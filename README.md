@@ -2,6 +2,7 @@ Map Journal
 ====================================
 
 Map Journal source code will be available for download in the next days. Thanks for your patience.
+
 In the mean time you can check out [Map Journal page on Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/).
 
 ## Features
