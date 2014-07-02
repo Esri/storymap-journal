@@ -36,7 +36,7 @@ For more information about the Map Journal, including a gallery of examples and 
 First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-tour/tutorial/)
 
 1. [Download the application](http://links.esri.com/storymaps/map_tour_template_zip)
-2. Deploy the application on your webserver. See [FAQ: how to deploy on a webserver](#) if needed
+2. Deploy the application on your webserver. See [FAQ](#) if needed
 3. Edit index.html and look for the configuration section (line 38) and copy/paste your application ID
 4. Navigate to index.html and enjoy (e.g., http://127.0.0.1/MapJournal/index.html)
 
@@ -53,13 +53,12 @@ We would love to hear from you!
 
 Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
 
-### Can I use the template without ArcGIS Online or Portal for ArcGIS
+#### Can I use the template without ArcGIS Online or Portal for ArcGIS?
 This is not a supported use case at that time. Please let us know if you are interested by another deployment scenarios. 
 The application rely heavily on web map but you can modify it to support another scenarios if you need.
 
-### Where are the data stored
+#### Where are the data stored?
 Coming soon.
-
 
 #### Can I deploy Map Tour on Portal for ArcGIS?
 Yes, just deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain files, make sure to clear it before. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in any other folder, some configuration will be required (see index.html configuration). Also note that the web application gallery preview feature won't be functional and give a 404 error.
@@ -67,8 +66,11 @@ Yes, just deploy the application in the following folder `ArcGIS\Portal\webapps\
 #### Can the template be used offline?
 Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file app/config.js.
 
-#### Can I use the builder with the downloadable without Portal for ArcGIS?
-No, not at this time. Let us know if you are interested.
+#### Can I use the builder without Portal for ArcGIS?
+No, for technical reason at this time the builder can only be use in ArcGIS Online or Portal for ArcGIS. 
+Let us know if you are interested, we can give you the reason and help you modify the code to enable it.
+
+### How to deploy the application on a webserver
 
 ## Support
 
