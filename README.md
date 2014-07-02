@@ -9,7 +9,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 [Details on Story Maps website](http://storymapsdev.arcgis.com/en/app-list/map-journal/) |
 [User Download (source code not included)](http://links.esri.com/storymaps/map_tour_template_zip)
 
-**Latest release is version 1.0.0**, if you want to be informed of new releases, we recommend you to watch these repository. See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+**Latest release is version 1.0.0**, if you want to be informed of new releases, we recommend you to watch this repository. See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
 Readme content:
  * [Introduction](#introduction)
@@ -25,11 +25,12 @@ Readme content:
 
 ## Introduction
 
-A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from an [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. See [FAQ](#deployment) for more detail about deployment scenarios.
-This repository provide the application source code for user that wants to host it themselves or developer that wants further customization.
+A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from an [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. The Journal's data (narrative content and reference to the webmap will be stored) in a Web Application Item.
+This repository provide the application source code for developers that wants to implement UI customization.
+See [FAQ](#deployment) for more details.
 
 For more information about the Map Journal, including a gallery of examples and a step-by-step tutorial, please see the [Map Journal](http://storymaps.arcgis.com/en/app-list/map-journal/) page on the [Esri Story Maps website](http://storymaps.arcgis.com/).
- 
+
 ## Instructions
 
 First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-tour/tutorial/)
@@ -48,18 +49,30 @@ We would love to hear from you!
 
 ## FAQ
 
-### Can I deploy Map Tour on Portal for ArcGIS?
+### Deployment
+
+Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
+
+### Can I use the template without ArcGIS Online or Portal for ArcGIS
+This is not a supported use case at that time. Please let us know if you are interested by another deployment scenarios. 
+The application rely heavily on web map but you can modify it to support another scenarios if you need.
+
+### Where are the data stored
+Coming soon.
+
+
+#### Can I deploy Map Tour on Portal for ArcGIS?
 Yes, just deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain files, make sure to clear it before. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in any other folder, some configuration will be required (see index.html configuration). Also note that the web application gallery preview feature won't be functional and give a 404 error.
 
-### Can the template be used offline?
+#### Can the template be used offline?
 Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file app/config.js.
 
-### Can I use the builder with the downloadable without Portal for ArcGIS?
+#### Can I use the builder with the downloadable without Portal for ArcGIS?
 No, not at this time. Let us know if you are interested.
 
 ## Support
 
-Please check out [Story Maps forum](http://forums.arcgis.com/forums/264-Story-Maps
+Please check out [Story Maps forum](http://forums.arcgis.com/forums/264-Story-Maps)
 
 ## Customize the look and feel
 
@@ -94,7 +107,7 @@ limitations under the License.
 
 A copy of the license is available in the repository's [license.txt](https://raw.github.com/Esri/map-journal-storytelling-template-js/master/license.txt) file.
 
-Some open-source components of this project are licensed under other License terms, see src/lib-app/ folder for respective licence files.
+Some open-source components of this project are licensed under other License terms, see `src/lib-app/` folder for respective licence files.
 
 | Library               | License   |
 | --------------------- | --------- |
