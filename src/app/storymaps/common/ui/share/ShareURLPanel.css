@@ -1,0 +1,13 @@
+.share-url-container .bitlylink {
+	display: inline-block;
+	width: 230px;
+	height: 34px; 
+	text-align: center;
+	font-size: 20px; 
+}
+
+.share-url-container .btn {
+	margin-left: 8px;
+	text-transform: uppercase;
+	vertical-align: 2px;
+}

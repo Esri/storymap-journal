@@ -1,0 +1,67 @@
+.imageSelectorFacebook {
+	position: relative;
+}
+
+.imageSelectorFacebook .service-logo {
+	display: inline-block;
+	width: 100px;
+	height: 35px;
+	background: url(../../../_resources/icons/media/builder-media-facebook.png);
+	background-repeat: no-repeat;
+	background-size: 100px auto;
+	vertical-align: top;
+	margin-right: 4px;
+}
+
+.imageSelectorFacebook .facebookLogin {
+	display: inline-block;
+}
+
+.imageSelectorFacebook .signInMsg {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 14px;
+	color: #30750a;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+.imageSelectorFacebook .signInMsg.error {
+	color: #c43d40;
+}
+
+.imageSelectorFacebook .signInMsg .smallLoader {
+	vertical-align: top;
+	margin-top: 2px;
+}
+
+.imageSelectorFacebook .albums {
+	display: none;
+	text-align: center;
+	max-height: 240px;
+	padding-top: 20px;
+	overflow-y: auto;
+}
+
+.imageSelectorFacebook .albums.disabled {
+	opacity: 0.4;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+.imageSelectorFacebook .album {
+	float: left;
+	width: 25%;
+	padding: 10px;
+}
+
+.mediaSelector.smallSize .imageSelectorFacebook .album {
+	width: 33%;
+}
+
+.imageSelectorFacebook .album:hover {
+	background-color: #DDE2E7;
+	cursor: pointer;
+	border-radius: 10px;
+}

@@ -1,0 +1,87 @@
+#headerMobile {
+	display: none;
+	background-color:#444;
+	position:fixed;
+	left: 0px;
+	top: 0px;
+	width:100%;
+	z-index: 100;
+}
+
+#headerMobile .banner {
+	display: none;
+	cursor: pointer;
+}
+
+#headerMobile .title {
+	color:#fff;
+	font-size:22px;
+	padding: 10px 10px 0px 10px;
+	margin-bottom: 10px;
+    word-wrap: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	max-height: 55px;
+}
+
+#headerMobile .subtitle {
+	color:#dadada;
+	font-size:16px;
+	padding:0 10px 0 10px;
+	font-weight:normal;
+    word-wrap: break-word;
+	max-height: 70px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	margin-bottom: 10px;
+}
+
+#headerMobile .navBar {
+	height: 41px;
+	color: #CFCFCF;
+	padding: 9px 0 9px 0;
+	text-align:center;
+	font-weight:normal;
+	border-top: 1px solid #888;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 2px;
+}
+
+#headerMobile .navBar span {
+	cursor:pointer;
+	-ms-user-select:none;
+	font-size: 19px;
+	text-align:center;
+}
+
+#headerMobile .rightLink, #headerMobile .leftLink {
+	position:absolute;
+	bottom: 12px;
+}
+
+#headerMobile .leftLink {
+	left:1em;
+}
+
+#headerMobile .rightLink {
+	right:1em;
+}
+
+#headerMobile .navBar .current {
+	color:#fff;
+	font-weight:bold;
+}
+
+#headerMobile .grip {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+}

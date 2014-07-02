@@ -1,0 +1,171 @@
+/*
+ * Bootstrap workaround
+ * Form error feedback
+ * Can't seem to get field feedback to works without that (02/27/14)
+ */
+
+.form-control-feedback {
+	position: absolute;
+    top: 3px;
+    right: 10px;
+    display: none;
+    width: 34px;
+    height: 34px;
+    line-height: 29px;
+    text-align: center;
+}
+
+.form-control-feedback.glyphicon-remove {
+	color: #A94442;
+}
+
+.modal-tabs .tab:nth-child(1) {
+	margin-left: 15px;
+}
+
+/*
+ * Popup views
+ */
+
+#init-import-views {
+	display: none;
+}
+
+/*
+ * Mobile Builder 
+ */
+.builderMobile {
+	display: none;
+}
+
+.modal-footer .success {
+	color: #30750a;
+}
+
+.modal-footer .addSpinner {
+	margin-left:8px;
+}
+
+/* Spectrum input color picker */	
+.sp-input-container {
+	height: 16px !important;
+}
+
+/* 
+ * TODO
+ */
+
+h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+textarea {
+	resize: none;
+}
+
+/*
+ * Modal footer
+ */
+
+.modal-footer .error, .modal-footer .success, .modal-footer .addSpinner {
+	display: none;
+	float: left;
+	vertical-align: -4px;
+	margin-top: 6px;
+	font-size: 14px;
+	color: #c43d40;
+	font-weight: bold;
+}
+
+.modal-footer .success {
+	color: #30750a;
+}
+
+.modal-footer .addSpinner {
+	margin-left:8px;
+}
+
+.modal-footer .btn-back {
+	display: none;
+	font-size: 1.3em;
+	margin-top: -3px;
+}
+
+/*
+ * Mask
+ */
+
+body .builder-mask {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #2d2d2d;
+	opacity: 0.6;
+}
+
+body.builder-mask .builder-mask {
+	display: block;
+	z-index: 3;
+}
+
+/*
+ * Map Controls Builder
+ */
+
+.mapControls .settingsGear {
+	position: absolute;
+	z-index: 1000;
+	top: 8px;
+	right: 10px;
+	cursor: pointer;
+	opacity: 0.6;
+	color: #4D4D4D;
+	font-size: 0.85em;
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.mapControls .settingsGear:hover {
+	opacity: 1.0;
+}
+
+.mapControls.collapsed .settingsGear {
+	display: none;
+}
+
+.mapControls .settingsOverlay {
+	display: none;
+	position: absolute;
+	top: 27px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	/*padding: 5px 10px 8px 10px;*/
+	padding: 0;
+	background-color: #000;
+	opacity: 0.9;
+	color: #FFF;
+}
+
+.mapControls .settingsOverlay .settings-title {
+	text-align: center;
+	padding: 2px 0;
+	border-bottom: 1px solid white;
+}
+
+.mapControls .settingsOverlay .settings-content {
+	padding: 5px;
+}
+
+.mapControls .settingsOverlay  .checkbox {
+	margin-top: 0;
+	margin-bottom: 4px;
+}

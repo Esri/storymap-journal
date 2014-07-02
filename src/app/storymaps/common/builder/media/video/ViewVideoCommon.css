@@ -1,0 +1,60 @@
+.videoSelectorView {
+	padding-bottom: 10px;
+}
+
+.videoSelectorView .service-logo {
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+
+.videoSelectorView .service-logo.youtube {
+	background: url(../../../_resources/icons/media/builder-media-youtube.png);
+	background-size: auto 50px;
+	background-position: 0 -13px;
+}
+
+.videoSelectorView .service-logo.vimeo {
+	background: url(../../../_resources/icons/media/builder-media-vimeo.png);
+	background-size: 80px auto;
+	background-position: -3px -14px;
+}
+
+.viewYoutubeContainer .videoSelectorView,
+.viewVimeoContainer .videoSelectorView
+{
+	margin-bottom: -15px;
+}
+
+.videoSelectorView .url {
+	width: 325px;
+}
+
+.mediaSelector.smallSize .videoSelectorView .url {
+	width: 300px;
+}
+
+.videoSelectorView .loadingMsg {
+	font-size: 14px;
+	color: #30750a;
+	font-weight: bold;
+	vertical-align: 2px;
+}
+
+.videoSelectorView .loadingMsg .glyphicon-ok {
+	margin-left: 4px;
+}
+
+.videoSelectorView .errorMsg {
+	display: none;
+	font-size: 14px;
+	color: #c43d40;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.videoSelectorView .result-container {
+	padding: 10px;
+}

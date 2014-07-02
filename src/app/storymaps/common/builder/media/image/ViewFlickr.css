@@ -1,0 +1,63 @@
+.imageSelectorFlickr .service-logo {
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+	background: url(../../../_resources/icons/media/builder-media-flickr.png);
+	background-repeat: no-repeat;
+	background-size: auto 20px;
+	background-position: 4px 2px;
+	vertical-align: middle;
+}
+
+.imageSelectorFlickr .userName {
+	width: 235px;
+}
+
+.imageSelectorFlickr .loadingMsg {
+	font-size: 14px;
+	color: #30750a;
+	font-weight: bold;
+	vertical-align: 2px;
+}
+
+.imageSelectorFlickr .loadingMsg .glyphicon-ok {
+	margin-left: 4px;
+}
+
+.imageSelectorFlickr .errorMsg {
+	display: none;
+	font-size: 14px;
+	color: #c43d40;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.imageSelectorFlickr .sets {
+	display: none;
+	text-align: center;
+	max-height: 240px;
+	padding-top: 20px;
+	overflow-y: auto;
+}
+
+.imageSelectorFlickr .sets.disabled {
+	opacity: 0.4;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+.imageSelectorFlickr .set {
+	float: left;
+	width: 25%;
+	padding: 10px;
+}
+
+.mediaSelector.smallSize .imageSelectorFlickr .set {
+	width: 33%;
+}
+
+.imageSelectorFlickr .set:hover {
+	background-color: #DDE2E7;
+	cursor: pointer;
+	border-radius: 10px;
+}

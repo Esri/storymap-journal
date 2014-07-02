@@ -1,0 +1,24 @@
+.webpageSelectorHome .separator {
+	text-align: center;
+	padding: 5px 0 10px 0;
+}
+
+.webpageSelectorHome .separator .solidline {
+	display: inline-block;
+	width: 186px;
+	vertical-align: 4px;
+	border-top: 1px solid grey; 
+	margin: 0 2px;
+}
+
+.webpageSelectorHome .textarea {
+	height: 67px;
+}
+
+.webpageSelectorHome .error {
+	display: none;
+	font-family: 'open_sanssemibold', sans-serif;
+	font-size: 1.15em;
+	color: red;
+	margin-top: 10px;
+}

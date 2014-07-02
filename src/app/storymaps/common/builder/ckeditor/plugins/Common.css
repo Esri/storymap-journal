@@ -1,0 +1,54 @@
+.editorDialog .modal-dialog {
+	margin-top: 113px;
+}
+
+@media screen and (max-height: 714px) {	
+	.editorDialog .modal-dialog {
+		margin-top: 84px;
+	}
+}
+
+@media screen and (max-height: 630px) {	
+	.editorDialog .modal-dialog {
+		margin-top: 58px;
+	}
+}
+
+.editorDialog .modal-content {
+	/*top: 75px;
+	width: 560px;
+	margin-left: 20px;
+	margin-top: 15px;
+	border: none;
+	border-radius: 0;*/
+	width: 570px;
+	min-height: 539px;
+	margin-left: 15px;
+}
+
+.editorDialog .modal-header {
+	border-radius: 0;
+	padding: 10px;
+}
+
+.editorDialog .modal-body {
+	min-height: 430px;
+}
+
+.editorDialog .modal-title {
+	font-size: 1.2em;
+	line-height: 1.4em;
+	margin-top: inherit;
+}
+
+.editorDialog .close {
+	font-size: 16px;
+	margin-top: 0;
+}
+
+.editorDialog .modal-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}

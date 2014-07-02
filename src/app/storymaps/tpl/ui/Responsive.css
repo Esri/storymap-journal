@@ -1,0 +1,71 @@
+@media screen and (max-width: 767px), screen and (orientation:portrait) {	
+	/*
+	 * Viewer
+	 */
+	#loadingOverlay {
+		top: 0px;
+	}
+	
+	#header, #sidePanel, #floatingPanel {
+		display: none !important;
+	}
+
+	#mobileView {
+		display: block;
+	}
+	
+	/*
+	 * Main Stage floating panel media rules
+	 */
+	 
+	.mainMediaContainer .embedContainer.center,
+	.mainMediaContainer .embedContainer.custom {
+		left: 0 !important;
+		right: 0 !important;
+	}
+	
+	/*
+	 * Map, Map extras
+	 */
+	
+	.overview, .overview .esriOverviewMap, .overview img {
+		z-index: 0 !important;
+		visibility: hidden !important;
+	}
+	
+	.esriControlsBR {
+		left: inherit !important;
+		right: 5px !important;
+	}
+	
+	.legendContainer {
+		left: inherit !important;
+		right: 5px !important;
+	}
+	
+	.mediaBackContainer {
+		left: 0 !important;
+		right: 0 !important;
+	}
+	
+	/*
+	 * Builder
+	 */
+	
+	#mainStageEdit {
+		display: none !important;
+	}
+	
+	#builderPanel, #builderLanding {
+		display: none !important;
+	}
+
+	.modal, .modal-backdrop {
+		display: none !important;
+	}
+	
+	#builderHelp, #builderHelpMaskOverlay, 
+	#builderLanding, #builderQuotes {
+		display: none !important;
+	}
+}

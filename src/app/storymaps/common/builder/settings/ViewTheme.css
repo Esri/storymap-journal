@@ -1,0 +1,58 @@
+.settings-colors .layout-thumbnail {
+	margin-right: 45px;
+	margin-top: 18px;
+	cursor: pointer;
+}
+
+.settings-colors .layout-thumbnail:nth-child(3),
+.settings-colors .layout-thumbnail:nth-child(6),
+.settings-colors .layout-thumbnail:nth-child(9) {
+	margin-right: 0;
+}
+
+.settings-colors .help {
+	position: absolute;
+	top: -14px;
+	right: -14px;
+}
+
+.settings-colors .help img {
+	width: 32px;
+}
+
+
+/*
+.settings-colors p {
+	margin-bottom: 20px;
+}
+
+.settings-colors input[type=radio] {
+	cursor:pointer;
+}
+
+.settings-colors .radio {
+	cursor:pointer;
+}
+
+.settings-colors .swatch {
+	width:25px;
+	height:17px;
+	border:solid;
+	border-width:thin;
+	border-color:#CCCCCC;
+	margin-left: 4px;
+}
+
+.settings-colors .caption {
+	font-size:12px;
+}
+
+.settings-colors td {
+	padding-right: 4px;
+	padding-bottom: 4px;
+}
+
+.settings-colors .sp-input-container {
+	height: 16px !important;
+}
+*/

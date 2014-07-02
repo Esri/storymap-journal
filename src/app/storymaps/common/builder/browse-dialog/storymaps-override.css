@@ -1,0 +1,62 @@
+#browse-id-dialog {
+	z-index: 1000 !important;
+}
+
+#browse-id-dialog .gallery {
+	height: 24em !important;
+} 
+
+#browse-id-dialog .dgrid-scroller {
+	overflow: hidden;
+}
+
+#browse-id-dialog .dgrid-content {
+	padding-left: 15px;
+}
+
+#browse-id-dialog .esriLeadingMargin1 {
+	margin-top: 6px !important;
+}
+
+#browse-id-dialog {
+	border: 1px solid #AAA;
+}
+
+#browse-id-dialog .dijitDialogPaneContent {
+	border-top: none;
+}
+
+#browse-id-dialog .dijitButton.cancel {
+	/*float: right;*/
+	background: #DDD;
+}
+
+#browse-id-dialog .dijitButton.cancel .dijitButtonNode {
+	background: #DDD;
+	border: 1px solid #AAA;
+}
+
+#browse-id-dialog .dijitButton.ok {
+	display: none;
+}
+
+#browse-id-dialog .dijitDialogTitleBar {
+	background-color: #848484;
+}
+
+#browse-id-dialog #dijit_form_Select_0 {
+	border-color: #AAA;
+}
+
+#browse-id-dialog #dijit_form_Select_0 .dijitArrowButtonContainer {
+	background-color: #DDD;
+}
+
+#browse-id-dialog #widget_browse-id-search-box .dijitInputInner {
+	font-size: 0.9em;
+}
+
+#browse-id-dialog .dijitPlaceHolder {
+	font-size: 0.85em;
+	line-height: 1.9em;
+}

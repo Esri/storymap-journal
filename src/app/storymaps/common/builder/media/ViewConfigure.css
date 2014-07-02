@@ -1,0 +1,111 @@
+/*
+.mediaSelectorConfigure .imageDetailsLbl {
+	cursor: pointer;
+}
+
+.mediaSelectorConfigure .imageDetailsContainer .question {
+	display: inline-block;
+	background: url(../../_resources/icons/media-configure-collapse-arrows.png);
+	width: 16px;
+	height: 16px;	
+	vertical-align: -2px;
+	opacity: 0.9;
+}
+
+.mediaSelectorConfigure .imageDetailsContainer.expanded .question {
+	background-position: 0 18px; 
+}
+
+.mediaSelectorConfigure .imageDetailsContainer .table {
+	display: none;
+}
+
+.mediaSelectorConfigure .imageDetailsContainer.expanded .table {
+	display: block;
+}
+
+.mediaSelectorConfigure .btn-reset {
+	background: url(../../_resources/icons/media-configure-refresh.png);
+	width: 16px;
+	height: 16px;
+}
+
+.mediaSelectorConfigure .btn-lockratio {
+	background: url(../../_resources/icons/media-configure-lock.png);
+	width: 16px;
+	height: 16px;
+}
+
+.mediaSelectorConfigure .btn-lockratio.locked {
+	background-position: 0 16px;
+}
+*/
+
+.mediaSelectorConfigure .form-group {
+	margin-top: 15px;
+}
+
+.mediaSelectorConfigure .form-group:nth-child(1) {
+	margin-top: 0;
+}
+
+/*
+ * Position
+ */
+
+.mediaSelectorConfigure .media-configure-position {
+	position: relative;
+	display: inline-block;
+	width: 127px;
+	text-align: center;
+	color: #4d4d4d;
+	opacity: 0.8;
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.mediaSelectorConfigure .media-configure-position:nth-child(1) {
+	/*vertical-align: 20px;*/	
+}
+
+.mediaSelector.smallSize .mediaSelectorConfigure .media-configure-position {
+	width: 117px;	
+}
+
+.mediaSelectorConfigure .media-configure-position:hover,
+.mediaSelectorConfigure .media-configure-position.selected {
+	opacity: 1.0;
+}
+
+.mediaSelectorConfigure .media-configure-position.selected .position-selected {
+	position: absolute;
+	top: -15px;
+	left: -6px;
+	width: 30px;
+	height: 30px;
+	background: url(../../../../../resources/tpl/builder/icons/builder-check.png);
+	background-size: 30px;
+	background-repeat: no-repeat;
+}
+
+.mediaSelectorConfigure .media-configure-position .position-img {
+	max-width: 100%;
+}
+
+.mediaSelectorConfigure .media-configure-position .position-lbl {
+	font-size: 1em;
+	color: #69A7E2;
+}
+
+.mediaSelectorConfigure .media-configure-position .position-params {
+	margin-top: 4px;
+}
+
+.mediaSelectorConfigure .media-configure-position .position-params.disabled {
+	opacity: 0.4;
+	pointer-events: none;
+}
+
+.mediaSelectorConfigure .form-group {
+	margin-bottom: 0px !important;
+}

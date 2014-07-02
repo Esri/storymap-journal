@@ -1,0 +1,14 @@
+<div class="videoSelectorView">
+	<form class="form-inline" role="form" onsubmit="return false;">
+		<div class="form-group">
+			<span class="service-logo <%= serviceId %>"></span>
+			<input type="text" class="form-control url" value="" placeholder="<%= fieldUrl %>"/>
+		</div>
+		<button class="btn btn-primary btn-check"><%= btnCheck %></button>
+		<span class="loadingMsg"></span>
+	</form>
+	<div class="errorMsg"></div>
+	<div class="result-container">
+		<div class="video-detail-container"></div>
+	</div>
+</div>

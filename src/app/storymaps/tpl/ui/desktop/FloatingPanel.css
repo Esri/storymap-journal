@@ -1,0 +1,269 @@
+#floatingPanel {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: none;
+	min-width: 300px;
+	/*max-width: 550px;*/
+	/*z-index: 30;*/
+	z-index: 1;
+}
+
+#floatingPanel .backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.8;
+}
+
+.floatingPanel .appTitle {
+	opacity: 0.9;	
+}
+
+/*
+ * Sections
+ */
+
+.floatingPanel .sections {
+	position: absolute;
+	/*top: 53px;*/
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	padding-right: 34px;
+	overflow: hidden;
+}
+
+/*
+ * Navigation dots
+ */
+
+.floatingPanel .navDots {
+	position: absolute;
+	top: 53px;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+	padding-bottom: 53px;
+	background-color: inherit !important;
+}
+
+/*
+ * Right layout
+ */
+
+body.layout-float-left .floatingPanel .sections {
+	padding-left: 34px;
+	padding-right: 0;
+}
+
+body.layout-float-left .floatingPanel .navDots {
+	left: 0;
+	right: inherit;
+}
+
+/*
+ * Section block
+ */
+
+.floatingPanel .section {
+	position: relative;
+	padding: 0 2% 0 5%;
+	width: 100%;
+	overflow: hidden;
+}
+
+body.layout-float-left .floatingPanel .section {
+	padding: 0 5% 0 2%;
+}
+
+/*
+ * Section content
+ */
+
+/*
+.floatingPanel .section a {
+	color: #EDEDED;
+}
+*/
+
+.floatingPanel .section a[data-storymaps] {
+	/*color: #EDEDED;*/
+	border-bottom: 1px dashed #EDEDED;
+}
+
+.floatingPanel .scroll-up, 
+.floatingPanel .scroll-down {
+	text-align: center;
+	font-size: 2em;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.floatingPanel .section:nth-child(1) .scroll-up {
+	display: none;
+}
+
+.floatingPanel .scroll-down-text {
+	display:none;
+}
+
+.floatingPanel .section:first-child .scroll-down-text {
+	display:inline;
+}
+
+.floatingPanel .section:nth-last-child(1) .scroll-down {
+	display: none;
+}
+
+.floatingPanel .title {
+	/*font-family: 'open_sanssemibold', sans-serif;*/
+	font-weight: normal;
+	font-size: 1.85em;
+	margin-top: 5%;
+	margin-bottom: 10%;
+}
+
+.floatingPanel .section:first-child .title {
+	margin-top: 20%;
+	margin-bottom: 10%;
+	font-size: 2.5em;
+	line-height: 1.2em;
+}
+
+.floatingPanel .section:first-child .content {
+	font-size: 1.4em;
+}
+
+.floatingPanel .content {
+	opacity: 0.8;
+	margin-top: 10%;
+	/*margin-bottom: 15%;*/
+	font-size: 1.1em;
+	/*overflow: hidden;*/
+}
+
+.floatingPanel .section img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/*
+ * Builder
+ */
+
+.floatingPanel .builder {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.floatingPanel .panelEditBtn {
+	right: 1%;
+	top: 12px;
+	width: 48px;
+	height: 48px;
+	background-size: 48px;
+	background-position: 0 -49px;
+}
+
+body.layout-float-left .floatingPanel .panelEditBtn {
+	top: 3px;
+	right: 5px;
+}
+
+.floatingPanel .panelEditBtn:hover {
+	background-position: 0 -49px;
+}
+
+body.builder-mode .floatingPanel {
+	top: 55px !important;
+}
+
+/* Display hidden in builder */
+/*body.builder-mode .sidePanel .draft-section,*/ 
+body.builder-mode .sidePanel .hidden-section {
+	display: block;
+}
+
+/*
+ * Mask
+ */
+
+.floatingPanel .builder-mask {
+	display: none;
+	z-index: 2;
+}
+
+/*
+ * Up/down icons FONT
+ */
+ 
+@font-face {
+  font-family: 'float-layout-font';
+  src: url('../../../../../resources/tpl/viewer/font/float-layout-font.eot?92336371');
+  src: url('../../../../../resources/tpl/viewer/font/float-layout-font.eot?92336371#iefix') format('embedded-opentype'),
+       url('../../../../../resources/tpl/viewer/font/float-layout-font.woff?92336371') format('woff'),
+       url('../../../../../resources/tpl/viewer/font/float-layout-font.ttf?92336371') format('truetype'),
+       url('../../../../../resources/tpl/viewer/font/float-layout-font.svg?92336371#float-layout-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'float-layout-font';
+    src: url('../../../../../resources/tpl/viewer/font/float-layout-font.svg?92336371#float-layout-font') format('svg');
+  }
+}
+*/
+ 
+ .floatingPanel .floating-panel-icon[class^="icon-"]:before, 
+ .floatingPanel .floating-panel-icon[class*=" icon-"]:before {
+  font-family: "float-layout-font";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.floatingPanel .icon-down-open:before { content: '\e800'; } /* '' */
+.floatingPanel .icon-up-open:before { content: '\e801'; } /* '' */
+
+.floatingPanel .icon-up-open,
+.floatingPanel .icon-down-open {
+	font-size: 1.6em;
+	vertical-align: -6px;
+}

@@ -1,0 +1,30 @@
+.editorDialogGeocode {
+	z-index: 9996;
+}
+
+.editorDialogGeocode .mapDiv {
+	position: relative;
+}
+
+.editorDialogGeocode .map {
+	width: 100% !important;
+}
+
+.editorDialogGeocode .simpleGeocoder {
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 70px;
+}
+
+.editorDialogGeocode .esriGeocoderContainer {
+	width: 250px;
+}
+
+.editorDialogGeocode #esri_dijit_Geocoder_0_input {
+	width: 194px;
+}
+
+.editorDialogGeocode .mapMarker {
+	margin-top: 5px;
+}

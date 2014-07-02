@@ -1,0 +1,69 @@
+.imageSelectorHome {
+	padding: 25px 0;
+}
+
+.imageSelectorHome .imageSelectorTable {
+	width: 70%;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.imageSelectorHome .imageSelectorTable .btn-container {
+	padding: 15px 16px;
+}
+
+.mediaSelector.smallSize .imageSelectorHome .imageSelectorTable .btn-container {
+	padding: 15px 12px;
+}
+
+.imageSelectorHome .imageSelectorTable .btn-img {
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	background-repeat: no-repeat;
+}
+
+.imageSelectorHome .btn-select-flickr .btn-img {
+	background: url(../../../_resources/icons/media/builder-media-flickr.png);
+	background-size: 100px auto;
+	background-repeat: no-repeat;
+}
+
+.imageSelectorHome .btn-select-fb .btn-img {
+	background: url(../../../_resources/icons/media/builder-media-facebook.png);
+	background-size: 100px auto;
+	background-repeat: no-repeat;
+}
+
+.imageSelectorHome .btn-select-picasa .btn-img {
+	background: url(../../../_resources/icons/media/builder-media-picasa.png);
+	background-size: 100px auto;
+	background-repeat: no-repeat;
+}
+
+.imageSelectorHome .btn-select-url {
+	padding: 0;
+}
+
+.imageSelectorHome .btn-select-url .btn-img {
+	width: 75px;
+	background: url(../../../_resources/icons/media/builder-media-url.png);
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	margin-top: -5px;
+}
+
+.imageSelectorHome .imageSelectorTable .btn-container.disabled {
+	opacity: 0.4;
+	cursor: default !important;
+}
+
+.imageSelectorHome .imageSelectorTable .btn-container.disabled a {
+	cursor: default !important;
+}
+
+.imageSelectorHome .imageSelectorTable .btn-container:hover {
+	background-color: #BDD1E2;
+	cursor: pointer;
+	border-radius: 10px;
+}

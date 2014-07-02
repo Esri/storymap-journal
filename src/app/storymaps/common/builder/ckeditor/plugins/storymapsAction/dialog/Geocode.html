@@ -1,0 +1,26 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title"><%= lblTitle %></h4>
+		</div>
+		
+		<div class="modal-body">
+			<div class="mapDiv">
+				<div class="map"></div>
+				<div class="geocoder"></div>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" class="mapMarker" /> <%= mapMarkerExplain %>
+				</label>
+			</div>
+		</div>
+		
+		<div class="modal-footer">
+			<span class="modal-footer-left"></span>
+			<button class="btnSubmit btn btn-primary"><%= btnOk %></button>
+			<button class="btnCancel btn btn-naked btn-close" data-dismiss="modal"><%= btnCancel %></button>
+		</div>
+	</div>
+</div>

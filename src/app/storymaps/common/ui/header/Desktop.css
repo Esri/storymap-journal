@@ -1,0 +1,187 @@
+#header {
+	height:115px;
+	background:#444;
+	color:#fff;
+	margin:0;
+	overflow:hidden;
+}
+
+#header .title {
+	font-family: 'open_sanssemibold', sans-serif;
+}
+
+/*
+ * Desktop
+ */
+
+#headerDesktop {
+	position: relative;
+	height: 115px;
+}
+
+#header.hideDesktop {
+	height: 0px;
+}
+
+#header.hideDesktop #headerDesktop {
+	display: none;
+}
+
+#headerDesktop .title {
+	padding-top: 18px;
+	font-size: 20px;
+	font-weight: normal;
+	text-align: left;
+	overflow: hidden;
+	white-space: nowrap;
+	line-height: inherit;
+}
+
+/* In view mode add ellipsis if title is too long */
+#headerDesktop:not(.isBuilder) .title {
+	text-overflow: ellipsis;
+	-o-text-overflow:ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+    word-wrap: break-word;
+	white-space: pre;
+}
+
+#headerDesktop .title.titleEmpty .text_edit_label {
+	color: #F00;
+}
+
+#headerDesktop .title.titleEmpty .text_edit_icon {
+	background-color: #F00;
+}
+
+#headerDesktop .subtitle {
+	font-size: 13px;
+	margin-top: 13px;
+	overflow: hidden;
+	overflow-y: auto;
+	font-weight: normal;
+	line-height: 18px;
+    word-wrap: break-word;
+	height: 54px;
+	color: #C5D5D5;
+}
+
+#headerDesktop .rightArea {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding-top:25px;
+	padding-right:25px;
+	text-align:right;
+}
+
+#headerDesktop .rightArea .social {
+	margin-bottom: 6px;
+}
+
+#headerDesktop .social .link {
+	color: #C5D5D5;
+	font-weight:normal;
+	font-size:13px;
+}
+
+#headerDesktop .rightArea .logo {
+	position:relative;
+	height: 60px;
+	border:none;
+	outline:none;
+}
+
+/* Firefox don't like this - vertical align on top instead */
+@-moz-document url-prefix() { 
+	#headerDesktop .rightArea .logo a {
+		position:relative;
+		display: inline-block;
+	}
+	
+	#headerDesktop .rightArea .logo a img {
+		bottom: initial;
+		top: initial;
+		margin-top: -10px;
+	}
+}
+
+#headerDesktop .rightArea .logo img {
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	right: 0px;
+	max-width: 250px;
+	max-height: 50px;
+	margin: auto 0;
+}
+
+#headerDesktop .switchBuilder {
+	display: none;
+	position:absolute; 
+	right: 180px; 
+	top: 30px;
+	padding-left: 35px;
+}
+
+#headerDesktop .switchBuilder .editIcon {
+	position: absolute;
+	top: 8px;
+	left: 7px;
+	width: 28px;
+	height: 28px;
+	background-color: inherit;
+	top: 3px;
+}
+
+/*
+ * Desktop builder view
+ */
+
+#headerDesktop .text_edit_input {
+	/* Position on top of the config panel */
+	position: relative;
+	z-index: 501;
+}
+
+/* Reduce the width of the field to be sure that icon will stay visible */
+#headerDesktop .text_edit_label { 
+	max-width: 94%;
+	overflow: hidden;
+}
+
+#headerDesktop .title .text_edit_input {
+	height: 24px;
+	margin-top: -6px;
+	margin-bottom: 0px;
+	font-size: 18px;
+	width: 98%;
+	padding: 0px 5px 2px 5px;
+	overflow: hidden;
+}
+
+#headerDesktop .title .text_edit_icon {
+	margin-top: -12px;
+	margin-left: 8px;
+}
+
+#headerDesktop .subtitle .text_edit_input {
+	font-size: 12px;
+	line-height: 17px;
+	width: 97%;
+}
+
+#headerDesktop .subtitle .text_edit_icon {
+	position: absolute;
+	margin-top: -9px;
+	margin-left: 8px;
+}
+
+
+#headerDesktop .textArea {
+	padding-top:0px;
+	padding-left:25px;
+	width:70%;
+}

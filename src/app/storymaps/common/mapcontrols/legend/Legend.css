@@ -1,0 +1,40 @@
+.legend {
+	display: none;
+}
+
+.legendContainer {
+	position: absolute;
+	top: 0;
+	right: 15%;
+	width: 200px;
+	padding: 5px 10px 8px 10px;
+}
+
+.legendContainer .collapseBtn {
+	background-position: 0 -9px !important;
+}
+
+.legendContainer.collapsed .collapseBtn {
+	background-position: 0 0 !important;
+}
+
+.legendContainer .content {
+	overflow-y: auto;
+	max-height: 400px;
+	overflow-x: hidden;
+	margin-right: -10px;
+}
+
+.legendContainer .content.settingsOpen {
+	min-height: 55px
+}
+
+.legendContainer, 
+.legendContainer .settingsOverlay {
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}

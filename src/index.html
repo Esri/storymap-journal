@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
+		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
+		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
+		
+		<!-- 
+			To correctly reference your Journal in search engine:
+			 - create and fill out extensively an ArcGIS Online item that link to your final application
+			 - edit the following four tags as well as the title tag above on line 4
+		-->
+		<meta name="description" content="This story map was created with the Esri Tpl application in ArcGIS Online.">
+		
+		<!-- Facebook sharing -->
+		<meta property="og:title" content="Story Map Journal"/>
+		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
+		<meta property="og:image" content="resources/common/icons/esri-globe.png"/>
+		
+		<!-- 
+			This template is released under the Apache License V2.0 by Esri http://www.esri.com/
+			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
+			https://github.com/Esri/map-journal-storytelling-template-js
+		-->
+		
+		<script type="text/javascript">
+			//-------------------------------------------------------------------------------------------
+			//     Template configuration (ignored on ArcGIS Online, Portal and during development)
+			//-------------------------------------------------------------------------------------------
+			var configOptions = {
+				// Enter an application ID created through the Story Map Journal Builder 
+				appid: "",
+			};
+			// Optionally sharing and proxy URLs can be configured in app/tpl-config.js. This is only required  
+			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the template isn't deployed as /home/MapJournal/ or /apps/MapJournal/. 
+			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required 
+			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
+			//  on Portal for ArcGIS as /home/MapJournal/ or /apps/MapJournal/, that configuration is available in ../commonConfig.js
+		</script>
+		
+		<!--
+		
+			Edit below at your own risk
+		
+		-->
+		
+		<script type="text/javascript">
+			var app = {
+				version: '1.0.0',
+				isProduction: false,
+				isInBuilder: false,
+				indexCfg: configOptions
+			};
+			
+			function loadJS(url, isExternal)
+			{
+				if( isExternal )
+					url = document.location.protocol == 'file:' ? 'http:' + url : url;
+				else
+					url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
+					
+				document.write("<script language='javascript' type='text/javascript' src='" + url + "'><\/script>");
+			}
+			
+			function loadCSS(url, isExternal)
+			{
+				if( isExternal ) 
+					url = document.location.protocol == 'file:' ? 'http:' + url : url;
+				else
+					url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
+					
+				var el = document.createElement("link");
+				el.setAttribute("rel", "stylesheet");
+				el.setAttribute("type", "text/css");
+				el.setAttribute("href", url);
+				document.getElementsByTagName("head")[0].appendChild(el);
+			}
+			
+			function getUrlVar(name)
+			{
+				var vars = [], hash;
+				if( window.location.href.indexOf('?') == -1 ) return null;
+			
+				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				for(var i = 0; i < hashes.length; i++){
+					hash = hashes[i].split('=');
+					hash[0] = hash[0].split('#')[0];
+					vars.push(hash[0]);
+					vars[hash[0]] = (hash[1] == undefined) ? true : hash[1];
+				}
+				return vars[name];
+			}
+			
+			var pathJSAPI = "//js.arcgis.com/3.10/";
+			var path1 = location.pathname.replace(/\/[^/]+$/, '/');
+			var path2 = location.pathname.replace(/\/[^/]+$/, '');
+			var dojoConfig = {
+				parseOnLoad: true,
+				isDebug: false,
+				useDeferredInstrumentation: true,
+				cacheBust: ! app.isProduction,
+				packages: [
+					{
+						name: 'storymaps',
+						location: path1 + 'app/storymaps'
+					},
+					{
+						name: "templateConfig",
+						// If the template is deployed on a Portal (apps path contains /apps/MapJournal/ or /home/MapJournal/)
+						// commonConfig.js is loaded from the parent folder, otherwise it's loaded from the app folder
+						location: (/(\/)([a-zA-Z0-9]+(\/))*(apps\/|home\/)([a-zA-Z0-9]+\/)/).test(document.location.pathname) ? path2.substr(0,path2.lastIndexOf('/MapJournal')) : path2.replace(/\/+$/, '') + '/app'
+					},
+					{
+						name: 'lib-app',
+						location: path1 + 'lib-app'
+					},
+					{
+						name: 'lib-build',
+						location: path1 + 'lib-build'
+					},
+					{
+						name: 'commonResources',
+						location: path1 + (app.isProduction ? 'resources/common' : 'app/storymaps/common/_resources/')
+					}
+				],
+				aliases: [
+					['text', 'lib-build/text'],
+					['underscore', 'lib-build/lodash']
+				]
+			};
+			
+			app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
+			
+			loadCSS(pathJSAPI + "js/esri/css/esri.css", true);
+			loadCSS(pathJSAPI + "js/dojo/dijit/themes/claro/claro.css", true);	
+			
+			if( app.isProduction ) {
+				if ( app.isInBuilder )
+					loadCSS("app/builder-min.css");
+				else
+					loadCSS("app/viewer-min.css");
+			}
+		</script>
+		<!--[if IE 7]>
+			<link rel="stylesheet" href="resources/common/font/storymaps-icons-ie7.css">
+			<link rel="stylesheet" href="resources/tpl/viewer/font/float-layout-font-ie7.css">
+		<![endif]-->
+	</head>
+	<body class="claro">
+		<style>
+			/* CUSTOM CSS RULES */
+		</style>
+		
+		<!-- Builder top panel is injected here -->
+		<div id="builderPanel" class="hide mainViewAboveMap"></div>
+		
+		<!-- Content -->
+		<div id="contentPanel" class="mobileView">
+			<!-- Map -->
+			<div id="mainStagePanel">
+				<div class="medias">
+					<!-- Maps and media injected here -->
+            	</div>
+            	<div class="loadingIndicator"></div>
+				<!-- Back button -->
+				<div class="mediaBackContainer centerAlignOnFloatOverMap">
+					<div class="backButton">
+						<div class="backArrow"></div>
+						<span class="backLbl"></span>
+					</div>
+				</div>
+				<!-- Builder -->
+				<div id="builderQuotes" class="centerAlignOnFloat"></div>
+				<div id="builderLanding" class="centerAlignOnFloat"></div>
+				<div id="mainStageEdit"></div>
+				<div id="builderHelp" class="centerAlignOnFloat"></div>
+				<div class="firstAddExplain"></div>
+			</div>
+			
+			<!-- Text panel of the Side Panel layout -->
+			<div id="sidePanel" class="mainViewSideMap sidePanel sectionPanel">
+				<div class="navDots">
+					<!-- navigation dots -->
+				</div>
+				<div class="header">
+					<div class="linkSocialContainer">
+						<span class="linkContainer"></span>
+						<span class="shareBtns">
+							<i class="shareIcon blackHover share_facebook icon-facebook-squared-1"></i>
+							<i class="shareIcon blackHover share_twitter icon-twitter-1"></i>
+							<i class="shareIcon blackHover share_bitly icon-link"></i>
+							<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
+						</span>
+					</div>
+					<table class="logoContainer">
+						<tr>
+							<td class="logoWrapper">
+								<a class="logoLink" target="_blank">
+									<img class="logoImg"/>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="appTitle"></div>
+				<div class="separator"></div>
+				<div class="sectionsWrapper">
+					<div class="sections" tabindex="0">
+						<!-- sections injected here -->
+					</div>
+				</div>
+				<div class="builder builder-content-panel">
+					<div class="builder-content-panel-group builder-add">
+						<div class="builder-btn"></div>
+						<div class="builder-lbl"></div>
+					</div>
+					<div class="builder-content-panel-group builder-organize">
+						<div class="builder-btn"></div>
+						<div class="builder-lbl"></div>
+					</div>
+				</div>
+				<!-- <div class="resizer"></div> -->
+				<div class="scroll"><div class="scrollInner" data-toggle="tooltip"></div></div>
+				<div class="builder-mask"></div>
+				<div class="firstAddExplain"></div>
+			</div>
+			
+		</div>
+		<!-- /Content -->
+		
+		<div id="floatingPanel" class="floatingPanel sectionPanel">
+			<div class="backdrop"></div>
+			<div class="header">
+				<div class="linkSocialContainer">
+					<span class="linkContainer"></span>
+					<span class="shareBtns">
+						<i class="shareIcon blackHover share_facebook icon-facebook-squared-1"></i>
+						<i class="shareIcon blackHover share_twitter icon-twitter-1"></i>
+						<i class="shareIcon blackHover share_bitly icon-link"></i>
+						<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
+					</span>
+				</div>
+				<table class="logoContainer">
+					<tr>
+						<td class="logoWrapper">
+							<a class="logoLink" target="_blank">
+								<img class="logoImg"/>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="appTitle"></div>
+			<div class="separator"></div>
+			<div class="sections">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<!-- sections injected here -->
+					</div>
+				</div>
+			</div>
+			<div class="builder builder-content-panel">
+				<div class="builder-content-panel-group builder-add">
+					<div class="builder-btn"></div>
+					<div class="builder-lbl"></div>
+				</div>
+				<div class="builder-content-panel-group builder-organize">
+					<div class="builder-btn"></div>
+					<div class="builder-lbl"></div>
+				</div>
+			</div>
+			<div class="navDots">
+				<!-- navigation dots -->
+			</div>
+			<div class="builder-mask"></div>
+			<div class="firstAddExplain"></div>
+		</div>
+		
+		<!-- Mobile -->		
+		<div id="mobileView" class="floatingSwiper">
+			<div class="swiper-container">
+				<div class="backdrop"></div>
+				<div class="swiper-wrapper">
+					<!-- sections injected here -->
+				</div>
+			</div>
+			<div class="header">
+				<div class="backdrop"></div>
+				<div class="linkSocialContainer">
+					<span class="linkContainer"></span>
+					<span class="shareBtns">
+						<i class="shareIcon share_facebook icon-facebook-squared-1"></i>
+						<i class="shareIcon share_twitter icon-twitter-1"></i>
+						<i class="shareIcon share_bitly icon-link"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Loading -->
+		<div id="loadingOverlay" style="position: absolute; top: 0; left: 0;  z-index: 1100; width: 100%; height: 100%; overflow: hidden; background-color: #E5E5E5;"></div>
+		<div id="loadingIndicator"></div>
+		<div id="loadingMessage"></div>
+		
+		<!-- Share dialog -->
+		<div class="modal fade shareDialog" id="shareDialog" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		
+		<!-- Builder views are injected here -->
+        <div class="modal fade" id="settingsPopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		<div class="modal" id="initPopup" role="dialog" data-backdrop="static"></div>
+		<div class="modal fade" id="sharePopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		
+		<div class="modal fade addEditPopup" id="addEditPopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		<div class="modal fade editorDialog editorDialogMedia" id="addEditPopupDialogMedia" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		<div class="modal fade editorDialog editorDialogGeocode" id="addEditPopupDialogGeocode" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		<div class="modal fade editorDialog editorDialogInlineMedia" id="addEditPopupDialogInlineMedia" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		
+		<div class="modal fade organizePopup" id="organizePopup" role="dialog" data-backdrop="static" tabindex="-1"></div>
+		
+		<!-- Fatal error box -->
+		<div id="fatalError">
+			<table border="0">
+				<tr>
+					<td width="70px" align="center" id="fatalError-icon"></td>
+					<td>
+						<b class="error-title"></b>
+						<p class="error-msg"></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<script type="text/javascript">
+			loadJS(pathJSAPI + 'init.js', true);
+			loadJS('app/config.js');
+			
+			CKEDITOR_BASEPATH = app.isProduction ? 'resources/lib/ckeditor/' : 'lib-app/ckeditor/';
+			
+			if( app.isProduction ) {
+				_ = {};
+			
+				if ( app.isInBuilder )
+					loadJS('app/builder-min.js');
+				else
+					loadJS('app/viewer-min.js');
+			}
+		</script>
+		
+		<!-- Enable Google Analytics on storymaps.esri.com -->
+		<script type="text/javascript">
+			if (window.location.href.toLowerCase().indexOf("storymaps.esri.com") >= 0) {
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-26529417-1']);
+				_gaq.push(['_trackPageview']);
+				
+				(function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();
+			}
+		</script>
+		
+		<script type="text/javascript">
+			var i18n = null;
+			
+			if (document.location.protocol == "file:") {
+				$(document).ready(function() {
+					$("#fatalError .error-title").html("Application loading failed");
+					$("#fatalError .error-msg").html("The application has to be accessed through a web server. Consult user guide for detail.");
+					$("#fatalError").show();
+				});
+			}
+			else {
+				define.amd.jQuery = true;
+			
+				require([
+						"dojo/i18n!./resources/tpl/viewer/nls/template.js?v=" + app.version, 
+						"storymaps/common/ui/loadingIndicator/LoadingIndicator", 
+						"esri/urlUtils", 
+						"dojo/ready"
+					], function(
+						i18nViewer, 
+						LoadingIndicator, 
+						urlUtils
+					){
+						i18n = i18nViewer;
+						app.ui = {
+							loadingIndicator: new LoadingIndicator("loadingIndicator", "loadingMessage")
+						};
+				 		app.ui.loadingIndicator.init();
+						app.ui.loadingIndicator.setMessage(i18n.viewer.loading.step1);
+						
+					 	require([
+								"storymaps/common/Core", 
+								"storymaps/tpl/core/MainView",
+								"templateConfig/commonConfig.js?v=" + app.version
+							], function(
+								Core, 
+								MainView
+							){
+								if (app.isInBuilder) {
+									require([
+											"storymaps/common/builder/Builder", 
+											"storymaps/tpl/builder/BuilderView" ,
+											"dojo/i18n!./resources/tpl/builder/nls/template.js?v=" + app.version,
+											"dojo/i18n!commonResources/nls/core.js?v=" + app.version,
+											"dojo/i18n!commonResources/nls/media.js?v=" + app.version,
+											"dojo/i18n!commonResources/nls/webmap.js?v=" + app.version,
+											"dojo/i18n!commonResources/nls/mapcontrols.js?v=" + app.version,
+											"dojo/_base/lang"
+										], function(
+											Builder, 
+											BuilderView,
+											i18nBuilder,
+											i18nCommonBuilder,
+											i18nCommonMedia,
+											i18nCommonWebmap,
+											i18nCommonMapControls,
+											lang
+										){
+											lang.mixin(i18n, i18nBuilder);
+											lang.mixin(i18n, i18nCommonBuilder);
+											lang.mixin(i18n, i18nCommonMedia);
+											lang.mixin(i18n, i18nCommonWebmap);
+											lang.mixin(i18n, i18nCommonMapControls);
+											
+											var builderView = new BuilderView(Core),
+											mainView = new MainView(builderView);
+											
+											Core.init(mainView, Builder);
+											Builder.init(Core, builderView);
+										}
+									);
+								}
+								else {
+									Core.init(new MainView());
+								}
+					 		}
+						);
+			 		}
+				);
+			 }
+		</script>
+	</body>
+</html>

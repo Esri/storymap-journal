@@ -1,0 +1,286 @@
+/*
+ * Application unique help container
+ */
+ 
+#builderHelp {
+	display: none; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	margin: auto;
+	height: 452px;
+	z-index: 101;
+	text-align: center;
+}
+
+/*
+ * Application unique mask overlay
+ */
+#builderHelpMaskOverlay {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 31;
+}
+
+/*
+ * Component
+ */
+
+.builderHelp .builderHelpContainer {
+	position: relative;
+	display: inline-block;
+	width: 540px;
+	height: 452px;
+	background-color: #FFF;
+	padding: 15px;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+	text-align: left;
+}
+
+/*
+ * Common
+ */
+ 
+.builderHelp .help-header,
+.builderHelp .helpNav,
+.builderHelp .helpFooter {
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Header
+ */
+
+.builderHelp .help-header {
+	text-align: left;
+	line-height: 1.1;
+	font-size: 1.4em;
+	font-family: 'open_sanssemibold', sans-serif;	
+	margin: -2px 14px 15px 14px;
+}
+
+.builderHelp .help-logo {
+	position: absolute;
+	top: -19px;
+	left: -20px;
+	width: 48px;
+	height: 48px;
+	background: url(../../../../resources/tpl/builder/icons/builder-tour.png);
+	background-repeat: no-repeat;
+	background-position: 0 -41px;
+	background-size: 40px;
+	border: 4px solid #FFF;
+	border-radius: 24px;
+}
+
+/*
+ * Navigation
+ */
+
+.builderHelp .helpNav {
+	position: relative;
+	text-align: center;
+}
+
+.builderHelp .stroke-bg {
+	position: absolute;
+	top: 20px;
+	left: 50px;
+	right: 50px;
+	border-top: 2px solid grey;
+}
+
+.builderHelp .helpBtn {
+	position: relative;
+	display: inline-block;
+	height: 90px;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+.builderHelp .helpBtn .helpImg {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+}
+
+.builderHelp .helpBtn.active .helpImg,
+.builderHelp .helpBtn:hover .helpImg
+{
+	background-position: 0 -42px;
+}
+
+.builderHelp .helpAdd.active .helpImg,
+.builderHelp .helpAdd:hover .helpImg,
+.builderHelp .helpOrganize.active .helpImg,
+.builderHelp .helpOrganize:hover .helpImg
+{
+	background-position: 0 -41px;
+}
+
+.builderHelp .helpBtn .helpLbl {
+	font-size: 0.8em;
+	font-weight: bold;
+	width: 80px;
+	opacity: 0.6;
+	text-transform: uppercase;
+}
+
+.builderHelp .helpBtn.active .helpLbl,
+.builderHelp .helpBtn:hover .helpLbl
+{
+	opacity: 1.0;
+}
+
+/*
+ * Help
+ */
+
+
+/* TODO common with modal footer cancel */
+.builderHelp .btn-external-help {
+	border: 0;
+	color: #3276b1;
+	outline: none;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.builderHelp .btn-external-help:hover {
+	color: #3276b1;
+}
+
+/*
+ * Button image
+ */
+
+.builderHelp .helpAdd .helpImg {
+	background: url(../../../../resources/tpl/builder/icons/builder-add.png);
+	background-size: 40px;
+}
+
+.builderHelp .helpSettings .helpImg {
+	background: url(../../common/_resources/icons/builder-settings.png);
+	background-size: 40px;
+}
+
+.builderHelp .helpOrganize .helpImg {
+	background: url(../../../../resources/tpl/builder/icons/builder-organize.png);
+	background-size: 40px;
+}
+
+.builderHelp .helpEdits .helpImg {
+	background: url(../../../../resources/tpl/builder/icons/builder-edit-noborder.png);
+	background-size: 40px;
+}
+
+.builderHelp .helpPublish .helpImg {
+	background: url(../../common/_resources/icons/builder-share.png);
+	background-size: 40px;
+}
+
+.builderHelp .helpTips .helpImg {
+	background: url(../../../../resources/tpl/builder/icons/builder-tips.png);
+	background-size: 40px;
+}
+
+/*
+ * Content
+ */
+ 
+.builderHelp .helpText {
+	font-size: 1em;
+	margin: 0.5em;
+	height: 240px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.builderHelp .layout-thumbnail {
+	width: 147px;
+	height: 105px;
+}
+
+.builderHelp .layout-thumbnail,
+.builderHelp .floatright {
+	float: right;
+	margin-left: 20px;
+}
+
+.builderHelp .layout-thumbnail span.rotate {
+	margin-top: -3px;
+}
+
+.builderHelp .layout-thumbnail.layout-float.size-medium span.rotate {
+	margin-left: 2px;
+}
+
+.builderHelp .layout-thumbnail.layout-float.size-small span.rotate {
+	margin-left: -4px;
+}
+
+.builderHelp .layout-thumbnail.layout-float.size-large span.rotate {
+	margin-left: 10px;
+}
+
+.builderHelp .layout-thumbnail.layout-side.size-medium span.rotate {
+	margin-left: 3px;
+}
+
+.builderHelp .layout-thumbnail.layout-side.size-small span.rotate {
+	margin-left: -2px;
+}
+
+.builderHelp .layout-thumbnail.layout-side.size-large span.rotate {
+	margin-left: 14px;
+}
+
+/*
+ * Footer
+ */
+
+.builderHelp .helpFooter {
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	height: 34px;
+	color: #CECECE;
+	font-style: italic;
+}
+
+.builderHelp .helpFooter .btn-external-help {
+	padding-left: 2px;
+	font-style: italic;
+	vertical-align: 0px;
+}
+
+.builderHelp .helpFooter .footerBtn {
+	position: absolute;
+	right: 0;
+	bottom: 0px;
+	font-style: normal;
+	height: 34px;
+}
+
+.builderHelp .helpFooter .footerBtn .btn {
+	text-transform: uppercase;
+}
+
+.builderHelp .helpFooter .btn-next {
+	color: #FFF;
+	background-color: #5DADDE;
+	border-color: #5DADDE;
+	vertical-align: -2px;
+}

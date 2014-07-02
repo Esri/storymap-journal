@@ -1,0 +1,13 @@
+.editorDialogInlineMedia {
+	z-index: 9996;
+}
+
+.editorDialogInlineMedia .textInputContainer {
+	position: relative;
+	display: inline-block;
+	width: 395px;
+}
+
+.editorDialogInlineMedia .textInputContainer.has-feedback .form-control-feedback {
+	display: block;
+}

@@ -1,0 +1,97 @@
+.TableOfContents {
+    width: 280px;
+}
+.TableOfContents .toc-title {
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 16px;
+    line-height: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.TableOfContents .toc-first-layer .toc-title {
+    border-top: 1px solid #e0e0e0;
+}
+.TableOfContents .toc-title-container {
+    background: #f8f8f8;
+    color: #555;
+    position: relative;
+    zoom: 1;
+}
+.TableOfContents .toc-text {
+    float: left;
+    padding: 12px 0;
+    margin: 0;
+    text-overflow: ellipsis;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 16px;
+    height: 16px;
+    border: 1px solid transparent;
+    vertical-align: middle;
+}
+.esriRTL .TableOfContents .toc-text {
+    float: right;
+}
+.TableOfContents .toc-checkbox {
+    float: left;
+    height: 16px;
+    width: 16px;
+    margin: 0;
+    border: 1px solid #bababa;
+    margin: 12px 8px;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+.esriRTL .TableOfContents .toc-checkbox {
+    float: right;
+}
+.TableOfContents .toc-checkbox:hover {
+    color: #555;
+}
+.TableOfContents .toc-checkbox:active {
+    color: #999;
+}
+.toc-settings {
+    cursor: pointer;
+    padding: 12px 0;
+    float: right;
+    margin-right: 15px;
+    color: #999;
+}
+.toc-settings:hover {
+    color: #333;
+}
+.toc-settings:active {
+    color: #97cbec;
+}
+.esriRTL .toc-settings {
+    margin-right: 0;
+    float: left;
+    margin-left: 15px;
+}
+.toc-account {
+    margin-left: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.esriRTL .toc-account {
+    margin-left: 0;
+    margin-right: 4px;
+}
+@media screen and (max-width: 310px) {
+    .TableOfContents {
+        width: auto;
+    }
+    .TableOfContents .toc-text {
+        width: 60%;
+    }
+}
+.clear{
+    clear:both;
+}

@@ -1,0 +1,127 @@
+/*
+ * Change z-index of bootstrap modal to not mess up with common/browse-dialog dijit
+ */
+
+.modal-backdrop {
+	z-index: 940;
+}
+
+.modal {
+	z-index: 945;
+	overflow: hidden;
+}
+
+/*
+ * Blue button
+ */
+
+.btn-primary {
+	background-color: #428BC9 !important;
+	border-color: #428BC9 !important;
+}
+
+/*
+ * Bootstrap override
+ */
+.modal-backdrop {
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+
+.modal.fade .modal-dialog {
+  -webkit-transform: translate(0, 0%);
+  -ms-transform: translate(0, 0%);
+  transform: translate(0, 0%);
+}
+
+.modal-header {
+	border: none;
+}
+
+.modal-title {
+	line-height: 1.1;
+	font-size: 1.4em;
+	font-family: 'open_sanssemibold', sans-serif;
+	margin-top: -4px;
+	margin-left: 12px;
+	text-transform: uppercase;
+}
+
+.modal-dialog {
+	margin-top: 77px;
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+@media screen and (max-height: 714px) {	
+	.modal-dialog {
+		margin-top: 47px;
+	}
+}
+
+@media screen and (max-height: 630px) {	
+	.modal-dialog {
+		margin-top: 21px;
+	}
+}
+
+.modal-content {
+	border: 0;
+	border-radius: 0;
+}
+
+.modal-body {
+	padding: 0 30px;
+}
+
+.modal-footer {
+	margin-top: 0px;
+	border-top: 0;
+	padding: 5px 20px 20px;
+}
+
+.modal-footer-left {
+	float: left;
+}
+
+.modal-footer .btn {
+	text-transform: uppercase;
+}
+
+.popover {
+	color: black;
+	-ms-user-select:none;
+}
+
+/*
+ * Modal footer
+ */
+.modal-footer .error, .modal-footer .success, .modal-footer .addSpinner {
+	display: none;
+	float: left;
+	vertical-align: -4px;
+	margin-top: 6px;
+	font-size: 14px;
+	color: #c43d40;
+	font-weight: bold;
+}
+
+/*
+ * Borderless close/cancel button
+ */
+
+.btn-naked {
+	border: 0;
+	color: #428BC9;
+	outline: none !important;
+	background-color: transparent;
+	box-shadow: none !important;
+}
+
+.btn-naked:hover {
+	color: #3276b1;
+}

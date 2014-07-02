@@ -1,0 +1,18 @@
+<div class="section swiper-slide <%= optHtmlClass %>">
+	<div class="section-inner">
+		<h6 class="scroll-up"><i class="floating-panel-icon icon-up-open"></i></h6>
+		
+		<% if ( isInBuilder ){ %>
+			<div class="panelEditBtn"></div>
+		<% } %>
+		
+		<h1 class="title"><%= title %></h1>
+		<div class="content"><%= content %></div>
+		<div class="social">
+			<span class="shareIcon share_facebook icon-facebook-squared-1" data-url="<%= shareURL %>"> Facebook</span>
+			<span class="shareIcon share_twitter icon-twitter-1" data-url="<%= shareURL %>"> Twitter</span>
+			<span class="shareIcon share_bitly icon-link" data-url="<%= shareURL %>"> <%= lblShare %></span>
+		</div>
+		<h6 class="scroll-down"><i class="floating-panel-icon icon-down-open"></i></h6>
+	</div>
+</div>

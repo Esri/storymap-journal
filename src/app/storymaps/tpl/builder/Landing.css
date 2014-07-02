@@ -1,0 +1,123 @@
+/*
+ * Quotes
+ */
+
+#builderQuotes {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center; 
+	padding: 12% 0;
+}
+
+@media screen and (max-height: 714px) {	
+	#builderQuotes {
+		padding: 9% 0;
+	}
+}
+
+@media screen and (max-height: 630px) {	
+	#builderQuotes {
+		padding: 3% 0;
+	}
+}
+
+
+.builderLanding {
+	text-align: center;
+	min-width: 404px;
+}
+
+/*
+ * Button
+ */
+
+.builderLanding .landing-btn {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	opacity: 0.8;
+}
+
+.builderLanding .landing-btn:not(.disabled) {
+	background-position: 0 48px !important;
+}
+
+.builderLanding .landing-btn:not(.disabled):hover {
+	opacity: 1.0;
+	cursor: pointer;
+}
+
+/*
+ * Add
+ */
+
+.builderLanding .landing-add-container .landing-lbl {
+	font-family: 'open_sanssemibold', sans-serif;
+	font-size: 1.35em;
+	color: #404040;
+}
+
+.builderLanding .add-title-wrapper {
+	margin-top: 8px;
+}
+
+.builderLanding .add-title {
+	display: inline-block;
+	width: 345px;
+}
+	
+.builderLanding .landing-add-container .landing-btn {
+	background: url(../../../../resources/tpl/builder/icons/builder-forward.png);
+	vertical-align: -18px;
+	margin-left: 5px;
+}
+
+/*
+ * Separator
+ */
+
+.builderLanding .btnSeparator {
+	margin: 15px 0;
+	text-transform: uppercase;
+}
+
+.builderLanding .solidline {
+	display: inline-block;
+	width: 186px;
+	vertical-align: 4px;
+	border-top: 1px solid grey; 
+}
+
+/*
+ * Take a tour
+ */
+ 
+.builderLanding .landing-tour-container {
+	display: inline-block;
+}
+
+.builderLanding .landing-tour-container:hover {
+	cursor: pointer;
+}
+
+.builderLanding .landing-tour-container:hover .landing-btn {
+	background-position: 0 48px !important;
+}
+
+.builderLanding .landing-tour-container .landing-lbl {
+	font-family: 'open_sanssemibold', sans-serif;
+	font-size: 1.4em;
+	color: #67AAE5;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.builderLanding .landing-tour-container:hover .landing-lbl {
+	color: #404040;
+}
+
+.builderLanding .landing-tour-container .landing-btn {
+	background: url(../../../../resources/tpl/builder/icons/builder-tour.png);
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>TOC Dijit</title>
+    <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.6/js/esri/css/esri.css">
+    <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.6/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" type="text/css" href="css/TableOfContents.css">
+    <link rel="stylesheet" href="css/fontello.css">
+    <!--[if IE 7]><link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    body{
+            margin:40px;
+            padding:20px;
+        }
+        .container{
+            position:relative;
+            padding: 10px;
+            border: 1px solid #eee;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+        }
+        #map{
+            width:100%;
+            height: 500px;
+            position: relative;
+        }
+        #tocContainer{
+            height: 500px;
+            background: #eee;
+            position: absolute;
+            top:10px;
+            right:10px;
+            z-index: 99;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .change-options{
+            list-style:none;
+            margin:20px;
+            padding:0;
+        }
+    </style>
+</head>
+<body class="claro">
+    <div class="container">
+        <div id="map" class="map">
+        </div>
+        <div id="tocContainer">
+            <div id="TableOfContents"></div>
+        </div>
+        <h2>Change Options</h2>
+        <ul class="change-options">
+            <li>Theme: <input id="theme_form" type="text" value="TableOfContents" /></li>
+            <li>Visible: <input id="visible_form" type="checkbox" checked /></li>
+        </ul>
+        <p><a href="https://github.com/esri/arcgis-dijit-table-of-contents">Documentation & Download</a></p>
+    </div>
+    <script type="text/javascript">
+        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        var dojoConfig = {
+            // The locationPath logic below may look confusing but all its doing is 
+            // enabling us to load the api from a CDN and load local modules from the correct location.
+            packages: [{
+                name: "application",
+                location: package_path + '/js'
+            }]
+        };
+    </script>
+    <script src="http://js.arcgis.com/3.6/" type="text/javascript"></script>
+    <script type="text/javascript">
+        require(["dojo/_base/lang", "esri/map", "application/TableOfContents", "esri/arcgis/utils", "dojo/on", "dojo/dom"], function(lang, Map, TableOfContents, arcgisUtils, on, dom){
+            arcgisUtils.createMap('df8bcc10430f48878b01c96e907a1fc3', "map", {
+                mapOptions: {
+                    //Optionally define additional map config here for example you can 
+                    //turn the slider off, display info windows, disable wraparound 180, slider position and more. 
+                }
+            }).then(lang.hitch(this, function (response) {
+                var map = response.map;
+                var layers = response.itemInfo.itemData.operationalLayers;
+                
+                console.log(layers);
+                
+                myWidget = new TableOfContents({
+                    map: map,
+                    layers: layers
+                }, "TableOfContents");
+                myWidget.startup();
+                
+                
+                on(dom.byId('theme_form'), 'keyup', lang.hitch(this, function(evt){
+                    myWidget.set("theme", evt.target.value);
+                }));
+                
+                on(dom.byId('visible_form'), 'change', lang.hitch(this, function(evt){
+                    myWidget.set("visible", evt.target.checked);
+                }));
+                
+             
+                
+                
+            }), lang.hitch(this, function (error) {
+                //an error occurred - notify the user. In this example we pull the string from the 
+                //resource.js file located in the nls folder because we've set the application up 
+                //for localization. If you don't need to support mulitple languages you can hardcode the 
+                //strings here and comment out the call in index.html to get the localization strings. 
+                if (this.config && this.config.i18n) {
+                    alert(this.config.i18n.map.error + ": " + error.message);
+                } else {
+                    alert("Unable to create map: " + error.message);
+                }
+            }));
+        });
+    </script>
+</body>
+</html>

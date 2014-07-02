@@ -1,0 +1,41 @@
+.settings-layout .layouts {
+	max-height: 290px;
+	overflow-y: auto;
+	padding: 5px;
+}
+
+.settings-layout .layout {
+	position: relative;
+	min-height: 110px;
+	padding: 5px;
+	margin-top: 5px;
+	border-radius: 5px;
+}
+
+.settings-layout .layout:hover {
+	background-color: #BDD1E2;
+}
+
+.settings-layout .layout:not(.selected):hover {
+	cursor:pointer;
+}
+
+.settings-layout .layout.selected {
+	background-color: #78A2C7;
+}
+
+.settings-layout .layout-thumb {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	height: 90px;
+}
+
+.settings-layout .layout-content {
+	margin-left: 140px;
+	margin-top: 5px;
+}
+
+.settings-layout .layout-title {
+	font-weight: bold;
+}

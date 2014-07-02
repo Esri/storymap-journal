@@ -1,0 +1,154 @@
+.webmapSelector {
+	position: relative;
+}
+
+.webmapSelector .map-cfg-webmap .map-cfg-title {
+	vertical-align: middle;
+}
+
+/*
+ * List selected
+ */
+
+.webmapSelector .webmaps-list-btn {
+	width: 370px;
+	text-align: left;
+}
+
+.webmapSelector .webmaps-list-btn-inner {
+	white-space: pre-wrap;
+	font-size: 0.9em;
+}
+
+.webmapSelector .webmaps-list-btn .caret {
+	float: right;
+	margin-top: 8px;
+}
+
+/*
+ * List
+ */
+
+.webmapSelector .webmaps-list {
+	width: 370px;
+}
+
+.webmapSelector .webmaps-list a {
+	padding-right: 80px;
+	white-space:pre-wrap;
+}
+
+.webmapSelector .webmap-entry {
+	display: block;
+	position: relative;
+}
+
+.webmapSelector .title {
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+.webmapSelector .info {
+	margin-left: 4px;
+	font-size: 0.8em;
+	color: grey;
+}
+	
+.webmapSelector .sharing-status {
+	position: absolute;
+	right: -72px;
+	top: 2px;
+	color: #69A7E2;
+	font-size: 0.8em;
+}
+
+.webmapSelector .browse-webmap {
+	border-top: 1px solid rgba(0,0,0,0.15);
+}
+
+.webmapSelector .browse-webmap .webmap-entry {
+	margin-top: 4px;
+}
+
+.webmapSelector .browse-webmap .title {
+	font-size: 1em;
+	line-height: 1.8em;
+}
+
+.webmapSelector .titleLoader {
+	margin-left: 0;
+	margin-right: 2px;
+}
+
+/*
+ * Webmap info
+ */
+
+.webmapSelector .selected-map-sharing-status {
+	display: none;
+	/*color: #69A7E2;
+	font-size: 0.8em;
+	margin-left: 10px;
+	text-transform: uppercase;*/
+}
+
+/*
+ * Configuration
+ */
+
+.webmapSelector .map-cfg.disabled {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.webmapSelector .map-cfg-title, 
+.webmapSelector .map-cfg-btns {
+	padding: 5px 5px 20px 5px;
+}
+
+.webmapSelector .map-cfg-title {
+	font-size: 1.15em;
+	vertical-align: top;
+}
+
+.webmapSelector .map-cfg-btns {
+	padding-left: 22px;
+}
+
+.webmapSelector .map-cfg-controls div.checkbox {
+	margin: 0;
+}
+
+.webmapSelector .map-cfg-controls .map-cfg-btns {
+	padding-top: 7px;
+	font-size: 0.85em;
+}
+
+.webmapSelector .map-cfg-controls.disable {
+	display: none !important;
+}
+
+.webmapSelector .helpImg {
+	width: 18px; 
+	vertical-align: -4px;
+}
+
+.webmapSelector .webmap-loading {
+	position: absolute;
+	top: 125px;
+	right: 10px;
+	font-size: 1.3em; 
+	font-weight: bold; 
+}
+
+.webmapSelector .webmap-loading .error {
+	color: red;
+	font-size: 16px;
+	width: 120px;
+	margin-top: -58px;
+}
+
+.mediaSelector.smallSize .webmapSelector .webmap-loading .error {
+	width: 100px;
+	margin-right: -5px;
+}

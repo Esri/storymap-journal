@@ -1,0 +1,41 @@
+/*
+ * Map Controls
+ */
+ 
+.mapControls {
+	background-color: #CDCDCD;
+}
+
+.mapControls .titleBtn {
+	font-weight: bold;
+	font-size: 0.9em;
+	height: 20px;
+	color: #c0c0c0;
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.mapControls .collapseBtn {
+	display: inline-block;
+	width: 18px;
+	height: 9px;
+	background: url(../_resources/icons/mapcontrols-collapse-expand.png);
+	background-repeat: no-repeat;
+}
+
+.mapControls.collapsed .collapseBtn {
+	background-position: 0 -9px;
+}
+
+.mapControls .content {
+	margin-top: 2px;
+}
+
+.mapControls.collapsed .content {
+	display: none;
+}

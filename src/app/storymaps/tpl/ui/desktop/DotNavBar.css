@@ -1,0 +1,119 @@
+.navDots {
+	display: table;
+	width: 34px;
+}
+
+.navDots .navDotsInner {
+	display: table-cell;
+	vertical-align: middle;
+	color: #F00;
+}
+
+/*
+ * Up/down buttons
+ */
+.navDots .navDotsNav {
+	width: 33px;
+	height: 38px;
+	cursor: pointer;
+}
+
+.navDots .navDotsNav.disabled {
+	visibility: hidden;
+	cursor: default;
+}
+
+.navDots .navDotsUp {
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-up-white.png') no-repeat 4px 13px;
+}
+
+.navDots .navDotsDown {
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-down-white.png') no-repeat 4px 13px;
+}
+
+/*
+ * Dot
+ */
+
+.navDots .dot {
+	font-family: Georgia;
+	height: 21px;
+	line-height: 21px;
+	padding: 0;
+	color: #444;
+	font-size: 18px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.navDots .dot[data-index="0"] {
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-home.png') 10px 5px;
+	background-repeat: no-repeat;
+	text-indent: -99px;
+	overflow: hidden;
+}
+
+.navDots .dot:hover {
+	color: #FFF;
+}
+
+.navDots .dot.active {
+	color: #FFF;
+	font-size: 28px;
+}
+
+.navDots .dot:first-child.active {
+	color: #FFF;
+	font-size: 28px;
+	background-position: 10px -16px;
+}
+
+/*
+ * Tooltip
+ */
+ 
+.navDots .tooltip {
+  	max-width: 450px;
+}
+
+.navDots .tooltip-inner {
+    max-width: 450px; /* TODO should depend on container size 90%? */
+    white-space: pre;
+	word-wrap: break-word;
+	text-align: left;
+	/* seems needed to make the text wraps correctly */
+	padding: 3px 7px;
+}
+
+/*
+ * Navigation groups
+ */
+ 
+.navDots .navGroups {
+	color: #444;
+	font-size: 0.7em;
+	text-align: center;
+}
+
+.navDots .navGroup {
+	margin: 2px 0;	
+	cursor: pointer;
+}
+
+.navDots .navGroup:hover {
+	color: #FFF;
+}
+
+.navDots .navGroupUp {
+	margin: 0 0 6px 0;
+}
+
+.navDots .navGroupDown {
+	margin: 6px 0 0 0;
+}
+
+.navDots .navGroupUp.disabled,
+.navDots .navGroupDown.disabled
+{
+	display: none;
+}

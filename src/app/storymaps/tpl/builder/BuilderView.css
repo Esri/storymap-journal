@@ -1,0 +1,284 @@
+/*
+.esriSignInDialog {
+	display: none !important;
+}
+*/
+
+/*
+ * Command panel
+ */
+
+#builderPanel .appTitle {
+	position: absolute;
+	top: 13px;
+	left: 32px;
+	width: 288px;
+	height: 31px;
+	background: url(../../../../resources/tpl/builder/icons/builder-logo.png);
+}
+ 
+/* CKEDITOR
+ *  Remove popup white background
+ *  Mandatory for image editing as can't prevent double click from opening the default popup
+ */
+.cke_dialog_background_cover {
+	display: none !important;
+}
+
+/*
+ * Landing
+ */
+ 
+#builderLanding {
+	display: none; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	margin: auto;
+	height: 220px;
+	z-index: 100;
+}
+
+/*
+ * First add splash
+ */
+ 
+.firstAddExplain {
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 0;
+	right: 0;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	font-size: 1.9em;
+}
+
+.firstAddExplain .biggerText {
+	font-size: 2.0em;
+	color: #67AAE5;
+	line-height: 0.8em;
+}
+
+#floatingPanel .firstAddExplain {
+	color: #FFF;
+}
+
+body.layout-float-right #mainStagePanel .firstAddExplain {
+	left: -40%;
+}
+
+body.layout-float-left #mainStagePanel .firstAddExplain {
+	right: -40%;
+}
+
+/*
+ * Main stage EDIT
+ */
+ 
+ #mainStageEdit {
+ 	position: absolute;
+ 	top: 15px;
+ 	right: 15px;
+ 	width: 40px;
+ 	height: 40px;
+ 	background: url(../../../../resources/tpl/builder/icons/builder-edit-border.png);
+ 	background-size: 40px;
+ 	cursor: pointer;
+ 	z-index: 3;
+}
+
+#mainStageEdit:hover {
+ 	background-position: 0 40px;
+}
+
+body.layout-float-left #mainStageEdit {
+ 	left: 15px;
+ 	right: inherit;
+}
+ 
+/*
+ * Map configuration layout specific rules
+ */
+ 
+body.layout-side-right .mapConfigOverlay.toc,
+body.layout-float-right .mapConfigOverlay.toc {
+	left: 0;
+	right: inherit;
+	border-left: none;
+	border-right: 1px solid #428BC9;
+}
+
+/*
+ * Layout thumbnails
+ */
+ 
+.layout-thumbnail {
+	display: inline-block;
+	position: relative;
+	width: 150px; 
+	height: 115px;
+	margin-right: 0;
+	margin-top: 0;
+	border-radius: 8px;
+	padding: 6px 2px;
+	background-color: #D7D7D7;
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.layout-thumbnail .layout-block {
+	position: relative;
+	height: 99%;
+	border: 2px solid #FFF;
+}
+
+.layout-thumbnail .number,
+.layout-thumbnail .size,
+.layout-thumbnail .panel-lbl:not(.rotate) {
+	position: absolute;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	top: 50%;
+	bottom: 50%;
+	left: 50%;
+	right: 50%;
+	margin-top: -16px;
+	margin-left: -16px;
+}
+
+ .layout-thumbnail .thumb-content {
+ 	color: black;
+ }
+	
+.layout-thumbnail .number {
+	background: url('../../../../resources/tpl/builder/icons/layout-thumbnail-number.png');
+}
+
+.layout-thumbnail .number-step1.number-2 {
+	background-position: 32px 0;
+}
+
+.layout-thumbnail .number-step2.number-1 {
+	background-position: 0 32px;
+}
+
+.layout-thumbnail .number-step2.number-2 {
+	background-position: 32px 32px;
+}
+
+/* Float specific */
+.layout-thumbnail .layout-block.layout-float:nth-child(2) .thumb-content {
+	margin-left: -40px;
+}
+
+/* Float specific */
+.layout-thumbnail .layout-block.layout-float.layout-left:nth-child(2) .thumb-content {
+	margin-left: 10px;
+}
+
+.layout-thumbnail .size {
+	font-family: 'open_sanssemibold', sans-serif;
+	font-size: 1.3em;
+	margin-left: -17px;
+}
+
+.layout-thumbnail .panel-lbl {
+	display: block;
+	font-family: 'open_sanssemibold', sans-serif;
+	font-weight: 1.2em;
+	text-align: center;
+}
+
+.layout-thumbnail .panel-lbl:not(.rotate) {
+	margin-top: -22px;
+}
+
+.layout-thumbnail .panel-lbl.rotate {
+	width: 110px;
+	height: 100px;
+	-webkit-transform: rotate(-90deg); 
+	-moz-transform: rotate(-90deg);	
+	transform: rotate(-90deg);
+}
+
+.layout-thumbnail .layout-selected {
+	position: absolute;
+	display: none;
+	top: -20px;
+	left: -16px;
+	width: 40px;
+	height: 40px;
+	z-index: 2;
+}
+
+.layout-thumbnail.selected .layout-selected {
+	display: block;
+	background: url(../../../../resources/tpl/builder/icons/builder-check.png);
+	background-repeat: no-repeat;
+}
+
+/*
+ * Layout/size/position text rotation adjustement
+ */
+
+.layout-thumbnail span.rotate {
+	margin-top: 15px;
+}
+
+.layout-thumbnail.layout-float.size-medium span.rotate {
+	margin-left: 10px;
+}
+
+.layout-thumbnail.layout-float.size-small span.rotate {
+	margin-left: 2px;
+}
+
+.layout-thumbnail.layout-float.size-large span.rotate {
+	margin-left: 20px;
+}
+
+.layout-thumbnail.layout-float.pos-right.size-medium .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+	margin-left: -48px;
+}
+
+.layout-thumbnail.layout-float.pos-right.size-small .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+	margin-left: -38px;
+}
+
+.layout-thumbnail.layout-float.pos-right.size-large .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+	margin-left: -55px;
+}
+
+.layout-thumbnail.layout-float.pos-left.size-medium .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+	margin-left: 14px;
+}
+
+.layout-thumbnail.layout-float.pos-left.size-small .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+	margin-left: 6px;
+}
+
+.layout-thumbnail.layout-float.pos-left.size-large .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+	margin-left: 22px;
+}
+
+.layout-thumbnail.layout-side.size-medium span.rotate {
+	margin-left: 10px;
+}
+
+.layout-thumbnail.layout-side.size-small span.rotate {
+	margin-left: 3px;
+}
+
+.layout-thumbnail.layout-side.size-large span.rotate {
+	margin-left: 24px;
+}

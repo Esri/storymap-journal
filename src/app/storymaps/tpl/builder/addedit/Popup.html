@@ -1,0 +1,54 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-logo"></div>
+		<div class="modal-header">
+			<h4 class="modal-title"></h4>
+		</div>
+		
+		<div class="modal-body">
+			<!-- Navigation in ADD -->
+			<div class="navigation-add">
+				<div class="navigation-title">
+					<span class="navigation-step"></span>
+					<div class="navigation-explain"></div>
+				</div>
+				<div class="navigation-thumbnail"></div>
+			</div>
+
+			<!-- Title field -->
+			<div class="form-group titleContainerAdd">
+				<input type="text" class="form-control title clear" placeholder="<%= titlePlaceholder %>"/>
+				<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+			</div>
+			<div class="form-group titleContainerFirstAdd">
+				<%= firstAddExplain %>
+			</div>
+			<div id="AddEditTitleEditor" class="titleContainerEdit" contenteditable="true"></div>
+			
+			<!-- Navigation in EDIT -->
+			<ul class="nav nav-tabs navigation-edit" style="width:100%; display: none;">
+				<li><a class="tab-btn" href=".viewMediaSelectorContainer" data-toggle="tab"><%= lblMainStage %></a></li>
+				<li><a class="tab-btn tab-panel-lbl" href=".viewTextContainer" data-toggle="tab"></a></li>
+				<li class="navHelpContainer">
+					<a href="#" class="navHelp" data-toggle="tooltip" data-placement="right">
+						<img src="resources/tpl/builder/icons/builder-help.png"/>
+					</a>
+				</li>
+			</ul>
+			
+			<div class="tab-content" style="margin-top: 10px;">
+				<div class="tab-pane viewMediaSelectorContainer"></div>
+				<div class="tab-pane viewTextContainer"></div>
+			</div>
+		</div>
+		
+		<div class="modal-footer">
+			<span class="modal-footer-left"><button class="btn btn-back btn-naked">< <%= btnBack %></button></span>
+			<span class="btnSubmitWrapper" data-toggle="tooltip"">
+				<button class="btnSubmit btn btn-primary" ></button>
+			</span>
+			<button class="btnCancel btn btn-naked btn-close"><%= btnCancel %></button>
+			<div class="btnSubmitTooltipContainer"></div>
+		</div>
+	</div>
+</div>

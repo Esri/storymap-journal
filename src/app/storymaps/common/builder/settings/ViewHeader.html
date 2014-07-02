@@ -1,0 +1,75 @@
+<div class="settings-header">
+	<div class="settings-simulator">
+		<img class="imgLogo"/>
+	</div>
+	<div class="settings-content">
+		<form role="form" class="form1">
+			<div class="form-group form-inline form-horizontal">
+				<div class="radio">
+					<label>
+						<input type="radio" name="optionsLogo" id="optionsRadios2" value="esri" checked>
+						<span class="logoText"><%= logoEsri %></span>
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="optionsLogo" id="optionsRadios1" value="none">
+						<span class="logoText"><%= logoNone %></span>
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="optionsLogo" id="optionsRadios2" value="custom">
+						<span class="logoText"><%= logoCustom %></span>
+					</label>
+				</div>
+				<div class="optionsLogoCustom">
+					<table class="settings-table">
+						<tr>
+							<td class="td-lbl"><%= logoCustomlbl %></td>
+							<td class="td-input"><input class="form-control input-sm" id="logoInput" type="text" placeholder="<%= logoCustomHelp %>"></td>
+						</tr>
+						<tr>
+							<td class="td-lbl"><%= logoLinkLbl %></td>
+							<td class="td-input"><input class="form-control input-sm" id="logoTargetInput" type="text" placeholder="<%= logoTargetHelp %>"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</form>
+		
+		<form class="form2">
+			<p><%= socialExplain %></p>
+			<div class="form-group socialConfig">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="enableFB" />
+						<span class="social-lbl">Facebook</span>
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="enableTwitter" />
+						<span class="social-lbl">Twitter</span>
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="enableBitly" />
+						<span class="social-lbl">Bitly</span>
+					</label>
+				</div>
+			</div>
+			<table class="settings-table">
+				<tr>
+					<td class="td-lbl"><%= socialText %></td>
+					<td class="td-input"><input id="selectSocialText" type="text" class="form-control input-sm" /></td>
+				</tr>
+				<tr>
+					<td class="td-lbl"><%= socialLink %></td>
+					<td class="td-input"><input id="selectSocialLink" type="text" class="form-control input-sm" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>

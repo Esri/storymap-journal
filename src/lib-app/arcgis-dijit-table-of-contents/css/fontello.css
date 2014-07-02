@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?2128570');
+  src: url('../font/fontello.eot?2128570#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?2128570') format('woff'),
+       url('../font/fontello.ttf?2128570') format('truetype'),
+       url('../font/fontello.svg?2128570#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?2128570#fontello') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before,[class*=" icon-"]:before,.left-arrow:before,.right-arrow:before,.dijitDialogCloseIcon:before,.esriGeocoderSearch:before,.esriGeocoderReset:before, .esriGeocoderSelectedCheck:before, .esriGeocoderMenuArrow:before, .note-expand:before, .esriGeocoderMenuClose:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.icon-emo-unhappy:before { content: '\e806'; } /* '' */
+.icon-layers:before { content: '\e81d'; } /* '' */
+.icon-mail:before { content: '\e802'; } /* '' */
+.icon-star:before { content: '\e811'; } /* '' */
+.icon-menu-1:before { content: '\e810'; } /* '' */
+.icon-check-1:before { content: '\e804'; } /* '' */
+.icon-cancel-1:before { content: '\e80c'; } /* '' */
+.icon-plus:before { content: '\e81a'; } /* '' */
+.icon-minus:before { content: '\e81b'; } /* '' */
+.icon-info-circled-1:before { content: '\e801'; } /* '' */
+.icon-home-1:before { content: '\e808'; } /* '' */
+.icon-reply:before { content: '\e813'; } /* '' */
+.icon-retweet:before { content: '\e80f'; } /* '' */
+.icon-attention-1:before { content: '\e812'; } /* '' */
+.icon-location:before { content: '\e81c'; } /* '' */
+.icon-search-1:before { content: '\e800'; } /* '' */
+.icon-cog:before { content: '\e805'; } /* '' */
+.icon-share:before { content: '\e816'; } /* '' */
+.icon-popup:before { content: '\e817'; } /* '' */
+.icon-left-open-big:before { content: '\e80d'; } /* '' */
+.icon-right-open-big:before { content: '\e80b'; } /* '' */
+.icon-down-dir:before { content: '\e814'; } /* '' */
+.icon-left-dir:before { content: '\e80a'; } /* '' */
+.icon-right-dir-1:before { content: '\e807'; } /* '' */
+.icon-up-dir:before { content: '\e815'; } /* '' */
+.icon-target-1:before { content: '\e82f'; } /* '' */
+.icon-list:before { content: '\e803'; } /* '' */
+.icon-twitter-1:before { content: '\e818'; } /* '' */
+.icon-facebook-squared-1:before { content: '\e80e'; } /* '' */
+.icon-gplus:before { content: '\e819'; } /* '' */
+.icon-map:before { content: '\e81e'; } /* '' */
+
+/* custom. don't remove */
+.left-arrow:before,.right-arrow:before,.dijitDialogCloseIcon:before,.esriGeocoderSearch:before,.esriGeocoderReset:before, .esriGeocoderSelectedCheck:before, .esriGeocoderMenuArrow:before, .note-expand:before, .esriGeocoderMenuClose:before {
+    margin-left: 0;
+    margin-right: 0;
+}
+.left-arrow:before { content: '\e80d'; }
+.right-arrow:before { content: '\e80b'; }
+.esriRTL .left-arrow:before { content: '\e80b'; }
+.esriRTL .right-arrow:before { content: '\e80d'; }
+.map .calcite .titleButton.next:before {content: '\e807';}
+.map .calcite .titleButton.prev:before {content: '\e80a';}
+.esriRTL .map .calcite .titleButton.next:before {content: '\e80a';}
+.esriRTL .map .calcite .titleButton.prev:before {content: '\e807';}
+.dijitDialogCloseIcon:before { content: '\e80c'; }
+.esriGeocoderSearch:before { content: '\e800'; }
+.esriGeocoderReset:before { content: '\e80c'; }
+.esriGeocoderMenuArrow:before { content: '\e807'; }
+.esriGeocoderMenuActive .esriGeocoderMenuArrow:before { content: '\e814'; }
+.HomeButtonCalcite .home:before { content: '\e808';}
+.LocateButtonCalcite .zoomLocateButton:before {content: '\e82f';}
+.map .calcite .titleButton.close:before {content: '\e80c';}
+.twitter-popup .action-reply:before {content:'\e813';}
+.twitter-popup .action-retweet:before {content:'\e80f';}
+.twitter-popup .action-favorite:before {content:'\e811';}
+.map .calcite .titleButton.maximize:before {content: '\e817';}
+.map .calcite .titleButton.restore:before {content: '\e817';}
+.note-expand:before { content: '\e81a'; } /* '' */
+.note-selected .note-expand:before { content: '\e81b'; } /* '' */
+.esriGeocoderSelected .esriGeocoderSelectedCheck:before { content: '\e804'; } /* '' */
+.esriGeocoderMenuClose:before { content: '\e80c'; }

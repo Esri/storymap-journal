@@ -1,0 +1,68 @@
+#initPopup {
+	z-index: 1700;
+	overflow: hidden;
+}
+
+#initPopup .modal-dialog {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 505px;
+}
+
+#initPopup .modal-header {
+	background: url(../../../../resources/tpl/builder/icons/builder-popup-header-bg.png);
+	height: 58px;
+	color: #FFF;
+}
+
+#initPopup .builder-logo {
+	display: inline-block;
+	background: url(../../../../resources/tpl/builder/icons/builder-logo.png);
+	width: 288px;
+	height: 31px;
+	margin-left: 8px;
+	vertical-align: -8px;
+}
+
+#initPopup .modal-title {
+	margin-top: 0;
+	margin-left: 0;
+}
+
+#initPopup .modal-body {
+	overflow: visible;
+	padding-bottom: 40px;
+}
+
+#initPopup .initPopupViewSettingsLayout {
+	margin-top: 25px;
+}
+
+#initPopup .modal-footer {
+	display: none;
+	min-height: 32px;
+}
+
+/*
+#initPopup .navContainer {
+	position: absolute;
+	left: 50%;
+	height: 40px
+}
+
+#initPopup .nav {
+	display: inline-block;
+}
+
+#initPopup .navHr {
+	margin-top: 60px;
+}
+
+#initPopup .step {
+	display: none;
+}
+*/

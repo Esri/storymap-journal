@@ -1,0 +1,229 @@
+.mapConfigOverlay {
+	display: none;
+	position: absolute;
+	z-index: 31;
+	background: #FFF;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	border: 1px solid #428BC9;
+}
+
+/*
+ * Common between MAP CONTENT & LOCATION
+ */
+
+.mapConfigOverlay .header {
+	font-size: 1.25em;
+	font-family: 'open_sanssemibold', sans-serif;
+	text-align: center;
+	padding: 6px 0 0 0;
+	text-transform: uppercase;
+}
+
+.mapConfigOverlay .explain {
+	color: #a5a5a5;
+	text-align: center;
+	font-size: 0.9em;
+	margin-bottom: 10px;
+}
+
+.mapConfigOverlay .btns {
+	padding: 10px 0;
+	text-align: center;
+}
+
+.mapConfigOverlay .btn {
+	text-transform: uppercase;
+}
+
+.mapConfigOverlay .btn-naked {
+	color: #000;
+}
+
+.mapConfigOverlay .btn-naked:hover {
+	color: #3276b1;
+}
+
+/*
+ * MAP CONTENT
+ */
+
+.mapConfigOverlay.toc {
+	top: 20px;
+	right: 0;
+	width: 40%;
+	/* need to set fixed height because of the expand button */
+	/*height: 360px;*/
+	border-right: none; 
+	padding-bottom: 0.5em;
+	transition: margin 0.6s;
+}
+
+body.layout-float .mapConfigOverlay.toc {
+	width: 25%;
+}
+
+.mapConfigOverlay.toc .explain {
+	padding: 5px 5px 0 5px;
+}
+
+/*
+.mapConfigOverlay.toc.collapsed {
+	margin-right: -214px;
+}
+
+.expandButton {
+	position: absolute;
+	bottom: 165px;
+	left: -169px;
+	width: 360px;
+	height: 25px;
+	text-align: end;
+	cursor: pointer;
+	-webkit-transform: rotate(-90deg);	
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+.expandButton .toc-title {
+	font-size: 1.25em;
+	font-family: 'open_sanssemibold', sans-serif;
+	text-transform: uppercase;
+	transition: display 2.0s;
+}
+
+.mapConfigOverlay.toc:not(.collapsed) .expandButton .toc-title {
+	display: none;
+}
+
+.expandButton .toc-toggle {
+	display: inline-block;
+	width: 18px;
+	height: 9px;
+	background: url(../../../_resources/icons/mapcontrols-collapse-expand.png);
+	background-repeat: no-repeat;
+	margin: 1px 5px;
+}
+
+.mapConfigOverlay.toc:not(.collapsed) .expandButton .toc-toggle {
+	background-position: 0 -9px;
+}
+*/
+
+.mapConfigOverlay .tocContainer {
+	max-height: 350px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* Because of the expand button */
+/*
+.mapConfigOverlay.toc .btns {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+*/
+
+/*
+ * TOC component override
+ */ 
+
+.tocContainer .TableOfContents {
+	width: auto !important;
+	margin-left: 20px;
+	padding-right: 20px;
+}
+
+.tocContainer .TableOfContents .toc-title {
+	font-size: 0.9em;
+	line-height: 12px;
+}
+
+.tocContainer .TableOfContents .toc-title-container {
+	background: #FFF;
+}
+
+.tocContainer .TableOfContents .toc-first-layer .toc-title {
+	border-top: none;
+}
+
+.tocContainer .TableOfContents .toc-layer:last-child .toc-title {
+	border-bottom: none;
+} 
+
+.tocContainer .TableOfContents .toc-checkbox {
+	top: 0;
+	border: none !important;
+	background: none !important;
+	margin: 7px 4px 0 4px !important;
+}
+
+.tocContainer .TableOfContents .toc-checkbox:before {
+	content: "\e157";
+}
+    
+.tocContainer .TableOfContents .icon-check-1:before {
+	content: "\e067";
+}
+
+.tocContainer .TableOfContents .toc-text {
+	float: initial !important;
+	height: auto !important;
+	padding: 6px 0 !important;
+	width: auto !important;
+}
+
+/*
+ * MAP LOCATION
+ */
+
+.mapConfigOverlay.position {
+	bottom: 0;
+	left: 50%;
+	width: 300px;
+	margin-left: -150px;
+	padding: 1.1em 1.0em 0.5em 1.0em;
+	border-bottom: none;
+}
+
+.mapConfigOverlay.position .explain {
+	margin-top: 15px;
+}
+
+/*
+ * MAP Popup
+ */
+
+.mapConfigOverlay.popup {
+	bottom: 0;
+	left: 50%;
+	width: 300px;
+	margin-left: -150px;
+	padding: 1.1em 1.0em 0.5em 1.0em;
+	border-bottom: none;
+}
+
+.mapConfigOverlay.popup .explain {
+	margin-top: 15px;
+}
+
+/*
+ * Geocoder
+ */
+
+.mainMediaContainer .geocoder {
+	position: absolute;
+	top: 20px;
+	left: 70px;
+}
+
+.mainMediaContainer .simpleGeocoder .esriGeocoderContainer {
+	width: 250px;
+}
+
+.mainMediaContainer .simpleGeocoder input {
+	width: 194px;
+}

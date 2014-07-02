@@ -1,0 +1,40 @@
+.settings-layoutoptions {
+	margin-top: 10px;
+}
+
+.settings-layoutoptions .option-container {
+	display: inline-block;
+	margin-right: 40px;
+}
+
+.settings-layoutoptions .btn-group {
+	display: block;
+}
+
+.settings-layoutoptions .thumbnail-position,
+.settings-layoutoptions .thumbnail-size {
+	clear: both;
+}
+
+.settings-layoutoptions .layout-thumbnail {
+	width: 200px;
+	height: 149px;
+	margin-top: 10px;
+}
+
+.settings-layoutoptions .opt-row {
+	margin-top: 10px;
+}
+
+.settings-layoutoptions div.checkbox {
+	margin: 0;
+}
+
+.settings-layoutoptions .opt-explain {
+	font-size: 0.75em;
+	margin-left: 21px;
+	margin-top: 4px;
+	opacity: 0.6;
+	overflow-y: auto;
+	height: 64px;
+}

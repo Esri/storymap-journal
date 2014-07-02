@@ -1,0 +1,38 @@
+<div class="settings-layout-horizontal">
+	<% if ( initMode ) { %>
+		<p class="explain">
+			<%= explain %>
+			<a href="#" class="help" data-toggle="tooltip" title="<%= helpExplain %>">
+				<img src="resources/tpl/builder/icons/builder-help.png" style="vertical-align: -4px;"/>
+			</a>
+		</p>
+	<% } %>
+	
+	<div class="layouts">
+		<span class="layout">
+			<div class="layout-selected"></div>
+			<img class="layout-thumb"/>
+			<div class="layout-content">
+				<div class="layout-title"></div>
+				<div class="layout-description"></div>
+				<% if ( initMode ) { %><div class="layout-live"><%= viewExample %></div><% } %>
+			</div>
+		</span>
+		
+		<span class="layout">
+			<div class="layout-selected"></div>
+			<img class="layout-thumb"/>
+			<div class="layout-content">
+				<div class="layout-title"></div>
+				<div class="layout-description"></div>
+				<% if ( initMode ) { %><div class="layout-live"><%= viewExample %></div><% } %>
+			</div>
+		</span>
+	</div>
+	
+	<% if ( initMode ) { %>
+		<div class="start-btn-container">
+			<button type="button" class="btn btn-primary btn-start" disabled="disabled"><%= start %></button>
+		</div>
+	<% } %>
+</div>

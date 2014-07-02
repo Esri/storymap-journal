@@ -1,0 +1,99 @@
+/*
+ * Containers
+ */
+
+.settings-header {
+	position: relative;
+	margin-top: 18px;
+} 
+
+.settings-header .settings-simulator {
+	position: relative;
+	width: 100px;
+	height: 225px;
+	background: url(../../_resources/icons/builder-settings-header-simulator.png);
+}
+
+.settings-header .settings-content {
+	position: absolute;
+	top: 0;
+	left: 120px;
+	margin-top: -2px;
+}
+
+
+/*
+ * Inner containers
+ */
+
+.settings-header .settings-table {
+	width: 310px;
+	margin-top: 10px;
+}
+
+.settings-header .settings-table .td-lbl {
+	display: inline-block;
+	padding: 3px 0;
+	vertical-align: -7px;
+	font-size: 0.9em;
+}
+
+.settings-header .settings-table .td-input {
+	width: 100%;
+	padding: 3px 0 0 10px;
+}
+
+/*
+ * Simulator
+ */
+ 
+.settings-header .imgLogo {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	max-width: 30px;
+	max-height: 17px;
+}
+
+/*
+ * Logo
+ */
+
+.settings-header .radio {
+	margin-left: 15px;
+}
+
+.settings-header .radio:nth-child(1) {
+	margin-left: 0;
+}
+
+.settings-header #logoInput, 
+.settings-header #logoTargetInput {
+	width: 100%;
+}
+
+/*
+ * Link
+ */
+
+.settings-header .form2 {
+	margin-top: 20px;
+}
+
+/*
+ * Social
+ */
+
+.settings-header .socialConfig {
+	position: absolute;
+	left: 350px;
+	top: 144px;
+}
+
+.settings-header .socialConfig .checkbox {
+	margin-left: -20px;
+}
+
+.settings-header .socialConfig .checkbox.disabled .social-lbl {
+	opacity: 0.5;
+}

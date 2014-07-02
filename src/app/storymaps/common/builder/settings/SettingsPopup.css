@@ -1,0 +1,41 @@
+#settingsPopup {
+	overflow: hidden;
+}
+
+#settingsPopup .modal-body {
+	height: 311px;
+	padding-top: 10px;
+}
+
+#settingsPopup .modal-logo {
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	width: 48px;
+	height: 48px;
+	background: url(../../_resources/icons/builder-settings.png);
+	background-position: 0 -42px;
+	background-repeat: no-repeat;
+	border: 4px solid #FFF;
+	border-radius: 24px;
+}
+
+#settingsPopup, #settingsPopup .modal-body {
+	max-height: none;
+}
+
+.settingsPopupHeader {
+	margin-top: -6px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#settingsPopup .tab.disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.settingsPopupHeader button {
+	border-radius: 0 !important;
+	width: 34%;
+}

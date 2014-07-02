@@ -1,0 +1,93 @@
+.mediaSelector {
+	min-height: 330px;
+}
+
+.mediaSelector .lblSelect {
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+/*
+ * Selector
+ */
+
+.mediaSelector .media-type-wrapper {
+	display: inline-block;
+	position: relative;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.mediaSelector .media-type-wrapper.disabled {
+	display: none;
+}
+
+.mediaSelector .mediaContainersArrow {
+	position: absolute;
+	visibility: hidden;
+	top: 30px;
+	left: 50%;
+	right: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -15px;
+	border-style: solid;
+	border-width: 0 15px 20px 15px;
+	border-color: transparent transparent #F3F3F3 transparent;
+}
+
+.mediaSelector .media-type-wrapper.current .mediaContainersArrow {
+	visibility: visible;
+}
+
+.mediaSelector .media-types {
+	display: inline-block;
+}
+
+.mediaSelector .media-type {
+	display: inline-block;
+	color: #4F4F4F;
+	cursor: pointer;
+	padding: 4px;
+}
+
+.mediaSelector .media-type:after {
+	display: inline-block;
+	width: 16px;
+	height: 14px;
+	content: "";
+	margin-left: 1px;
+	background: url(../../_resources/icons/builder-media-types.png);
+	vertical-align: -2px;
+	cursor: pointer;
+}
+
+.mediaSelector .media-type-wrapper:nth-child(2) .media-type:after {
+	background-position: -16px 0;
+}
+
+.mediaSelector .media-type-wrapper:nth-child(3) .media-type:after {
+	background-position: -34px 0;
+}
+
+.mediaSelector .media-type-wrapper:nth-child(4) .media-type:after {
+	background-position: -51px 0;
+}
+
+
+/*
+ * View container
+ */
+
+.mediaSelector .mediaContainers {
+	background-color: #F3F3F3;
+}
+
+.mediaSelector .mainMediaTypeContainer {
+	display: none;
+	padding: 15px;
+}
+
+.mediaSelector .mainMediaTypeContainer.error {
+	background-color: red;
+}

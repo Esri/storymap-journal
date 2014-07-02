@@ -1,0 +1,40 @@
+<div class="mediaSelector">
+	<label class="lblSelect"><%= lblSelect %>:</label>
+	<span class="media-types">
+		<div class="media-type-wrapper <% if( ! hasMap ) { %> disabled <% } %>">
+			<label class="checkbox-inline media-type">
+				<input type="radio" name="media-type" value="map"> <%= lblMap %>
+			</label>
+			<div class="mediaContainersArrow"></div>
+		</div>
+	
+		<div class="media-type-wrapper">
+			<label class="checkbox-inline media-type">
+				<input type="radio" name="media-type" value="image"> <%= lblImage %>
+			</label>
+			<div class="mediaContainersArrow"></div>
+		</div>
+		
+		<div class="media-type-wrapper">
+			<label class="checkbox-inline media-type">
+				<input type="radio" name="media-type" value="video"> <%= lblVideo %>
+			</label>
+			<div class="mediaContainersArrow"></div>
+		</div>
+		
+		<div class="media-type-wrapper">
+			<label class="checkbox-inline media-type">
+				<input type="radio" name="media-type" value="webpage"> <%= lblExternal %>
+			</label>
+			<div class="mediaContainersArrow"></div>
+		</div>
+	</span>
+	
+	
+	<div class="mediaContainers">
+		<div class="mainMediaTypeContainer mapMediaContainer <% if( ! hasMap ) { %> disabled <% } %>"></div>
+		<div class="mainMediaTypeContainer imageMediaContainer"></div>
+		<div class="mainMediaTypeContainer videoMediaContainer"></div>
+		<div class="mainMediaTypeContainer webpageMediaContainer"></div>
+	</div>
+</div>

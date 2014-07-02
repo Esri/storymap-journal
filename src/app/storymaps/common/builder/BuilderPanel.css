@@ -1,0 +1,163 @@
+#builderPanel {
+	display: block;
+	position: relative;
+    word-wrap: break-word;
+	width: 100%;
+	height: 55px;
+	padding: 15px 20px 0px 8px;
+	background: url(../_resources/icons/builder-command-background.png);
+	-webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+/*
+ * Central buttons
+ */
+
+#builderPanel .btn {
+	margin: 0px;
+}
+
+#builderPanel .btn,
+#builderPanel .builder-cmd {
+	text-transform: uppercase;
+}
+
+#builderPanel .buttons {
+	position: absolute;
+	top: 21px;
+	left: 315px;
+	color: #BEDFF0;
+	z-index: 3;
+}
+
+#builderPanel .builder-cmd {
+	display: inline-block;
+	margin-left: 20px;
+	font-size: 1em;
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+#builderPanel .builder-cmd:hover {
+	opacity: 1.0;
+}
+
+#builderPanel .builder-cmd:after {
+	display: inline-block;
+	width: 18px;
+	height: 17px;
+	content: "";
+	margin-left: 4px;
+	background: url(../_resources/icons/builder-command-icons.png);
+	vertical-align: -3px;
+	cursor: pointer;
+}
+
+#builderPanel .builder-cmd.disabled {
+	cursor: default;
+	opacity: 0.5;
+}
+
+#builderPanel .builder-share:after {
+	background-position: -18px 0;
+}
+
+#builderPanel .builder-help:after {
+	background-position: -38px 0;
+}
+
+#builderPanel .builder-preview:after {
+	background-position: -57px 0;
+	vertical-align: -4px;
+}
+
+/*
+ * Right panel
+ */
+
+#builderPanel .status-bar {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	display: inline-block;
+	margin-top: 6px;
+	margin-left: 1px;
+	font-size: 12px;
+	color: #999;
+	text-align: right;
+}
+
+#builderPanel .save-counter.pendingChanges {
+	color: #67AAE5;
+	margin-top: -1px;
+	font-size: 1.1em;
+}
+
+#builderPanel .status-bar.hideCounterAndSharing .builder-save {
+	margin-top: 3px;
+}
+
+#builderPanel .status-bar.hideCounterAndSharing .save-counter,
+#builderPanel .status-bar.hideCounterAndSharing .sharing-status {
+	opacity: 0;
+}
+
+/*
+ * Save
+ */
+ 
+#builderPanel .builder-save {
+	vertical-align: 9px;
+	margin-left: 7px;
+	font-size: 0.9em;
+	outline: none !important;
+	background-color: #E0E0E0;
+}
+
+#builderPanel .smallLoader {
+	vertical-align: -2px;
+}
+
+#builderPanel .saving {
+	color: #30750A;
+	font-weight: bold;
+}
+
+/*
+ * Save failure popover
+ */
+
+#builderPanel .save-fail-popover {
+	text-align: left;
+	min-height: 40px;
+	color: #30750A;
+	font-size: 14px;
+	margin-left: -181px;
+	top: -7px !important;
+	opacity: 1.0;
+}
+
+#builderPanel .save-fail-popover .tooltip-inner {
+	background-color: #FFF;
+}
+
+#builderPanel .save-fail-popover .tooltip-arrow {
+	border-left-color: #FFF;
+}
+
+/*
+ * Warning when something not right with data
+ */
+
+#builderPanel .datawarning-popover {
+	max-width: 420px !important;
+	width: 420px;
+}
+
+#builderPanel .datawarning-popover .popover-title {
+	display: none;
+}

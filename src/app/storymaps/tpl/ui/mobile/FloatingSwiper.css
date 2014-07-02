@@ -1,0 +1,204 @@
+.floatingSwiper {
+	position: absolute;
+	left: 0;
+	right: 0;
+	display: none;
+	bottom: 95px;
+	width: 100%;
+	height: 50px;
+	z-index: 30;
+}
+
+.floatingSwiper.expanded {
+	height: 100%;
+	top: 0;
+	bottom: 0;
+}
+
+.floatingSwiper .backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.8;
+}
+
+.floatingSwiper .swiper-container {
+	height: 85px;
+	/* Make bootstrap popover for bitly sharing happy */
+	z-index: inherit;
+}
+
+.floatingSwiper:not(.expanded) .swiper-container {
+	cursor: pointer;
+} 
+
+.floatingSwiper .section {
+	padding: 15px;
+	overflow-y: auto;
+}
+
+.floatingSwiper:not(.expanded) .section {
+	overflow-y: hidden;
+}
+
+.floatingSwiper.expanded .swiper-container {
+	height: 100%;
+}
+
+.floatingSwiper.expanded .swiper-wrapper {
+	height: 100%;
+}
+
+/*
+ * Title
+ */
+
+.floatingSwiper .title {
+	font-size: 1.85em;
+}
+
+.floatingSwiper:not(.expanded) .title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/*
+ * Content
+ */
+
+.floatingSwiper .content {
+	display: none;
+	margin-top: 15px;
+	min-height: 200px;
+}
+
+/* Prevent image full screen */
+.floatingSwiper .content img,
+.floatingSwiper .content .image-container {
+	pointer-events: none;
+}
+
+.floatingSwiper.expanded .content {
+	display: block;
+}
+
+.floatingSwiper .expanded-close {
+	display: none;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 1.85em;
+	width: 100%;
+}
+
+.floatingSwiper.expanded .expanded-close {
+	display: block;
+}
+
+/*
+ * Help
+ */
+
+.floatingSwiper .help {
+	margin-top: 4px;
+	opacity: 0.7;
+}
+
+.floatingSwiper.expanded .help {
+	display: none;
+}
+
+/*
+ * Header
+ */
+
+.floatingSwiper .header {
+	position: relative;
+	width: 200px;
+	padding: 5px 15px 8px 15px;
+	height: 33px;
+}
+
+.floatingSwiper .linkSocialContainer {
+	opacity: 0.7;
+}
+
+.floatingSwiper.expanded .header {
+	display: none;
+}
+
+.floatingSwiper .link {
+	font-weight: 700;
+	font-size: 0.8em;
+	outline: 0;
+}
+
+.floatingSwiper .link, .floatingSwiper .shareIcon {
+	color: inherit;
+	opacity: 0.7;
+}
+
+/*
+ * Buttons
+ */
+
+.floatingSwiper .expanded-close {
+	cursor: pointer;
+} 
+
+.floatingSwiper .glyphicon-fullscreen {
+	font-size: 0.85em;
+}
+ 
+.floatingSwiper .btnIcon {
+	margin-right: 4px; 
+}
+
+.floatingSwiper .btnIcon:nth-child(2) {
+	margin-left: 6px;
+}
+	
+.floatingSwiper .backmap {
+	display: inline-block;
+	background: url(../../../../../resources/tpl/viewer/icons/map-icon.png);
+	width: 30px;
+	height: 30px;
+	background-size: 30px;
+	vertical-align: -6px;
+}
+
+/*
+.floatingSwiper .backmap,
+.floatingSwiper .resizeIcon {
+	display: inline-block;
+	background: url(../../../../../resources/tpl/viewer/icons/responsive-view-icons.png);
+	width: 30px;
+	height: 28px;
+	vertical-align: -6px;
+}
+
+.floatingSwiper .backmap {
+	margin-right: 7px;
+}
+
+.floatingSwiper .resizeIcon {
+	background-position: 0 28px;
+}
+*/
+
+.floatingSwiper .glyphicon-resize-horizontal {
+	vertical-align: -1px;
+}
+
+.floatingSwiper .expanded-close .glyphicon-resize-horizontal {
+	color: #4B4B4B;
+	background-color: white;
+	border-radius: 15px;
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	font-size: 20px;
+	line-height: 25px;
+}

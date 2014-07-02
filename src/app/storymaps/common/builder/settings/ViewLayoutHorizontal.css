@@ -1,0 +1,124 @@
+/*
+ * Explain
+ */
+.settings-layout-horizontal .explain {
+	font-size: 1.25em;
+	color: #AAAAAA;
+}
+
+/*
+ * Container
+ */
+
+.settings-layout-horizontal .layouts {
+	margin-top: 3px;
+}
+
+.settings-layout-horizontal .layout {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 15px;
+	cursor: pointer;
+	opacity: 0.9;
+	margin-left: 4px;
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+/*
+ * Right layout
+ */
+
+.settings-layout-horizontal .layout:nth-child(2) {
+	margin-left: 60px;
+}
+
+/*
+ * Container hover and selected state
+ */
+
+.settings-layout-horizontal .layout:hover {
+	opacity: 1.0;
+}
+
+/*
+.settings-layout-horizontal .layouts.init .layout {
+	opacity: 0.6;
+}
+
+.settings-layout-horizontal .layouts.init .layout.hover {
+	opacity: 1.0;
+}
+
+.settings-layout-horizontal .layout.selected {
+	opacity: 1.0;
+}
+*/
+
+.settings-layout-horizontal .layout.selected .layout-selected {
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	width: 40px;
+	height: 40px;
+	background: url(../../../../../resources/tpl/builder/icons/builder-check.png);
+	background-repeat: no-repeat;
+}
+
+/*
+ * Title/description
+ */
+
+.settings-layout-horizontal .layout-content {
+	clear: both;
+	padding-left: 4px;
+}
+
+.settings-layout-horizontal .layout-thumb,
+.settings-layout-horizontal .layout-title,
+.settings-layout-horizontal .layout-description {
+	width: 230px;
+}
+
+.settings-layout-horizontal .layout-title {
+	font-family: 'open_sanssemibold', sans-serif;
+	font-size: 1.4em;
+	margin-top: 10px;
+}
+
+.settings-layout-horizontal .layout-description {
+	font-size: 0.85em;
+	color: #4F4F4F;
+	overflow-y: auto;
+	height: 68px;
+}
+
+/*
+ * Link to live app 
+ */
+ 
+.settings-layout-horizontal .layout-live {
+ 	visibility: visible;
+ 	font-size: 0.8em;
+ 	color: #428BC9;
+ 	text-align: center;
+ 	text-transform: uppercase;
+ 	margin-top: 3px;
+ 	margin-bottom: 5px;
+}
+
+/*
+ * Start
+ */
+ 
+.settings-layout-horizontal .start-btn-container {
+	margin-top: 15px;
+	margin-bottom: -18px;
+	text-align: center;
+}
+
+.settings-layout-horizontal .start-btn-container .btn {
+	text-transform: uppercase;
+}

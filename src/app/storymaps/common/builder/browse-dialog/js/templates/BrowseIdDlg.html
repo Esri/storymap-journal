@@ -1,0 +1,23 @@
+<div class="widgetContent" >
+  <div data-dojo-type="dijit/Dialog" id="browse-id-dialog" title="${i18n.title}" execute="">
+    <div data-dojo-attach-point="formNode" class="esriItemLinks dijitDialogPaneContentArea">
+      <div id="browse-id-box" style="border:#333 1px solid; width:565px; min-height:330px; padding:0; overflow:hidden;">            
+        <div class="esriFloatLeading esriLeadingMargin1" style="width:250px; margin-top:10px;">
+          <select data-dojo-attach-point="_filterSelect"  data-dojo-type="dijit/form/Select" sortByLabel="false" maxHeight='350' style="width:240px;">
+          </select>
+        </div>  
+        <div class="search esriFloatTrailing esriTrailingMargin1" style="width:250px;">
+          <div id="search-form" style="position:relative;">
+            <input class="esriSearchBox" type="text" data-dojo-type="dijit/form/TextBox" trim="true" id="browse-id-search-box" data-dojo-attach-point="searchText" data-dojo-attach-event="onKeyPress:_onSearchKeyPress,onFocus:_onSearchBoxFocus,onBlur:_onSearchBoxBlur" alt="${i18n.searchTitle}" title="${i18n.searchTitle}" placeholder="${i18n.placeholder}" />
+            <button class="esriLeadingMargin13 esriSearchButton" id="search-box_submit" alt="${i18n.searchTitle}" title="searchTitle" data-dojo-attach-point="searchButton" data-dojo-attach-event="onclick:_onSearchClick" >&nbsp;&nbsp;</button>
+          </div>
+        </div>
+        <div style="position:relative; width:565px;clear:both;" data-dojo-attach-point="gallery"  id="gallery"></div>
+      </div>
+    </div>
+    <div class="submitButtons dijitDialogPaneActionBar esriPositionRight0">
+      <input data-dojo-type="dijit/form/Button" name="cancel" class="cancel esriFloatTrailing" type="button" data-dojo-attach-event="onClick:onCancel" label="${i18n.cancel}">
+      <input data-dojo-type="dijit/form/Button" name="ok" class="ok esriFloatTrailing calcite blue" type="button" data-dojo-attach-event="onClick:onClose" label="${i18n.ok}">
+    </div>
+  </div>
+</div>

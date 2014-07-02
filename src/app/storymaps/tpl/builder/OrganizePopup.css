@@ -1,0 +1,142 @@
+.organizePopup .modal-logo {
+	position: absolute;
+	top: -19px;
+	left: -20px;
+	width: 48px;
+	height: 48px;
+	background: url(../../../../resources/tpl/builder/icons/builder-organize.png);
+	background-repeat: no-repeat;
+	background-position: 0 -41px;
+	background-size: 40px;
+	border: 4px solid #FFF;
+	border-radius: 24px;
+}
+
+.organizePopup .modal-footer {
+	margin-top: 30px;
+}
+
+/*
+.organizePopup .story-filter-container {
+	height: 40px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.organizePopup .nav {
+	display: inline-block;
+}
+
+.organizePopup .filter-hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+*/
+
+/*
+ * Table style & D&D
+ */
+
+.organizePopup .organizeTableContainer {
+	max-height: 300px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin: 15px 0;
+	border: 1px solid #DDD;
+}
+
+.organizePopup .organizeTable {
+	margin-bottom: 0;
+} 
+
+.organizePopup .organizeTable .firstSection {
+	min-height: 47px;
+	padding: 12px;
+	cursor: default;
+}
+
+.organizePopup .organizeTable .moverHeader {
+	width:5px !important;
+	padding:0 !important;
+}
+
+.organizePopup .organizeTable td:first-child {
+	width: 5px !important;
+	padding: 0 !important;
+}
+
+.organizePopup .organizeTable .rows:not(.noreorder) {
+	cursor: ns-resize;
+}
+
+.organizePopup .organizeTable .rows:not(.noreorder) .mover {
+	background-image: url("../../common/_resources/icons/browse-dialog/ago_sprite.png");
+	background-repeat: no-repeat;
+	background-position: -20px -95px;
+}
+
+.organizePopup .organizeTable .placeholder {
+	text-align: center;
+	padding: 15px;
+}
+
+/*
+ * Date input
+ */
+
+.organizePopup .input-date {
+	padding: 5px;
+	width: 140px;
+}
+
+/*
+ * Status
+ */
+
+.organizePopup .status .btn-group {
+	width: 100%;
+}
+
+.organizePopup .status .dropdown-toggle {
+	width: 100%;
+	text-align: left;
+}
+
+.organizePopup .status .status-list {
+	min-width: 134px;
+	max-width: 134px;
+}
+
+.organizePopup .status .status-list-btn {
+	padding-right: 5px;
+}
+
+.organizePopup .status .caret {
+	position: absolute;
+	top: 12px;
+	right: 5px;
+}
+
+/*
+ * Delete
+ */
+
+.organizePopup .deleteSectionBtn {
+	width: 2em !important;
+	padding: 2px 0 5px 0;
+	height: 26px;	
+}
+
+/*
+ * Export
+ */
+ 
+.organizePopup .btn-export {
+	background-color: #B7B7B7;
+	color: white;
+	margin-left: 10px;
+}
+
+.organizePopup .modal-footer .tooltip-inner {
+	max-width: 324px;
+}

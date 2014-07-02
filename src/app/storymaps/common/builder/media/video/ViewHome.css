@@ -1,0 +1,58 @@
+.videoSelectorHome .videoSelectorTable {
+	width: 70%;
+	text-align: center;
+	margin-left: -5px;
+}
+
+.videoSelectorHome .videoSelectorTable .btn-container {
+	padding: 15px 18px;
+}
+
+.mediaSelector.smallSize .videoSelectorHome .videoSelectorTable .btn-container {
+	padding: 15px 12px;
+}
+
+.videoSelectorHome .videoSelectorTable .btn-img {
+	display: inline-block;
+	width: 140px;
+	height: 90px;
+	background-repeat: no-repeat;
+}
+
+.videoSelectorHome .btn-select-youtube .btn-img {
+	background: url(../../../_resources/icons/media/builder-media-youtube.png);
+	background-size: 140px auto;
+	background-repeat: no-repeat;
+}
+
+.videoSelectorHome .btn-select-vimeo .btn-img {
+	background: url(../../../_resources/icons/media/builder-media-vimeo.png);
+	background-size: 140px auto;
+	background-repeat: no-repeat;
+}
+
+.videoSelectorHome .btn-select-other {
+}
+
+.videoSelectorHome .btn-select-other .btn-img {
+	font-family: 'open_sanssemibold', sans-serif;
+	font-size: 1.7em;
+	padding-top: 28px;
+}
+
+/*
+.videoSelectorHome .videoSelectorTable .btn-container.disabled {
+	opacity: 0.4;
+	cursor: default !important;
+}
+
+.videoSelectorHome .videoSelectorTable .btn-container.disabled a {
+	cursor: default !important;
+}
+*/
+
+.videoSelectorHome .videoSelectorTable .btn-container:hover {
+	background-color: #BDD1E2;
+	cursor: pointer;
+	border-radius: 10px;
+}

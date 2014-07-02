@@ -1,0 +1,69 @@
+.imageSelectorPicasa .service-logo {
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+	background: url(../../../_resources/icons/media/builder-media-picasa.png);
+	background-repeat: no-repeat;
+	background-size: auto 30px;
+	vertical-align: top;
+	background-position: 2px 2px;
+}
+
+.imageSelectorPicasa .userName {
+	width: 235px;
+}
+
+.imageSelectorPicasa .loadingMsg {
+	font-size: 14px;
+	color: #30750a;
+	font-weight: bold;
+	vertical-align: 2px;
+}
+
+.imageSelectorFlickr .loadingMsg .glyphicon-ok {
+	margin-left: 4px;
+}
+
+.imageSelectorFlickr .errorMsg {
+	display: none;
+	font-size: 14px;
+	color: #c43d40;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.imageSelectorPicasa .albums {
+	display: none;
+	text-align: center;
+	max-height: 240px;
+	padding-top: 20px;
+	overflow-y: auto;
+}
+
+.imageSelectorPicasa .albums.disabled {
+	opacity: 0.4;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+.imageSelectorPicasa .album {
+	float: left;
+	width: 25%;
+	padding: 10px;
+}
+
+.imageSelectorPicasa .album .album-thumb {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.mediaSelector.smallSize .imageSelectorPicasa .album {
+	width: 33%;
+}
+
+.imageSelectorPicasa .album:hover {
+	background-color: #DDE2E7;
+	cursor: pointer;
+	border-radius: 10px;
+}

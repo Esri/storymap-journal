@@ -1,0 +1,14 @@
+.share-embed-container .embed-explain {
+	font-size: 0.85em;
+	color: #4F4F4F;
+}
+
+.share-embed-container .embedTextarea {
+	width: 100%;
+	height: 87px;
+	margin: 10px 0 5px 0;
+}
+
+.share-embed-container .embed-lbl-size {
+	color: #4F4F4F;
+}

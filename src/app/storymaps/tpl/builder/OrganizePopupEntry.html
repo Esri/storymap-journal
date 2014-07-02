@@ -1,0 +1,31 @@
+<% if ( index === 0 ){ %>
+
+	<tr class="sectionRow ui-state-highlight" data-index="<%= index %>">
+		<td colspan="5"><div class="firstSection"><%= title %> <span style="font-size: 80%; color: #3276b1;"><%= firstSectionExplain %></span></div></td>
+	</tr>
+	
+<% } else { %>
+
+	<tr class="sectionRow ui-state-highlight" data-index="<%= index %>">
+		<td class="mover"></td>
+		<td class="entryTitle"><%= title %></td>
+		<td>
+			<div class="input-group form_datetime date">
+		    	<input class="form-control clear input-sm input-date" size="16" type="text" value="<%= pubDate %>" readonly>
+				<span class="input-group-addon input-sm"><span class="glyphicon glyphicon-calendar"></span></span>
+			</div>
+		</td>
+		<td class="status" data-value="<%= statusVal %>">
+			<div class="btn-group dropup">
+				<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+					<span class="status-list-btn" data-value="<%= statusVal %>"><%= statusLbl %></span>&nbsp;<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu status-list" role="menu"></ul>
+			</div>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-md glyphicon glyphicon-trash deleteSectionBtn" data-toggle="tooltip" title="<%= helpDelete %>"></button>
+		</td>
+	</tr>
+	
+<% } %>

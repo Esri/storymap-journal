@@ -1,0 +1,24 @@
+.mediaSelectorPickerContainer {
+	display: inline-block;
+	text-align: center;
+	max-height: 275px;
+	margin-top: 20px;
+	overflow-y: auto;
+}
+
+.mediaSelectorPickerContainer .mediaItem {
+	float: left;
+	width: 49%;
+	padding: 10px;
+}
+
+.mediaSelectorPickerContainer .mediaItem:hover {
+	background-color: #DDE2E7;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.mediaSelectorPickerContainer .mediaImg {
+	max-width: 250px;
+	max-height: 100px;
+}

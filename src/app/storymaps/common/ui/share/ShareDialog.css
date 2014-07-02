@@ -1,0 +1,42 @@
+/* Prevent rule from Responsive.css that disable app popup on mobile */
+/* TODO should flag builder dialog to obly hide them */ 
+.shareDialog.modal.in {
+	display: block !important;
+}
+
+body.mobile-view .shareDialog {
+	margin-top: 40px;
+	padding: 20px;
+}
+
+.shareDialog .modal-logo {
+	position: absolute;
+	top: -19px;
+	left: -20px;
+	width: 48px;
+	height: 48px;
+	background: url(../../_resources/icons/builder-share.png);
+	background-repeat: no-repeat;
+	background-position: 0 -41px;
+	background-size: 40px;
+	border: 4px solid #FFF;
+	border-radius: 24px;
+}
+
+.shareDialog .embed-title {
+	font-size: 1.3em;
+	color: #4B8BC9; 
+	margin: 15px 0 5px 0;
+}
+
+body.mobile-view .shareDialog .bitlylink {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+body.mobile-view .shareDialog .btn-bitlylink-copy,
+body.mobile-view .shareDialog .btn-bitlylink-open,
+body.mobile-view .shareDialog .embed-title,
+body.mobile-view .shareDialog .share-embed-container {
+	display: none;
+}

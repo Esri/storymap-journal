@@ -1,0 +1,77 @@
+.viewText {
+	position: relative;
+}
+
+/*
+ * Main Stage Actions toolbar
+ */
+
+.viewText .tooltip {
+	left: auto !important;
+	right: 115px !important;
+	top: 66px !important;
+	opacity: 1 !important;
+}
+
+.viewText .tooltip .tooltip-arrow {
+	border-bottom-color: #E9E9E9;
+}
+
+.viewText .tooltip .tooltip-inner {
+	text-align: left;
+	color: #000;
+	background-color: #E9E9E9;
+	padding-bottom: 7px;
+}
+
+.viewText .tooltip .title {
+	color: #428BC9;
+	font-size: 1.1em;
+	margin-bottom: 2px;
+	text-transform: uppercase;
+}
+
+#addEditPopup .mainStageActionExpandBtn {
+	width: 6px;
+	height: 18px;
+	background: url(../../../../../resources/tpl/builder/icons/editor-collapse-expand.png);
+	background-repeat: no-repeat;
+	background-position: 9px 4px;
+	cursor: pointer;
+	margin-right: 6px;
+	margin-left: -8px;
+}
+
+#addEditPopup .mainStageActionExpandBtn.expand {
+	color: #FFF;
+	background-position: -9px 4px;
+	margin-right: 2px;
+	margin-left: 10px;
+}
+
+
+/*
+ * Editor customization
+ */
+ 
+ /* Link dialog : the ID doesn't seems to be stable */
+ .cke_editor_addEditRTE_dialog .cke_dialog_contents_body {
+ 	height: 90px !important;
+ }
+ 
+.cke_editor_addEditRTE_dialog .cke_resizer {
+ 	display: none;
+}
+ 
+#cke_1_path {
+	display: none !important; 
+}
+
+.cke_maximized #cke_1_contents {
+	/* no height limitation in full screen mode */
+	max-height: none !important;
+}
+
+.cke_maximized #cke_1_bottom {
+	height: 20px;
+}

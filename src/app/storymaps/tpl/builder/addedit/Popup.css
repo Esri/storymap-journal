@@ -1,0 +1,202 @@
+/*
+ * Modal
+ */
+.addEditPopup .modal-dialog {
+	width: 610px;
+}
+
+.addEditPopup .modal-footer {
+	padding-top: 20px;
+}
+
+.addEditPopup .modal-logo {
+	position: absolute;
+	top: -19px;
+	left: -20px;
+	width: 48px;
+	height: 48px;
+	background: url(../../../../../resources/tpl/builder/icons/builder-add.png);
+	background-repeat: no-repeat;
+	background-position: 0 -41px;
+	background-size: 40px;
+	border: 4px solid #FFF;
+	border-radius: 24px;
+}
+
+.addEditPopup .modal-logo.edit {
+	background: url(../../../../../resources/tpl/builder/icons/builder-edit-noborder.png);
+	background-position: 0 -41px;
+}
+
+/*
+ * Header
+ */
+
+.addEditPopup .titleContainerAdd {
+	position: relative;
+	width: 438px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.addEditPopup .titleContainer.has-feedback .form-control-feedback {
+	display: block;
+}
+
+.addEditPopup .titleContainerFirstAdd {
+	text-align: center;
+	margin: 30px 1px;
+}
+
+.addEditPopup .titleContainerEdit {
+	margin: 10px 0 15px 0;
+}
+
+/*
+ * Title text editor
+ */
+ 
+.cke_editable {
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+/*
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+*/
+
+.cke_focus, #cke_AddEditTitleEditor {
+	box-shadow: 0 0 5px #66AFE9;
+	border: 1px solid #66AFE9;
+}
+
+/*
+ * Views navigation & containers
+ */
+
+.addEditPopup .viewMediaSelectorContainer {
+	min-height: 304px;
+}
+
+.addEditPopup .navigation-add {
+	position: relative;
+	margin-top: -10px;
+	font-family: 'open_sanssemibold', sans-serif;
+}
+
+.addEditPopup .navigation-title {
+	padding-top: 8px;
+}
+
+.addEditPopup .navigation-step {
+	display: inline-block;
+	color: #3276b1;
+	text-transform: uppercase;
+	font-size: 2.2em;
+}
+
+.addEditPopup .navigation-explain {
+	display: inline-block;
+	color: #3276b1;
+	font-size: 1.4em;
+}
+
+.addEditPopup .navigation-thumbnail {
+	position: absolute;
+	top: -25px;
+	right: -15px;
+}
+
+.addEditPopup .navigation-thumbnail .layout-thumbnail {
+	width: 115px;
+	height: 80px;
+}
+
+.addEditPopup .navHelpContainer .tooltip {
+	opacity: 1.0;
+}
+
+.addEditPopup .navHelpContainer .tooltip .tooltip-arrow {
+	border-right-color: #E7E7E7;
+}
+
+.addEditPopup .navHelpContainer .tooltip .tooltip-inner {
+	background-color: #E7E7E7;
+	padding: 10px;
+}
+
+.addEditPopup .navHelpContainer .tooltip .layout-thumbnail {
+	width: 132px;
+	height: 99px;
+}
+
+.addEditPopup .navHelpContainer .layout-thumbnail span.rotate {
+	margin-top: -7px;
+}
+
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-float.size-medium span.rotate {
+	margin-left: 2px;
+}
+
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-float.size-small span.rotate {
+	margin-left: -2px;
+}
+
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-float.size-large span.rotate {
+	margin-left: 10px;
+}
+
+.layout-thumbnail.layout-float.pos-left.size-large .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+	margin-left: 8px;
+}
+
+.layout-thumbnail.layout-right.pos-right.size-large .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+	margin-left: -45px;
+}
+
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-side.size-medium span.rotate {
+	margin-left: 3px;
+}
+
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-side.size-small span.rotate {
+	margin-left: -2px;
+}
+
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-side.size-large span.rotate {
+	margin-left: 14px;
+}
+
+.addEditPopup .navHelp {
+	padding: 8px 0 0 3px;
+}
+
+.addEditPopup .navHelp:hover {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+/*
+ * Footer
+ */
+
+.addEditPopup .btnSubmitWrapper {
+	display: inline-block;
+}
+
+/*
+ * TODO
+ */
+ 
+.addEditPopup .webmapSelector {
+	margin-bottom: -15px;
+} 

@@ -1,0 +1,156 @@
+/*
+body{
+    font: 12px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;
+}
+*/
+
+.gallery {
+    margin:auto;
+    height:28em;
+}
+
+.itemGrid img{
+    width:120px;
+    height:88px;
+    border:0;
+}
+
+.itemGrid {
+    height:110px;
+}
+.itemGrid:hover{
+    cursor:pointer;
+    display:block;
+    color: hsl(15, 2%, 45%);
+    z-index: 99;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.itemGrid .itemText{
+    font-size:8pt;
+    text-align: left;
+    margin:0;
+}
+.itemTitle{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.itemOwner{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.soria .ui-state-active{
+    background-color: #fff;
+}
+.dgrid-row {
+    width:127px;
+    float:left;
+    text-align:center;
+    padding:1em 3px;
+    border:solid 1px #fff !important; 
+    margin:2px;
+}
+.dgrid-pagination-links:hover{
+    cursor:pointer;
+}
+.dgrid-pagination .dgrid-page-disabled{
+    color:hsl(0,0%,67%) !important;
+    cursor:default;
+}
+.dgrid-page-link{
+    cursor:pointer;
+}
+.dgrid-active{
+    background-color: #fff;
+}
+.dgrid-selected{
+    border-radius: 4px;
+    background-color: #fff;
+    border:solid 1px #BFD6EB !important; 
+}
+.dgrid-row .dgrid-row-odd{
+    background-color: #fff;
+}
+.dgrid-row .dgrid-row-even{
+    background-color: #fff;
+}
+
+.dgrid-row:hover{
+    border-radius: 4px;
+    background-color: #E1F0FB !important;
+}
+
+
+.truncate {
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/*Styles for the web map search box */
+.esriFloatTrailing {
+    float:right;
+}
+
+.esriTrailingMargin1 {
+    margin-right:1em;
+}
+
+.esriFloatLeading {
+    float:left!important;
+}
+
+.esriLeadingMargin1 {
+    margin-left:1em;
+}
+
+#search-form {
+    position:relative;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.esriSearchBox {
+    border-radius:4px;
+}
+
+.esriSearchBox.dijitTextBox {
+    width:250px;
+    background:none;
+    background-image:none!important;
+    filter:none;
+    opacity:1;
+    background-color:hsl(0,100%,100%)!important;
+    border-color:hsl(0,0%,80%)!important;
+}
+
+#search-form .dijitInputContainer {
+    padding-top:3px;
+}
+
+.esriSearchButton {
+    background-color:hsla(0,0%,0%,0);
+    background-image:url(../../../_resources/icons/browse-dialog/ago_sprite.png);
+    background-repeat:no-repeat;
+    background-position:0 0;
+    background-clip:border-box;
+    border:none;
+    height:16px;
+    line-height:normal;
+    position:absolute;
+    cursor:pointer;
+    right:0;
+    top:6px;
+    width:16px;
+    margin-right:6px;
+    display:inline-block;
+    padding:0 9px 5px 5px;
+}
+
+.clear {
+    clear:both;
+}
+
+

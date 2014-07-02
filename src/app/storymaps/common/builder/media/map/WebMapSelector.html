@@ -1,0 +1,113 @@
+<div class="webmapSelector">
+	<table class="map-cfg">
+		<tr class="map-cfg-webmap">
+			<td class="map-cfg-title">
+				<%= lblWebmap %>
+			</td>
+			<td class="map-cfg-btns">
+				<div class="webmaps-list-container">
+					<div class="radio-value btn-group">
+						<button class="btn btn-default dropdown-toggle webmaps-list-btn" type="button" data-toggle="dropdown">
+							<span class="webmaps-list-btn-inner"></span>&nbsp;<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu webmaps-list"></ul>
+					</div>
+					<span class="selected-map-sharing-status"></span>
+					<!-- 
+					<a href="#" class="help" data-toggle="tooltip" data-placement="right" data-original-title="" title="Make sure your webmaps are shared publicly">
+						<img src="resources/tpl/builder/icons/builder-help.png">
+					</a>
+					 -->
+				</div>
+			</td>
+		</tr>
+		
+		<tr class="map-cfg-row map-cfg-location">
+			<td class="map-cfg-title">
+				<%= lblLocation %>
+			</td>
+			<td class="map-cfg-btns">
+				<span class="btn-group">
+					<button type="button" class="btn btn-default btn-xs" data-value="default">
+						<%= webmapDefault %>
+					</button>
+					<button type="button" class="btn btn-default btn-xs" data-value="custom">
+						<%= customCfg %>&nbsp;
+					</button>
+				</span>
+				<a href="#" class="help" data-toggle="tooltip" data-placement="right" title="<%= tooltipLocation %>">
+					<img class="helpImg" src="resources/tpl/builder/icons/builder-help.png">
+				</a>
+			</td>
+		</tr>
+		
+		<tr class="map-cfg-row map-cfg-content">
+			<td class="map-cfg-title">
+				<%= lblContent %>
+			</td>
+			<td class="map-cfg-btns">
+				<span class="btn-group">
+					<button type="button" class="btn btn-default btn-xs" data-value="default">
+						<%= webmapDefault %>
+					</button>
+					<button type="button" class="btn btn-default btn-xs" data-value="custom">
+						<%= customCfg %>&nbsp;
+					</button>
+				</span>
+				<a href="#" class="help" data-toggle="tooltip" data-placement="right" title="<%= tooltipContent %>">
+					<img class="helpImg" src="resources/tpl/builder/icons/builder-help.png">
+				</a>
+			</td>
+		</tr>
+		
+		<tr class="map-cfg-row map-cfg-popup">
+			<td class="map-cfg-title">
+				<%= lblPopup %>
+			</td>
+			<td class="map-cfg-btns">
+				<span class="btn-group">
+					<button type="button" class="btn btn-default btn-xs" data-value="default">
+						<%= webmapDefault %>
+					</button>
+					<button type="button" class="btn btn-default btn-xs" data-value="custom">
+						<%= customCfg %>&nbsp;
+					</button>
+				</span>
+				<a href="#" class="help" data-toggle="tooltip" data-placement="right" title="<%= tooltipPopup %>">
+					<img class="helpImg" src="resources/tpl/builder/icons/builder-help.png">
+				</a>
+			</td>
+		</tr>
+		
+		<tr class="map-cfg-row map-cfg-controls">
+			<td class="map-cfg-title">
+				<%= lblControls %>
+			</td>
+			<td class="map-cfg-btns">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="opt-checkbox-overview" />
+						<%= lblOverview %>
+						<a href="#" class="help" data-toggle="tooltip" data-placement="right" title="<%= tooltipOverview %>">
+							<img class="helpImg" src="resources/tpl/builder/icons/builder-help.png">
+						</a>
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="opt-checkbox-legend" />
+						<%= lblLegend %> 
+						<a href="#" class="help" data-toggle="tooltip" data-placement="right" title="<%= tooltipLegend %>">
+							<img class="helpImg" src="resources/tpl/builder/icons/builder-help.png">
+						</a>
+					</label>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	<div class="webmap-loading">
+	
+	</div>
+	
+</div>

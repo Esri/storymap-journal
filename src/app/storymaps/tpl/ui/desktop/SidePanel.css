@@ -1,0 +1,282 @@
+#sidePanel {
+	display: none;
+	position: relative;
+	height: 100%;
+	min-width: 350px;
+	/*box-shadow: 4px 3px 6px 0px #333;*/
+	border-right: 1px solid black;
+	padding-left: 34px;
+	/*z-index: 30;*/
+	overflow: hidden;
+}
+
+/*
+ * Sections container
+ */
+
+/* to hide the scrollbar */
+.sidePanel .sectionsWrapper {
+	margin-right: -20px;
+}
+
+.sidePanel .sectionsWrapper.ie11fix {
+	margin-right: 0;
+}
+
+.sidePanel .sections {
+	position: relative;
+	padding: 0 15px;
+	overflow-y: scroll;
+	height: 100%;
+}
+
+.sidePanel .sections::-webkit-scrollbar { 
+	width: 20px;
+}
+
+/*
+ * Section block
+ */
+
+.sidePanel .section {
+	position: relative;
+	padding: 20px 10px 10px 10px;
+	/*border-bottom: 1px solid #dadada;*/
+	opacity: .2;
+	filter: alpha(opacity=20);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.sidePanel .section:first-child {
+	margin-top: -8px;
+}
+
+.sidePanel .section:last-child {
+	border-bottom: none;
+}
+
+.sidePanel .section:not(.active) {
+	cursor: pointer;
+}
+
+.sidePanel .section:not(.active) .title,
+.sidePanel .section:not(.active) .content,
+.sidePanel .section:not(.active) .panelEditBtn {
+	pointer-events: none;
+}
+
+.sidePanel .section.active {
+	opacity: .99;
+	filter: alpha(opacity=99);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=99)";
+}
+
+/*.sidePanel .draft-section,*/ 
+.sidePanel .hidden-section {
+	padding-left: 15px;
+	border-left: 3px solid #3e78b7;
+	display: none;
+}
+
+/*
+ * Navigation dots
+ */
+
+.sidePanel .navDots {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	border-right: 1px solid black;
+	/* to be over scrollbar when placed on the right */
+	z-index: 2;
+}
+
+body.builder-mode .sidePanel .navDots {
+	/* Builder command + header height */
+	/*top: 96px;*/
+	top: 0px;
+	/* 2 * Builder command height */
+	/*padding-bottom: 90px;*/
+}
+
+/*
+ * Right layout
+ */
+
+body.layout-side-right .sidePanel {
+	padding-left: 0 !important;
+	padding-right: 34px;
+	border-left: 1px solid black;
+	border-right: none;
+}
+
+body.layout-side-right .sidePanel .navDots {
+	left: inherit;
+	right: 0;
+	border-left: 1px solid black;
+	border-right: none;
+}
+
+/*
+ * Scroll
+ */
+
+.sidePanel .scroll {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 82px;
+	padding: 15px;
+	background-color: #FFF;
+	cursor: pointer;
+}
+
+body.layout-side-left .sidePanel .scroll {
+	padding-left: 34px;
+}
+
+body.layout-side-right .sidePanel .scroll {
+	padding-right: 34px;
+}
+
+.sidePanel .scrollInner {
+	width: 100%;
+	height: 52px;
+	background: url('../../../../../resources/tpl/viewer/icons/side-scroll.png');
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: 85px 52px;
+	
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 2.5s;
+	-webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+	-webkit-animation-iteration-count: infinite;
+	
+	-moz-animation-name: blinker;
+	-moz-animation-duration: 2.5s;
+	-moz-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+	-moz-animation-iteration-count: infinite;
+	
+	animation-name: blinker;
+	animation-duration: 2.5s;
+	animation-timing-function: cubic-bezier(.5, 0, 1, 1);
+	animation-iteration-count: infinite;
+}
+
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1.0; }
+}
+
+.sidePanel .title {	
+	/*font-family: 'open_sanssemibold', sans-serif;*/
+	/* TODO remove break compat with beta */
+	font-weight: normal;
+	font-size: 1.5em;
+}
+
+.sidePanel .section:first-child .title {
+	/*display: none;*/
+	font-size: 2.3em;
+	line-height: 1.1em;
+	padding: 10px 0 0 0;
+}
+
+.sidePanel .content {
+	margin-top: 10px;
+	font-size: 1.0em;
+}
+
+.sidePanel .section:first-child .content {
+	margin-top: 10px;
+	font-size: 1.1em;
+}
+
+.sidePanel .section:first-child .content {
+	/*display: table-cell;
+	height: 150px;
+	vertical-align: middle;*/
+	min-height: 150px;
+}
+
+/*
+.sidePanel .sections img {
+	box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.2);
+}
+*/
+
+/*
+.sidePanel .map-state-link {
+	color: #468847;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.sidePanel .map-state-link:hover, .map-state-link:focus {
+	color: #2F5830;
+	text-decoration: underline;
+}
+
+.sidePanel .blog-post-photo-caption {
+	color: #777;
+	font-size: 13px;
+	margin-top: 8px;
+}
+*/
+
+/*
+ * Builder
+ */
+
+.sidePanel .builder {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 15px;
+	text-align: center;
+}
+
+.sidePanel .section .panelEditBtn {
+	right: -10px;
+}
+
+.sidePanel .section:not(.active) .panelEditBtn {
+	opacity: .65;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+.sidePanel .section:first-child .panelEditBtn {
+	top: 25px;
+}
+
+/* Display hidden/draft in builder */
+/*body.builder-mode .sidePanel .draft-section,*/ 
+body.builder-mode .sidePanel .hidden-section {
+	display: block;
+}

@@ -1,0 +1,14 @@
+ <div class="section <%= optHtmlClass %>">
+ 	
+	<% if ( isInBuilder ){ %>
+		<div class="panelEditBtn"></div>
+	<% } %>
+	
+	<div class="title"><%= title %></div>
+	<div class="content"><%= content %></div>
+	<div class="social">
+		<span class="shareIcon share_facebook icon-facebook-squared-1" data-url="<%= shareURL %>"> Facebook</span>
+		<span class="shareIcon share_twitter icon-twitter-1" data-url="<%= shareURL %>"> Twitter</span>
+		<span class="shareIcon share_bitly icon-link" data-url="<%= shareURL %>"> <%= lblShare %></span>
+	</div>
+</div>
