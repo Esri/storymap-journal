@@ -6,12 +6,13 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 ![App](https://raw.github.com/Esri/map-journal-storytelling-template-js/master/map-journal-storytelling-template-js.png)
 
 [View it live](http://links.esri.com/storymaps/map_journal_example_side_panel) | 
-[Details on Story Maps website](http://storymapsdev.arcgis.com/en/app-list/map-journal/) |
-[User Download (source code not included)](http://links.esri.com/storymaps/map_tour_template_zip)
+[Details on Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
+[User Download (source code not included)](http://links.esri.com/storymaps/map_journal_template_zip)
 
 **Latest release is version 1.0.0**, if you want to be informed of new releases, we recommend you to watch this repository. See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
-Readme content:
+## Help content
+
  * [Introduction](#introduction)
  * [Instructions](#instructions)
  * [Feedback](#feedback)
@@ -25,7 +26,7 @@ Readme content:
 
 ## Introduction
 
-A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from an [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. The Journal's data (narrative content and reference to the webmap will be stored) in a Web Application Item.
+A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from an [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. The Journal's data are stored in a Web Application Item (this include the narrative content, reference to the webmap(s), pictures, videos and the settings).
 This repository provide the application source code for developers that wants to implement UI customization.
 See [FAQ](#deployment) for more details.
 
@@ -33,12 +34,16 @@ For more information about the Map Journal, including a gallery of examples and 
 
 ## Instructions
 
-First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-tour/tutorial/)
+First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-journal/tutorial/).
+Once your story is ready, you have to find it's ID in ArcGIS Online. The ID is a 32 characters strings that you will find in your browser bar when consulting your journal.
 
-1. [Download the application](http://links.esri.com/storymaps/map_tour_template_zip)
-2. Deploy the application on your webserver. See [FAQ](#) if needed
-3. Edit index.html and look for the configuration section (line 38) and copy/paste your application ID
+1. [Download the application](http://links.esri.com/storymaps/map_journal_template_zip)
+2. Deploy the application on your webserver. See [FAQ](#how-to-deploy-the-application-on-a-webserver) for details
+3. Edit index.html, find look for the configuration section on line 38 and paste your application ID
 4. Navigate to index.html and enjoy (e.g., http://127.0.0.1/MapJournal/index.html)
+
+You can continue to use the builder in ArcGIS Online to modify your story.
+See [customize the look and feel section](#customize-the-look-and-feel) or [developer guide](#developer-guide) if you want to modify the app.
 
 ## Feedback
 
@@ -60,7 +65,7 @@ The application rely heavily on web map but you can modify it to support another
 #### Where are the data stored?
 Coming soon.
 
-#### Can I deploy Map Tour on Portal for ArcGIS?
+#### Can I deploy Map Journal on Portal for ArcGIS?
 Yes, just deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain files, make sure to clear it before. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in any other folder, some configuration will be required (see index.html configuration). Also note that the web application gallery preview feature won't be functional and give a 404 error.
 
 #### Can the template be used offline?
@@ -74,7 +79,7 @@ Let us know if you are interested, we can give you the reason and help you modif
 
 ## Support
 
-Please check out [Story Maps forum](http://forums.arcgis.com/forums/264-Story-Maps)
+Please check out [Story Maps forum](http://forums.arcgis.com/forums/264-Story-Maps).
 
 ## Customize the look and feel
 
