@@ -3,7 +3,7 @@ Map Journal
 
 The Story Map Journal is ideal when you want to combine narrative text with maps and other embedded content. A Map Journal contains entries, or sections, that users simply scroll through. Each section in a Map Journal has an associated map, image, video or web page. Actions can also be defined in journal sections so that, for example, clicking a word automatically zooms the section’s map to a particular location.
 
-![App](https://raw.github.com/Esri/map-journal-storytelling-template-js/master/map-journal-storytelling-template-js.png)
+![App](map-journal-storytelling-template-js.png)
 
 [View it live](http://links.esri.com/storymaps/map_journal_example_side_panel) | 
 [Details on Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
@@ -37,7 +37,7 @@ For more information about the Map Journal, including a gallery of examples and 
 First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-journal/tutorial/).
 Once your story is ready, you have to find it's ID in ArcGIS Online. The ID is a 32 characters strings that you will find in your browser bar when consulting your journal.
 
-![App ID](https://raw.github.com/Esri/map-journal-storytelling-template-js/master/map-journal-help-application-id.png)
+![App ID](map-journal-help-application-id.png)
 
 1. [Download the application](http://links.esri.com/storymaps/map_journal_template_zip)
 2. Deploy the application on your webserver. See [FAQ](#how-to-deploy-the-application-on-a-webserver) for details
@@ -116,7 +116,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-A copy of the license is available in the repository's [LICENSE.txt](https://raw.github.com/Esri/map-journal-storytelling-template-js/master/LICENSE.txt) file.
+A copy of the license is available in the repository's [LICENSE.txt](LICENSE.txt) file.
 
 Some open-source components of this project are licensed under other License terms, see `src/lib-app/` folder for respective licence files.
 
