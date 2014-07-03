@@ -37,11 +37,14 @@ For more information about the Map Journal, including a gallery of examples and 
 First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-journal/tutorial/).
 Once your story is ready, you have to find it's ID in ArcGIS Online. The ID is a 32 characters strings that you will find in your browser bar when consulting your journal.
 
+![App ID](https://raw.github.com/Esri/map-journal-storytelling-template-js/master/map-journal-help-application-id.png)
+
 1. [Download the application](http://links.esri.com/storymaps/map_journal_template_zip)
 2. Deploy the application on your webserver. See [FAQ](#how-to-deploy-the-application-on-a-webserver) for details
 3. Edit index.html, find look for the configuration section on line 38 and paste your application ID
-4. Navigate to index.html and enjoy (e.g., http://127.0.0.1/MapJournal/index.html)
+4. Navigate to index.html (e.g., `http://127.0.0.1/MapJournal/index.html`)
 
+Enjoy!
 You can continue to use the builder in ArcGIS Online to modify your story.
 See [customize the look and feel section](#customize-the-look-and-feel) or [developer guide](#developer-guide) if you want to modify the app.
 
@@ -75,7 +78,7 @@ Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, 
 No, for technical reason at this time the builder can only be use in ArcGIS Online or Portal for ArcGIS. 
 Let us know if you are interested, we can give you the reason and help you modify the code to enable it.
 
-### How to deploy the application on a webserver
+#### How to deploy the application on a webserver?
 
 ## Support
 
@@ -112,7 +115,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-A copy of the license is available in the repository's [license.txt](https://raw.github.com/Esri/map-journal-storytelling-template-js/master/license.txt) file.
+A copy of the license is available in the repository's [LICENSE.txt](https://raw.github.com/Esri/map-journal-storytelling-template-js/master/LICENSE.txt) file.
 
 Some open-source components of this project are licensed under other License terms, see `src/lib-app/` folder for respective licence files.
 
