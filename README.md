@@ -52,6 +52,7 @@ See [customize the look and feel section](#customize-the-look-and-feel) or [deve
 
 We would love to hear from you!
 * [StoryMaps Website](http://storymaps.arcgis.com/)
+* [Let us know about your application](http://storymapsdev.arcgis.com/en/gallery/submission-form/)
 * [@EsriStoryMaps](http://twitter.com/EsriStoryMaps)
 * [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
 
