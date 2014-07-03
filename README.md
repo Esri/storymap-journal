@@ -6,7 +6,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 ![App](map-journal-storytelling-template-js.png)
 
 [View it live](http://links.esri.com/storymaps/map_journal_example_side_panel) | 
-[Presentation on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
+[Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
 [User Download (source code not included)](http://links.esri.com/storymaps/map_journal_template_zip)
 
 **Latest release is version 1.0.0**, if you want to be informed of new releases, we recommend you to watch this repository. See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
@@ -80,6 +80,7 @@ No, for technical reason at this time the builder can only be use in ArcGIS Onli
 Let us know if you are interested, we can give you the reason and help you modify the code to enable it.
 
 #### How to deploy the application on a webserver?
+Coming soon.
 
 ## Support
 
