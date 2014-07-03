@@ -6,7 +6,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 ![App](map-journal-storytelling-template-js.png)
 
 [View it live](http://links.esri.com/storymaps/map_journal_example_side_panel) | 
-[Details on Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
+[Presentation on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
 [User Download (source code not included)](http://links.esri.com/storymaps/map_journal_template_zip)
 
 **Latest release is version 1.0.0**, if you want to be informed of new releases, we recommend you to watch this repository. See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
@@ -129,7 +129,7 @@ Some open-source components of this project are licensed under other License ter
 | Spectrum 				| MIT 		|
 | iDangero.us swiper 	| MIT 		|
 | ZeroClipboard 		| MIT 		|
-| History 				| BSD 		|
+| History.js			| BSD 		|
 | jQuery UI 			| MIT 		|
 | FastClick 			| MIT 		|
 | Hammer.JS 			| MIT 		| 
