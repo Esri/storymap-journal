@@ -71,19 +71,17 @@ Map Journal authoring is supported on all major desktop browser (Internet Explor
 
 #### Can I keep my Journal private?
 Yes, the regular ArcGIS Online security model applies. 
-By default your Journal is private, you have to share it manually. 
-
+By default your Journal is private, you can share it through Map Journal builder or ArcGIS Online. 
 When you share your Journal, it is your responsibility to make sure that all the resources of your Journal (webmaps, images, videos) are accessible to your audience.
 
 #### Who can edit my Journal?
-Only the Journal owner can edit it. It is possible for Administrator to take ownership of the Journal and so be able to edit it. Changing the ownership is the only way to collaborate to create a Journal without sharing the owner's credentials.
+A Journal can only be edited by it's owner (named account). It is possible for Organization Administrator to take or change the ownership of a Journal and so be able to edit it. In that case the original owner can't edit anymore the Journal. Changing the ownership is the only way to collaborate on a Journal creation without sharing the owner's credentials.
 
 #### Can I use private web map or layer?
 Yes. 
-
 When the Journal is hosted in ArcGIS Online or Portal for ArcGIS, unauthorized user will be redirected to ArcGIS Online sign-in page.
 
-When hosted on your web server, by default the authentication dialog will appear. Because of technical limitation on older browser we recommand that you [configure the application to use OAuth](https://developers.arcgis.com/authentication/user-javascript.html). If you prefer to not configure OAuth, for the authentication to work on some older browser you need to install a proxy server on your web server to make sure the login credentials can be pass securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
+When hosted on your web server, by default the authentication dialog will appear. Because of technical limitation on older browser we recommand that you [configure the application to use OAuth](https://developers.arcgis.com/authentication/user-javascript.html). If you prefer to not configure OAuth, for the authentication to work on some older browser  (Internet Explorer 9 and below) you need to install a proxy server on your web server to make sure the login credentials can be pass securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
 
 ### Deployment
 Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
@@ -93,7 +91,7 @@ This is not a supported use case at that time. Please let us know if you are int
 Map Journal rely heavily on the Portal for ArcGIS API but it is doable to modify the application to support other scenario.
 
 #### Where is the data stored?
-The Journal's data are stored in a Web Application Item in ArcGIS Online or Portal for ArcGIS. This include the narrative content, reference to the webmap(s), reference to the pictures, videos, web page and the settings.
+The Journal's data are stored in a Web Application Item in ArcGIS Online or Portal for ArcGIS. This include the narrative content, reference to the webmap(s), reference to picture(s), video(s), web page(s) and the settings.
 
 The image and videos that you include in your Journal using the builder are not copied in ArcGIS Online. You have to make sure that these medias as well as the webmaps you are using are accessible to your audience without unneeded authentication.
 
@@ -113,8 +111,8 @@ Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, 
 No, for technical reason at this time the builder can only be used in ArcGIS Online or Portal for ArcGIS. 
 Let us know if you are interested, we can give you the technical details and help you modify the application to enable the builder.
 
-#### How to deploy the application on a webserver?
-If you are not familiar with webserver here is three solutions:
+#### How to deploy the application on a web server?
+If you are not familiar with web servers here is three solutions:
  * Use a free hosting service like [Dropbox](https://www.dropbox.com), you may have to [configure Dropbox to enable webpage hosting](https://www.dropbox.com/enable_public_folder)
  * On Windows or Mac OS, use a simple web server like [Mongoose](https://code.google.com/p/mongoose/)
  * Use the web server that comes with your Operating System. On windows this is Internet Information Services(IIS), if you have a `C:\inetpub\wwwroot` folder on your computer, you should be able to access it's content using `http://localhost`
