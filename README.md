@@ -15,9 +15,9 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 
  * [Introduction](#introduction)
  * [Instructions](#instructions)
- * [Feedback](#feedback)
+ * [Feedback / support](#feedback)
  * [FAQ](#faq)
- * [Support](#support)
+ * [Configuration](#configuration)
  * [Customize the look and feel](#customize-the-look-and-feel)
  * [Developer guide](#developer-guide)
  * [Issues](#issues)
@@ -25,7 +25,6 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
  * [Licensing](#licensing)
 
 ## Introduction
-
 A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from a [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. The Journal's data are stored in a Web Application Item (this include the narrative content, reference to the webmap(s), pictures, videos and the settings).
 This repository provide the application source code for developers that wants to implement UI customization.
 See [FAQ](#deployment) for more details.
@@ -33,7 +32,6 @@ See [FAQ](#deployment) for more details.
 For more information about the Map Journal, including a gallery of examples and a step-by-step tutorial, please see the [Map Journal](http://storymaps.arcgis.com/en/app-list/map-journal/) page on the [Esri Story Maps website](http://storymaps.arcgis.com/).
 
 ## Instructions
-
 First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-journal/tutorial/).
 Once your story is ready, you have to find its ID in ArcGIS Online. The ID is a 32 characters strings that you will find in your browser bar when you are consulting your journal.
 
@@ -48,18 +46,46 @@ Enjoy!
 You can continue to use the builder in ArcGIS Online to modify your story.
 See [customize the look and feel section](#customize-the-look-and-feel) or [developer guide](#developer-guide) if you want to modify the app.
 
-## Feedback
-
+## Feedback / support
 We would love to hear from you!
 * [StoryMaps Website](http://storymaps.arcgis.com/)
 * [Let us know about your application](http://storymapsdev.arcgis.com/en/gallery/submission-form/)
+* [Story Maps forum on GeoNet](https://geonet.esri.com/community/gis/web-gis/storymaps/content)
 * [@EsriStoryMaps](http://twitter.com/EsriStoryMaps)
 * [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
 
+When you contact us, don't hesitate to include a link to your application to make it easier for us to understand what you are working on.
+
 ## FAQ
 
-### Deployment
+### Journal's checklist
+We recommand that you perform the following checks before sharing your Journal with your audience:
+ - Signout from ArcGIS Online and any service that you use to host your Journal's resources and make sure everything loads correctly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session.
+ - Try the application on different browser, screen resolution and mobile device. You can [emulate different device](http://mobiletest.me/) inside your browser.
 
+### Application compatibility
+Map Journal is supported on all major desktop browser (Internet Explorer version 9) as well as the major tablet and smartphone device.
+Map Journal authoring is supported on all major desktop browser (Internet Explorer version 10) and on tablet but not on smartphone.
+
+### Security
+
+#### Can I keep my Journal private?
+Yes, the regular ArcGIS Online security model applies. 
+By default your Journal is private, you have to share it manually. 
+
+When you share your Journal, it is your responsibility to make sure that all the resources of your Journal (webmaps, images, videos) are accessible to your audience.
+
+#### Who can edit my Journal?
+Only the Journal owner can edit it. It is possible for Administrator to take ownership of the Journal and so be able to edit it. Changing the ownership is the only way to collaborate to create a Journal without sharing the owner's credentials.
+
+#### Can I use private web map or layer?
+Yes. 
+
+When the Journal is hosted in ArcGIS Online or Portal for ArcGIS, unauthorized user will be redirected to ArcGIS Online sign-in page.
+
+When hosted on your web server, by default the authentication dialog will appear. Because of technical limitation on older browser we recommand that you [configure the application to use OAuth](https://developers.arcgis.com/authentication/user-javascript.html). If you prefer to not configure OAuth, for the authentication to work on some older browser you need to install a proxy server on your web server to make sure the login credentials can be pass securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
+
+### Deployment
 Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
 
 #### Can I use the template without ArcGIS Online or Portal for ArcGIS?
@@ -72,7 +98,7 @@ The Journal's data are stored in a Web Application Item in ArcGIS Online or Port
 The image and videos that you include in your Journal using the builder are not copied in ArcGIS Online. You have to make sure that these medias as well as the webmaps you are using are accessible to your audience without unneeded authentication.
 
 #### Can I deploy Map Journal on Portal for ArcGIS?
-Yes, just deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to first clear the folder. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see index.html). 
+Yes, we recommend that you deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to delete all of its content first. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see index.html). 
 
 
 Then you should configure Map Journal to use the JavaScript API deployed on your Portal and not the one in ArcGIS Online. This is optional but strongly recommended as some incompatibility may occur. To change the JS API, edit `index.html` and locate `pathJSAPI` around line 100.
@@ -88,11 +114,13 @@ No, for technical reason at this time the builder can only be used in ArcGIS Onl
 Let us know if you are interested, we can give you the technical details and help you modify the application to enable the builder.
 
 #### How to deploy the application on a webserver?
+If you are not familiar with webserver here is three solutions:
+ * Use a free hosting service like [Dropbox](https://www.dropbox.com), you may have to [configure Dropbox to enable webpage hosting](https://www.dropbox.com/enable_public_folder)
+ * On Windows or Mac OS, use a simple web server like [Mongoose](https://code.google.com/p/mongoose/)
+ * Use the web server that comes with your Operating System. On windows this is Internet Information Services(IIS), if you have a `C:\inetpub\wwwroot` folder on your computer, you should be able to access it's content using `http://localhost`
+
+## Configuration
 Coming soon.
-
-## Support
-
-Please check out [Story Maps space on GeoNet](https://geonet.esri.com/community/gis/web-gis/storymaps/content).
 
 ## Customize the look and feel
 
@@ -103,11 +131,9 @@ Coming soon.
 Coming soon.
 
 ## Issues
-
 Find a bug or want to request a new feature?  Please let us know by submitting an issue.
 
 ## Contributing
-
 Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing).
 
 ## Licensing
