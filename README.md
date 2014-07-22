@@ -35,7 +35,7 @@ For more information about the Map Journal, including a gallery of examples and 
 ## Instructions
 
 First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-journal/tutorial/).
-Once your story is ready, you have to find it's ID in ArcGIS Online. The ID is a 32 characters strings that you will find in your browser bar when consulting your journal.
+Once your story is ready, you have to find it's ID in ArcGIS Online. The ID is a 32 characters strings that you will find in your browser bar when you are consulting your journal.
 
 ![App ID](map-journal-help-application-id.png)
 
@@ -63,14 +63,16 @@ We would love to hear from you!
 Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
 
 #### Can I use the template without ArcGIS Online or Portal for ArcGIS?
-This is not a supported use case at that time. Please let us know if you are interested by another deployment scenario. 
-The application rely heavily on web map but you can modify it to support other scenario if you need.
+This is not a supported use case at that time. Please let us know if you are interested by that scenario. 
+Map Journal rely heavily on the Portal for ArcGIS API but it is doable to modify the application to support other scenario.
 
 #### Where is the data stored?
-Coming soon.
+The Journal's data are stored in a Web Application Item in ArcGIS Online or Portal for ArcGIS. This include the narrative content, reference to the webmap(s), reference to the pictures, videos, web page and the settings.
+
+The image and videos that you select using the 
 
 #### Can I deploy Map Journal on Portal for ArcGIS?
-Yes, just deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version of the application, make sure to first clear the folder. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see index.html). 
+Yes, just deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to first clear the folder. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see index.html). 
 
 
 Then you should configure Map Journal to use the Javascript API deployed on your Portal and not the one in ArcGIS Online. This is optional but strongly recommanded as some incompatibility may occur. To change the JS API, edit `index.html` and locate `pathJSAPI` around line 100.
