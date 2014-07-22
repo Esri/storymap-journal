@@ -59,8 +59,8 @@ When you contact us, don't hesitate to include a link to your application to mak
 ## FAQ
 
 ### Journal's checklist
-We recommand that you perform the following checks before sharing your Journal with your audience:
- - Signout from ArcGIS Online and any service that you use to host your Journal's resources and make sure everything loads correctly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session.
+We recommend that you perform the following checks before sharing your Journal with your audience:
+ - Sign-out from ArcGIS Online and any service that you use to host your Journal's resources and make sure everything loads correctly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session.
  - Try the application on different browser, screen resolution and mobile device. You can [emulate different device](http://mobiletest.me/) inside your browser.
 
 ### Application compatibility
@@ -75,7 +75,7 @@ By default your Journal is private, you can share it through Map Journal builder
 When you share your Journal, it is your responsibility to make sure that all the resources of your Journal (webmaps, images, videos) are accessible to your audience.
 
 #### Who can edit my Journal?
-A Journal can only be edited by it's owner (named account). It is possible for Organization Administrator to take or change the ownership of a Journal and so be able to edit it. In that case the original owner can't edit anymore the Journal. Changing the ownership is the only way to collaborate on a Journal creation without sharing the owner's credentials.
+A Journal can only be edited by its owner (the named account that initially created the Journal). Organization Administrator (does not apply for public account) can take or give to another user the ownership of a Journal you have created. In that case the original owner can't edit anymore the Journal. Changing the ownership is the only way to collaborate on a Journal creation without sharing the owner's credentials.
 
 #### Can I use private web map or layer?
 Yes. 
