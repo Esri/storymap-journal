@@ -26,7 +26,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 
 ## Introduction
 
-A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from an [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. The Journal's data are stored in a Web Application Item (this include the narrative content, reference to the webmap(s), pictures, videos and the settings).
+A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from a [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. The Journal's data are stored in a Web Application Item (this include the narrative content, reference to the webmap(s), pictures, videos and the settings).
 This repository provide the application source code for developers that wants to implement UI customization.
 See [FAQ](#deployment) for more details.
 
@@ -35,7 +35,7 @@ For more information about the Map Journal, including a gallery of examples and 
 ## Instructions
 
 First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-journal/tutorial/).
-Once your story is ready, you have to find it's ID in ArcGIS Online. The ID is a 32 characters strings that you will find in your browser bar when you are consulting your journal.
+Once your story is ready, you have to find its ID in ArcGIS Online. The ID is a 32 characters strings that you will find in your browser bar when you are consulting your journal.
 
 ![App ID](map-journal-help-application-id.png)
 
@@ -75,7 +75,7 @@ The image and videos that you select using the
 Yes, just deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to first clear the folder. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see index.html). 
 
 
-Then you should configure Map Journal to use the Javascript API deployed on your Portal and not the one in ArcGIS Online. This is optional but strongly recommanded as some incompatibility may occur. To change the JS API, edit `index.html` and locate `pathJSAPI` around line 100.
+Then you should configure Map Journal to use the JavaScript API deployed on your Portal and not the one in ArcGIS Online. This is optional but strongly recommended as some incompatibility may occur. To change the JS API, edit `index.html` and locate `pathJSAPI` around line 100.
 
 
 Also note that the web application gallery preview feature redirect to StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
@@ -84,8 +84,8 @@ Also note that the web application gallery preview feature redirect to StoryMaps
 Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file app/config.js.
 
 #### Can I use the builder without Portal for ArcGIS?
-No, for technical reason at this time the builder can only be use in ArcGIS Online or Portal for ArcGIS. 
-Let us know if you are interested, we can give you the reason and help you modify the code to enable it.
+No, for technical reason at this time the builder can only be used in ArcGIS Online or Portal for ArcGIS. 
+Let us know if you are interested, we can give you the technical details and help you modify the application to enable the builder.
 
 #### How to deploy the application on a webserver?
 Coming soon.
