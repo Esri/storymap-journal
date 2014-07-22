@@ -69,7 +69,7 @@ Map Journal rely heavily on the Portal for ArcGIS API but it is doable to modify
 #### Where is the data stored?
 The Journal's data are stored in a Web Application Item in ArcGIS Online or Portal for ArcGIS. This include the narrative content, reference to the webmap(s), reference to the pictures, videos, web page and the settings.
 
-The image and videos that you select using the 
+The image and videos that you include in your Journal using the builder are not copied in ArcGIS Online. You have to make sure that these medias as well as the webmaps you are using are accessible to your audience without unneeded authentication.
 
 #### Can I deploy Map Journal on Portal for ArcGIS?
 Yes, just deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to first clear the folder. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see index.html). 
