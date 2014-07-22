@@ -180,9 +180,9 @@ define(["lib-build/css!./MainView",
 						autoResize: false,
 						showAttribution: true,
 						infoWindow: popup,
-						extent: extent,
-						usePopupManager: true
+						extent: extent
 					},
+					usePopupManager: true,
 					ignorePopups: false,
 					bingMapsKey: commonConfig.bingMapsKey
 				}); 

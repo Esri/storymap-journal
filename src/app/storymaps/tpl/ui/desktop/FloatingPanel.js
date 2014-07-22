@@ -276,7 +276,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 
 				// if configuring the MAP
 				if ( container.find(".builder-mask").is(":visible") )
-					return;
+					return false;
 				
 				if (_swipeOnWheelReady) {
 					var slide = container.find(".swiper-slide.swiper-slide-active"),
@@ -312,6 +312,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 						slide.scrollTop(scrollTop - (30 * delta));
 					}
 				}
+				
+				return false;
 			}
 			
 			function delayScroll()

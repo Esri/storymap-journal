@@ -89,11 +89,11 @@
 }
 
 .esriPopup .titleButton.prev {
-	right: 55px;
+	right: 55px !important;
 }
 
 .esriPopup .titleButton.next {
-	right: 31px;
+	right: 31px !important;
 }
 
 .esriPopup .title {

@@ -128,7 +128,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			
 			if ( ! _mainView.init(this) )
 				return;
-						
+			
 			// Automatic login in development mode
 			if ( !isProd() && app.indexCfg.username && app.indexCfg.password) {
 				on(IdentityManager, 'dialog-create', function(){
