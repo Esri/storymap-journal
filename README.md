@@ -15,7 +15,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 
  * [Introduction](#introduction)
  * [Instructions](#instructions)
- * [Feedback / support](#feedback)
+ * [Feedback / support](#feedback--support)
  * [FAQ](#faq)
  * [Configuration](#configuration)
  * [Customize the look and feel](#customize-the-look-and-feel)
