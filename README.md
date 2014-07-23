@@ -145,40 +145,30 @@ The easiest way to find the id or path to the DOM element that you want to custo
 
 Here are some customization that can achieved through a `style` tag (look for `/* CUSTOM CSS RULES */` in index.html):
 
-      ...
-      <body class="claro">
-         <style>
-            /* CUSTOM CSS RULES */
-			#element {
-               /* changes */
-            }
-         </style>
-      <div id="header">
-      ...
-tml), [Firefox](https://getfirebug.com/).
-
-Here are some customization that can achieved through a `style` tag (look for `/* CUSTOM CSS RULES */` in index.html):
-
-      ...
-      <body class="claro">
-         <style>
-            /* CUSTOM CSS RULES */
-			#element {
-               /* changes */
-            }
-         </style>
-      ...
+```
+...
+<body class="claro">
+  <style>
+    /* CUSTOM CSS RULES */
+    #element {
+      /* changes */
+    }
+  </style>
+  ...
+```
 
 #### Use an image as the background of the Side or Floating header
 
-   .sectionPanel .header {
-			  background: url('http://www.esri.com/~/media/banner-map1.jpg');
-			}
-			
-			.sectionPanel .appTitle {
-		   background: url('http://www.esri.com/~/media/banner-map1.jpg');
-				 background-position: 0 -50px;
-			}
+```
+.sectionPanel .header {
+  background: url('http://www.esri.com/~/media/banner-map1.jpg');
+}
+
+.sectionPanel .appTitle {
+  background: url('http://www.esri.com/~/media/banner-map1.jpg');
+  background-position: 0 -50px;
+}
+```
 
 ## Developer guide
 
