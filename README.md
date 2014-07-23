@@ -58,12 +58,12 @@ When you contact us, don't hesitate to include a link to your application to mak
 
 ## FAQ
 
-### Journal's checklist
+### What checks should are perform before publishing a Journal?
 We recommend that you perform the following checks before sharing your Journal with your audience:
  - Sign-out from ArcGIS Online and any service that you use to host your Journal's resources and make sure everything loads correctly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session.
  - Try the application on different browser, screen resolution and mobile device. You can [emulate different device](http://mobiletest.me/) inside your browser.
 
-### Application compatibility
+### What are the supported browsers?
 Map Journal is supported on all major desktop browser (Internet Explorer version 9) as well as the major tablet and smartphone device.
 Map Journal authoring is supported on all major desktop browser (Internet Explorer version 10) and on tablet but not on smartphone.
 
@@ -119,11 +119,21 @@ If you are not familiar with web servers here is three solutions:
 
 
 ## Configuration
-Coming soon.
+In adition to the configuration offered by the builder, the files `app/config.js` and `app/commonConfig.js` provide various settings that are documented there.
 
 ## Customize the look and feel
 
-Coming soon.
+### Custom color theme
+As we don't offer yet the ability to create a custom theme through the builder, customizing the various colors of the application require to download and configure the application through `app/config.js`. Edit that file, locate the `LAYOUT` property and edit the theme values that correspond to the theme you have chosen in the builder. 
+
+For exemple if you are using a Side Panel layout and have kept the default theme, edit the first line with the desired colors.
+
+```
+themes: [
+  {name: "side-default-1", dotNav: "#777777", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", esriLogo: "black"},
+  ...
+  ]
+```
 
 ## Developer guide
 
