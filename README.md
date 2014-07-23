@@ -38,7 +38,7 @@ Once your story is ready, you have to find its ID in ArcGIS Online. The ID is a 
 ![App ID](map-journal-help-application-id.png)
 
 1. [Download the application](http://links.esri.com/storymaps/map_journal_template_zip)
-2. Deploy the application on your webserver. See [FAQ](#how-to-deploy-the-application-on-a-webserver) for details
+2. Deploy the application on your webserver. See [FAQ](#how-to-deploy-the-application-on-a-web-server) for details
 3. Edit index.html, find look for the configuration section on line 38 and paste your application ID
 4. Navigate to index.html (e.g., `http://127.0.0.1/MapJournal/index.html`)
 
@@ -114,8 +114,9 @@ Let us know if you are interested, we can give you the technical details and hel
 #### How to deploy the application on a web server?
 If you are not familiar with web servers here is three solutions:
  * Use a free hosting service like [Dropbox](https://www.dropbox.com), you may have to [configure Dropbox to enable webpage hosting](https://www.dropbox.com/enable_public_folder)
- * On Windows or Mac OS, use a simple web server like [Mongoose](https://code.google.com/p/mongoose/)
- * Use the web server that comes with your Operating System. On windows this is Internet Information Services(IIS), if you have a `C:\inetpub\wwwroot` folder on your computer, you should be able to access it's content using `http://localhost`
+ * Use the web server that comes with your server Operating System. On Windows this is Internet Information Services(IIS), if you have a `C:\inetpub\wwwroot` folder on your computer, you should be able to access it's content using `http://localhost`
+ * On Windows or Mac OS, use a simple web server like [Mongoose](https://code.google.com/p/mongoose/) (not recommanded for production)
+
 
 ## Configuration
 Coming soon.
