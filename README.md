@@ -64,8 +64,8 @@ We recommend that you perform the following checks before sharing your Journal w
  - Try the application on different browser, screen resolution and mobile device. You can [emulate different device](http://mobiletest.me/) inside your browser.
 
 ### What are the supported browsers?
-Map Journal is supported on Internet Explorer 9, Chrome, Firefox, Safari and the most recent tablet and smartphone devices.
-Map Journal authoring is supported on Internet Explorer 10, on the most recent tablet but not on smartphone.
+Map Journal is supported on Internet Explorer 9, Chrome, Firefox, Safari and the most recent tablets and smartphones devices.
+Map Journal authoring is supported on Internet Explorer 10, on the most recent tablets but not on smartphones.
 
 We actively test the application in all major browsers but if you experience some difficulties especially with the builder, we recommend that you use Chrome.
 
@@ -136,6 +136,49 @@ themes: [
   ...
   ]
 ```
+
+### Other customization
+Most of the look and feel customization can be done using the user download and including the css/html override directly into index.html. 
+If you want to change the behavior of one functionality or want to add new one, you will need to read the [developer guide](#developer-guide).
+
+The easiest way to find the id or path to the DOM element that you want to customize is to use your browser developer tool, read documentation for [Chrome](https://developers.google.com/chrome-developer-tools/), [Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Introduction/Introduction.html), [Firefox](https://getfirebug.com/).
+
+Here are some customization that can achieved through a `style` tag (look for `/* CUSTOM CSS RULES */` in index.html):
+
+      ...
+      <body class="claro">
+         <style>
+            /* CUSTOM CSS RULES */
+			#element {
+               /* changes */
+            }
+         </style>
+      <div id="header">
+      ...
+tml), [Firefox](https://getfirebug.com/).
+
+Here are some customization that can achieved through a `style` tag (look for `/* CUSTOM CSS RULES */` in index.html):
+
+      ...
+      <body class="claro">
+         <style>
+            /* CUSTOM CSS RULES */
+			#element {
+               /* changes */
+            }
+         </style>
+      ...
+
+#### Use an image as the background of the Side or Floating header
+
+   .sectionPanel .header {
+			  background: url('http://www.esri.com/~/media/banner-map1.jpg');
+			}
+			
+			.sectionPanel .appTitle {
+		   background: url('http://www.esri.com/~/media/banner-map1.jpg');
+				 background-position: 0 -50px;
+			}
 
 ## Developer guide
 
