@@ -64,8 +64,10 @@ We recommend that you perform the following checks before sharing your Journal w
  - Try the application on different browser, screen resolution and mobile device. You can [emulate different device](http://mobiletest.me/) inside your browser.
 
 ### What are the supported browsers?
-Map Journal is supported on all major desktop browser (Internet Explorer version 9) as well as the major tablet and smartphone device.
-Map Journal authoring is supported on all major desktop browser (Internet Explorer version 10) and on tablet but not on smartphone.
+Map Journal is supported on Internet Explorer 9, Chrome, Firefox, Safari and the most recent tablet and smartphone devices.
+Map Journal authoring is supported on Internet Explorer 10, on the most recent tablet but not on smartphone.
+
+We actively test the application in all major browsers but if you experience some difficulties especially with the builder, we recommend that you use Chrome.
 
 ### Security
 
