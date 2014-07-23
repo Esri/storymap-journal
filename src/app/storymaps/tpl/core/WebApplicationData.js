@@ -246,7 +246,23 @@ define(["dojo/_base/lang"],
 			},
 			getColors: function()
 			{
-				return this.getTheme().colors || this.getLayoutProperties().themes[0];
+				var cfgColors = this.getTheme().colors;
+				
+				// If colors are defined, check if that theme is present in the config file
+				// If present reuse the values from config, else use the values from the item
+				// This allow an user to override his theme from the config file as well as administrator update
+				if ( cfgColors && cfgColors.name ) {
+					var matchedTheme = $.grep(this.getLayoutProperties().themes, function(theme) {
+						return theme.name == cfgColors.name;
+					});
+					
+					if ( matchedTheme && matchedTheme.length )
+						return matchedTheme[0];
+					else
+						return cfgColors;
+				}
+				else
+					return  this.getLayoutProperties().themes[0];
 			},
 			
 			/*
