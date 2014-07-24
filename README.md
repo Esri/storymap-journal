@@ -99,13 +99,13 @@ The image and videos that you include in your Journal using the builder are not 
 #### Can I deploy Map Journal on Portal for ArcGIS?
 Yes, Map Journal is included with Portal for ArcGIS starting at version 10.3.
 
-If you are using a previous version of Portal, you will have deploy [Map Journal](http://links.esri.com/storymaps/map_journal_template_zip) in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to first delete all of its content. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see the configuration section in index.html). 
+If you are using a previous version of Portal, you will have to deploy [Map Journal](http://links.esri.com/storymaps/map_journal_template_zip) in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to first delete all of its content. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see the configuration section in index.html). 
 
 
-Then you should configure Map Journal to use the JavaScript API deployed on your Portal and not the one in ArcGIS Online. This is optional but strongly recommended as some incompatibility may occur. To change the JS API, edit `index.html` and locate `pathJSAPI` around line 100.
+Then you should configure Map Journal to use the JavaScript API deployed on your Portal and not the one hosted by ArcGIS Online. This is optional but strongly recommended as some incompatibility may occur. To change the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 100.
 
 
-Also note that the web application gallery preview feature redirects to StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
+Also note that the web application gallery preview feature redirects to the StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
 
 #### Can the template be used offline?
 Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file `app/config.js`.
@@ -139,7 +139,10 @@ themes: [
 ```
 
 ### Other customization
-Most of the look and feel customization can be done using the [user download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html overrides directly into `index.html`. The application Javascript and CSS are minified, we don't recommand that you directely edit those files. In addition to beeing hard to edit, this will make application update complex for you.
+Most of the look and feel customization can be done using the [user download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html overrides directly into `index.html`. 
+
+As the application Javascript and CSS are minified, we don't recommand that you directely edit those files (`app-viewer-min.css`). In addition to beeing hard to edit, this will make application update complex for you.
+
 If you want to change the behavior of one functionality or want to add new one, follow the [developer guide](#developer-guide) below.
 
 The easiest way to find the id or path of a DOM element that you want to customize is to use your browser developer tool, read documentation for [Chrome](https://developers.google.com/chrome-developer-tools/), [Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Introduction/Introduction.html), [Firefox](https://getfirebug.com/).
@@ -166,7 +169,7 @@ Here is some customization examples that can achieved through the `style` tag al
 ```
 
 ## Developer guide
-This developer guide is intended for developers that wants to modify behavior or add new functionalities to the Map Journal application. 
+This developer guide is intended for developers that wants to modify the behavior or add new functionalities to the Map Journal application. 
 It requires knowledge of HTML, Javascript and CSS languages.
 If you only need to customize look and feel, you should be able to do so using the [customize section above](#customize-the-look-and-feel).
 
@@ -188,7 +191,7 @@ require(["dojo/topic"], function(topic) {
   });
 
   // When a main stage action that load a new media or reconfigure the current media is performed
-  // Note that this even is not fired for the "Locate and address or a place action" (only for the one that reconfigure the Map
+  // Note that this even is not fired for the "Locate and address or a place action"
   topic.subscribe("story-perform-action-media", function(){
     console.log("story-perform-action-media");
   });
@@ -243,17 +246,17 @@ The application is structured as this:
 | Path          			                  	| Contains																						|
 | ---------------------------------------------	|  -------------------------------------------------------------------------------------------- |
 | Gruntfile.js									| Build configuration																			|
-| src/											| Main source code folder with index.html and the Eclipse project file							|
+| src/											| Main source code folder with index.html and the Eclipse project configuration							|
 | src/app/										| Javascript and CSS source code 																|
 | src/app/config.js			            		| App configuration file (loaded at execution time) 											|
 | src/app/commonConfig.js			            | More configuration (only used when deployed outside of ArcGIS Online and Portal for ArcGIS)	|
-| src/app/storymaps/common/						| Modules common across storymaps templates (main module is Core.js)							|
+| **src/app/storymaps/common/**						| Modules common across storymaps templates (main module is Core.js)							|
 | src/app/storymaps/common/builder/				| Builder modules (main module is Builder.js)													|
 | src/app/storymaps/common/mapcontrols/			| Map UI components (Overview, Legend)															|
 | src/app/storymaps/common/ui/					| UI components																					|
 | src/app/storymaps/common/utils/				| Utils, connector,...																			|
 | src/app/storymaps/common/_resources			| Static resources																				|
-| src/app/storymaps/tpl/						| Map Journal modules (build configuration files in the root)									|
+| **src/app/storymaps/tpl/**						| Map Journal modules (build configuration files in the root)									|
 | src/app/storymaps/tpl/builder/				| Builder modules (main module is BuilderView.js)												|
 | src/app/storymaps/tpl/core/					| Core modules (main module is MainView.js) 													|
 | src/app/storymaps/tpl/ui/						| UI components of the viewer grouped by target device											|
