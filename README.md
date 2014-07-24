@@ -154,7 +154,7 @@ Here are some customization that can achieved through a `style` tag (look for `/
       /* changes */
     }
   </style>
-  ...
+...
 ```
 
 #### Use an image as the background of the Side or Floating header
@@ -171,6 +171,43 @@ Here are some customization that can achieved through a `style` tag (look for `/
 ```
 
 ## Developer guide
+This developer guide is intended to developer that wants to modify behavior or add new functionalities to the Map Journal application. If you only need to customize look and feel, you should be able to do so using the [user download](http://links.esri.com/storymaps/map_journal_template_zip).
+It will require knowledge of HTML, Javascript and CSS languages.
+
+### Developer extension events
+The template fire some events to allow customization with lose integration. This mean that you may not need to understand the internal of the application to extend it.
+
+Coming soon.
+
+### Environment setup
+
+Clone the repository or download a [copy of the repository as a zip file](https://github.com/Esri/map-journal-storytelling-template-js/archive/master.zip).
+
+To build a production version of the application from the source code, you first need to install [Node.js](http://nodejs.org/).
+
+Then initialize the environment by running the following commands in the MapJournal folder:
+ * `npm install`
+ * `npm install –g grunt-cli`
+
+This will create a new `node-modules` folder in your project root with all tools to build the project. If you have trouble running the second command, [see this documentation on how to install grunt-cli locally](https://github.com/gruntjs/grunt-cli#installing-grunt-cli-locally).
+
+### How to use the application from the source code
+ * Make accessible the MapJournal folder on a web server. You can use any server or run the one provided by running `grunt server`, this will startup the server on port `8080`
+ * If using a Portal for ArcGIS instance configure the sharing url `app/config.js` (last properties)
+ * Configure index.html or use the URL parameter `appid` to specify the item to be loaded
+
+### How to build application from the source code
+  * Open a terminal and navigate to the MapJournal folder 
+  * Run the following command: `grunt`
+
+The deploy folder now contains the built application that you can deploy to your web server.
+
+### Issues building the application
+
+The build script perform code validation through [JSHint](http://www.jshint.com/), you can disable that by editing Gruntfile.js and look for the following comments `/* Comment out to disable code linting */`.
+
+### Design
+Map Tour relies on AMD and Dojo loader [AMD](http://help.arcgis.com/en/webapi/javascript/arcgis/jshelp/#inside_dojo_amd) for application structure.
 
 Coming soon.
 
