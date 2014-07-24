@@ -110,9 +110,8 @@ Also note that the web application gallery preview feature redirects to the Stor
 #### Can the template be used offline?
 Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file `app/config.js`.
 
-#### Can I use the builder without Portal for ArcGIS?
-No, for technical reason at this time the builder can only be used in ArcGIS Online or Portal for ArcGIS. 
-Let us know if you are interested, we can give you the technical details and help you modify the application to enable the builder.
+#### Can I use the builder with the downloadable?
+Yes, when the template is configured with an application ID, adding the URL parameter 'edit' will open the builder. You will be prompted for user authentication through the Identity Manager.
 
 #### How to deploy the application on a web server?
 If you are not familiar with web servers here is three solutions:
