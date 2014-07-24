@@ -57,9 +57,9 @@ When you contact us, don't hesitate to include a link to your application to mak
 
 ## FAQ
 
-### What checks should are perform before publishing a Journal?
+### What should I check before publishing a Journal?
 We recommend that you perform the following checks before sharing your Journal with your audience:
- - Check that allyour Journal content is shared with your audience (webmaps, medias, ...). Typically you can use another computer than the one you have used to build your story to make sure everything is loading properly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session or you can just sign-out from ArcGIS Online and any service that you have used to host your Journal's resources. 
+ - Check that all your Journal's content is shared with your audience (webmaps, medias, ...). Typically you can use another computer than the one you have used to build your story to make sure everything is loading properly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session or you can just sign-out from ArcGIS Online and any service that you have used to host your Journal's resources. 
  - Try the application on different browsers, screen resolutions and mobile devices. You can [emulate mobile  devices](http://mobiletest.me/) inside your desktop browser.
 
 ### What are the supported browsers?
@@ -82,7 +82,7 @@ A Journal can only be edited by its owner (the named account that initially crea
 Yes. 
 When the Journal is hosted in ArcGIS Online or Portal for ArcGIS, unauthorized user will be redirected to ArcGIS Online sign-in page.
 
-When hosted on your web server, by default the authentication dialog will appear. Because of technical limitation on older browser we recommand that you [configure the application to use OAuth](https://developers.arcgis.com/authentication/user-javascript.html). If you prefer to not configure OAuth, for the authentication to work on some older browser  (Internet Explorer 9 and below) you need to install a proxy server on your web server to make sure the login credentials can be pass securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
+When hosted on your web server, by default the authentication dialog will appear. Because of technical limitation on older browser we recommend that you [configure the application to use OAuth](https://developers.arcgis.com/authentication/user-javascript.html). If you prefer to not configure OAuth, for the authentication to work on some older browser  (Internet Explorer 9 and below) you need to install a proxy server on your web server to make sure the login credentials can be pass securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
 
 ### Deployment
 Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
@@ -94,7 +94,7 @@ Map Journal rely heavily on the Portal for ArcGIS API but it is doable to modify
 #### Where is the data stored?
 The Journal's data are stored in a Web Application Item in ArcGIS Online or Portal for ArcGIS. This include the narrative content, reference to the webmap(s), reference to picture(s), video(s), web page(s) and the settings.
 
-The image and videos that you include in your Journal using the builder are not copied in ArcGIS Online. You have to make sure that these medias as well as the webmaps you are using are accessible to your audience without unneeded authentication.
+The image and videos that you include in your Journal using the builder are not copied in ArcGIS Online. You have to make sure that those medias as well as the webmaps you are using are accessible to your audience without unneeded authentication.
 
 #### Can I deploy Map Journal on Portal for ArcGIS?
 Yes, we recommend that you deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to delete all of its content first. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see index.html). 
@@ -115,19 +115,19 @@ Let us know if you are interested, we can give you the technical details and hel
 #### How to deploy the application on a web server?
 If you are not familiar with web servers here is three solutions:
  * Use a free hosting service like [Dropbox](https://www.dropbox.com), you may have to [configure Dropbox to enable webpage hosting](https://www.dropbox.com/enable_public_folder)
- * Use the web server that comes with your server Operating System. On Windows this is Internet Information Services(IIS), if you have a `C:\inetpub\wwwroot` folder on your computer, you should be able to access it's content using `http://localhost`
- * On Windows or Mac OS, use a simple web server like [Mongoose](https://code.google.com/p/mongoose/) (not recommanded for production)
+ * Use the web server that comes with your server Operating System. On Windows this is Internet Information Services (IIS), if you have a `C:\inetpub\wwwroot` folder on your computer, you should be able to access it's content using `http://localhost`
+ * On Windows or Mac OS, use a simple web server like [Mongoose](https://code.google.com/p/mongoose/) (not recommended for production)
 
 
 ## Configuration
-In adition to the configuration offered by the builder, the files `app/config.js` and `app/commonConfig.js` provide various settings that are documented there.
+In addition to the configuration offered by the builder, the files `app/config.js` and `app/commonConfig.js` provide various settings that are documented there.
 
 ## Customize the look and feel
 
 ### Custom color theme
 As we don't offer yet the ability to create a custom theme through the builder, customizing the various colors of the application require to download and configure the application through `app/config.js`. Edit that file, locate the `LAYOUT` property and edit the theme values that correspond to the theme you have chosen in the builder. 
 
-For exemple if you are using a Side Panel layout and have kept the default theme, edit the first line with the desired colors.
+For example if you are using a Side Panel layout and have kept the default theme, edit the first line with the desired colors.
 
 ```
 themes: [
@@ -156,7 +156,7 @@ Here are some customization that can achieved through a `style` tag (look for `/
 ...
 ```
 
-#### Use an image as the background of the Side or Floating header
+#### Use an image as the background of the Side or Floating panel header
 
 ```
 .sectionPanel .header {
@@ -200,7 +200,7 @@ require(["dojo/topic"], function(topic) {
 ```
 
 ### Developer helper
-In addition of the events described above, the story data, configuration and useful helpers function can be called  through the global variable `app`.
+In addition of the events described above, the story data, configuration and useful helpers function can be called through the global variable `app`.
 
 ```
 console.log("Section", app.data.getCurrentSectionIndex(), "/", app.data.getStoryLength());
