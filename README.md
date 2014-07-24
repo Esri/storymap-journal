@@ -174,10 +174,43 @@ This developer guide is intended to developer that wants to modify behavior or a
 It will require knowledge of HTML, Javascript and CSS languages.
 If you only need to customize look and feel, you should be able to do so using the [user download](http://links.esri.com/storymaps/map_journal_template_zip).
 
-### Developer extension events
-The template fire some events to allow customization with lose integration. This mean that you may not need to understand the internal of the application to extend it.
+### Application life cycle
+The application fire three events to allow customization with lose integration. This mean that you may not need to understand much of the application internals to extend it.
 
-Coming soon.
+To try those events, add that code at the far end of index.html after `Core.init(new MainView());`.
+
+```
+require(["dojo/topic"], function(topic) {
+  // The application is ready
+  topic.subscribe("tpl-ready", function(){
+    console.log("tpl-ready");
+   });
+
+   // After a section is loaded (for maps, this is after the map is loaded and start to render)
+   topic.subscribe("story-loaded-section", function(index){
+     console.log("story-loaded-section", index);
+   });
+
+  // When a main stage action that load a new media or reconfigure the current media is performed
+		// Note that this even is not fired for the "Locate and address or a place action" (only for the one that reconfigure the Map
+  topic.subscribe("story-perform-action-media", function(){
+    console.log("story-perform-action-media");
+  });
+});
+```
+
+### Developer helper
+In addition of the events described above, the story data, configuration and useful helpers function can be called  through the global variable `app`.
+
+```
+console.log("Section", app.data.getCurrentSectionIndex(), "/", app.data.getStoryLength());
+console.log("Current map", app.map);
+console.log("IDs of all the webmaps used in the story", app.data.getWebmaps());
+console.log("Current section's data", app.data.getCurrentSection());
+console.log("All sections data", app.data.getStorySections());
+console.log("Story layout configuration", app.data.getWebAppData().get().values.settings.layoutOptions);
+console.log("Static ayout configuration values", app.data.getCurrentLayoutStaticConfig());
+```
 
 ### Environment setup
 
