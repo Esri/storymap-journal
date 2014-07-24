@@ -76,37 +76,39 @@ By default your Journal is private, you can share it through Map Journal builder
 When you share your Journal, it is your responsibility to make sure that all the resources of your Journal (webmaps, images, videos) are accessible to your audience.
 
 #### Who can edit my Journal?
-A Journal can only be edited by its owner (the named account that initially created the Journal). Organization Administrator (does not apply for public account) can take or give to another user the ownership of a Journal you have created. In that case the original owner can't edit anymore the Journal. Changing the ownership is the only way to collaborate on a Journal creation without sharing the owner's credentials.
+A Journal can only be edited by its owner (the named account that initially created the Journal). Organization Administrator (does not apply for public account) can take or give the Journal's ownership to another user. In that case you won't anymore be able to edit the Journal. Changing the ownership is the only way to collaborate on a Journal creation without sharing the owner's credentials.
 
 #### Can I use private web map or layer?
 Yes. 
-When the Journal is hosted in ArcGIS Online or Portal for ArcGIS, unauthorized user will be redirected to ArcGIS Online sign-in page.
+When the Journal is hosted in ArcGIS Online or Portal for ArcGIS, unauthorized users will be redirected to ArcGIS Online sign-in page.
 
-When hosted on your web server, by default the authentication dialog will appear. Because of technical limitation on older browser we recommend that you [configure the application to use OAuth](https://developers.arcgis.com/authentication/user-javascript.html). If you prefer to not configure OAuth, for the authentication to work on some older browser  (Internet Explorer 9 and below) you need to install a proxy server on your web server to make sure the login credentials can be pass securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
+When hosted on your web server, by default the authentication dialog will appear. Because of a technical limitation on older browser we recommend that you [configure the application to use OAuth](https://developers.arcgis.com/authentication/user-javascript.html). If you prefer to not configure OAuth, for the authentication to work on some older browser  (Internet Explorer 9 and below) you need to install a proxy server on your web server to make sure the login credentials can be passed securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
 
 ### Deployment
 Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
 
 #### Can I use the template without ArcGIS Online or Portal for ArcGIS?
-This is not a supported use case at that time. Please let us know if you are interested by that scenario. 
-Map Journal rely heavily on the Portal for ArcGIS API but it is doable to modify the application to support other scenario.
+This is not a supported use case at that time. Please let us know if you are interested by such a scenario. 
+Map Journal rely heavily on the Portal for ArcGIS API but it is doable to modify the application to support other scenarios.
 
 #### Where is the data stored?
 The Journal's data are stored in a Web Application Item in ArcGIS Online or Portal for ArcGIS. This include the narrative content, reference to the webmap(s), reference to picture(s), video(s), web page(s) and the settings.
 
-The image and videos that you include in your Journal using the builder are not copied in ArcGIS Online. You have to make sure that those medias as well as the webmaps you are using are accessible to your audience without unneeded authentication.
+The image and videos that you include in your Journal using the builder are not copied in ArcGIS Online. You have to make sure that those medias as well as the webmaps you are using are and will remain accessible to your audience.
 
 #### Can I deploy Map Journal on Portal for ArcGIS?
-Yes, we recommend that you deploy the application in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to delete all of its content first. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see index.html). 
+Yes, Map Journal is included with Portal for ArcGIS starting at version 10.3.
+
+If you are using a previous version of Portal, you will have deploy [Map Journal](http://links.esri.com/storymaps/map_journal_template_zip) in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to first delete all of its content. Then refer your Portal documentation for instructions on publishing a new web application item and adding it to the web application gallery. If you choose to deploy the template in another folder, some configuration will be required (see the configuration section in index.html). 
 
 
 Then you should configure Map Journal to use the JavaScript API deployed on your Portal and not the one in ArcGIS Online. This is optional but strongly recommended as some incompatibility may occur. To change the JS API, edit `index.html` and locate `pathJSAPI` around line 100.
 
 
-Also note that the web application gallery preview feature redirect to StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
+Also note that the web application gallery preview feature redirects to StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
 
 #### Can the template be used offline?
-Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file app/config.js.
+Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file `app/config.js`.
 
 #### Can I use the builder without Portal for ArcGIS?
 No, for technical reason at this time the builder can only be used in ArcGIS Online or Portal for ArcGIS. 
@@ -120,14 +122,14 @@ If you are not familiar with web servers here is three solutions:
 
 
 ## Configuration
-In addition to the configuration offered by the builder, the files `app/config.js` and `app/commonConfig.js` provide various settings that are documented there.
+In addition to the configuration offered by the builder, the files `app/config.js` and `app/commonConfig.js` provide various settings. Documentation is provided in those files.
 
 ## Customize the look and feel
 
 ### Custom color theme
-As we don't offer yet the ability to create a custom theme through the builder, customizing the various colors of the application require to download and configure the application through `app/config.js`. Edit that file, locate the `LAYOUT` property and edit the theme values that correspond to the theme you have chosen in the builder. 
+As Map Journal doesn't yet offer the ability to create a custom theme through the builder, customizing the various colors of the application require to download and configure them through `app/config.js`.
 
-For example if you are using a Side Panel layout and have kept the default theme, edit the first line with the desired colors.
+For example if you are using a Side Panel layout and have kept the default theme, open `app/config.js`, locate the `LAYOUT` property and edit the following line with the desired colors.
 
 ```
 themes: [
@@ -137,62 +139,56 @@ themes: [
 ```
 
 ### Other customization
-Most of the look and feel customization can be done using the [user download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html override directly into index.html. 
-If you want to change the behavior of one functionality or want to add new one, you will need to read the [developer guide](#developer-guide).
+Most of the look and feel customization can be done using the [user download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html overrides directly into `index.html`. The application Javascript and CSS are minified, we don't recommand that you directely edit those files. In addition to beeing hard to edit, this will make application update complex for you.
+If you want to change the behavior of one functionality or want to add new one, follow the [developer guide](#developer-guide) below.
 
-The easiest way to find the id or path to the DOM element that you want to customize is to use your browser developer tool, read documentation for [Chrome](https://developers.google.com/chrome-developer-tools/), [Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Introduction/Introduction.html), [Firefox](https://getfirebug.com/).
+The easiest way to find the id or path of a DOM element that you want to customize is to use your browser developer tool, read documentation for [Chrome](https://developers.google.com/chrome-developer-tools/), [Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Introduction/Introduction.html), [Firefox](https://getfirebug.com/).
 
-Here are some customization that can achieved through a `style` tag (look for `/* CUSTOM CSS RULES */` in index.html):
+Here is some customization examples that can achieved through the `style` tag already present for you in `index.html` (search for `/* CUSTOM CSS RULES */`):
+
+#### Use an image as the background of the Side or Floating panel header
 
 ```
 ...
 <body class="claro">
   <style>
     /* CUSTOM CSS RULES */
-    #element {
-      /* changes */
+    .sectionPanel .header {
+      background: url('http://www.esri.com/~/media/banner-map1.jpg');
+    }
+
+    .sectionPanel .appTitle {
+      background: url('http://www.esri.com/~/media/banner-map1.jpg');
+      background-position: 0 -50px;
     }
   </style>
 ...
 ```
 
-#### Use an image as the background of the Side or Floating panel header
-
-```
-.sectionPanel .header {
-  background: url('http://www.esri.com/~/media/banner-map1.jpg');
-}
-
-.sectionPanel .appTitle {
-  background: url('http://www.esri.com/~/media/banner-map1.jpg');
-  background-position: 0 -50px;
-}
-```
-
 ## Developer guide
-This developer guide is intended to developer that wants to modify behavior or add new functionalities to the Map Journal application. 
-It will require knowledge of HTML, Javascript and CSS languages.
-If you only need to customize look and feel, you should be able to do so using the [user download](http://links.esri.com/storymaps/map_journal_template_zip).
+This developer guide is intended for developers that wants to modify behavior or add new functionalities to the Map Journal application. 
+It requires knowledge of HTML, Javascript and CSS languages.
+If you only need to customize look and feel, you should be able to do so using the [customize section above](#customize-the-look-and-feel).
 
 ### Application life cycle
-The application fire three events to allow customization with lose integration. This mean that you may not need to understand much of the application internals to extend it.
+Map Journal fires three events that allow customization with lose integration. This mean that you may not need to understand much of the application internals to extend it.
 
-To try those events, add that code at the far end of index.html after `Core.init(new MainView());`.
+To try those events, add the following code at the far end of index.html after `Core.init(new MainView());`.
 
 ```
 require(["dojo/topic"], function(topic) {
   // The application is ready
   topic.subscribe("tpl-ready", function(){
     console.log("tpl-ready");
-   });
+  });
 
-   // After a section is loaded (for maps, this is after the map is loaded and start to render)
-   topic.subscribe("story-loaded-section", function(index){
-     console.log("story-loaded-section", index);
-   });
+  // After a section is loaded (for maps, this is after the map is loaded and start to render)
+  topic.subscribe("story-loaded-section", function(index){
+    console.log("story-loaded-section", index);
+  });
 
   // When a main stage action that load a new media or reconfigure the current media is performed
-		// Note that this even is not fired for the "Locate and address or a place action" (only for the one that reconfigure the Map
+  // Note that this even is not fired for the "Locate and address or a place action" (only for the one that reconfigure the Map
   topic.subscribe("story-perform-action-media", function(){
     console.log("story-perform-action-media");
   });
@@ -200,7 +196,7 @@ require(["dojo/topic"], function(topic) {
 ```
 
 ### Developer helper
-In addition of the events described above, the story data, configuration and useful helpers function can be called through the global variable `app`.
+In addition of the events described above, the story data, configuration and useful helpers functions can be accessed through the global variable `app`.
 
 ```
 console.log("Section", app.data.getCurrentSectionIndex(), "/", app.data.getStoryLength());
@@ -222,7 +218,7 @@ Then initialize the environment by running the following commands **in the MapJo
  * `npm install`
  * `npm install –g grunt-cli`
 
-This will create a new `node-modules` folder in your project root with all tools to build the project. If you have trouble running the second command, [see this documentation on how to install grunt-cli locally](https://github.com/gruntjs/grunt-cli#installing-grunt-cli-locally).
+This will create a new `node-modules` folder in your project root with all the tools required to build the application. If you have trouble running the second command, [see this documentation on how to install grunt-cli locally](https://github.com/gruntjs/grunt-cli#installing-grunt-cli-locally).
 
 ### How to use the application from the source code
  * Make accessible the MapJournal folder on a web server. Use your favorite server or run one with `grunt server`, this will start a server on port `8080`
@@ -271,6 +267,17 @@ The main dependencies are:
  * [Bootstrap](http://twitter.github.com/bootstrap/)
  * [CKEditor](http://ckeditor.com/)
  * [iDangero.us Swiper](http://www.idangero.us/sliders/swiper/)
+
+The application Javascript and CSS are minified into four files:
+
+| File			|										|
+| --------------------- | ----------------------------------------------------------------------------- |
+| app/viewer-min.css	| Compressed CSS loaded when accessing the Map Journal as a viewer		|
+| app/viewer-min.js	| Compressed Javascript loaded when accessing the Map Journal as a viewer	|
+| app/builder-min.css	| Compressed CSS loaded when accessing the Map Journal as an author		|
+| app/builder-min.js	| Compressed Javascript loaded when accessing the Map Journal as an author	|
+
+Depending on the URL parameters, index.html will load the corresponding files.
 
 ## Issues
 Find a bug or want to request a new feature?  Please let us know by submitting an issue.
