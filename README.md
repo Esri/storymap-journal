@@ -26,8 +26,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 
 ## Introduction
 A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from a [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. The Journal's data are stored in a Web Application Item (this include the narrative content, reference to the webmap(s), pictures, videos and the settings).
-This repository provide the application source code for developers that wants to implement UI customization.
-See [FAQ](#deployment) for more details.
+This repository provide the application source code for developers that wants to customize Map Journal.
 
 For more information about the Map Journal, including a gallery of examples and a step-by-step tutorial, please see the [Map Journal](http://storymaps.arcgis.com/en/app-list/map-journal/) page on the [Esri Story Maps website](http://storymaps.arcgis.com/).
 
@@ -39,7 +38,7 @@ Once your story is ready, you have to find its ID in ArcGIS Online. The ID is a 
 
 1. [Download the application](http://links.esri.com/storymaps/map_journal_template_zip)
 2. Deploy the application on your webserver. See [FAQ](#how-to-deploy-the-application-on-a-web-server) for details
-3. Edit index.html, find look for the configuration section on line 38 and paste your application ID
+3. Edit index.html, find the configuration section on line 38 and paste your application ID
 4. Navigate to index.html (e.g., `http://127.0.0.1/MapJournal/index.html`)
 
 Enjoy!
@@ -60,14 +59,14 @@ When you contact us, don't hesitate to include a link to your application to mak
 
 ### What checks should are perform before publishing a Journal?
 We recommend that you perform the following checks before sharing your Journal with your audience:
- - Sign-out from ArcGIS Online and any service that you use to host your Journal's resources and make sure everything loads correctly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session.
- - Try the application on different browser, screen resolution and mobile device. You can [emulate different device](http://mobiletest.me/) inside your browser.
+ - Check that allyour Journal content is shared with your audience (webmaps, medias, ...). Typically you can use another computer than the one you have used to build your story to make sure everything is loading properly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session or you can just sign-out from ArcGIS Online and any service that you have used to host your Journal's resources. 
+ - Try the application on different browsers, screen resolutions and mobile devices. You can [emulate mobile  devices](http://mobiletest.me/) inside your desktop browser.
 
 ### What are the supported browsers?
-Map Journal is supported on Internet Explorer 9, Chrome, Firefox, Safari and the most recent tablets and smartphones devices.
-Map Journal authoring is supported on Internet Explorer 10, on the most recent tablets but not on smartphones.
+Map Journal is supported on Internet Explorer 9, Chrome, Firefox, Safari and the most recent tablet and smartphone devices.
+Map Journal authoring is supported on Internet Explorer 10, on the most recent tablet but not on smartphone.
 
-We actively test the application in all major browsers but if you experience some difficulties especially with the builder, we recommend that you use Chrome.
+We actively test the application in all major browsers but if you experience difficulties especially with the builder, we recommend that you use [Chrome](https://www.google.com/intl/en_us/chrome/browser/).
 
 ### Security
 
@@ -138,7 +137,7 @@ themes: [
 ```
 
 ### Other customization
-Most of the look and feel customization can be done using the user download and including the css/html override directly into index.html. 
+Most of the look and feel customization can be done using the [user download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html override directly into index.html. 
 If you want to change the behavior of one functionality or want to add new one, you will need to read the [developer guide](#developer-guide).
 
 The easiest way to find the id or path to the DOM element that you want to customize is to use your browser developer tool, read documentation for [Chrome](https://developers.google.com/chrome-developer-tools/), [Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Introduction/Introduction.html), [Firefox](https://getfirebug.com/).
@@ -171,8 +170,9 @@ Here are some customization that can achieved through a `style` tag (look for `/
 ```
 
 ## Developer guide
-This developer guide is intended to developer that wants to modify behavior or add new functionalities to the Map Journal application. If you only need to customize look and feel, you should be able to do so using the [user download](http://links.esri.com/storymaps/map_journal_template_zip).
+This developer guide is intended to developer that wants to modify behavior or add new functionalities to the Map Journal application. 
 It will require knowledge of HTML, Javascript and CSS languages.
+If you only need to customize look and feel, you should be able to do so using the [user download](http://links.esri.com/storymaps/map_journal_template_zip).
 
 ### Developer extension events
 The template fire some events to allow customization with lose integration. This mean that you may not need to understand the internal of the application to extend it.
@@ -185,14 +185,14 @@ Clone the repository or download a [copy of the repository as a zip file](https:
 
 To build a production version of the application from the source code, you first need to install [Node.js](http://nodejs.org/).
 
-Then initialize the environment by running the following commands in the MapJournal folder:
+Then initialize the environment by running the following commands **in the MapJournal folder**:
  * `npm install`
  * `npm install –g grunt-cli`
 
 This will create a new `node-modules` folder in your project root with all tools to build the project. If you have trouble running the second command, [see this documentation on how to install grunt-cli locally](https://github.com/gruntjs/grunt-cli#installing-grunt-cli-locally).
 
 ### How to use the application from the source code
- * Make accessible the MapJournal folder on a web server. You can use any server or run the one provided by running `grunt server`, this will startup the server on port `8080`
+ * Make accessible the MapJournal folder on a web server. Use your favorite server or run one with `grunt server`, this will start a server on port `8080`
  * If using a Portal for ArcGIS instance configure the sharing url `app/config.js` (last property)
  * Configure index.html or use the URL parameter `appid` to specify the item to be loaded
 
@@ -204,12 +204,40 @@ The deploy folder now contains the built application that you can deploy to your
 
 ### Issues building the application
 
-The build script perform code validation through [JSHint](http://www.jshint.com/), you can disable that by editing Gruntfile.js and look for the following comments `/* Comment out to disable code linting */`.
+The build script perform code validation through [JSHint](http://www.jshint.com/), you can disable those validations by editing Gruntfile.js and look for the following comments `/* Comment out to disable code linting */`.
 
 ### Design
-Map Tour relies on AMD and Dojo loader [AMD](http://help.arcgis.com/en/webapi/javascript/arcgis/jshelp/#inside_dojo_amd) for application structure.
+Map Journal relies on AMD and Dojo loader [AMD](http://help.arcgis.com/en/webapi/javascript/arcgis/jshelp/#inside_dojo_amd) for application structure.
 
-Coming soon.
+The application is structured as this:
+
+| Path          			                  	| Contains																						|
+| ---------------------------------------------	|  -------------------------------------------------------------------------------------------- |
+| Gruntfile.js									| Build configuration																			|
+| src/											| Main source code folder with index.html and the Eclipse project file							|
+| src/app/										| Javascript and CSS source code 																|
+| src/app/config.js			            		| App configuration file (loaded at execution time) 											|
+| src/app/commonConfig.js			            | More configuration (only used when deployed outside of ArcGIS Online and Portal for ArcGIS)	|
+| src/app/storymaps/common/						| Modules common across storymaps templates (main module is Core.js)							|
+| src/app/storymaps/common/builder/				| Builder modules (main module is Builder.js)													|
+| src/app/storymaps/common/mapcontrols/			| Map UI components (Overview, Legend)															|
+| src/app/storymaps/common/ui/					| UI components																					|
+| src/app/storymaps/common/utils/				| Utils, connector,...																			|
+| src/app/storymaps/common/_resources			| Static resources																				|
+| src/app/storymaps/tpl/						| Map Journal modules (build configuration files in the root)									|
+| src/app/storymaps/tpl/builder/				| Builder modules (main module is BuilderView.js)												|
+| src/app/storymaps/tpl/core/					| Core modules (main module is MainView.js) 													|
+| src/app/storymaps/tpl/ui/						| UI components of the viewer grouped by target device											|
+| src/lib-app/									| Dependencies (included in the final app)														|
+| src/lib-build/								| Dependencies used by the build (not included in final app)									|
+| src/resources/								| Static resources																				|
+
+
+The main dependencies are:
+ * [jQuery](http://jquery.com/)
+ * [Bootstrap](http://twitter.github.com/bootstrap/)
+ * [CKEditor](http://ckeditor.com/)
+ * [iDangero.us Swiper](http://www.idangero.us/sliders/swiper/)
 
 ## Issues
 Find a bug or want to request a new feature?  Please let us know by submitting an issue.
