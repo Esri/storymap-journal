@@ -193,7 +193,7 @@ This will create a new `node-modules` folder in your project root with all tools
 
 ### How to use the application from the source code
  * Make accessible the MapJournal folder on a web server. You can use any server or run the one provided by running `grunt server`, this will startup the server on port `8080`
- * If using a Portal for ArcGIS instance configure the sharing url `app/config.js` (last properties)
+ * If using a Portal for ArcGIS instance configure the sharing url `app/config.js` (last property)
  * Configure index.html or use the URL parameter `appid` to specify the item to be loaded
 
 ### How to build application from the source code
