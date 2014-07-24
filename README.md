@@ -119,6 +119,10 @@ If you are not familiar with web servers here is three solutions:
  * Use the web server that comes with your server Operating System. On Windows this is Internet Information Services (IIS), if you have a `C:\inetpub\wwwroot` folder on your computer, you should be able to access it's content using `http://localhost`
  * On Windows or Mac OS, use a simple web server like [Mongoose](https://code.google.com/p/mongoose/) (not recommended for production)
 
+If you are experiencing some rendering issues like improper symbol appearing instead of icons, you will have an extra configuration to perform. Some servers require to configure a new mime type to be able to serve Map Journal fonts correctly. See the following links for more information:
+
+ * [IIS Mime types](http://codingstill.com/2013/01/set-mime-types-for-web-fonts-in-iis/)
+ * [Properly serve webfonts](http://blog.symbolset.com/properly-serve-webfonts)
 
 ## Configuration
 In addition to the configuration offered by the builder, the files `app/config.js` and `app/commonConfig.js` provide various settings. Documentation is provided in those files.
@@ -197,7 +201,7 @@ require(["dojo/topic"], function(topic) {
 });
 ```
 
-### Developer helper
+### Developer helpers
 In addition of the events described above, the story data, configuration and useful helpers functions can be accessed through the global variable `app`.
 
 ```
