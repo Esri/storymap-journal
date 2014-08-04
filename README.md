@@ -142,7 +142,7 @@ themes: [
 ```
 
 ### Other customization
-Most of the look and feel customization can be done using the [user download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html overrides directly into `index.html`. 
+Most of the look and feel customization can be done using the [regular Application Download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html overrides directly into `index.html`. 
 
 As the application Javascript and CSS are minified, we don't recommand that you directely edit those files (`app-viewer-min.css`). In addition to beeing hard to edit, this will make application update complex for you.
 
