@@ -7,7 +7,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 
 [View it live](http://links.esri.com/storymaps/map_journal_example_side_panel) | 
 [Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
-[User Download (source code not included)](http://links.esri.com/storymaps/map_journal_template_zip)
+[Application Download (source code not included)](http://links.esri.com/storymaps/map_journal_template_zip)
 
 **Latest release is version 1.0.1**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
@@ -25,20 +25,20 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
  * [Licensing](#licensing)
 
 ## Introduction
-A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from a [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. The Journal's data are stored in a Web Application Item (this include the narrative content, reference to the webmap(s), pictures, videos and the settings).
-This repository provide the application source code for developers that wants to customize Map Journal.
+A Map Journal application can be created from [ArcGIS Online](http://arcgis.com), from the [Esri Story Maps website](http://storymaps.arcgis.com/) or from a [Portal for ArcGIS](http://www.esri.com/software/arcgis/arcgisserver/extensions/portal-for-arcgis) deployment. The Journal's data are stored in a Web Application Item (this includes the narrative content, reference to the webmap(s), pictures, videos and the settings).
+This repository provides the application source code for developers that want to customize Map Journal.
 
 For more information about the Map Journal, including a gallery of examples and a step-by-step tutorial, please see the [Map Journal](http://storymaps.arcgis.com/en/app-list/map-journal/) page on the [Esri Story Maps website](http://storymaps.arcgis.com/).
 
 ## Instructions
 First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-journal/tutorial/).
-Once your story is ready, you have to find its ID in ArcGIS Online. The ID is a 32 characters strings that you will find in your browser bar when you are consulting your journal.
+Once your story is ready, you have to find its ID in ArcGIS Online. The ID is a 32 character string that you will find in your web browser's address bar when you are viewing your journal.
 
 ![App ID](map-journal-help-application-id.png)
 
 1. [Download the application](http://links.esri.com/storymaps/map_journal_template_zip)
 2. Deploy the application on your webserver. See [FAQ](#how-to-deploy-the-application-on-a-web-server) for details
-3. Edit index.html, find the configuration section on line 38 and paste your application ID
+3. Edit index.html, find the configuration section on line 38 and paste in your application ID
 4. Navigate to index.html (e.g., `http://127.0.0.1/MapJournal/index.html`)
 
 Enjoy!
