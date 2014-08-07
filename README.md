@@ -214,6 +214,21 @@ console.log("Story layout configuration", app.data.getWebAppData().get().values.
 console.log("Static ayout configuration values", app.data.getCurrentLayoutStaticConfig());
 ```
 
+Some events are also available:
+
+```
+require(["dojo/topic"], function(topic) { 
+  // Navigate to a section
+  topic.publish("story-navigate-section", 2);
+  
+  // Reload the content panel
+  topic.publish("story-update-sections");
+  
+  // Update a specific section content panel
+  topic.publish("story-update-section", 2);
+});
+```
+
 ### Environment setup
 
 Clone the repository or download a [copy of the repository as a zip file](https://github.com/Esri/map-journal-storytelling-template-js/archive/master.zip).
