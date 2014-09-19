@@ -174,6 +174,8 @@ define(["lib-build/css!./MainView",
 				//var popup = $("body").width() > 768 ? null : new PopupMobile(null, $("<div></div>")[0]);
 				var popup = null;
 				
+				arcgisUtils.arcgisUrl = arcgisUtils.arcgisUrl.replace('http:http','http');
+				
 				return arcgisUtils.createMap(webmapIdOrJSON, container, {
 					mapOptions: {
 						slider: true,
