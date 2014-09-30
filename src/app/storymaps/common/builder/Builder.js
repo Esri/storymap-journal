@@ -35,12 +35,13 @@ define(["lib-build/css!./Builder",
 				builderDirectCreationFirstSave,
 				builderGalleryCreationFirstSave
 			),
-			_settingsPopup = new SettingsPopup($("#settingsPopup"));
+			_settingsPopup = null;
 
 		function init(core, builderView)
 		{
 			_core = core;
 			_builderView = builderView;
+			_settingsPopup = new SettingsPopup($("#settingsPopup"));
 			
 			console.log("common.builder.Builder - init");
 		
@@ -141,6 +142,21 @@ define(["lib-build/css!./Builder",
 			
 			app.portal.signIn().then(
 				function(){ 
+					// Search for typeKeywords defined in app.cfg.WEBAPP_KEYWORD_APP in webapp item
+					var presentKeywords = $.grep(app.data.getWebAppItem().typeKeywords, function(keyword){ 
+						return $.grep(app.cfg.WEBAPP_KEYWORD_APP, function(keyword2){ return keyword == keyword2; }).length; 
+					});
+					
+					// One or more typeKeywords not present
+					if ( presentKeywords.length != app.cfg.WEBAPP_KEYWORD_APP.length ) {
+						$.each(app.cfg.WEBAPP_KEYWORD_APP, function(i, keyword){
+							// Add the missing keyword
+							if ( ! $.grep(presentKeywords, function(keyword2){ return keyword == keyword2; }).length ) {
+								app.data.getWebAppItem().typeKeywords = app.data.getWebAppItem().typeKeywords.concat(keyword);
+							}
+						});
+					}
+					
 					saveApp(function(response){
 						if (!response || !response.success) {
 							appSaveFailed("APP");
@@ -269,6 +285,8 @@ define(["lib-build/css!./Builder",
 			);
 		}
 		
+		// TODO this is only used in Map Tour (MJ doesn't goes there because of app.appCfg.useWebmapInApp)
+		// The flag is never set properly in MJ. Should be more generic, MJ doesn't save a webmap...
 		function builderGalleryCreationFirstSave()
 		{
 			if ( ! app.portal ) {
@@ -419,7 +437,7 @@ define(["lib-build/css!./Builder",
 		
 		function saveWebmap(nextFunction)
 		{
-			if( app.isDirectCreationFirstSave || app.isGalleryCreation ) {				
+			if( app.isDirectCreationFirstSave || (app.appCfg.useWebmapInApp && app.isGalleryCreation) ) {				
 				WebMapHelper.saveWebmap(app.data.getWebMap(), app.portal).then(
 					function(response){
 						nextFunction(response);
@@ -520,6 +538,8 @@ define(["lib-build/css!./Builder",
 			if (response && response.success) {
 				_builderPanel.saveSucceeded();
 				app.data.updateAfterSave();
+				app.isGalleryCreation = false;
+				_builderPanel.updateSharingStatus();
 			}
 			else
 				appSaveFailed();

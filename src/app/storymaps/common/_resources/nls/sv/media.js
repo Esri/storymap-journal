@@ -11,7 +11,8 @@
 				disabled: "Den här funktionen har inaktiverats av administratören",
 				url: "Ange webbadressen för en bild manuellt",
 				userLookup: "Läs in album",
-				notImplemented: "Inte infört ännu."
+				notImplemented: "Inte infört ännu.",
+				noData: "Inget offentligt album hittades"
 			},
 			imageSelector: {
 				lblStep1: "Välj tjänst",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-postadress eller ID för Picasa/Google+",
 				signInMsg2: "Det gick inte att hitta kontot",
-				signInMsg3: "Inget offentligt album",
 				howToFind: "Så här hittar du ett konto-ID för Picasa eller Google+",
 				howToFind2: "Kopiera siffrorna mellan det första och andra '/'-tecknet på en Picasa- eller G+-sida"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Bädda in kod",
 				lblOR: "ELLER",
 				lblError1: "Fel, rensa ett av de båda inmatningsfälten.",
-				lblError2: "Inbäddad kod kan endast innehålla en <iframe>"
+				lblError2: "Inbäddad kod kan endast innehålla en %IFRAMETAG%",
+				configure: "Konfigurera"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "En bild-URL bör börja med http:// och slutar med .jpg eller .png",
+				lblURLError: "Den här bilden verkar inte vara giltig. Ange en direktlänk till en bildfil (din URL slutar vanligtvis med en .jpg eller .png). Länkar till en webbsida som innehåller en bild fungerar inte.",
+				lblURLCheck: "Kontrollerar bild ...",
 				lblLabel: "Bildtext",
 				lblLabel1: "Bildtext",
 				lblLabel2: "Hovringstext",
@@ -91,10 +94,13 @@
 				lblPosition4: "Sträck",
 				lblPosition5: "Anpassad",
 				tooltipDimension: "Värdet kan anges i \"px\" eller \"%\"",
+				tooltipDimension2: "Värdet måste anges i \"px\"",
 				lblPosition2Explain: "(kan beskäras)",
 				lblPosition3Explain: "(kan inte beskäras)",
 				lblPosition3Explain2: "(bredden kommer alltid att fylla rutan)",
-				lblPosition4Explain: "(kan förvrängas)"
+				lblPosition4Explain: "(kan förvrängas)",
+				unloadLbl: "Ta bort när användaren navigerar till ett annat avsnitt",
+				unloadHelp: "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar till ett annat avsnitt. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom journalen.<br />Om webbläsaren är en applikation avmarkerar du alternativet så att applikationen inte läses in på nytt om användaren återvänder till det avsnittet."
 			},
 			editorActionGeocode: {
 				lblTitle: "Hitta en adress eller plats",
@@ -104,7 +110,7 @@
 				lblTitle: "Ändra innehåll för huvudscenen"
 			},
 			editorInlineMedia: {
-				lblTitle: "Infoga en bild eller ett videoklipp"
+				lblTitle: "Infoga en bild, ett videoklipp eller en webbsida"
 			}
 		}
 	})

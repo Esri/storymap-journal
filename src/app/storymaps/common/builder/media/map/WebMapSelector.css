@@ -21,8 +21,9 @@
 }
 
 .webmapSelector .webmaps-list-btn .caret {
-	float: right;
-	margin-top: 8px;
+	position: absolute;
+	bottom: 14px;
+	right: 12px;
 }
 
 /*

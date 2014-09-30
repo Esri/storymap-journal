@@ -34,12 +34,13 @@
 				btnCancel: "Annuleren",
 				tocTitle: "Kaartinhoud",
 				tocExplain: "Selecteer welke kaartlagen zullen worden weergegeven.",
+				tocNoData: "Er kan geen kaartlaag worden geconfigureerd.",
 				tocSave: "Kaartinhoud opslaan",
 				extentTitle: "Kaartlocatie",
 				extentExplain: "Pan en zoom op de kaart om te definiëren hoe deze eruit zal zien voor uw lezers.",
 				extentSave: "Kaartlocatie opslaan",
 				popupTitle: "Kaartpop-up",
-				popupExplain: "Configureer het uiterlijk van de pop-up die aan de lezers word weergegeven",
+				popupExplain: "Klik op een object op de pop-up te openen die u wilt weergeven.",
 				popupSave: "De pop-upconfiguratie opslaan",
 				hintNavigation: "Kaartnavigatie is uitgeschakeld."
 			}

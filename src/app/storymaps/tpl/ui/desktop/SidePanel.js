@@ -2,6 +2,7 @@ define(["lib-build/tpl!./SidePanelSection",
 		"lib-build/css!./SidePanel",
 		"lib-build/css!storymaps/common/builder/InlineFieldEdit",
 		"./DotNavBar",
+		"../StoryText",
 		"storymaps/common/utils/HeaderHelper",
 		"storymaps/common/utils/CommonHelper"
 	], 
@@ -10,6 +11,7 @@ define(["lib-build/tpl!./SidePanelSection",
 		viewCss,
 		inlineEditCss,
 		DotNavBar,
+		StoryText,
 		HeaderHelper,
 		CommonHelper
 	){
@@ -29,31 +31,28 @@ define(["lib-build/tpl!./SidePanelSection",
 				setLayout(layoutOptions);
 				setColor(colors);
 				setHeader(headerCfg);
-				render(sections);
+				render(sections, sectionIndex);
 				initEvents();
 				
-				_navDots.init(
-					sections, 
-					sectionIndex, 
-					colors.dotNav,
-					colors.text,
-					colors.panel,
-					layoutOptions.layoutCfg.position == "left" ? "right" : "left"
-				);
+				_navDots.init({
+					sections: sections, 
+					sectionIndex: sectionIndex, 
+					bgColor: colors.dotNav, 
+					tooltipBgColor: colors.text,
+					tooltipFontColor: colors.panel,
+					dotColor: colors.softBtn,
+					tooltipPosition: layoutOptions.layoutCfg.position == "left" ? "right" : "left"
+				});
 				
 				// Visual scroll invitation in viewer
-				if ( ! app.isInBuilder ) {
+				if ( ! isInBuilder ) {
 					setTimeout(function() {
 						displayScrollInvite(colors);
 					}, 0);
 					
 					if ( sections.length == 1 ) {
 						container.find(".navDots").hide();
-						container.css({
-							paddingLeft: 0,
-							paddingRight: 0
-						});
-						container.find(".scroll").css({
+						container.find("#sidePanelInner, .scroll").css({
 							paddingLeft: 0,
 							paddingRight: 0
 						});
@@ -89,7 +88,7 @@ define(["lib-build/tpl!./SidePanelSection",
 			{
 				$("#sidePanel .sections").height(
 					cfg.height 
-					- $("#sidePanel .sections").position().top 
+					- $("#sidePanel .sectionsWrapper").position().top 
 					- $(".builder-content-panel:visible").outerHeight()
 				);
 				updateAppTitle();
@@ -98,35 +97,67 @@ define(["lib-build/tpl!./SidePanelSection",
 			
 			this.showSectionNumber = function(index, forceDisplay, skipScrolling)
 			{
-				if ( ! container.is(':visible') )
+				if ( ! container.is(':visible') || ! _selectReady )
 					return;
 				
+				// Unload current section frame if navigating out
+				if ( _activeSectionIndex != index ) {
+					var activeSectionIFrame = container.find('.section.active .content iframe[data-unload=true]');
+					if ( activeSectionIFrame.length ) {
+						setTimeout(function(){
+							activeSectionIFrame.each(function(i, frame){
+								var $frame = $(frame);
+								$frame.attr('src', '');
+							});
+						}, 150);
+					}
+				}
+				
+				// Show potential iframe not loaded yet
+				StoryText.loadSectionIframe(container.find('.section').eq(index));
+				
+				// Navigate
 				if ( _activeSectionIndex != index || forceDisplay ){
-					_activeSectionIndex = index;
-					container.find('.section').removeClass('active').eq(_activeSectionIndex).addClass('active');
-					_navDots.setActive(_activeSectionIndex);
+					_selectReady = false;
+					
+					container.find('.section').removeClass('active').eq(index).addClass('active');
+					_navDots.setActive(index);
 					
 					if ( ! skipScrolling ) {
-						_selectReady = false;
-						
-						if ( ! container.find('.sections').length || ! container.find('.section').length )
+						// Start from scratch
+						if ( ! container.find('.sections').length || ! container.find('.section').length ) {
+							_selectReady = true;
 							return;
+						}
 
+						var scrollTop = container.find('.sections').eq(0)[0].scrollTop,
+							sectionsScroll = container.find('.sections')[0].scrollHeight,
+							sectionsHeight = container.find('.sections').height(),
+							newSectionTop = container.find('.section').eq(index).position().top,
+							hasToMove = (newSectionTop <= 0) || (scrollTop + sectionsHeight < sectionsScroll);
+						
 						setTimeout(function(){
 							container.find('.sections').animate(
 								{
-									scrollTop: container.find('.sections').eq(0)[0].scrollTop 
-										+ container.find('.section').eq(index).position().top
+									scrollTop: scrollTop + newSectionTop
 								},
 								{
-									duration: 500,
+									duration: hasToMove ? 500 : 0,
 									complete: function(){
 										updateAppTitle(true);
 										removeScrollInvite();
-										// need to wait for the title to be updated...
+										
+										if ( isInBuilder )
+											updateEditBtnPosition(index);
+
+										// Need to wait for the title to be updated...
 										setTimeout(function(){
 											_selectReady = true;
+											_activeSectionIndex = index;
 										}, 100);
+										
+										// Load potential frame on visible section 
+										loadVisibleIframe();
 									},
 									progress: function(){
 										updateAppTitle();
@@ -135,6 +166,13 @@ define(["lib-build/tpl!./SidePanelSection",
 								}
 							);
 						}, 0); // Needed when section defined by url parameter...
+					}
+					else {
+						_activeSectionIndex = index;
+						_selectReady = true;
+						
+						if ( isInBuilder )
+							updateEditBtnPosition();
 					}
 				}
 			};
@@ -169,7 +207,7 @@ define(["lib-build/tpl!./SidePanelSection",
 			}
 			
 			/* jshint -W069 */
-			function render(sections)
+			function render(sections, sectionIndex)
 			{				
 				var contentHTML = "";
 				
@@ -184,17 +222,18 @@ define(["lib-build/tpl!./SidePanelSection",
 				});
 				
 				container.find('.appTitle').html(sections.length ? sections[0]["title"] : '');
-				container.find('.sections').html(contentHTML);
+				container.find('.sections').html(StoryText.prepareSectionPanelContent(contentHTML));
 				container.find('.section')
 					.click(onClickSection)
-					.eq(0).addClass('active');
+					.eq(sectionIndex).addClass('active');
 				
-				if ( isInBuilder )
-					container.find('.panelEditBtn').click(onClickEdit);
+				// Builder edit btn
+				container.find(".panelEditBtn").toggle(!! (isInBuilder && sections && sections.length));
 				
 				container.show();
 				setTimeout(function(){
 					container.find(".sections").focus();
+					loadVisibleIframe();
 				}, 0);
 			}
 			
@@ -211,8 +250,6 @@ define(["lib-build/tpl!./SidePanelSection",
 					optHtmlClass: optHtmlClass,
 					title: title,
 					content: content,
-					isInBuilder: isInBuilder,
-					lblEdit: isInBuilder ? i18n.commonCore.common.edit : '',
 					lblShare: i18n.viewer.headerFromCommon.share,
 					shareURL: CommonHelper.getAppViewModeURL() + "&section=" + (index+1)
 				});
@@ -259,14 +296,14 @@ define(["lib-build/tpl!./SidePanelSection",
 			{
 				var index = $(this).index();
 				
-				if ( $(this).hasClass('active') )
+				if ( _activeSectionIndex == index )
 					return;
 				
 				_this.showSectionNumber(index);
 				navigationCallback(index);
 			}
 			
-			function selectPostByScrollPosition()
+			function onScroll()
 			{
 				if(! _selectReady)
 					return;
@@ -296,7 +333,7 @@ define(["lib-build/tpl!./SidePanelSection",
 						lastSectionTopPosition = sectionPos;	
 					});
 					
-					if ( lastSectionTopPosition + container.find(".section").last().outerHeight() == scrollingContainerHeight )
+					if ( Math.round(lastSectionTopPosition + container.find(".section").last().outerHeight()) == scrollingContainerHeight )
 						newSectionIndex = container.find(".section").length - 1;
 					else if ( firstMatchingSectionIndex == -1 && lastSectionTopPosition > 0 )
 						newSectionIndex = 0;
@@ -310,6 +347,69 @@ define(["lib-build/tpl!./SidePanelSection",
 					_this.showSectionNumber(newSectionIndex, false, true);
 					navigationCallback(newSectionIndex);
 				}
+				else {
+					// Load potential frame on visible section 
+					loadVisibleIframe();
+					if ( isInBuilder )
+						updateEditBtnPosition();
+				}
+			}
+			
+			function loadVisibleIframe()
+			{
+				var scrollingContainer = container.find(".sections"),
+					scrollingContainerHeight = scrollingContainer.height(),
+					nbSection = container.find(".section").length,
+					visibleSections = [],
+					searchIndex = null,
+					section = null,
+					isVisible = false;
+				
+				//console.log("current:", _activeSectionIndex, scrollingContainerHeight)
+				
+				// Look for visible section before the current section
+				// Search is stopped when the first non visible section is reached
+				searchIndex = _activeSectionIndex;
+				while( searchIndex > 0 ) {
+					section = container.find(".section").eq(--searchIndex);
+					isVisible = section.position().top + section.outerHeight() > 8;
+					
+					if ( isVisible )
+						visibleSections.push(searchIndex);
+					else
+						break;
+					
+					//console.log("<look for ", searchIndex, isVisible)
+				}
+				
+				// Look for visible section after the current section
+				// Search is stopped when the first non visible section is reached
+				searchIndex = _activeSectionIndex;
+				while( searchIndex < nbSection - 1 ) {
+					section = container.find(".section").eq(++searchIndex),
+					isVisible = section.position().top < scrollingContainerHeight;
+					
+					if ( isVisible )
+						visibleSections.push(searchIndex);
+					else
+						break;
+					
+					//console.log(">look for ", searchIndex, isVisible)
+				}
+				
+				visibleSections.sort();
+				
+				//console.log("visible sections:", visibleSections);
+				
+				$.each(visibleSections, function(i, sectionIndex){
+					StoryText.loadSectionIframe(container.find('.section').eq(sectionIndex));
+				});
+			}
+			
+			function updateEditBtnPosition(forceIndex)
+			{
+				var currentSectionPos = container.find(".section").eq(forceIndex !== undefined ? forceIndex : _activeSectionIndex).position().top;
+				container.find(".panelEditBtn").css("top", currentSectionPos < 6 ? 6 : currentSectionPos);
 			}
 			
 			function updateAppTitle()
@@ -336,10 +436,15 @@ define(["lib-build/tpl!./SidePanelSection",
 			
 			function setColor(colors)
 			{
-				_navDots.update(colors.dotNav, colors.text, colors.panel);
+				_navDots.update({
+					bgColor: colors.dotNav, 
+					tooltipBgColor: colors.text, 
+					tooltipFontColor: colors.panel
+				});
 				container.css("background-color", colors.panel);
 				container.find('.scroll').css("background-color", colors.panel);
 				container.find('.sections').css("color", colors.text);
+				container.find('.panelEditBtn').css("background-color", colors.panel);
 			}
 			
 			function setHeader(headerCfg)
@@ -356,19 +461,18 @@ define(["lib-build/tpl!./SidePanelSection",
 			
 			function onClickEdit()
 			{
-				var section = $(this).parents('.section');
-				if ( ! section.hasClass('active') )
-					return;
-				
 				app.builder.openEditPopup({
-					sectionIndex: section.index(),
+					sectionIndex: _activeSectionIndex,
 					displayTab: 'content'
 				});
 			}
 			
 			function initEvents()
 			{
-				container.find('.sections').scroll(selectPostByScrollPosition);
+				container.find('.sections').scroll(onScroll);
+				
+				if ( isInBuilder )
+					container.find('.panelEditBtn').click(onClickEdit);
 			}
 		};
 	}

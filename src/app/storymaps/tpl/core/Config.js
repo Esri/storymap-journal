@@ -1,9 +1,16 @@
 define([], 
 	function(){
+		// Header default configuration
+		var HEADER_LOGO_URL = "resources/tpl/viewer/icons/esri-logo.png",
+			HEADER_LOGO_TARGET = "http://www.esri.com",
+			HEADER_LINK_TEXT = "A story map",
+			HEADER_LINK_URL = "http://storymaps.arcgis.com";
+
 		app.appCfg = {
 			supportWebmapPreviewAGOL: false,
 			useWebmapInApp: false,
-			useStandardHeader: false
+			useStandardHeader: false,
+			useAppTitleAsPageTitle: false
 		};
 		
 		app.appCfg.getLayoutThumnail = function(params)
@@ -148,7 +155,7 @@ define([],
 					.replace('$basestyle$', 'position: absolute; right: 10%; top: 6px;')
 					.replace('$size$', sizePanel)
 					.replace('$color$', theme.panel)
-					.replace('$styleOpt$', 'border: none; bottom: 7px; height: initial; left: ' + (panelLeft ? '10%' : 'auto'));
+					.replace('$styleOpt$', 'border: none; bottom: 7px; height: auto; left: ' + (panelLeft ? '10%' : 'auto'));
 				
 				if ( contentLabel ) {
 					block1HTML = block1HTML
@@ -166,10 +173,10 @@ define([],
 			
 			if ( contentStep ) {
 				block1HTML = block1HTML
-					.replace('$contentClass$', 'number number-step' + contentStepIdx + ' number-2')
+					.replace('$contentClass$', 'number number-step' + contentStepIdx + ' ' + (layout == "side" ? 'number-2' : 'number-1'))
 					.replace('$content$', '');
 				block2HTML = block2HTML
-					.replace('$contentClass$', 'number number-step' + contentStepIdx + ' number-1')
+					.replace('$contentClass$', 'number number-step' + contentStepIdx + ' ' + (layout == "side" ? 'number-1' : 'number-2'))
 					.replace('$content$', '');
 			}
 			else if ( contentSize ) {
@@ -204,6 +211,11 @@ define([],
 		return {
 			checkConfigFileIsOK: function()
 			{
+				app.cfg.HEADER_LOGO_URL = HEADER_LOGO_URL;
+				app.cfg.HEADER_LOGO_TARGET = HEADER_LOGO_TARGET;
+				app.cfg.HEADER_LINK_TEXT = HEADER_LINK_TEXT;
+				app.cfg.HEADER_LINK_URL = HEADER_LINK_URL;
+
 				return app.cfg
 					&& app.cfg.HEADER_LOGO_URL !== undefined 
 					&& app.cfg.HEADER_LOGO_TARGET !== undefined
@@ -214,27 +226,27 @@ define([],
 					&& app.cfg.MAX_NB_SECTIONS
 					&& app.cfg.DOTNAV_GROUPSIZE
 					
-					&& app.cfg.DISPLAY_LOCATE_BUTTON !== undefined
-					
 					&& app.cfg.TIMEOUT_VIEWER_LOAD
 					&& app.cfg.TIMEOUT_VIEWER_REQUEST
 					&& app.cfg.TIMEOUT_BUILDER_REQUEST
 					
 					&& app.cfg.SECTION_ACTION_ZOOM_MAP_MARKER
 					
+					&& app.cfg.LAYOUTS && app.cfg.LAYOUTS.length
+					&& app.cfg.FONTS
+					
 					&& app.cfg.HELP_URL
 					
 					&& app.cfg.TPL_NAME
 					&& app.cfg.WEBAPP_TAG
-					&& app.cfg.WEBAPP_KEYWORD
+					&& app.cfg.WEBAPP_KEYWORD_GENERIC
+					&& app.cfg.WEBAPP_KEYWORD_APP
 					
 					&& app.cfg.AUTHORIZED_IMPORT_SOURCE
 					&& app.cfg.FLICKR_API_KEY
 					&& app.cfg.FACEBOOK_APP_ID
 					
-					&& app.cfg.LAYOUTS && app.cfg.LAYOUTS.length
 					&& app.cfg.CORS_SERVER
-					
 					&& app.cfg.DEFAULT_SHARING_URL
 					&& app.cfg.DEFAULT_PROXY_URL; 
 			}

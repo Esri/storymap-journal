@@ -21,7 +21,7 @@
 				editMe: "Muuda mind!"
 			},
 			builderPanel: {
-				panelHeader: "%TPL_NAME% koostur",
+				panelHeader: "%TPL_NAME% koostaja",
 				buttonSaving: "Salvestamine",
 				buttonSaved: "Salvestatud",
 				buttonShare: "Jaga",
@@ -39,12 +39,18 @@
 				shareStatus3: "Rakendus on jagatud organisatsiooniga",
 				shareStatus4: "Rakendus pole jagatud"
 			},
+			saveError: {
+				title: "Viga rakenduse salvestamisel",
+				err1Div1: "Rakendust ei saa salvestada, sest teil on juba sama nimega objekt (vaadake oma <a class='linkagolroot' target='_blank'>sisukausta</a>).",
+				err1Div2: "Muutke kodujaotise pealkirja ja salvestage rakendus.",
+				btnOk: "Muuda kodujaotise pealkirja"
+			},
 			share: {
 				firstSaveTitle: "Rakendus on salvestatud",
 				firstSaveHeader: "Teie rakendus on nüüd salvestatud kohta %PORTAL%, kuid seda pole veel jagatud.",
 				firstSavePreview: "Eelvaade",
 				firstSaveShare: "Jaga",
-				firstSaveA1: "Kui %PORTAL% pole teile tuttav või kui soovite otseteed koosturiliidesesse, võite salvestada järgmise lingi: %LINK1%",
+				firstSaveA1: "Kui %PORTAL% pole teile tuttav või kui soovite otseteed koostajaliidesesse, võite salvestada järgmise lingi: %LINK1%",
 				firstSaveA1bis: "Rakenduse leiate ka oma <a href='%LINK2%' target='_blank'>portaali %PORTAL% sisukaustast</a>.",
 				shareTitle: "Jaga oma rakendus",
 				sharePrivateHeader: "Teie rakendus pole jagatud. Kas soovite selle jagada?",
@@ -60,12 +66,13 @@
 				shareHeader2: "Teie rakendus on kättesaadav organisatsiooni liikmetele (sisselogimine nõutav).",
 				shareLinkCopy: "Kopeeri",
 				shareLinkCopied: "Kopeeritud",
+				shareQ0: "Kuidas lisada rakendus veebisaidile?",
 				shareQ1Opt1: "Kuidas hoida rakendus privaatne?",
 				shareQ1Opt2: "Kuidas hoida rakendus privaatne või seda avalikult jagada?",
 				shareA1: "Kasutage <a href='%LINK1%' target='_blank'>rakenduse üksuse lehel</a> üksust %SHAREIMG%.",
-				shareQ2bis: "Kuidas pääseb koosturiliidesesse tagasi?",
+				shareQ2bis: "Kuidas pääseb koostaja liidesesse tagasi?",
 				shareA2div1: "Salvestage ja taaskasutage järgnevat linki %LINK1% või kasutage <a href='%LINK2%' target='_blank'>rakenduse sisu lehte</a>.",
-				shareA2div2: "Kui olete rakenduse omanikuna lehel %PORTAL% sisse logitud, sisaldab rakendus nuppu interaktiivse koosturi avamiseks.",				
+				shareA2div2: "Kui olete rakenduse omanikuna lehel %PORTAL% sisse logitud, sisaldab rakendus nuppu interaktiivse koostaja avamiseks.",				
 				shareQ3: "Kus andmed talletatakse?",
 				shareA3: "%TPL_NAME%: andmed ja konfiguratsioon talletatakse <a href='%LINK2%' target='_blank'>selles veebirakenduse üksuses</a>. Kui olete kasutanud Flickri, Picasa, Facebooki või YouTube\'i importi, pole teie pilte ja videoid portaali %PORTAL% kopeeritud."
 			},

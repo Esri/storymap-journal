@@ -9,8 +9,9 @@
 				step2: "Загрузка данных",
 				step3: "Инициализация",
 				loadBuilder: "Открытие конструктора",
-				fail: "К сожалению, загрузка не удалась",
-				failButton: "Повторить"
+				long: "Журнал карт активирован",
+				long2: "Спасибо за ожидание",
+				failButton: "Еще раз загрузить приложение"
 			},
 			signin: {
 				title: "Требуется аутентификация",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Произошла ошибка",
-				invalidConfig: "Критическая ошибка: недопустимая конфигурация",
-				invalidConfigNoApp: "Фатальная ошибка: в index.html не указан идентификатор Web Mapping Application",
+				invalidConfig: "Некорректная конфигурация",
+				invalidConfigNoApp: "В index.html не указан идентификатор Картографического веб-приложения",
+				unspecifiedConfigOwner: "Невозможно настроить авторизованного владельца.",
+				invalidConfigOwner: "Владелец приложения не авторизован.",
 				createMap: "Не удалось создать карту",
-				invalidApp: "Критическая ошибка: не удается загрузить приложение",
-				notConfiguredDesktop: "Добро пожаловать в веб-приложение %TPL_NAME%.<br />Приложение еще не настроено.",
-				notConfiguredMobile: "Добро пожаловать в веб-приложение %TPL_NAME%. Приложение ещё не настроено. Конструктор не поддерживается на мобильных устройствах.",
+				invalidApp: "%TPL_NAME% не существует или не доступен.",
+				appLoadingFail: "Что-то пошло не так, % TPLNAME % не был загружен правильно.",
+				notConfiguredDesktop: "Приложение еще не настроено.",
+				notConfiguredMobile: "Конструктор %TPL_NAME% не поддерживается при этом разрешении экрана.",
 				notAuthorized: "Вы не авторизованы для доступа к данному приложению",
-				noBuilderIE8: "Конструктор не поддерживается в браузере Internet Explorer версий ранее 9.",
-				mapLoadingFail: "Что-то пошло не так, карта не может быть загружена."
+				noBuilderIE: "Конструктор не поддерживается в браузере Internet Explorer версий %VERSION%. %UPGRADE%",
+				noViewerIE: "Это приложение не поддерживается в браузере Internet Explorer версий %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Обновите ваш браузер</a>.",
+				mapLoadingFail: "Что-то пошло не так, карта не может быть загружена корректно.",
+				signOut: "Выйти"
 			},
 			mobileView: {
 				tapForDetails: "Коснитесь для подробной информации",
+				clickForDetails: "Подробнее",
 				swipeToExplore: "Проведите для поиска",
-				tapForMap: "Коснитесь, чтобы вернуться к карте"
+				tapForMap: "Коснитесь, чтобы вернуться к карте",
+				clickForMap: "НАЗАД К КАРТЕ"
 			},
 			floatLayout: {
 				scroll: "Прокрутите"

@@ -54,7 +54,6 @@ p {
 strong {
 	font-family: 'open_sanssemibold', sans-serif;
 	font-weight: normal;
-	font-style: normal;
 }
 
 .cke_editable
@@ -182,4 +181,43 @@ a[data-storymaps] {
 	text-decoration: none;
 	pointer-events: none;
 	cursor: default;
+}
+
+/*
+ * Iframe style
+ */
+
+.image-container > span.cke_widget_wrapper:after,
+.cke_widget_element > span.cke_image_resizer_wrapper:after,
+.iframe-container:after {
+	position: absolute;
+	top: -20px;
+	width: 40px;
+	height: 40px;
+	background-image: url('../../_resources/icons/ckeditor/builder-edit-border.png');
+	content: ' ';
+	background-size: 40px auto;
+	right: -20px;
+	cursor: pointer;
+}
+
+.image-container > span.cke_widget_wrapper:hover:after,
+.cke_widget_element > span.cke_image_resizer_wrapper:hover:after,
+.iframe-container:hover:after {
+	background-position: 0 -40px;
+}
+
+.iframe-container {
+	display: inline;
+	position: relative;
+}
+
+.iframe-container > iframe {
+	/* prevent bad alignement of edit button */
+	max-width: 99%;
+}
+
+.iframe-container:after {
+	top: auto;
+	margin-top: -20px;
 }

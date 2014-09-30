@@ -11,7 +11,8 @@
 				disabled: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä.",
 				url: "Kuvan verkko-osoitteen manuaalinen syöttäminen",
 				userLookup: "Lataa albumit",
-				notImplemented: "Ei ole vielä toteutettu."
+				notImplemented: "Ei ole vielä toteutettu.",
+				noData: "Julkista albumia ei löytynyt"
 			},
 			imageSelector: {
 				lblStep1: "Valitse palvelu",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "Sähköpostiosoite tai Picasa-/Google+-tunnus",
 				signInMsg2: "Tiliä ei löydy",
-				signInMsg3: "Ei julkista albumia",
 				howToFind: "Picasa- tai Google+-tilitunnuksen etsiminen",
 				howToFind2: "Kopioi minkä tahansa Picasa- tai Google+-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Upotuskoodi",
 				lblOR: "TAI",
 				lblError1: "Virhe, tyhjennä toinen kahdesta lähtöaineistokentästä.",
-				lblError2: "Upotuskoodi voi sisältää vain yhden merkkijonon <iframe>"
+				lblError2: "Upotuskoodi voi sisältää vain yhden merkkijonon %IFRAMETAG%",
+				configure: "Määritä"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Kuvan URL-osoitteen on alettava merkkijonolla http:// ja loputtava tarkenteeseen .jpg tai .png",
+				lblURLError: "Kuva ei ole kelvollinen. Määritä suora linkki kuvatiedostoon (URL päättyy yleensä jpg- tai png-tunnisteeseen ). Linkki kuvan sisältävään verkkosivuun ei toimi.",
+				lblURLCheck: "Tarkistetaan kuvaa...",
 				lblLabel: "Kuvan seloste",
 				lblLabel1: "Seloste",
 				lblLabel2: "Kohoteksti",
@@ -91,10 +94,13 @@
 				lblPosition4: "Venytä",
 				lblPosition5: "Mukautettu",
 				tooltipDimension: "Arvo voidaan määrittää px (pikseli)- tai %-yksiköissä",
+				tooltipDimension2: "Arvo on määritettävä pikseleinä",
 				lblPosition2Explain: "(voi rajautua)",
 				lblPosition3Explain: "(ei rajaudu)",
 				lblPosition3Explain2: "(leveys sopii aina paneeliin)",
-				lblPosition4Explain: "(voi vääristyä)"
+				lblPosition4Explain: "(voi vääristyä)",
+				unloadLbl: "Poista lataus, kun lukija siirtyy toiseen osaan",
+				unloadHelp: "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy toiseen osaan. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä päiväkirjassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta sovellus ei lataudu uudelleen, kun lukija palaa osaan."
 			},
 			editorActionGeocode: {
 				lblTitle: "Paikanna osoite tai paikka",
@@ -104,7 +110,7 @@
 				lblTitle: "Muuta päävaiheen sisältöä"
 			},
 			editorInlineMedia: {
-				lblTitle: "Lisää kuva tai video"
+				lblTitle: "Lisää kuva, video tai verkkosivu"
 			}
 		}
 	})

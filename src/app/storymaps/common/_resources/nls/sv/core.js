@@ -39,6 +39,12 @@
 				shareStatus3: "Applikationen delas inom organisationen",
 				shareStatus4: "Applikationen delas inte"
 			},
+			saveError: {
+				title: "Det gick inte att spara applikationen",
+				err1Div1: "Det går inte att spara applikationen eftersom du redan har ett annat objekt med samma namn (se din <a class='linkagolroot' target='_blank'>innehållsmapp</a>).",
+				err1Div2: "Ändra titeln på startavsnittet och spara applikationen.",
+				btnOk: "Redigera titeln på startavsnittet"
+			},
 			share: {
 				firstSaveTitle: "Applikationen har sparats",
 				firstSaveHeader: "Din applikation har nu sparats i %PORTAL%, men den har inte delas ännu.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Din applikation är tillgänglig för organisationens medlemmar (inloggning krävs).",
 				shareLinkCopy: "Kopiera",
 				shareLinkCopied: "Kopierad",
+				shareQ0: "Hur bäddar jag in applikationen på en webbplats?",
 				shareQ1Opt1: "Hur behåller jag applikationen privat?",
 				shareQ1Opt2: "Hur behåller jag applikationen privat eller delar den publikt?",
 				shareA1: "Använd %SHAREIMG% på <a href='%LINK1%' target='_blank'>applikationens objektsida</a>.",

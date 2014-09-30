@@ -11,7 +11,8 @@
 				disabled: "Šo funkciju administrators ir atspējojis",
 				url: "Lai manuālie ievadītu attēla web adresi",
 				userLookup: "Ielādēt albumus",
-				notImplemented: "Vēl nav ieviests."
+				notImplemented: "Vēl nav ieviests.",
+				noData: "Nav atrasts publisks albums"
 			},
 			imageSelector: {
 				lblStep1: "Izvēlēties servisu",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-pasta adrese vai Picasa/Google+ ID",
 				signInMsg2: "Konts nav atrasts",
-				signInMsg3: "Nav publiska albuma",
 				howToFind: "Kā atrast Picasa vai Google+ konta ID",
 				howToFind2: "Kopēt ciparus starp pirmo un otro \'/\' no jebkura Picasa vai G+ lapa"
 			},
@@ -63,20 +63,23 @@
 			},
 			videoSelectorOther: {
 				explain1: "Karšu žurnāls nevar atskaņot neapstrādātus video (piemēram, avi, mpeg), bet var atskaņot mitinātus video failus ar iebūvētiem atskaņotājiem (piemēram, YouTube vai Vimeo).",
-				explain2: "Lielākā daļa video mitināšanas pakalpojumu piedāvā šo funkciju, jums ir jāatrod iespēja iegult video, nokopēt saņemto kodu un izmantot %WEBPAGE%.",
+				explain2: "Lielākā daļa video mitināšanas pakalpojumu piedāvā šo funkciju, jums ir jāatrod iespēja iedarināt video, nokopēt saņemto kodu un izmantot %WEBPAGE%.",
 				explain3: "Ja video vēlaties mitināt pats, varat arī izveidot HTML lapu, kurā tiek izmantots video atskaņotājs (piemēram, %EXAMPLE%), mitināt šo lapu un arī izmantot %WEBPAGE%.",
 				webpage: "Web lapas funkcija"
 			},
 			webpageSelectorHome: {
 				lblUrl: "Web lapas URL",
-				lblEmbed: "Iegult kodu",
+				lblEmbed: "Iedarināt kodu",
 				lblOR: "VAI",
 				lblError1: "Kļūda, notīriet vienu no diviem ievades laukiem.",
-				lblError2: "Iegultais kods var saturēt tikai vienu <iframe>"
+				lblError2: "Iegultais kods var saturēt tikai vienu %IFRAMETAG%",
+				configure: "Konfigurēt"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Attēla URL ir jāsākas ar http:// un jābeidzas ar .jpg vai .png",
+				lblURLError: "Šķiet, ka šis attēls nav derīgs. Lūdzu, norādiet tiešu saiti uz attēla failu (parasti URL beidzas ar .jpg vai .png). Saites uz web lapu, kurā atrodas attēls, nedarbosies.",
+				lblURLCheck: "Notiek attēla pārbaude...",
 				lblLabel: "Attēla teksts",
 				lblLabel1: "Uzraksts",
 				lblLabel2: "Novietot virs teksta",
@@ -91,10 +94,13 @@
 				lblPosition4: "Izstiept",
 				lblPosition5: "Pielāgots",
 				tooltipDimension: "Vērtību var norādīt \'px\' vai \'%\'",
+				tooltipDimension2: "Vērtība ir jānorāda pikseļos",
 				lblPosition2Explain: "(var apgriezt)",
 				lblPosition3Explain: "(netiks apgriezts)",
 				lblPosition3Explain2: "(platums vienmēr atbildīs panelim)",
-				lblPosition4Explain: "(var tikt izkropļots)"
+				lblPosition4Explain: "(var tikt izkropļots)",
+				unloadLbl: "Izlādēt, ja lasītājs pārvietojas uz citu sadaļu",
+				unloadHelp: "Ja web lapā ir audio vai video datu nesējs, saglabājiet šo opciju kā atzīmētu, lai tad, kad lasītājs pārvietojas uz citu sadaļu, netiktu demonstrēts saturs. Noņemiet atzīmi, piemēram, gadījumos, ja vēlaties atskaņot skaņu celiņu, kamēr lasītājs pārskata žurnālu.<br />Ja web lapa ir aplikācija, noņemiet šīs opcijas atlasi, lai tad, kad lasītājs atgriežas šajā sadaļā, aplikācija netiktu ielādēta atkārtoti."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adreses vai vietas noteikšana",
@@ -104,7 +110,7 @@
 				lblTitle: "Galvenā posma satura maiņa"
 			},
 			editorInlineMedia: {
-				lblTitle: "Attēla vai video ievietošana"
+				lblTitle: "Attēla, video vai web lapas ievietošana"
 			}
 		}
 	})

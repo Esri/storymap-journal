@@ -39,6 +39,12 @@
 				shareStatus3: "应用程序已在组织中共享",
 				shareStatus4: "应用程序未共享"
 			},
+			saveError: {
+				title: "保存应用程序时出错",
+				err1Div1: "无法保存该应用程序，因为您具有相同名称的其他项目(请参阅您的<a class='linkagolroot' target='_blank'>内容文件夹</a>)。",
+				err1Div2: "请修改主目录节标题并保存应用程序。",
+				btnOk: "编辑主目录节标题"
+			},
 			share: {
 				firstSaveTitle: "应用程序已成功保存",
 				firstSaveHeader: "应用程序现已保存在 %PORTAL% 中，但尚未进行共享。",
@@ -60,6 +66,7 @@
 				shareHeader2: "组织成员（需要登录帐户）可访问应用程序。",
 				shareLinkCopy: "复制",
 				shareLinkCopied: "已复制",
+				shareQ0: "如何在网站中嵌入应用程序?",
 				shareQ1Opt1: "如何将应用程序设置为私有？",
 				shareQ1Opt2: "如何将应用程序设置为私有或公开共享？",
 				shareA1: "在<a href='%LINK1%' target='_blank'>应用程序项目页面</a>上使用 %SHAREIMG%。",

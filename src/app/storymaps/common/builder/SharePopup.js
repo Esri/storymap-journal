@@ -161,9 +161,8 @@ define(["lib-build/tpl!./SharePopup",
 				);
 				
 				// Question 0
-				// TODO i18n Should use "How to"
 				container.find('.shared-question0')
-					.html(i18n.viewer.shareFromCommon.embed)
+					.html(i18n.commonCore.share.shareQ0)
 					.on('click', function() { 
 						container.find('.shared-answer0').collapse('toggle');
 					}

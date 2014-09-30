@@ -1,6 +1,7 @@
 (function() {
 	module.exports = function(grunt) {
-		var TPL_NAME = 'tpl';
+		var fs = require('fs'),
+			TPL_NAME = 'tpl';
 		
 		/*
 		 * Tasks:
@@ -8,6 +9,7 @@
 		 *  - grunt server		Run a webserver on 8080
 		 *  - grunt jshint		Run JSHint once
 		 *  - grunt watch		Run JSHint every time a JS file change
+		 *  - grunt jsapioptim	Generate the JS API modules list used by the app in deploy/
 		 */
 		
 		require('load-grunt-tasks')(grunt);
@@ -16,7 +18,19 @@
 			pkg: grunt.file.readJSON('package.json'),
 			
 			clean: {
-				deploy: ['deploy/*']
+				deploy: ['deploy/*'],
+				jsapioptim: [
+					'deploy/build-api-viewer.tmp', 
+					'deploy/build-api-builder.tmp',
+					'jsapi-optim-modules-viewer.txt',
+					'jsapi-optim-modules-builder.txt'
+				],
+				fontello: [
+				    'deploy/resources/tpl/viewer/font/css/',
+				    'deploy/resources/tpl/viewer/font/config.json',
+				    'deploy/resources/tpl/viewer/font/demo.html',
+				    'deploy/resources/tpl/viewer/font/README.txt'
+				]
 			},
 			
 			mkdir: {
@@ -58,12 +72,13 @@
 					],
 					exclude: [
 						'underscore',
-						'lib-build/normalize', 
+						'lib-build/normalize'
 						//'i18n'
 					],
 					inlineText: true,
 					separateCSS: true,
-					siteRoot: '../../src/app/storymaps/'
+					siteRoot: '../../src/app/storymaps/',
+					preserveLicenseComments: false
 					// ckeditor doesn't build with uglify2
 					//optimize: 'uglify2'
 				},
@@ -71,12 +86,65 @@
 					options: {
 						name: 'storymaps/' + TPL_NAME + '/BuildConfigBuilder',
 						out: 'deploy/app/builder-min.js',
+						onModuleBundleComplete: function (data) {
+							var modules = data.included.filter(function (value) { 
+								return ! value.match(/lib-/);
+							});
+							
+							fs.writeFile("deploy/build-api-builder.tmp", modules.join('\n'), function(err) {
+								if(err) console.log(err);
+							}); 
+						}
 					}
 				},
 				viewer: {
 					options: {
 						name: 'storymaps/' + TPL_NAME + '/BuildConfigViewer',
 						out: 'deploy/app/viewer-min.js',
+						onModuleBundleComplete: function (data) {
+							var modules = data.included.filter(function (value) { 
+								return ! value.match(/lib-/);
+							});
+							
+							fs.writeFile("deploy/build-api-viewer.tmp", modules.join('\n'), function(err) {
+								if(err) console.log(err);
+							}); 
+						}
+					}
+				}
+			},
+			
+			concat: {
+				options: {
+					stripBanners: true,
+					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - '
+							+ '<%= grunt.template.today("yyyy-mm-dd, hh:MM:ss TT") %> - '
+							+ 'This application is released under the Apache License V2.0 by Esri http://www.esri.com/ - '
+							+ 'https://github.com/Esri/map-journal-storytelling-template-js */',
+				},
+				viewerJS: {
+					src: ['deploy/app/viewer-min.js'],
+					dest: 'deploy/app/viewer-min.js',
+				},
+				builderJS: {
+					src: ['deploy/app/builder-min.js'],
+					dest: 'deploy/app/builder-min.js',
+				},
+			},
+			
+			execute: {
+				viewer: {
+					src: ['src/lib-build/js-api-optimizer.js'],
+					options: {
+						// execute node with additional arguments
+						args: ['deploy/build-api-viewer.tmp', 'jsapi-optim-modules-viewer.txt']
+					}
+				},
+				builder: {
+					src: ['src/lib-build/js-api-optimizer.js'],
+					options: {
+						// execute node with additional arguments
+						args: ['deploy/build-api-builder.tmp', 'jsapi-optim-modules-builder.txt']
 					}
 				}
 			},
@@ -111,6 +179,14 @@
 						expand: true,
 						cwd: 'src',
 						src:['app/config.js'],
+						dest: 'deploy/'
+					}]
+				},
+				main: {
+					files: [{
+						expand: true,
+						cwd: 'src',
+						src:['app/main-app.js', 'app/main-config.js'],
 						dest: 'deploy/'
 					}]
 				},
@@ -177,6 +253,12 @@
 						src:['editor.css', 'plugins/storymaps*/plugin.js', 'plugins/storymaps*/icons/**'],
 						dest: 'deploy/resources/lib/ckeditor/'
 					}]
+				},
+				jsapioptim: {
+					files: [{
+						src:['jsapi-optim-modules-viewer.txt', 'jsapi-optim-modules-builder.txt'],
+						dest: 'deploy/'
+					}]
 				}
 			},
 			
@@ -218,6 +300,12 @@
 							search: '../../_resources/font/',
 							replace: '../../common/font/',
 							flags: 'g'
+						},
+						{
+							name: 'CKEDITOR image',
+							search: '../../_resources/icons/ckeditor/',
+							replace: '../../common/icons/ckeditor/',
+							flags: 'g'
 						}
 					]
 				},
@@ -236,13 +324,13 @@
 						}
 					]
 				},
-				index: {
-					src: ['deploy/index.html'],
+				main: {
+					src: ['deploy/app/main-config.js'],
 					actions: [
 						{
 							name: 'Index.html isProduction flag',
-							search: 'isProduction: false',
-							replace: 'isProduction: true'
+							search: 'app.isProduction = false',
+							replace: 'app.isProduction = true'
 						}
 					]
 				}
@@ -301,10 +389,14 @@
 			'requirejs',
 			'regex-replace:js',
 			'regex-replace:css',
+			'concat',
 			
-			// Copy and perform replacement in index.html
+			// Copy html
 			'copy:html',
-			'regex-replace:index',
+			
+			// Copy main
+			'copy:main',
+			'regex-replace:main',
 			
 			// Copy resources
 			'copy:config',
@@ -316,7 +408,24 @@
 			'copy:libsResources',
 			'regex-replace:csslib',
 			
-			'copy:readme'
+			'copy:readme',
+			'clean:jsapioptim', 
+			'clean:fontello'
 		]);
+		
+		/*
+		 * Generate jso.arcgis.com input
+		 */
+		grunt.registerTask('jsapioptim', function() {
+			grunt.task.run('clean'); 
+			grunt.task.run('mkdir'); 
+			
+			grunt.task.run('requirejs'); 
+			grunt.task.run('execute'); 
+			
+			grunt.task.run('clean:deploy'); 
+			grunt.task.run('copy:jsapioptim'); 
+			grunt.task.run('clean:jsapioptim'); 
+		});
 	};
 })();

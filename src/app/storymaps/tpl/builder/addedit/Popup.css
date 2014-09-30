@@ -52,6 +52,15 @@
 	margin: 10px 0 15px 0;
 }
 
+/* Prevent text from not being selectable in FF and Safari */
+#AddEditTitleEditor {
+	-webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+}
+
 /*
  * Title text editor
  */

@@ -2,17 +2,37 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 	icons: 'inlineMedia',
 	init: function(editor) {
 		
-		var inlineMediaExec = function(isEditing)
+		var inlineMediaExec = function(isEditing, editingNode)
 		{
-			var path = editor.elementPath(),
-				elemIsImg = path.lastElement.getName() == "span" && $(path.lastElement.$).data('cke-display-name') == 'image',
-				elemIsFrame = path.lastElement.getName() == "img" && $(path.lastElement.$).data('ckeRealElementType') == 'iframe';
+			var sel = editor.getSelection();
 			
-			require(["dojo/topic"], function(topic){
+			// Search for the media container node specificed in param
+			// Used when clicking on the media to-right edit button
+			// When adding a media or editing through the toolbar button
+			if ( editingNode ) {
+				var elems = editor.document.getElementsByTag('div'),
+					foundIndex = null;
+				
+				$.each(elems.$, function(i, elem){
+					if ( elem == editingNode )
+						foundIndex = i;
+				});
+				
+				if ( foundIndex != null )
+					sel.selectElement(elems.getItem(foundIndex));
+			}
+			
+			var path = editor.elementPath(),
+				elemTmp = $(path.lastElement.$),
+				elem = elemTmp.is("iframe") ? elemTmp.parent() : elemTmp,
+				elemIsImg = elem.data("cke-display-name") == "image",
+				elemIsFrame = elem.is("div") && elem.hasClass("iframe-container");
+			
+			require(["dojo/topic", "dojo/has"], function(topic, has){
 				var media = null;
 				
 				if ( elemIsImg ) {
-					var mediaImg = $(path.lastElement.$).children('img').eq(0),
+					var mediaImg = elem.children('img').eq(0),
 						caption = mediaImg.parents('figure').children('figcaption'),
 						title = caption && caption.length ? caption.html() : mediaImg.attr('title');
 					
@@ -29,11 +49,11 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 					};
 				}
 				else if ( elemIsFrame ) {
-					var mediaIframe = $(path.lastElement.$),
-						mediaContainer = mediaIframe.parent(),
+					var mediaContainer = elem,
+						mediaIframe = mediaContainer.find("iframe").eq(0),
 						isVideo = mediaContainer.hasClass("mj-video-by-url"),
-						isFrameByUrl = mediaContainer.hasClass("mj-frame-by-url"),
-						frameStr = decodeURIComponent(mediaIframe.data('ckeRealelement'));
+						isFrameByUrl = mediaContainer.hasClass("mj-frame-by-url");
+						//frameStr = decodeURIComponent(mediaIframe.data('ckeRealelement'));
 					
 					if ( isVideo ) {
 						media = {
@@ -49,12 +69,15 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 					}
 					
 					media[media.type] = {
-						url: isVideo || isFrameByUrl ? $(frameStr).attr('src') : null,
-						frameTag: isVideo || isFrameByUrl ? null : frameStr,
+						url: isVideo || isFrameByUrl ? mediaIframe.attr('src') : null,
+						frameTag: isVideo || isFrameByUrl ? null : mediaIframe.prop('outerHTML'),
 						display: mediaContainer.hasClass("custom") ? "custom" : "fit",
-						width: $(frameStr).attr('width'),
-						height: $(frameStr).attr('height')
+						width: mediaIframe.attr('width'),
+						height: mediaIframe.attr('height')
 					};
+					
+					if ( media.type == "webpage" )
+						media[media.type].unload = mediaIframe.attr('data-unload') === undefined || mediaIframe.attr('data-unload') == "true";
 				}
 				
 				topic.publish("EDITOR-OPEN-INLINE-MEDIA", {
@@ -66,25 +89,25 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							captionTpl = "";
 						
 						if ( cfg.type == "image" ) {
-							var fullScreenOpt = cfg.activateFullScreen ? 'activate-fullscreen' : '';
-							mediaTpl = '<div class="image-container ' + fullScreenOpt + '"><img src="" /></div>';
+							var fullScreenOpt = cfg.activateFullScreen ? ' activate-fullscreen' : '';
+							mediaTpl = '<div class="image-container' + fullScreenOpt + '"><img src="" /></div>';
 							captionTpl = '<figure class="caption">' + mediaTpl + '<figcaption></figcaption>' + '</figure>';
 						}
 						else {
-							var editTag = "mj-video-by-url";
+							var editTag = " mj-video-by-url";
 							
 							if ( cfg.type == "webpage" && cfg.frameTag )
-								editTag = "mj-frame-by-frametag";
+								editTag = " mj-frame-by-frametag";
 							else if ( cfg.type == "webpage" )
-								editTag = "mj-frame-by-url";
+								editTag = " mj-frame-by-url";
 							
 							// Fit or custom
-							editTag += " " + (! cfg.width && ! cfg.height ? "fit" : "custom");
+							editTag += " " + (! cfg.width && ! cfg.height ? " fit" : " custom");
 							
-							mediaTpl = '<div class="iframe-container ' + editTag + '"><iframe src="" frameborder="0" allowfullscreen="1"/></iframe></div>';
+							mediaTpl = '<div class="iframe-container' + editTag + '"><iframe src="" frameborder="0" allowfullscreen="1"/></iframe></div>';
 							
 							if ( cfg.type == "webpage" && cfg.frameTag ) {
-								mediaTpl = '<div class="iframe-container ' + editTag + '">' + cfg.frameTag + '</div>';
+								mediaTpl = '<div class="iframe-container' + editTag + '">' + cfg.frameTag + '</div>';
 							}
 						}
 						
@@ -93,8 +116,8 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							outputEl = CKEDITOR.dom.element.createFromHtml(captionTpl, editor.document);
 							$(outputEl.getChildren().$).eq(0).children().attr({
 								'src': cfg.url,
-								'width': DEFAULT_WIDTH
-								//'height': cfg.height
+								'width': media && media.image && media.image.width ? media.image.width : DEFAULT_WIDTH,
+								'height': media && media.image && media.image.height ? media.image.height : null
 							});
 							outputEl.getChildren().$[1].innerHTML = cfg.title;
 						}
@@ -107,6 +130,12 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							
 							outputEl.getChildren().$[0].setAttribute('width', DEFAULT_WIDTH);
 							
+							// It's an image with a width/height (resized manually)
+							if ( media && media.image && media.image.width ) {
+								outputEl.getChildren().$[0].setAttribute('width', media.image.width);
+								outputEl.getChildren().$[0].setAttribute('height', media.image.height);
+							}
+							
 							if ( cfg.type == "image" && cfg.titleDisplay == 'hover' )
 								outputEl.getChildren().$[0].setAttribute('title', cfg.title);
 							
@@ -114,12 +143,20 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 								outputEl.getChildren().$[0].setAttribute('width', cfg.width || DEFAULT_WIDTH);
 								outputEl.getChildren().$[0].setAttribute('height', cfg.height || '');
 							}
+							
+							if ( cfg.type == "webpage" )
+								outputEl.getChildren().$[0].setAttribute('data-unload', cfg.unload);
 						}
 						
 						var sel = editor.getSelection(),
-							node = sel.getRanges()[0].getCommonAncestor(),
-							wasCaption = !! $(node.$).parents('figure').length;
+							node = sel.getRanges()[0].getEnclosedNode(),
+							wasCaption = !! (node && $(node.$).parents('figure').length);
 						
+						// Adding in firefox
+						// TODO investigate why this seems needed
+						if ( ! has("firefox") && cfg.type == "image" )
+							node = sel.getRanges()[0].getCommonAncestor();
+							
 						// Add when editor is not focused
 						if( ! editor.getData() ) {
 							editor.insertElement(outputEl);
@@ -127,6 +164,9 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 						else {
 							if ( wasCaption )
 								node = node.getParent();
+							
+							if ( ! node )
+								node = sel.getRanges()[0].getCommonAncestor();
 							
 							node.insertBeforeMe(outputEl);
 							
@@ -147,8 +187,8 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 		
 		// Double click event (trigger in ckeditor/plugins/image2/dialogs/image2.js > onShow (around line 400)
 		require(["dojo/topic"], function(topic){
-			topic.subscribe("EDITOR-DOUBLE-CLICK-IMAGE", function(){
-				inlineMediaExec(true);
+			topic.subscribe("EDITOR-EDIT-INLINE-MEDIA", function(node){
+				inlineMediaExec(true, node);
 			});
 		});
 		

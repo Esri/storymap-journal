@@ -2,14 +2,14 @@
 	 ({
 		builder: {
 			layouts: {
-				mainStage: "Põhilava",
+				mainStage: "Põhisektsioon",
 				sideTitle: "Külgpaneel",
 				sideDescr: "Ohtra tekstiga loo jaoks sobiv paigutus, kus saate oma fotod, videod ja kaardid kombineerida ühtseks selget sõnumit kandvaks artikliks.",
-				floatTitle: "Ujupaneel",
+				floatTitle: "Ujuv paneel",
 				floatDescr: "Paigutus, mis tõmbab tähelepanu kaartidele, võimaldades samas läbipaistva lühitekstipaneeli kaudu sisu jutustada."
 			},
 			common: {
-				lblStatus1: "Avaldatud",
+				lblStatus1: "Publitseeritud",
 				lblStatus2: "Mustand",
 				lblStatus3: "Peidetud"
 			},
@@ -20,8 +20,14 @@
 				cfgSmall: "Väike",
 				cfgMedium: "Keskmine",
 				cfgLarge: "Suur",
-				socialLinksLabel: "Kuva jagamislingid iga jaotise allservas",
+				socialLinksLabel: "Kuva jagamise lingid iga jaotise allservas",
 				socialLinksDescr: "Sel viisil saavad lugejad viidata teie malli %TPL_NAME% kindlatele jaotistele ja neid esile tõsta. Kui kasutate näiteks jaotiste jagamise ikooni, satub lugeja lehel %TPL_NAME% sellesse konkreetsesse jaotisse, mitte loo algusse. Tiitlijaotises asuva sotsiaalmeedia lingi kaudu saavad lugejad tervet teie lehte %TPL_NAME% (päisesakki) jagada nii, et uus lugeja viiakse lehe %TPL_NAME% algusse."
+			},
+			settingsLayoutFonts: {
+				title: "Fondid",
+				defaultLbl: "Vaikimisi",
+				sectionTitleLbl: "Jaotise pealkiri",
+				sectionContentLbl: "Jaotise sisu"
 			},
 			initPopup: {
 				title: "Tere tulemast"
@@ -32,9 +38,10 @@
 				titleAddHome: "Kodujaotise lisamine",
 				titleEdit: "Jaotise muutmine",
 				step: "Samm",
-				stepMainStageExplain: "Põhilava sisu",
+				stepMainStageExplain: "Põhisektsiooni sisu",
 				stepPanelExplain: "Sisu",
-				stepMainStageNextTooltip: "Sisestage jaotise nimi ja valige põhilava sisu",
+				stepMainStageNextTooltip: "Sisestage jaotise nimi ja valige põhisektsiooni sisu",
+				stepMainStageNextTooltip2: "Valige põhisektsiooni sisu",
 				step2NextTooltip: "Sisestage jaotise nimi ja %LAYOUT-TYPE% sisu",
 				stepNextTooltipNext: "järgmisesse etappi liikumiseks",
 				stepNextTooltipAdd: "jaotise lisamiseks",
@@ -44,23 +51,27 @@
 			},
 			addEditViewText: {
 				editorPlaceholder: "Siia saate lisada teksti, lingid ja väiksemad pildid.",
-				editorActionsTitle: "Põhilava toimingud",
-				editorActionsHelpDescr: "Nende juhtelementide abil saate luua põhilava muutvad lingid. Näiteks võite soovida, et kui lugeja klikib kindlat linki, kuvatakse kaardil suuremana kindel asukoht, kuvatakse mõni muu veebikaart või kuvatakse pilt."
+				editorActionsTitle: "Põhisektsiooni toimingud",
+				editorActionsHelpDescr: "Nende juhtelementide abil saate luua põhisektsiooni muutvad lingid. Näiteks võite soovida, et kui lugeja klikib kindlat linki, kuvatakse kaardil suuremana konkreetne asukoht, kuvatakse mõni muu veebikaart või kuvatakse pilt.",
+				mainStageDisabled: "Kui redaktor on maksimeeritud, on põhisektsiooni toimingud keelatud"
 			},
 			organizePopup: {
 				title: "Paiguta",
 				lblHeader: "Sisu korraldamiseks lohistage loo jaotised soovitud kohta.",
 				lblColTitle: "Pealkiri",
-				lblColPubDate: "Avaldamiskuupäev",
+				lblColPubDate: "Avaldamise kuupäev",
 				lblColStatus: "Staatus",
 				checkDisplayReverse: "Kuva jaotised pöördjärjestuses",
 				btnApplyWarning: "Kinnita %NB% jaotis(t)e kustutamine",
 				deleteTooltip: "Kustuta",
-				firstSectionExplain: "(Kodujaotist ei saa teisaldada)"
+				firstSectionExplain: "(Kodujaotist ei saa teisaldada)",
+				exportMainStage: "Põhisektsiooni sisu",
+				exportPanel: "Paneeli sisu",
+				exportActions: "Põhisektsiooni toimingud"
 			},
 			exportData: {
 				btn: "Ekspordi sisu",
-				tooltip: "Kui peaksite oma ajakirja kogemata kustutama, saate sisu eksportimise kaudu luua ajakirja varukoopia ja seda vaadata. Kopeerige ja kleepige vaid lehe sisu mis tahes tekstiprotsessorisse."
+				tooltip: "Kui peaksite oma sisu kogemata kustutama, saate sisu eksportimise kaudu luua varukoopia ja seda vaadata. Kopeerige ja kleepige vaid lehe sisu mis tahes tekstiprotsessorisse."
 			},
 			help: {
 				lblHelp: "Abi",
@@ -70,12 +81,12 @@
 				lblEdit: "Muudatused",
 				lblPublish: "Jaga",
 				lblTips: "Vihjed",
-				lblMore: "Kas sellest ei piisa?",
-				lblLink: "Külastage kaardilugude veebisaiti.",
-				content1Div1: "Artikli koostamisel saate kaasata mitmesuguseid laade. <strong>%LAYOUT_TITLE%</strong> sisaldab enamasti teksti, pilte ja videoid, kaardid aga asuvad <strong>põhilaval</strong>. %TPL_NAME% lubab teil siiski ka pilte, diagramme ja videot põhilaval kasutada.",
-				content1Div2: "Jaotiste lisamisega saate oma loo jutustada täpselt nii, nagu soovite. Kui lugeja liigub jaotise %LAYOUT_TITLE% tekstis kerides allapoole, saab põhilaval kaarti liigutada või olulisi kohti suuremana näidata; samuti saab teie sõnumi toetamiseks automaatselt uusi kaarte ja pilte sisse ja välja lülitada.",
-				content2Div1: "Siin saate kohandada malli %TPL_NAME% ilmet. Muu hulgas saate siin määratleda värviskeemid, paigutused ja laiused.",
-				content2Div2: "Samuti saate lisada Facebooki, Twitteri ja Bitly kaudu jagamise lingid, et lugejad saaksid teie malli %TPL_NAME% mugavalt edasi levitada.",
+				lblMore: "Soovite rohkem?",
+				lblLink: "Külastage Esri kaardilugude veebisaiti.",
+				content1Div1: "Artikli koostamisel saate kaasata mitmesuguseid laade. <strong>%LAYOUT_TITLE%</strong> sisaldab enamasti teksti, pilte ja videoid, kaardid aga asuvad <strong>põhisektsioonis</strong>. %TPL_NAME% lubab teil siiski ka pilte, diagramme ja videot põhisektsioonis kasutada.",
+				content1Div2: "Jaotiste lisamisega saate oma loo jutustada täpselt nii, nagu soovite. Kui lugeja liigub jaotise %LAYOUT_TITLE% tekstis kerides allapoole, saate põhisektsioonis kaarti liigutada või olulisi kohti suuremana näidata; samuti saab Teie sõnumi toetamiseks automaatselt uusi kaarte ja pilte sisse ja välja lülitada.",
+				content2Div1: "Siin saate kohandada malli %TPL_NAME% ilmet. Muuhulgas saate siin määratleda värviskeemid, paigutused, laiused ja fondid.",
+				content2Div2: "Samuti saate lisada Facebooki, Twitteri ja Bitly kaudu jagamise lingid, et lugejad saaksid Teie malli %TPL_NAME% mugavalt edasi levitada.",
 				content3Div1: "Sisu korraldatakse jaotistena. Jaotiste arv pole piiratud (võite neid käsitleda miniatuursete peatükkidena). Kuna nende peatükkide voog peaks olema sujuv, saate korraldamisaknas jaotiste järjestust muuta või jaotisi ka kustutada.",
 				content4Div1: "Kas olete leidnud vea või soovite materjali muuta? Ärge muretsege. Rakenduse muutmisikooni kaudu saate sisu igal ajal muuta. Muutmisvõimaluste kasutamist tuleb teil malli %TPL_NAME% väljatöötamisel kindlasti ohtralt ette!",
 				content5Div1: "%TPL_NAME% salvestatakse teie portaali %PORTAL% kontole ja see on vaikimisi privaatne. Te saate valida, kas soovite seda jagada üksnes oma organisatsiooni piires või kogu maailmaga. Selleks, et seda oleks mugavam jagada, anname teile ka lühikese püsilingi.",
@@ -89,7 +100,8 @@
 				lblHelp: "Tutvu võimalustega"
 			},
 			firstAddSplash: {
-				thisis: "See on"
+				thisis: "See on",
+				lblMain: "See on %BR% põhisektsioon"
 			}
         }
     })

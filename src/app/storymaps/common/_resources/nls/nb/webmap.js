@@ -34,12 +34,13 @@
 				btnCancel: "Avbryt",
 				tocTitle: "Kartinnhold",
 				tocExplain: "Velg hvilke lag som skal vises.",
+				tocNoData: "Ingen lag kan konfigureres.",
 				tocSave: "Lagre kartinnhold",
 				extentTitle: "Kartlokasjon",
 				extentExplain: "Panorer og zoom på kartet for å definere hvordan det skal se ut for leserne.",
 				extentSave: "Lagre kartlokasjon",
 				popupTitle: "Sprettoppvindu for kart",
-				popupExplain: "Konfigurer hvordan sprettoppvinduet som leserne ser, skal se ut",
+				popupExplain: "Klikk på et geoobjekt for å åpne sprettoppvinduet du vil vise",
 				popupSave: "Lagre konfigurasjonen av sprettoppvinduet",
 				hintNavigation: "Kartnavigasjon er deaktivert."
 			}

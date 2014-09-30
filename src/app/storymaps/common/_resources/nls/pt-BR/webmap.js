@@ -34,12 +34,13 @@
 				btnCancel: "Cancelar",
 				tocTitle: "Conteúdo do mapa",
 				tocExplain: "Seleciona quais camadas serão msotradas.",
+				tocNoData: "Nenhuma camada pode ser configurada.",
 				tocSave: "Salvar conteúdo do mapa",
 				extentTitle: "Localização do mapa",
 				extentExplain: "Move e amplia o mapa para definir seu visual para os leitores.",
 				extentSave: "Salvar Localização do Mapa",
 				popupTitle: "Pop-Up do Mapa",
-				popupExplain: "Configura a aparência do pop-up mostrado para leitores",
+				popupExplain: "Clique em uma feição para abrir o pop-up que deseja exibir.",
 				popupSave: "Salve a configuração do pop-up",
 				hintNavigation: "A navegação do mapa está desabilitada."
 			}

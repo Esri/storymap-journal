@@ -39,6 +39,12 @@
 				shareStatus3: "Applicatie wordt gedeeld binnen de organisatie",
 				shareStatus4: "Application wordt niet gedeeld"
 			},
+			saveError: {
+				title: "Fout bij het opslaan van de applicatie",
+				err1Div1: "De applicatie kan niet worden opgeslagen omdat u al een ander item hebt met dezelfde naam (controleer uw <a class='linkagolroot' target='_blank'>contentmap</a>).",
+				err1Div2: "Wijzig de titel van de Home-sectie en sla de applicatie op.",
+				btnOk: "De titel van de Home-sectie bewerken"
+			},
 			share: {
 				firstSaveTitle: "Applicatie is opgeslagen",
 				firstSaveHeader: "Uw applicatie is nu opgeslagen in %PORTAL%, maar is nog niet gedeeld.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Uw applicatie is toegankelijk voor leden van uw organisatie (aanmelden is vereist).",
 				shareLinkCopy: "Kopiëren",
 				shareLinkCopied: "Gekopieerd",
+				shareQ0: "Hoe kan ik de applicatie in een website inbedden?",
 				shareQ1Opt1: "Hoe kan ik de applicatie privé houden?",
 				shareQ1Opt2: "Hoe kan ik de applicatie privé houden of openbaar delen?",
 				shareA1: "Gebruik %SHAREIMG% op <a href='%LINK1%' target='_blank'>de applicatie-itempagina</a>.",

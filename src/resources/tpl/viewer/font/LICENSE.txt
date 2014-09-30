@@ -1,12 +1,21 @@
 Font license info
 
 
-## MFG Labs
+## Fontelico
+
+   Copyright (C) 2012 by Fontello project
+
+   Author:    Crowdsourced, for Fontello project
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://fontello.com
+
+
+## Entypo
 
    Copyright (C) 2012 by Daniel Bruce
 
-   Author:    MFG Labs
+   Author:    Daniel Bruce
    License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://www.mfglabs.com/
+   Homepage:  http://www.entypo.com
 
 

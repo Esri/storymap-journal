@@ -1,182 +1,9 @@
 /*
- * The main view Map/media container
+ * Using a table to properly align Side Panel and Main Stage seems to be 
+ * the only way to have the edit button to properly overflow the Side Panel
  */
-#mainStagePanel {
-    position: relative;
-	float: right;
-	height:100%;
-    width: 100%;
-    /*background: url(../../../../resources/tpl/viewer/icons/mainstage-background.jpg);
-    background-size: 100% 100%;*/
-	-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
-	-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
-	box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
-}
-
-#mainStagePanel .medias {
-	width: 100%;
-    height: 100%;
-}
-
-/*
- * One container with Map or any media
- */
-.mainMediaContainer {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.mainMediaContainer.active {
-	z-index: 1;
-	visibility: visible;
-	opacity: 1;
-}
-
-/*
- * Error
- */
-
-.mainMediaContainer .error {
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 220px;
-	min-height: 50px;
-	margin-left: -110px;
-	margin-top: -50px;
-}
-
-.mainMediaContainer.has-error .error {
-	display: block;
-	background-color: #f2dede;
-	font-size: 1.1em;
-	font-family: 'open_sanssemibold', sans-serif;
-	text-align: center;
-	padding: 15px;
-}
-	
-/*
- * Map
- */
- 
-.mapContainer {
-    border:none;
-    padding:0;
-    height:100%;
-    width:100% !important;
-    overflow:hidden;
-}
-
-.mapContainer.legend {
-	display: none;
-}
-
-/*
- * Popup tunning
- */
-
-/*.mapContainer .esriPopup .actionList {*/
-.esriPopup .actionsPane {
-	display: none !important;
-}
-
-.esriPopup .titleButton.prev {
-	right: 55px !important;
-}
-
-.esriPopup .titleButton.next {
-	right: 31px !important;
-}
-
-.esriPopup .title {
-	color: transparent;
-}
-
-.esriPopup.light .titlePane {
-	height: 21px;
-}
-
-.esriPopup.light .titleButton {
-	top: 4px;
-}
-
-.esriPopup .titleButton.close {
-	opacity: 1.0 !important;
-}
-
-.esriPopup .maximize {
-	display: none;
-}
-
-/*
- * Loading
- */
-
-.loadingIndicator {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 100px;
-	height: 100px;
-	margin-left: -50px;
-	margin-top: -90px;
-	z-index: 99;
-}
-
-/*
- * Image
- */
-
-.imgContainer {
-	margin: auto;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-}
-
-.imgContainer.fit {
-	background-size: contain;
-}
-
-.imgContainer.fill {
-	background-size: cover;
-}
-
-.imgContainer.stretch {
-	background-size: 100% 100%;
-}
-
-/*
- * Embed
- */
-
-.embedContainer {
-	margin: auto;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	border: none;
-}
-
-.embedContainer.fit {
-	width: 100%;
-}
-
-.embedContainer.stretch {
+.containerPanelInner {
+	table-layout: fixed;
 	width: 100%;
 	height: 100%;
 }
@@ -195,19 +22,6 @@ body.mobile-view-expanded .esriSimpleSlider {
 }
 
 /*
- * Layout: side
- */
-
-body.layout-side-right #sidePanel {
-	float: right;
-}
-
-
-body.layout-side-right #mainStagePanel {
-	float: left;
-}
-
-/*
  * Layout: float
  */
 
@@ -219,8 +33,8 @@ body.layout-float-left #floatingPanel {
 	left: 10%;
 }
 
-body.layout-float-left .esriSimpleSlider {
-	left: initial;
+body:not(.mobile-view).layout-float-left .esriSimpleSlider {
+	left: auto;
 	right: 20px
 }
 
@@ -239,12 +53,12 @@ body.layout-float-right .legendContainer {
 	right: inherit; 
 }
 
-body.layout-float-left .esriAttribution {
+body.layout-float-left:not(.mobile-view) .esriAttribution {
 	margin-top: 6px;
 	float: right;
 }
 
-body.layout-float-left .esriControlsBR .logo-med {
+body.layout-float-left:not(.mobile-view) .esriControlsBR .logo-med {
 	float: left;
 	margin-top: -14px;
 }

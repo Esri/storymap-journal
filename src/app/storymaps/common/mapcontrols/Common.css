@@ -1,5 +1,5 @@
 /*
- * Map Controls
+ * Viewer
  */
  
 .mapControls {
@@ -9,33 +9,112 @@
 .mapControls .titleBtn {
 	font-weight: bold;
 	font-size: 0.9em;
-	height: 20px;
-	color: #c0c0c0;
+	height: 33px;
 	-webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: -moz-none;
-    -o-user-select: none;
-    user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-o-user-select: none;
+	user-select: none;
 	text-transform: uppercase;
 	cursor: pointer;
+	padding: 5px 10px 0 10px;
 }
 
 .mapControls .collapseBtn {
 	display: inline-block;
 	width: 18px;
 	height: 9px;
-	background: url(../_resources/icons/mapcontrols-collapse-expand.png);
-	background-repeat: no-repeat;
+	font-size: 16px;
+	vertical-align: -3px;
+}
+
+.mapControls .glyphicon-chevron-up,
+.mapControls .glyphicon-chevron-down {
+	display: none;
+	opacity: 0.6;
+}
+
+.mapControls .glyphicon-chevron-up:hover,
+.mapControls .glyphicon-chevron-down:hover {
+	opacity: 1.0;
+}
+
+.mapControls.collapsed .glyphicon-chevron-up {
+	display: block;
+}
+
+.mapControls:not(.collapsed) .glyphicon-chevron-down {
+	display: block;
 }
 
 .mapControls.collapsed .collapseBtn {
-	background-position: 0 -9px;
+	vertical-align: -2px !important;
 }
 
 .mapControls .content {
-	margin-top: 2px;
+	margin-top: -6px;
+	margin: 0 0px 8px 10px;
+	padding-right: 10px;
 }
 
 .mapControls.collapsed .content {
 	display: none;
+}
+
+/*
+ * Builder
+ */
+
+.mapControls .settingsGear {
+	position: absolute;
+	z-index: 1000;
+	top: 8px;
+	right: 10px;
+	cursor: pointer;
+	opacity: 0.6;
+	color: #4D4D4D;
+	font-size: 0.85em;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.mapControls .settingsGear:hover {
+	opacity: 1.0;
+}
+
+.mapControls.collapsed .settingsGear {
+	display: none;
+}
+
+.mapControls .settingsOverlay {
+	display: none;
+	position: absolute;
+	top: 27px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	/*padding: 5px 10px 8px 10px;*/
+	padding: 0;
+	background-color: #000;
+	opacity: 0.9;
+	color: #FFF;
+}
+
+.mapControls .settingsOverlay .settings-title {
+	text-align: center;
+	padding: 2px 0;
+	border-bottom: 1px solid white;
+}
+
+.mapControls .settingsOverlay .settings-content {
+	padding: 5px;
+}
+
+.mapControls .settingsOverlay  .checkbox {
+	margin-top: 0;
+	margin-bottom: 4px;
 }

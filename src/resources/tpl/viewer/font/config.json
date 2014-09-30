@@ -1,5 +1,5 @@
 {
-  "name": "float-layout-font",
+  "name": "",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -7,16 +7,28 @@
   "ascent": 850,
   "glyphs": [
     {
-      "uid": "d9be617b7f2fe7843118ca2d3a1b8cca",
-      "css": "down-open",
+      "uid": "72109d2fb3088d0e66ea6a9204297651",
+      "css": "spin1",
       "code": 59392,
-      "src": "mfglabs"
+      "src": "fontelico"
     },
     {
-      "uid": "440e148d0e21100118eae7036bcd2067",
-      "css": "up-open",
+      "uid": "815503841e980c848f55e0271deacead",
+      "css": "link",
       "code": 59393,
-      "src": "mfglabs"
+      "src": "entypo"
+    },
+    {
+      "uid": "d090355c31f497b61d676416c1fd39fb",
+      "css": "twitter",
+      "code": 59395,
+      "src": "entypo"
+    },
+    {
+      "uid": "47bd87a650e95b97f947d275ed968efe",
+      "css": "facebook-squared",
+      "code": 59394,
+      "src": "entypo"
     }
   ]
 }

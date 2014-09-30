@@ -1,8 +1,6 @@
 define(["lib-build/tpl!./ViewTheme",
 		"lib-build/css!./ViewTheme",
-		"dojo/topic",
-		"lib-app/spectrum/spectrum", 
-		"lib-build/css!lib-app/spectrum/spectrum"], 
+		"dojo/topic"], 
 	function (viewTpl, viewCss, topic) {
 		return function ViewTheme() 
 		{

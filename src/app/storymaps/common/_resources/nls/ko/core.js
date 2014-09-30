@@ -39,13 +39,19 @@
 				shareStatus3: "응용프로그램이 기관 내에서 공유됨",
 				shareStatus4: "응용프로그램이 공유되지 않음"
 			},
+			saveError: {
+				title: "응용프로그램을 저장하는 동안 오류 발생",
+				err1Div1: "같은 이름을 가진 다른 항목이 이미 있으므로 응용프로그램을 저장할 수 없습니다(<a class='linkagolroot' target='_blank'>콘텐츠 폴더</a> 참조).",
+				err1Div2: "홈 섹션 제목을 수정한 후 응용프로그램을 저장하세요.",
+				btnOk: "홈 섹션 제목 편집"
+			},
 			share: {
 				firstSaveTitle: "응용프로그램이 저장됨",
 				firstSaveHeader: "응용프로그램을 %PORTAL%에 저장했지만 아직 공유하지 않았습니다.",
 				firstSavePreview: "미리보기",
 				firstSaveShare: "공유",
 				firstSaveA1: "%PORTAL%에 익숙하지 않거나 바로가기를 통해 빌더 인터페이스에 접근하려면 다음 링크를 저장하면 됩니다. %LINK1%",
-				firstSaveA1bis: "<a href='%LINK2%' target='_blank'>%PORTAL% 컨텐츠 폴더</a>에서도 응용프로그램을 찾을 수 있습니다.",
+				firstSaveA1bis: "<a href='%LINK2%' target='_blank'>%PORTAL% 콘텐츠 폴더</a>에서도 응용프로그램을 찾을 수 있습니다.",
 				shareTitle: "응용프로그램 공유",
 				sharePrivateHeader: "응용프로그램이 공유되고 있지 않습니다. 공유하시겠습니까?",
 				sharePrivateBtn1: "공개적으로 공유",
@@ -60,6 +66,7 @@
 				shareHeader2: "기관의 구성원이 응용프로그램에 접근할 수 있습니다(로그인 필요).",
 				shareLinkCopy: "복사",
 				shareLinkCopied: "복사됨",
+				shareQ0: "웹 사이트에 응용프로그램을 포함하는 방법",
 				shareQ1Opt1: "응용프로그램을 비공개 상태로 유지하려면 어떻게 해야 합니까?",
 				shareQ1Opt2: "응용프로그램을 비공개 상태로 유지하거나 공개적으로 공유하려면 어떻게 해야 합니까?",
 				shareA1: "<a href='%LINK1%' target='_blank'>응용프로그램 항목 페이지</a>의 %SHAREIMG%를 사용합니다.",

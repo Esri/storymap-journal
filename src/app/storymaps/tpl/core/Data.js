@@ -403,11 +403,7 @@ define(["./WebApplicationData",
 					if ( ! section || ! section.media || (section.media.type != "video" && section.media.type != "webpage") || ! section.media[section.media.type] )
 						return null;
 					
-					return {
-						url: section.media[section.media.type].url,
-						frameTag: section.media[section.media.type].frameTag,
-						ts: section.media[section.media.type].ts
-					};
+					return section.media[section.media.type];
 				});
 				
 				// Story actions embeds
@@ -417,11 +413,7 @@ define(["./WebApplicationData",
 							if ( action.type != "media" || ! action.media.type || (action.media.type != "video" && action.media.type != "webpage") || ! action.media[action.media.type] )
 								return;
 							
-							embeds.push({
-								url: action.media[action.media.type].url,
-								frameTag: action.media[action.media.type].frameTag,
-								ts: action.media[action.media.type].ts
-							});
+							embeds.push(action.media[action.media.type]);
 						});
 					}
 				});

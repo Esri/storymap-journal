@@ -80,8 +80,6 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			// - aspect.before(app.map, "setExtent", function(extent){}); => extent is the asked extent
 			topic.subscribe("CORE_UPDATE_EXTENT", onResetInitialExtent);
 			
-			// TODO
-			$("#mainStageEdit").hide();
 			$(".mainMediaContainer.active .mapControls").addClass("hidden");
 			//container.find(".toc").addClass("collapsed");
 			
@@ -124,8 +122,6 @@ define(["lib-build/tpl!./MapConfigOverlay",
 		
 		function close()
 		{
-			// TODO
-			$("#mainStageEdit").show();
 			$(".mainMediaContainer.active .mapControls").removeClass("hidden");
 			
 			closeUI();
@@ -336,6 +332,14 @@ define(["lib-build/tpl!./MapConfigOverlay",
 				map: app.map,
 				layers: _layersInitial
 			}, container.find(".TableOfContents")[0]);
+			
+			if ( ! _layersInitial || ! _layersInitial.length ) {
+				container.find(".TableOfContents").html(
+					'<div style="margin-bottom: 10px;">'
+					+ i18n.commonWebmap.configure.tocNoData
+					+ '</div>'
+				);
+			}
 
 			on(_tableOfContents, 'toggle', onLayerToggle);
 			on(_tableOfContents, 'load', function(){
@@ -387,7 +391,8 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			
 			// TODO should have an error message if not found
 			
-			var layer = feature.getLayer(),
+			// If the graphics come from a client side layer OR from a Feature Service
+			var layer = feature.getLayer() || feature.MJlayerRef,
 				fields = layer.fields,
 				objectIdFields = $.grep(fields, function(field){
 					return field.type == "esriFieldTypeOID";
@@ -425,6 +430,7 @@ define(["lib-build/tpl!./MapConfigOverlay",
 		function openUI(type)
 		{
 			$("body").addClass("builder-mask");
+			$(".panelEditBtn").fadeOut();
 			
 			if( type == "LOCATION"){
 				container.find(".mapConfigOverlay.position").show();
@@ -449,6 +455,8 @@ define(["lib-build/tpl!./MapConfigOverlay",
 		function closeUI()
 		{
 			$("body").removeClass("builder-mask");
+			$(".panelEditBtn").fadeIn();
+			
 			container.find(".mapConfigOverlay").hide();
 			app.map.enableMapNavigation();
 			$(app.map.__container).parent().find(".esriSimpleSliderTL").show();

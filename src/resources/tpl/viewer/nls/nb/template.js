@@ -9,8 +9,9 @@
 				step2: "Laster inn data",
 				step3: "Initialiserer",
 				loadBuilder: "Går over til byggeverktøyet",
-				fail: "Beklager, men innlastingen mislyktes",
-				failButton: "Prøv på nytt"
+				long: "Karthistorie initialiseres",
+				long2: "Takk for at du venter",
+				failButton: "Last inn programmet på nytt"
 			},
 			signin: {
 				title: "Krever godkjenning",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Det har oppstått en feil",
-				invalidConfig: "Alvorlig feil: Ugyldig konfigurasjon",
-				invalidConfigNoApp: "Alvorlig feil: Identifikator for webkartprogram ikke angitt i index.html",
+				invalidConfig: "Ugyldig konfigurasjon",
+				invalidConfigNoApp: "Identifikator for webkartprogram ikke angitt i index.html.",
+				unspecifiedConfigOwner: "Godkjent eier er ikke konfigurert.",
+				invalidConfigOwner: "Programeier er ikke godkjent.",
 				createMap: "Kan ikke opprette kart",
-				invalidApp: "Alvorlig feil: Kan ikke laste inn applikasjonen",
-				notConfiguredDesktop: "Velkommen til webprogrammet %TPL_NAME%.<br />Programmet er ikke konfigurert ennå.",
-				notConfiguredMobile: "Velkommen til webprogrammet %TPL_NAME%. Programmet er ikke konfigurert ennå, og byggeverktøyet støttes ikke på mobile enheter.",
+				invalidApp: "%TPL_NAME% finnes ikke eller er ikke tilgjengelig.",
+				appLoadingFail: "Noe gikk galt, og %TPL_NAME% ble ikke lastet inn på riktig måte.",
+				notConfiguredDesktop: "Programmet er ikke konfigurert ennå.",
+				notConfiguredMobile: "%TPL_NAME% støttes ikke av denne skjermoppløsningen.",
 				notAuthorized: "Du har ikke tillatelse til å bruke denne applikasjonen",
-				noBuilderIE8: "Byggeverktøyet støttes ikke i versjoner av Internet Explorer som er eldre enn versjon 9.",
-				mapLoadingFail: "Noe gikk galt; kartet kan ikke lastes inn."
+				noBuilderIE: "Byggeverktøyet er ikke støttet i Internet Explorer før versjon %VERSION%. %UPGRADE%",
+				noViewerIE: "Dette programmet er ikke støttet i Internet Explorer før versjon %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Oppdater webleseren</a>.",
+				mapLoadingFail: "Noe gikk galt, og kartet ble ikke lastet inn på riktig måte.",
+				signOut: "Logg ut"
 			},
 			mobileView: {
 				tapForDetails: "Trykk for å se detaljer",
+				clickForDetails: "Få mer informasjon",
 				swipeToExplore: "Sveip for å utforske",
-				tapForMap: "Trykk for å gå tilbake til kartet"
+				tapForMap: "Trykk for å gå tilbake til kartet",
+				clickForMap: "TILBAKE TIL KARTET"
 			},
 			floatLayout: {
 				scroll: "Rull"
@@ -62,7 +71,7 @@
 				copied: "Kopiert",
 				open: "Åpne",
 				embed: "bygge inn på webområde",
-				embedExplain: "Bruk følgende HTML-kode for å bygge inn dagboken på en nettside.",
+				embedExplain: "Bruk følgende HTML-kode for å bygge inn historien på en webside.",
 				size: "Størrelse (bredde/høyde):"
 			}
         }

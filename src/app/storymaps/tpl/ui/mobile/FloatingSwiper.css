@@ -202,3 +202,140 @@
 	font-size: 20px;
 	line-height: 25px;
 }
+
+/*
+ * Embed view
+ */
+ 
+.floatingSwiper.hasDesktopBtn:not(.expanded) .swiper-container {
+	padding: 0 51px;
+}
+
+/* Title */
+.floatingSwiper.hasDesktopBtn:not(.expanded) .title {
+	text-align: center;
+	padding-right: 102px;
+}
+
+
+/* Help */
+.floatingSwiper .help-embed {
+	display: none;
+	text-align: center;
+	padding-right: 102px;
+	color: #438DC7;
+	opacity: 0.8;
+}
+
+.floatingSwiper.hasDesktopBtn:not(.expanded) .help-embed {
+	display: block;
+}
+
+.floatingSwiper .section:hover .help-embed {
+	opacity: 1.0;
+}
+
+.floatingSwiper.hasDesktopBtn .help {
+	display: none;
+}
+
+/* Buttons container */
+.floatingSwiper .embed-btn-container {
+	display: none;
+}
+
+.floatingSwiper.hasDesktopBtn:not(.expanded) .embed-btn-container {
+	position: absolute;
+	top: 0;
+	display: block;
+	width: 51px;
+	height: 100%;
+	z-index: 1;
+	opacity: 0.8;
+	padding-top: 21px;
+}
+
+.floatingSwiper:not(.expanded) .embed-btn-container.disabled {
+	cursor: default;	
+}
+
+/* Buttons */
+.floatingSwiper .embed-btn {
+	width: 42px;
+	height: 42px;
+	background: url(../../../../../resources/tpl/viewer/icons/embed-arrows.png);
+}
+
+.floatingSwiper .embed-btn-container:not(.disabled):hover {
+	opacity: 1.0;
+}
+
+/* Left button */
+.floatingSwiper .embed-btn-left {
+	left: 0;
+	padding-left: 9px;
+}
+
+.floatingSwiper .embed-btn-left.disabled .embed-btn {
+	background-position: 42px 0;
+}
+
+/* Right button */
+.floatingSwiper .embed-btn-right {
+	right: 0;
+	padding-right: 9px;
+}
+
+.floatingSwiper .embed-btn-right .embed-btn {
+	background-position: 0 -42px;
+}
+
+.floatingSwiper .embed-btn-right.disabled .embed-btn {
+	background-position: 42px -42px;
+}
+
+/* Expanded view navigation */
+.floatingSwiper.hasDesktopBtn .expanded-close {
+	display: none;
+}
+
+.floatingSwiper .expanded-close-embed {
+	display: none;
+}
+
+.floatingSwiper.hasDesktopBtn.expanded .expanded-close-embed {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.floatingSwiper .embed-btn2 {
+	display: inline-block;
+	width: 42px;
+	height: 42px;
+	background: url(../../../../../resources/tpl/viewer/icons/embed-arrows.png);
+	opacity: 0.8;
+	vertical-align: -16px;
+	margin: 0 35px;
+}
+
+.floatingSwiper .embed-btn2:not(.disabled):hover {
+	opacity: 1.0;
+	cursor: pointer;
+}
+
+.floatingSwiper .embed-btn2-left.disabled {
+	background-position: 42px 0;
+}
+	
+.floatingSwiper .embed-btn2-right {
+	background-position: 0 -42px;
+}
+
+.floatingSwiper .embed-btn2-right.disabled {
+	background-position: 42px -42px;
+}
+
+.floatingSwiper .expanded-close-embed .backmap2 {
+	height: 40px;
+}

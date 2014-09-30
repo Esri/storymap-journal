@@ -186,8 +186,6 @@ p.has-width.float-right img {
 	top: 0px;
 	text-align:center;
 	z-index: 30;
-	/* let some room for map command and edit buttons */
-	margin: 0 60px;
 }
  
 .backButton {

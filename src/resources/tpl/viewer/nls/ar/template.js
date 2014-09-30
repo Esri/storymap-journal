@@ -9,8 +9,9 @@
 				step2: "تحميل البيانات",
 				step3: "التهيئة",
 				loadBuilder: "التحويل إلى المُنشئ",
-				fail: "ناسف، فشل التحميل",
-				failButton: "إعادة المحاولة"
+				long: "يتم الأن تهيئة دفتر يومية الخريطة",
+				long2: "شكرًا على الانتظار",
+				failButton: "إعادة تحميل التطبيق"
 			},
 			signin: {
 				title: "يلزم وجود المصادقة",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "حدث خطأ",
-				invalidConfig: "خطأ فادح: تكوين غير صحيح",
-				invalidConfigNoApp: "خطأ فادح: مُعرف تطبيق تعيين الويب غير محدد في index.html",
+				invalidConfig: "تكوين غير صحيح",
+				invalidConfigNoApp: "معرف تطبيق رسم الخرائط على الويب غير محدد في index.html.",
+				unspecifiedConfigOwner: "لم يتم تكوين المالك المعتمد",
+				invalidConfigOwner: "لم يتم اعتماد مالك التطبيق",
 				createMap: "يتعذر إنشاء الخريطة",
-				invalidApp: "خطأ فادح: لا يمكن تحميل التطبيق",
-				notConfiguredDesktop: "مرحبًا بك في تطبيق الويب %TPL_NAME%. <br />لم يتم تكوين التطبيق بعد.",
-				notConfiguredMobile: "مرحبًا بك في تطبيق الويب %TPL_NAME%. لم يتم تكوين التطبيق بعد والمُنشئ غير مدعوم على أجهزة الجوال.",
+				invalidApp: "%TPL_NAME% غير موجود أو لا يمكن الوصول إليه.",
+				appLoadingFail: "وقع خطأ ما، لم يتم تحميل %TPL_NAME% بشكل صحيح.",
+				notConfiguredDesktop: "لم يتم تكوين التطبيق بعد.",
+				notConfiguredMobile: "لم يتم دعم منشئ %TPL_NAME% في دقة هذه الشاشة.",
 				notAuthorized: "لست مخولاً لتكوين التطبيق للوصول إلى هذا التطبيق",
-				noBuilderIE8: "المُنشئ غير مدعوم على Internet Explorer الإصدار السابق للإصدار 9.",
-				mapLoadingFail: "حدث خطأ ما، يتعذر تحميل الخريطة."
+				noBuilderIE: "لم يتم دعم المنشيء في Internet Explorer قبل الإصدار %VERSION%. %UPGRADE%",
+				noViewerIE: "لم يتم دعم هذا التطبيق في Internet Explorer قبل الإصدار %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>الرجاء تحديث المستعرض</a>.",
+				mapLoadingFail: "وقع خطأ ما، لم يتم تحميل الخريطة بشكل صحيح.",
+				signOut: "تسجيل الخروج"
 			},
 			mobileView: {
 				tapForDetails: "الضغط للحصول على التفاصيل",
+				clickForDetails: "تعلم المزيد",
 				swipeToExplore: "السحب للاستكشاف",
-				tapForMap: "الضغط للرجوع إلى الخريطة"
+				tapForMap: "الضغط للرجوع إلى الخريطة",
+				clickForMap: "الرجوع إلى الخريطة"
 			},
 			floatLayout: {
 				scroll: "التمرير"
@@ -62,7 +71,7 @@
 				copied: "تم النسخ",
 				open: "فتح",
 				embed: "التضمين في موقع الويب",
-				embedExplain: "استخدام كود HTML التالي لتضمين الدفاتر اليومية في موقع الويب.",
+				embedExplain: "استخدم كود HTML التالي لتضمين دفتر اليومية في موقع الويب.",
 				size: "الحجم (الاتساع/الارتفاع):"
 			}
         }

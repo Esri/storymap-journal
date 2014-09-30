@@ -11,7 +11,8 @@
 				disabled: "Administratoren har deaktivert denne funksjonen",
 				url: "For å angi webadressen til et bilde manuelt",
 				userLookup: "Last inn albumer",
-				notImplemented: "Ikke implementert ennå."
+				notImplemented: "Ikke implementert ennå.",
+				noData: "Finner ingen offentlige albumer"
 			},
 			imageSelector: {
 				lblStep1: "Velg tjeneste",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-postadresse eller Picasa-/Google+-ID",
 				signInMsg2: "Finner ikke kontoen",
-				signInMsg3: "Ingen offentlige album",
 				howToFind: "Slik finner du en konto-ID for Picasa eller Google+",
 				howToFind2: "Kopier tallene mellom første og andre/ på en tilfeldig side på Picasa eller G+"
 			},
@@ -62,7 +62,7 @@
 				url: "Nettadressen for en Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Karthistorie kan ikke spille råvideoer (f.eks. avi og mpeg), men den kan spille av vertsbaserte videofiler som har innbygde spillere (f.eks. YouTube og Vimeo).",
+				explain1: "Karthistorie kan ikke spille råvideoer (f.eks. AVI- og MPEG-format), men den kan spille av vertsbaserte videofiler som har innebygde spillere (f.eks. YouTube og Vimeo).",
 				explain2: "De fleste nettbaserte videovertstjenestene har denne funksjonen. Du må finne alternativet for å bygge inn videoen, kopiere den oppgitte koden og bruke %WEBPAGE%.",
 				explain3: "Du kan eventuelt være vert for videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
 				webpage: "Nettsidefunksjon"
@@ -72,11 +72,14 @@
 				lblEmbed: "Bygg inn kode",
 				lblOR: "OR",
 				lblError1: "Feil, fjern ett av de to inndatafeltene.",
-				lblError2: "Innbygging av kode kan inneholde bare én <iframe>"
+				lblError2: "Innbygging av kode kan inneholde bare én %IFRAMETAG%",
+				configure: "Konfigurer"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "En bilde-URL bør starte med http:// og slutte med .jpg eller .png",
+				lblURLError: "Dette bildet ser ikke ut til å være gyldig. Angi en direkte kobling til en bildefil (URL-adressen skal normalt ende på .jpg eller .png). Koblinger til en webside som inneholder et bilde, kommer ikke til å fungere.",
+				lblURLCheck: "Kontrollerer bilde...",
 				lblLabel: "Bildetekst",
 				lblLabel1: "Undertekst",
 				lblLabel2: "Tekst med musepekeren over",
@@ -91,10 +94,13 @@
 				lblPosition4: "Strekk",
 				lblPosition5: "Tilpasset",
 				tooltipDimension: "Verdien kan angis i \'px\' eller \'%\'",
+				tooltipDimension2: "Verdien må angis i piksler",
 				lblPosition2Explain: "(kan bli beskåret)",
 				lblPosition3Explain: "(blir ikke beskåret)",
 				lblPosition3Explain2: "(bredden passer alltid med panelet)",
-				lblPosition4Explain: "(kan bli forvrengt / vises skjevt)"
+				lblPosition4Explain: "(kan bli forvrengt / vises skjevt)",
+				unloadLbl: "Last ut når leseren navigerer til en annen del",
+				unloadHelp: "Hvis websiden inneholder lyd eller video, beholder du avmerkingen for dette alternativet slik at dette innholdet ikke spilles av når leseren navigerer til en annen del. Du kan fjerne avmerkingen hvis du for eksempel vil spille av et lydspor mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet slik at programmet ikke lastes inn på nytt hvis leseren kommer tilbake til delen."
 			},
 			editorActionGeocode: {
 				lblTitle: "Finn en adresse eller et sted",
@@ -104,7 +110,7 @@
 				lblTitle: "Endre innholdet for hovedstadiet"
 			},
 			editorInlineMedia: {
-				lblTitle: "Sett inn et bilde eller en video"
+				lblTitle: "Sett inn et bilde, en video eller en webside"
 			}
 		}
 	})

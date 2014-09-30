@@ -1,21 +1,55 @@
-#loadingIndicator {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	width: 100px;
-	height: 100px;
-	margin-left: -50px;
-	margin-top: -90px;
-	z-index: 1101;
-}
-
 #loadingMessage {
-	width: 100%;
-	text-align: center;
-	margin-top: 14px;
+	display: none;
 	position: fixed;
 	top: 50%;
+	width: 100%;
+	margin-top: 15px;
 	z-index: 1101;
+	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
+}
+
+#loadingMessage.loaded .mainMessage {
+	-webkit-animation-name: blinker2;
+	-webkit-animation-duration: 3.0s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	
+	-moz-animation-name: blinker2;
+	-moz-animation-duration: 3.0s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+	
+	animation-name: blinker2;
+	animation-duration: 3.0s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker2 {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker2 {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinke2r {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1.0; }
+}
+
+#loadingMessage #loadingRetry {
+	opacity: 0.8;
+	margin-top: -5px;
+}
+
+#loadingMessage #loadingRetry:hover {
+	opacity: 1.0;
 }

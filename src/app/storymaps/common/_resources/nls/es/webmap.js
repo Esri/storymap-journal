@@ -34,12 +34,13 @@
 				btnCancel: "Cancelar",
 				tocTitle: "Contenido del mapa",
 				tocExplain: "Selecciona las capas que se mostrarán.",
+				tocNoData: "No se puede configurar ninguna capa.",
 				tocSave: "Guardar contenido del mapa",
 				extentTitle: "Ubicación del mapa",
 				extentExplain: "Desplázate y haz zoom por el mapa para definir cómo lo verán los lectores.",
 				extentSave: "Guardar ubicación del mapa",
 				popupTitle: "Ventana emergente del mapa",
-				popupExplain: "Configura el aspecto que tendrá la ventana emergente mostrada a los lectores",
+				popupExplain: "Haz clic en una entidad para abrir la ventana emergente que deseas mostrar.",
 				popupSave: "Guardar la configuración de la ventana emergente",
 				hintNavigation: "La navegación del mapa se ha deshabilitado."
 			}

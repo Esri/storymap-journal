@@ -9,8 +9,9 @@
 				step2: "Datu ielāde",
 				step3: "Inicializēšana",
 				loadBuilder: "Pārslēgšanās uz veidotāju",
-				fail: "Diemžēl ielāde neizdevās",
-				failButton: "Atkārtot"
+				long: "Karšu žurnāls tiek inicializēts",
+				long2: "Paldies, ka uzgaidījāt",
+				failButton: "Pārlādēt aplikāciju"
 			},
 			signin: {
 				title: "Nepieciešama autentifikācija",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Kļūda",
-				invalidConfig: "Fatāla kļūda: konfigurācijas neveiksme",
-				invalidConfigNoApp: "Fatāla kļūda: web kartēšanas aplikācijas identifikators nav norādīts index.html",
+				invalidConfig: "Nederīga konfigurācija",
+				invalidConfigNoApp: "Web kartēšanas aplikācijas identifikators nav norādīts šeit: index.html.",
+				unspecifiedConfigOwner: "Autorizētais īpašnieks nav konfigurēts.",
+				invalidConfigOwner: "Aplikācijas īpašnieks nav autorizēts.",
 				createMap: "Nevar izveidot karti",
-				invalidApp: "Fatāla kļūda: aplikāciju nevar ielādēt",
-				notConfiguredDesktop: "Laipni lūdzam web aplikācijā %TPL_NAME%.<br />Aplikācija vēl nav konfigurēta.",
-				notConfiguredMobile: "Laipni lūdzam web aplikācijā %TPL_NAME%. Aplikācija vēl nav konfigurēta un veidotājs vēl nav atbalstīts mobilajās ierīcēs.",
+				invalidApp: "%TPL_NAME% nepastāv vai tai nevar piekļūt.",
+				appLoadingFail: "Radās kļūda, %TPL_NAME% netika ielādēta pareizi.",
+				notConfiguredDesktop: "Aplikācija vēl nav konfigurēta.",
+				notConfiguredMobile: "%TPL_NAME% veidotājs ekrānā ar šādu izšķirtspēju netiek atbalstīts.",
 				notAuthorized: "Jums nav tiesību piekļūt šai aplikācijai",
-				noBuilderIE8: "Pārlūkprogrammā Internet Explorer veidotājs tiek atbalstīts tikai, sākot ar 9. versiju.",
-				mapLoadingFail: "Kaut kas ir nogājis greizi, karti nevar ielādēt."
+				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				noViewerIE: "Šī aplikācija netiek atbalstīta Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
+				mapLoadingFail: "Diemžēl radās kļūda, karte netika ielādēta pareizi.",
+				signOut: "Izrakstīties"
 			},
 			mobileView: {
 				tapForDetails: "Pieskarieties, lai iegūtu detalizētu informāciju",
+				clickForDetails: "Uzziniet vairāk",
 				swipeToExplore: "Pavelciet, lai izpētītu",
-				tapForMap: "Pieskarieties, lai atgrieztos atpakaļ kartē"
+				tapForMap: "Pieskarieties, lai atgrieztos atpakaļ kartē",
+				clickForMap: "ATPAKAĻ UZ KARTI"
 			},
 			floatLayout: {
 				scroll: "Ritināt"
@@ -61,8 +70,8 @@
 				copy: "Kopēt",
 				copied: "Kopēts",
 				open: "Atvērt",
-				embed: "Iegult tīmekļa vietnē",
-				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu tīmekļa vietnē.",
+				embed: "Iedarinār tīmekļa vietnē",
+				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu web vietnē.",
 				size: "Izmēri (platums/augstums):"
 			}
         }

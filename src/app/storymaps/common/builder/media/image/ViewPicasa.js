@@ -29,14 +29,16 @@ define(["lib-build/tpl!./ViewPicasa",
 				container.show();
 				
 				// Resize url field to adjust localization
-				container.find(".userName")
-					.css("width", 
-						container.find(".imageSelectorPicasa").width() 
-						- 85
-						- 40
-						- container.find('.btn-userLogin').outerWidth()
-					)
-					.focus();
+				if ( container.find(".imageSelectorPicasa").width() ) {
+					container.find(".userName")
+						.css("width", 
+							container.find(".imageSelectorPicasa").width() 
+							- 85
+							- 40
+							- container.find('.btn-userLogin').outerWidth()
+						)
+						.focus();
+				}
 			};
 			
 			function login()
@@ -53,7 +55,7 @@ define(["lib-build/tpl!./ViewPicasa",
 						
 						if ( ! data || ! data.length ) {
 							container.find(".loadingMsg").html('');
-							container.find(".errorMsg").show().html(i18n.viewer.viewFlickr.signInMsg3);
+							container.find(".errorMsg").show().html(i18n.commonMedia.mediaSelector.noData);
 							return;
 						}
 						
@@ -73,7 +75,7 @@ define(["lib-build/tpl!./ViewPicasa",
 					},
 					function() {
 						container.find(".loadingMsg").html('');
-						container.find(".errorMsg").show().html(i18n.viewer.viewFlickr.signInMsg2);
+						container.find(".errorMsg").show().html(i18n.commonMedia.imageSelectorPicasa.signInMsg2);
 					}
 				);
 			}

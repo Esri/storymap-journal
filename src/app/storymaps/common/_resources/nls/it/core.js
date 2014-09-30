@@ -39,6 +39,12 @@
 				shareStatus3: "Applicazione condivisa nell\'ambito dell\'organizzazione",
 				shareStatus4: "Applicazione non condivisa"
 			},
+			saveError: {
+				title: "Errore durante il salvataggio dell\'applicazione",
+				err1Div1: "Non è possibile salvare l\'applicazione perché è già presente un altro elemento con lo stesso nome (vedere la <a class='linkagolroot' target='_blank'>cartella dei contenuti</a>).",
+				err1Div2: "Modificare il titolo della prima sezione e salvare l\'applicazione.",
+				btnOk: "Modifica il titolo della prima sezione"
+			},
 			share: {
 				firstSaveTitle: "Salvataggio dell\'applicazione completato",
 				firstSaveHeader: "L\'applicazione è stata salvata in %PORTAL% ma non è ancora condivisa.",
@@ -60,6 +66,7 @@
 				shareHeader2: "L\'applicazione è accessibile ai membri dell\'organizzazione (accesso obbligatorio).",
 				shareLinkCopy: "Copia",
 				shareLinkCopied: "Copiato",
+				shareQ0: "Come si incorpora l\'applicazione in un sito Web?",
 				shareQ1Opt1: "Come si mantiene privata l\'applicazione?",
 				shareQ1Opt2: "Come si mantiene privata o si condivide pubblicamente l\'applicazione?",
 				shareA1: "Utilizzare %SHAREIMG% nella <a href='%LINK1%' target='_blank'>pagina degli elementi dell\'applicazione</a>.",

@@ -21,7 +21,13 @@
 				cfgMedium: "Średni",
 				cfgLarge: "Duży",
 				socialLinksLabel: "Wyświetlaj łącza do udostępniania u dołu każdej sekcji",
-				socialLinksDescr: "Umożliwia to użytkownikom tworzenie odnośników do określonych sekcji aplikacji %TPL_NAME% i ich promowanie. Na przykład, jeżeli użyjesz ikony udostępniania sekcji, użytkownicy zostaną przekierowani do określonej sekcji aplikacji %TPL_NAME%, zamiast do początku opowiadania. Użytkownicy mogą skorzystać z łącza mediów społecznościowych w sekcji tytułu, aby promować całą aplikację %TPL_NAME% (Karta nagłówka) — w tym przypadku użytkownicy są przekierowywani do początku aplikacji %TPL_NAME%."
+				socialLinksDescr: "Umożliwia to użytkownikom tworzenie odnośników do określonych sekcji aplikacji %TPL_NAME% i ich promowanie. Na przykład, jeżeli użyjesz ikony udostępniania sekcji, użytkownicy zostaną przekierowani do określonej sekcji aplikacji %TPL_NAME%, zamiast do początku opowiadania. Użytkownicy mogą skorzystać z łącza mediów społecznościowych w sekcji tytułu, aby promować całą aplikację %TPL_NAME% (karta nagłówka) — w tym przypadku użytkownicy są przekierowywani do początku aplikacji %TPL_NAME%."
+			},
+			settingsLayoutFonts: {
+				title: "Czcionki",
+				defaultLbl: "Domyślnie",
+				sectionTitleLbl: "Tytuł sekcji",
+				sectionContentLbl: "Treść sekcji"
 			},
 			initPopup: {
 				title: "Witamy w"
@@ -35,17 +41,19 @@
 				stepMainStageExplain: "Zawartość obszaru głównego",
 				stepPanelExplain: "Zawartość",
 				stepMainStageNextTooltip: "Wpisz tytuł sekcji i wybierz zawartość, która znajdzie się w obszarze głównym",
+				stepMainStageNextTooltip2: "Wybierz zawartość, która znajdzie się w obszarze głównym",
 				step2NextTooltip: "Wpisz tytuł sekcji i zawartość, która będzie wyświetlana w układzie %LAYOUT-TYPE%",
 				stepNextTooltipNext: "aby przejść do kolejnego etapu",
 				stepNextTooltipAdd: "aby dodać sekcję",
 				firstAddExplain: "Pierwsza sekcja to sekcja Start, którą należy postrzegać jako „okładkę” swojej historii. Tytuł, który właśnie podałeś, będzie wyświetlony dużą czcionką.",
 				firstAddLeanMore: "Dowiedz się więcej",
-				titlePlaceholder: "Tytuł sekcji"
+				titlePlaceholder: "Tytuł sekcji..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",
 				editorActionsTitle: "Operacje w obszarze głównym",
-				editorActionsHelpDescr: "Użyj tych kontrolek do utworzenia łączy, które zmienią obszar główny. Na przykład, gdy użytkownik kliknie łącze, może nastąpić powiększenie mapy do określonej lokalizacji, wyświetlenie innej mapy internetowej lub wyświetlenie obrazu."
+				editorActionsHelpDescr: "Użyj tych kontrolek do utworzenia łączy, które zmienią obszar główny. Na przykład, gdy użytkownik kliknie łącze, może nastąpić powiększenie mapy do określonej lokalizacji, wyświetlenie innej mapy internetowej lub wyświetlenie obrazu.",
+				mainStageDisabled: "Operacje w obszarze głównym nie mogą być wykonywane, gdy okno edytora jest zmaksymalizowane."
 			},
 			organizePopup: {
 				title: "Organizuj",
@@ -56,11 +64,14 @@
 				checkDisplayReverse: "Wyświetlaj sekcje w odwrotnej kolejności",
 				btnApplyWarning: "Potwierdź usunięcie %NB% sekcji",
 				deleteTooltip: "Usuń",
-				firstSectionExplain: "(Sekcji Start nie można przenieść)."
+				firstSectionExplain: "(Sekcji Start nie można przenieść).",
+				exportMainStage: "Zawartość obszaru głównego",
+				exportPanel: "Zawartość panelu",
+				exportActions: "Operacje w obszarze głównym"
 			},
 			exportData: {
 				btn: "Eksportuj zasoby",
-				tooltip: "Dzięki eksportowaniu zawartości możesz przeglądać i utworzyć kopię zapasową swojego Dziennika na wypadek, gdyby został on przez przypadek usunięty. Wystarczy skopiować zawartość strony i wkleić ją do dowolnego edytora tekstu."
+				tooltip: "Dzięki eksportowaniu zawartości możesz przeglądać i utworzyć jej kopię zapasową na wypadek, gdyby została ona przez przypadek usunięta. Wystarczy skopiować zawartość strony i wkleić ją do dowolnego edytora tekstu."
 			},
 			help: {
 				lblHelp: "Pomoc",
@@ -71,10 +82,10 @@
 				lblPublish: "Udostępnij",
 				lblTips: "Wskazówki",
 				lblMore: "Chcesz mieć więcej możliwości?",
-				lblLink: "Odwiedź witrynę Story Maps.",
+				lblLink: "Odwiedź witrynę Esri Story Maps.",
 				content1Div1: "Podczas tworzenia opowiadania możesz łączyć różne style. W układzie <strong>%LAYOUT_TITLE%</strong> zwykle znajduje się tekst, obrazy oraz filmy wideo, mapy natomiast są na ogół widoczne w <strong>obszarze głównym</strong>. Jednak aplikacja %TPL_NAME% pozwala również na umieszczenie w obszarze głównym także obrazów obiektów, diagramów i filmów wideo.",
 				content1Div2: "Dodanie sekcji umożliwia personalizację korzystania z aplikacji opowiadania. Możliwe jest dostosowanie aplikacji tak, aby podczas przewijania tekstu w układzie %LAYOUT_TITLE% mapa znajdująca się w obszarze głównym była przesuwana i powiększana do najważniejszych punktów lub automatycznie przełączane były nowe mapy i obrazy, stanowiące kontekst dla przekazywanych treści.",
-				content2Div1: "Tutaj możesz dostosować wygląd aplikacji %TPL_NAME%. Dostępne są tutaj szczegółowe ustawienia schematów kolorów, układów i szerokości.",
+				content2Div1: "Tutaj możesz dostosować wygląd aplikacji %TPL_NAME%. Dostępne są tutaj szczegółowe ustawienia schematów kolorów, układów, szerokości i czcionek.",
 				content2Div2: "Możesz również dodać łącza udostępniania w serwisach Facebook, Twitter i Bitly, dzięki czemu użytkownicy będą mogli łatwo rozpowszechniać aplikację %TPL_NAME% wśród szerokiego grona odbiorców.",
 				content3Div1: "Zawartość jest podzielona na sekcje. Liczba sekcji, które można dodać jest nieograniczona (sekcje są w postaci niewielkich rozdziałów). Sposób i kolejność prezentacji rozdziałów są bardzo ważne. Na ekranie Organizuj można zmieniać kolejność sekcji lub usuwać je wedle uznania.",
 				content4Div1: "Czy znaleziono błąd w aplikacji, czy chcesz zmienić materiały? Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
@@ -89,7 +100,8 @@
 				lblHelp: "Dowiedz się więcej"
 			},
 			firstAddSplash: {
-				thisis: "To jest"
+				thisis: "To jest",
+				lblMain: "To jest %BR% obszar główny"
 			}
         }
     })

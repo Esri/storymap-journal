@@ -39,6 +39,12 @@
 				shareStatus3: "Aplikacija bendrinama organizacijos viduje",
 				shareStatus4: "Aplikacija nėra bendrinama"
 			},
+			saveError: {
+				title: "Klaida įrašant aplikaciją",
+				err1Div1: "Aplikacijos negalima įrašyti, nes jau turite kitą elementą tokiu pavadinimu (žr. <a class='linkagolroot' target='_blank'>turinio aplanką</a>).",
+				err1Div2: "Pakeiskite pagrindinės skilties antraštę ir įrašykite aplikaciją.",
+				btnOk: "Redaguoti pagrindinės skilties antraštę"
+			},
 			share: {
 				firstSaveTitle: "Aplikacija išsaugota",
 				firstSaveHeader: "Dabar aplikacija išsaugota %PORTAL%, bet dar nėra bendrinama.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Aplikacija pasiekiama organizacijos nariams (būtina prisijungti).",
 				shareLinkCopy: "Kopijuoti",
 				shareLinkCopied: "Nukopijuota",
+				shareQ0: "Kaip įterpti aplikaciją svetainėje?",
 				shareQ1Opt1: "Kaip aplikaciją išlaikyti privačią?",
 				shareQ1Opt2: "Kaip aplikaciją išlaikyti privačią ar bendrinti viešai?",
 				shareA1: "Naudokite %SHAREIMG% <a href='%LINK1%' target='_blank'>aplikacijos elemento puslapyje</a>.",

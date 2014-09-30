@@ -39,6 +39,12 @@
 				shareStatus3: "A aplicação é partilhada com a organização",
 				shareStatus4: "A aplicação não é partilhada"
 			},
+			saveError: {
+				title: "Erro ao guardar a aplicação",
+				err1Div1: "A aplicação não pode ser guardada porque já possui outro item com o mesmo nome (consulte a sua <a class='linkagolroot' target='_blank'>pasta de conteúdo</a>).",
+				err1Div2: "Por favor modifique o título da Seção da Página Inicial e guarde a aplicação.",
+				btnOk: "Editar o título da Seção da Página Inicial"
+			},
 			share: {
 				firstSaveTitle: "Aplicação guardada com sucesso",
 				firstSaveHeader: "A sua aplicação está agora guardada em %PORTAL% mas ainda não se encontra partilhada.",
@@ -60,6 +66,7 @@
 				shareHeader2: "A sua aplicação está acessível aos membros da sua organização (é necessário início de sessão).",
 				shareLinkCopy: "Copiar",
 				shareLinkCopied: "Copiado",
+				shareQ0: "Como incorporar a aplicação num website?",
 				shareQ1Opt1: "Como posso manter a aplicação privada?",
 				shareQ1Opt2: "Como posso manter a aplicação privada ou partilhá-la publicamente?",
 				shareA1: "Utilize %SHAREIMG% na <a href='%LINK1%' target='_blank'>página do item da aplicação</a>.",

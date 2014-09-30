@@ -3,6 +3,7 @@
 		<div class="form-group">
 			<label><%= lblURL %></label>
 			<input type="text" class="form-control mediaURL" placeholder="<%= lblURLPH %>">
+			<p class="mediaURLError"><%= lblURLError %></p>
 		</div>
 		<% if ( mode == "inlineText" ) { %>
 			<div class="inline-image">
@@ -11,10 +12,15 @@
 					<textarea class="form-control mediaTitle" placeholder="<%= lblLabelPH %>" style="height: 74px; margin-top: 5px;"></textarea>
 				</div>
 				<div class="form-group">
-					<input type="checkbox" value="opt-maximize"> <%= lblMaximize %>
-					<a href="#" class="maximizeHelp" data-toggle="tooltip" data-placement="right" data-title="<%= lblMaximizeHelp %>">
-						<img src="resources/tpl/builder/icons/builder-help.png"/>
-					</a>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="opt-maximize"> 
+							<%= lblMaximize %>
+							<a href="#" class="maximizeHelp" data-toggle="tooltip" data-placement="right" data-title="<%= lblMaximizeHelp %>">
+								<img src="resources/tpl/builder/icons/builder-help.png"/>
+							</a>
+						</label>
+					</div>
 				</div>
 			</div>
 			<div class="inline-video">
@@ -40,7 +46,7 @@
 							</div>
 							<div style="margin-top: 2px;">
 								<input type="text" class="form-control input-sm posCustomH" placeholder="<%= phHeight %>" style="display: inline-block; width: 65px;">
-								<a href="#" class="dimHelp" data-toggle="tooltip">
+								<a href="#" class="dimHelp2" data-toggle="tooltip">
 									<img src="resources/tpl/builder/icons/builder-help.png"/>
 								</a>
 							</div>
@@ -133,7 +139,7 @@
 							</div>
 							<div style="margin-top: 2px;">
 								<input type="text" class="form-control input-sm posCustomH" placeholder="<%= phHeight %>" style="display: inline-block; width: 65px;">
-								<a href="#" class="dimHelp" data-toggle="tooltip">
+								<a href="#" class="dimHelp2" data-toggle="tooltip">
 									<img src="resources/tpl/builder/icons/builder-help.png"/>
 								</a>
 							</div>
@@ -141,42 +147,17 @@
 					</div>
 				</div>
 			</div>
-		<% } else { %>
-			<!-- 
-			<div class="form-group imageDetailsContainer">
-				<label class="imageDetailsLbl"><span class="question"></span>Image details</label>
-				<table class="table table-condensed">
-					<thead>
-						<tr>
-							<th></th>
-							<th>Width</th>
-							<th>Height</th>
-							<th>Ratio</th>
-							<th style="width: 46px;"></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Original dimension</td>
-							<td><span class="imgNatWidth"></span></td>
-							<td><span class="imgNatHeight"></span></td>
-							<td><span class="imgNatRatio"></span></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Actual dimension</td>
-							<td><input type="text" class="form-control input-sm imgActualWidth" style="width: 52px;"></td>
-							<td><input type="text" class="form-control input-sm imgActualHeight" style="width: 52px;"></td>
-							<td><span class="imgActualRatio"></span></td>
-							<td>
-								<button type="button" class="btn btn-xs btn-lockratio"></button>
-								<button type="button" class="btn btn-xs btn-reset"></button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			-->
 		<% } %>
+		<div class="form-group mediaUnloadStrategy">
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" class="navigateOutUnload" />
+					<%= unloadLbl %>
+					<a href="#" class="unloadHelp" data-toggle="tooltip" data-title="<%= unloadHelp %>">
+						<img src="resources/tpl/builder/icons/builder-help.png"/>
+					</a>
+				</label>
+			</div>
+		</div>
 	</form>
 </div>

@@ -39,6 +39,12 @@ define({
 				shareStatus3: "Application is shared within the organization",
 				shareStatus4: "Application is not shared"
 			},
+			saveError: {
+				title: "Error saving the application",
+				err1Div1: "The application can't be saved because you already have another item with the same name (see your <a class='linkagolroot' target='_blank'>content folder</a>).",
+				err1Div2: "Please modify the Home Section title and save the application.",
+				btnOk: "Edit the Home Section title"
+			},
 			share: {
 				firstSaveTitle: "Application successfully saved",
 				firstSaveHeader: "Your application is now saved in %PORTAL% but it is not shared yet.",
@@ -60,6 +66,7 @@ define({
 				shareHeader2: "Your application is accessible by your organization's members (login is required).",
 				shareLinkCopy: "Copy",
 				shareLinkCopied: "Copied",
+				shareQ0: "How do I embed the application in a website?",
 				shareQ1Opt1: "How do I keep the application private?",
 				shareQ1Opt2: "How do I keep the application private or share it publicly?",
 				shareA1: "Use %SHAREIMG% on <a href='%LINK1%' target='_blank'>the application item page</a>.",

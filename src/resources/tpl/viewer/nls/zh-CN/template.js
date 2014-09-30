@@ -9,8 +9,9 @@
 				step2: "加载数据",
 				step3: "正在初始化",
 				loadBuilder: "切换到构建器",
-				fail: "抱歉，加载失败",
-				failButton: "重试"
+				long: "Map Journal 正在初始化",
+				long2: "谢谢等候",
+				failButton: "重新加载应用程序"
 			},
 			signin: {
 				title: "需要进行身份验证",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "发生错误",
-				invalidConfig: "严重错误: 配置无效",
-				invalidConfigNoApp: "严重错误：未在 index.html 中指定 Web 制图应用程序标识符",
+				invalidConfig: "配置无效",
+				invalidConfigNoApp: "未在 index.html 中指定 Web 制图应用程序标识符。",
+				unspecifiedConfigOwner: "尚未配置授权的所有者。",
+				invalidConfigOwner: "未授权应用程序所有者。",
 				createMap: "无法创建地图",
-				invalidApp: "严重错误: 无法加载应用程序",
-				notConfiguredDesktop: "欢迎使用 %TPL_NAME% web 应用程序。<br />应用程序尚未配置。",
-				notConfiguredMobile: "欢迎使用 %TPL_NAME% web 应用程序。应用程序尚未配置，移动设备不支持构建器。",
+				invalidApp: "%TPL_NAME% 不存在或不可访问。",
+				appLoadingFail: "发生了一些错误， %TPL_NAME% 未正确加载。",
+				notConfiguredDesktop: "应用程序尚未配置。",
+				notConfiguredMobile: "%TPL_NAME% 构建器不支持此屏幕分辨率。",
 				notAuthorized: "您无权访问该应用程序",
-				noBuilderIE8: "Internet Explorer 9 之前的版本不支持构建器。",
-				mapLoadingFail: "发生了一些错误，无法加载地图。"
+				noBuilderIE: "低于版本 %VERSION% 的 Internet Explorer 不支持构建器。%UPGRADE%",
+				noViewerIE: "低于版本 %VERSION% 的 Internet Explorer 不支持该应用程序。%UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>请更新您的浏览器</a>。",
+				mapLoadingFail: "发生了一些错误，地图未正确加载。",
+				signOut: "登出"
 			},
 			mobileView: {
 				tapForDetails: "点击查看详细信息",
+				clickForDetails: "了解详细信息",
 				swipeToExplore: "滑动以进行浏览",
-				tapForMap: "点击以返回地图"
+				tapForMap: "点击以返回地图",
+				clickForMap: "返回到地图"
 			},
 			floatLayout: {
 				scroll: "滚动"

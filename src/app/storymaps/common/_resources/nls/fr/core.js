@@ -39,6 +39,12 @@
 				shareStatus3: "L\'application est partagée au sein de l\'organisation",
 				shareStatus4: "L\'application n\'est pas partagée"
 			},
+			saveError: {
+				title: "Erreur d\'enregistrement de l\'application",
+				err1Div1: "Impossible d\'enregistrer l\'application, car un autre élément porte déjà le même nom (consultez votre <a class='linkagolroot' target='_blank'>dossier de contenu</a>).",
+				err1Div2: "Modifiez le titre Section d\'accueil et enregistrez l\'application.",
+				btnOk: "Modifier le titre Section d\'accueil"
+			},
 			share: {
 				firstSaveTitle: "L\'application a été enregistrée",
 				firstSaveHeader: "Votre application est maintenant enregistrée dans %PORTAL% mais n\'est pas encore partagée.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Votre application est accessible par les membres de votre organisation (identifiant de connexion requis).",
 				shareLinkCopy: "Copier",
 				shareLinkCopied: "Copié",
+				shareQ0: "Comment incorporer l\'application dans un site Web ?",
 				shareQ1Opt1: "Comment préserver le caractère privé de l'\'application ?",
 				shareQ1Opt2: "Comment préserver le caractère privé de l\'application ou la partager publiquement ?",
 				shareA1: "Utilisez %SHAREIMG% sur la <a href='%LINK1%' target='_blank'>page des éléments de l\'application</a>.",

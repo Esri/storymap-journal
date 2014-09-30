@@ -11,7 +11,8 @@
 				disabled: "Acest obiect spaţial a fost dezactivat de administrator",
 				url: "Pentru introducerea manuală a adresei web a unei imagini",
 				userLookup: "Încărcare albume",
-				notImplemented: "Neimplementat încă."
+				notImplemented: "Neimplementat încă.",
+				noData: "Nu a fost găsit niciun album public"
 			},
 			imageSelector: {
 				lblStep1: "Alegere serviciu",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-mail sau ID Picasa/Google+",
 				signInMsg2: "Cont negăsit",
-				signInMsg3: "Niciun album public",
 				howToFind: "Găsirea unui ID de cont Picasa sau Google+",
 				howToFind2: "Copiaţi cifrele dintre primul şi al doilea caracter „/” a unei pagini Picasa sau G+"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Încorporare cod",
 				lblOR: "SAU",
 				lblError1: "Eroare, eliminaţi unul sau două câmpuri de intrare.",
-				lblError2: "Codul încorporat poate conţine numai un <iframe>"
+				lblError2: "Codul încorporat poate conţine numai un %IFRAMETAG%",
+				configure: "Configurare"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Un URL de imagine trebuie să înceapă cu http:// şi să se încheie cu .jpg sau .png",
+				lblURLError: "Această imagine nu pare validă. Specificaţi un link direct către un fişier imagine (adresa URL se va termina de regulă cu .jpg sau .png). Linkurile către o pagină web care conţine o imagine nu vor funcţiona.",
+				lblURLCheck: "Se verifică imaginea...",
 				lblLabel: "Subtitlu imagine",
 				lblLabel1: "Subtitlu",
 				lblLabel2: "Text informativ",
@@ -91,10 +94,13 @@
 				lblPosition4: "Întindere",
 				lblPosition5: "Particularizat",
 				tooltipDimension: "Valoarea poate fi specificată în „px” sau „%”",
+				tooltipDimension2: "Valoarea trebuie să fie specificată în „px”",
 				lblPosition2Explain: "(poate fi decupat)",
 				lblPosition3Explain: "(nu poate fi decupat)",
 				lblPosition3Explain2: "(lăţimea va corespunde întotdeauna panoului)",
-				lblPosition4Explain: "(poate fi distorsionat)"
+				lblPosition4Explain: "(poate fi distorsionat)",
+				unloadLbl: "Se revocă încărcare când cititorul trece în altă secţiune",
+				unloadHelp: "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca aplicaţia să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizaţi o adresă sau un loc",
@@ -104,7 +110,7 @@
 				lblTitle: "Modificare conţinut pentru Nivelul principal"
 			},
 			editorInlineMedia: {
-				lblTitle: "Inserare imagine sau videoclip"
+				lblTitle: "Inserare imagine, videoclip sau pagină web"
 			}
 		}
 	})

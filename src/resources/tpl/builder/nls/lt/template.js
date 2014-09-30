@@ -21,7 +21,13 @@
 				cfgMedium: "Vidutinis",
 				cfgLarge: "Didelis",
 				socialLinksLabel: "Kiekvienos skilties apačioje rodomos bendrinimo nuorodos",
-				socialLinksDescr: "Skaitytojai gali nurodyti ir reklamuoti konkrečias jūsų %TPL_NAME% skiltis. Pvz., jei naudojate skilties bendrinimo piktogramą, skaitytojai bus nukreipti į konkrečią %TPL_NAME% skiltį, o ne į pasakojimo pradžią. Be to, skaitytojai gali naudoti pavadinimo skiltyje pateiktą socialinių tinklų nuorodą ir reklamuoti visą %TPL_NAME% (antraštės skirtukas), jie bus nukreipti į %TPL_NAME% pradžią."
+				socialLinksDescr: "Skaitytojai gali nurodyti ir reklamuoti konkrečias jūsų %TPL_NAME% skiltis. Pvz., jei naudojate skilties bendrinimo piktogramą, skaitytojai bus nukreipti į konkrečią %TPL_NAME% skiltį, o ne į pasakojimo pradžią. Be to, skaitytojai gali naudoti pavadinimo skiltyje pateiktą socialinių tinklų nuorodą ir reklamuoti visą %TPL_NAME% (antraštės skirtukas), tada jie bus nukreipti į %TPL_NAME% pradžią."
+			},
+			settingsLayoutFonts: {
+				title: "Šriftai",
+				defaultLbl: "Numatytasis",
+				sectionTitleLbl: "Skilties pavadinimas",
+				sectionContentLbl: "Skilties turinys"
 			},
 			initPopup: {
 				title: "Sveiki atvykę"
@@ -35,6 +41,7 @@
 				stepMainStageExplain: "Pagrindinės srities turinys",
 				stepPanelExplain: "Turinys",
 				stepMainStageNextTooltip: "Redaguokite skilties pavadinimą ir pasirinkite pagrindinės srities turinį",
+				stepMainStageNextTooltip2: "Pasirinkti pagrindinės srities turinį",
 				step2NextTooltip: "Įveskite skilties pavadinimą ir %LAYOUT-TYPE% turinį",
 				stepNextTooltipNext: "pereiti į kitą žingsnį",
 				stepNextTooltipAdd: "pridėti skiltį",
@@ -45,7 +52,8 @@
 			addEditViewText: {
 				editorPlaceholder: "Čia pridėkite teksto, nuorodų ir mažų grafinių elementų.",
 				editorActionsTitle: "Pagrindinės srities veiksmai",
-				editorActionsHelpDescr: "Naudodami šiuos valdiklius kurkite nuorodas, pakeisiančias pagrindinę sritį. Pvz., galbūt norėsite, kad kai skaitytojas paspaus nuorodą, pasikeistų žemėlapio mastelis ir būtų rodoma konkreti vieta, kitas interneto žemėlapis ar vaizdas."
+				editorActionsHelpDescr: "Naudodami šiuos valdiklius kurkite nuorodas, pakeisiančias pagrindinę sritį. Pvz., galbūt norėsite, kad kai skaitytojas paspaus nuorodą, pasikeistų žemėlapio mastelis ir būtų rodoma konkreti vieta, kitas interneto žemėlapis ar vaizdas.",
+				mainStageDisabled: "Redaktorių padidinus, pagrindinės srities veiksmai išjungiami"
 			},
 			organizePopup: {
 				title: "Tvarkyti",
@@ -56,11 +64,14 @@
 				checkDisplayReverse: "Rodyti skiltis atvirkštine tvarka",
 				btnApplyWarning: "Patvirtinkite %NB% skilčių panaikinimą",
 				deleteTooltip: "Pašalinti",
-				firstSectionExplain: "(Pagrindinės skilties perkelti negalima)"
+				firstSectionExplain: "(Pagrindinės skilties perkelti negalima)",
+				exportMainStage: "Pagrindinės srities turinys",
+				exportPanel: "Skydelio turinys",
+				exportActions: "Pagrindinės srities veiksmai"
 			},
 			exportData: {
 				btn: "Eksportuoti turinį",
-				tooltip: "Eksportavę turinį galėsite peržiūrėti žurnalą ir sukurti jo atsarginę kopiją, jei netyčia žurnalą ištrintumėte. Tiesiog puslapio turinį nukopijuokite ir įklijuokite į bet kurią teksto apdorojimo programą."
+				tooltip: "Eksportavę turinį galėsite peržiūrėti turinį ir sukurti jo atsarginę kopiją, jei turinį netyčia ištrintumėte. Tiesiog puslapio turinį nukopijuokite ir įklijuokite į bet kurią teksto apdorojimo programą."
 			},
 			help: {
 				lblHelp: "Pagalba",
@@ -71,10 +82,10 @@
 				lblPublish: "Bendrinti",
 				lblTips: "Patarimai",
 				lblMore: "Norite daugiau?",
-				lblLink: "Apsilankykite pristatomųjų žemėlapių svetainėje.",
+				lblLink: "Apsilankykite Esri pristatomųjų žemėlapių svetainėje.",
 				content1Div1: "Kurdami pasakojimą galite integruoti įvairius stilius. Paprastai <strong>%LAYOUT_TITLE%</strong> pateikiami tekstas, vaizdai ir video, o žemėlapiai dažniausiai būna <strong>pagrindinėje srityje</strong>. Tačiau, naudodami %TPL_NAME%, ir pagrindinėje srityje galite pridėti vaizdų, diagramų ir video.",
 				content1Div2: "Pridėdami skilčių galite labai įvairiai adaptuoti savo pasakojimą. Kai skaitytojai slinks %LAYOUT_TITLE% tekstu, gali būti prastumiamas pagrindinėje srityje esantis žemėlapis ir keičiamas jo mastelis, kad būtų rodomi pagrindiniai taškai arba gali būti automatiškai perjungiami nauji žemėlapiai ir vaizdai, sustiprinantys jūsų pasakojimo įspūdį.",
-				content2Div1: "Čia galite koreguoti, kaip atrodys %TPL_NAME%. Čia priderinamos spalvų schemos, maketai ir pločiai.",
+				content2Div1: "Čia galite koreguoti, kaip atrodys %TPL_NAME%. Čia priderinamos spalvų schemos, maketai, pločiai ir šriftai.",
 				content2Div2: "Be to, galite pridėti Facebook, Twitter ir Bitly bendrinimo nuorodas, kad skaitytojai galėtų lengvai išplatinti %TPL_NAME% kitiems.",
 				content3Div1: "Turinys tvarkomas dalijant į skiltis. Gali būti kiek tik norite skilčių (galvokite apie jas, kaip apie mažus skyrius). Svarbi šių skyrių seka; dalyje Tvarkymas galite keisti skilčių išdėstymo tvarką arba jas panaikinti, kaip norite.",
 				content4Div1: "Radote klaidą ar norite pakeisti duomenis? Nesirūpinkite. Norėdami pakeisti turinį, ieškokite aplikacijos redagavimo piktogramos. Kurdami %TPL_NAME% daug kartų naudosite redagavimo funkcijas!",
@@ -89,7 +100,8 @@
 				lblHelp: "Susipažinkite"
 			},
 			firstAddSplash: {
-				thisis: "Tai yra"
+				thisis: "Tai yra",
+				lblMain: "Tai yra %BR% pagrindinė sritis"
 			}
         }
     })

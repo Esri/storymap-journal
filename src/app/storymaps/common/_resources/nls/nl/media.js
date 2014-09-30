@@ -11,7 +11,8 @@
 				disabled: "Deze functie is uitgeschakeld door de beheerder",
 				url: "Om het webadres van een afbeelding handmatig in te voeren",
 				userLookup: "Albums laden",
-				notImplemented: "Nog niet geïmplementeerd."
+				notImplemented: "Nog niet geïmplementeerd.",
+				noData: "Geen openbaar album gevonden"
 			},
 			imageSelector: {
 				lblStep1: "Kies de service",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-mail of Picasa-/Google+-ID",
 				signInMsg2: "Account niet gevonden",
-				signInMsg3: "Geen openbaar album",
 				howToFind: "Zoeken naar een Picasa- of Google+-account-ID",
 				howToFind2: "Kopieer getallen tussen de eerste en tweede \'/\' van een pagina van Picasa of G+"
 			},
@@ -62,7 +62,7 @@
 				url: "URL van een Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Kaartjournaal kan geen onbewerkte video afspelen (zoals avi of mpeg), maar het kan wel gehoste videobestanden met ingebouwde spelers afspelen (zoals YouTube of Vimeo).",
+				explain1: "Het Kaartjournaal kan geen onbewerkte video afspelen (zoals avi of mpeg), maar het kan wel gehoste videobestanden met ingebouwde spelers afspelen (zoals YouTube of Vimeo).",
 				explain2: "De meeste online videoservices bieden deze functie. U moet de optie vinden om de video in te kunnen sluiten, de verstrekte code kopieren en de %WEBPAGE% gebruiken.",
 				explain3: "Als u de video zelf wilt hosten, kunt u een HTML-pagina maken die een videospeler gebruikt zoals %EXAMPLE%. Host die pagina en gebruik tevens de %WEBPAGE%.",
 				webpage: "Functie webpagina"
@@ -72,17 +72,20 @@
 				lblEmbed: "Code voor inbedden",
 				lblOR: "OF",
 				lblError1: "Fout: maak een van de twee velden leeg.",
-				lblError2: "Code inbedden kan maar 1 <iframe> bevatten"
+				lblError2: "Invoegcode kan maar één %IFRAMETAG% bevatten",
+				configure: "Configureren"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Een afbeeldings-URL moet beginnen met http:// en met .jpg of .png eindigen",
+				lblURLError: "Deze afbeelding is blijkbaar niet geldig. Geef een directe koppeling naar een afbeeldingsbestand op (uw URL eindigt doorgaans op .jpg of .png). Koppelingen naar een webpagina die een afbeelding bevat, functioneren niet.",
+				lblURLCheck: "Afbeelding bekijken...",
 				lblLabel: "Bijschrift afbeelding",
 				lblLabel1: "Bijschrift",
 				lblLabel2: "Over tekst bewegen",
 				lblLabel3: "Geen",
 				lblLabelPH: "Voer wat tekst in...",
-				lblMaximize: "Sluit een knop voor maximaliseren in de hoek van de afbeelding in",
+				lblMaximize: "Voeg een knop voor maximaliseren in de hoek van de afbeelding toe",
 				lblMaximizeHelp: "Alleen aanbevolen voor foto\'s van hoge kwaliteit",
 				lblPosition: "Positie",
 				lblPosition1: "Centreren",
@@ -91,10 +94,13 @@
 				lblPosition4: "Uitrekken",
 				lblPosition5: "Aangepast",
 				tooltipDimension: "De waarde kan in 'px' of '%' worden gespecificeerd",
+				tooltipDimension2: "De waarde moet worden opgegeven in \'px\'",
 				lblPosition2Explain: "(kan worden bijgesneden)",
 				lblPosition3Explain: "(wordt niet bijgesneden)",
 				lblPosition3Explain2: "(breedte past altijd in het deelvenster)",
-				lblPosition4Explain: "(kan worden vervormd)"
+				lblPosition4Explain: "(kan worden vervormd)",
+				unloadLbl: "Laden ongedaan maken als de lezer naar een andere sectie gaat",
+				unloadHelp: "Als de webpagina audio of video bevat, laat u deze optie aangevinkt om het afspelen van deze inhoud te stoppen wanneer de lezer naar een andere sectie gaat. Vink de optie uit als u bijvoorbeeld wilt dat een soundtrack blijft spelen wanneer de lezer door het journaal bladert.<br />Als de webpagina een applicatie is, vinkt u deze optie uit zodat de applicatie niet opnieuw wordt geladen als de lezer terugkeert naar die sectie."
 			},
 			editorActionGeocode: {
 				lblTitle: "Een adres of plaats zoeken",
@@ -104,7 +110,7 @@
 				lblTitle: "De inhoud van het hoofdvenster wijzigen"
 			},
 			editorInlineMedia: {
-				lblTitle: "Een afbeelding of video invoegen"
+				lblTitle: "Een afbeelding, video of webpagina invoegen"
 			}
 		}
 	})

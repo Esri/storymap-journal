@@ -1,11 +1,15 @@
 define(["lib-build/css!./ViewConfigure",
 		"lib-build/tpl!./ViewConfigure",
-		"dojo/_base/lang"
+		"../../utils/CommonHelper",
+		"dojo/_base/lang",
+		"dojo/Deferred"
 	], 
 	function (
 		viewCss,
 		viewTpl,
-		lang
+		CommonHelper,
+		lang,
+		Deferred
 	){
 		return function ViewConfigure(container, cfg) 
 		{
@@ -13,12 +17,14 @@ define(["lib-build/css!./ViewConfigure",
 			//maxImgDim = [300, 500];
 			
 			var _media = null,
-				_mediaType = null;
+				_mediaType = null,
+				_params = null;
 			
 			container.append(viewTpl({
 				mode: cfg.mode,
 				lblURL: i18n.commonMedia.mediaConfigure.lblURL,
 				lblURLPH: i18n.commonMedia.mediaConfigure.lblURLPH,
+				lblURLError: i18n.commonMedia.mediaConfigure.lblURLError,
 				lblLabel: i18n.commonMedia.mediaConfigure.lblLabel,
 				lblLabelPH: i18n.commonMedia.mediaConfigure.lblLabelPH,
 				lblMaximize: i18n.commonMedia.mediaConfigure.lblMaximize,
@@ -31,11 +37,12 @@ define(["lib-build/css!./ViewConfigure",
 				lblPosition5: i18n.commonMedia.mediaConfigure.lblPosition5,
 				phWidth: i18n.commonCore.common.width,
 				phHeight: i18n.commonCore.common.height,
-				tooltipDim: i18n.commonMedia.mediaConfigure.tooltipDimension,
 				lblPosition2Explain: i18n.commonMedia.mediaConfigure.lblPosition2Explain,
 				lblPosition3Explain: i18n.commonMedia.mediaConfigure.lblPosition3Explain,
 				lblPosition3Explain2: i18n.commonMedia.mediaConfigure.lblPosition3Explain2,
-				lblPosition4Explain: i18n.commonMedia.mediaConfigure.lblPosition4Explain
+				lblPosition4Explain: i18n.commonMedia.mediaConfigure.lblPosition4Explain,
+				unloadLbl: i18n.commonMedia.mediaConfigure.unloadLbl,
+				unloadHelp: i18n.commonMedia.mediaConfigure.unloadHelp
 			}));
 			
 			initEvents();
@@ -77,11 +84,18 @@ define(["lib-build/css!./ViewConfigure",
 				
 				_mediaType = media ? media.type : 'image';
 				_media = media;
+				_params = params;
+				
 				// URL
-				container.find('.mediaURL').val(media ? media[media.type].url : '');
-				container.find('.mediaURL').parent().toggle(
-					params.fromService === false && _mediaType == "image"
-				);
+				container.find('.mediaURL')
+					.val(media ? media[media.type].url : '')
+					.keyup(function(){
+						container.find('.mediaURLError').fadeOut();
+					})
+					.parent().toggle(
+							params.fromService === false && _mediaType == "image"
+					);
+				container.find('.mediaURLError').hide();
 				
 				// Frame trick
 				var isFrame = _mediaType == 'webpage' && media[media.type].frameTag;
@@ -148,26 +162,53 @@ define(["lib-build/css!./ViewConfigure",
 					fillImageInformation(media[media.type].url, imgCfg);
 				*/
 				
+				// Web Page Unload strategy
+				container.find(".mediaUnloadStrategy").toggle(_mediaType == 'webpage');
+				container.find(".navigateOutUnload").prop('checked', ! params.media || ! params.media[params.media.type] || params.media[params.media.type].unload === undefined || params.media[params.media.type].unload);
+				
 				container.show();
+				container.find('.mediaURL').focus();
 			};
 			
-			this.checkError = function()
+			this.checkError = function(saveBtn)
 			{
-				var hasError = false;
-				// TODO valid URL check
-				if ( ! container.find('.mediaURL').val() )
-					return true;
+				var error = false;
 				
-				return hasError;
+				container.find('.mediaURLError').fadeOut();
+				
+				if ( _params.fromService === false && _mediaType == "image" ) {
+					var resultDeferred = new Deferred();
+					
+					var saveBtnLbl = saveBtn.html();
+					saveBtn.html(i18n.commonMedia.mediaConfigure.lblURLCheck);
+					
+					var img = new Image();
+					img.src =  CommonHelper.prependURLHTTP(container.find('.mediaURL').val().trim());
+					
+					img.onload = function(){
+						saveBtn.html(saveBtnLbl);
+						resultDeferred.resolve(false);
+					};
+					
+					img.onerror = function(){
+						container.find('.mediaURLError').fadeIn();
+						saveBtn.html(saveBtnLbl);
+						resultDeferred.resolve(true);
+					};
+					
+					return resultDeferred;
+				}
+				
+				return error;
 			};
 			
 			this.getData = function()
 			{
 				var display = container.find('.media-configure-position.selected').data('val'),
 					data = {
-					url: container.find('.mediaURL').val(),
-					type: _mediaType
-				};
+						url: container.find('.mediaURL').val().trim(),
+						type: _mediaType
+					};
 				
 				if ( cfg.mode == "inlineText" ) {
 					if ( _mediaType == "image" ) {
@@ -206,11 +247,16 @@ define(["lib-build/css!./ViewConfigure",
 					}
 				}
 				
+				if ( _mediaType == "webpage" )
+					data.unload = container.find(".navigateOutUnload").prop('checked');
+				
 				if ( _mediaType == "webpage" && _media.webpage.frameTag ) {
 					data.frameTag = data.url;
 					data.url = '';
 					data.ts = new Date().getTime();
 				}
+				else
+					data.url = CommonHelper.prependURLHTTP(data.url);
 					
 				return data;
 			};
@@ -310,7 +356,14 @@ define(["lib-build/css!./ViewConfigure",
 					html: true
 				});
 				
-				container.find('.maximizeHelp').tooltip();
+				container.find('.dimHelp2').tooltip('destroy').tooltip({
+					title: i18n.commonMedia.mediaConfigure.tooltipDimension2,
+					html: true
+				});
+				
+				container.find('.maximizeHelp, .unloadHelp').tooltip({
+					html: true
+				});
 			}
 			
 			/*

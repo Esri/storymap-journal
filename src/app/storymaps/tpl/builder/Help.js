@@ -44,6 +44,9 @@ define(["lib-build/tpl!./Help",
 				
 				_closeCallback = closeCallback;
 				
+				if( WebApplicationData.getLayoutId() == "float" )
+					app.ui.floatingPanel.disableSwiperKeybordEvent();
+				
 				container.show();
 			};
 			
@@ -248,6 +251,9 @@ define(["lib-build/tpl!./Help",
 				container.hide();
 				
 				_closeCallback && _closeCallback();
+				
+				if( WebApplicationData.getLayoutId() == "float" )
+					app.ui.floatingPanel.enableSwiperKeybordEvent();
 			}
 			
 			function initEvents()
@@ -273,6 +279,11 @@ define(["lib-build/tpl!./Help",
 				});
 				
 				container.find('.helpFooter .btn-close').click(close);
+				
+				$(document).keyup(function(e) {
+					if ( e.keyCode == 27 && container.is(":visible") )
+						close();
+				});
 				
 				$(window).resize(drawMask);
 			}

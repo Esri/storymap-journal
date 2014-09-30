@@ -1,21 +1,48 @@
 .navDots {
 	display: table;
+}
+
+.navDots.vertical {
 	width: 34px;
+}
+
+.navDots.horizontal {
+	display: inline-block;
+	height: 28px;
 }
 
 .navDots .navDotsInner {
 	display: table-cell;
 	vertical-align: middle;
 	color: #F00;
+	max-width: 33px;
+	overflow: hidden;
+}
+
+.navDots.horizontal .navDotsInner {
+	max-width: inherit;
 }
 
 /*
  * Up/down buttons
  */
 .navDots .navDotsNav {
-	width: 33px;
+	width: 26px;
 	height: 38px;
 	cursor: pointer;
+	margin-left: 4px;
+	opacity: 0.8;
+}
+
+.navDots .navDotsNav:hover {
+	opacity: 1.0;
+}
+
+.navDots.horizontal .navDotsNav {
+	display: inline-block;
+	width: 15px;
+	height: 26px;
+	margin-left: 8px;
 }
 
 .navDots .navDotsNav.disabled {
@@ -24,42 +51,64 @@
 }
 
 .navDots .navDotsUp {
-	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-up-white.png') no-repeat 4px 13px;
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-arrows-white.png') no-repeat 0 13px;
 }
 
 .navDots .navDotsDown {
-	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-down-white.png') no-repeat 4px 13px;
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-arrows-white.png') no-repeat -26px 13px;
+}
+
+.navDots.horizontal .navDotsUp {
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-arrows-white.png') no-repeat -67px 1px;
+}
+
+.navDots.horizontal .navDotsDown {
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-arrows-white.png') no-repeat -52px 1px;
 }
 
 /*
  * Dot
  */
 
+.navDots.horizontal .dots {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 2px;
+}
+
 .navDots .dot {
 	font-family: Georgia;
 	height: 21px;
 	line-height: 21px;
 	padding: 0;
-	color: #444;
 	font-size: 18px;
 	text-align: center;
 	cursor: pointer;
 }
 
+.navDots.horizontal .dot {
+	display: inline-block;
+	width: 21px;
+}
+
 .navDots .dot[data-index="0"] {
-	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-home.png') 10px 5px;
-	background-repeat: no-repeat;
-	text-indent: -99px;
-	overflow: hidden;
+	font-family: 'Glyphicons Halflings';
+	font-size: 15px !important;
+	width: 100%;
+	line-height: 19px;
 }
 
 .navDots .dot:hover {
-	color: #FFF;
+	color: #FFF !important;
 }
 
 .navDots .dot.active {
-	color: #FFF;
+	color: #FFF !important;
 	font-size: 28px;
+}
+
+.navDots.horizontal .dot.active {
+	vertical-align: -3px;
 }
 
 .navDots .dot:first-child.active {
@@ -95,9 +144,20 @@
 	text-align: center;
 }
 
+.navDots.horizontal .navGroups {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 6px;
+}
+
 .navDots .navGroup {
 	margin: 2px 0;	
 	cursor: pointer;
+}
+
+.navDots.horizontal .navGroup {
+	display: inline-block;
+	width: 34px;
 }
 
 .navDots .navGroup:hover {

@@ -198,6 +198,8 @@ define(["lib-build/tpl!./Popup",
 						try {
 							_popupDeferred.reject();
 						} catch(e){ }
+						
+						container.removeClass("temporaryHide");
 					}
 					else
 						_isTemporaryHide = false;
@@ -236,8 +238,13 @@ define(["lib-build/tpl!./Popup",
 			
 			function toggle()
 			{
-				if ( container.hasClass("in") )
+				if ( container.hasClass("in") ){
 					_isTemporaryHide = true;
+					container.addClass("temporaryHide");
+				}
+				else {
+					container.removeClass("temporaryHide");
+				}
 				
 				container.modal('toggle');
 			}
@@ -308,29 +315,44 @@ define(["lib-build/tpl!./Popup",
 				else
 					sectionTitle = CKEDITOR.instances.AddEditTitleEditor.getData();
 				
+				var postErrorCheck = function() {
+					if ( ! sectionTitle )
+						container.find('.titleContainer').addClass('has-feedback has-error');
+					else if ( $.inArray(0, errorInStep) != -1 )
+						showTab(0);
+					else if ( $.inArray(1, errorInStep) != -1 )
+						showTab(1);
+					else {
+						_popupDeferred.resolve({
+							title: sectionTitle,
+							content: viewTextData.text,
+							contentActions: viewTextData.actions,
+							creaDate: Date.now(),
+							pubDate: Date.now(),
+							status: 'PUBLISHED',
+							media: viewMediaData.media 
+						});
+						container.modal('hide');
+					}
+				};
+				
 				if ( _viewContentPanel.checkError() )
 					errorInStep.push(1);
-				if ( _viewMainStage.checkError() )
+				
+				var mainStageError = _viewMainStage.checkError(_btnSubmit);
+				
+				if ( mainStageError instanceof Deferred ) {
+					mainStageError.then(function(hasError){
+						if ( hasError )
+							errorInStep.push(0);
+						postErrorCheck();
+					});
+					return;
+				}
+				else if ( mainStageError )
 					errorInStep.push(0);
 				
-				if ( ! sectionTitle )
-					container.find('.titleContainer').addClass('has-feedback has-error');
-				else if ( $.inArray(0, errorInStep) != -1 )
-					showTab(0);
-				else if ( $.inArray(1, errorInStep) != -1 )
-					showTab(1);
-				else {
-					_popupDeferred.resolve({
-						title: sectionTitle,
-						content: viewTextData.text,
-						contentActions: viewTextData.actions,
-						creaDate: Date.now(),
-						pubDate: Date.now(),
-						status: 'PUBLISHED',
-						media: viewMediaData.media 
-					});
-					container.modal('hide');
-				}
+				postErrorCheck();
 			}
 			
 			function updateSubmitButton()
@@ -364,7 +386,7 @@ define(["lib-build/tpl!./Popup",
 				if ( disableButton ) {
 					var tooltip = "";
 					if ( currentStep <= 0 ) {
-						tooltip = i18n.builder.addEditPopup.stepMainStageNextTooltip;
+						tooltip = app.data.getStoryLength() ? i18n.builder.addEditPopup.stepMainStageNextTooltip : i18n.builder.addEditPopup.stepMainStageNextTooltip2;
 						if ( _cfg.mode == "add" )
 							tooltip += " " + i18n.builder.addEditPopup.stepNextTooltipNext;
 					}

@@ -39,6 +39,12 @@
 				shareStatus3: "Aplikacja jest udostępniana w obrębie tej instytucji",
 				shareStatus4: "Aplikacja nie jest udostępniana"
 			},
+			saveError: {
+				title: "Błąd podczas zapisywania aplikacji",
+				err1Div1: "Nie można zapisać aplikacji, ponieważ istnieje już inny element o tej samej nazwie (patrz <a class='linkagolroot' target='_blank'>folder zasobów</a>).",
+				err1Div2: "Zmień tytuł sekcji Start i zapisz aplikację.",
+				btnOk: "Edytuj tytuł sekcji Start"
+			},
 			share: {
 				firstSaveTitle: "Aplikacja zapisana pomyślnie",
 				firstSaveHeader: "Aplikacja została zapisana w portalu %PORTAL%, jednak nie została jeszcze udostępniona.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Aplikacja jest dostępna dla członków instytucji (wymagane logowanie).",
 				shareLinkCopy: "Kopiuj",
 				shareLinkCopied: "Skopiowane",
+				shareQ0: "Jak mogę osadzić aplikację w witrynie internetowej?",
 				shareQ1Opt1: "Jak mogę zachować prywatny status aplikacji?",
 				shareQ1Opt2: "W jaki sposób mogę zachować prywatny status aplikacji lub udostępnić ją publicznie?",
 				shareA1: "Użyj przycisku %SHAREIMG% na <a href='%LINK1%' target='_blank'>stronie aplikacji</a>.",
@@ -76,7 +83,7 @@
 			settingsLayout: {
 				title: "Układ",
 				explain: "Jakiego układu chcesz użyć?",
-				explainInit: "W oknie dialogowym ustawień możesz zmienić układ możesz w dowolnej chwili.",
+				explainInit: "W oknie dialogowym ustawień możesz zmienić układ w dowolnej chwili.",
 				viewExample: "Wyświetl przykład online"
 			},
 			settingsTheme: {

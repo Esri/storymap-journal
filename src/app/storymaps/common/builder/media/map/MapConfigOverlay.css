@@ -51,6 +51,8 @@
 	top: 20px;
 	right: 0;
 	width: 40%;
+	min-width: 330px;
+	max-width: 500px;
 	/* need to set fixed height because of the expand button */
 	/*height: 360px;*/
 	border-right: none; 
@@ -66,66 +68,11 @@ body.layout-float .mapConfigOverlay.toc {
 	padding: 5px 5px 0 5px;
 }
 
-/*
-.mapConfigOverlay.toc.collapsed {
-	margin-right: -214px;
-}
-
-.expandButton {
-	position: absolute;
-	bottom: 165px;
-	left: -169px;
-	width: 360px;
-	height: 25px;
-	text-align: end;
-	cursor: pointer;
-	-webkit-transform: rotate(-90deg);	
-	-moz-transform: rotate(-90deg);
-	-ms-transform: rotate(-90deg);
-	-o-transform: rotate(-90deg);
-	transform: rotate(-90deg);
-}
-
-.expandButton .toc-title {
-	font-size: 1.25em;
-	font-family: 'open_sanssemibold', sans-serif;
-	text-transform: uppercase;
-	transition: display 2.0s;
-}
-
-.mapConfigOverlay.toc:not(.collapsed) .expandButton .toc-title {
-	display: none;
-}
-
-.expandButton .toc-toggle {
-	display: inline-block;
-	width: 18px;
-	height: 9px;
-	background: url(../../../_resources/icons/mapcontrols-collapse-expand.png);
-	background-repeat: no-repeat;
-	margin: 1px 5px;
-}
-
-.mapConfigOverlay.toc:not(.collapsed) .expandButton .toc-toggle {
-	background-position: 0 -9px;
-}
-*/
-
 .mapConfigOverlay .tocContainer {
 	max-height: 350px;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
-
-/* Because of the expand button */
-/*
-.mapConfigOverlay.toc .btns {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-}
-*/
 
 /*
  * TOC component override
@@ -163,6 +110,9 @@ body.layout-float .mapConfigOverlay.toc {
 
 .tocContainer .TableOfContents .toc-checkbox:before {
 	content: "\e157";
+	/* prevent fontello conflict */
+	font-family: inherit;
+	margin: 0;
 }
     
 .tocContainer .TableOfContents .icon-check-1:before {

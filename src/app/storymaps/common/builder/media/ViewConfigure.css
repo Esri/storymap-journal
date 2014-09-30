@@ -45,8 +45,22 @@
 	margin-top: 15px;
 }
 
-.mediaSelectorConfigure .form-group:nth-child(1) {
+/* URL and video groups */
+.mediaSelectorConfigure .form-group:nth-child(1),
+.mediaSelectorConfigure .form-group:nth-child(3) {
 	margin-top: 0;
+}
+
+/*
+ * URL
+ */
+
+.mediaURLError {
+ 	display: none;
+ 	background-color: #f2dede;
+ 	font-weight: bold;
+ 	padding: 5px;
+ 	margin: 10px 0 0 0;
 }
 
 /*
@@ -108,4 +122,8 @@
 
 .mediaSelectorConfigure .form-group {
 	margin-bottom: 0px !important;
+}
+
+.mediaSelectorConfigure .tooltip-arrow {
+	display: none;
 }

@@ -11,7 +11,8 @@
 				disabled: "Cette entité a été désactivée par l\'administrateur",
 				url: "Pour entrer manuellement l\'adresse Web d\'une image",
 				userLookup: "Charger des albums",
-				notImplemented: "Fonction pas encore implémentée."
+				notImplemented: "Fonction pas encore implémentée.",
+				noData: "Aucun album public trouvé"
 			},
 			imageSelector: {
 				lblStep1: "Choisir le service",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "Adresse électronique ou identifiant Picasa/Google+",
 				signInMsg2: "Compte introuvable",
-				signInMsg3: "Pas d\'album public",
 				howToFind: "Comment trouver un ID de compte Picasa ou Google+",
 				howToFind2: "Copiez les chiffres compris entre la première et la deuxième barre oblique inverse \'/\' d\'une page Picasa ou G+"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Code incorporé",
 				lblOR: "OU",
 				lblError1: "Erreur. Effacez un des deux champs en entrée.",
-				lblError2: "Le code incorporé ne peut contenir qu\'un <iframe>"
+				lblError2: "Le code incorporé ne peut contenir qu\'un %IFRAMETAG%",
+				configure: "Configurer"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "L\'URL d\'une image doit commencer par http:// et se terminer par .jpg ou .png",
+				lblURLError: "Cette image ne semble pas valide. Spécifiez un lien direct vers un fichier image (votre URL se terminera généralement par .jpg ou .png). Les liens vers une page Web contenant une image ne fonctionneront pas.",
+				lblURLCheck: "Vérification de l\'image...",
 				lblLabel: "Légende de l\'image",
 				lblLabel1: "Légende",
 				lblLabel2: "Texte de pointage",
@@ -91,10 +94,13 @@
 				lblPosition4: "Etirer",
 				lblPosition5: "Personnalisé",
 				tooltipDimension: "La valeur peut être spécifiée en 'px' ou '%'",
+				tooltipDimension2: "La valeur doit être spécifiée en 'px'",
 				lblPosition2Explain: "(peut être rognée)",
 				lblPosition3Explain: "(ne sera pas rognée)",
 				lblPosition3Explain2: "(la largeur s\'adapte toujours au volet)",
-				lblPosition4Explain: "(peut être déformée)"
+				lblPosition4Explain: "(peut être déformée)",
+				unloadLbl: "Décharger lorsque le lecteur quitte cette section pour accéder à une autre section",
+				unloadHelp: "Si la page Web comporte un support audio ou vidéo, cette option doit rester activée pour empêcher la lecture du contenu lorsque le lecteur quitte cette section pour accéder à une autre section. Désactivez cette option pour continuer la lecture d\'une piste audio pendant que le lecteur avance dans le journal.<br />Si la page Web est une application, désactivez cette option pour que l\'application ne se recharge pas si ce lecteur revient à cette section."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localiser une adresse ou un lieu",
@@ -104,7 +110,7 @@
 				lblTitle: "Modifier le contenu de la grande scène"
 			},
 			editorInlineMedia: {
-				lblTitle: "Insérer une image ou une vidéo"
+				lblTitle: "Insérer une image, une vidéo ou une page Web"
 			}
 		}
 	})

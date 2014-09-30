@@ -7,15 +7,25 @@
 	top: 0;
 	right: 15%;
 	width: 200px;
-	padding: 5px 10px 8px 10px;
+}
+
+.legendContainer .glyphicon-chevron-up,
+.legendContainer .glyphicon-chevron-down {
+	display: none !important;
+}
+
+.legendContainer:not(.collapsed) .glyphicon-chevron-up {
+	display: block !important;
+	vertical-align: -2px !important;
+}
+
+.legendContainer.collapsed .glyphicon-chevron-down {
+	display: block !important;
+	vertical-align: -2px !important;
 }
 
 .legendContainer .collapseBtn {
-	background-position: 0 -9px !important;
-}
-
-.legendContainer.collapsed .collapseBtn {
-	background-position: 0 0 !important;
+	vertical-align: -2px !important;
 }
 
 .legendContainer .content {

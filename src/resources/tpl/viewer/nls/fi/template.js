@@ -9,8 +9,9 @@
 				step2: "Ladataan aineistoa",
 				step3: "Käynnistetään",
 				loadBuilder: "Vaihdetaan luontitoimintoon",
-				fail: "Lataus epäonnistui",
-				failButton: "Yritä uudelleen"
+				long: "Karttapäiväkirjaa alustetaan",
+				long2: "Odota hetki",
+				failButton: "Lataa sovellus uudelleen"
 			},
 			signin: {
 				title: "Todennus on pakollinen",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Tapahtui virhe",
-				invalidConfig: "Vakava virhe: virheellinen kokoonpano",
-				invalidConfigNoApp: "Vakava virhe: Web-karttasovelluksen tunnusta ei ole määritetty index.html-tiedostossa",
+				invalidConfig: "Virheellinen määritys",
+				invalidConfigNoApp: "Web-karttasovelluksen tunnusta ei ole määritetty index.html-tiedostossa.",
+				unspecifiedConfigOwner: "Valtuutettua omistajaa ei ole määritetty.",
+				invalidConfigOwner: "Sovelluksen omistajalla ei ole valtuuksia.",
 				createMap: "Karttaa ei voi luoda",
-				invalidApp: "Vakava virhe: sovellusta ei voi ladata",
-				notConfiguredDesktop: "Tervetuloa tarinan %TPL_NAME% Web-sovellukseen.<br />Sovellusta ei ole vielä määritetty.",
-				notConfiguredMobile: "Tervetuloa tarinan %TPL_NAME% Web-sovellukseen. Sovellusta ei ole vielä määritetty, eivätkä mobiililaitteet tue luontitoimintoa.",
+				invalidApp: "Kohdetta %TPL_NAME% ei ole, tai se ei ole käytettävissä.",
+				appLoadingFail: "Tapahtui virhe, eikä %TPL_NAME% latautunut oikein.",
+				notConfiguredDesktop: "Sovellusta ei ole vielä määritetty.",
+				notConfiguredMobile: "Nykyinen näytön resoluutio ei tue kohteen %TPL_NAME% luontitoimintoa.",
 				notAuthorized: "Sinulla ei ole tämän sovelluksen käyttöoikeuksia",
-				noBuilderIE8: "Luontitoimintoa ei tueta Internet Explorerin versiota 9 edeltävissä versioissa.",
-				mapLoadingFail: "Jotain meni pieleen, ja karttaa ei voi ladata."
+				noBuilderIE: "Luontitoimintoa ei tueta Internet Explorerin versiota %VERSION% edeltävissä versioissa. %UPGRADE%",
+				noViewerIE: "Sovellusta ei tueta Internet Explorerin versiota %VERSION% edeltävissä versioissa. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Päivitä selain</a>.",
+				mapLoadingFail: "Tapahtui virhe, eikä kartta latautunut oikein.",
+				signOut: "Kirjaudu ulos"
 			},
 			mobileView: {
 				tapForDetails: "Saat tiedot näkyviin napauttamalla",
+				clickForDetails: "Lisätietoja",
 				swipeToExplore: "Tutki pyyhkäisemällä",
-				tapForMap: "Siirry takaisin karttaan napauttamalla"
+				tapForMap: "Siirry takaisin karttaan napauttamalla",
+				clickForMap: "TAKAISIN KARTTAAN"
 			},
 			floatLayout: {
 				scroll: "Vieritä"
@@ -41,7 +50,7 @@
 				scroll: "Saat lisää tietoja näkyviin vierittämällä alaspäin."
 			},
 			mainStage: {
-				back: "Takaosa"
+				back: "Takaisin"
 			},
 			headerFromCommon: {
 				storymapsText: "Tarinakartta",

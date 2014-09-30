@@ -29,14 +29,16 @@ define(["lib-build/tpl!./ViewFlickr",
 				container.show();
 				
 				// Resize url field to adjust localization
-				container.find(".userName")
-					.css("width", 
-						container.find(".imageSelectorFlickr").width() 
-						- 85
-						- 40
-						- container.find('.btn-userLogin').outerWidth()
-					)
-					.focus();
+				if ( container.find(".imageSelectorFlickr").width() ) {
+					container.find(".userName")
+						.css("width", 
+							container.find(".imageSelectorFlickr").width() 
+							- 85
+							- 40
+							- container.find('.btn-userLogin').outerWidth()
+						)
+						.focus();
+				}
 			};
 			
 			function login()
@@ -50,6 +52,13 @@ define(["lib-build/tpl!./ViewFlickr",
 				_flickr.connect(userName, true, false).then(
 					function(data){
 						var setsHTML = "";
+						
+						if ( ! data || ! data.sets || ! data.sets.length ) {
+							container.find(".loadingMsg").html('');
+							container.find(".errorMsg").show().html(i18n.commonMedia.mediaSelector.noData);
+							return;
+						}
+						
 						$.each(data.sets, function(i, set){
 							setsHTML += viewTplSet({
 								id: set.id,

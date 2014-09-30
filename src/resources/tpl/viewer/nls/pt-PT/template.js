@@ -9,7 +9,8 @@
 				step2: "A carregar dados",
 				step3: "Inicializando",
 				loadBuilder: "Alternando para builder",
-				fail: "Lamentamos, o carregamento falhou",
+				long: "O Jornal de Mapa está a inicializar",
+				long2: "Obrigado por aguardar",
 				failButton: "Tentar Novamente"
 			},
 			signin: {
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Ocorreu um erro",
-				invalidConfig: "Erro fatal: configuração não válida",
-				invalidConfigNoApp: "Erro fatal: o identificador da Aplicação de Cartografia não se encontra especificado em index.html",
+				invalidConfig: "Configuração inválida",
+				invalidConfigNoApp: "O identificador da Aplicação de Cartografia Web não se encontra especificado em index.html",
+				unspecifiedConfigOwner: "O proprietário autorizado não foi configurado.",
+				invalidConfigOwner: "O proprietário da aplicação não está autorizado.",
 				createMap: "Não foi possível criar o mapa",
-				invalidApp: "Erro fatal: não é possível carregar a aplicação",
-				notConfiguredDesktop: "Bem-vindo à aplicação web %TPL_NAME% .<br />A aplicação ainda não se encontra confugurada.",
-				notConfiguredMobile: "Bem-vindo à aplicação web %TPL_NAME% . A aplicação ainda não se encontra configurada e o builder não é suportado em dispositivos móveis.",
+				invalidApp: "O %TPL_NAME% não existe ou encontra-se inacessível.",
+				appLoadingFail: "Aolgo correu mal, o %TPL_NAME% não foi carregado corretamente.",
+				notConfiguredDesktop: "A aplicação ainda não se encontra configurada.",
+				notConfiguredMobile: "O builder %TPL_NAME%  não é suportado nesta resolução de ecrã.",
 				notAuthorized: "Não tem autorização para configurar esta aplicação",
-				noBuilderIE8: "O builder não é suportado pelo Internet Explorer abaixo da versão 9.",
-				mapLoadingFail: "Algo correu mal, o Mapa não pôde ser carregado."
+				noBuilderIE: "O construtor não é suportado em versões de Internet Explorer anteriores a %VERSION%. %UPGRADE%",
+				noViewerIE: "Esta aplicação não é suportada em versões de Internet Explorer anteriores a %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Por favor atualize o seu browser</a>.",
+				mapLoadingFail: "Algo correu mal, o Mapa não foi carregado corretamente.",
+				signOut: "Terminar sessão"
 			},
 			mobileView: {
 				tapForDetails: "Toque para aceder a detalhes",
+				clickForDetails: "Obtenha mais informações",
 				swipeToExplore: "Deslize para explorar.",
-				tapForMap: "Toque para regressar ao mapa"
+				tapForMap: "Toque para regressar ao mapa",
+				clickForMap: "VOLTAR AO MAPA"
 			},
 			floatLayout: {
 				scroll: "Scroll"

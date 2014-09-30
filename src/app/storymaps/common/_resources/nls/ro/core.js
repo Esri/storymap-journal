@@ -39,6 +39,12 @@
 				shareStatus3: "Aplicaţia este partajată în cadrul organizaţiei",
 				shareStatus4: "Aplicaţia nu este partajată"
 			},
+			saveError: {
+				title: "Eroare la salvarea aplicaţiei",
+				err1Div1: "Aplicaţia nu poate fi salvată deoarece aveţi deja alt element cu acelaşi nume (consultaţi <a class='linkagolroot' target='_blank'>directorul de conţinut</a>).",
+				err1Div2: "Modificaţi titlul secţiunii principale şi salvaţi aplicaţia.",
+				btnOk: "Editaţi titlul secţiunii principale"
+			},
 			share: {
 				firstSaveTitle: "S-a reuşit salvarea aplicaţiei",
 				firstSaveHeader: "Aplicaţia este acum salvată în %PORTAL%, însă nu este partajată încă.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Aplicaţia este accesibilă pentru membrii organizaţiei (necesită autentificare).",
 				shareLinkCopy: "Copiere",
 				shareLinkCopied: "Copiat",
+				shareQ0: "Cum încorporez aplicaţia într-un site web?",
 				shareQ1Opt1: "Cum menţin aplicaţia privată?",
 				shareQ1Opt2: "Cum menţin aplicaţia privată sau o partajez public?",
 				shareA1: "Utilizaţi %SHAREIMG% în <a href='%LINK1%' target='_blank'>pagina elementului aplicaţie</a>.",

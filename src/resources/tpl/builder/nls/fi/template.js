@@ -21,7 +21,13 @@
 				cfgMedium: "Keskisuuri",
 				cfgLarge: "Suuri",
 				socialLinksLabel: "Näytä jakamislinkit kunkin osan alareunassa",
-				socialLinksDescr: "Tämän toiminnon avulla lukijat voivat viitata tai manostaa tiettyjä tarinan %TPL_NAME% osia. Jos käytät esimerkiksi osien jakamiskuvaketta, lukijat osuvat tuohon tiettyyn tarinan %TPL_NAME% osaan eivätkä tarinan alkuun. Lukijat voivat käyttää otsikko-osan sosiaalisen median linkkiä koko tarinan %TPL_NAME% (Otsikko-välilehti) mainostamiseen, jolloin he osuvat tarinan %TPL_NAME% alkuun."
+				socialLinksDescr: "Tämän toiminnon avulla lukijat voivat viitata tiettyihin tarinan %TPL_NAME% osiin tai mainostaa niitä. Jos käytät esimerkiksi osien jakamiskuvaketta, lukijat päätyvät tarinan %TPL_NAME% tiettyyn osaan eivätkä tarinan alkuun. Lukijat voivat käyttää otsikko-osan sosiaalisen median linkkiä koko tarinan %TPL_NAME% (Otsikko-välilehti) mainostamiseen, jolloin he päätyvät tarinan %TPL_NAME% alkuun."
+			},
+			settingsLayoutFonts: {
+				title: "Fontit",
+				defaultLbl: "Oletusarvo",
+				sectionTitleLbl: "Osan otsikko",
+				sectionContentLbl: "Osan sisältö"
 			},
 			initPopup: {
 				title: "Tervetuloa"
@@ -35,6 +41,7 @@
 				stepMainStageExplain: "Päävaiheen sisältö",
 				stepPanelExplain: "Sisältö",
 				stepMainStageNextTooltip: "Kirjoita osan otsikko ja valitse päävaiheen sisältö",
+				stepMainStageNextTooltip2: "Valitse päävaiheen sisältö",
 				step2NextTooltip: "Kirjoita osan otsikko ja taiton %LAYOUT-TYPE% sisältö",
 				stepNextTooltipNext: "siirry seuraavaan vaiheeseen",
 				stepNextTooltipAdd: "osan lisäystä varten",
@@ -45,7 +52,8 @@
 			addEditViewText: {
 				editorPlaceholder: "Lisää tähän tekstiä, linkkejä ja pieniä kuvia.",
 				editorActionsTitle: "Päävaiheen toiminnot",
-				editorActionsHelpDescr: "Näiden kontrollien avulla voit luoda linkkejä, jotka muuttavat päävaihetta. Kun lukija napsauttaa esimerkiksi linkkiä, haluat ehkä tarkentaa karttaa tiettyyn sijaintiin, tuoda näkyviin toisen Web-kartan tai kuvan."
+				editorActionsHelpDescr: "Näiden kontrollien avulla voit luoda linkkejä, jotka muuttavat päävaihetta. Kun lukija napsauttaa esimerkiksi linkkiä, haluat ehkä tarkentaa karttaa tiettyyn sijaintiin, tuoda näkyviin toisen Web-kartan tai kuvan.",
+				mainStageDisabled: "Päävaiheen toiminnot eivät ole käytettävissä, kun muokkaus on maksimoitu"
 			},
 			organizePopup: {
 				title: "Järjestä",
@@ -56,11 +64,14 @@
 				checkDisplayReverse: "Näytä osat käänteisessä järjestyksessä",
 				btnApplyWarning: "Vahvista %NB% osan poisto",
 				deleteTooltip: "Poista",
-				firstSectionExplain: "(Kotisivuosaa ei voi siirtää)"
+				firstSectionExplain: "(Kotisivuosaa ei voi siirtää)",
+				exportMainStage: "Päävaiheen sisältö",
+				exportPanel: "Ruudun sisältö",
+				exportActions: "Päävaiheen toiminnot"
 			},
 			exportData: {
 				btn: "Vie sisältö",
-				tooltip: "Sisällön viemisen avulla voit tarkastella ja luoda päiväkirjan varmuuskopion, jos se poistetaan vahingossa. Sinun tarvitsee vain kopioida ja liittää sivun sisältö johonkin tekstinkäsittelyohjelmaan."
+				tooltip: "Sisällön viennin avulla voit tarkastella sisältöä ja luoda siitä varmuuskopion tahattoman poistamisen varalle. Sivun sisältö tarvitsee vain kopioida ja liittää johonkin tekstinkäsittelyohjelmaan."
 			},
 			help: {
 				lblHelp: "Ohje",
@@ -71,10 +82,10 @@
 				lblPublish: "Jaa",
 				lblTips: "Vinkkejä",
 				lblMore: "Haluatko lisää?",
-				lblLink: "Siirry Tarinakartat-sivustoon.",
+				lblLink: "Siirry Esrin Tarinakartat-sivustoon.",
 				content1Div1: "Voit integroida useita tyylejä, kun muodostat tarinaasi. <strong>%LAYOUT_TITLE%</strong> sisältää tavallisesti tekstin, kuvat ja videot, kun kartat ovat yleensä <strong>päävaiheessa</strong>. Tarinassa %TPL_NAME% voit kuitenkin esitellä kuvia, kaavioita ja videoita myös päävaiheessa.",
 				content1Div2: "Lisäämällä osioita voit mukauttaa kattavasti tarinankerrontakokemustasi. Kun lukijat vierittävät tyylin %LAYOUT_TITLE% mukaista tekstiäsi, voit tehostaa viestiäsi vierittämällä päävaiheen karttaa tai tarkentamalla tärkeisiin pisteisiin tai kytkemällä uudet kartat ja kuvat näkymään automaattisesti.",
-				content2Div1: "Tässä voit säätää sitä, miltä %TPL_NAME% näyttää. Värimalleja, asetteluja ja leveyksiä säädetään tässä.",
+				content2Div1: "Tässä voit säätää sitä, miltä %TPL_NAME% näyttää. Värimalleja, asetteluja, leveyksiä ja fontteja säädetään tässä.",
 				content2Div2: "Voit myös lisätä jaettavia linkkejä Facebookiin, Twitteriin ja Bitlyyn, jotta lukijat voivat helposti levittää %TPL_NAME% -tarinasi muille.",
 				content3Div1: "Sisältösi on jaettu osiin. Voit lisätä niin monta osaa kuin haluat (ajattele, että ne ovat lyhyitä kappaleita). Kappaleiden virta on tärkeä. Järjestä-näkymässä voit järjestää osia uudelleen tai poistaa niitä.",
 				content4Div1: "Löysitkö virheen vai haluatko muuttaa aineistoasi? Ei huolta. Etsi muokkauskuvaketta sovelluksesta tehdäksesi muutoksia sisältöösi. Käytät muokkaustoimintoja useita kertoja, kun kehität tarinaa %TPL_NAME%.",
@@ -89,7 +100,8 @@
 				lblHelp: "Käy kierroksella"
 			},
 			firstAddSplash: {
-				thisis: "Tämä on"
+				thisis: "Tämä on",
+				lblMain: "Tämä on %BR%-päävaihe"
 			}
         }
     })

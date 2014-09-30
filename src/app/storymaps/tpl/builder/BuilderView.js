@@ -1,4 +1,5 @@
-define(["lib-build/css!./BuilderView",
+define(["lib-build/tpl!./BuilderView",
+        "lib-build/css!./BuilderView",
 		"lib-build/css!./Common",
 		"../core/WebApplicationData", 
 		"storymaps/common/builder/settings/SettingsPopup",
@@ -13,6 +14,7 @@ define(["lib-build/css!./BuilderView",
 		"./settings/ViewLayoutOptions",
 		"storymaps/common/builder/settings/ViewTheme",
 		"storymaps/common/builder/settings/ViewHeader",
+		"./settings/ViewLayoutFonts",
 		// Template
 		"storymaps/common/builder/media/MediaSelector",
 		"./addedit/Popup",
@@ -24,6 +26,7 @@ define(["lib-build/css!./BuilderView",
 		// Text editing lib is loaded here once for the whole app
 		"lib-app/ckeditor/ckeditor"], 
 	function (
+		viewTpl,
 		viewCss,
 		commonCss,
 		WebApplicationData, 
@@ -39,6 +42,7 @@ define(["lib-build/css!./BuilderView",
 		ViewLayoutOptions,
 		ViewTheme, 
 		ViewHeader,
+		ViewLayoutFonts,
 		// Template
 		MediaSelector,
 		AddEditPopup,
@@ -50,6 +54,8 @@ define(["lib-build/css!./BuilderView",
 	){
 		return function BuilderView(Core) 
 		{
+			$("#builder-views").append(viewTpl({ }));
+			
 			var _this = this,
 				_settingsPopup = null,
 				_landingUI = new Landing($("#builderLanding"), firstAdd, clickHelp),
@@ -86,13 +92,6 @@ define(["lib-build/css!./BuilderView",
 					.click(openOrganizePopup)
 					.find(".builder-lbl").html(i18n.builder.organizePopup.title);
 				
-				$("#mainStageEdit").click(function(){
-					openEditPopup({
-						displayTab: "main-stage",
-						sectionIndex: app.data.getCurrentSectionIndex()
-					});
-				});
-				
 				app.builderCfg = {
 					STATUS: {
 						PUBLISHED: i18n.builder.common.lblStatus1,
@@ -109,6 +108,24 @@ define(["lib-build/css!./BuilderView",
 				app.cfg.LAYOUTS[0].description = i18n.builder.layouts.sideDescr;
 				app.cfg.LAYOUTS[1].title = i18n.builder.layouts.floatTitle;
 				app.cfg.LAYOUTS[1].description = i18n.builder.layouts.floatDescr;
+				
+				//
+				// Layout specificity related to handling events
+				//
+				$('body').on('shown.bs.modal', '.modal', function (e) {
+					if( WebApplicationData.getLayoutId() == "float" )
+						app.ui.floatingPanel.disableSwiperKeybordEvent();
+						
+				});
+				
+				$('body').on('hide.bs.modal', '.modal', function (e) {
+					if( WebApplicationData.getLayoutId() == "float" ) {
+						if ( $(e.currentTarget).hasClass("addEditPopup") && $(e.currentTarget).hasClass("temporaryHide") )
+							return;
+					
+						app.ui.floatingPanel.enableSwiperKeybordEvent();
+					}
+				});
 			};
 			
 			this.appInitComplete = function()
@@ -138,7 +155,6 @@ define(["lib-build/css!./BuilderView",
 				
 				_landingUI.toggle(! storyLength);
 				$(".builder-content-panel").toggle(!! storyLength);
-				$("#mainStageEdit").toggle(!! app.data.getStoryLength());
 				$("#sidePanel .builder, #floatingPanel .builder").toggleClass("large", ! app.data.getStoryLength());
 			};
 			
@@ -152,8 +168,9 @@ define(["lib-build/css!./BuilderView",
 				$(".builder-add").addClass("active");
 				
 				$("#mainStagePanel .firstAddExplain").html(
-					'<div>' + i18n.builder.firstAddSplash.thisis + '</div>'
-					+ '<div class="biggerText">' + i18n.builder.layouts.mainStage + '</div>'
+					'<div>' 
+					+ i18n.builder.firstAddSplash.lblMain.replace('%BR%', '</div><div class="biggerText">')
+					+ '</div>'
 				).fadeIn();
 				
 				setTimeout(function(){
@@ -334,6 +351,7 @@ define(["lib-build/css!./BuilderView",
 					new ViewLayout(),
 					new ViewLayoutOptions(),
 					new ViewTheme(),
+					new ViewLayoutFonts(),
 					new ViewHeader()
 				];
 			};
@@ -349,6 +367,7 @@ define(["lib-build/css!./BuilderView",
 							layoutCfg: WebApplicationData.getLayoutOptions().layoutCfg,
 							theme: WebApplicationData.getTheme()
 						},
+						WebApplicationData.getTheme(),
 						WebApplicationData.getHeader()
 					],
 					null
@@ -371,8 +390,11 @@ define(["lib-build/css!./BuilderView",
 				
 				WebApplicationData.setLayout(data.settings[0]);
 				WebApplicationData.setLayoutOptions(data.settings[1]);
-				WebApplicationData.setTheme(data.settings[2]);
-				WebApplicationData.setHeader(data.settings[3]);
+				WebApplicationData.setTheme({
+					colors: data.settings[2].colors,
+					fonts: data.settings[3].fonts
+				});
+				WebApplicationData.setHeader(data.settings[4]);
 			
 				// TODO deprecate nbChange ...
 				if ( nbChange ) {

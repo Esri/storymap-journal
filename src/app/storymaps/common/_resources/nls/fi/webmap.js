@@ -34,12 +34,13 @@
 				btnCancel: "Peruuta",
 				tocTitle: "Kartan sisältö",
 				tocExplain: "Valitse näytettävät karttatasot.",
+				tocNoData: "Karttatasoa ei voi määrittää.",
 				tocSave: "Tallenna kartan sisältö",
 				extentTitle: "Karttasijainti",
 				extentExplain: "Vieritä ja tarkenna karttaa määrittääksesi, miten lukijasi sen näkevät.",
 				extentSave: "Tallenna karttasijainti",
 				popupTitle: "Kartan ponnahdusikkuna",
-				popupExplain: "Määritä lukijoille näytettävän ponnahdusikkunan ulkoasu",
+				popupExplain: "Avaa näytettävä ponnahdusikkuna napsauttamalla kohdetta.",
 				popupSave: "Tallenna ponnahdusikkunan konfiguraatio",
 				hintNavigation: "Karttanavigointi on poistettu käytöstä."
 			}

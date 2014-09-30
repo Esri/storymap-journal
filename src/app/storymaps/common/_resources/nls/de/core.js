@@ -39,6 +39,12 @@
 				shareStatus3: "Anwendung ist innerhalb der Organisation freigegeben",
 				shareStatus4: "Anwendung ist nicht freigegeben"
 			},
+			saveError: {
+				title: "Fehler beim Speichern der Anwendung",
+				err1Div1: "Die Anwendung kann nicht gespeichert werden, da Sie bereits über ein anderes Element mit demselben Namen verfügen (weitere Informationen finden Sie im <a class='linkagolroot' target='_blank'>Inhaltsordner</a>).",
+				err1Div2: "Ändern Sie den Titel des Startseitenabschnitts, und speichern Sie die Anwendung.",
+				btnOk: "Titel des Startseitenabschnitts bearbeiten"
+			},
 			share: {
 				firstSaveTitle: "Anwendung wurde erfolgreich gespeichert",
 				firstSaveHeader: "Ihre Anwendung ist jetzt in %PORTAL% gespeichert, wurde aber noch nicht freigegeben.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Ihre Anwendung ist für die Mitglieder Ihrer Organisation zugänglich (Anmeldung ist erforderlich).",
 				shareLinkCopy: "Kopieren",
 				shareLinkCopied: "Kopiert",
+				shareQ0: "Wie wird die Anwendung in eine Website eingebettet?",
 				shareQ1Opt1: "Wie bleibt die Anwendung privat?",
 				shareQ1Opt2: "Wie bleibt die Anwendung privat oder wie wird sie veröffentlicht?",
 				shareA1: "Verwenden Sie %SHAREIMG% auf <a href='%LINK1%' target='_blank'>der Elementseite der Anwendung</a>.",

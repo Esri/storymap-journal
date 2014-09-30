@@ -39,6 +39,12 @@
 				shareStatus3: "Programmet er delt innenfor organisasjonen",
 				shareStatus4: "Programmet er ikke delt"
 			},
+			saveError: {
+				title: "Feil under lagring av programmet",
+				err1Div1: "Programmet kan ikke lagres, fordi du allerede har et annet element med samme navn (se <a class='linkagolroot' target='_blank'>innholdsmappen</a>).",
+				err1Div2: "Endre tittelen på startseksjonen, og lagre programmet.",
+				btnOk: "Rediger tittelen på startseksjonen"
+			},
 			share: {
 				firstSaveTitle: "Programmet er lagret",
 				firstSaveHeader: "Programmet er nå lagret i %PORTAL%, men er ikke delt ennå.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Programmet ditt er tilgjengelig for medlemmer av organisasjonen din (krever pålogging).",
 				shareLinkCopy: "Kopier",
 				shareLinkCopied: "Kopiert",
+				shareQ0: "Hvordan bygger jeg inn programmet på et webområde?",
 				shareQ1Opt1: "Hvordan holder jeg programmet privat?",
 				shareQ1Opt2: "Hvordan holder jeg programmet privat eller deler det offentlig?",
 				shareA1: "Bruk %SHAREIMG% på <a href='%LINK1%' target='_blank'>elementsiden for programmet</a>.",

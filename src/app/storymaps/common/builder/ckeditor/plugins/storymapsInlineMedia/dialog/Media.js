@@ -60,16 +60,23 @@ define(["lib-build/tpl!./Media",
 			
 			function onClickSubmit()
 			{
-				var hasError = false;
+				var hasError = _viewMediaSelector.checkError(container.find(".btnSubmit"));
 				
-				if ( _viewMediaSelector.checkError() )
-					hasError = true;
-				
-				if ( ! hasError ) {
+				var postErrorCheck = function()
+				{
 					var media = _viewMediaSelector.getData().media;
 					_dialogDeferred.resolve(media[media.type]);
 					container.modal('toggle');
+				};
+				
+				if ( hasError instanceof Deferred ) {
+					hasError.then(function(hasError){
+						if ( ! hasError )
+							postErrorCheck();
+					});
 				}
+				else if ( ! hasError )
+					postErrorCheck();
 			}
 			
 			function initEvents()

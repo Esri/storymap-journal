@@ -21,7 +21,13 @@
 				cfgMedium: "Médio",
 				cfgLarge: "Grande",
 				socialLinksLabel: "Exibir links de compartilhamento na parte inferior de cada seção",
-				socialLinksDescr: "Isto permite que os leitores façam referência e promovam seções específicas do seu %TPL_NAME%. Por exemplo, se você utilizar um ícone para compartilhar seções, os leitores verificarão a seção %TPL_NAME% específica, ao invés do começo da sua história. Seus leitores podem utilizar o link de mídia social na seção de título para promover o seu %TPL_NAME% inteiro (Guia Cabeçalho) e tê-lo no início do %TPL_NAME%."
+				socialLinksDescr: "Isto permite que os leitores façam referência e promovam seções específicas do seu %TPL_NAME%. Por exemplo, se você utilizar um ícone para compartilhar seções, os leitores verificarão a seção %TPL_NAME% específica, ao invés do começo da sua história. Seus leitores podem utilizar o link de mídia social na seção de título para promover o seu %TPL_NAME% inteiro (guia cabeçalho) e tê-lo no início do %TPL_NAME%."
+			},
+			settingsLayoutFonts: {
+				title: "Fontes",
+				defaultLbl: "Padrão",
+				sectionTitleLbl: "Título da seção",
+				sectionContentLbl: "Conteúdo da seção"
 			},
 			initPopup: {
 				title: "Bem-Vindo ao"
@@ -35,17 +41,19 @@
 				stepMainStageExplain: "Conteúdo do Nível Principal",
 				stepPanelExplain: "Conteúdo",
 				stepMainStageNextTooltip: "Insira o título da seção e selecione o conteúdo do Nível Principal",
+				stepMainStageNextTooltip2: "Selecione o conteúdo do Nível Principal",
 				step2NextTooltip: "Insira o título da seção e conteúdo do %LAYOUT-TYPE%",
 				stepNextTooltipNext: "para ir para a próxima etapa",
 				stepNextTooltipAdd: "para adicionar a seção",
-				firstAddExplain: "Esta primeira seção é a sua Seção Inicial, pense nisto como a 'página de capa' para a sua história. O título que você acabou de definir será exibido com fontes grandes.",
+				firstAddExplain: "Esta primeira seção é a sua Seção Inicial, pense nisto como a \'página de capa\' para a sua história. O título que você acabou de definir será exibido com fontes grandes.",
 				firstAddLeanMore: "Mais Informações",
 				titlePlaceholder: "Título da seção..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Adicione texto, links e pequenos gráficos aqui.",
 				editorActionsTitle: "Ações do Nível Principal",
-				editorActionsHelpDescr: "Utilize estes controles para criar links que vão mudar o nível principal. Por exemplo, quando o leitor clicar em um link, você poderá desejar o zoom no mapa em local específico, exibir um outro mapa da web ou exibir uma imagem."
+				editorActionsHelpDescr: "Utilize estes controles para criar links que vão mudar o nível principal. Por exemplo, quando o leitor clicar em um link, você poderá desejar o zoom no mapa em local específico, exibir um outro mapa da web ou exibir uma imagem.",
+				mainStageDisabled: "As Ações do Nível Principal são desabilitadas quando o editor é maximizado"
 			},
 			organizePopup: {
 				title: "Organizar",
@@ -56,11 +64,14 @@
 				checkDisplayReverse: "Exibir seções em ordem inversa",
 				btnApplyWarning: "Confirmar exclusão das seções %NB%",
 				deleteTooltip: "Excluir",
-				firstSectionExplain: "(A seção local não pode ser movida)"
+				firstSectionExplain: "(A seção local não pode ser movida)",
+				exportMainStage: "Conteúdo do Nível Principal",
+				exportPanel: "Conteúdo do Painel",
+				exportActions: "Ações do Nível Principal"
 			},
 			exportData: {
 				btn: "Exportar conteúdo",
-				tooltip: "Exportar seu conteúdo permite visualizar e criar uma cópia de segurança do seu Diário se você acidentalmente excluí-lo. Basta copiar e colar o conteúdo da página em qualquer processador de texto."
+				tooltip: "Exportar seu conteúdo permite a você visualizar e criar uma cópia de segurança do seu conteúdo se você acidentalmente excluí-lo. Basta copiar e colar o conteúdo da página em qualquer processador de texto."
 			},
 			help: {
 				lblHelp: "Ajuda",
@@ -71,15 +82,15 @@
 				lblPublish: "Compartilhar",
 				lblTips: "Dicas",
 				lblMore: "Deseja mais?",
-				lblLink: "Visite o site da web de Mapas Históricos.",
+				lblLink: "Visite o site da web de Mapas Históricos da Esri.",
 				content1Div1: "Você pode integrar uma variedade de estilos na construção da sua história. O <strong>% LAYOUT_TITLE% </ strong> normalmente tem o seu texto, imagens e vídeo enquanto seus mapas tendem a ir para o<strong> Nível Principal</ strong>. No entanto, o% TPL_NAME% também permite a você apresentar imagens, gráficos e vídeos dentro do nível principal.",
 				content1Div2: "Adicionar seções permite a você personalizar verdadeiramente a sua experiência de contar histórias. Conforme os leitores rolam pelo seu texto %LAYOUT_TITLE%, um mapa no Nível Principal pode mover ou ampliar nos pontos-chaves ou novos mapas e imagens podem alternar automaticamente para suporte da sua mensagem.",
-				content2Div1: "Aqui é onde você pode ajustar o visual do seu%TPL_NAME%. Os esquemas de cores, layouts e larguras são todos refinados aqui.",
+				content2Div1: "Aqui é onde você pode ajustar o visual do seu%TPL_NAME%. Os esquemas de cores, layouts, larguras e fontes são todos refinados aqui.",
 				content2Div2: "Você também pode adicionar links de compartilhamento para Facebook, Twitter e Bitly, assim os leitores podem facilmente espalhar seu%TPL_NAME% para todos.",
 				content3Div1: "Seu conteúdo está organizado em seções. Você pode ter várias seções que desejar (pense nelas como mini capítulos). O fluxo destes capítulos é importante; dentro de Organizar você pode reordenar ou excluir seções como desejar.",
 				content4Div1: "Encontrou um erro ou deseja alterar o seu material? Não se preocupe. Procure o ícone de edição em todo o aplicativo para fazer alterações no seu conteúdo. Você utilizará as funções de edição várias vezes conforme desenvolver o seu %TPL_NAME%!",
-				content5Div1: "Seu%TPL_NAME% é salvo na sua conta %PORTAL%, e privado por padrão. Você pode decidir compartilhá-lo com sua organização, ou abrí-lo para o mundo. Até lhe oferecemos uma URL mais curta, estável para que você possa compartilhá-la facilmente.",
-				content6Div1: "O título da sua seção Inicial é também o título do seu Diário; pense na sua seção Inicial como a 'página da capa' para a sua história. O título da Seção Inicial permanecerá visível quando os leitores navegarem no Diário.",
+				content5Div1: "Seu%TPL_NAME% é salvo na sua conta %PORTAL%, e privado por padrão. Você pode decidir compartilhá-lo com sua organização, ou abrí-lo para o mundo. Até lhe oferecemos uma URL mais curta, para que você possa compartilhá-la facilmente.",
+				content6Div1: "O título da sua seção Inicial é também o título do seu diário; pense na sua seção Inicial como a \'página da capa\' para a sua história. O título da Seção Inicial permanecerá visível quando os leitores navegarem no Diário.",
 				content6Div2: "Seu %LAYOUT_TITLE% Não tem que ser apenas texto, considere incluir fotos e vídeos para ajudar a trazer a história viva e quebrar longos trechos do texto!"
 			},
 			landing: {
@@ -89,7 +100,8 @@
 				lblHelp: "Obter uma Apresentação"
 			},
 			firstAddSplash: {
-				thisis: "Esta é o"
+				thisis: "Esta é o",
+				lblMain: "Este é o Nível Principal %BR%"
 			}
         }
     })

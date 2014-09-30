@@ -64,7 +64,7 @@ define(["lib-build/tpl!./WebMapSelector",
 					
 					// TODO should be able to know if this is the webmap initial extent or not
 					if ( cfg.mode == "add" )
-						_mapConfig.extent = app.map ? app.map.extent : null;
+						_mapConfig.extent = app.map ? app.map.extent.toJson() : null;
 				}
 				
 				container.find('.webmaps-list-btn-inner').data('webmap', '');
@@ -392,7 +392,7 @@ define(["lib-build/tpl!./WebMapSelector",
 				).then(
 					function(mapConfigResult){
 						if ( type == "LOCATION" )
-							_mapConfig.extent = mapConfigResult.extent;
+							_mapConfig.extent = mapConfigResult.extent ? mapConfigResult.extent.toJson() : null;
 						else if ( type == "CONTENT" )
 							_mapConfig.layers = mapConfigResult.layers;
 						else if ( type == "POPUP" )

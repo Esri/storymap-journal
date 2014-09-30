@@ -6,8 +6,9 @@ define(["lib-build/tpl!./BuilderPanel",
 		 */
 		"dojo/i18n!commonResources/nls/core.js?v=" + app.version,
 		"storymaps/common/utils/CommonHelper",
+		"./SaveErrorPopup",
 		"dojo/topic"],
-	function (viewTpl, cssTpl, i18n, CommonHelper, topic) {
+	function (viewTpl, cssTpl, i18n, CommonHelper, SaveErrorPopup, topic) {
 		return function BuilderPanel(container, builderSave, builderDirectCreationFirstSave, builderGalleryCreationFirstSave) 
 		{
 			container.append(viewTpl({
@@ -22,12 +23,15 @@ define(["lib-build/tpl!./BuilderPanel",
 				saveCounter: i18n.commonCore.builderPanel.noPendingChange
 			}));
 			
-			var _this = this;
-			var _builderView = null;
+			var _this = this,
+				_builderView = null,
+				_saveErrorPopup = null;
 			
 			this.init = function(builderView) 
 			{	
 				_builderView = builderView;
+				_saveErrorPopup = new SaveErrorPopup($("#saveErrorPopup"));
+				
 				initLocalization();
 				
 				container.removeClass('hide');
@@ -70,21 +74,44 @@ define(["lib-build/tpl!./BuilderPanel",
 				changeBuilderPanelButtonState(false);
 				
 				if (app.isDirectCreationFirstSave) {
-					var appTitle = app.data.getWebAppData().getTitle();
-					var appSubTitle = app.data.getWebAppData().getSubtitle();
+					var appTitle = app.data.getWebAppData().getTitle(),
+						appSubTitle = app.data.getWebAppData().getSubtitle();
 					
 					if ( ! appTitle ) {
 						_this.saveFailed("NONAME");
 						return;
 					}
 					
-					// Save the webmap
-					// If ok get the new id
-					// Call saveApp
-					// If ok call appSaveSucceeded
-					builderDirectCreationFirstSave(appTitle, appSubTitle);
+					app.portal.getPortalUser().getItems().then(function(items){
+						var foundDuplicate = false;
+						
+						if ( items ) {
+							$.each(items, function(i, item){
+								if ( item.title && item.title.toLowerCase() == appTitle.toLowerCase() )
+									foundDuplicate = true;
+							});
+						}
+						
+						if ( foundDuplicate ) {
+							container.find('.builder-save').removeClass('saving').html(i18n.commonCore.common.save);
+							_saveErrorPopup.present().then(function(){
+								app.builder.openEditPopup({
+									sectionIndex: 0,
+									displayTab: 'main-stage'
+								});
+							});
+						}
+						else
+							// Save the webmap
+							// If ok get the new id
+							// Call saveApp
+							// If ok call appSaveSucceeded
+							builderDirectCreationFirstSave(appTitle, appSubTitle);
+					});
 				}
-				else if (app.isGalleryCreation) {
+				// If the app rely on a webmap and it's a gallery workflow
+				// Has to do special workflow for first save
+				else if (app.appCfg.useWebmapInApp && app.isGalleryCreation) {
 					builderGalleryCreationFirstSave();
 				}
 				else {
@@ -265,7 +292,7 @@ define(["lib-build/tpl!./BuilderPanel",
 				 */
 				
 				var disableShare = app.isDirectCreationFirstSave,
-					disablePreview = app.isDirectCreationFirstSave || app.data.getWebAppItem().access == "private";
+					disablePreview =  app.data.getWebAppData().isBlank() || app.data.getWebAppItem().access == "private";
 				
 				container.find('.builder-share').toggleClass("disabled", disableShare);
 				container.find('.builder-preview').toggleClass("disabled", disablePreview);

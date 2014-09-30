@@ -22,9 +22,9 @@
 				newMap: "Nesen izvēlētā web karte",
 				webmapDefault: "Web kartes noklusējums",
 				customCfg: "Pielāgota konfigurācija",
-				tooltipLocation: "Definējiet kartes izvietojumu, kas tiks izmantots, kad lasītāji naviģēs uz šo sadaļu.",
+				tooltipLocation: "Definējiet kartes izvietojumu, kas tiks izmantots, kad lasītāji virzīsies uz šo sadaļu.",
 				tooltipContent: "Definējiet redzamos slāņus.",
-				tooltipPopup: "Izvēlieties uznirstošo logu, kuru rādīt, kad lasītāji naviģē uz šo sadaļu.",
+				tooltipPopup: "Izvēlieties uznirstošo logu, kuru rādīt, kad lasītāji virzīsies uz šo sadaļu.",
 				tooltipOverview: "Attēlot mazu pārskata karti blakus galvenajai kartei",
 				tooltipLegend: "Attēlojiet kartē apzīmējumus, kas ir noderīgi, ja kartē ir daudz slāņu un simbolu.",
 				mapCfgInvite: "Izmantojiet šīs vadīklas, lai konfigurētu savu  karti"
@@ -34,12 +34,13 @@
 				btnCancel: "Atcelt",
 				tocTitle: "Kartes saturs",
 				tocExplain: "Izvēlieties, kuri slāņi tiks rādīti.",
+				tocNoData: "Nevar konfigurēt nevienu slāni.",
 				tocSave: "Saglabāt kartes saturu",
 				extentTitle: "Kartes izvietojums",
 				extentExplain: "Panoramējiet un mērogojiet karti, lai uzzinātu, kādu to redzēs jūsu lasītāji.",
 				extentSave: "Saglabāt kartes izvietojumu",
 				popupTitle: "Kartes uznirstošais logs",
-				popupExplain: "Konfigurēt lietotājiem parādītā uznirstošā loga izskatu",
+				popupExplain: "Noklikšķiniet uz elementa, lai atvērtu uznirstošo logu, kuru vēlaties attēlot.",
 				popupSave: "Saglabāt uznirstošā loga konfigurāciju",
 				hintNavigation: "Kartes navigācija ir atspējota."
 			}

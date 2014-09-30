@@ -11,7 +11,8 @@
 				disabled: "この機能は、管理者によって無効にされています",
 				url: "画像の Web アドレスを手動で入力",
 				userLookup: "アルバムを読み込む",
-				notImplemented: "まだ実装されていません。"
+				notImplemented: "まだ実装されていません。",
+				noData: "パブリックなアルバムが見つかりませんでした"
 			},
 			imageSelector: {
 				lblStep1: "サービスの選択",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "電子メールまたは Picasa/Google+ ID",
 				signInMsg2: "アカウントが見つかりません",
-				signInMsg3: "パブリック アルバムがありません",
 				howToFind: "Picasa または Google+ アカウントの ID の検索方法",
 				howToFind2: "任意の Picasa または Google+ のページの 1 番目と 2 番目の「/」の間の数字をコピーします。"
 			},
@@ -62,9 +62,9 @@
 				url: "Vimeo ビデオの URL"
 			},
 			videoSelectorOther: {
-				explain1: "マップ ジャーナルは、未加工のビデオ (avi、mpeg など) は再生できませんが、プレイヤ (YouTube または Vimeo など) が組み込まれているホストされたビデオ ファイルは再生できます。",
+				explain1: "マップ ジャーナルは、単体のビデオファイル (avi、mpeg など) は再生できませんが、プレイヤ (YouTube または Vimeo など) が組み込まれているホストされたビデオ ファイルは再生できます。",
 				explain2: "ほとんどのオンライン ビデオ ホスティング サービスは、その機能を提供しています。ビデオを埋め込み、指定のコードをコピーし、%WEBPAGE% を使用するオプションを見つける必要があります。",
-				explain3: "または、ビデオを自分でホストする場合、%EXAMPLE% のようなビデオ プレイヤを使用する HTML ページを作成して、そのページをホストしたり、%WEBPAGE% も使用したりできます。",
+				explain3: "または、ビデオを自分でホストする場合、%EXAMPLE% のようなビデオ プレイヤを使用する HTML ページを作成して、そのページをホストしたり、%WEBPAGE% を使用したりすることもできます。",
 				webpage: "Web ページ フィーチャ"
 			},
 			webpageSelectorHome: {
@@ -72,11 +72,14 @@
 				lblEmbed: "コードの埋め込み",
 				lblOR: "または",
 				lblError1: "エラーです。2 つの入力フィールドの 1 つを削除してください。",
-				lblError2: "コードの埋め込みには 1 つの <iframe> だけを含めることができます"
+				lblError2: "コードの埋め込みには 1 つの %IFRAMETAG% だけを含めることができます",
+				configure: "構成"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "画像の URL は、http:// から始まり、*.jpg または *.png で終わる必要があります。",
+				lblURLError: "この画像は有効ではありません。画像ファイルへの直接のリンクを指定してください (URL の末尾は通常 *.jpg または *.png となります)。画像を含む Web ページへのリンクは機能しません。",
+				lblURLCheck: "画像をチェックしています...",
 				lblLabel: "画像のキャプション",
 				lblLabel1: "キャプション",
 				lblLabel2: "ホバー テキスト",
@@ -91,10 +94,13 @@
 				lblPosition4: "ストレッチ",
 				lblPosition5: "カスタム",
 				tooltipDimension: "値は「px」または「%」で指定できます",
+				tooltipDimension2: "値は「px」で指定する必要があります",
 				lblPosition2Explain: "(トリミングの可能性あり)",
 				lblPosition3Explain: "(トリミングなし)",
 				lblPosition3Explain2: "(幅は常にパネルに合わせて調整されます)",
-				lblPosition4Explain: "(歪みの可能性あり)"
+				lblPosition4Explain: "(歪みの可能性あり)",
+				unloadLbl: "ユーザが別のセクションに移動したときにアンロード",
+				unloadHelp: "Web ページにオーディオまたはビデオ メディアがある場合は、このオプションをオンのままにして、ユーザが別のセクションに移動したときに、そのコンテンツが再生されないようにします。ユーザがジャーナルの先に移動してもサウンドトラックを再生し続けるような場合は、このオプションをオフにします。<br />Web ページがアプリケーションの場合は、ユーザがそのセクションに戻ってもアプリケーションを再読み込みしないように、このオプションをオフにします。"
 			},
 			editorActionGeocode: {
 				lblTitle: "住所または位置の検索",
@@ -104,7 +110,7 @@
 				lblTitle: "メイン ステージのコンテンツを変更"
 			},
 			editorInlineMedia: {
-				lblTitle: "画像またはビデオの挿入"
+				lblTitle: "画像、ビデオ、または Web ページの挿入"
 			}
 		}
 	})

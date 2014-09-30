@@ -9,8 +9,9 @@
 				step2: "טעינת נתונים",
 				step3: "מאתחל",
 				loadBuilder: "עבור למצב בנייה",
-				fail: "מצטערים, הטעינה נכשלה",
-				failButton: "נסה שוב"
+				long: "חוברת המפות שלך מבצעת אתחול",
+				long2: "תודה על ההמתנה",
+				failButton: "טען מחדש את היישום"
 			},
 			signin: {
 				title: "נדרש אימות",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "אירעה שגיאה",
-				invalidConfig: "שגיאה קריטית: קביעת תצורה לא תקינה",
-				invalidConfigNoApp: "שגיאה חמורה: מזהה Web Mapping Application לא מצויין ב- index.html",
+				invalidConfig: "תצורה לא חוקית",
+				invalidConfigNoApp: "מזהה אפליקציית המיפוי באינטרנט לא צוין ב-index.html.",
+				unspecifiedConfigOwner: "לא הוגדר בעלים מורשה.",
+				invalidConfigOwner: "הבעלים של האפליקציה אינו מורשה.",
 				createMap: "לא ניתן ליצור מפה",
-				invalidApp: "שגיאה קריטית: לא ניתן לטעון את האפליקציה",
-				notConfiguredDesktop: "ברוכים הבאים לאפליקצית ה- web של %TPL_NAME%.<br />טרם נקבעה תצורה לאפליקציה.",
-				notConfiguredMobile: "ברוכים הבאים לאפליקצית web מסוג %TPL_NAME%. לא נקבעה תצורה לאפליקציה וכלי הבנייה לא נתמך במכשיריים ניידים.",
+				invalidApp: "ה-%TPL_NAME% לא קיים או שאינו נגיש.",
+				appLoadingFail: "משהו השתבש, ה-%TPL_NAME% לא נטען באופן תקין.",
+				notConfiguredDesktop: "תצורת האפליקציה עדיין לא הוגדרה.",
+				notConfiguredMobile: "אשף הבנייה של ה-%TPL_NAME% אינו נתמך ברזולוציית מסך זו.",
 				notAuthorized: "אינך מורשה לגשת לאפליקציה זו",
-				noBuilderIE8: "כלי הבניה לא נתמך ב- Internet Explorer טרם גרסה 9.",
-				mapLoadingFail: "משהו השתבש, המפה לא נטענת."
+				noBuilderIE: "כלי הבניה לא נתמך ב-Internet Explorer בגרסה הקודמת לגרסה %VERSION%‏. %UPGRADE%",
+				noViewerIE: "יישום זה לא נתמך ב-Internet Explorer  בגרסה הקודמת לגרסה %VERSION%‏. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>עדכן את הדפדפן שלך</a>.",
+				mapLoadingFail: "משהו השתבש, המפה לא נטענה באופן תקין.",
+				signOut: "התנתק"
 			},
 			mobileView: {
 				tapForDetails: "הקש לקבלת פרטים",
+				clickForDetails: "מידע נוסף",
 				swipeToExplore: "Swipe כדי לחקור",
-				tapForMap: "הקש כדי לחזור למפה"
+				tapForMap: "הקש כדי לחזור למפה",
+				clickForMap: "חזור למפה"
 			},
 			floatLayout: {
 				scroll: "גלול"
@@ -62,7 +71,7 @@
 				copied: "הועתק",
 				open: "פתח",
 				embed: "הטמע באתר האינטרנט",
-				embedExplain: "השתמש בקוד ה-  HTML הבא כדי להטמיע את ה- Journal באתר.",
+				embedExplain: "השתמש בקוד ה-HTML הבא כדי להטמיע את ה-Journal באתר.",
 				size: "גודל (רוחב/גובה):"
 			}
         }

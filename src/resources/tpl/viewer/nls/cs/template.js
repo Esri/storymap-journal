@@ -9,8 +9,9 @@
 				step2: "Nahrávání dat",
 				step3: "Inicializace",
 				loadBuilder: "Přepínání na nástroj pro tvorbu",
-				fail: "Je nám líto, nahrávání se nezdařilo",
-				failButton: "Zkusit znovu"
+				long: "Mapový deník se inicializuje",
+				long2: "Děkujeme za strpení",
+				failButton: "Znovu načíst aplikaci"
 			},
 			signin: {
 				title: "Je vyžadováno ověření",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Došlo k chybě",
-				invalidConfig: "Závažná chyba: Neplatná konfigurace",
-				invalidConfigNoApp: "Fatální chyba: V souboru index.html není určen identifikátor aplikace webového mapování.",
+				invalidConfig: "Neplatná konfigurace",
+				invalidConfigNoApp: "V souboru index.html není zadán identifikátor aplikace pro webové mapování.",
+				unspecifiedConfigOwner: "Nebyl nakonfigurován autorizovaný vlastník.",
+				invalidConfigOwner: "Vlastník aplikace není autorizován.",
 				createMap: "Nelze vytvořit mapu",
-				invalidApp: "Závažná chyba: Aplikaci nelze načíst",
-				notConfiguredDesktop: "Vítejte ve webové aplikaci %TPL_NAME%.<br />Aplikace ještě není nakonfigurována.",
-				notConfiguredMobile: "Vítejte ve webové aplikaci %TPL_NAME%. Aplikace ještě není nakonfigurována a nástroj pro tvorbu není podporován v mobilních zařízeních.",
+				invalidApp: "%TPL_NAME% neexistuje nebo není dostupný.",
+				appLoadingFail: "Něco se pokazilo, %TPL_NAME% se nenahrál správně.",
+				notConfiguredDesktop: "Aplikace ještě není nakonfigurována.",
+				notConfiguredMobile: "Nástroj pro tvorbu %TPL_NAME% není v tomto rozlišení obrazovky podporován.",
 				notAuthorized: "Nemáte oprávnění k přístupu do této aplikace.",
-				noBuilderIE8: "Nástroj pro tvorbu není podporován ve verzích prohlížeče Internet Explorer starších než verze 9.",
-				mapLoadingFail: "Něco se pokazilo, mapu nelze nahrát."
+				noBuilderIE: "Nástroj pro tvorbu není podporován v aplikaci Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
+				noViewerIE: "Tato aplikace není podporována v prohlížeči Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Prosím, aktualizujte prohlížeč</a>.",
+				mapLoadingFail: "Něco se pokazilo, mapa se nenahrála správně.",
+				signOut: "Odhlásit"
 			},
 			mobileView: {
 				tapForDetails: "Klepnutím zobrazíte podrobnosti.",
+				clickForDetails: "Zjistit více",
 				swipeToExplore: "Přejeďte prstem, chcete-li zahájit prohlížení.",
-				tapForMap: "Klepnutím se vrátíte na mapu."
+				tapForMap: "Klepnutím se vrátíte na mapu.",
+				clickForMap: "ZPĚT DO MAPY"
 			},
 			floatLayout: {
 				scroll: "Posunout"

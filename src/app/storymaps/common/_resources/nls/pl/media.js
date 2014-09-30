@@ -11,7 +11,8 @@
 				disabled: "Opcja ta została wyłączona przez Administratora",
 				url: "W celu manualnego wprowadzenia adresu internetowego obrazu",
 				userLookup: "Wczytaj albumy",
-				notImplemented: "Jeszcze nie wprowadzone"
+				notImplemented: "Jeszcze nie wprowadzone",
+				noData: "Nie znaleziono żadnych albumów publicznych"
 			},
 			imageSelector: {
 				lblStep1: "Wybierz usługę",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "Adres e-mail lub identyfikator z serwisu Picasa/Google+",
 				signInMsg2: "Nie odnaleziono konta",
-				signInMsg3: "Brak albumów publicznych",
 				howToFind: "Jak znaleźć identyfikator konta Picasa lub Google+",
 				howToFind2: "Skopiuj cyfry znajdujące się między pierwszym a drugim znakiem „/” dowolnej strony Picasa lub G+"
 			},
@@ -53,7 +53,7 @@
 				url: "Adres URL pliku wideo dostępnego w serwisie YouTube",
 				pageInputLbl: "Nazwa użytkownika",
 				lookupMsgError: "Nie odnaleziono użytkownika",
-				howToFind: "Wyszukiwanie nazwy użytkownika serwisu YouTube",
+				howToFind: "W jaki sposób wyszukać nazwę użytkownika serwisu YouTube",
 				howToFind2: "Nazwa użytkownika jest wyświetlana pod każdym filmem",
 				found: "Znaleziono",
 				noData: "Nie znaleziono żadnych filmów publicznych"
@@ -62,7 +62,7 @@
 				url: "Adres URL pliku wideo dostępnego w serwisie Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Dziennik mapy nie jest w stanie odtwarzać surowych plików wideo (np. w formacie avi, mpeg), ale może odtwarzać hostowane pliki wideo, w które wbudowane są odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
+				explain1: "Dziennik mapy nie jest w stanie odtwarzać zwykłych plików wideo (np. w formacie avi, mpeg), ale może odtwarzać hostowane pliki wideo, w które wbudowane są odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
 				explain2: "Funkcja ta jest udostępniana w ramach większości usług hostowania plików wideo w Internecie, konieczne jest znalezienie opcji osadzenia pliku wideo, skopiowanie danego kodu oraz skorzystanie z witryny %WEBPAGE%.",
 				explain3: "Ewentualnie, jeżeli użytkownik chce samodzielnie hostować plik wideo, może utworzyć stronę HTML, w ramach której wykorzystywany będzie odtwarzacz plików wideo, taki jak %EXAMPLE%, hostować tę stronę, a także skorzystać z witryny %WEBPAGE%.",
 				webpage: "Obiekt witryny internetowej"
@@ -72,11 +72,14 @@
 				lblEmbed: "Kod do osadzenia",
 				lblOR: "LUB",
 				lblError1: "Błąd, wyczyść jedno z dwóch pól danych wejściowych.",
-				lblError2: "Kod do osadzenia może zawierać tylko jedną ramkę<iframe>"
+				lblError2: "Kod do osadzenia może zawierać tylko jedną ramkę %IFRAMETAG%",
+				configure: "Konfiguruj"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Adres URL obrazu powinien zaczynać się od http:// i kończyć na .jpg lub .png",
+				lblURLError: "Prawdopodobnie ten obraz nie jest prawidłowy. Podaj bezpośredni adres łącza do pliku obrazu (wtedy adres URL zwykle kończy się rozszerzeniem .jpg lub .png). Adresy łączy do witryn internetowych zawierających dany obraz są nieobsługiwane.",
+				lblURLCheck: "Sprawdzanie obrazu...",
 				lblLabel: "Legenda do obrazu",
 				lblLabel1: "Podpis",
 				lblLabel2: "Aktywuj tekst",
@@ -91,10 +94,13 @@
 				lblPosition4: "Rozciągnij",
 				lblPosition5: "Niestandardowy",
 				tooltipDimension: "Wartość można podać w „px” lub „%”",
+				tooltipDimension2: "Wartość należy podać w „px”",
 				lblPosition2Explain: "(obraz może zostać przycięty)",
 				lblPosition3Explain: "(obraz nie zostanie przycięty)",
 				lblPosition3Explain2: "(szerokość będzie zawsze dopasowana do panelu)",
-				lblPosition4Explain: "(obraz może zostać zniekształcony)"
+				lblPosition4Explain: "(obraz może zostać zniekształcony)",
+				unloadLbl: "Usuń, gdy czytelnik przechodzi do innej sekcji",
+				unloadHelp: "Gdy na stronie internetowej udostępnione są materiały audio lub wideo, opcja ta powinna być zaznaczona, aby po przejściu czytelnika do innej sekcji odtwarzanie tych treści było przerywane. Opcję tę należy odznaczyć, aby na przykład podczas czytania czasopisma przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli strona internetowa jest aplikacją, opcję tę należy odznaczyć, aby uniknąć ponownego wczytywania tej aplikacji, gdy czytelnik powróci do danej sekcji."
 			},
 			editorActionGeocode: {
 				lblTitle: "Lokalizuj adres lub miejsce",
@@ -104,7 +110,7 @@
 				lblTitle: "Zmień zasoby w obszarze głównym"
 			},
 			editorInlineMedia: {
-				lblTitle: "Wstaw obraz lub film wideo"
+				lblTitle: "Wstaw obraz, film wideo lub witrynę internetową"
 			}
 		}
 	})

@@ -11,7 +11,8 @@
 				disabled: "Dette objekt er blevet deaktiveret af administratoren",
 				url: "Hvis du vil angive webadressen til et billede manuelt",
 				userLookup: "Indlæs albummer",
-				notImplemented: "Ikke implementeret endnu."
+				notImplemented: "Ikke implementeret endnu.",
+				noData: "Intet offentligt album fundet"
 			},
 			imageSelector: {
 				lblStep1: "Vælg tjeneste",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-mail eller Picasa/Google+ ID",
 				signInMsg2: "Kontoen kunne ikke findes",
-				signInMsg3: "Intet offentligt album",
 				howToFind: "Sådan findes et Picasa- eller Google+ konto-ID",
 				howToFind2: "Kopier tal mellem første og anden \'\/\' på Picasa eller en G+-side"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Indlejr kode",
 				lblOR: "ELLER",
 				lblError1: "Fejl. Ryd et af de to indtastningsfelter.",
-				lblError2: "Indlejret kode kan kun indeholde \én <iframe>"
+				lblError2: "Indlejret kode kan kun indeholde \én %IFRAMETAG%",
+				configure: "Konfigurér"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "En billede-URL skal starte med http:// og slutte med .jpg eller .png",
+				lblURLError: "Dette billede er tilsyneladende ikke gyldigt. Angiv et direkte link til en billedfil (din URL skal normalt slutte med .jpg eller .png). Links til en webside, der indeholder et billede, fungerer ikke.",
+				lblURLCheck: "Kontrollerer billedet...",
 				lblLabel: "Billedtekst",
 				lblLabel1: "Billedtekst",
 				lblLabel2: "Hold musen over teksten",
@@ -91,10 +94,13 @@
 				lblPosition4: "Stræk",
 				lblPosition5: "Tilpasset",
 				tooltipDimension: "Værdien kan angives i \'px\' eller \'%\'",
+				tooltipDimension2: "Værdien skal angives i \"px\"",
 				lblPosition2Explain: "(kan beskæres)",
 				lblPosition3Explain: "(kan ikke beskæres)",
 				lblPosition3Explain2: "(bredden vil altid passe til panelet)",
-				lblPosition4Explain: "(kan forvrænges)"
+				lblPosition4Explain: "(kan forvrænges)",
+				unloadLbl: "Udlæs, når læseren navigerer til en anden sektion",
+				unloadHelp: "Bevar markeringen af denne indstilling, hvis websiden har medier med lyd eller video, for at forhindre, at indholdet afspilles, når læseren navigerer til en anden sektion. Fjern markeringen, hvis lydsporet skal afspilles, mens læseren gennemgår artiklen.<br />Fjern markeringen af denne indstilling, hvis websiden er en applikation, så genindlæses applikationen ikke, hvis læseren vender tilbage til den pågældende sektion."
 			},
 			editorActionGeocode: {
 				lblTitle: "Find en adresse eller et sted",
@@ -104,7 +110,7 @@
 				lblTitle: "Redigér indholdet i hovedområdet"
 			},
 			editorInlineMedia: {
-				lblTitle: "Indsæt et billede eller en video"
+				lblTitle: "Indsæt et billede, en video eller en webside"
 			}
 		}
 	})

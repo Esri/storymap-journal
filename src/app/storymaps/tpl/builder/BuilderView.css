@@ -77,31 +77,6 @@ body.layout-float-left #mainStagePanel .firstAddExplain {
 }
 
 /*
- * Main stage EDIT
- */
- 
- #mainStageEdit {
- 	position: absolute;
- 	top: 15px;
- 	right: 15px;
- 	width: 40px;
- 	height: 40px;
- 	background: url(../../../../resources/tpl/builder/icons/builder-edit-border.png);
- 	background-size: 40px;
- 	cursor: pointer;
- 	z-index: 3;
-}
-
-#mainStageEdit:hover {
- 	background-position: 0 40px;
-}
-
-body.layout-float-left #mainStageEdit {
- 	left: 15px;
- 	right: inherit;
-}
- 
-/*
  * Map configuration layout specific rules
  */
  
@@ -247,6 +222,10 @@ body.layout-float-right .mapConfigOverlay.toc {
 	margin-left: 20px;
 }
 
+/*
+ * Label
+ */
+
 .layout-thumbnail.layout-float.pos-right.size-medium .layout-block.layout-float:nth-child(2) span:not(.rotate) {
 	margin-left: -48px;
 }
@@ -269,6 +248,34 @@ body.layout-float-right .mapConfigOverlay.toc {
 
 .layout-thumbnail.layout-float.pos-left.size-large .layout-block.layout-float:nth-child(2) span:not(.rotate) {
 	margin-left: 22px;
+}
+
+/*
+ * Step Number 
+ */
+ 
+.layout-thumbnail.layout-float.pos-right.size-medium .layout-block.layout-float:nth-child(2) .number {
+	margin-left: -34px !important;
+}
+
+.layout-thumbnail.layout-float.pos-right.size-small .layout-block.layout-float:nth-child(2) .number {
+	margin-left: -32px !important;
+}
+
+.layout-thumbnail.layout-float.pos-right.size-large .layout-block.layout-float:nth-child(2) .number {
+	margin-left: -40px !important;
+}
+
+.layout-thumbnail.layout-float.pos-left.size-medium .layout-block.layout-float:nth-child(2) .number {
+	margin-left: 0px !important;
+}
+
+.layout-thumbnail.layout-float.pos-left.size-small .layout-block.layout-float:nth-child(2) .number {
+	margin-left: 4px !important;
+}
+
+.layout-thumbnail.layout-float.pos-left.size-large .layout-block.layout-float:nth-child(2) .number {
+	margin-left: 8px !important;
 }
 
 .layout-thumbnail.layout-side.size-medium span.rotate {

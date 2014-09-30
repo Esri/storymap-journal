@@ -34,12 +34,13 @@
 				btnCancel: "Annullér",
 				tocTitle: "Kortindhold",
 				tocExplain: "Vælg, hvilke lag de skal vises.",
+				tocNoData: "Ingen lag kan konfigureres.",
 				tocSave: "Gem kortindhold",
 				extentTitle: "Kortposition",
 				extentExplain: "Panorér og zoom kortet for at definere, hvordan det skal vises for læserne.",
 				extentSave: "Gem kortposition",
 				popupTitle: "Kort-pop-up",
-				popupExplain: "Konfigurér udseendet af den pop-up, der bliver vist for læserne",
+				popupExplain: "Klik på et objekt for at åbne den pop-up, du vil have vist",
 				popupSave: "Gem pop-up-konfiguration",
 				hintNavigation: "Kortnavigation er deaktiveret."
 			}

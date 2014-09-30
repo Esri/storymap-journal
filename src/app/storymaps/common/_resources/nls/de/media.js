@@ -11,7 +11,8 @@
 				disabled: "Diese Funktion wurde vom Administrator deaktiviert",
 				url: "Zur manuellen Eingabe der Web-Adresse eines Bildes",
 				userLookup: "Alben laden",
-				notImplemented: "Noch nicht implementiert."
+				notImplemented: "Noch nicht implementiert.",
+				noData: "Kein öffentliches Album gefunden"
 			},
 			imageSelector: {
 				lblStep1: "Service auswählen",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-Mail-Adresse oder Picasa/Google+-ID",
 				signInMsg2: "Konto nicht gefunden",
-				signInMsg3: "Kein öffentliches Album",
 				howToFind: "So finden Sie eine Picasa- oder Google+-Konto-ID",
 				howToFind2: "Kopieren Sie die Ziffern zwischen dem ersten und zweiten Schrägstrich (\'/\') einer Picasa- oder G+-Seite"
 			},
@@ -62,9 +62,9 @@
 				url: "URL eines Vimeo-Videos"
 			},
 			videoSelectorOther: {
-				explain1: "Map Journal kann keine unverarbeiteten Videos (z. B. avi, mpeg), jedoch gehostete Videodateien mit integrierten Playern (z. B. YouTube oder Vimeo) wiedergeben.",
+				explain1: "Map Journal kann keine unverarbeiteten Videos (z. B. avi, mpeg) wiedergeben. Es kann jedoch gehostete Videodateien mit integrierten Playern (z. B. YouTube oder Vimeo) wiedergeben.",
 				explain2: "Diese Funktion wird von den meisten Online-Services, die Videos hosten, bereitgestellt. Sie müssen die Option zum Einbetten des Videos suchen, den angegebenen Code kopieren und %WEBPAGE% verwenden.",
-				explain3: "Wenn Sie das Video selbst hosten möchten, können Sie auch eine HTML-Seite erstellen, die einen Videoplayer wie %EXAMPLE% verwendet, diese Seite hosten und %WEBPAGE% verwenden.",
+				explain3: "Wenn Sie das Video selbst hosten möchten, können Sie auch eine HTML-Seite erstellen, die einen Videoplayer wie %EXAMPLE% verwendet, diese Seite hosten und auch %WEBPAGE% verwenden.",
 				webpage: "Webseitenfunktion"
 			},
 			webpageSelectorHome: {
@@ -72,11 +72,14 @@
 				lblEmbed: "Eingebundener Code",
 				lblOR: "ODER",
 				lblError1: "Fehler - löschen Sie den Inhalt eines der beiden Eingabefelder.",
-				lblError2: "Der eingebundene Code darf nur ein <iframe> enthalten"
+				lblError2: "Der eingebettete Code darf nur ein %IFRAMETAG% enthalten",
+				configure: "Konfigurieren"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Eine Bild-URL muss mit \"http://\" beginnen und mit \".jpg\" oder \".png\" enden",
+				lblURLError: "Dieses Bild ist scheinbar nicht gültig. Geben Sie einen direkten Link zu einer Bilddatei an (die URL endet in der Regel mit .jpg oder .png). Links zu einer Webseite, die Bilder enthält, funktionieren nicht.",
+				lblURLCheck: "Bild wird überprüft...",
 				lblLabel: "Bildüberschrift",
 				lblLabel1: "Beschriftung",
 				lblLabel2: "Hovertext",
@@ -91,10 +94,13 @@
 				lblPosition4: "Strecken",
 				lblPosition5: "Benutzerdefiniert",
 				tooltipDimension: "Der Wert kann in \"Px\" oder \"%\" angegeben werden",
+				tooltipDimension2: "Der Wert muss in \"Px\" angegeben werden",
 				lblPosition2Explain: "(Zuschneiden möglich)",
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
 				lblPosition3Explain2: "(Breite wird immer an das Fenster angepasst)",
-				lblPosition4Explain: "(Verzerren möglich)"
+				lblPosition4Explain: "(Verzerren möglich)",
+				unloadLbl: "Wird angehalten, wenn Leser zu einem anderen Abschnitt navigiert",
+				unloadHelp: "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Abschnitt navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen während der Leser durch das Journal blättert.<br />Wenn die Webseite eine Anwendung ist, deaktivieren Sie diese Option, damit die Anwendung nicht erneut geladen wird, wenn der Leser zu diesem Abschnitt zurückkehrt."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adresse oder Ort suchen",
@@ -104,7 +110,7 @@
 				lblTitle: "Inhalt der Hauptanzeige ändern"
 			},
 			editorInlineMedia: {
-				lblTitle: "Bild oder Video einfügen"
+				lblTitle: "Bild, Video oder Webseite einfügen"
 			}
 		}
 	})

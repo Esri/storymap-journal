@@ -34,12 +34,13 @@
 				btnCancel: "Atšaukti",
 				tocTitle: "Žemėlapio turinys",
 				tocExplain: "Pasirinkite, kurie sluoksniai bus rodomi.",
+				tocNoData: "Nėra konfigūruotino sluoksnio.",
 				tocSave: "Išsaugoti žemėlapio turinį",
 				extentTitle: "Žemėlapio vieta",
 				extentExplain: "Perstumkite žemėlapį ir keiskite jo mastelį, kad nustatytumėte, kaip jis atrodys skaitytojams.",
 				extentSave: "Išsaugoti žemėlapio vietą",
 				popupTitle: "Žemėlapio iškylantis langas",
-				popupExplain: "Konfigūruoti skaitytojams rodomą iškylantį langą",
+				popupExplain: "Spustelėkite elementą, kad atidarytumėte norimą rodyti iškylantį langą.",
 				popupSave: "Išsaugoti iškylančio lango konfigūraciją",
 				hintNavigation: "Žemėlapio navigacija išjungta."
 			}

@@ -19,8 +19,9 @@ define([],
 				}
 				
 				/*
-				 * AddEventListener
+				 * AddEventListener IE8
 				 */
+				/*
 				(function(win, doc){
 					if(win.addEventListener)return;		//No need to polyfill
 				 
@@ -49,6 +50,7 @@ define([],
 						addListen(doc.all);	
 					}
 				})(window, document);
+				*/
 				
 				Object.keys = Object.keys || 
 					function ( 

@@ -21,7 +21,13 @@ define({
 				cfgMedium: "Medium",
 				cfgLarge: "Large",
 				socialLinksLabel: "Display sharing links at the bottom of each section",
-				socialLinksDescr: "This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (Header Tab) and have them land at the start of the %TPL_NAME%."
+				socialLinksDescr: "This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%."
+			},
+			settingsLayoutFonts: {
+				title: "Fonts",
+				defaultLbl: "Default",
+				sectionTitleLbl: "Section title",
+				sectionContentLbl: "Section content"
 			},
 			initPopup: {
 				title: "Welcome to"
@@ -35,6 +41,7 @@ define({
 				stepMainStageExplain: "Main Stage Content",
 				stepPanelExplain: "Content",
 				stepMainStageNextTooltip: "Enter the section title and select the Main Stage content",
+				stepMainStageNextTooltip2: "Select the Main Stage content",
 				step2NextTooltip: "Enter the section title and %LAYOUT-TYPE% content",
 				stepNextTooltipNext: "to go to the next step",
 				stepNextTooltipAdd: "to add the section",
@@ -45,7 +52,8 @@ define({
 			addEditViewText: {
 				editorPlaceholder: "Add text, links, and small graphics here.",
 				editorActionsTitle: "Main Stage Actions",
-				editorActionsHelpDescr: "Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image."
+				editorActionsHelpDescr: "Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image.",
+				mainStageDisabled: "Main Stage Actions are disabled when the editor is maximized"
 			},
 			organizePopup: {
 				title: "Organize",
@@ -56,7 +64,10 @@ define({
 				checkDisplayReverse: "Display sections in reverse order",
 				btnApplyWarning: "Confirm deletion of %NB% section(s)",
 				deleteTooltip: "Delete",
-				firstSectionExplain: "(The home section cannot be moved)"
+				firstSectionExplain: "(The home section cannot be moved)",
+				exportMainStage: "Main Stage content",
+				exportPanel: "Panel content",
+				exportActions: "Main Stage actions"
 			},
 			exportData: {
 				btn: "Export content",
@@ -71,15 +82,15 @@ define({
 				lblPublish: "Share",
 				lblTips: "Tips",
 				lblMore: "Want more?",
-				lblLink: "Visit the Story Maps website.",
+				lblLink: "Visit the Esri Story Maps website.",
 				content1Div1: "You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well.",
 				content1Div2: "Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message.",
-				content2Div1: "Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, and widths are all refined here.",
+				content2Div1: "Here is where you can adjust how your %TPL_NAME% looks. Color schemes, layouts, widths, and fonts are all refined here.",
 				content2Div2: "You can also add sharing links to Facebook, Twitter, and Bitly so readers can easily spread your %TPL_NAME% to others.",
 				content3Div1: "Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish.",
 				content4Div1: "Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. You’ll use the edit functions many times as you develop your %TPL_NAME%!",
 				content5Div1: "Your %TPL_NAME% is saved to your %PORTAL% account and private by default. You can decide to share it with your organization, or open it to the world. We even provide you with a shortened URL so you can share it more easily.",
-				content6Div1: "The title of your Home section is also the title of your Journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal.",
+				content6Div1: "The title of your Home section is also the title of your journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal.",
 				content6Div2: "Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!"
 			},
 			landing: {
@@ -89,7 +100,8 @@ define({
 				lblHelp: "Take a Tour"
 			},
 			firstAddSplash: {
-				thisis: "This is the"
+				thisis: "This is the",
+				lblMain: "This is the %BR% Main Stage"
 			}
         }
     }),

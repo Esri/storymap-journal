@@ -78,12 +78,12 @@ define(["lib-build/tpl!./Selector",
 					showView('home');
 			};
 			
-			this.checkError = function()
+			this.checkError = function(saveBtn)
 			{
 				var hasError = false;
 				
 				if ( _selectedView == 'configure' )
-					hasError = _views[_selectedView].checkError();
+					hasError = _views[_selectedView].checkError(saveBtn);
 				else
 					hasError = true;
 				

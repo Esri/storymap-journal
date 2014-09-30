@@ -4,6 +4,7 @@ define(["lib-build/tpl!./ViewText",
 		"storymaps/common/builder/ckeditor/plugins/storymapsAction/dialog/Geocode",
 		"storymaps/common/builder/ckeditor/plugins/storymapsInlineMedia/dialog/Media",
 		"../../ui/StoryText",
+		"storymaps/common/utils/CommonHelper",
 		"dojo/topic",
 		"lib-app/bootstrap-datetimepicker/js/bootstrap-datetimepicker",
 		"lib-build/css!lib-app/bootstrap-datetimepicker/css/bootstrap-datetimepicker"], 
@@ -14,6 +15,7 @@ define(["lib-build/tpl!./ViewText",
 		EditorDialogGeocode,
 		EditorDialogInlineMedia,
 		StoryText,
+		CommonHelper,
 		topic
 	){
 		return function ViewText(container, onDataChangeCallback) 
@@ -50,7 +52,8 @@ define(["lib-build/tpl!./ViewText",
 					this.applyMediaRules(mediaType);
 				
 				// Set RTE content
-				CKEDITOR.instances.addEditRTE.setData(cfg.mode == "add" ? '' : cfg.section.content);
+				if ( CKEDITOR.instances.addEditRTE )
+					CKEDITOR.instances.addEditRTE.setData(cfg.mode == "add" ? '' : cfg.section.content);
 				
 				$(".cke_wysiwyg_frame").contents().find('body').removeClass("error-no-content");
 				
@@ -72,13 +75,37 @@ define(["lib-build/tpl!./ViewText",
 				CKEDITOR.instances.addEditRTE.editable().setStyle("color", _appColors.text);
 				CKEDITOR.instances.addEditRTE.window.$.scroll(0, 0);
 				
-				container.find("#cke_1_contents").css("height", 226);
+				container.find("#cke_1_contents").css("height", 228);
 				container.find("#cke_1_contents").css(
 					"max-height", 
 					$("body").height() 
 					- container.find("#cke_1_contents").offset().top 
 					- 75 /* footer */
 					- 75 /* minimal space bottom */
+				);
+				
+				
+				/*
+				 * Font rules
+				 */
+				var appFonts = app.data.getWebAppData().getFonts();
+
+				// Body
+				CommonHelper.addCSSRule(
+					"body { " + appFonts.sectionContent.value + " }", 
+					"AddPopupFontStyle", 
+					$("#addEditPopup .cke_wysiwyg_frame")
+				);
+				
+				// Strong tag
+				CommonHelper.addCSSRule(
+					"strong { "
+					+ (appFonts.sectionContent.id != "default" ? 
+							appFonts.sectionContent.value + " font-weight: bold;"
+							: "font-family: 'open_sanssemibold', sans-serif; font-weight: normal;")
+					+ "}",
+					"AddPopupFontStyleStrong", 
+					$("#addEditPopup .cke_wysiwyg_frame")
 				);
 			};
 			
@@ -329,6 +356,34 @@ define(["lib-build/tpl!./ViewText",
 							$(".cke_wysiwyg_frame").contents().find('body').removeClass("error-no-content");
 							updateMainStageCommand();
 						}, false);
+						
+						// Resize the Iframe with fit positioning to have the final aspect ratio 
+						// Same ratio than in StoryText
+						// Timeout needed all the time but first time editor is open, wait popup ready?
+						setTimeout(function(){
+							container.find(".cke_wysiwyg_frame")
+								.contents().find('body')
+								.find(".iframe-container.fit img")
+								.css("height", container.find(".cke_wysiwyg_frame").width() * 9 / 16);
+							
+							container.find(".cke_wysiwyg_frame")
+								.contents().find('body')
+								.find(".iframe-container").click(function(){
+									var $this = $(this);
+									topic.publish("EDITOR-EDIT-INLINE-MEDIA", $this[0]);
+								});
+							
+							container.find(".cke_wysiwyg_frame")
+							.contents().find('body')
+							.find(".image-container > span.cke_widget_wrapper, .cke_widget_element > span.cke_image_resizer_wrapper").click(function(e){
+								var $this = $(this),
+									xpos = e.offsetX === undefined ? e.pageX - $this.offset().left : e.offsetX,
+									ypos = e.offsetY === undefined ? e.pageY - $this.offset().top  : e.offsetY;
+								
+								if (xpos > $(this).width() - 20 && ypos < 20 )
+									topic.publish("EDITOR-EDIT-INLINE-MEDIA", $this[0]);
+							});
+						}, 200);
 					});
 					
 					editor.on('selectionChange', function(evt) {
@@ -342,7 +397,20 @@ define(["lib-build/tpl!./ViewText",
 						command.setState(elementIsAction ? CKEDITOR.TRISTATE_DISABLED : CKEDITOR.TRISTATE_OFF);
 					});
 					
-					editor.config.extraPlugins = 'storymapsInlineMedia,storymapsAction,widget,lineutils,image2,tableresize,confighelper';
+					editor.on('maximize', function(evt) {
+						var isMaximizing = evt.data == 1;
+						
+						container.find(".cke_button__media_icon").parents(".cke_toolbar").attr(
+							"title",
+							isMaximizing ? i18n.builder.addEditViewText.mainStageDisabled : ''
+						);
+						container.find(".cke_button__media_icon").parents(".cke_toolgroup").css({
+							opacity: isMaximizing ? 0.2 : 1,
+							'pointer-events': isMaximizing ? 'none' : 'initial'
+						});
+					});
+					
+					editor.config.extraPlugins = 'storymapsInlineMedia,storymapsAction,widget,lineutils,tableresize,confighelper';
 					//editor.config.colorButton_colors = '000,800000,8B4513,2F4F4F,008080,000080,4B0082,696969,B22222,A52A2A,DAA520,006400,40E0D0,0000CD,800080,808080,F00,FF8C00,FFD700,008000,0FF,00F,EE82EE,A9A9A9,FFA07A,FFA500,FFFF00,00FF00,AFEEEE,ADD8E6,DDA0DD,D3D3D3,FFF0F5,FAEBD7,FFFFE0,F0FFF0,F0FFFF,F0F8FF,E6E6FA,FFF,00923E,F8C100,28166F';
 				});
 				
@@ -373,11 +441,15 @@ define(["lib-build/tpl!./ViewText",
 					// Main Stage actions toolbar
 					//
 					container.find(".cke_button__media_icon").parents(".cke_toolgroup")
-						.css("border", "1px solid #428BC9")
-						.css("cursor", "pointer")
+						.css({
+							border: "1px solid #428BC9",
+							cursor: "pointer",
+							maxHeight: 26,
+							overflow: "hidden"
+						})
 						.prepend('<span class="cke_button" style="cursor:default;float:left;padding: 4px 1px 0px 6px;">'
 								+ ' <span style="font-size:0.8em; margin-top: -4px;display: inline-block;margin-bottom: 0px;height: 18px;font-size: 0.8em;width: 68px;word-break: break-word;white-space: normal; color: #428BC9">' 
-								+    i18n.builder.addEditViewText.editorActionsTitle 
+								+    i18n.builder.addEditViewText.editorActionsTitle
 								+ ' <img src="resources/tpl/builder/icons/builder-help.png" style="vertical-align: -4px; width: 14px; margin-left: 2px; margin-right: 1px">'
 								+ ' </span>'
 								+ '</span>'
@@ -418,8 +490,25 @@ define(["lib-build/tpl!./ViewText",
 					_this.applyMediaRules(mediaType);
 					
 					CKEDITOR.instances.addEditRTE.on('change', onDataChangeCallback);
+					
+					editor.filter.addTransformations([
+						[
+							// Add target="_blank" to link that don't have it or that is set to different value
+							{
+								element: 'a',
+								left: function(el) {
+									return el.attributes.target != "_blank";
+								},
+								right: function(el) {
+									// If link isn't a Main Stage action
+									if ( ! el.attributes['data-storymaps'] )
+										el.attributes.target = "_blank";
+								}
+							}
+						]
+					]);
 				});
-				
+
 				// Set target="_blank" for links
 				CKEDITOR.on('dialogDefinition', function(ev) {
 					var dialogName = ev.data.name,
@@ -431,15 +520,22 @@ define(["lib-build/tpl!./ViewText",
 							targetField = targetTab.get('linkTargetType');
 
 						targetField['default'] = '_blank';
-						infoTab.remove('linkType');
-						infoTab.remove( 'protocol' );
+						infoTab.get('linkType').style = 'display: none';
+						infoTab.get('urlOptions').children[0].children.shift();
+					}
+					
+					// Open inline media cfg on image double click 
+					if ( dialogName == 'image2' ) {
+						dialogDefinition.dialog.show = function(){
+							topic.publish("EDITOR-EDIT-INLINE-MEDIA", {});
+						};
 					}
 				});
 				
 				/*
-				 * /!\ CKEDITOR UPDATE /!\
-				 * There is custom code in iframe and image plugin that need to be ported
-				 * (plugins/iframe/dialogs/iframe.js > onShow and plugins/image2/dialogs/image2.js > onShow)
+				 * CKEDITOR UPDATE
+				 *  - Use http://ckeditor.com/builder and lib-app/ckeditor/build-config.js to get good default plugin config
+				 *  - Remove folders: adapters and samples
 				 * 
 				 */
 				
@@ -459,13 +555,30 @@ define(["lib-build/tpl!./ViewText",
 
 					],
 					customConfig: '',
-					allowedContent: true,
+					
+					// V1.0 behavior, ACF filtering off
+					// Everything pasted was kept ; most of tag soup were cleaned but far from perfect
+					// main issue was with font type and background color
+					//allowedContent: true,
+					
+					// Instead we allow all elements that can be styled using the editor plus those one
+					// *(*) class attribute, *[*] all other attributes
+					// a[data-*] authorize data attribute on link, no idea why *[data-*] or *[*] doesn't works...
+					// Other elements are inserted as plain text
+					// See http://docs.ckeditor.com/#!/guide/dev_allowed_content_rules
+					// *{*}; to allow any style
+					extraAllowedContent: 'h1 h2 h3 h4 h5 h6 table tr th td caption div span img figure figcaption iframe; *(*); *[*]; a[data-*]',
+					// Elements to be removed when executing the "remove " format" command
+					removeFormatTags: 
+						// Default
+						'b,big,code,del,dfn,em,font,i,ins,kbd,q,s,samp,small,span,strike,strong,sub,sup,tt,u,var' 
+						+ ',h1,h2,h3,h4,h5,h6',
+					// Copy/paste magic
+					pasteFromWordRemoveFontStyles: false,
+					pasteFromWordRemoveStyles: false,
 					
 					linkShowAdvancedTab: false,
 					linkShowTargetTab: false,
-					
-					pasteFromWordRemoveFontStyles: false,
-					pasteFromWordRemoveStyles: false,
 					
 					uiColor: '#FCFCFC',
 					disableAutoInline: true,

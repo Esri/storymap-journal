@@ -34,12 +34,13 @@
 				btnCancel: "Avbryt",
 				tocTitle: "Kartinnehåll",
 				tocExplain: "Välj vilka lager som ska visas.",
+				tocNoData: "Det går inte att konfigurera något lager.",
 				tocSave: "Spara kartinnehåll",
 				extentTitle: "Kartplats",
 				extentExplain: "Panorera och zooma kartan för att definiera hur användarna ska se den.",
 				extentSave: "Spara kartplats",
 				popupTitle: "Kartpopupfönster",
-				popupExplain: "Konfigurera hur popupfönstret visas för användarna",
+				popupExplain: "Klicka på ett geoobjekt för att öppna det popupfönster du vill visa.",
 				popupSave: "Spara konfigurationen av popupfönstret",
 				hintNavigation: "Kartnavigeringen är inaktiverad."
 			}

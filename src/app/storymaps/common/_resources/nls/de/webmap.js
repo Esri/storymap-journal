@@ -34,12 +34,13 @@
 				btnCancel: "Abbrechen",
 				tocTitle: "Karteninhalt",
 				tocExplain: "Legen Sie fest, welche Layer angezeigt werden sollen.",
+				tocNoData: "Es kann kein Layer konfiguriert werden.",
 				tocSave: "Karteninhalt speichern",
 				extentTitle: "Kartenposition",
 				extentExplain: "Die Karten schwenken und zoomen, um zu definieren, wie Sie Lesern angezeigt wird.",
 				extentSave: "Kartenposition speichern",
 				popupTitle: "Karten-Pop-up",
-				popupExplain: "Das Aussehen des Pop-ups für Leser konfigurieren",
+				popupExplain: "Klicken Sie auf ein Feature, um das Pop-up zu öffnen, das Sie anzeigen möchten.",
 				popupSave: "Pop-up-Konfiguration speichern",
 				hintNavigation: "Kartennavigation ist deaktiviert."
 			}

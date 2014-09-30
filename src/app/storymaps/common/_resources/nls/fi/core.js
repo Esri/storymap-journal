@@ -7,7 +7,7 @@
 				save: "Tallenna",
 				next: "Seuraava",
 				cancel: "Peruuta",
-				back: "Takaosa",
+				back: "Takaisin",
 				apply: "Käytä",
 				close: "Sulje",
 				open: "Avaa",
@@ -39,6 +39,12 @@
 				shareStatus3: "Sovellus on jaettu organisaatiossa",
 				shareStatus4: "Sovellusta ei ole jaettu"
 			},
+			saveError: {
+				title: "Virhe tallennettaessa sovellusta",
+				err1Div1: "Sovellusta ei voi tallentaa, koska toisella kohteella on sama nimi (katso <a class='linkagolroot' target='_blank'>sisältökansio</a>).",
+				err1Div2: "Muokkaa Kotisivu-osan otsikkoa ja tallenna sovellus.",
+				btnOk: "Muokkaa Kotisivu-osan otsikkoa"
+			},
 			share: {
 				firstSaveTitle: "Sovellus on tallennettu",
 				firstSaveHeader: "Sovelluksesi on nyt tallennettu portaaliin %PORTAL%, mutta sitä ei ole vielä jaettu.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Organisaatiosi jäsenet voivat käyttää sovellustasi (sisäänkirjauduttuaan).",
 				shareLinkCopy: "Kopioi",
 				shareLinkCopied: "Kopioitu",
+				shareQ0: "Miten upotan sovelluksen verkkosivustoon?",
 				shareQ1Opt1: "Miten voin pitää sovelluksen yksityisenä?",
 				shareQ1Opt2: "Miten säilytän sovelluksen yksityisenä tai jaan sen julkisesti?",
 				shareA1: "Käytä kohdetta %SHAREIMG% <a href='%LINK1%' target='_blank'>sovelluskohteen sivulla</a>.",

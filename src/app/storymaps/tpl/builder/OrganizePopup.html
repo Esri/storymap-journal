@@ -6,40 +6,40 @@
 		</div>
 
 		<div class="modal-body">
-				<div><%= lblHeader %></div>
+			<div><%= lblHeader %></div>
+			
+			<!-- 
+			<div class="story-filter-container">
+				<ul class="nav nav-pills story-filters">
+					<li><a class="story-filter"><% /* lblAll */ %></a></li>
+				</ul>
+			</div>
+	
+			<hr class="filter-hr"/>
+				-->
 				
-				<!-- 
-				<div class="story-filter-container">
-					<ul class="nav nav-pills story-filters">
-						<li><a class="story-filter"><% /* lblAll */ %></a></li>
-					</ul>
-				</div>
-
-				<hr class="filter-hr"/>
- 				-->
- 				
-				<div class="organizeTableContainer">
-					<table class="organizeTable table table-striped">
-						<thead>
-						<tr>
-							<th class="moverHeader">&nbsp;</th>
-							<th><%= lblColTitle %></th>
-							<th style="width: 170px;"><%= lblColPubDate %></th>
-							<th style="width: 80px;"><%= lblColStatus %></th>
-							<th style="width: 44px;"></th>
-						</tr>
-						</thead>
-						<tbody class="rows">
-							<!-- rows -->
-						</tbody>
-					</table>
-				</div>
-				
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="displayReverse"/><%= checkDisplayReverse %>
-					</label>
-				</div>
+			<div class="organizeTableContainer">
+				<table class="organizeTable table table-striped">
+					<thead>
+					<tr>
+						<th class="moverHeader">&nbsp;</th>
+						<th><%= lblColTitle %></th>
+						<th style="width: 170px;"><%= lblColPubDate %></th>
+						<th style="width: 80px;"><%= lblColStatus %></th>
+						<th style="width: 44px;"></th>
+					</tr>
+					</thead>
+					<tbody class="rows">
+						<!-- rows -->
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="displayReverse"/><%= checkDisplayReverse %>
+				</label>
+			</div>
 		</div>
 
 		<div class="modal-footer">

@@ -11,7 +11,8 @@
 				disabled: "Esta funcionalidade foi desativada pelo Admnistrador",
 				url: "Para inserir manualmente o endereço web de uma imagem",
 				userLookup: "Carregar álbuns",
-				notImplemented: "Ainda não implementado."
+				notImplemented: "Ainda não implementado.",
+				noData: "Não há vídeos públicos encontrados"
 			},
 			imageSelector: {
 				lblStep1: "Escolha o serviço",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "Email ou ID do Picasa/Google+",
 				signInMsg2: "Conta não encontrada",
-				signInMsg3: "Nenhum álbum público",
 				howToFind: "Como encontrar o ID de uma conta de Picasa ou Google+",
 				howToFind2: "Copiar os dígitos que estão entre a primeira e a segunda barra ( / ) de qualquer página Picasa ou G+"
 			},
@@ -62,7 +62,7 @@
 				url: "URL de um vídeo do Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "O Jornal de Mapas não pode reproduzir vídeos em formato raw (ex: avi, mpeg), mas pode reproduzir ficheiro de vídeo alojados que tenham  but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
+				explain1: "O Jornal de Mapa não pode reproduzir vídeos em formato raw (ex: avi, mpeg), mas pode reproduzir ficheiro de vídeo alojados que tenham  but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
 				explain2: "A maior parte dos serviços online de alojamento de video oferecem essa possibilidade, tem de encontrar a opção para incorporar vídeo, copiar o código e utilizar %WEBPAGE%.",
 				explain3: "Em alternativa, se pretender alojar o vídeo, pode criar uma página HTML que utilize um leitor de vídeo como %EXAMPLE%, alojar essa página e também utilizar o %WEBPAGE%.",
 				webpage: "Elemento de página web"
@@ -72,11 +72,14 @@
 				lblEmbed: "Incorporar código",
 				lblOR: "OU",
 				lblError1: "Erro, limpe um dos dois campos de entrada.",
-				lblError2: "O código de incorporação pode conter apenas um <iframe>"
+				lblError2: "O código de incorporação pode conter apenas um %IFRAMETAG%",
+				configure: "Configurar"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Um URL de imagem deve começar com http:// e terminar com .jpg ou .png",
+				lblURLError: "Esta imagem não aparenta ser válida. Por favor especifique uma ligação direta para um ficheiro de imagem (o seu URL geralmente termina em .jpg ou .png). Ligações para uma página web que contenha a imagem não irão funcionar.",
+				lblURLCheck: "A verificar imagem...",
 				lblLabel: "Legenda de Imagem",
 				lblLabel1: "Legenda",
 				lblLabel2: "Passe sobre o texto",
@@ -90,11 +93,14 @@
 				lblPosition3: "Adaptar",
 				lblPosition4: "Esticar",
 				lblPosition5: "Personalizar",
-				tooltipDimension: "O valor pode ser especificado em 'px' ou '%'",
+				tooltipDimension: "O valor pode ser especificado em pixéis ou percentagem",
+				tooltipDimension2: "O valor tem de ser especificado em px",
 				lblPosition2Explain: "(pode recortar)",
 				lblPosition3Explain: "(não é possível recortar)",
 				lblPosition3Explain2: "(a largura será sempre ajustada ao painel)",
-				lblPosition4Explain: "(pode distorcer)"
+				lblPosition4Explain: "(pode distorcer)",
+				unloadLbl: "Descarregue quando o leitor navegar para uma secção diferente",
+				unloadHelp: "Caso a página contenha media áudio ou vídeo, mantenha esta opção selecionada para impedir que esse conteúdo continue a ser reproduzido quando o leitor navegar para uma secção diferente. Desmarque-a, por exemplo, para que uma banda sonora continue a ser reproduzida à medida que o leitor avança na leitura do jornal.<br />Se a Página Web for uma aplicação, desmarque esta opção para que a aplicação não seja recarregada se o leitor regressar a essa secção."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizar um endereço ou lugar",
@@ -104,7 +110,7 @@
 				lblTitle: "Alterar o conteúdo do Ecrã Principal"
 			},
 			editorInlineMedia: {
-				lblTitle: "Inserir uma imagem ou vídeo"
+				lblTitle: "Inserir uma imagem, vídeo ou página web"
 			}
 		}
 	})

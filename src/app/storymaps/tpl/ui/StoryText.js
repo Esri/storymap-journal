@@ -18,6 +18,43 @@ define(["dojo/topic",
 		var _fullScreenMediaIsOpening = false; 
 	
 		/*
+		 * Prepare story text content for display
+		 * All panels have to call that function
+		 */
+		
+		function prepareSectionPanelContent(contentStr)
+		{
+			var content = $(contentStr);
+			
+			content.find("iframe").each(function(i, frame){
+				var $frame = $(frame),
+					dataUnload = $frame.attr('data-unload');
+				
+				// Don't use .data('src') on purpose (stored memory not persisted when added DOM later)
+				$frame
+					.attr("data-src", $frame.attr('src'))
+					.attr("data-unload", dataUnload === undefined || dataUnload == "true")
+					.removeAttr('src');
+			});
+			
+			return content;
+		}
+		
+		/*
+		 * Load Iframe with source hidden above
+		 */
+		
+		function loadSectionIframe(container)
+		{
+			container.find("iframe").each(function(i, node){
+				var frame = $(node);
+				// Set the iframe only if not already set (i.e. don't reload)
+				if ( ! frame.attr('src') )
+					frame.attr("src", frame.data('src'));
+			});
+		}
+		
+		/*
 		 * Style section content after it has been inserted in the dom
 		 */
 		
@@ -35,6 +72,7 @@ define(["dojo/topic",
 		 */
 		function resizeSectionIframe(container, contentInnerWidth)
 		{
+			// Same ratio present in ViewText
 			container.find(".iframe-container.fit iframe").attr("height", contentInnerWidth * 9 / 16);
 		}
 		
@@ -128,18 +166,25 @@ define(["dojo/topic",
 				
 				topic.publish("story-perform-action-media", action.media);
 				
+				// If the action is only changing extent on the same map, the next Map Move discard the back button
+				// Can't rely on update-end as the Map may fire more than one event depending 
+				//  on the extent. As of 3.11, zoom far away is ok, but simple pan fire multiple events.
+				//  so wait for story-loaded-section which is fired on setExtent.then and after a timeout we can
+				//  safely listen for update-end
 				if ( actionChangeExtent && ! actionChangeLayers && ! actionChangePopup && currentWebmapId == action.media.webmap.id ) {
-					var handle = app.map.on("update-end", function(){
-						var handle2 = app.map.on("update-end", function(){
-							handle.remove();
-							handle2.remove();
-							$('.mediaBackContainer').fadeOut().off('click');
-						});
+					var handle = topic.subscribe("story-loaded-section", function(){
+						handle.remove();
 						
-						$('.mediaBackContainer').click(function(){
-							handle.remove();
-							handle2.remove();
-						});
+						setTimeout(function(){
+							var handle2 = app.map.on("update-end", function(){
+								handle2.remove();
+								$('.mediaBackContainer').fadeOut().off('click');
+							});
+							
+							$('.mediaBackContainer').click(function(){
+								handle2.remove();
+							});
+						}, 800);
 					});
 				}
 				
@@ -186,7 +231,10 @@ define(["dojo/topic",
 				// If the action is a popup, that will be decided later in applyPopupConfigurationStep2 
 				//  depending on the map context and the geometry of the feature
 				if ( ! actionChangePopup )
-					$('.mediaBackContainer').show();
+					$('.mediaBackContainer')
+						.show()
+						.css("marginLeft", - $(".mediaBackContainer .backButton").outerWidth() / 2)
+						.css("marginRight", - $(".mediaBackContainer .backButton").outerWidth() / 2);
 			}
 			else if ( action.type == "zoom" ) {
 				var pointLayer = null;
@@ -237,7 +285,11 @@ define(["dojo/topic",
 					
 				});
 				
-				$('.mediaBackContainer').show();
+				$('.mediaBackContainer')
+					.show()
+					.css("marginLeft", - $(".mediaBackContainer .backButton").outerWidth() / 2)
+					.css("marginRight", - $(".mediaBackContainer .backButton").outerWidth() / 2);
+				
 				$('.backButton').off('click').click(function() {
 					app.map.setExtent(currentExtent);
 					if ( pointLayer )
@@ -251,7 +303,9 @@ define(["dojo/topic",
 			createMainMediaActionLink: createMainMediaActionLink,
 			createMediaFullScreenButton: createMediaFullScreenButton,
 			performAction: performAction,
-			styleSectionPanelContent: styleSectionPanelContent
+			styleSectionPanelContent: styleSectionPanelContent,
+			prepareSectionPanelContent: prepareSectionPanelContent,
+			loadSectionIframe: loadSectionIframe
 		};
 	}
 );

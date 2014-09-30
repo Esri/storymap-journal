@@ -45,7 +45,7 @@ define([
 			function buildEmbedSizeList()
 			{
 				$.each(EMBED_SIZE, function(i, size){
-					container.find('.embed-sizes').append('<li><a data-width="' + size.width + '" data-height="' + size.height + '">' + size.width + ' x ' + size.height + '</a></li>');
+					container.find('.embed-sizes').append('<li><a data-width="' + size.width + '" data-height="' + size.height + '">' + size.width + ' / ' + size.height + '</a></li>');
 				});
 				
 				container.find('.embed-sizes a').click(function(){

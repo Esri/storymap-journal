@@ -9,8 +9,9 @@
 				step2: "Se încarcă date",
 				step3: "În curs de iniţializare",
 				loadBuilder: "În curs de comutare la builder",
-				fail: "Ne pare rău, încărcarea a eşuat",
-				failButton: "Reîncercare"
+				long: "Jurnalul hărţii este în curs de iniţializare",
+				long2: "Vă mulţumim pentru aşteptare",
+				failButton: "Reîncărcare aplicaţie"
 			},
 			signin: {
 				title: "Necesită autentificare",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "A apărut o eroare",
-				invalidConfig: "Eroare gravă: Configurare incorectă",
-				invalidConfigNoApp: "Eroare fatală: ID-ul aplicaţiei de cartografiere web nu este specificat în index.html",
+				invalidConfig: "Configurare incorectă",
+				invalidConfigNoApp: "ID-ul aplicaţiei de cartografiere web nu este specificat în index.html.",
+				unspecifiedConfigOwner: "Proprietarul autorizat nu a fost configurat.",
+				invalidConfigOwner: "Proprietarul aplicaţiei nu este autorizat.",
 				createMap: "Imposibil de creat harta",
-				invalidApp: "Eroare gravă: Imposibil de încărcat aplicaţia",
-				notConfiguredDesktop: "Bine aţi venit la aplicaţia web %TPL_NAME%.<br />Aplicaţia nu este configurată încă.",
-				notConfiguredMobile: "Bine aţi venit la aplicaţia web %TPL_NAME%. Aplicaţia nu este configurată încă, iar builderul nu este suportat p dispozitive mobile.",
+				invalidApp: "%TPL_NAME% nu există sau nu este accesibil.",
+				appLoadingFail: "Ceva nu a mers bine, %TPL_NAME% nu s-a încărcat corect.",
+				notConfiguredDesktop: "Aplicaţia nu este configurată încă.",
+				notConfiguredMobile: "Aplicaţia de creare %TPL_NAME% nu este suportată la această rezoluţie a ecranului.",
 				notAuthorized: "Nu sunteţi autorizat pentru a accesa această aplicaţie",
-				noBuilderIE8: "Builderul nu este suportat în versiunile Internet Explorer anterioare versiunii 9.",
-				mapLoadingFail: "Ceva nu a mers bine şi harta nu poate fi încărcată."
+				noBuilderIE: "Instrumentul de creare nu este suportat în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
+				noViewerIE: "Această aplicaţie nu este suportată în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Efectuaţi un upgrade al browserului</a>.",
+				mapLoadingFail: "Ceva nu a mers bine şi harta nu a fost încărcată corect.",
+				signOut: "Ieşire"
 			},
 			mobileView: {
 				tapForDetails: "Atingeţi pentru detalii",
+				clickForDetails: "Învăţaţi mai mult",
 				swipeToExplore: "Glisaţi pentru a explora",
-				tapForMap: "Atingeţi pentru a reveni la hartă"
+				tapForMap: "Atingeţi pentru a reveni la hartă",
+				clickForMap: "ÎNAPOI LA HARTĂ"
 			},
 			floatLayout: {
 				scroll: "Derulare"
@@ -62,7 +71,7 @@
 				copied: "Copiat",
 				open: "Deschidere",
 				embed: "Încorporare în site web",
-				embedExplain: "Utilizaţi următorul cod HTML pentru a încorpora Jurnalul într-un site web.",
+				embedExplain: "Utilizaţi următorul cod HTML pentru a încorpora jurnalul într-un site web.",
 				size: "Dimensiune (lăţime/înălţime):"
 			}
         }

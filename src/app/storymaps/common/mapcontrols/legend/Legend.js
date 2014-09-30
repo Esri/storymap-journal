@@ -43,6 +43,9 @@ define(["lib-build/tpl!./Legend",
 					backgroundColor: appColors.dotNav,
 					color: appColors.text
 				});
+				
+				container.find(".titleBtn").css("color", appColors.softText);
+				container.find(".settingsGear, .collapseBtn").css("color", appColors.softBtn);
 			};
 			
 			function display()

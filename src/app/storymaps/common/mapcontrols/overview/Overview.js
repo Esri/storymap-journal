@@ -75,6 +75,9 @@ define(["lib-build/tpl!./Overview",
 					color: appColors.text
 				});
 				
+				container.find(".titleBtn").css("color", appColors.softText);
+				container.find(".settingsGear, .collapseBtn").css("color", appColors.softBtn);
+				
 				container.find(".ovwHighlight").css("border", "3px solid " + appColors.dotNav);
 			};
 			

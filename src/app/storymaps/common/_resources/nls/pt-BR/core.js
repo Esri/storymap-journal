@@ -18,7 +18,7 @@
 				height: "Altura"
 			},
 			inlineFieldEdit: {
-				editMe: "Editar- me!"
+				editMe: "Editar-me!"
 			},
 			builderPanel: {
 				panelHeader: "Construtor %TPL_NAME%",
@@ -35,12 +35,18 @@
 				closeWithPendingChange: "Você tem certeza que deseja confirmar esta ação? Suas alterações serão perdidas.",
 				saveError: "Falha ao salvar, tente novamente",
 				shareStatus1: "O aplicativo ainda não foi salvo",
-				shareStatus2: "O Application está publicamente compartilhado",
-				shareStatus3: "O Application está compartilhado dentro da organização",
-				shareStatus4: "O Application não está compartilhado"
+				shareStatus2: "O aplicativo está publicamente compartilhado",
+				shareStatus3: "O aplicativo está compartilhado dentro da organização",
+				shareStatus4: "O aplicativo não está compartilhado"
+			},
+			saveError: {
+				title: "Erro ao salvar o aplicativo",
+				err1Div1: "O aplicativo não pode ser salvo, pois você já tem outro item com o mesmo nome (consulte sua <a class='linkagolroot' target='_blank'>pasta de conteúdo</a>).",
+				err1Div2: "Modifique o título Seção Inicial e salve o aplicativo.",
+				btnOk: "Edite o título Seção Inicial"
 			},
 			share: {
-				firstSaveTitle: "Application salvo com sucesso",
+				firstSaveTitle: "Aplicativo salvo com sucesso",
 				firstSaveHeader: "O aplicativo agora está salvo no %PORTAL%, mas ainda não está compartilhado.",
 				firstSavePreview: "Visualizar",
 				firstSaveShare: "Compartilhar",
@@ -60,6 +66,7 @@
 				shareHeader2: "O aplicativo pode ser acessado por membros da sua organização (é necessário login).",
 				shareLinkCopy: "Copiar",
 				shareLinkCopied: "Copiado",
+				shareQ0: "Como eu anexo o aplicativo em um site da web?",
 				shareQ1Opt1: "Como faço para manter o aplicativo privado?",
 				shareQ1Opt2: "Como faço para manter o aplicativo privado ou compartilhá-lo publicamente?",
 				shareA1: "Utilize %SHAREIMG% na <a href='%LINK1%' target='_blank'>página de item do aplicativo</a>.",

@@ -157,13 +157,15 @@
             //   * deltaMode 1 is by lines
             //   * deltaMode 2 is by pages
             if ( orgEvent.deltaMode === 1 ) {
-                var lineHeight = $.data(this, 'mousewheel-line-height');
-                delta  *= lineHeight;
+                // Esri Firefox issue
+                var lineHeight = $.data(this, 'mousewheel-line-height') || 1;
+                //delta  *= lineHeight;
                 deltaY *= lineHeight;
                 deltaX *= lineHeight;
             } else if ( orgEvent.deltaMode === 2 ) {
+                // Esri Firefox issue
                 var pageHeight = $.data(this, 'mousewheel-page-height');
-                delta  *= pageHeight;
+                //delta  *= pageHeight || 1;
                 deltaY *= pageHeight;
                 deltaX *= pageHeight;
             }

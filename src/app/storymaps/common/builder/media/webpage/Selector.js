@@ -80,6 +80,9 @@ define(["lib-build/tpl!./Selector",
 						showView(previousView.name || 'home', previousView.params, true);
 					});
 				}
+				else 
+					_views[_selectedView].postDisplay();
+					
 			};
 			
 			this.deactivate = function()

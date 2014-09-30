@@ -279,15 +279,29 @@ define(["dojo/cookie",
 					str += String.fromCharCode(arr[i]);
 				return str;
 			},
-			addCSSRule: function(style)
+			addCSSRule: function(style, styleNodeIdAttr, targetIframeNode)
 			{
+				var target = "head";
+				
 				if( has("ie") <= 8 )
 					return;
 				
+				if ( targetIframeNode )
+					target = targetIframeNode.contents().find("head");
+				
+				if ( styleNodeIdAttr ) {
+					var styleNode = $(target).find("#" + styleNodeIdAttr).eq(0);
+					if ( styleNode.length ) {
+						styleNode.html(style);
+						return;
+					}
+				}
+				
 				$("<style>")
 					.prop("type", "text/css")
+					.attr("id", styleNodeIdAttr)
 					.html(style)
-					.appendTo("head");
+					.appendTo(target);
 			},
 			hex2rgba: function(x, a)
 			{
@@ -303,13 +317,17 @@ define(["dojo/cookie",
 			},
 			prependURLHTTP: function(url)
 			{
-				if ( ! url || url === "" )
+				if ( ! url || url === "" || url.match(/^mailto:/) )
 					return url;
 				
 				if ( ! /^(https?:\/\/)|^(\/\/)/i.test(url) )
 					return 'http://' + url;
 				
 				return url;
+			},
+			checkImageURL: function(url)
+			{
+				return url && url.match(/((\.png)|(\.jp(e)?g))$/i);
 			},
 			createGeocoderOptions: function() 
 			{

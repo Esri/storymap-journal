@@ -39,6 +39,12 @@
 				shareStatus3: "Aplikace je sdílená v rámci organizace.",
 				shareStatus4: "Aplikace není sdílená."
 			},
+			saveError: {
+				title: "Chyba při ukládání aplikace",
+				err1Div1: "Aplikaci nelze uložit, protože již máte uloženou položku se stejným názvem (viz vaše <a class='linkagolroot' target='_blank'>složka obsahu</a>).",
+				err1Div2: "Změňte název domovské části a uložte aplikaci.",
+				btnOk: "Upravit název domovské části"
+			},
 			share: {
 				firstSaveTitle: "Aplikace úspěšně uložena",
 				firstSaveHeader: "Vaše aplikace je nyní uložena v %PORTAL%, ještě však není sdílena.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Vaše aplikace je přístupná členům vaší organizace (je vyžadováno přihlášení).",
 				shareLinkCopy: "Kopírovat",
 				shareLinkCopied: "Zkopírováno",
+				shareQ0: "Jak vložím aplikaci do webových stránek?",
 				shareQ1Opt1: "Jak lze aplikaci ponechat jako soukromou?",
 				shareQ1Opt2: "Jak lze aplikaci ponechat jako soukromou nebo ji veřejně sdílet?",
 				shareA1: "Použijte %SHAREIMG% na <a href='%LINK1%' target='_blank'>stránce položek aplikace</a>.",
@@ -74,7 +81,7 @@
 				tabError: "Zkontrolujte prosím, nejsou-li v záložkách chyby."
 			},
 			settingsLayout: {
-				title: "Rozvržení",
+				title: "Rozvržení stránky",
 				explain: "Jaké rozvržení chcete použít?",
 				explainInit: "Rozvržení můžete kdykoli změnit v dialogu nastavení.",
 				viewExample: "Zobrazit živý příklad"

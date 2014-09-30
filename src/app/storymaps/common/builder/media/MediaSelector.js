@@ -123,14 +123,14 @@ define(["lib-build/tpl!./MediaSelector",
 				return { };
 			};
 			
-			this.checkError = function()
+			this.checkError = function(saveBtn)
 			{
 				var selectedMedia = container.find('.mainMediaTypeContainer.current').index();
 				
 				if ( selectedMedia === 0 )
 					return _mapSelector.checkError();
 				else if ( selectedMedia == 1  )
-					return _imageSelector.checkError();
+					return _imageSelector.checkError(saveBtn);
 				else if ( selectedMedia == 2 )
 					return _videoSelector.checkError();
 				else if ( selectedMedia == 3 )

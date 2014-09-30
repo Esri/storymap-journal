@@ -7,7 +7,7 @@
 				lblContent: "Contenu",
 				lblPopup: "Fenêtre contextuelle",
 				lblControls: "Suppléments",
-				lblOverview: "Carte générale",
+				lblOverview: "Vue générale",
 				lblLegend: "Légende",
 				loadingTitle: "Chargement du titre",
 				section: "Section",
@@ -25,7 +25,7 @@
 				tooltipLocation: "Définissez l\'emplacement sur la carte qui sera utilisé lorsque vos lecteurs accéderont à cette section.",
 				tooltipContent: "Définissez les couches visibles.",
 				tooltipPopup: "Choisissez la fenêtre contextuelle à afficher lorsque vos lecteurs accéderont à cette section.",
-				tooltipOverview: "Affichez une petite carte générale avec la carte principale.",
+				tooltipOverview: "Affichez une petite vue générale avec la carte principale.",
 				tooltipLegend: "Affichez la légende de la carte, qui est utile lorsque la carte comporte beaucoup de couches et de symboles.",
 				mapCfgInvite: "Utilisez ces contrôles pour configurer la carte"
 			},
@@ -34,12 +34,13 @@
 				btnCancel: "Annuler",
 				tocTitle: "Contenu de la carte",
 				tocExplain: "Sélectionnez les couches à afficher.",
+				tocNoData: "Aucune couche ne peut être configurée.",
 				tocSave: "Enregistrer le contenu de la carte",
 				extentTitle: "Emplacement sur la carte",
 				extentExplain: "Déplacez la carte et appliquez un zoom pour définir son apparence pour vos lecteurs.",
 				extentSave: "Enregistrer l\'emplacement sur la carte",
 				popupTitle: "Fenêtre contextuelle de la carte",
-				popupExplain: "Configurer l\'aspect de la fenêtre contextuelle pour les lecteurs",
+				popupExplain: "Cliquez sur une entité pour ouvrir la fenêtre contextuelle à afficher.",
 				popupSave: "Enregistrer la configuration de la fenêtre contextuelle",
 				hintNavigation: "La navigation cartographique est désactivée."
 			}

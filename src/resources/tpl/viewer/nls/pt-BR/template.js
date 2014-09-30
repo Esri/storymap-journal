@@ -9,8 +9,9 @@
 				step2: "Carregando dados",
 				step3: "Inicializando",
 				loadBuilder: "Trocando para construtor",
-				fail: "Desculpe, falha ao carregar",
-				failButton: "Tentar Novamente"
+				long: "O diário do mapa está inicializando",
+				long2: "Obrigado por aguardar",
+				failButton: "Recarregar o aplicativo"
 			},
 			signin: {
 				title: "uma autenticação é exigida",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Ocorreu um erro",
-				invalidConfig: "Erro fatal: configuração inválida",
-				invalidConfigNoApp: "Erro fatal: Identificador do Aplicativo de Mapeamento da Web não especificado no index.html",
+				invalidConfig: "Configuração inválida",
+				invalidConfigNoApp: "Identificador do Aplicativo de Mapeamento da Web não especificado no index.html.",
+				unspecifiedConfigOwner: "O proprietário autorizado não foi configurado.",
+				invalidConfigOwner: "O proprietário do aplicativo não está autorizado.",
 				createMap: "Não foi possível criar o mapa",
-				invalidApp: "Erro fatal: O aplicativo não pode ser carregado",
-				notConfiguredDesktop: "Bem-Vindo ao aplicativo da web %TPL_NAME% .<br />O aplicativo ainda não está configurado.",
-				notConfiguredMobile: "Bem-Vindo ao aplicativo da web %TPL_NAME%. O aplicativo ainda não está configurado e o construtor não é suportado em dispositivos móveis.",
+				invalidApp: "O %TPL_NAME% não existe ou está inacessível.",
+				appLoadingFail: "Ocorreu algo errado, o %TPL_NAME% não carregou corretamente.",
+				notConfiguredDesktop: "O aplicativo ainda não está configurado.",
+				notConfiguredMobile: "O construtor do %TPL_NAME% não é suportado nesta resolução de tela.",
 				notAuthorized: "Você não está autorizado para acessar este aplicativo.",
-				noBuilderIE8: "Este construtor não é suportado no Internet Explorer anterior à versão 9.",
-				mapLoadingFail: "Ocorreu algo errado, o Mapa não pode ser carregado."
+				noBuilderIE: "O construtor não é suportado no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
+				noViewerIE: "Este aplicativo não é suportado no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atualize seu navegador</a>.",
+				mapLoadingFail: "Ocorreu algo errado, o Mapa não carregou corretamente.",
+				signOut: "Sair"
 			},
 			mobileView: {
 				tapForDetails: "Toque poara detalhes",
+				clickForDetails: "Mais informações",
 				swipeToExplore: "Oscile para explorar",
-				tapForMap: "Toque para voltar ao Mapa"
+				tapForMap: "Toque para voltar ao Mapa",
+				clickForMap: "VOLTAR AO MAPA"
 			},
 			floatLayout: {
 				scroll: "Rolar"
@@ -62,7 +71,7 @@
 				copied: "Copiado",
 				open: "Abrir",
 				embed: "Anexar no site da web",
-				embedExplain: "Utilize o seguinte código HTML para anexar o Jornal em um site da web.",
+				embedExplain: "Utilize o seguinte código HTML para anexar o diário em um site da web.",
 				size: "Tamanho (largura/altura):"
 			}
         }

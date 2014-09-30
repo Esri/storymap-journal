@@ -11,7 +11,8 @@
 				disabled: "Este recurso foi desabilitado pelo Administrador",
 				url: "Para inserir manualmente o endereço da web de uma imagem",
 				userLookup: "Carregar álbuns",
-				notImplemented: "Não implementado ainda."
+				notImplemented: "Não implementado ainda.",
+				noData: "Nenhum álbum público localizado"
 			},
 			imageSelector: {
 				lblStep1: "Escolha o serviço",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-mail ou Picasa/Google+ ID",
 				signInMsg2: "Conta não encontrada",
-				signInMsg3: "Nenhum álbum público",
 				howToFind: "Como encontrar um ID de conta do Picasa ou Google+",
 				howToFind2: "Copie dígitos entre o primeiro e segundo \'/\' de qualquer página do Picasa ou G+"
 			},
@@ -62,7 +62,7 @@
 				url: "URL de um vídeo do Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "O Diário do Mapa não pode reproduzir vídeos pesados (ex: AVI, MPEG), mas ele pode reproduzir arquivos de vídeo hospedados que têm botões de reprodução embutidos (ex: YouTube ou Vimeo).",
+				explain1: "O Diário do Mapa não pode reproduzir vídeos pesados (ex: avi,mpeg), mas ele pode reproduzir arquivos de vídeo hospedados que têm botões de reprodução embutidos (ex: YouTube ou Vimeo).",
 				explain2: "A maioria dos serviços de hospedagem de vídeo online oferecem esste recurso, você tem que encontrar a opção para embutir o vídeo, copiar o código fornecido e utilizar o %WEBPAGE%.",
 				explain3: "Alternativamente, se desejar você mesmo hospedar o vídeo, é possível criar uma página HTML que utiliza um botão de reprodução de vídeo como %EXAMPLE%, hospedar esta página e também utilizar o %WEBPAGE%.",
 				webpage: "Recurso da página da web"
@@ -72,11 +72,14 @@
 				lblEmbed: "Código embutido",
 				lblOR: "OU",
 				lblError1: "Erro, limpe um dos dois campos de entrada.",
-				lblError2: "O código embutido pode conter somente um <iframe>"
+				lblError2: "O código embutido pode conter somente um %IFRAMETAG%",
+				configure: "Configurar"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Uma URL de imagem deve iniciar com http:// e terminar com .jpg ou .png",
+				lblURLError: "Esta imagem parece não ser válida. Especifique um link direto para um arquivo de imagem (sua URL geralmente terminará com .jpg ou .png). Links para uma página da web que contêm uma imagem não funcionarão.",
+				lblURLCheck: "Verificando imagem...",
 				lblLabel: "Legenda da Imagem",
 				lblLabel1: "Legenda",
 				lblLabel2: "Pairar texto",
@@ -90,11 +93,14 @@
 				lblPosition3: "Ajustar",
 				lblPosition4: "Esticar",
 				lblPosition5: "Personalizar",
-				tooltipDimension: "O valor pode ser especificado em 'px' ou '%'",
+				tooltipDimension: "O valor pode ser especificado em \'px\' ou \'%\'",
+				tooltipDimension2: "O valor tem que ser especificado em \'px\'",
 				lblPosition2Explain: "(pode recortar)",
 				lblPosition3Explain: "(não cortará)",
 				lblPosition3Explain2: "(a largura sempre se ajustará no painel)",
-				lblPosition4Explain: "(pode distorcer)"
+				lblPosition4Explain: "(pode distorcer)",
+				unloadLbl: "Descarregar quando o leitor navegar para seção diferente",
+				unloadHelp: "Se a Página da Web tiver mídia de áudio ou vídeo, mantenha esta opção marcada para impedir que o conteúdo seja reproduzido quando o leitor navegar para uma seção diferente. Desmarque-a, por exemplo, para manter a reprodução da trilha sonora conforme o leitor avançar pelo diário.<br /> Se a Página da Web for um aplicativo, desmarque esta opção para que o aplicativo não recarregue se o leitor retornar para esta secção."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizar um endereço ou lugar",
@@ -104,7 +110,7 @@
 				lblTitle: "Altere o conteúdo do Nível Principal"
 			},
 			editorInlineMedia: {
-				lblTitle: "Insira uma imagem ou vídeo"
+				lblTitle: "Insira uma imagem, vídeo ou página da web"
 			}
 		}
 	})

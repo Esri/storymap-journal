@@ -6,10 +6,10 @@ define(["dojo/Deferred"],
 			this.checkVideoUrl = function(url)
 			{
 				var resultDeferred = new Deferred(),
-					urlTest = /(vimeo\.com|player.vimeo.com\/video)\/([0-9]{8})/.exec(url);
+					urlTest = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/.exec(url);
 				
-				if ( urlTest && urlTest.length == 3 ) {
-					var videoId = urlTest[2];
+				if ( urlTest && urlTest.length == 6 ) {
+					var videoId = urlTest[5];
 				
 					getVideoInfo(videoId).then(
 						function(data){

@@ -34,12 +34,13 @@
 				btnCancel: "キャンセル",
 				tocTitle: "マップ コンテンツ",
 				tocExplain: "表示するレイヤを選択します。",
+				tocNoData: "レイヤを構成できません。",
 				tocSave: "マップ コンテンツの保存",
 				extentTitle: "マップ位置",
 				extentExplain: "マップを移動および拡大/縮小して、ユーザに対する外観を定義します。",
 				extentSave: "マップ位置の保存",
 				popupTitle: "マップ ポップアップ",
-				popupExplain: "ユーザに表示するポップアップの外観を構成します。",
+				popupExplain: "フィーチャをクリックして、表示するポップアップを開きます。",
 				popupSave: "ポップアップ構成の保存",
 				hintNavigation: "マップ ナビゲーションは無効化されています。"
 			}

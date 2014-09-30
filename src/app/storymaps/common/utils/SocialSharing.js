@@ -107,9 +107,10 @@ define(["dojo/Deferred"],
 			cleanURL: function(url, noEncoding)
 			{
 				// If sharing in builder mode the link will always open the viewer
-				url = url.replace(/\?edit&/, '?');
+				// TODO clean, should get all url parameters, filter edit and rebuild URL
+				url = url.replace(/\?edit(=.*)*&/, '?');
+				url = url.replace(/\&edit(=.*)*/, '');
 				url = url.replace(/\?edit/, '');
-				url = url.replace(/\&edit/, '');
 				
 				return noEncoding ? url : encodeURIComponent(url);
 			}

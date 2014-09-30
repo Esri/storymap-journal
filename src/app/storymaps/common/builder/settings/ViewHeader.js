@@ -147,7 +147,7 @@ define(["lib-build/tpl!./ViewHeader",
 					logoTarget = "";
 				}
 				else {
-					logoURL = _badLogo ? app.cfg.HEADER_LOGO_URL : _contentContainer.find(".imgLogo").attr("src");
+					logoURL = _badLogo ? app.cfg.HEADER_LOGO_URL : CommonHelper.prependURLHTTP(_contentContainer.find(".imgLogo").attr("src"));
 					logoTarget = _logoTargetInput.val();
 				}
 				
@@ -204,7 +204,7 @@ define(["lib-build/tpl!./ViewHeader",
 			function loadCustomLogo()
 			{
 				var logoUrl = $.trim($("#logoInput", _contentContainer).val());
-				_contentContainer.find(".imgLogo").attr("src", logoUrl).show();
+				_contentContainer.find(".imgLogo").attr("src", CommonHelper.prependURLHTTP(logoUrl)).show();
 			}
 			
 			function onTargetInputEnter(event)

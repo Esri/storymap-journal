@@ -34,12 +34,13 @@
 				btnCancel: "取消",
 				tocTitle: "地图内容",
 				tocExplain: "选择将显示哪些图层。",
+				tocNoData: "无法配置任何图层。",
 				tocSave: "保存地图内容",
 				extentTitle: "地图位置",
 				extentExplain: "平移并缩放地图以定义供读者观看的地图外观。",
 				extentSave: "保存地图位置",
 				popupTitle: "地图弹出窗口",
-				popupExplain: "配置显示给读者的弹出窗口的外观",
+				popupExplain: "单击要素以打开您要显示的弹出窗口。",
 				popupSave: "保存弹出窗口配置",
 				hintNavigation: "地图导航已禁用。"
 			}

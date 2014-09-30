@@ -34,12 +34,13 @@
 				btnCancel: "İptal",
 				tocTitle: "Harita içeriği",
 				tocExplain: "Gösterilecek katmanları seçin.",
+				tocNoData: "Herhangi bir katman yapılandırılamadı.",
 				tocSave: "Harita içeriğini kaydedin",
 				extentTitle: "Harita konumu",
 				extentExplain: "Okuyucularınıza görüntüleneceği biçimi tanımlamak için haritayı genişletin ve yakınlaştırın.",
 				extentSave: "Harita konumunu kaydet",
 				popupTitle: "Harita açılır penceresi",
-				popupExplain: "Okuyucular görüntülenen açılır pencerenin görünümünü yapılandırın.",
+				popupExplain: "Görüntülemek istediğiniz açılır pencereyi açmak için bir detaya tıklayın.",
 				popupSave: "Açılır pencere yapılandırmasını kaydet",
 				hintNavigation: "Harita navigasyonu devre dışı bırakıldı."
 			}

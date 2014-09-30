@@ -34,12 +34,13 @@ define({
 				btnCancel: "Cancel",
 				tocTitle: "Map content",
 				tocExplain: "Select which layers will be shown.",
+				tocNoData: "No layer can be configured.",
 				tocSave: "Save map content",
 				extentTitle: "Map location",
 				extentExplain: "Pan and zoom the map to define how it will look for your readers.",
 				extentSave: "Save Map location",
 				popupTitle: "Map popup",
-				popupExplain: "Configure the look of the pop-up shown to readers",
+				popupExplain: "Click on a feature to open the popup you want to display.",
 				popupSave: "Save the popup configuration",
 				hintNavigation: "Map navigation is disabled."
 			}

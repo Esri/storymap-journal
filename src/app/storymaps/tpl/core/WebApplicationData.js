@@ -50,7 +50,7 @@ define(["dojo/_base/lang"],
 			},
 			isBlank: function()
 			{
-				return Object.keys(_data.values).length <= 1;
+				return Object.keys(_data.values).length <= 1 || app.data.getStorySections().length === 0;
 			},
 			getBlank: function()
 			{
@@ -241,8 +241,7 @@ define(["dojo/_base/lang"],
 			setTheme: function(theme) 
 			{
 				_data.values.settings = _data.values.settings || {};
-				_data.values.settings.theme = _data.values.settings.theme || {};
-				_data.values.settings.theme.colors = theme.colors;
+				_data.values.settings.theme = theme;
 			},
 			getColors: function()
 			{
@@ -262,7 +261,29 @@ define(["dojo/_base/lang"],
 						return cfgColors;
 				}
 				else
-					return  this.getLayoutProperties().themes[0];
+					return this.getLayoutProperties().themes[0];
+			},
+			getFonts: function()
+			{
+				var outputFonts = { 
+						sectionTitle: app.cfg.FONTS.sectionTitle[0],
+						sectionContent: app.cfg.FONTS.sectionContent[0]
+					},
+					cfgFonts = this.getTheme().fonts || { };
+				
+				if ( cfgFonts.sectionTitle ) {
+					outputFonts.sectionTitle = $.grep(app.cfg.FONTS.sectionTitle, function(font) {
+						return font.id == cfgFonts.sectionTitle.id;
+					})[0] || cfgFonts.sectionTitle;
+				}
+				
+				if ( cfgFonts.sectionContent ) {
+					outputFonts.sectionContent = $.grep(app.cfg.FONTS.sectionContent, function(font) {
+						return font.id == cfgFonts.sectionContent.id;
+					})[0] || cfgFonts.sectionContent;
+				}
+
+				return outputFonts;
 			},
 			
 			/*
@@ -317,6 +338,13 @@ define(["dojo/_base/lang"],
 				var story = this.getStory();
 				
 				// FS will use story.order to return sections in the correct order
+				
+				/*
+				var arr = [];
+				for(var i=0;i<1000;i++)
+					arr.push(story.sections[0]);
+				return arr;
+				*/
 				
 				return story.sections || [];
 			},

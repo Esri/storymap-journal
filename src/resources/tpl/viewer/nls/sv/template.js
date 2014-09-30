@@ -9,8 +9,9 @@
 				step2: "Läser in data",
 				step3: "Initierar",
 				loadBuilder: "Växlar till byggverktyget",
-				fail: "Det gick inte att läsa in",
-				failButton: "Försök igen"
+				long: "Kartjournalen initieras",
+				long2: "Tack för att du väntar",
+				failButton: "Läs in applikationen igen"
 			},
 			signin: {
 				title: "Autentisering krävs",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Ett fel har inträffat",
-				invalidConfig: "Allvarligt fel: ogiltig konfiguration",
-				invalidConfigNoApp: "Allvarligt fel: Webbkartapplikationens identifierare anges inte i index.html",
+				invalidConfig: "Ogiltig konfiguration",
+				invalidConfigNoApp: "Webbkartapplikationens identifierare anges inte i index.html.",
+				unspecifiedConfigOwner: "Ingen auktoriserad ägare har konfigurerats.",
+				invalidConfigOwner: "Applikationens ägare är inte auktoriserad.",
 				createMap: "Det gick inte att skapa kartan",
-				invalidApp: "Allvarligt fel: programmet kunde inte läsas in",
-				notConfiguredDesktop: "Välkommen till %TPL_NAME%-webbapplikationen.<br />Applikationen har inte konfigurerats ännu.",
-				notConfiguredMobile: "Välkommen till %TPL_NAME%-webbapplikationen. Applikationen har inte konfigurerats ännu och byggverktyget går inte att använda på mobila enheter.",
+				invalidApp: "%TPL_NAME% finns inte eller går inte att komma åt.",
+				appLoadingFail: "Något gick fel, %TPL_NAME% lästes inte in korrekt.",
+				notConfiguredDesktop: "Applikationen har inte konfigurerats ännu.",
+				notConfiguredMobile: "%TPL_NAME%-byggverktyget går inte att använda med den här skärmupplösningen.",
 				notAuthorized: "Du är inte behörig att konfigurera det här programmet",
-				noBuilderIE8: "Byggverktyget går inte att använda med tidigare versioner av Internet Explorer än version 9.",
-				mapLoadingFail: "Något gick fel, det går inte att läsa in kartan."
+				noBuilderIE: "Byggverktyget kan inte användas med Internet Explorer tidigare än version %VERSION%. %UPGRADE%",
+				noViewerIE: "Det här programmet kan inte användas med Internet Explorer tidigare än version %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Uppdatera din webbläsare</a>.",
+				mapLoadingFail: "Något gick fel, kartan lästes inte in på rätt sätt.",
+				signOut: "Logga ut"
 			},
 			mobileView: {
 				tapForDetails: "Peka för information",
+				clickForDetails: "Läs mer",
 				swipeToExplore: "Svep för att utforska",
-				tapForMap: "Peka för att återgå till kartan"
+				tapForMap: "Peka för att återgå till kartan",
+				clickForMap: "TILLBAKA TILL KARTAN"
 			},
 			floatLayout: {
 				scroll: "Bläddra"

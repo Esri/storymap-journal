@@ -35,9 +35,14 @@ define([
 						container.find('.logoLink').attr("href", headerCfg.logoTarget);
 					
 					resizeLinkContainer(container);
+					
 					container.find('.logoImg')[0].onload = function(){
 						resizeLinkContainer(container);
 					};
+					container.find('.logoImg')[0].onerror = function(){
+						resizeLinkContainer(container);
+					};
+					
 					container.find('.logoImg').attr("src", headerCfg.logoURL).show();
 				}
 			},

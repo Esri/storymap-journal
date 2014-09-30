@@ -34,10 +34,16 @@
 				unSavedChangePlural: "Gaida izmaiņas",
 				closeWithPendingChange: "Vai tiešām vēlaties apstiprināt šo darbību? Jūsu veiktās izmaiņas tiks zaudētas.",
 				saveError: "Saglabāt neizdevās, lūdzu, mēģiniet vēlreiz",
-				shareStatus1: "Aplikācija vēl nav saglabāta",
+				shareStatus1: "Lietotne vēl nav saglabāta",
 				shareStatus2: "Lietotne tiek publiski koplietota",
 				shareStatus3: "Lietotne tiek koplietota organizācijā",
 				shareStatus4: "Lietotne netiek koplietota"
+			},
+			saveError: {
+				title: "Saglabājot aplikāciju, radās kļūda",
+				err1Div1: "Aplikāciju nevar saglabāt, jo jums jau ir cita vienība ar tādu pašu nosaukumu (skatiet savu <a class='linkagolroot' target='_blank'>satura mapi</a>).",
+				err1Div2: "Lūdzu, modificējiet sadaļas Mājas nosaukumu un saglabājiet aplikāciju.",
+				btnOk: "Rediģēt sadaļas Mājas nosaukumu"
 			},
 			share: {
 				firstSaveTitle: "Lietotne veiksmīgi saglabāta",
@@ -60,6 +66,7 @@
 				shareHeader2: "Jūsu aplikācijai var piekļūt jūsu organizācijas dalībnieki (nepieciešama pieteikšanās).",
 				shareLinkCopy: "Kopēt",
 				shareLinkCopied: "Kopēts",
+				shareQ0: "Kā iegult aplikāciju web vietnē?",
 				shareQ1Opt1: "Kā saglabāt aplikāciju privātu?",
 				shareQ1Opt2: "Kā saglabāt aplikāciju privātu vai koplietot to publiski?",
 				shareA1: "Izmantojiet %SHAREIMG% <a href='%LINK1%' target='_blank'>aplikācijas vienību lapā</a>.",

@@ -12,7 +12,7 @@ define(["lib-build/tpl!./ViewHome",
 				phURL: "http://www.esri.com",
 				phEmbed: "<iframe width=&quot;100%&quot; height=&quot;600px&quot; src=&quot;http://...&quot;></iframe>",
 				lblOR: i18n.commonMedia.webpageSelectorHome.lblOR,
-				btnConfigure: "Configure" // TODO i18n
+				btnConfigure: i18n.commonMedia.webpageSelectorHome.configure
 			}));
 			
 			init();
@@ -31,6 +31,13 @@ define(["lib-build/tpl!./ViewHome",
 				}
 				
 				onDataUpdate();
+				this.postDisplay();
+			};
+			
+			this.postDisplay = function()
+			{
+				// Focus the expected field
+				container.find(container.find('.textarea').val() ? '.textarea' : '.url').focus();
 			};
 			
 			
@@ -73,10 +80,10 @@ define(["lib-build/tpl!./ViewHome",
 					var urlVal = container.find('.url').val(),
 						embedVal = container.find('.textarea').val();
 					
-					if ( embedVal && ! urlVal && ! embedVal.match(/^<iframe.*<\/iframe>$/)) {
+					if ( embedVal && ! urlVal && (! embedVal.match(/^<iframe.*<\/iframe>$/) || embedVal.match(/iframe/g).length > 2) ) {
 						container.find('.error')
 							.show()
-							.html(i18n.commonMedia.webpageSelectorHome.lblError2.replace('<', '"&lt;').replace('>', '&gt;"')); // TODO i18n
+							.html(i18n.commonMedia.webpageSelectorHome.lblError2.replace('%IFRAMETAG%', '"&lt;iframe&gt;"'));
 						return;
 					}
 					

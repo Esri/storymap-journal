@@ -11,7 +11,8 @@
 				disabled: "See funktsioon on administraatori poolt välja lülitatud",
 				url: "Pildi veebiaadressi käsitsi sisestamiseks",
 				userLookup: "Laadi albumid",
-				notImplemented: "Pole veel kasutusele võetud."
+				notImplemented: "Pole veel kasutusele võetud.",
+				noData: "Avalikku albumit ei leitud"
 			},
 			imageSelector: {
 				lblStep1: "Valige teenus",
@@ -34,9 +35,8 @@
 				lookupMsgError: "Lehte ei leitud"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "E-post või Picasa/Google+ ID",
+				userInputLbl: "e-post või Picasa/Google+ ID",
 				signInMsg2: "Kontot ei leitud",
-				signInMsg3: "Avalikku albumit pole",
 				howToFind: "Kuidas leida Picasa või Google+ konto ID-d",
 				howToFind2: "Kopeeri numbrikohad esimese ja teise \'/\' vahelt Picasa või G+ lehelt"
 			},
@@ -50,7 +50,7 @@
 				other: "Muu"
 			},
 			videoSelectorYoutube: {
-				url: "Youtube'i video URL",
+				url: "Youtube video URL",
 				pageInputLbl: "Kasutajanimi",
 				lookupMsgError: "Kasutajat ei leitud",
 				howToFind: "Kuidas leida YouTube’i kasutajanime",
@@ -62,9 +62,9 @@
 				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "Kaardiajakiri ei saa esitada töötlemata videoid (nt avi, mpeg), kuid saab esitada majutatud videoid sisseehitatud pleierites (nt YouTube või Vimeo).",
-				explain2: "Enamik veebis olevaid videomajutusteenuseid pakuvad seda funktsiooni. Peate leidma video lisamise võimaluse, kopeerima antud koodi ja kasutama veebilehte %WEBPAGE%.",
-				explain3: "Kui soovite videot ise majutada, saate luua HTML-lehe, mis kasutab näiteks videopleierit %EXAMPLE%, selle lehe majutada ning kasutada ka veebilehte %WEBPAGE%.",
+				explain1: "Kaardiajakiri ei saa esitada töötlemata videoid (nt .avi, .mpeg), kuid saab esitada majutatud videoid sisseehitatud pleierites (nt YouTube või Vimeo).",
+				explain2: "Enamik veebis olevaid videomajutusteenuseid pakub seda funktsiooni. Peate leidma video lisamise võimaluse, kopeerima antud koodi ja kasutama veebilehte %WEBPAGE%.",
+				explain3: "Kui soovite aga videot ise majutada, saate luua HTML-lehe, mis kasutab näiteks videopleierit %EXAMPLE%, selle lehe majutada ning kasutada ka veebilehte %WEBPAGE%.",
 				webpage: "Veebilehe funktsioon"
 			},
 			webpageSelectorHome: {
@@ -72,11 +72,14 @@
 				lblEmbed: "Lisa kood",
 				lblOR: "VÕI",
 				lblError1: "Viga, tühjendage üks kahest sisendväljast.",
-				lblError2: "Lisatud kood võib sisaldada ainult ühte <iframe>"
+				lblError2: "Lisatud kood võib sisaldada ainult ühte märksõna %IFRAMETAG%",
+				configure: "Seadista"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Pildi URL-i alguses peaks olema http:// ja lõpus laiend .jpg või .png",
+				lblURLError: "See pilt paistab olevat vigane. Määrake pildifaili otselink (URL-i lõpus on üldiselt laiend .jpg või .png). Pilti sisaldava veebilehe lingid ei tööta.",
+				lblURLCheck: "Pildi kontrollimine...",
 				lblLabel: "Pildi alapealkiri",
 				lblLabel1: "Alapealkiri",
 				lblLabel2: "Hõljuktekst",
@@ -85,16 +88,19 @@
 				lblMaximize: "Lisa pildi nurka maksimeerimise nupp",
 				lblMaximizeHelp: "Soovitatud ainult kvaliteetsete piltide puhul",
 				lblPosition: "Paigutus",
-				lblPosition1: "Keskele",
+				lblPosition1: "Keskel",
 				lblPosition2: "Täida",
 				lblPosition3: "Sobita",
 				lblPosition4: "Venita",
 				lblPosition5: "Kohandatud",
 				tooltipDimension: "Väärtuse ühikuks võib olla px või %",
+				tooltipDimension2: "Väärtuse ühikuks peab olema px",
 				lblPosition2Explain: "(võib kärpida)",
 				lblPosition3Explain: "(ei kärbita)",
 				lblPosition3Explain2: "(laius on alati paneelile vastav)",
-				lblPosition4Explain: "(võib moonutada)"
+				lblPosition4Explain: "(võib moonutada)",
+				unloadLbl: "Laadi maha, kui lugeja liigub teise jaotise juurde",
+				unloadHelp: "Kui veebileht sisaldab heli- või videosisu, märkige see valik, et takistada selle sisu esitamist siis, kui lugeja liigub teise jaotise juurde. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks siis, kui lugeja läbi ajakirja liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et rakendust ei laaditaks uuesti siis, kui lugeja sellesse jaotisesse naaseb."
 			},
 			editorActionGeocode: {
 				lblTitle: "Märgi aadress või asukoht",
@@ -104,7 +110,7 @@
 				lblTitle: "Põhietapi sisu muutmine"
 			},
 			editorInlineMedia: {
-				lblTitle: "Pildi või video lisamine"
+				lblTitle: "Pildi, video või veebilehe lisamine"
 			}
 		}
 	})

@@ -39,6 +39,12 @@
 				shareStatus3: "Uygulama kuruluş içinde paylaşılıyor",
 				shareStatus4: "Uygulama paylaşılmıyor"
 			},
+			saveError: {
+				title: "Uygulama kaydederken hata",
+				err1Div1: "Aynı ada sahip başka bir öğeniz olduğundan uygulama kaydedilemiyor (bkz. <a class='linkagolroot' target='_blank'>içerik klasörünüz</a>).",
+				err1Div2: "Ana Bölüm başlığını değiştirin ve uygulamayı kaydedin.",
+				btnOk: "Ana Bölüm başlığını düzenle"
+			},
 			share: {
 				firstSaveTitle: "Uygulama başarıyla kaydedildi",
 				firstSaveHeader: "Uygulamanız %PORTAL% üzerinde kaydedildi, ancak henüz paylaştırılmadı.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Uygulamanız kuruluşunuzun üyeleri tarafından (oturum açılması gerekir) erişilebilir durumda.",
 				shareLinkCopy: "Kopyala",
 				shareLinkCopied: "Kopyalandı",
+				shareQ0: "Uygulamayı bir web sitesi içine nasıl yerleştiririm?",
 				shareQ1Opt1: "Uygulamayı nasıl özel tutarım?",
 				shareQ1Opt2: "Uygulamayı nasıl özel tutabilir ya da herkesle paylaşabilirim?",
 				shareA1: "<a href='%LINK1%' target='_blank'>Uygulama öğesi sayfasındaki</a> %SHAREIMG% özelliğini kullanın.",

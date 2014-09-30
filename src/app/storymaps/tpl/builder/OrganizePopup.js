@@ -77,7 +77,6 @@ define([
 				
 				// Date
 				container.find('.date').datetimepicker({
-					// TODO i18n
 					//language:  'en',
 					format: 'mm dd yyyy - HH:ii P',
 					weekStart: true,
@@ -295,7 +294,7 @@ define([
 					
 					winHTML += "<h1>" + section.title + "</h1>";
 					
-					winHTML += "<strong>Main Stage content</strong>"; // TODO i18n
+					winHTML += "<strong>" + i18n.builder.organizePopup.exportMainStage + "</strong>";
 					winHTML += "<table border='1' cellpadding='5'>";
 					winHTML += " <tr>";
 					winHTML +=    exportMediaBlock(section.media);
@@ -308,11 +307,11 @@ define([
 					}
 					winHTML += "</table>";
 					
-					winHTML += "<br /><strong>Panel content</strong>"; // TODO i18n
+					winHTML += "<br /><strong>" + i18n.builder.organizePopup.exportPanel + "</strong>";
 					winHTML += "<div>" + section.content + "</div>";
 					
 					if ( section.contentActions && section.contentActions.length ) {
-						winHTML += "<br /><strong>Content actions</strong>"; // TODO i18n
+						winHTML += "<br /><strong>" + i18n.builder.organizePopup.exportActions + "</strong>";
 						winHTML += "<table border='1' cellpadding='5'>";
 						
 						$.each(section.contentActions, function(i, action) {
@@ -338,7 +337,7 @@ define([
 			function exportMediaBlock(media)
 			{
 				var outHTML = "";
-				outHTML += "<td>" + media.type[0].toUpperCase() + media.type.slice(1) + "</td>"; // TODO i18n ?
+				outHTML += "<td>" + media.type[0].toUpperCase() + media.type.slice(1) + "</td>";
 				
 				outHTML += "<td>";
 				switch(media.type) {

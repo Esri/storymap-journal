@@ -34,12 +34,13 @@
 				btnCancel: "Anulare",
 				tocTitle: "Resurse hartă",
 				tocExplain: "Selectaţi ce straturi tematice vor fi afişate,",
+				tocNoData: "Nu se poate configura niciun strat tematic.",
 				tocSave: "Salvare resurse hartă",
 				extentTitle: "Locaţie hartă",
 				extentExplain: "Panoramaţi şi transfocaţi harta pentru a defini cum va arăta pentru cititori.",
 				extentSave: "Salvare locaţie hartă",
 				popupTitle: "Fereastră pop-up hartă",
-				popupExplain: "Configuraţi aspectul ferestrei pop-up afişate cititorilor",
+				popupExplain: "Faceţi clic pe un obiect spaţial pentru a deschide fereastra pop-up pe care doriţi să o afişaţi.",
 				popupSave: "Salvare configuraţiei pop-up",
 				hintNavigation: "Navigarea în hartă este dezactivată."
 			}

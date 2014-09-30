@@ -14,7 +14,7 @@ define(["lib-build/tpl!./ViewHome",
 			
 			this.present = function()
 			{
-				container.show();	
+				container.show();
 			};
 			
 			function init()

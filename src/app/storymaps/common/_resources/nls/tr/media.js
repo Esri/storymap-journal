@@ -11,7 +11,8 @@
 				disabled: "Bu özellik Yönetici tarafından devre dışı bırakıldı",
 				url: "Bir resmin web adresine manuel olarak girmek için",
 				userLookup: "Albüm yükle",
-				notImplemented: "Henüz uygulanmadı."
+				notImplemented: "Henüz uygulanmadı.",
+				noData: "Hiçbir genel albüm bulunamadı"
 			},
 			imageSelector: {
 				lblStep1: "Servisi seç",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-posta veya Picasa/Google+ ID",
 				signInMsg2: "Hesap bulunamadı",
-				signInMsg3: "Genel albüm yok",
 				howToFind: "Picasa ya da Google+ hesabı kimliği nasıl bulunur",
 				howToFind2: "Herhangi bir Picasa ya da G+ sayfasının ilk ve ikinci \'/\' karakterleri arasındaki rakamları kopyalayın"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Kod ekle",
 				lblOR: "YA DA",
 				lblError1: "Hata, iki giriş alanından birini silin.",
-				lblError2: "Gömülü kod yalnızca <iframe> içerebilir"
+				lblError2: "İçe yerleştime kodu yalnızca bir %IFRAMETAG% içerebilir",
+				configure: "Yapılandır"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Bir görüntü URL\'si http:// ile başlamalı ve .jpg ya da .png ile bitmelidir",
+				lblURLError: "Bu görüntü geçerli gibi görünmüyor. Bir görüntü dosyasına bir doğrudan bağlantı belirtin (URL\'niz genelde .jpg ya da .png ile biter). Bir web sayfasının bağlantıları çalışmayan bir görüntü içeriyor.",
+				lblURLCheck: "Görüntü denetleniyor...",
 				lblLabel: "Görüntü Alt Yazısı",
 				lblLabel1: "Altyazı",
 				lblLabel2: "Metnin üzerinde gezin",
@@ -91,10 +94,13 @@
 				lblPosition4: "Esnet",
 				lblPosition5: "Özel",
 				tooltipDimension: "Değer 'px' ya da '%' cinsinden belirtilebilir",
+				tooltipDimension2: "Değer //'px//' cinsinden belirtilmelidir",
 				lblPosition2Explain: "(kırpılabilir)",
 				lblPosition3Explain: "(kırpılmaz)",
 				lblPosition3Explain2: "(genişlik her zaman panele sığacaktır)",
-				lblPosition4Explain: "(şekil değiştirebilir)"
+				lblPosition4Explain: "(şekil değiştirebilir)",
+				unloadLbl: "Okuyucu farklı bir bölüme gittiğinde yüklemeyi kaldır",
+				unloadHelp: "Web Sayfası ses ya da video ortamı içeriyorsa, okuyucu farklı bir bölüme giderken içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu bülten boyunca ilerlerken örneğin bir seslendirmenin oynatılmasını sürdürmek için bunun işaretini kaldırın.<br />Web Sayfası bir uygulamaysa bu seçeneğin işaretini kaldırın, bu sayede okuyucu o bölüme geri döndüğünde uygulama yeniden yüklenmez."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adres veya yer bul",
@@ -104,7 +110,7 @@
 				lblTitle: "Ana Aşama içeriğini değiştir"
 			},
 			editorInlineMedia: {
-				lblTitle: "Bir resim veya video ekle"
+				lblTitle: "Bir resim, video ya da web sayfası ekleme"
 			}
 		}
 	})

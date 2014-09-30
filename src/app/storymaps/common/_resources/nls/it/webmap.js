@@ -34,12 +34,13 @@
 				btnCancel: "Annulla",
 				tocTitle: "Contenuti mappa",
 				tocExplain: "Consente di selezionare i layer che verranno visualizzati.",
+				tocNoData: "Non è possibile configurare nessun layer.",
 				tocSave: "Salva contenuti mappa",
 				extentTitle: "Posizione mappa",
 				extentExplain: "Consente di applicare pan e zoom alla mappa per definirne l\'aspetto per i lettori.",
 				extentSave: "Salva posizione mappa",
 				popupTitle: "Popup mappa",
-				popupExplain: "Consente di configurare l\'aspetto del popup visualizzato ai lettori.",
+				popupExplain: "Fare clic su una feature per aprire il popup da visualizzare.",
 				popupSave: "Salva la configurazione del popup",
 				hintNavigation: "Navigazione mappa disabilitata."
 			}

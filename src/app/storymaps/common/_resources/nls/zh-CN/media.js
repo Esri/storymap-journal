@@ -11,7 +11,8 @@
 				disabled: "此功能已被管理员禁用",
 				url: "要手动输入图像的 web 地址",
 				userLookup: "加载图片集",
-				notImplemented: "尚未实现。"
+				notImplemented: "尚未实现。",
+				noData: "未找到公共图片集"
 			},
 			imageSelector: {
 				lblStep1: "选择服务",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "电子邮件或 Picasa/Google+ ID",
 				signInMsg2: "未找到帐户",
-				signInMsg3: "无公共图片集",
 				howToFind: "如何查找 Picasa 或 Google+ 帐户 ID",
 				howToFind2: "复制任何 Picasa 或 G+ 页面的第一个和第二个\“/\”之间的数字"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "嵌入代码",
 				lblOR: "或",
 				lblError1: "错误，请清除其中一个输入字段。",
-				lblError2: "嵌入代码仅可包含一个 <iframe>"
+				lblError2: "嵌入代码仅可包含一个 %IFRAMETAG%",
+				configure: "配置"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "图像 URL 应该以 http:// 开始，以 .jpg 或 .png 结束",
+				lblURLError: "此图像可能无效。请指定图像文件的直接链接(URL 通常以 .jpg 或 .png 结尾)。包含图像的网页链接无法使用。",
+				lblURLCheck: "正在检查图像...",
 				lblLabel: "图像标题",
 				lblLabel1: "说明文字",
 				lblLabel2: "悬停文本",
@@ -91,10 +94,13 @@
 				lblPosition4: "拉伸",
 				lblPosition5: "自定义",
 				tooltipDimension: "可使用“px”或“%”指定值",
+				tooltipDimension2: "值必须在 'px'中指定",
 				lblPosition2Explain: "（可裁切）",
 				lblPosition3Explain: "（不裁切）",
 				lblPosition3Explain2: "(宽度将始终适应面板)",
-				lblPosition4Explain: "（可变形）"
+				lblPosition4Explain: "（可变形）",
+				unloadLbl: "读者定位到其他部分时进行卸载",
+				unloadHelp: "如果网页中包含音频或视频介质，请将该选项选中以在读者定位到其他部分时停止内容播放。取消选中该选项可使读者在浏览日志的同时持续播放音轨。<br />如果网页是应用程序，请取消选中该选项，则应用程序不必在读者返回此部分时重新加载。"
 			},
 			editorActionGeocode: {
 				lblTitle: "定位地址或地点",
@@ -104,7 +110,7 @@
 				lblTitle: "更改主要阶段内容"
 			},
 			editorInlineMedia: {
-				lblTitle: "插入图像或视频"
+				lblTitle: "插入图像、视频或网页"
 			}
 		}
 	})

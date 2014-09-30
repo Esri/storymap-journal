@@ -1,0 +1,203 @@
+#mainStagePanel {
+     position: relative;
+    background-size: 100% 100%;
+	-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+	-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+	box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+}
+
+#mainStagePanelInner {
+	position: relative;
+}
+
+#mainStagePanel .medias {
+	width: 100%;
+    height: 100%;
+}
+
+/*
+ * One container with Map or any media
+ */
+.mainMediaContainer {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.mainMediaContainer.active {
+	display: block !important;
+	z-index: 1;
+	visibility: visible;
+	-webkit-animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	-ms-animation: fadein 1s;
+	-o-animation: fadein 1s;
+	animation: fadein 1s;
+	-webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+
+html.dj_ie9 .mainMediaContainer.active {
+	opacity: 1.0;
+}
+
+/*
+ * Error
+ */
+
+.mainMediaContainer .mainStageErrorContainer {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	right: 50%;
+	margin-left: -110px;
+	margin-top: -86px;
+	opacity: 0.0;
+}
+
+.mainMediaContainer.has-error .mainStageErrorContainer {
+	display: block;
+	-webkit-animation: fadein 3s;
+	-moz-animation: fadein 3s;
+	-ms-animation: fadein 3s;
+	-o-animation: fadein 3s;
+	animation: fadein 3s;
+	-webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+
+html.dj_ie9 .mainMediaContainer.has-error .mainStageErrorContainer {
+	opacity: 1.0;
+}
+
+.mainMediaContainer.has-error .error {
+	width: 220px;
+	background-color: #f2dede;
+	font-size: 1.1em;
+	font-family: 'open_sanssemibold', sans-serif;
+	text-align: center;
+	padding: 15px;
+}
+	
+/*
+ * Map
+ */
+ 
+.mapContainer {
+    border:none;
+    padding:0;
+    height:100%;
+    width:100% !important;
+    overflow:hidden;
+}
+
+.mapContainer.legend {
+	display: none;
+}
+
+/*
+ * Popup tunning
+ */
+
+/*.mapContainer .esriPopup .actionList {*/
+.esriPopup .actionsPane {
+	display: none !important;
+}
+
+.esriPopup .titleButton.prev {
+	right: 55px !important;
+}
+
+.esriPopup .titleButton.next {
+	right: 31px !important;
+}
+
+.esriPopup .title {
+	color: transparent;
+}
+
+.esriPopup.light .titlePane {
+	height: 21px;
+}
+
+.esriPopup.light .titleButton {
+	top: 4px;
+}
+
+.esriPopup .titleButton.close {
+	opacity: 1.0 !important;
+}
+
+.esriPopup .maximize {
+	display: none;
+}
+
+/*
+ * Loading
+ */
+
+#mainStageLoadingIndicator {
+	position: absolute;
+	top: 50%;
+	display: none;
+	z-index: 99;
+}
+
+/*
+ * Image
+ */
+
+.imgContainer {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.imgContainer.fit {
+	background-size: contain;
+}
+
+.imgContainer.fill {
+	background-size: cover;
+}
+
+.imgContainer.stretch {
+	background-size: 100% 100%;
+}
+
+/*
+ * Embed
+ */
+
+.embedContainer {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border: none;
+}
+
+.embedContainer.fit {
+	width: 100%;
+}
+
+.embedContainer.stretch {
+	width: 100%;
+	height: 100%;
+}

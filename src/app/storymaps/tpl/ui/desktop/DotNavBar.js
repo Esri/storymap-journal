@@ -1,5 +1,5 @@
 define([
-        "lib-build/css!./DotNavBar", 
+        "lib-build/css!./DotNavBar",
         "storymaps/common/utils/CommonHelper"
     ],
 	function(
@@ -10,18 +10,19 @@ define([
 		{
 			var _this = this,
 				_groupSize = app.cfg.DOTNAV_GROUPSIZE || 15,
-				_sections = null,
-				_nbSections = null,
-				_tooltipPosition = null;
+				_params = null,
+				_nbSections = null;
 			
-			this.init = function(sections, sectionIndex, bgColor, tooltipBgColor, tooltipFontColor, tooltipPosition)
+			this.init = function(params)
 			{
-				_sections = sections;
-				_nbSections = sections.length;
-				_tooltipPosition = tooltipPosition || "right";
+				_params = params;
+				_params.sections = _params.sections || [];
+				_params.tooltipPosition = _params.tooltipPosition || "right";
 				
-				setColor(bgColor, tooltipBgColor, tooltipFontColor);
-				render(sectionIndex || 0);
+				_nbSections = params.sections.length;
+				
+				render(params.sectionIndex || 0);
+				setColor();
 				
 				initEvents();
 			};
@@ -45,9 +46,19 @@ define([
 				container.find('.navDotsDown').toggleClass('disabled', index == _nbSections - 1);
 			};
 			
-			this.update = function(bgColor, tooltipBgColor, tooltipFontColor)
+			this.update = function(params)
 			{
-				setColor(bgColor, tooltipBgColor, tooltipFontColor);
+				if ( ! _params )
+					return;
+				
+				params = params || {};
+
+				_params.bgColor = params.bgColor || _params.bgColor;
+				_params.tooltipBgColor = params.tooltipBgColor || _params.tooltipBgColor;
+				_params.tooltipFontColor = params.tooltipFontColor || _params.tooltipFontColor;
+				_params.dotColor = params.dotColor || _params.dotColor;
+				
+				setColor();
 			};
 			
 			this.resize = function()
@@ -77,7 +88,12 @@ define([
 					startIndex = groupStart * _groupSize;
 				
 				for(var i=startIndex; i < _nbSections && i < startIndex + _groupSize; i++){
-					dotsHTML += '<div class="dot" title="' + $("<div>" + _sections[i].title + "</div>").text() + '" data-index="' + i + '">●</div>';
+					var title = $("<div>" + _params.sections[i].title + "</div>").text();
+					
+					if ( i === 0 )
+						dotsHTML += '<div class="dot glyphicon glyphicon-home" title="' + title + '" data-index="0"></div>';
+					else
+						dotsHTML += '<div class="dot" title="' + title + '" data-index="' + i + '">&#9679;</div>';
 				}
 
 				if ( _nbSections > _groupSize ) {
@@ -89,7 +105,15 @@ define([
 					
 					if ( groupStart + _groupSize < _nbSections ) {
 						for(var k=startIndex + _groupSize; k < _nbSections; k += _groupSize){
-							nextGroupsHTML += '<div class="navGroup" data-index="' + k + '">' + (k+1) + '-' + Math.min(k+_groupSize, _nbSections) + '</div>'; 
+							var groupStartLbl = k+1,
+								groupEndLbl = Math.min(k+_groupSize, _nbSections),
+								label = groupStartLbl != groupEndLbl ? groupStartLbl + '-' + groupEndLbl : groupStartLbl,
+								styleOpt = "";
+							
+							if ( groupStartLbl >= 100 && groupEndLbl > 100 )
+								styleOpt = "font-size: 8px;";
+							
+							nextGroupsHTML += '<div class="navGroup" data-index="' + k + '" style="' + styleOpt + '">' + label + '</div>';
 						}
 					}
 				}
@@ -100,7 +124,7 @@ define([
 					+ ' <div class="navGroups navGroupUp' + (!prevGroupsHTML ? ' disabled' : '') + '">'
 					+    prevGroupsHTML
 					+ ' </div>'
-					+ ' <div>'
+					+ ' <div class="dots">'
 					+    dotsHTML 
 					+ ' </div>'
 					+ ' <div class="navGroups navGroupDown' + (!nextGroupsHTML ? ' disabled' : '') + '">'
@@ -111,17 +135,25 @@ define([
 				);
 				
 				container.find('.dot').tooltip({
-					placement: _tooltipPosition
+					placement: _params.tooltipPosition
 				});
+				
+				setColor();
 				
 				_this.setActive(sectionIndex);
 			}
 			
-			function setColor(bgColor, tooltipBgColor, tooltipFontColor)
+			function setColor()
 			{
-				container.css("background-color", bgColor);
-				CommonHelper.addCSSRule(".navDots .tooltip-inner { background-color: " + tooltipBgColor + "; color: " + tooltipFontColor + "; }");
-				CommonHelper.addCSSRule(".navDots .tooltip-arrow { border-left-color: " + tooltipBgColor + " !important; border-right-color: " + tooltipBgColor + " !important; }");
+				container.css("background-color", _params.bgColor);
+				container.find(".dot, .navGroups").css("color", _params.dotColor);
+				
+				// Tooltip
+				CommonHelper.addCSSRule(".navDots .tooltip-inner { background-color: " + _params.tooltipBgColor + "; color: " + _params.tooltipFontColor + "; }");
+				if ( _params.tooltipPosition && _params.tooltipPosition != "left" && _params.tooltipPosition != "right" )
+					CommonHelper.addCSSRule(".navDots .tooltip-arrow { border-top-color: " + _params.tooltipBgColor + " !important; border-bottom-color: " + _params.tooltipBgColor + " !important; }");
+				else
+					CommonHelper.addCSSRule(".navDots .tooltip-arrow { border-left-color: " + _params.tooltipBgColor + " !important; border-right-color: " + _params.tooltipBgColor + " !important; }");
 			}
 			
 			function initEvents()
@@ -141,8 +173,6 @@ define([
 					if (target.hasClass('navGroup'))
 						navigationCallback(target.data('index'));
 				});
-				
-				
 			}
 		};
 	}

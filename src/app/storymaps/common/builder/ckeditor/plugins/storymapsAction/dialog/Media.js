@@ -77,19 +77,26 @@ define(["lib-build/tpl!./Media",
 			
 			function onClickSubmit()
 			{
-				var hasError = false;
+				var hasError = _viewMediaSelector.checkError(container.find(".btnSubmit"));
 				
-				if ( _viewMediaSelector.checkError() )
-					hasError = true;
-				
-				if ( ! hasError ) {
+				var postErrorCheck = function()
+				{
 					_dialogDeferred.resolve({
 						id: _cfg.mode == "add" ? "MJ-ACTION-" + Date.now() : null,
 						text: _cfg.text,
 						media: _viewMediaSelector.getData().media
 					});
 					container.modal('toggle');
+				};
+				
+				if ( hasError instanceof Deferred ) {
+					hasError.then(function(hasError){
+						if ( ! hasError )
+							postErrorCheck();
+					});
 				}
+				else if ( ! hasError )
+					postErrorCheck();
 			}
 			
 			function initEvents()

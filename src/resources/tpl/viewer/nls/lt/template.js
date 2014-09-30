@@ -9,8 +9,9 @@
 				step2: "Įkeliami duomenys",
 				step3: "Inicijuojama",
 				loadBuilder: "Perjungiama į kūrimo priemonę",
-				fail: "Deja, įkelti nepavyko",
-				failButton: "Pakartoti"
+				long: "Žemėlapių žurnalas inicijuojamas",
+				long2: "Ačiū, kad palaukėte.",
+				failButton: "Įkelti aplikaciją iš naujo"
 			},
 			signin: {
 				title: "Autentifikacija būtina",
@@ -19,20 +20,28 @@
 			},
 			errors: {
 				boxTitle: "Įvyko klaida",
-				invalidConfig: "Kritinė klaida: Neteisinga konfigūracija",
-				invalidConfigNoApp: "Kritinė klaida: index.html nenurodytas interneto žemėlapių aplikacijos identifikatorius",
+				invalidConfig: "Neteisinga konfigūracija",
+				invalidConfigNoApp: "Interneto žemėlapių aplikacijos identifikatorius nenurodytas index.html.",
+				unspecifiedConfigOwner: "Nesukonfigūruotas teisėtas savininkas.",
+				invalidConfigOwner: "Teisėtas savininkas neautorizuotas.",
 				createMap: "Žemėlapio sukurti nepavyko",
-				invalidApp: "Kritinė klaida: Negalima įkelti aplikacijos",
-				notConfiguredDesktop: "Sveiki atvykę į %TPL_NAME% interneto aplikaciją.<br />Aplikacija dar nesukonfigūruota.",
-				notConfiguredMobile: "Sveiki atvykę į %TPL_NAME% interneto aplikaciją. Aplikacija dar nesukonfigūruota, o kūrimo priemonė mobiliuosiuose prietaisuose neveikia.",
+				invalidApp: "%TPL_NAME% neegzistuoja arba yra nepasiekiamas.",
+				appLoadingFail: "Įvyko klaida ir tinkamai įkelti %TPL_NAME% nepavyko.",
+				notConfiguredDesktop: "Aplikacija dar nesukonfigūruota.",
+				notConfiguredMobile: "%TPL_NAME% kūrimo priemonė šia ekrano raiška nepalaikoma.",
 				notAuthorized: "Neturite teisių pasiekti šią aplikaciją",
-				noBuilderIE8: "Kūrimo priemonė neveikia ankstesnėse nei „Internet Explorer 9“ versijose.",
-				mapLoadingFail: "Įvyko klaida ir žemėlapio įkelti nepavyko."
+				noBuilderIE: "Kūrimo priemonė neveikia „Internet Explorer“ versijose ankstesnėse nei %VERSION%. %UPGRADE%",
+				noViewerIE: "Aplikacija neveikia „Internet Explorer“ versijose ankstesnėse nei %VERSION%. %UPGRADE%",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atnaujinkite naršyklę</a>.",
+				mapLoadingFail: "Įvyko klaida ir žemėlapio nepavyko tinkamai įkelti.",
+				signOut: "Atsijungti"
 			},
 			mobileView: {
 				tapForDetails: "Išsamiai informacijai bakstelėkite",
+				clickForDetails: "Sužinokite daugiau",
 				swipeToExplore: "Perbraukite norėdami naršyti",
-				tapForMap: "Bakstelėkite norėdami grįžti į žemėlapį"
+				tapForMap: "Bakstelėkite norėdami grįžti į žemėlapį",
+				clickForMap: "GRĮŽTI Į ŽEMĖLAPĮ"
 			},
 			floatLayout: {
 				scroll: "Slinkti"

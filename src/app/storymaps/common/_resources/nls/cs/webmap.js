@@ -34,12 +34,13 @@
 				btnCancel: "Storno",
 				tocTitle: "Obsah mapy",
 				tocExplain: "Vyberte, které vrstvy se zobrazí.",
+				tocNoData: "Žádnou vrstvu není možné konfigurovat.",
 				tocSave: "Uložit obsah mapy",
 				extentTitle: "Umístění mapy",
 				extentExplain: "Pomocí posunutí a přiblížení mapy můžete nastavit, jak se zobrazí čtenářům.",
 				extentSave: "Uložit umístění mapy",
 				popupTitle: "Vyskakovací okno mapy",
-				popupExplain: "Umožňuje nastavit vzhled vyskakovacího okna, které se zobrazuje uživatelům.",
+				popupExplain: "Kliknutím na prvek otevřete vyskakovací okno, s informacemi, které chcete o prvku zobrazit.",
 				popupSave: "Uložit konfiguraci vyskakovacího okna",
 				hintNavigation: "Navigace mapy je vypnuta."
 			}

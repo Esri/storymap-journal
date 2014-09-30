@@ -30,14 +30,16 @@ define(["lib-build/tpl!./ViewVideoCommon",
 				container.show();
 				
 				// Resize url field to adjust localization
-				container.find(".url")
-					.css("width", 
-						container.find(".videoSelectorView").width() 
-						- 85
-						- 40
-						- container.find('.btn-check').outerWidth()
-					)
-					.focus();
+				if ( container.find(".videoSelectorView").width() ) {
+					container.find(".url")
+						.css("width", 
+							container.find(".videoSelectorView").width() 
+							- 85
+							- 40
+							- container.find('.btn-check').outerWidth()
+						)
+						.focus();
+				}
 			};
 			
 			function check()

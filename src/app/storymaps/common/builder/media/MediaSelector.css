@@ -1,5 +1,5 @@
 .mediaSelector {
-	min-height: 330px;
+	min-height: 332px;
 }
 
 .mediaSelector .lblSelect {
@@ -89,5 +89,5 @@
 }
 
 .mediaSelector .mainMediaTypeContainer.error {
-	background-color: red;
+	/*background-color: red;*/
 }

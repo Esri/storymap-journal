@@ -3,6 +3,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 		"lib-build/css!./Common",
 		"lib-build/css!storymaps/common/builder/InlineFieldEdit",
 		"./DotNavBar",
+		"../StoryText",
 		"storymaps/common/utils/HeaderHelper",
 		"storymaps/common/utils/CommonHelper",
 		"dojo/has",
@@ -18,6 +19,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 		commonCss,
 		inlineEditCss,
 		DotNavBar,
+		StoryText,
 		HeaderHelper,
 		CommonHelper,
 		has
@@ -29,6 +31,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				_swipeOnWheelReady = true,
 				_scrollDelayed = true,
 				_lastTouchMoveOffset = null,
+				_scrollInviteDisplayed = false,
 				_sectionIndex = null,
 				_navDots = new DotNavBar(container.find('.navDots'), onDotNavigation);
 			
@@ -47,21 +50,26 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				render(sections, sectionIndex);
 				isInBuilder && initBuilder();
 
-				_navDots.init(
-					sections, 
-					sectionIndex, 
-					colors.dotNav, 
-					colors.text,
-					colors.panel,
-					layoutOptions.layoutCfg.position == "left" ? "right" : "left"
-				);
+				_navDots.init({
+					sections: sections, 
+					sectionIndex: sectionIndex, 
+					bgColor: colors.dotNav, 
+					tooltipBgColor: colors.text,
+					tooltipFontColor: colors.panel,
+					dotColor: colors.softBtn,
+					tooltipPosition: layoutOptions.layoutCfg.position == "left" ? "right" : "left"
+				});
 				
-				if ( ! isInBuilder && sections.length == 1 ) {
-					container.find(".navDots").hide();
-					container.css({
-						paddingLeft: 0,
-						paddingRight: 0
-					});
+				// Visual scroll invitation in viewer
+				if ( ! isInBuilder ) {
+					setTimeout(function() {
+						displayScrollInvite(colors, sectionIndex == sections.length - 1);
+					}, 50);
+					
+					if ( sections.length == 1 ) {
+						container.find(".navDots").hide();
+						container.find('.sections').css(layoutOptions.layoutCfg.position == "left" ? "padding-left" : "padding-right", "3%");
+					}
 				}
 			};
 			
@@ -78,6 +86,10 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				var height = container.height() 
 					- container.find(".separator").position().top 
 					- (isInBuilder ? container.find(".builder-content-panel").outerHeight() + 12 : 3);
+				
+				if ( _scrollInviteDisplayed )
+					updateSwiperWrapperForScrollInvite();
+				
 				
 				container.find('.swiper-container, .sections, .section').css("height", height);
 
@@ -97,6 +109,9 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					return;
 				
 				if ( _sectionIndex != index || forceDisplay ){
+					// Show potential iframe not loaded yet
+					StoryText.loadSectionIframe(container.find('.section').eq(index));
+					
 					_navDots.setActive(index);
 					_swipePane.swipeTo(index);
 					_sectionIndex = index;
@@ -121,7 +136,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				_scrollDelayed = true;
 				_navDots.destroy();
 
-				$("body").off('mousewheel');
+				container.off('mousewheel');
+				$(document).unbind('keyup', onKeyboardEvent);
 
 				if (app.map) {
 					app.map.enableScrollWheelZoom();
@@ -144,6 +160,18 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					.toggle(state);
 			};
 			
+			this.enableSwiperKeybordEvent = function()
+			{
+				_swipePane.enableKeyboardControl();
+				$(document).keyup(onKeyboardEvent);
+			};
+			
+			this.disableSwiperKeybordEvent = function()
+			{
+				_swipePane.disableKeyboardControl();
+				$(document).unbind('keyup', onKeyboardEvent);
+			};
+			
 			/*
 			 * Sections rendering
 			 */
@@ -164,24 +192,22 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				});
 				
 				container.find('.appTitle').html(sections.length ? sections[0]["title"] : '');
-				container.find('.swiper-wrapper').html(contentHTML);
+				container.find('.swiper-wrapper').html(StoryText.prepareSectionPanelContent(contentHTML));
 				container.show();
 
-				container.find('.panelEditBtn').click(onClickEdit);
-				
 				initSwipePane(sectionIndex);
 				
 				_this.resize();
 				_swipePane.resizeFix();
 				
-				container.find('.scroll-down').click(function(){
-					_swipePane.swipeNext();
-					navigationCallback(_swipePane.activeIndex);
-				});
-				container.find('.scroll-up').click(function(){
-					_swipePane.swipePrev();
-					navigationCallback(_swipePane.activeIndex);
-				});
+				// Fix weird issue on Chrome where home section title wasn't appearing
+				// TODO this should be cleaned-up
+				setTimeout(function(){
+					container.find('.section').eq(0).find('.title').css("margin-top", container.find('.section').eq(0).find('.title').css("margin-top"));
+				}, 200);
+				
+				// Builder edit btn
+				container.find(".panelEditBtn").toggle(!! (isInBuilder && sections && sections.length));
 			}
 			
 			function createSectionBlock(index, status, content, title)
@@ -197,8 +223,6 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					optHtmlClass: optHtmlClass,
 					title: title,
 					content: content,
-					isInBuilder: isInBuilder,
-					lblEdit: isInBuilder ? i18n.commonCore.common.edit : '',
 					lblShare: i18n.viewer.headerFromCommon.share,
 					shareURL: CommonHelper.getAppViewModeURL() + "&section=" + (index+1),
 					scroll: i18n.viewer.floatLayout.scroll
@@ -213,9 +237,26 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					keyboardControl: true,
 					cssWidthAndHeight: true,
 					onlyExternal: true,
+					onSlideNext: function(swiper){
+						// Regression with Swiper 2.6.1?
+						if ( swiper.activeIndex == 1 )
+							return false;
+						
+						updateAppTitle();
+						unloadActiveIframe(container.find('.swiper-slide').eq(swiper.previousIndex));
+						removeScrollInvite();
+					},
+					onSlidePrev: function(swiper){
+						updateAppTitle();
+						unloadActiveIframe(container.find('.swiper-slide').eq(swiper.previousIndex));
+						removeScrollInvite();
+					},
 					onSlideChangeEnd: function(swiper){
-						if ( _sectionIndex != swiper.activeIndex )
+						if ( _sectionIndex != swiper.activeIndex ) {
+							unloadActiveIframe(container.find('.swiper-slide').eq(_sectionIndex));
+							StoryText.loadSectionIframe(container.find('.section').eq(swiper.activeIndex));
 							navigationCallback(swiper.activeIndex);
+						}
 					},
 					onSlideClick: function(){
 						//
@@ -234,6 +275,19 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					.addClass(layoutOptions.layoutCfg.position == "right" ? "layout-float-right" : "layout-float-left");
 			}
 			
+			function unloadActiveIframe(slide)
+			{
+				var activeSectionIFrame = slide.find('.content iframe[data-unload=true]');
+				if ( activeSectionIFrame.length ) {
+					setTimeout(function(){
+						activeSectionIFrame.each(function(i, frame){
+							var $frame = $(frame);
+							$frame.attr('src', '');
+						});
+					}, 150);
+				}
+			}
+			
 			/*
 			 * Header init/update
 			 */
@@ -248,9 +302,63 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			
 			function setColor(colors)
 			{
-				_navDots.update(colors.dotNav, colors.text, colors.panel);
-				container.find('.backdrop').css("background-color", colors.panel);
+				_navDots.update({
+					bgColor: colors.dotNav, 
+					tooltipBgColor: colors.text, 
+					tooltipFontColor: colors.panel
+				});
+				container.find('.backdrop, .panelEditBtn').css("background-color", colors.panel);
 				container.css("color", colors.text);
+			}
+			
+			function displayScrollInvite(colors, startOnLastSection)
+			{
+				var swiperWrapperHeight = container.find('.swiper-container').height();
+				
+				// Exit if content fully fits in container
+				if ( startOnLastSection && container.find('.swiper-slide-active .section-inner').height() < swiperWrapperHeight )
+					return;
+				
+				_scrollInviteDisplayed = true;
+				
+				updateSwiperWrapperForScrollInvite();
+				
+				container.find(".scroll").show();
+				container.find(".scrollInner").tooltip({
+					title: i18n.viewer.sideLayout.scroll
+				});
+				
+				CommonHelper.addCSSRule(".scroll .tooltip-inner { background-color: " + colors.text + "; color: " + colors.panel + "; }");
+				CommonHelper.addCSSRule(".scroll .tooltip-arrow { border-top-color: " + colors.text + " !important; }");
+				
+				container.find(".scroll").click(function(){
+					container.find(".scroll .tooltip").remove();
+					onMouseWheel({ deltaY:1 }, true);
+				});
+			}
+			
+			function updateSwiperWrapperForScrollInvite()
+			{
+				var swiperWrapperHeight = container.find('.swiper-container').height();
+				
+				container.find('.swiper-wrapper').css({
+					height: container.find('.swiper-slide-active').position().top + swiperWrapperHeight - container.find('.scroll').outerHeight(),
+					overflow: 'hidden'
+				});
+			}
+			
+			function removeScrollInvite()
+			{
+				if ( _scrollInviteDisplayed ) {
+					container.find(".scroll").slideUp();
+					setTimeout(function(){
+						container.find('.swiper-wrapper').css({
+							height: 'initial',
+							overflow: 'initial'
+						});
+					}, 200);
+					_scrollInviteDisplayed = false;
+				}
 			}
 			
 			/*
@@ -259,12 +367,15 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			
 			function onDotNavigation(index)
 			{
+				unloadActiveIframe(container.find('.swiper-slide-visible'));
+				removeScrollInvite();
 				_this.showSectionNumber(index, true);
 				navigationCallback(index);
 			}
 			
-			function onMouseWheel(event){
-				var delta = event.deltaY * -1;
+			function onMouseWheel(event, forceNextIfReady){
+				var delta = event.deltaY * -1,
+					returnValue = false;
 				
 				// Inertia
 				if ( has("mac") )
@@ -278,6 +389,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				if ( container.find(".builder-mask").is(":visible") )
 					return false;
 				
+				removeScrollInvite();
+				
 				if (_swipeOnWheelReady) {
 					var slide = container.find(".swiper-slide.swiper-slide-active"),
 						slideHeight = slide.outerHeight(),
@@ -289,12 +402,16 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					// Going down and reach bottom
 					if (delta < 0 && slideHeight + scrollTop >= scrollHeight){
 						// Scroll has been delayed once
-						if(_scrollDelayed) {
+						if(_scrollDelayed || forceNextIfReady) {
 							_swipePane.swipeNext();
 							delayScroll2();
 						}
 						else
 							delayScroll();
+						
+						// Reached bottom of last section
+						if ( slide.index() == slide.parent().children().length -1 )
+							returnValue = true;
 					}
 					// Going up and reach top
 					else if(delta > 0 && scrollTop === 0) {
@@ -305,6 +422,10 @@ define(["lib-build/tpl!./FloatingPanelSection",
 						}
 						else
 							delayScroll();
+						
+						// Reached top of home section
+						if ( slide.index() === 0 )
+							returnValue = true;
 					}
 					// Up or down 30px
 					else {
@@ -313,7 +434,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					}
 				}
 				
-				return false;
+				// Return false except on top of home section/bottom last section to allow eventual parent page that embed a MJ to scroll
+				return returnValue;
 			}
 			
 			function delayScroll()
@@ -354,8 +476,23 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					container.find('.header').toggleClass('titleanchored', anchorTitle);
 					setTimeout(function(){
 						_this.resize();
-					}, 350);
+					}, 250);
 				}
+			}
+			
+			function onKeyboardEvent(e)
+			{
+				if ( ! _swipePane )
+					return;
+				
+				if ( e.keyCode == 34 )
+					_swipePane.swipeNext();
+				else if ( e.keyCode == 33 )
+					_swipePane.swipePrev();
+				else if ( e.keyCode == 36 )
+					_swipePane.swipeTo(0);
+				else if ( e.keyCode == 35 )
+					_swipePane.swipeTo(container.find('.swiper-slide').length - 1);
 			}
 			
 			/*
@@ -369,12 +506,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			
 			function onClickEdit()
 			{
-				var section = $(this).parents('.section');
-				if ( ! section.hasClass('swiper-slide-active') )
-					return;
-				
 				app.builder.openEditPopup({
-					sectionIndex: section.index(),
+					sectionIndex: _this.getSectionNumber(),
 					displayTab: 'content'
 				});
 			}
@@ -392,54 +525,65 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				container.on('mousewheel', onMouseWheel);
 				
 				//
-				// Touch and mouse drag scroll
+				// Touch scroll
 				//
-
-				/* jshint -W064 */
-				/* jshint -W117 */
-				Hammer(container.find('.swiper-container')[0], {}).on("dragstart", function() {
-					_lastTouchMoveOffset = 0;
-					_scrollDelayed = false;
-				});
 				
-				Hammer(container.find('.swiper-container')[0], {}).on("drag", function(e) {
-					var slide = container.find(".swiper-slide.swiper-slide-active"),
-						slideHeight = slide.outerHeight(),
-						scrollTop = slide.scrollTop(),
-						scrollHeight = slide.prop('scrollHeight');
+				if ( has("touch") ) {
+					/* jshint -W064 */
+					/* jshint -W117 */
+					Hammer(container.find('.swiper-container')[0], {}).on("dragstart", function() {
+						_lastTouchMoveOffset = 0;
+						_scrollDelayed = false;
+					});
 					
-					if ( ! _swipeOnWheelReady )
-						return;
-					
-					container.find(".swiper-slide.swiper-slide-active").scrollTop(
-						container.find(".swiper-slide.swiper-slide-active").scrollTop() 
-						- e.gesture.deltaY 
-						+ _lastTouchMoveOffset
-					);
-					
-					// Reach bottom & going down
-					if (slideHeight + scrollTop >= scrollHeight && e.gesture.deltaY < 0){
-						// Have waited or is first "move of the drag"
-						if ( _scrollDelayed || _lastTouchMoveOffset === 0 )
-							_swipePane.swipeNext();
-						else
-							delayScroll3();
-					}
-					// Reach top & going up
-					else if(scrollTop === 0 && e.gesture.deltaY > 0) {
-						// Have waited or is first "move of the drag"
-						if( _scrollDelayed || _lastTouchMoveOffset === 0 )
-							_swipePane.swipePrev();
-						else 
-							delayScroll3();
-					}
-					
-					_lastTouchMoveOffset = e.gesture.deltaY;
-				});
-
+					Hammer(container.find('.swiper-container')[0], {}).on("drag", function(e) {
+						var slide = container.find(".swiper-slide.swiper-slide-active"),
+							slideHeight = slide.outerHeight(),
+							scrollTop = slide.scrollTop(),
+							scrollHeight = slide.prop('scrollHeight');
+						
+						if ( ! _swipeOnWheelReady )
+							return;
+						
+						container.find(".swiper-slide.swiper-slide-active").scrollTop(
+							container.find(".swiper-slide.swiper-slide-active").scrollTop() 
+							- e.gesture.deltaY 
+							+ _lastTouchMoveOffset
+						);
+						
+						// Reach bottom & going down
+						if (slideHeight + scrollTop >= scrollHeight && e.gesture.deltaY < 0){
+							// Have waited or is first "move of the drag"
+							if ( _scrollDelayed || _lastTouchMoveOffset === 0 )
+								_swipePane.swipeNext();
+							else
+								delayScroll3();
+						}
+						// Reach top & going up
+						else if(scrollTop === 0 && e.gesture.deltaY > 0) {
+							// Have waited or is first "move of the drag"
+							if( _scrollDelayed || _lastTouchMoveOffset === 0 )
+								_swipePane.swipePrev();
+							else 
+								delayScroll3();
+						}
+						
+						_lastTouchMoveOffset = e.gesture.deltaY;
+					});
+				}
 
 				// Social sharing
 				HeaderHelper.initEvents(container);
+			
+				// Disable map keybopard navigation
+				// To fix conflict with the Swiper component
+				// That guy listen to even on document and I haven't find the proper way to not mess them up
+				app.map && app.map.disableKeyboardNavigation();
+				
+				if ( isInBuilder )
+					container.find('.panelEditBtn').click(onClickEdit);
+				
+				$(document).keyup(onKeyboardEvent);
 			}
 		};
 	}

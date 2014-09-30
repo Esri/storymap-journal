@@ -39,6 +39,12 @@
 				shareStatus3: "Applikationen er delt inden for organisationen",
 				shareStatus4: "Applikationen er ikke delt"
 			},
+			saveError: {
+				title: "Layout",
+				err1Div1: "Applikationen kan ikke gemmes, fordi du har et andet element med samme navn (se din <a class='linkagolroot' target='_blank'>indholdsmappe</a>).",
+				err1Div2: "Rediger titlen på startsektionen, og gem applikationen.",
+				btnOk: "Rediger titlen på startsektionen"
+			},
 			share: {
 				firstSaveTitle: "Applikationen er gemt",
 				firstSaveHeader: "Din applikation er nu blevet gemt i %PORTAL%, men den er endnu ikke blevet delt.",
@@ -60,6 +66,7 @@
 				shareHeader2: "Din applikation er tilgængelig for dine organisationsmedlemmer (der kræves login).",
 				shareLinkCopy: "Kopiér",
 				shareLinkCopied: "Kopieret",
+				shareQ0: "Hvordan integrerer jeg applikationen i et websted?",
 				shareQ1Opt1: "Hvordan kan jeg holde min applikation privat?",
 				shareQ1Opt2: "Hvordan kan jeg holde applikationen privat eller dele den offentligt?",
 				shareA1: "Brug %SHAREIMG% på <a href='%LINK1%' target='_blank'>applikationens elementside</a>.",

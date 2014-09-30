@@ -39,6 +39,12 @@
 				shareStatus3: "アプリケーションが組織サイト内で共有されています",
 				shareStatus4: "アプリケーションが共有されていません"
 			},
+			saveError: {
+				title: "アプリケーションの保存中にエラーが発生しました",
+				err1Div1: "すでに同じ名前のアイテムがあるためアプリケーションが保存できません (<a class='linkagolroot' target='_blank'>コンテンツ フォルダ</a>をご参照ください)。",
+				err1Div2: "ホーム セクションのタイトルを変更して、アプリケーションを保存してください。",
+				btnOk: "ホーム セクションのタイトルの編集"
+			},
 			share: {
 				firstSaveTitle: "アプリケーションが保存されました",
 				firstSaveHeader: "アプリケーションが %PORTAL% に保存されましたが、まだ共有されていません。",
@@ -60,6 +66,7 @@
 				shareHeader2: "アプリケーションには組織のメンバーがアクセスできます (ログインが必要)。",
 				shareLinkCopy: "コピー",
 				shareLinkCopied: "コピー",
+				shareQ0: "Web サイトにアプリケーションを埋め込む方法",
 				shareQ1Opt1: "アプリケーションをプライベートにする方法",
 				shareQ1Opt2: "アプリケーションのプライベート使用とパブリック使用を切り替える方法",
 				shareA1: "<a href='%LINK1%' target='_blank'>アプリケーション アイテム ページ</a>で %SHAREIMG% を使用します。",

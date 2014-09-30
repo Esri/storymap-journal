@@ -11,7 +11,8 @@
 				disabled: "Questa feature è stata disabilitata dall\'Amministratore",
 				url: "Per immettere manualmente l\'indirizzo Web di un\'immagine",
 				userLookup: "Carica album",
-				notImplemented: "Non ancora implementato."
+				notImplemented: "Non ancora implementato.",
+				noData: "Nessun album pubblico trovato"
 			},
 			imageSelector: {
 				lblStep1: "Scegli il servizio",
@@ -36,7 +37,6 @@
 			imageSelectorPicasa: {
 				userInputLbl: "E-mail o ID Picasa/Google+",
 				signInMsg2: "Account non trovato",
-				signInMsg3: "Nessun album pubblico",
 				howToFind: "Come trovare l\'ID di un account Picasa o Google+",
 				howToFind2: "Copiare le cifre tra il primo e il secondo \"/\" di qualsiasi pagina Picasa o G+"
 			},
@@ -72,11 +72,14 @@
 				lblEmbed: "Incorpora codice",
 				lblOR: "OPPURE",
 				lblError1: "Errore, cancellare uno dei due campi di input.",
-				lblError2: "Il codice incorporato può contenere un solo <iframe>"
+				lblError2: "Il codice incorporato può contenere un solo %IFRAMETAG%",
+				configure: "Configura"
 			},
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Un URL di immagine deve iniziare con http:// e terminare con .jpg o .png",
+				lblURLError: "Questa immagine non sembra valida. Specificare un collegamento diretto a un file immagine (l\'URL in genere termina con .jpg o .png). I collegamenti a una pagina Web che contiene un\'immagine non funzioneranno.",
+				lblURLCheck: "Verifica immagine in corso...",
 				lblLabel: "Didascalia immagine",
 				lblLabel1: "Didascalia",
 				lblLabel2: "Testo al passaggio del mouse",
@@ -91,10 +94,13 @@
 				lblPosition4: "Estendi",
 				lblPosition5: "Personalizza",
 				tooltipDimension: "Il valore può essere specificato come \'px\' o \'%\'",
+				tooltipDimension2: "Il valore deve essere specificato in \'px\'",
 				lblPosition2Explain: "(possibile ritaglio)",
 				lblPosition3Explain: "(nessun ritaglio)",
 				lblPosition3Explain2: "(la larghezza viene sempre adattata al pannello)",
-				lblPosition4Explain: "(possibile distorsione)"
+				lblPosition4Explain: "(possibile distorsione)",
+				unloadLbl: "Scarica quando il lettore passa a una sezione diversa",
+				unloadHelp: "Se la pagina Web dispone di supporti audio o video, mantenere l\'opzione selezionata per arrestare la riproduzione del contenuto quando il lettore passa a una sezione diversa. Deselezionarla, per esempio, per mantenere la riproduzione di una colonna sonora mentre il lettore scorre nel diario.<br />Se la pagina Web è un\'applicazione, deselezionare l\'opzione in modo che l\'applicazione non venga ricaricata se il lettore torna alla sezione."
 			},
 			editorActionGeocode: {
 				lblTitle: "Trova un indirizzo o un luogo",
@@ -104,7 +110,7 @@
 				lblTitle: "Cambia contenuti per Visualizzazione principale"
 			},
 			editorInlineMedia: {
-				lblTitle: "Inserisci immagine o video"
+				lblTitle: "Inserisci immagine, video o pagina Web"
 			}
 		}
 	})
