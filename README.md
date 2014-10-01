@@ -177,7 +177,7 @@ It requires knowledge of HTML, Javascript and CSS languages.
 If you only need to customize look and feel, you should be able to do so using the [customize section above](#customize-the-look-and-feel).
 
 ### Application life cycle
-Map Journal fires three events that allow customization with lose integration. This mean that you may not need to understand the application internals to extend it.
+Map Journal fires three events that allow customization with lose integration. This mean that you don't need to understand the application internals to implement simple extension.
 
 To try those events, look for the `Custom Javascript` block at the far end of index.html.
 
