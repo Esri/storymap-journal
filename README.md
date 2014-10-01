@@ -179,26 +179,38 @@ If you only need to customize look and feel, you should be able to do so using t
 ### Application life cycle
 Map Journal fires three events that allow customization with lose integration. This mean that you may not need to understand much of the application internals to extend it.
 
-To try those events, add the following code at the far end of index.html after `Core.init(new MainView());`.
+To try those events, look for the `Custom Javascript` block at the far end of index.html.
 
 ```
+...
 require(["dojo/topic"], function(topic) {
+  /*
+   * Custom Javascript to be exexuted while the application is initalizating goes here
+   */
+   
+  console.log("Map Journal is initializing");
+				
   // The application is ready
   topic.subscribe("tpl-ready", function(){
-    console.log("tpl-ready");
-  });
+    /*
+     * Custom Javascript to be exexuted when the application is ready goes here
+     */
+     
+    console.log("Map Journal is ready");
+     
+    // After a section is loaded (for maps, this is after the map is loaded and start to render)
+    topic.subscribe("story-loaded-section", function(index){
+      console.log("The section", index, "has been loaded");
+    });
 
-  // After a section is loaded (for maps, this is after the map is loaded and start to render)
-  topic.subscribe("story-loaded-section", function(index){
-    console.log("story-loaded-section", index);
-  });
-
-  // When a main stage action that load a new media or reconfigure the current media is performed
-  // Note that this even is not fired for the "Locate and address or a place action"
-  topic.subscribe("story-perform-action-media", function(){
-    console.log("story-perform-action-media");
+    // When a main stage action that load a new media or reconfigure the current media is performed
+    // Note that this even is not fired for the "Locate and address or a place action"
+    topic.subscribe("story-perform-action-media", function(media){
+      console.log("A Main Stage action is performed:", media);
+    });
   });
 });
+...
 ```
 
 ### Developer helpers
