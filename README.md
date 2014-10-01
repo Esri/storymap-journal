@@ -68,6 +68,24 @@ Map Journal authoring is supported on Internet Explorer 10, on the most recent t
 
 We actively test the application in all major browsers but if you experience difficulties especially with the builder, we recommend that you use [Chrome](https://www.google.com/intl/en_us/chrome/browser/).
 
+### Tips for your content
+
+#### Link between sections
+One [popular](https://github.com/Esri/map-journal-storytelling-template-js/issues/5) [request](https://github.com/Esri/map-journal-storytelling-template-js/issues/7) is to add the ability to navigate between Journal's sections using links in the panel or through map features popup. Until we implement that capability in the builder you can do it using HTML markup.
+
+To add links in a section content, use the `Source button` of the text editor (second from the right on the first line) and use the following markup:
+
+```
+<p><a onclick="require(['dojo/topic'], function(topic){ topic.publish('story-navigate-section', 0); });">Navigate to home section</a></p>
+<p><a onclick="require(['dojo/topic'], function(topic){ topic.publish('story-navigate-section', 2); });">Navigate to section 2</a></p>
+<p><a onclick="require(['dojo/topic'], function(topic){ topic.publish('story-navigate-section', 4); });">Navigate to section 4</a></p>
+```
+
+You can also add that capability to map feature popups. This can for example allow the home section map to be the spatial index to your story. ArcGIS Online Map Viewer doesn't allow to create those links from the editor but if those links are present in your layer attributes before you upload your data to ArcGIS Online, it will works.
+
+Note that the links navigate the Journal using an index that start at 0 for the Home Section. If you remove or reorder your sections, you will have to modify the links manually.
+
+
 ### Security
 
 #### Can I keep my Journal private?
