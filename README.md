@@ -177,7 +177,7 @@ It requires knowledge of HTML, Javascript and CSS languages.
 If you only need to customize look and feel, you should be able to do so using the [customize section above](#customize-the-look-and-feel).
 
 ### Application life cycle
-Map Journal fires three events that allow customization with lose integration. This mean that you may not need to understand much of the application internals to extend it.
+Map Journal fires three events that allow customization with lose integration. This mean that you may not need to understand the application internals to extend it.
 
 To try those events, look for the `Custom Javascript` block at the far end of index.html.
 
@@ -214,7 +214,7 @@ require(["dojo/topic"], function(topic) {
 ```
 
 ### Developer helpers
-In addition of the events described above, the story data, configuration and useful helpers functions can be accessed through the global variable `app`.
+In addition to the events described above, the story data, configuration and useful helpers functions can be accessed through the global variable `app`.
 
 ```
 console.log("Section", app.data.getCurrentSectionIndex(), "/", app.data.getStoryLength());
@@ -226,7 +226,7 @@ console.log("Story layout configuration", app.data.getWebAppData().get().values.
 console.log("Static ayout configuration values", app.data.getCurrentLayoutStaticConfig());
 ```
 
-Some events are also available:
+Some events are also available for you to navigate the Journal programmatically:
 
 ```
 require(["dojo/topic"], function(topic) { 
