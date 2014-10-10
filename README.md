@@ -98,9 +98,16 @@ A Journal can only be edited by its owner (the named account that initially crea
 
 #### Can I use private web map or layer?
 Yes. 
-When the Journal is hosted in ArcGIS Online or Portal for ArcGIS, unauthorized users will be redirected to ArcGIS Online sign-in page.
 
-When hosted on your web server, by default the authentication dialog will appear. Because of a technical limitation on older browser we recommend that you [configure the application to use OAuth](https://developers.arcgis.com/authentication/user-javascript.html). If you prefer to not configure OAuth, for the authentication to work on some older browser  (Internet Explorer 9 and below) you need to install a proxy server on your web server to make sure the login credentials can be passed securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
+When the Journal is hosted in ArcGIS Online or Portal for ArcGIS, users that don't have access to the Journal or a webmap used in the Journal will be redirected to the ArcGIS Online sign-in page. It is not possible to display an authentication dialog in the Map Journal when the Journal is hosted in ArcGIS Online.
+
+To use a premium layer in a public webmap, [follow that procedure](http://blogs.esri.com/esri/arcgis/2014/10/07/public-access-to-arcgis-online-premium-services/).
+
+When the Journal is hosted on your web server, an authentication dialog will appear inside the application. 
+
+Note that for that authentication to work on some older browser (Internet Explorer 9) you need to install a proxy server on your web server to make sure the login credentials can be passed securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
+
+Because of that limitation, we recommend that you configure the application to use OAuth. OAuth 2.0 based authentication is available for ArcGIS Online and Portal for ArcGIS users with developer or organizational accounts. Follow the procedure to [add an application](http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#ESRI_SECTION1_55703F1EE9C845C3B07BBD85221FB074) and [register an application](http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#ESRI_SECTION2_20AF85308FD548B5ADBAE28836F66D3F) to get an OAuth application ID. Once you have that application, open `index.html`, locate the `configOptions` section and fill the `oAuthAppId` property.
 
 ### Deployment
 Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
@@ -141,6 +148,16 @@ If you are experiencing some rendering issues like improper symbol appearing ins
 
  * [IIS Mime types](http://codingstill.com/2013/01/set-mime-types-for-web-fonts-in-iis/)
  * [Properly serve webfonts](http://blog.symbolset.com/properly-serve-webfonts)
+
+#### Can I use a single deployment of Map Journal for multiple stories?
+Yes. 
+If you have customized the application and deployed it on your server, you don't need to copy it multiple times, edit index.html and paste a different application ID for each story you want to publish. 
+
+Instead edit `index.html`, locate the `configOptions` section and fill the `authorizedOwners` property with the ArcGIS Online or Portal for ArcGIS login of the owner(s) of the Journals you want to use. This make possible for the application to display  any of the Journal created by the specified user(s) through an URL parameter.
+
+Example of the same application displaying two stories:
+ * http://myserver.com/MapJournal/index.html?appid=c7ad1a55de0247a68454a76f251225a4
+ * http://myserver.com/MapJournal/index.html?appid=c7ad1a55de0247a68454a76f251225a5
 
 ## Configuration
 In addition to the configuration offered by the builder, the files `app/config.js` and `app/commonConfig.js` provide various settings. Documentation is provided in those files.
