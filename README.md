@@ -127,7 +127,7 @@ Yes, Map Journal is included with Portal for ArcGIS starting at version 10.3.
 If you are using a previous version of Portal, you will have to deploy [Map Journal](http://links.esri.com/storymaps/map_journal_template_zip) in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to first delete all of its content. Then refer your Portal documentation for instructions on [publishing a new web application item](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_applications/019300000031000000/) and adding it to a group and [configuring the web application gallery](http://resources.arcgis.com/en/help/main/10.2/index.html#/Configure_map_viewer/017s00000024000000/) to use that group. If you choose to deploy the template in another folder, some configuration will be required (see the configuration section in index.html). 
 
 
-Then we recommand that you configure Map Journal to use the JavaScript API deployed on your Portal and not the one hosted by ArcGIS Online. This is optional but strongly recommended as some incompatibility may occur, **namely when  using Portal 10.2.1 or 10.2.2, it is required that you use the JS API in version 3.9 or below, please use `//js.arcgis.com/3.9/` or the one included on your Portal.**. To change the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 100. 
+Then we recommend that you configure Map Journal to use the JavaScript API deployed on your Portal and not the one hosted by ArcGIS Online. This is optional but strongly recommended as some incompatibility may occur, **namely when  using Portal 10.2.1 or 10.2.2, it is required that you use the JS API in version 3.9 or below, please use `//js.arcgis.com/3.9/` or the one included on your Portal.**. To change the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 100. 
 
 
 Also note that the web application gallery preview feature redirects to the StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
@@ -179,7 +179,7 @@ themes: [
 ### Other customization
 Most of the look and feel customization can be done using the [regular Application Download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html overrides directly into `index.html`. 
 
-As the application Javascript and CSS are minified, **we don't recommand that you directely edit those files** (e.g. `app-viewer-min.css`, `app-viewer-min.js`, ...). In addition to beeing hard to edit, this will make application update complex for you.
+As the application Javascript and CSS are minified, **we don't recommend that you directely edit those files** (e.g. `app-viewer-min.css`, `app-viewer-min.js`, ...). In addition to beeing hard to edit, this will make application update complex for you.
 
 If you want to change the behavior of one functionality or want to add new one, follow the [developer guide](#developer-guide) below.
 
