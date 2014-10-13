@@ -220,7 +220,7 @@ To try those events, look for the `Custom Javascript` block at the far end of in
 ...
 require(["dojo/topic"], function(topic) {
   /*
-   * Custom Javascript to be exexuted while the application is initalizating goes here
+   * Custom Javascript to be executed while the application is initializing goes here
    */
    
   console.log("Map Journal is initializing");
@@ -228,7 +228,7 @@ require(["dojo/topic"], function(topic) {
   // The application is ready
   topic.subscribe("tpl-ready", function(){
     /*
-     * Custom Javascript to be exexuted when the application is ready goes here
+     * Custom Javascript to be executed when the application is ready goes here
      */
      
     console.log("Map Journal is ready");
