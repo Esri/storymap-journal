@@ -9,7 +9,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 [Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
 [Application Download (source code not included)](http://links.esri.com/storymaps/map_journal_template_zip)
 
-**Latest release is version 1.1.0**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+**Latest release is version 1.1.1**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
 ## Help content
 
@@ -224,7 +224,7 @@ require(["dojo/topic"], function(topic) {
    */
    
   console.log("Map Journal is initializing");
-				
+  
   // The application is ready
   topic.subscribe("tpl-ready", function(){
     /*
@@ -232,17 +232,25 @@ require(["dojo/topic"], function(topic) {
      */
      
     console.log("Map Journal is ready");
-     
-    // After a section is loaded (for maps, this is after the map is loaded and start to render)
-    topic.subscribe("story-loaded-section", function(index){
-      console.log("The section", index, "has been loaded");
-    });
-
-    // When a main stage action that load a new media or reconfigure the current media is performed
-    // Note that this even is not fired for the "Locate and address or a place action"
-    topic.subscribe("story-perform-action-media", function(media){
-      console.log("A Main Stage action is performed:", media);
-    });
+  });
+  
+  // When a section is being loaded (don't wait for the Main Stage media to be loaded) 
+  topic.subscribe("story-load-section", function(index){
+    console.log("The section", index, "is being loaded");
+  });
+  
+  // After a map is loaded (when the map starts to render)	
+  topic.subscribe("story-loaded-map", function(result){
+    if ( result.index !== null )
+      console.log("The map", result.id, "has been loaded from the section", result.index);
+    else
+      console.log("The map", result.id, "has been loaded from a Main Stage Action");
+  });
+  
+  // When a main stage action that load a new media or reconfigure the current media is performed
+  // Note that this even is not fired for the "Locate and address or a place action"
+  topic.subscribe("story-perform-action-media", function(media){
+    console.log("A Main Stage action is performed:", media);
   });
 });
 ...
