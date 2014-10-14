@@ -169,10 +169,10 @@ define(["dojo/topic",
 				// If the action is only changing extent on the same map, the next Map Move discard the back button
 				// Can't rely on update-end as the Map may fire more than one event depending 
 				//  on the extent. As of 3.11, zoom far away is ok, but simple pan fire multiple events.
-				//  so wait for story-loaded-section which is fired on setExtent.then and after a timeout we can
+				//  so wait for story-loaded-map which is fired on setExtent.then and after a timeout we can
 				//  safely listen for update-end
 				if ( actionChangeExtent && ! actionChangeLayers && ! actionChangePopup && currentWebmapId == action.media.webmap.id ) {
-					var handle = topic.subscribe("story-loaded-section", function(){
+					var handle = topic.subscribe("story-loaded-map", function(){
 						handle.remove();
 						
 						setTimeout(function(){

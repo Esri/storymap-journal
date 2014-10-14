@@ -157,6 +157,8 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				var section = app.data.getStoryByIndex(index);
 				if ( section && section.media )
 					updateMainMedia(section.media, section, index);
+				
+				topic.publish("story-load-section", index);
 			};
 			
 			this.updateMainMediaWithStoryAction = function(media)
@@ -429,7 +431,10 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 								mapContainer.parent().addClass("has-error");
 								mapContainer.parent().find('.error').html(i18n.viewer.errors.mapLoadingFail);
 								
-								topic.publish("story-loaded-section", index);
+								topic.publish("story-loaded-map", {
+									id: newWebmapId,
+									index: index
+								});
 								topic.publish("ADDEDIT_LOAD_WEBMAP_FAIL");
 							})
 						);
@@ -514,10 +519,16 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					if ( extent )
 						app.map.setExtent(extent/*, true*/).then(function(){
 							applyPopupConfiguration(media.webmap.popup, index);
-							topic.publish("story-loaded-section", index);
+							topic.publish("story-loaded-map", {
+								id: media.webmap.id,
+								index: index
+							});
 						}); // TODO has at least to use _core.setExtent
 					else
-						topic.publish("story-loaded-section", index);
+						topic.publish("story-loaded-map", {
+							id: media.webmap.id,
+							index: index
+						});
 					
 					/*
 					// Reuse the current extent

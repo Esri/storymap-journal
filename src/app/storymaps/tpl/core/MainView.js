@@ -243,7 +243,7 @@ define(["lib-build/css!./MainView",
 					else {
 						var handle, handle2;
 						
-						handle = topic.subscribe("story-loaded-section", function(){
+						handle = topic.subscribe("story-loaded-map", function(){
 							handle.remove();
 							handle2.remove();
 							
