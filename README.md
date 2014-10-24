@@ -129,6 +129,18 @@ If you are using a previous version of Portal, you will have to deploy [Map Jour
 
 Then we recommend that you configure Map Journal to use the JavaScript API deployed on your Portal and not the one hosted by ArcGIS Online. This is optional but strongly recommended as some incompatibility may occur, **namely when  using Portal 10.2.1 or 10.2.2, it is required that you use the JS API in version 3.9 or below, please use `//js.arcgis.com/3.9/` or the one included on your Portal.**. To change the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 100. 
 
+Also note that when downgrading to JS API 3.9 or 3.10 it is necassary to update two instructions in `app/main-config.js`:
+
+```
+loadCSS(app.pathJSAPI + "esri/css/esri.css", true);
+loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);	
+```
+
+To be replaced by :
+```
+loadCSS(app.pathJSAPI + "js/esri/css/esri.css", true);
+loadCSS(app.pathJSAPI + "js/dojo/dijit/themes/claro/claro.css", true);	
+```
 
 Also note that the web application gallery preview feature redirects to the StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
 
