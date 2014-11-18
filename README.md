@@ -124,23 +124,11 @@ The image and videos that you include in your Journal using the builder are not 
 #### Can I deploy Map Journal on Portal for ArcGIS?
 Yes, Map Journal is included with Portal for ArcGIS starting at version 10.3.
 
-If you are using a previous version of Portal, you will have to deploy [Map Journal](http://links.esri.com/storymaps/map_journal_template_zip) in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. If this folder already contain a previous version, make sure to first delete all of its content. Then refer your Portal documentation for instructions on [publishing a new web application item](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_applications/019300000031000000/) and adding it to a group and [configuring the web application gallery](http://resources.arcgis.com/en/help/main/10.2/index.html#/Configure_map_viewer/017s00000024000000/) to use that group. If you choose to deploy the template in another folder, some configuration will be required (see the configuration section in index.html). 
+If you are using a previous version of Portal, you will have to deploy the following version [Map Journal V1.0.2 - portal](https://github.com/Esri/map-journal-storytelling-template-js/releases/download/V1.0.2/Storytelling-MapJournal-1.0.2-portal.zip) in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. 
 
+Note that when using Portal 10.2.1 or 10.2.2, it is required that you use Map Journal V1.0.2 or below and the JS API in version 3.9 (Map Journal V1.1 and above are not compatible, JS API 3.10 and above are not compatible). The previous link is the only version of Map Journal that is compatible with Portal 10.2.1 or 10.2.2. That version use the Javascript API V3.9 hosted in ArcGIS Online, optionaly you can modify it to use the API included on your Portal. To change the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 100. 
 
-Then we recommend that you configure Map Journal to use the JavaScript API deployed on your Portal and not the one hosted by ArcGIS Online. This is optional but strongly recommended as some incompatibility may occur, **namely when  using Portal 10.2.1 or 10.2.2, it is required that you use the JS API in version 3.9 or below, please use `//js.arcgis.com/3.9/` or the one included on your Portal.**. To change the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 100. 
-
-Also note that when downgrading to JS API 3.9 or 3.10 it is necassary to update two instructions in `app/main-config.js`:
-
-```
-loadCSS(app.pathJSAPI + "esri/css/esri.css", true);
-loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);	
-```
-
-To be replaced by :
-```
-loadCSS(app.pathJSAPI + "js/esri/css/esri.css", true);
-loadCSS(app.pathJSAPI + "js/dojo/dijit/themes/claro/claro.css", true);	
-```
+If the folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal` already contain a previous version, make sure to first delete all of its content. Then refer your Portal documentation for instructions on [publishing a new web application item](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_applications/019300000031000000/) and adding it to a group and [configuring the web application gallery](http://resources.arcgis.com/en/help/main/10.2/index.html#/Configure_map_viewer/017s00000024000000/) to use that group. If you choose to deploy the template in another folder, some configuration will be required (see the configuration section in index.html). 
 
 Also note that the web application gallery preview feature redirects to the StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
 
