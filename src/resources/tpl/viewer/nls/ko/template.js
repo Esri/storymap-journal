@@ -5,8 +5,8 @@
 				close: "닫기"
 			},
 			loading: {
-				step1: "응용프로그램을 로드하는 중",
-				step2: "데이터를 로드하는 중",
+				step1: "응용프로그램을 불러오는 중",
+				step2: "데이터를 불러오는 중",
 				step3: "초기화하는 중",
 				loadBuilder: "빌더로 전환하는 중",
 				long: "맵 저널을 초기화하는 중",
@@ -39,7 +39,7 @@
 			mobileView: {
 				tapForDetails: "세부정보를 보려면 누릅니다.",
 				clickForDetails: "자세한 정보",
-				swipeToExplore: "쓸어 넘겨서 탐색",
+				swipeToExplore: "탐색하려면 스와이프",
 				tapForMap: "맵으로 돌아가려면 누릅니다.",
 				clickForMap: "맵으로 돌아가기"
 			},
@@ -70,11 +70,10 @@
 				copy: "복사",
 				copied: "복사됨",
 				open: "열기",
-				embed: "웹 사이트에 포함",
-				embedExplain: "다음 HTML 코드를 사용하여 저널을 웹 사이트에 포함시킵니다.",
+				embed: "웹 페이지에 포함",
+				embedExplain: "다음 HTML 코드를 사용하여 저널을 웹 페이지에 포함시킵니다.",
 				size: "크기(너비/높이):"
 			}
         }
     })
-
 );

@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Adicionar",
@@ -28,8 +28,8 @@
 				buttonSettings: "Configurações",
 				buttonHelp: "Ajuda",
 				buttonPreview: "Ver ao Vivo",
-				tooltipFirstSave: "Esta funcionalidade não se encontra disponível até que a aplicação seja guardada",
-				tooltipNotShared: "Esta funcionalidade não se encontra disponível até que a aplicação seja partilhada",
+				tooltipFirstSave: "Esta funcionalidade não se encontra disponível até que a aplicação seja guardada.",
+				tooltipNotShared: "Esta funcionalidade não se encontra disponível até que a aplicação seja partilhada.",
 				noPendingChange: "Nenhuma alteração pendente",
 				unSavedChangePlural: "Alterações pendentes",
 				closeWithPendingChange: "Tem a certeza que pretende confirmar esta ação? As suas alterações serão perdidas.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Erro ao guardar a aplicação",
 				err1Div1: "A aplicação não pode ser guardada porque já possui outro item com o mesmo nome (consulte a sua <a class='linkagolroot' target='_blank'>pasta de conteúdo</a>).",
-				err1Div2: "Por favor modifique o título da Seção da Página Inicial e guarde a aplicação.",
-				btnOk: "Editar o título da Seção da Página Inicial"
+				err1Div2: "Por favor modifique o título da da sua aplicação e depois guarde-a.",
+				btnOk: "Editar o título da aplicação"
 			},
 			share: {
 				firstSaveTitle: "Aplicação guardada com sucesso",
@@ -66,7 +66,7 @@
 				shareHeader2: "A sua aplicação está acessível aos membros da sua organização (é necessário início de sessão).",
 				shareLinkCopy: "Copiar",
 				shareLinkCopied: "Copiado",
-				shareQ0: "Como incorporar a aplicação num website?",
+				shareQ0: "Como posso incorporar a aplicação numa página web?",
 				shareQ1Opt1: "Como posso manter a aplicação privada?",
 				shareQ1Opt2: "Como posso manter a aplicação privada ou partilhá-la publicamente?",
 				shareA1: "Utilize %SHAREIMG% na <a href='%LINK1%' target='_blank'>página do item da aplicação</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Ligação para clicar",
 				logoSocialExplain: "Personalize a ligação do cabeçalho.",
 				logoSocialText: "Texto",
-				logoSocialLink: "Ligação"
+				logoSocialLink: "Ligação",
+				lblSmallHeader: "Utilizar cabeçalho compacto (sem legenda)"
+			},
+			header: {
+				title: "Editar o título do seu %TPL_NAME%",
+				subtitle: "Editar o subtítulo do seu %TPL_NAME%"
 			}
 		}
 	})
-
 );

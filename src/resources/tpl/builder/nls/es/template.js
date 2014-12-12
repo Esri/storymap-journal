@@ -85,11 +85,12 @@
 				lblLink: "Visita el sitio web de Esri Story Maps.",
 				content1Div1: "Puedes integrar diversos estilos al crear tu historia. El <strong>%LAYOUT_TITLE%</strong> alberga normalmente el texto, las imágenes y los vídeos, mientras que los mapas suelen estar en el <strong>escenario principal</strong>. Sin embargo, el %TPL_NAME% también permite mostrar imágenes, gráficos y vídeos en el escenario principal.",
 				content1Div2: "Agregar secciones te permite personalizar tu experiencia narrativa. A medida que los lectores se desplazan por el texto de tu %LAYOUT_TITLE%, en el escenario principal un mapa puede desplazarse o aplicar el zoom a los puntos clave, o pueden activarse automáticamente nuevos mapas e imágenes para reforzar tu mensaje.",
-				content2Div1: "Aquí puedes ajustar el aspecto de tu %TPL_NAME%. Los esquemas de color, los diseños, las anchuras y las fuentes se definen aquí.",
-				content2Div2: "También puedes agregar vínculos para compartir en Facebook, Twitter y Bitly con el fin de que los lectores puedan divulgar fácilmente tu %TPL_NAME% entre otros usuarios.",
+				content2Div1: "En el cuadro de diálogo Configuración, puedes cambiar el aspecto de tu %TPL_NAME%. Puedes cambiar el diseño, elegir un esquema de color diferente, cambiar la fuente del texto, etc.",
+				content2Div2: "También puedes reemplazar el logotipo de Esri con tu propio logotipo para reflejar tu marca. También puedes especificar el sitio web que se abrirá si los lectores hacen clic en tu logotipo, de modo que puedan obtener más información.",
 				content3Div1: "Tu contenido se organiza en secciones. Puedes tener tantas secciones como desees (puedes entenderlas como mini capítulos). El flujo de estos capítulos es importante. En Organizar puedes reordenar o eliminar secciones según tus necesidades.",
 				content4Div1: "¿Has descubierto un error o deseas cambiar el material? No hay problema: busca el icono de edición en la aplicación para realizar cambios en el contenido. Usarás las funciones de edición muchas veces durante el desarrollo de tu %TPL_NAME%.",
-				content5Div1: "Tu %TPL_NAME% está guardada en la cuenta de %PORTAL% y, de manera predeterminada, es privada. Puedes optar por compartirla solo con tu organización o por abrirla al mundo. Te proporcionamos incluso una URL abreviada para que puedas compartirla con más facilidad.",
+				content5Div1: "Cuando guardas tu %TPL_NAME%, esta es privada inicialmente. Utiliza el botón Compartir para compartirla con otros. Puedes compartir tu %TPL_NAME% públicamente de modo que cualquiera pueda acceder a ella.",
+				content5Div2: "En función de tu cuenta, es posible que también tengas la opción de compartir tu %TPL_NAME% solo con personas de tu organización, de modo que nadie más pueda acceder a ella.",
 				content6Div1: "El título de tu sección de inicio es también el título de tu diario. Piensa en la sección de inicio como si fuera la portada de tu historia. El título de la sección de inicio seguirá estando visible para los lectores cuando naveguen por el diario.",
 				content6Div2: "Tu %LAYOUT_TITLE% no tiene que ser solo texto; también puedes incluir fotografías y vídeos para animar la historia y que el texto no se haga tan pesado."
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

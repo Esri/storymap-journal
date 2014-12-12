@@ -71,10 +71,9 @@
 				copied: "Zkopírováno",
 				open: "Otevřít",
 				embed: "Vložit do webové stránky",
-				embedExplain: "Chcete-li deník vložit do webových stránek, použijte následující kód HTML.",
+				embedExplain: "Chcete-li deník vložit do webové stránky, použijte následující kód HTML.",
 				size: "Velikost (šířka/výška):"
 			}
         }
     })
-
 );

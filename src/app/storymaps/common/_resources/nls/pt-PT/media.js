@@ -62,7 +62,7 @@
 				url: "URL de um vídeo do Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "O Jornal de Mapa não pode reproduzir vídeos em formato raw (ex: avi, mpeg), mas pode reproduzir ficheiro de vídeo alojados que tenham  but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
+				explain1: "A aplicação não pode reproduzir vídeos em formato raw (ex: avi, mpeg), mas pode reproduzir ficheiro de vídeo alojados que tenham leitores de vídeo incorporados (ex: YouTube ur Vimeo).",
 				explain2: "A maior parte dos serviços online de alojamento de video oferecem essa possibilidade, tem de encontrar a opção para incorporar vídeo, copiar o código e utilizar %WEBPAGE%.",
 				explain3: "Em alternativa, se pretender alojar o vídeo, pode criar uma página HTML que utilize um leitor de vídeo como %EXAMPLE%, alojar essa página e também utilizar o %WEBPAGE%.",
 				webpage: "Elemento de página web"
@@ -100,7 +100,7 @@
 				lblPosition3Explain2: "(a largura será sempre ajustada ao painel)",
 				lblPosition4Explain: "(pode distorcer)",
 				unloadLbl: "Descarregue quando o leitor navegar para uma secção diferente",
-				unloadHelp: "Caso a página contenha media áudio ou vídeo, mantenha esta opção selecionada para impedir que esse conteúdo continue a ser reproduzido quando o leitor navegar para uma secção diferente. Desmarque-a, por exemplo, para que uma banda sonora continue a ser reproduzida à medida que o leitor avança na leitura do jornal.<br />Se a Página Web for uma aplicação, desmarque esta opção para que a aplicação não seja recarregada se o leitor regressar a essa secção."
+				unloadHelp: "Caso a Página Web contenha media áudio ou vídeo, mantenha esta opção selecionada para impedir que esse conteúdo seja reproduzido quando o leitor navegar para uma secção diferente. Desmarque-a, por exemplo, para que uma banda sonora continue a ser reproduzida à medida que o leitor avança na história.<br />Se a Página Web for uma aplicação, desmarque esta opção para que a aplicação não seja recarregada se o leitor regressar a essa secção."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizar um endereço ou lugar",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

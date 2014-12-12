@@ -62,7 +62,7 @@
 				url: "Vimeo vaizdo įrašo URL"
 			},
 			videoSelectorOther: {
-				explain1: "Žemėlapių žurnalas negali paleisti neapdorotų video (pvz., avi, mpeg), bet jis gali leisti patalpintus video failus, kuriuose yra integruoti leistuvai (pvz., YouTube ar Vimeo).",
+				explain1: "Aplikacija negali paleisti neapdorotų video (pvz., avi, mpeg), bet ji gali leisti patalpintus video failus, kuriuose yra integruoti leistuvai (pvz., YouTube ar Vimeo).",
 				explain2: "Dauguma vaizdo įrašų talpinimo paslaugų siūlo tokią funkciją, tereikia rasti vaizdo įrašo integravimo parinktį, nukopijuoti pateiktą kodą ir naudoti %WEBPAGE%.",
 				explain3: "Be to, jei norite patalpinti video patys, galite sukurti HTML puslapį, kuriame būtų naudojamas vaizdo leistuvas, pvz., %EXAMPLE%, patalpinti tą puslapį ir taip pat naudoti %WEBPAGE%.",
 				webpage: "Tinklalapio elementas"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(nebus apkarpoma)",
 				lblPosition3Explain2: "(plotis visada atitiks skydą)",
 				lblPosition4Explain: "(gali būti iškraipoma)",
-				unloadLbl: "Iškelti, kai skaitytojas pereina tolyn į kitą skiltį",
-				unloadHelp: "Jeigu tinklalapyje yra garso arba vaizdo medija, palikite šią parinktį pažymėtą, kad sustabdytumėte turinio leidimą, kai skaitytojas pereina tolyn į kitą skiltį. Panaikinkite žymėjimą, pavyzdžiui, jei norite leisti garso takelį, kai skaitytojas varto žurnalą.<br />Jeigu tinklalapis yra aplikacija, panaikinkite šios parinkties žymėjimą, kad skaitytojui grįžus į šią skiltį aplikacija nebūtų įkeliama iš naujo."
+				unloadLbl: "Iškelti, kai skaitytojas palieka šią dalį",
+				unloadHelp: "Jeigu tinklalapyje yra garso arba vaizdo medija, palikite šią parinktį pažymėtą, kad sustabdytumėte turinio leidimą, kai skaitytojas išeina. Panaikinkite žymėjimą, pavyzdžiui, jei norite leisti garso takelį, kai skaitytojas keliauja pasakojimu.<br />Jeigu tinklalapis yra aplikacija, panaikinkite šios parinkties žymėjimą, kad skaitytojui grįžus, aplikacija nebūtų įkeliama iš naujo."
 			},
 			editorActionGeocode: {
 				lblTitle: "Raskite adresą arba vietą",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

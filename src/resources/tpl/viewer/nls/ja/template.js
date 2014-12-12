@@ -70,11 +70,10 @@
 				copy: "コピー",
 				copied: "コピー",
 				open: "開く",
-				embed: "Web サイトに埋め込む",
-				embedExplain: "ジャーナルを Web サイトに埋め込むには、次の HTML コードを使用します。",
+				embed: "Web ページに埋め込む",
+				embedExplain: "ジャーナルを Web ページに埋め込むには、次の HTML コードを使用します。",
 				size: "サイズ (幅/高さ):"
 			}
         }
     })
-
 );

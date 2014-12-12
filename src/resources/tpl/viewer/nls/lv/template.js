@@ -70,11 +70,10 @@
 				copy: "Kopēt",
 				copied: "Kopēts",
 				open: "Atvērt",
-				embed: "Iedarinār tīmekļa vietnē",
-				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu web vietnē.",
+				embed: "Iegult web lapā",
+				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu web lapā.",
 				size: "Izmēri (platums/augstums):"
 			}
         }
     })
-
 );

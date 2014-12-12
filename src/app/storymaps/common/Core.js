@@ -336,7 +336,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 					app.data.getWebAppData().set(dataRq);
 					
 					if( app.indexCfg.authorizedOwners && app.indexCfg.authorizedOwners.length > 0 && app.indexCfg.authorizedOwners[0] ) {
-						var owner = itemRq.results[0].owner,
+						var owner = itemRq.owner,
 							ownerFound = false;
 						
 						if( owner ) 

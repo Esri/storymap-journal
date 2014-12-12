@@ -70,11 +70,10 @@
 				copy: "Kopiuj",
 				copied: "Skopiowane",
 				open: "Otwórz",
-				embed: "Osadzanie w witrynie internetowej",
-				embedExplain: "Aby umieścić Dziennik w witrynie, skorzystaj z poniższego kodu HTML.",
+				embed: "Osadzanie na stronie internetowej",
+				embedExplain: "Aby umieścić Dziennik na stronie internetowej, skorzystaj z poniższego kodu HTML.",
 				size: "Rozmiar (szerokość/wysokość):"
 			}
         }
     })
-
 );

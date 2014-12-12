@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Ekle",
@@ -28,8 +28,8 @@
 				buttonSettings: "Ayarlar",
 				buttonHelp: "Yardım",
 				buttonPreview: "Canlı Görünüm",
-				tooltipFirstSave: "Bu işlev, uygulama kaydedilinceye kadar kullanılamaz",
-				tooltipNotShared: "Bu işlev, uygulama paylaştırılıncaya kadar kullanılamaz",
+				tooltipFirstSave: "Bu, kaydedene kadar kullanılamaz.",
+				tooltipNotShared: "Bu, paylaşana kadar kullanılamaz.",
 				noPendingChange: "Bekleyen değişiklik yok",
 				unSavedChangePlural: "Bekleyen değişiklikler",
 				closeWithPendingChange: "Bu eylemi onaylamak istediğinizden emin misiniz? Değişiklikleriniz silinecek.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Uygulama kaydederken hata",
 				err1Div1: "Aynı ada sahip başka bir öğeniz olduğundan uygulama kaydedilemiyor (bkz. <a class='linkagolroot' target='_blank'>içerik klasörünüz</a>).",
-				err1Div2: "Ana Bölüm başlığını değiştirin ve uygulamayı kaydedin.",
-				btnOk: "Ana Bölüm başlığını düzenle"
+				err1Div2: "Uygulamanızın başlığını değiştirin ve ardından kaydedin.",
+				btnOk: "Uygulama başlığını düzenle"
 			},
 			share: {
 				firstSaveTitle: "Uygulama başarıyla kaydedildi",
@@ -66,7 +66,7 @@
 				shareHeader2: "Uygulamanız kuruluşunuzun üyeleri tarafından (oturum açılması gerekir) erişilebilir durumda.",
 				shareLinkCopy: "Kopyala",
 				shareLinkCopied: "Kopyalandı",
-				shareQ0: "Uygulamayı bir web sitesi içine nasıl yerleştiririm?",
+				shareQ0: "Uygulamayı bir web sayfasına nasıl gömerim?",
 				shareQ1Opt1: "Uygulamayı nasıl özel tutarım?",
 				shareQ1Opt2: "Uygulamayı nasıl özel tutabilir ya da herkesle paylaşabilirim?",
 				shareA1: "<a href='%LINK1%' target='_blank'>Uygulama öğesi sayfasındaki</a> %SHAREIMG% özelliğini kullanın.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Tıklanabilir bağlantı",
 				logoSocialExplain: "Başlık bağlantısını özelleştirin.",
 				logoSocialText: "Metin",
-				logoSocialLink: "Bağlantı"
+				logoSocialLink: "Bağlantı",
+				lblSmallHeader: "Kompakt başlık kullanın (alt başlıksız)"
+			},
+			header: {
+				title: "%TPL_NAME% adınızın başlığını düzenleyin",
+				subtitle: "%TPL_NAME% adınızın alt başlığını düzenleyin"
 			}
 		}
 	})
-
 );

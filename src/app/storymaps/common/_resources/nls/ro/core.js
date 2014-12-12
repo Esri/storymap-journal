@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Adăugare",
@@ -28,8 +28,8 @@
 				buttonSettings: "Setări",
 				buttonHelp: "Ajutor",
 				buttonPreview: "Vizualizare live",
-				tooltipFirstSave: "Această funcţie nu este disponibilă decât după salvarea aplicaţiei",
-				tooltipNotShared: "Această funcţie nu este disponibilă decât după partajarea aplicaţiei",
+				tooltipFirstSave: "Această funcţie nu este disponibilă decât după ce salvaţi.",
+				tooltipNotShared: "Această funcţie nu este disponibilă decât după ce partajaţi.",
 				noPendingChange: "Nicio modificare în aşteptare",
 				unSavedChangePlural: "Modificări în aşteptare",
 				closeWithPendingChange: "Sigur doriţi să confirmaţi această acţiune? Modificările dvs. se vor pierde.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Eroare la salvarea aplicaţiei",
 				err1Div1: "Aplicaţia nu poate fi salvată deoarece aveţi deja alt element cu acelaşi nume (consultaţi <a class='linkagolroot' target='_blank'>directorul de conţinut</a>).",
-				err1Div2: "Modificaţi titlul secţiunii principale şi salvaţi aplicaţia.",
-				btnOk: "Editaţi titlul secţiunii principale"
+				err1Div2: "Modificaţi titlul aplicaţiei, apoi salvaţi-l.",
+				btnOk: "Editaţi titlul aplicaţiei"
 			},
 			share: {
 				firstSaveTitle: "S-a reuşit salvarea aplicaţiei",
@@ -66,7 +66,7 @@
 				shareHeader2: "Aplicaţia este accesibilă pentru membrii organizaţiei (necesită autentificare).",
 				shareLinkCopy: "Copiere",
 				shareLinkCopied: "Copiat",
-				shareQ0: "Cum încorporez aplicaţia într-un site web?",
+				shareQ0: "Cum încorporez aplicaţia într-o pagină web?",
 				shareQ1Opt1: "Cum menţin aplicaţia privată?",
 				shareQ1Opt2: "Cum menţin aplicaţia privată sau o partajez public?",
 				shareA1: "Utilizaţi %SHAREIMG% în <a href='%LINK1%' target='_blank'>pagina elementului aplicaţie</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Link de accesare cu clic",
 				logoSocialExplain: "Particularizaţi linkul din antet.",
 				logoSocialText: "Text",
-				logoSocialLink: "Link"
+				logoSocialLink: "Link",
+				lblSmallHeader: "Utilizare antet compact (fără subtitlu)"
+			},
+			header: {
+				title: "Editaţi titlul %TPL_NAME%",
+				subtitle: "Editaţi subtitlul %TPL_NAME%"
 			}
 		}
 	})
-
 );

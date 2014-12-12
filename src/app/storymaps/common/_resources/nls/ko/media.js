@@ -10,7 +10,7 @@
 				lblExternal: "웹 페이지",
 				disabled: "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
 				url: "이미지의 웹 주소를 수동으로 입력하려면",
-				userLookup: "앨범 로드",
+				userLookup: "앨범 불러오기",
 				notImplemented: "아직 구현되지 않았습니다.",
 				noData: "공개 앨범을 찾을 수 없음"
 			},
@@ -25,7 +25,7 @@
 			imageSelectorFlickr: {
 				userInputLbl: "사용자 이름",
 				signInMsg2: "사용자를 찾을 수 없습니다.",
-				loadingFailed: "로드 실패"
+				loadingFailed: "불러오기 실패"
 			},
 			imageSelectorFacebook: {
 				leftHeader: "Facebook 사용자",
@@ -62,7 +62,7 @@
 				url: "Vimeo 비디오 URL"
 			},
 			videoSelectorOther: {
-				explain1: "맵 저널은 원시 비디오(예: avi, mpeg)를 재생할 수 없지만 내장 플레이어(예: YouTube 또는 Vimeo)가 있는 호스팅 비디오 파일은 재생할 수 있습니다.",
+				explain1: "응용프로그램은 비디오 파일(예: avi, mpeg)를 재생할 수 없지만 기본 제공 플레이어(예: YouTube 또는 Vimeo)가 있는 호스팅 비디오 파일은 재생할 수 있습니다.",
 				explain2: "대부분의 온라인 비디오 호스팅 서비스는 해당 피처를 제공하므로, 비디오를 포함할 옵션을 찾고 제공된 코드를 복사하고 %WEBPAGE%을(를) 사용해야 합니다.",
 				explain3: "또는 직접 비디오를 호스팅하려면 %EXAMPLE% 등의 비디오 플레이어를 사용하는 HTML 페이지를 생성하고, 해당 페이지를 호스팅하고, %WEBPAGE%을(를) 사용할 수도 있습니다.",
 				webpage: "웹 페이지 피처"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(잘리지 않음)",
 				lblPosition3Explain2: "(너비는 항상 패널에 맞춤)",
 				lblPosition4Explain: "(왜곡될 수 있음)",
-				unloadLbl: "리더가 다른 섹션으로 이동 시 언로드",
-				unloadHelp: "웹 페이지에 오디오 또는 비디오 미디어가 있는 경우 이 옵션을 선택 상태로 유지하여 리더가 다른 섹션으로 이동 시 콘텐츠가 재생되는 것을 막으세요. 리더가 저널을 통해 진행할 때 사운드 트랙 재생을 유지하려면 옵션을 선택 해제하세요.<br />웹 페이지가 응용프로그램일 경우 리더가 해당 섹션으로 되돌아올 때 응용프로그램이 다시 로드되지 않도록 이 옵션을 선택 해제하세요."
+				unloadLbl: "독자가 다른 위치를 탐색할 때 언로드",
+				unloadHelp: "웹 페이지에 오디오 또는 비디오 미디어가 있는 경우 이 옵션을 선택 상태로 유지하여 독자가 다른 위치를 탐색할 때 콘텐츠가 재생되는 것을 방지할 수 있습니다. 독자가 스토리 사이를 진행할 때 사운드 트랙 재생을 유지하려면 옵션을 선택 해제합니다.<br />웹 페이지가 응용프로그램인 경우 독자가 돌아왔을 때 응용프로그램이 다시 로드되지 않도록 이 옵션을 선택 해제합니다."
 			},
 			editorActionGeocode: {
 				lblTitle: "주소 또는 장소 찾기",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

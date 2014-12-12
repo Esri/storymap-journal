@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Pridėti",
@@ -28,8 +28,8 @@
 				buttonSettings: "Nuostatos",
 				buttonHelp: "Pagalba",
 				buttonPreview: "Peržiūrėti veikiančią",
-				tooltipFirstSave: "Kol aplikacija neišsaugota, ši funkcija nepasiekiama",
-				tooltipNotShared: "Kol aplikacija nebendrinama, ši funkcija nepasiekiama",
+				tooltipFirstSave: "Kol neišsaugosite, tai nepasiekiama.",
+				tooltipNotShared: "Kol nebendrinsite, tai nepasiekiama.",
 				noPendingChange: "Laukiančių pakeitimų nėra",
 				unSavedChangePlural: "Nepatvirtinti pakeitimai",
 				closeWithPendingChange: "Ar tikrai norite patvirtinti šį veiksmą? Pakeitimai bus prarasti.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Klaida įrašant aplikaciją",
 				err1Div1: "Aplikacijos negalima įrašyti, nes jau turite kitą elementą tokiu pavadinimu (žr. <a class='linkagolroot' target='_blank'>turinio aplanką</a>).",
-				err1Div2: "Pakeiskite pagrindinės skilties antraštę ir įrašykite aplikaciją.",
-				btnOk: "Redaguoti pagrindinės skilties antraštę"
+				err1Div2: "Pakeiskite savo aplikacijos pavadinimą ir išsaugokite.",
+				btnOk: "Redaguoti aplikacijos pavadinimą"
 			},
 			share: {
 				firstSaveTitle: "Aplikacija išsaugota",
@@ -66,7 +66,7 @@
 				shareHeader2: "Aplikacija pasiekiama organizacijos nariams (būtina prisijungti).",
 				shareLinkCopy: "Kopijuoti",
 				shareLinkCopied: "Nukopijuota",
-				shareQ0: "Kaip įterpti aplikaciją svetainėje?",
+				shareQ0: "Kaip įterpti aplikaciją į tinklalapį?",
 				shareQ1Opt1: "Kaip aplikaciją išlaikyti privačią?",
 				shareQ1Opt2: "Kaip aplikaciją išlaikyti privačią ar bendrinti viešai?",
 				shareA1: "Naudokite %SHAREIMG% <a href='%LINK1%' target='_blank'>aplikacijos elemento puslapyje</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Vieno mygtuko paspaudimo nuoroda",
 				logoSocialExplain: "Adaptuokite antraštės nuorodą.",
 				logoSocialText: "Tekstas",
-				logoSocialLink: "Nuoroda"
+				logoSocialLink: "Nuoroda",
+				lblSmallHeader: "Naudoti kompaktišką antraštę (be paantraštės)"
+			},
+			header: {
+				title: "Redaguokite %TPL_NAME% pavadinimą",
+				subtitle: "Redaguokite %TPL_NAME% paantraštę"
 			}
 		}
 	})
-
 );

@@ -10,6 +10,8 @@
 				lblOverview: "Vue générale",
 				lblLegend: "Légende",
 				loadingTitle: "Chargement du titre",
+				entry: "Entrée",
+				entries: "Entrées",
 				section: "Section",
 				sections: "Sections",
 				and: "et",
@@ -22,12 +24,14 @@
 				newMap: "Nouvelle carte Web sélectionnée",
 				webmapDefault: "Carte Web par défaut",
 				customCfg: "Configuration personnalisée",
-				tooltipLocation: "Définissez l\'emplacement sur la carte qui sera utilisé lorsque vos lecteurs accéderont à cette section.",
+				tooltipLocation: "Définissez l\'emplacement que cette carte affichera.",
 				tooltipContent: "Définissez les couches visibles.",
-				tooltipPopup: "Choisissez la fenêtre contextuelle à afficher lorsque vos lecteurs accéderont à cette section.",
+				tooltipPopup: "Choisissez la fenêtre contextuelle à afficher à l\'ouverture de la carte.",
 				tooltipOverview: "Affichez une petite vue générale avec la carte principale.",
 				tooltipLegend: "Affichez la légende de la carte, qui est utile lorsque la carte comporte beaucoup de couches et de symboles.",
-				mapCfgInvite: "Utilisez ces contrôles pour configurer la carte"
+				mapCfgInvite: "Utilisez ces contrôles pour configurer la carte",
+				lblLocationAlt: "Hérité de la première carte",
+				tooltipLocationAlt: "L\'emplacement de cette carte est synchronisé sur la première carte de la série. Pour changer ce comportement pour votre série, accédez à Paramètres > Options de carte."
 			},
 			configure: {
 				btnReset: "Réinitialiser",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

@@ -10,6 +10,8 @@
 				lblOverview: "Översiktskarta",
 				lblLegend: "Teckenförklaring",
 				loadingTitle: "Läser in titel",
+				entry: "Post",
+				entries: "Poster",
 				section: "Avsnitt",
 				sections: "Avsnitt",
 				and: "och",
@@ -22,12 +24,14 @@
 				newMap: "Nyligen vald webbkarta",
 				webmapDefault: "Standardwebbkarta",
 				customCfg: "Anpassad konfiguration",
-				tooltipLocation: "Definiera vilken kartplats som ska användas när användarna navigerar till det här avsnittet.",
+				tooltipLocation: "Definiera vilken plats som kartan ska visa.",
 				tooltipContent: "Definiera synliga lager.",
-				tooltipPopup: "Välj ett popupfönster som ska visas när användarna navigerar till det här avsnittet.",
+				tooltipPopup: "Välj ett popupfönster som ska öppnas när den här kartan visas.",
 				tooltipOverview: "Visa en liten översiktskarta tillsammans med huvudkartan.",
 				tooltipLegend: "Visa en teckenförklaring på kartan, vilket kan vara användbart om den innehåller många lager och symboler.",
-				mapCfgInvite: "Konfigurera kartan med dessa kontroller"
+				mapCfgInvite: "Konfigurera kartan med dessa kontroller",
+				lblLocationAlt: "Ärvd från den första kartan",
+				tooltipLocationAlt: "Kartans plats synkroniseras med den första kartan i serien. Om du vill ändra det här beteendet för din serie går du till Inställningar > Kartalternativ."
 			},
 			configure: {
 				btnReset: "Återställ",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

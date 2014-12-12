@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "הוסף",
@@ -28,8 +28,8 @@
 				buttonSettings: "הגדרות",
 				buttonHelp: "עזרה",
 				buttonPreview: "תצוגה דינמית",
-				tooltipFirstSave: "פוקציה זו לא זמינה עד לשמירת האפליקציה",
-				tooltipNotShared: "פונקציה זו אינה זמינה עד לשיתוף האפליקציה",
+				tooltipFirstSave: "אפשרות זו אינה זמינה עד לשמירה.",
+				tooltipNotShared: "אפשרות זו אינה זמינה עד לשיתוף.",
 				noPendingChange: "אין שינוי לביצוע",
 				unSavedChangePlural: "השינויים בהמתנה",
 				closeWithPendingChange: "האם הינך בטוח שברצונך לאשר פעולה זו? אתה עלול לאבד את השינויים שביצעת.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "שגיאה בשמירת היישום",
 				err1Div1: "לא ניתן לשמור את היישום משום שכבר יש לך פריט אחר באותו שם (ראה את<a class='linkagolroot' target='_blank'>תיקיית התוכן</a> שלך).",
-				err1Div2: "שנה את כותרת חלק דף הבית ושמור את היישום.",
-				btnOk: "ערוך את כותרת חלק דף הבית"
+				err1Div2: "שנה את כותרת האפליקציה ולאחר מכן שמור אותה.",
+				btnOk: "ערוך את כותרת האפליקציה"
 			},
 			share: {
 				firstSaveTitle: "האפליקציה נשמרה בהצלחה",
@@ -66,7 +66,7 @@
 				shareHeader2: "האפליקציה שלך נגישה לחברי הארגון שלך (נדרש להתחבר).",
 				shareLinkCopy: "העתק",
 				shareLinkCopied: "הועתק",
-				shareQ0: "כיצד ניתן להטמיע את היישום באתר אינטרנט?",
+				shareQ0: "כיצד ניתן להטמיע את האפליקציה בדף אינטרנט?",
 				shareQ1Opt1: "כיצד אני יכול לשמור את האפליקציה פרטית?",
 				shareQ1Opt2: "כיצד אני יכול לשמור את האפליקציה פרטית או לשתף אותה לציבור?",
 				shareA1: "השתמש ב-%SHAREIMG% ב- <a href='%LINK1%' target='_blank'>בדף פריטי האפליקציה</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "קישור זמין",
 				logoSocialExplain: "התאמה אישית של קישור הכותרת.",
 				logoSocialText: "טקסט",
-				logoSocialLink: "קישור"
+				logoSocialLink: "קישור",
+				lblSmallHeader: "השתמש בכותרת מצומצמת (ללא כותרת משנה)"
+			},
+			header: {
+				title: "ערוך את הכותרת של %TPL_NAME%",
+				subtitle: "ערוך את כותרת המשנה של %TPL_NAME%"
 			}
 		}
 	})
-
 );

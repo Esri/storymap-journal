@@ -184,8 +184,9 @@ define(["lib-build/tpl!./Help",
 					+ "<span>",
 					"<span>"
 						+ "<img class='floatright' style='margin-top:10px' src='resources/tpl/builder/icons/builder-help-topic5.png' /><br />"
-						+ i18n.builder.help.content5Div1.replace(/%PORTAL%/g, app.portal.portalName).replace(/%TPL_NAME%/g, app.cfg.TPL_NAME)
-					+ "</span>",
+						+ i18n.builder.help.content5Div1.replace(/%TPL_NAME%/g, app.cfg.TPL_NAME)
+						+ "<br /><br />"
+						+ i18n.builder.help.content5Div2.replace(/%TPL_NAME%/g, app.cfg.TPL_NAME)					+ "</span>",
 					"<span>"
 						+ "<img class='floatright' src='resources/tpl/builder/icons/builder-help-topic6-1.gif' />"
 						+ i18n.builder.help.content6Div1

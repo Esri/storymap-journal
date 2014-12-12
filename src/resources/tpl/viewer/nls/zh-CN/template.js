@@ -70,11 +70,10 @@
 				copy: "复制",
 				copied: "已复制",
 				open: "打开",
-				embed: "嵌入到网站",
-				embedExplain: "使用以下 HTML 代码将日志嵌入到网站。",
+				embed: "嵌入到网页",
+				embedExplain: "使用以下 HTML 代码将日志嵌入到网页。",
 				size: "大小(宽度/高度):"
 			}
         }
     })
-
 );

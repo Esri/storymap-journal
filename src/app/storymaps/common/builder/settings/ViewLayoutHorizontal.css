@@ -11,6 +11,10 @@
  */
 
 .settings-layout-horizontal .layouts {
+	margin-top: 10px;
+}
+
+#settingsPopup .settings-layout-horizontal .layouts {
 	margin-top: 3px;
 }
 
@@ -93,6 +97,10 @@
 	color: #4F4F4F;
 	overflow-y: auto;
 	height: 68px;
+}
+
+#settingsPopup .settings-layout-horizontal .layout-description {
+	height: 88px;
 }
 
 /*

@@ -33,7 +33,7 @@
 				title: "欢迎使用"
 			},
 			addEditPopup: {
-				disabled: "由于允许的部分已达到最大数量，因此禁用“添加部分”。",
+				disabled: "由于允许的部分已达到最大数量，因此禁用\“添加部分\”。",
 				titleAdd: "添加节",
 				titleAddHome: "添加主目录部分",
 				titleEdit: "编辑节",
@@ -45,7 +45,7 @@
 				step2NextTooltip: "输入节标题和 %LAYOUT-TYPE% 内容",
 				stepNextTooltipNext: "要进行下一步",
 				stepNextTooltipAdd: "要添加节",
-				firstAddExplain: "第一部分是主目录部分，可将其看做故事“封面”。刚刚定义的标题将显示为大号字体。",
+				firstAddExplain: "第一部分是主目录部分，可将其看做故事\“封面\”。刚刚定义的标题将显示为大号字体。",
 				firstAddLeanMore: "了解详细信息",
 				titlePlaceholder: "节标题..."
 			},
@@ -85,11 +85,12 @@
 				lblLink: "访问 Esri Story Maps 网站。",
 				content1Div1: "构建故事时，可集成各种风格。<strong>%LAYOUT_TITLE%</strong> 通常在地图要发布在<strong>主要阶段</strong>时会保留文本、图像和视频。但 %TPL_NAME% 也可以在主要阶段中展示图像、图表和视频。",
 				content1Div2: "添加节可以使您真正自定义提供信息的经验。在读者滚动 %LAYOUT_TITLE% 文本时，主要阶段上的地图可平移或缩放至关键点或新地图，图像也可以自动切换以支持消息。",
-				content2Div1: "此处可调整 %TPL_NAME% 的外观。配色方案、布局、宽度和字体均在此处进行优化。",
-				content2Div2: "还可添加至 Facebook、Twitter 和 Bitly 的共享链接，这样读者便可轻松将 %TPL_NAME% 共享给其他人。",
+				content2Div1: "可在\“设置\”对话框中更改 %TPL_NAME% 的外观。更改布局，选择其他配色方案和更改文本字体等等。",
+				content2Div2: "您还可以使用自己的徽标来替换 Esri 徽标，以反映您的品牌。您还可以指定当读者单击您的徽标时将启动的网站，以便读者获取详细信息。",
 				content3Div1: "您的内容将组织成部分。您可拥有任意数量的部分(可将其视为微型章节)。这些章节流十分重要；可在组织内根据需要重新排序或删除部分。",
 				content4Div1: "发现错误或希望更改材料？别担心。在整个应用程序中查找编辑图标，以对内容进行更改。在开发 %TPL_NAME% 时将多次使用编辑功能！",
-				content5Div1: "%TPL_NAME% 将保存在 %PORTAL% 帐户中，默认为私有。您可以决定是与组织共享，还是向全世界开放。我们甚至还为您提供简化的 URL，以便您轻松进行共享。",
+				content5Div1: "保存 %TPL_NAME% 时，最初状态为私有。使用\“共享\”按钮将其共享给其他人。您可以将 %TPL_NAME% 公开共享，这样所有人都可对其进行访问。",
+				content5Div2: "根据您的帐户，您还可以选择将 %TPL_NAME% 仅共享给组织内的人员，这样其他人便无法对其进行访问。",
 				content6Div1: "主目录节的标题也是您日志的标题；将主目录节作为故事的\“封面\”。读者浏览日志时主目录节标题仍然可见。",
 				content6Div2: "您的 %LAYOUT_TITLE% 无需仅包含文字，可考虑将照片和视频包含在内以更加生动地展现故事并断开长篇文本部分!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

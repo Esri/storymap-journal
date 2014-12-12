@@ -45,7 +45,7 @@
 				step2NextTooltip: "Bölüm başlığını ve %LAYOUT-TYPE% içeriğini gir",
 				stepNextTooltipNext: "sonraki adıma gitmek için",
 				stepNextTooltipAdd: "bölüm eklemek için",
-				firstAddExplain: "Bu birinci bölüm Ana Bölümünüzdür, bunu öykünüzün 'kapak sayfası' olarak düşünün. Henüz tanımladığınız başlık büyük yazı tipinde görüntülenecektir.",
+				firstAddExplain: "Bu birinci bölüm Ana Bölümünüzdür, bunu öykünüzün \'kapak sayfası\' olarak düşünün. Henüz tanımladığınız başlık büyük yazı tipinde görüntülenecektir.",
 				firstAddLeanMore: "Daha Fazla Bilgi",
 				titlePlaceholder: "Bölüm başlığı..."
 			},
@@ -85,11 +85,12 @@
 				lblLink: "Esri Story Maps web sitesini ziyaret edin.",
 				content1Div1: "Hikayenizi oluştururken çeşitli stiller kullanabilirsiniz. <strong>%LAYOUT_TITLE%</strong> genellikle metninizi, resimlerinizi ve videonuzu saklar, haritalarınız ise <strong>Ana Aşama</strong> içindedir. Bununla birlikte %TPL_NAME%, size resimleri, grafikleri ve videoyu da ana aşama içinde gösterme olanağı tanır.",
 				content1Div2: "Bölüm ekleme, hikaye aktarma deneyiminizi gerçek anlamda özelleştirmenize olanak tanır. Okuyucular %LAYOUT_TITLE% metninizde ilerledikçe, Ana Aşama üzerindeki bir harita temel noktalara genişleyerek veya yakınlaşarak ya da yeni haritalara ve resimlere otomatik geçiş yaparak mesajınızı destekler.",
-				content2Div1: "%TPL_NAME% görünümünü ayarlayacağınız yer işte burasıdır. Renk şemalarının, düzenlerin, genişliklerin ve yazı tiplerinin tamamı burada hassaslaştırılır.",
-				content2Div2: "Ayrıca Facebook, Twitter ve Bitly paylaşım bağlantıları ekleyerek, okuyucularınızın %TPL_NAME% adınızı kolayca diğerlerine yaymasını sağlayabilirsiniz.",
+				content2Div1: "Ayarlar iletişiminde %TPL_NAME% adınızın görünümünü değiştirebilirsiniz. Düzeni değiştirebilir, farklı bir renk şeması seçebilir, metin yazı tipini değiştirebilirsiniz vb.",
+				content2Div2: "Ayrıca Esri logosunu kendi logonuzla değiştirerek markanızı yansıtabilirsiniz. Ayrıca okuyucular logonuza tıkladığında açılacak web sitesini belirleyebilirsiniz, bu sayede daha fazla bilgi alabilirler.",
 				content3Div1: "İçeriğiniz bölümlere ayrılmıştır. İstediğiniz kadar çok bölüm oluşturabilirsiniz (bunları alt bölümler olarak düşünün). Bu alt bölümlerin akışı önemlidir; bölümleri Düzenle içinden istediğiniz gibi yeniden sıralayabilir veya silebilirsiniz.",
 				content4Div1: "Bir hata mı buldunuz ya da malzemenizi mi değiştirmek istiyorsunuz? Hiç sorun değil. İçeriğinizde değişiklik yapmak için uygulama içinde düzenle simgesini arayın. %TPL_NAME% uygulamanızı geliştirirken düzenleme işlevlerini çok sık kullanacaksınız!",
-				content5Div1: "%TPL_NAME% adınız %PORTAL% hesabınıza kaydedilir ve varsayılan olarak özeldir. Bunu kuruluşunuzla paylaşmayı seçebilir ya da dünyaya açabilirsiniz. Hatta size sunduğumuz kısaltılmış bir URL ile daha kolay paylaşabilirsiniz.",
+				content5Div1: "%TPL_NAME% adınızı kaydettiğinizde, başlangıçta özeldir. Paylaş düğmesini kullanarak bunu başkalarıyla paylaşabilirsiniz. %TPL_NAME% adınızı genel olarak paylaşabilirsiniz, bu sayede verinize herkes erişebilir.",
+				content5Div2: "Hesabınıza bağlı olarak ayrıca %TPL_NAME% adınızı yalnızca kuruluşunuzdaki insanlarla paylaşma seçeneğiniz olabilir, bu sayede başkalarının erişimi olmayacaktır.",
 				content6Div1: "Ana bölümünüzün başlığı ayrıca bülteninizin de başlığıdır. Ana bölümünüzü bülteninizin \'kapak sayfası\' olarak düşünün. Ana Bölüm başlığı, okuyucularınız bültende gezerken görünür kalacaktır.",
 				content6Div2: "%LAYOUT_TITLE% başlığınız yalnızca metin olmak zorunda değildir, fotoğraflar ve videolar da ekleyerek öyküyü daha canlı hale getirebilir ve uzun metin kısımlarını ayırabilirsiniz!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

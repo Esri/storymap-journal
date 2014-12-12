@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Toevoegen",
@@ -28,8 +28,8 @@
 				buttonSettings: "Instellingen",
 				buttonHelp: "Help",
 				buttonPreview: "Live weergeven",
-				tooltipFirstSave: "Deze functie is niet beschikbaar totdat de applicatie wordt opgeslagen",
-				tooltipNotShared: "Deze functie is niet beschikbaar totdat de applicatie wordt gedeeld",
+				tooltipFirstSave: "Dit is niet beschikbaar totdat u opslaat.",
+				tooltipNotShared: "Dit is niet beschikbaar totdat u deelt.",
 				noPendingChange: "Geen wijziging in behandeling",
 				unSavedChangePlural: "Wijzigingen in behandeling",
 				closeWithPendingChange: "Weet u zeker dat u deze actie wilt bevestigen? Uw wijzigingen gaan verloren.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Fout bij het opslaan van de applicatie",
 				err1Div1: "De applicatie kan niet worden opgeslagen omdat u al een ander item hebt met dezelfde naam (controleer uw <a class='linkagolroot' target='_blank'>contentmap</a>).",
-				err1Div2: "Wijzig de titel van de Home-sectie en sla de applicatie op.",
-				btnOk: "De titel van de Home-sectie bewerken"
+				err1Div2: "Wijzig de titel van uw applicatie en sla het op.",
+				btnOk: "De titel van de applicatie bewerken"
 			},
 			share: {
 				firstSaveTitle: "Applicatie is opgeslagen",
@@ -66,7 +66,7 @@
 				shareHeader2: "Uw applicatie is toegankelijk voor leden van uw organisatie (aanmelden is vereist).",
 				shareLinkCopy: "Kopiëren",
 				shareLinkCopied: "Gekopieerd",
-				shareQ0: "Hoe kan ik de applicatie in een website inbedden?",
+				shareQ0: "Hoe kan ik de applicatie in een webpagina inbedden?",
 				shareQ1Opt1: "Hoe kan ik de applicatie privé houden?",
 				shareQ1Opt2: "Hoe kan ik de applicatie privé houden of openbaar delen?",
 				shareA1: "Gebruik %SHAREIMG% op <a href='%LINK1%' target='_blank'>de applicatie-itempagina</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Doorklikkoppeling",
 				logoSocialExplain: "Pas de koppeling voor de koptekst aan.",
 				logoSocialText: "Tekst",
-				logoSocialLink: "Koppeling"
+				logoSocialLink: "Koppeling",
+				lblSmallHeader: "Compact header gebruiken (geen subtitel)"
+			},
+			header: {
+				title: "Bewerk de titel van uw %TPL_NAME%",
+				subtitle: "Bewerk de subtitel van uw %TPL_NAME%"
 			}
 		}
 	})
-
 );

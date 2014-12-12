@@ -85,11 +85,12 @@
 				lblLink: "Apsilankykite Esri pristatomųjų žemėlapių svetainėje.",
 				content1Div1: "Kurdami pasakojimą galite integruoti įvairius stilius. Paprastai <strong>%LAYOUT_TITLE%</strong> pateikiami tekstas, vaizdai ir video, o žemėlapiai dažniausiai būna <strong>pagrindinėje srityje</strong>. Tačiau, naudodami %TPL_NAME%, ir pagrindinėje srityje galite pridėti vaizdų, diagramų ir video.",
 				content1Div2: "Pridėdami skilčių galite labai įvairiai adaptuoti savo pasakojimą. Kai skaitytojai slinks %LAYOUT_TITLE% tekstu, gali būti prastumiamas pagrindinėje srityje esantis žemėlapis ir keičiamas jo mastelis, kad būtų rodomi pagrindiniai taškai arba gali būti automatiškai perjungiami nauji žemėlapiai ir vaizdai, sustiprinantys jūsų pasakojimo įspūdį.",
-				content2Div1: "Čia galite koreguoti, kaip atrodys %TPL_NAME%. Čia priderinamos spalvų schemos, maketai, pločiai ir šriftai.",
-				content2Div2: "Be to, galite pridėti Facebook, Twitter ir Bitly bendrinimo nuorodas, kad skaitytojai galėtų lengvai išplatinti %TPL_NAME% kitiems.",
+				content2Div1: "Nustatymų dialogo lange galite pakeisti savo %TPL_NAME% išvaizdą. Galite pakeisti maketą, pasirinkti kitą spalvų schemą, pakeisti teksto šriftą ir t. t.",
+				content2Div2: "Esri logotipą galite pakeisti savo logotipu. Taip pat galite nurodyti svetainę, kuri bus paleista skaitytojams paspaudus jūsų logotipą, kad jie galėtų gauti daugiau informacijos.",
 				content3Div1: "Turinys tvarkomas dalijant į skiltis. Gali būti kiek tik norite skilčių (galvokite apie jas, kaip apie mažus skyrius). Svarbi šių skyrių seka; dalyje Tvarkymas galite keisti skilčių išdėstymo tvarką arba jas panaikinti, kaip norite.",
 				content4Div1: "Radote klaidą ar norite pakeisti duomenis? Nesirūpinkite. Norėdami pakeisti turinį, ieškokite aplikacijos redagavimo piktogramos. Kurdami %TPL_NAME% daug kartų naudosite redagavimo funkcijas!",
-				content5Div1: "%TPL_NAME% išsaugomas %PORTAL% paskyroje ir pagal numatytuosius nustatymus yra privatus. Galite nuspręsti, ar bendrinti jį organizacijoje, ar pateikti visam pasauliui. Kad galėtumėte lengvai bendrinti, mes netgi pateikiame sutrumpintą URL.",
+				content5Div1: "Kai išsaugote savo %TPL_NAME%, ir pradžių ji yra privati. Norėdami bendrinti su kitais, naudokite bendrinimo mygtuką. Galite %TPL_NAME% bendrinti viešai, kad galėtų pasiekti visi.",
+				content5Div2: "Priklausomai nuo paskyros tipo, galite %TPL_NAME% bendrinti tik su savo organizacijos nariais, kad negalėtų pasiekti kiti.",
 				content6Div1: "Pagrindinės skilties pavadinimas yra ir žurnalo pavadinimas; galvokite apie pagrindinę skiltį kaip apie istorijos antraštinį puslapį. Kai skaitytojai naršys žurnalą, pagrindinės skilties pavadinimas išliks matomas.",
 				content6Div2: "%LAYOUT_TITLE% nebūtinai turi būti tik tekstas. Galbūt verta pridėti nuotraukų ir vaizdo įrašų, kad istorija taptų gyvesnė ir suskaidytų ilgas teksto skiltis!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

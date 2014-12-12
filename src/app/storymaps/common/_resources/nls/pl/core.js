@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Dodaj",
@@ -28,8 +28,8 @@
 				buttonSettings: "Ustawienia",
 				buttonHelp: "Pomoc",
 				buttonPreview: "Wyświetl dane dynamiczne",
-				tooltipFirstSave: "Z tej funkcji można skorzystać dopiero po zapisaniu aplikacji.",
-				tooltipNotShared: "Z tej funkcji można skorzystać dopiero po udostępnieniu aplikacji.",
+				tooltipFirstSave: "Z tego elementu można skorzystać dopiero po zapisaniu.",
+				tooltipNotShared: "Z tego elementu można skorzystać dopiero po udostępnieniu.",
 				noPendingChange: "Brak oczekujących zmian",
 				unSavedChangePlural: "Oczekujące zmiany",
 				closeWithPendingChange: "Czy na pewno chcesz potwierdzić tę operację? Zmiany zostaną utracone.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Błąd podczas zapisywania aplikacji",
 				err1Div1: "Nie można zapisać aplikacji, ponieważ istnieje już inny element o tej samej nazwie (patrz <a class='linkagolroot' target='_blank'>folder zasobów</a>).",
-				err1Div2: "Zmień tytuł sekcji Start i zapisz aplikację.",
-				btnOk: "Edytuj tytuł sekcji Start"
+				err1Div2: "Zmień tytuł aplikacji i zapisz ją.",
+				btnOk: "Edytuj tytuł aplikacji"
 			},
 			share: {
 				firstSaveTitle: "Aplikacja zapisana pomyślnie",
@@ -66,7 +66,7 @@
 				shareHeader2: "Aplikacja jest dostępna dla członków instytucji (wymagane logowanie).",
 				shareLinkCopy: "Kopiuj",
 				shareLinkCopied: "Skopiowane",
-				shareQ0: "Jak mogę osadzić aplikację w witrynie internetowej?",
+				shareQ0: "Jak mogę osadzić aplikację na stronie internetowej?",
 				shareQ1Opt1: "Jak mogę zachować prywatny status aplikacji?",
 				shareQ1Opt2: "W jaki sposób mogę zachować prywatny status aplikacji lub udostępnić ją publicznie?",
 				shareA1: "Użyj przycisku %SHAREIMG% na <a href='%LINK1%' target='_blank'>stronie aplikacji</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "łącze przekierowujące do innej strony",
 				logoSocialExplain: "Dostosuj łącze w nagłówku.",
 				logoSocialText: "Tekst",
-				logoSocialLink: "Łącze"
+				logoSocialLink: "Łącze",
+				lblSmallHeader: "Użyj nagłówka kompaktowego (bez podtytułu)"
+			},
+			header: {
+				title: "Zmień tytuł swojej aplikacji %TPL_NAME%",
+				subtitle: "Zmień podtytuł swojej aplikacji %TPL_NAME%"
 			}
 		}
 	})
-
 );

@@ -70,11 +70,10 @@
 				copy: "Kopeeri",
 				copied: "Kopeeritud",
 				open: "Ava",
-				embed: "Lisa veebisaidile",
-				embedExplain: "Kasutage ajakirja veebisaidile lisamiseks järgmist HTML-koodi.",
+				embed: "Lisa veebilehele",
+				embedExplain: "Kasutage ajakirja veebilehele lisamiseks järgmist HTML-koodi.",
 				size: "Suurus (laius/kõrgus):"
 			}
         }
     })
-
 );

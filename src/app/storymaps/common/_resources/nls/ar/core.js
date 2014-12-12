@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "إضافة",
@@ -18,7 +18,7 @@
 				height: "الارتفاع"
 			},
 			inlineFieldEdit: {
-				editMe: "التحرير!"
+				editMe: "تحرير!"
 			},
 			builderPanel: {
 				panelHeader: "%TPL_NAME% Builder",
@@ -28,8 +28,8 @@
 				buttonSettings: "الإعدادات",
 				buttonHelp: "تعليمات",
 				buttonPreview: "عرض مباشر",
-				tooltipFirstSave: "تكون هذه الوظيفة غير متاحة حتى يتم حفظ التطبيق",
-				tooltipNotShared: "تكون هذه الوظيفة غير متاحة حتى تتم مشاركة التطبيق",
+				tooltipFirstSave: "غير متاح حتى يتم حفظ التطبيق.",
+				tooltipNotShared: "غير متاح حتى يتم حفظ التطبيق.",
 				noPendingChange: "لا يوجد تغيير معلق",
 				unSavedChangePlural: "تغييرات معلقة",
 				closeWithPendingChange: "هل أنت متأكد من تأكيد هذا الإجراء؟ سيتم فقدان التغييرات.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "خطأ في حفظ التطبيق",
 				err1Div1: "يتعذر حفظ التطبيق نظرًا لأنك بالفعل لديك عنصر أخر بنفس الاسم (راجع <a class='linkagolroot' target='_blank'>مجلد المحتوى</a>).",
-				err1Div2: "الرجاء تعديل عنوان قسم الصفحة الرئيسية وحفظ التطبيق.",
-				btnOk: "تحرير عنوان قسم الصفحة الرئيسية"
+				err1Div2: "الرجاء تعديل عنوان التطبيق ثم حفظه.",
+				btnOk: "تحرير عنوان التطبيق"
 			},
 			share: {
 				firstSaveTitle: "تم حفظ التطبيق بنجاح",
@@ -66,7 +66,7 @@
 				shareHeader2: "يمكن الوصول إلى التطبيق من قبل أعضاء المؤسسة (يتطلب تسجيل الدخول).",
 				shareLinkCopy: "نسخ",
 				shareLinkCopied: "تم النسخ",
-				shareQ0: "كيف أقوم بتضمين التطبيق في موقع إلكتروني؟",
+				shareQ0: "كيف أقوم بتضمين التطبيق في صفحة ويب؟",
 				shareQ1Opt1: "كيف يمكن الاحتفاظ بخصوصية التطبيق؟",
 				shareQ1Opt2: "كيف يمكن الاحتفاظ بخصوصية التطبيق أو مشاركته مع الجميع؟",
 				shareA1: "استخدام %SHAREIMG% على <a href='%LINK1%' target='_blank'>صفحة عنصر التطبيق</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "انقر فوق الرابط",
 				logoSocialExplain: "تخصيص رابط العنوان.",
 				logoSocialText: "النص",
-				logoSocialLink: "رابط"
+				logoSocialLink: "رابط",
+				lblSmallHeader: "استخدم عنوان صغير (لا تستخدم عنوان فرعي)"
+			},
+			header: {
+				title: "تحرير عنوان %TPL_NAME%",
+				subtitle: "تحرير العنوان الفرعي لـ %TPL_NAME%"
 			}
 		}
 	})
-
 );

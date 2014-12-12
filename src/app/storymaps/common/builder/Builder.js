@@ -141,22 +141,7 @@ define(["lib-build/css!./Builder",
 			}
 			
 			app.portal.signIn().then(
-				function(){ 
-					// Search for typeKeywords defined in app.cfg.WEBAPP_KEYWORD_APP in webapp item
-					var presentKeywords = $.grep(app.data.getWebAppItem().typeKeywords, function(keyword){ 
-						return $.grep(app.cfg.WEBAPP_KEYWORD_APP, function(keyword2){ return keyword == keyword2; }).length; 
-					});
-					
-					// One or more typeKeywords not present
-					if ( presentKeywords.length != app.cfg.WEBAPP_KEYWORD_APP.length ) {
-						$.each(app.cfg.WEBAPP_KEYWORD_APP, function(i, keyword){
-							// Add the missing keyword
-							if ( ! $.grep(presentKeywords, function(keyword2){ return keyword == keyword2; }).length ) {
-								app.data.getWebAppItem().typeKeywords = app.data.getWebAppItem().typeKeywords.concat(keyword);
-							}
-						});
-					}
-					
+				function(){
 					saveApp(function(response){
 						if (!response || !response.success) {
 							appSaveFailed("APP");
@@ -406,9 +391,36 @@ define(["lib-build/css!./Builder",
 			delete appItem.numViews;
 			delete appItem.size;
 			
+			//
+			// Add/edit the typeKeyword property to be able to identify the app and the layout
+			//
+			
+			if ( ! appItem.typeKeywords )
+				appItem.typeKeywords = [];
+			
+			// App not created through the builder fromScratch mode don't get those keywords
+			appItem.typeKeywords = appItem.typeKeywords.concat(app.cfg.WEBAPP_KEYWORD_APP);
+			
+			// Those should only be necessary to be able to convert an appid that wasn't already selfConfigured
+			appItem.typeKeywords = appItem.typeKeywords.concat(app.cfg.WEBAPP_KEYWORD_GENERIC);
+			
+			// Layout
+			var layouts = $.map(app.cfg.LAYOUTS, function(layout){ return "layout-" + layout.id; });
+			// Filter previous layout keyword
+			appItem.typeKeywords = $.grep(appItem.typeKeywords, function(keyword) {
+				return $.inArray(keyword, layouts) == -1; 
+			});
+			// Add actual layout keyword
+			appItem.typeKeywords.push("layout-" + app.data.getWebAppData().getLayoutId());
+			
+			// Make the typeKeywords array unique
+			appItem.typeKeywords = $.grep(appItem.typeKeywords, function(keyword, index) {
+				return index == $.inArray(keyword, appItem.typeKeywords);
+			});
+			
 			// Transform arrays
 			appItem.tags = appItem.tags ? appItem.tags.join(',') : '';
-			appItem.typeKeywords = appItem.typeKeywords ? appItem.typeKeywords.join(',') : '';
+			appItem.typeKeywords = appItem.typeKeywords.join(',');
 			
 			appItem = lang.mixin(appItem, {
 				f: "json",

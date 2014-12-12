@@ -62,7 +62,7 @@
 				url: "URL de um vídeo do Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "O Diário do Mapa não pode reproduzir vídeos pesados (ex: avi,mpeg), mas ele pode reproduzir arquivos de vídeo hospedados que têm botões de reprodução embutidos (ex: YouTube ou Vimeo).",
+				explain1: "O aplicativo não pode reproduzir vídeos pesados (ex: avi,mpeg), mas ele pode reproduzir arquivos de vídeo hospedados que têm botões de reprodução embutidos (ex: YouTube ou Vimeo).",
 				explain2: "A maioria dos serviços de hospedagem de vídeo online oferecem esste recurso, você tem que encontrar a opção para embutir o vídeo, copiar o código fornecido e utilizar o %WEBPAGE%.",
 				explain3: "Alternativamente, se desejar você mesmo hospedar o vídeo, é possível criar uma página HTML que utiliza um botão de reprodução de vídeo como %EXAMPLE%, hospedar esta página e também utilizar o %WEBPAGE%.",
 				webpage: "Recurso da página da web"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(não cortará)",
 				lblPosition3Explain2: "(a largura sempre se ajustará no painel)",
 				lblPosition4Explain: "(pode distorcer)",
-				unloadLbl: "Descarregar quando o leitor navegar para seção diferente",
-				unloadHelp: "Se a Página da Web tiver mídia de áudio ou vídeo, mantenha esta opção marcada para impedir que o conteúdo seja reproduzido quando o leitor navegar para uma seção diferente. Desmarque-a, por exemplo, para manter a reprodução da trilha sonora conforme o leitor avançar pelo diário.<br /> Se a Página da Web for um aplicativo, desmarque esta opção para que o aplicativo não recarregue se o leitor retornar para esta secção."
+				unloadLbl: "Descarregar quando o leitor navegar",
+				unloadHelp: "Se a Página da Web tiver mídia de áudio ou vídeo, mantenha esta opção marcada para impedir que o conteúdo seja reproduzido quando o leitor navegar. Desmarque-a, por exemplo, para manter a reprodução da trilha sonora conforme o leitor avançar pelo diário.<br /> Se a Página da Web for um aplicativo, desmarque esta opção para que o aplicativo não recarregue se o leitor retornar para ele."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizar um endereço ou lugar",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

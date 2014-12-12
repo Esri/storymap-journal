@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "เพิ่ม",
@@ -66,7 +66,7 @@
 				shareHeader2: "ใบสมัครของคุณสามารถเข้าถึงได้โดยสมาชิกขององค์กรของคุณ (ต้องเข้าสู่ระบบ)",
 				shareLinkCopy: "คัดลอก",
 				shareLinkCopied: "คัดลอก",
-				shareQ0: "ฉันจะฝั่งโปรแกรมประยุกต์ไว้ในเว็บไซต์อย่างไร?",
+				shareQ0: "ฉันจะฝั่งโปรแกรมประยุกต์ไว้ในเว็บไซต์อย่างไร",
 				shareQ1Opt1: "ฉันจะเก็บโปรแกรมนี้เป็นส่วนตัวได้อย่างไร?",
 				shareQ1Opt2: "ฉันจะมีวิธีการประยุกต์ใช้ส่วนตัวหรือแบ่งปันต่อสาธารณชน?",
 				shareA1: "ใช้ %SHAREIMG% on <a href='%LINK1%' target='_blank'>หน้ารายการโปแกรมประยุกต์</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "คลิกผ่านลิ้ง",
 				logoSocialExplain: "แก้ไขหัวของลิ้ง",
 				logoSocialText: "ตัวหนังสือ",
-				logoSocialLink: "ลิงก์"
+				logoSocialLink: "ลิงก์",
+				lblSmallHeader: "ใช้ส่วนบนที่มีขนาดกระทัดรัด (ไม่มีชื่อเรื่อง)"
+			},
+			header: {
+				title: "แก้ไขชื่อเรื่องของคุณ %TPL_NAME%",
+				subtitle: "แก้ไขเนื้อหาด้านล่างของคุณ %TPL_NAME%"
 			}
 		}
 	})
-
 );

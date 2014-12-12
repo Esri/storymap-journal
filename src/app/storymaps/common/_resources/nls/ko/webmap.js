@@ -9,7 +9,9 @@
 				lblControls: "추가",
 				lblOverview: "개요 맵",
 				lblLegend: "범례",
-				loadingTitle: "제목을 로드하는 중",
+				loadingTitle: "제목을 불러오는 중",
+				entry: "항목",
+				entries: "항목",
 				section: "섹션",
 				sections: "섹션",
 				and: "및",
@@ -22,12 +24,14 @@
 				newMap: "새로 선택한 웹 맵",
 				webmapDefault: "웹 맵 기본값",
 				customCfg: "사용자 정의 구성",
-				tooltipLocation: "사용자가 이 섹션으로 이동할 때 사용할 맵 위치를 정의합니다.",
+				tooltipLocation: "이 맵이 표시될 위치를 정의합니다.",
 				tooltipContent: "가시 레이어를 정의합니다.",
-				tooltipPopup: "사용자가 이 섹션으로 이동할 때 표시할 팝업을 선택합니다.",
-				tooltipOverview: "주 맵과 함께 소형 개요보기 맵 표시",
+				tooltipPopup: "이 맵이 표시될 때 열릴 팝업을 선택합니다.",
+				tooltipOverview: "기본 맵과 함께 소형 개요보기 맵을 표시합니다.",
 				tooltipLegend: "레이어 및 심볼이 맵에 많이 포함되어 있는 경우에 유용한 맵 범례를 맵에 표시합니다.",
-				mapCfgInvite: "이 컨트롤을 사용하여 맵 구성"
+				mapCfgInvite: "이 컨트롤을 사용하여 맵 구성",
+				lblLocationAlt: "첫 번째 맵으로부터 상속됨",
+				tooltipLocationAlt: "이 맵의 위치는 맵 시리즈의 첫 번째 맵과 동기화됩니다. 시리즈에 대한 이 동작을 변경하려면 설정 > 맵 옵션으로 이동합니다."
 			},
 			configure: {
 				btnReset: "재설정",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

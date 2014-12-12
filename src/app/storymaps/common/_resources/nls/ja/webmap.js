@@ -10,6 +10,8 @@
 				lblOverview: "概観図",
 				lblLegend: "凡例",
 				loadingTitle: "タイトルを読み込んでいます",
+				entry: "エントリ",
+				entries: "エントリ",
 				section: "セクション",
 				sections: "セクション",
 				and: "および",
@@ -22,12 +24,14 @@
 				newMap: "新しく選択した Web マップ",
 				webmapDefault: "Web マップのデフォルト",
 				customCfg: "カスタム構成",
-				tooltipLocation: "ユーザがこのセクションに移動したときに使用されるマップ位置を定義します。",
+				tooltipLocation: "このマップが表示される場所を定義します。",
 				tooltipContent: "表示レイヤを定義します。",
-				tooltipPopup: "ユーザがこのセクションに移動したときに表示されるポップアップを選択します。",
-				tooltipOverview: "小さな概観図をメイン マップとともに表示します",
+				tooltipPopup: "このマップを表示するときに開くポップアップを選択します。",
+				tooltipOverview: "メインのマップと一緒に小さいオーバービュー マップを表示します。",
 				tooltipLegend: "マップの凡例をマップ上に表示します。マップに多くのレイヤとシンボルが存在する場合に役立ちます。",
-				mapCfgInvite: "これらのコントロールを使用してマップを構成"
+				mapCfgInvite: "これらのコントロールを使用してマップを構成",
+				lblLocationAlt: "最初のマップから継承",
+				tooltipLocationAlt: "このマップの場所は一連のマップ内の最初のマップと同期します。この動作を変更するには、[設定] → [マップ オプション] の順に移動します。"
 			},
 			configure: {
 				btnReset: "リセット",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

@@ -62,7 +62,7 @@
 				url: "URL eines Vimeo-Videos"
 			},
 			videoSelectorOther: {
-				explain1: "Map Journal kann keine unverarbeiteten Videos (z. B. avi, mpeg) wiedergeben. Es kann jedoch gehostete Videodateien mit integrierten Playern (z. B. YouTube oder Vimeo) wiedergeben.",
+				explain1: "Die Anwendung kann keine unverarbeiteten Videos (z. B. avi, mpeg) wiedergeben. Sie kann jedoch gehostete Videodateien mit integrierten Playern (z. B. YouTube oder Vimeo) wiedergeben.",
 				explain2: "Diese Funktion wird von den meisten Online-Services, die Videos hosten, bereitgestellt. Sie müssen die Option zum Einbetten des Videos suchen, den angegebenen Code kopieren und %WEBPAGE% verwenden.",
 				explain3: "Wenn Sie das Video selbst hosten möchten, können Sie auch eine HTML-Seite erstellen, die einen Videoplayer wie %EXAMPLE% verwendet, diese Seite hosten und auch %WEBPAGE% verwenden.",
 				webpage: "Webseitenfunktion"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(Zuschneiden nicht möglich)",
 				lblPosition3Explain2: "(Breite wird immer an das Fenster angepasst)",
 				lblPosition4Explain: "(Verzerren möglich)",
-				unloadLbl: "Wird angehalten, wenn Leser zu einem anderen Abschnitt navigiert",
-				unloadHelp: "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Abschnitt navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen während der Leser durch das Journal blättert.<br />Wenn die Webseite eine Anwendung ist, deaktivieren Sie diese Option, damit die Anwendung nicht erneut geladen wird, wenn der Leser zu diesem Abschnitt zurückkehrt."
+				unloadLbl: "Wird angehalten, wenn Leser zu einem anderen Ort navigiert",
+				unloadHelp: "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Anwendung nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adresse oder Ort suchen",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

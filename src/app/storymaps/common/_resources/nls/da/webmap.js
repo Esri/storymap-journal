@@ -10,6 +10,8 @@
 				lblOverview: "Oversigtskort",
 				lblLegend: "Signaturforklaring",
 				loadingTitle: "Indlæser titel",
+				entry: "Post",
+				entries: "Poster",
 				section: "Sektion",
 				sections: "Sektioner",
 				and: "og",
@@ -22,12 +24,14 @@
 				newMap: "Webkort, der er valgt for nylig",
 				webmapDefault: "Standard-webkort",
 				customCfg: "Tilpasset konfiguration",
-				tooltipLocation: "Defin\ér den kortposition, der skal bruges, når dine læsere navigerer til denne sektion.",
+				tooltipLocation: "Definér den position, som kortet skal vise.",
 				tooltipContent: "Definér synlige lag.",
-				tooltipPopup: "Vælg en pop-up, der skal vises, når dine læsere navigerer til denne sektion.",
+				tooltipPopup: "Vælg en pop-up, der skal åbnes, når kortet bliver vist.",
 				tooltipOverview: "Få vist et lille oversigtskort sammen med hovedkortet.",
 				tooltipLegend: "Få vist signaturforklaringen på kortet. Dette er nyttigt, når kortet har mange lag og symboler.",
-				mapCfgInvite: "Brug disse knapper til at konfigurere kortet"
+				mapCfgInvite: "Brug disse knapper til at konfigurere kortet",
+				lblLocationAlt: "Arvet fra det første kort",
+				tooltipLocationAlt: "Kortets placering synkroniseres med det første kort i serien. Hvis du vil ændre din series funktionsmåde, skal du gå til Indstillinger > Kortindstillinger."
 			},
 			configure: {
 				btnReset: "Nulstil",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

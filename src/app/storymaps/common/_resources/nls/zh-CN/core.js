@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "添加",
@@ -28,8 +28,8 @@
 				buttonSettings: "设置",
 				buttonHelp: "帮助",
 				buttonPreview: "实时查看",
-				tooltipFirstSave: "应用程序保存后，此功能才可用",
-				tooltipNotShared: "应用程序共享后，此功能才可用",
+				tooltipFirstSave: "保存后，此功能才可用。",
+				tooltipNotShared: "共享后，此功能才可用。",
 				noPendingChange: "无待决的更改",
 				unSavedChangePlural: "待决更改",
 				closeWithPendingChange: "是否确定要确认此操作？您的更改将丢失。",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "保存应用程序时出错",
 				err1Div1: "无法保存该应用程序，因为您具有相同名称的其他项目(请参阅您的<a class='linkagolroot' target='_blank'>内容文件夹</a>)。",
-				err1Div2: "请修改主目录节标题并保存应用程序。",
-				btnOk: "编辑主目录节标题"
+				err1Div2: "请修改应用程序标题并将其保存。",
+				btnOk: "编辑应用程序标题"
 			},
 			share: {
 				firstSaveTitle: "应用程序已成功保存",
@@ -66,7 +66,7 @@
 				shareHeader2: "组织成员（需要登录帐户）可访问应用程序。",
 				shareLinkCopy: "复制",
 				shareLinkCopied: "已复制",
-				shareQ0: "如何在网站中嵌入应用程序?",
+				shareQ0: "如何在网页中嵌入应用程序?",
 				shareQ1Opt1: "如何将应用程序设置为私有？",
 				shareQ1Opt2: "如何将应用程序设置为私有或公开共享？",
 				shareA1: "在<a href='%LINK1%' target='_blank'>应用程序项目页面</a>上使用 %SHAREIMG%。",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "点击链接",
 				logoSocialExplain: "自定义标题链接。",
 				logoSocialText: "文本",
-				logoSocialLink: "链接"
+				logoSocialLink: "链接",
+				lblSmallHeader: "使用紧凑型标题(无副标题)"
+			},
+			header: {
+				title: "编辑 %TPL_NAME% 的标题",
+				subtitle: "编辑 %TPL_NAME% 的副标题"
 			}
 		}
 	})
-
 );

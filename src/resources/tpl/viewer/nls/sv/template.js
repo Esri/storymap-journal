@@ -70,11 +70,10 @@
 				copy: "Kopiera",
 				copied: "Kopierad",
 				open: "Öppna",
-				embed: "bädda in på webbplatser",
+				embed: "Bädda in på webbplats",
 				embedExplain: "Använd följande HTML-kod om du vill bädda in journalen på en webbplats.",
 				size: "Storlek (bredd/höjd):"
 			}
         }
     })
-
 );

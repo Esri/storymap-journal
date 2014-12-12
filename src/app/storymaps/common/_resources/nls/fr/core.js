@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Ajouter",
@@ -28,8 +28,8 @@
 				buttonSettings: "Paramètres",
 				buttonHelp: "Aide",
 				buttonPreview: "Voir en direct",
-				tooltipFirstSave: "Cette fonction n\'est pas disponible tant que l\'application n\'est pas enregistrée",
-				tooltipNotShared: "Cette fonction n\'est pas disponible tant que l\'application n\'est pas partagée",
+				tooltipFirstSave: "Cette fonction n\'est pas disponible tant qu\'un enregistrement n\'est pas effectué.",
+				tooltipNotShared: "Cette fonction n\'est pas disponible tant qu\'un partage n\'est pas effectué.",
 				noPendingChange: "Aucune modification en attente",
 				unSavedChangePlural: "Modifications en attente",
 				closeWithPendingChange: "Vouez-vous vraiment confirmer cette opération ? Vos modifications seront perdues.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Erreur d\'enregistrement de l\'application",
 				err1Div1: "Impossible d\'enregistrer l\'application, car un autre élément porte déjà le même nom (consultez votre <a class='linkagolroot' target='_blank'>dossier de contenu</a>).",
-				err1Div2: "Modifiez le titre Section d\'accueil et enregistrez l\'application.",
-				btnOk: "Modifier le titre Section d\'accueil"
+				err1Div2: "Modifiez le titre de votre application et enregistrez-la.",
+				btnOk: "Modifier le titre de l\'application"
 			},
 			share: {
 				firstSaveTitle: "L\'application a été enregistrée",
@@ -66,7 +66,7 @@
 				shareHeader2: "Votre application est accessible par les membres de votre organisation (identifiant de connexion requis).",
 				shareLinkCopy: "Copier",
 				shareLinkCopied: "Copié",
-				shareQ0: "Comment incorporer l\'application dans un site Web ?",
+				shareQ0: "Comment incorporer l\'application dans une page Web ?",
 				shareQ1Opt1: "Comment préserver le caractère privé de l'\'application ?",
 				shareQ1Opt2: "Comment préserver le caractère privé de l\'application ou la partager publiquement ?",
 				shareA1: "Utilisez %SHAREIMG% sur la <a href='%LINK1%' target='_blank'>page des éléments de l\'application</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Lien",
 				logoSocialExplain: "Personnalisez le lien d\'en-tête.",
 				logoSocialText: "Texte",
-				logoSocialLink: "Lien"
+				logoSocialLink: "Lien",
+				lblSmallHeader: "Utiliser un en-tête compact (pas de sous-titre)"
+			},
+			header: {
+				title: "Modifiez le titre de votre %TPL_NAME%",
+				subtitle: "Modifiez le sous-titre de votre %TPL_NAME%"
 			}
 		}
 	})
-
 );

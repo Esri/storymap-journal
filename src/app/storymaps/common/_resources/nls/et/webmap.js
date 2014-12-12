@@ -10,6 +10,8 @@
 				lblOverview: "Ülevaatekaart",
 				lblLegend: "Legend",
 				loadingTitle: "Pealkirja laadimine",
+				entry: "Sissekanne",
+				entries: "Sissekanded",
 				section: "Jaotis",
 				sections: "Jaotised",
 				and: "ja",
@@ -22,12 +24,14 @@
 				newMap: "Vastvalitud veebikaart",
 				webmapDefault: "Veebikaardi vaikeseade",
 				customCfg: "Kohandatud konfiguratsioon",
-				tooltipLocation: "Määratlege kaardil asukoht, mida kasutatakse, kui Teie lugejad liiguvad sellesse jaotisse.",
+				tooltipLocation: "Määratlege sellel kaardil kuvatav asukoht.",
 				tooltipContent: "Määratlege nähtavad kihid.",
-				tooltipPopup: "Valige hüpikaken, mis kuvatakse, kui Teie lugejad liiguvad sellesse jaotisse.",
-				tooltipOverview: "Kuva koos peamise kaardiga väike ülevaatekaart",
-				tooltipLegend: "Kuva kaardil legend, millest on abi siis, kui kaardil on palju kihte ja sümboleid.",
-				mapCfgInvite: "Nende juhtelementide abil saate kaardi konfigureerida"
+				tooltipPopup: "Valige hüpikaken, mis avaneb selle kaardi kuvamisel.",
+				tooltipOverview: "Kuvage koos peamise kaardiga väike ülevaatekaart.",
+				tooltipLegend: "Kuvage kaardil legend, millest on abi siis, kui kaardil on palju kihte ja sümboleid.",
+				mapCfgInvite: "Nende juhtelementide abil saate kaardi konfigureerida",
+				lblLocationAlt: "Pärineb esimeselt kaardilt",
+				tooltipLocationAlt: "Selle kaardi asukoht sünkroniseeritakse sarja esimese kaardiga. Selle toimingu muutmiseks seeria puhul valige Seaded > Kaardi valikud."
 			},
 			configure: {
 				btnReset: "Lähtesta",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

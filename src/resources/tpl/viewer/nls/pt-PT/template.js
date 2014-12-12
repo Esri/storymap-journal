@@ -70,11 +70,10 @@
 				copy: "Copiar",
 				copied: "Copiado",
 				open: "Abrir",
-				embed: "Incorporar em site web",
-				embedExplain: "Utilize o seguinte código HTML para incorporar o Diário num site web.",
+				embed: "Incorporar em página web",
+				embedExplain: "Utilize o seguinte código HTML para incorporar o jornal numa página web.",
 				size: "Tamanho (largura/altura):"
 			}
         }
     })
-
 );

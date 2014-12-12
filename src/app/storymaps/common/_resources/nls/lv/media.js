@@ -62,7 +62,7 @@
 				url: "Vimeo video URL"
 			},
 			videoSelectorOther: {
-				explain1: "Karšu žurnāls nevar atskaņot neapstrādātus video (piemēram, avi, mpeg), bet var atskaņot mitinātus video failus ar iebūvētiem atskaņotājiem (piemēram, YouTube vai Vimeo).",
+				explain1: "Aplikācija nevar atskaņot neapstrādātus video (piemēram, avi, mpeg), bet var atskaņot mitinātus video failus ar iebūvētiem atskaņotājiem (piemēram, YouTube vai Vimeo).",
 				explain2: "Lielākā daļa video mitināšanas pakalpojumu piedāvā šo funkciju, jums ir jāatrod iespēja iedarināt video, nokopēt saņemto kodu un izmantot %WEBPAGE%.",
 				explain3: "Ja video vēlaties mitināt pats, varat arī izveidot HTML lapu, kurā tiek izmantots video atskaņotājs (piemēram, %EXAMPLE%), mitināt šo lapu un arī izmantot %WEBPAGE%.",
 				webpage: "Web lapas funkcija"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(netiks apgriezts)",
 				lblPosition3Explain2: "(platums vienmēr atbildīs panelim)",
 				lblPosition4Explain: "(var tikt izkropļots)",
-				unloadLbl: "Izlādēt, ja lasītājs pārvietojas uz citu sadaļu",
-				unloadHelp: "Ja web lapā ir audio vai video datu nesējs, saglabājiet šo opciju kā atzīmētu, lai tad, kad lasītājs pārvietojas uz citu sadaļu, netiktu demonstrēts saturs. Noņemiet atzīmi, piemēram, gadījumos, ja vēlaties atskaņot skaņu celiņu, kamēr lasītājs pārskata žurnālu.<br />Ja web lapa ir aplikācija, noņemiet šīs opcijas atlasi, lai tad, kad lasītājs atgriežas šajā sadaļā, aplikācija netiktu ielādēta atkārtoti."
+				unloadLbl: "Izlādēt, ja lasītājs pārvietojas uz citurieni",
+				unloadHelp: "Ja web lapā ir audio vai video datu nesējs, saglabājiet šo opciju kā atzīmētu, lai tad, kad lasītājs pārvietojas uz citu vietu, netiktu demonstrēts saturs. Noņemiet atzīmi, piemēram, gadījumos, ja vēlaties atskaņot skaņu celiņu, kamēr lasītājs pārskata stāstu.<br />Ja web lapa ir aplikācija, noņemiet šīs opcijas atlasi, lai tad, kad lasītājs atgriežas tajā, aplikācija netiktu ielādēta atkārtoti."
 			},
 			editorActionGeocode: {
 				lblTitle: "Adreses vai vietas noteikšana",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

@@ -85,11 +85,12 @@
 				lblLink: "Ga naar de website met kaartverhalen van Esri.",
 				content1Div1: "U kunt verschillende stijlen integreren wanneer u uw verhaal opbouwt. De <strong>%LAYOUT_TITLE%</strong> bevat doorgaans uw tekst, afbeeldingen en video terwijl uw kaarten gewoonlijk op het <strong>Hoofdvenster</strong> staan. Met de %TPL_NAME% kunt u echter ook afbeeldingen, diagrammen en video opnemen in het hoofdvenster.",
 				content1Div2: "Door secties toe te voegen, kunt u de manier waarop u uw verhaal vertelt echt aanpassen. Wanneer lezers door uw %LAYOUT_TITLE%-tekst bladeren, kan een kaart op het hoofdvenster pannen of zoomen naar belangrijke punten of kunnen nieuwe kaarten en afbeeldingen automatisch worden in- en uitgeschakeld om uw boodschap te ondersteunen.",
-				content2Div1: "Hier kunt u aanpassen hoe uw %TPL_NAME% eruitziet. Kleurenschema\'s, lay-outs, breedtes en lettertypen kunnen hier worden verfijnd.",
-				content2Div2: "U kunt ook koppelingen om te delen naar Facebook, Twitter en Bitly toevoegen, zodat lezers uw %TPL_NAME% gemakkelijk met anderen kunnen delen.",
+				content2Div1: "In het dialoogvenster Instellingen kunt u het uiterlijk van %TPL_NAME% wijzigen. U kunt de lay-out veranderen, een ander kleurschema kiezen, het lettertype wijzigen, etc.",
+				content2Div2: "U kunt ook het logo van Esri vervangen door uw eigen logo om uw merk te promoten. U kunt ook de website opgeven die wordt geopend als de lezers op uw logo klikken zodat ze meer informatie kunnen krijgen.",
 				content3Div1: "Uw inhoud wordt geordend in secties. U kunt zoveel secties hebben als u maar wilt (beschouw deze als kleine hoofdstukken). De volgorde van deze hoofdstukken is belangrijk; binnen Rangschikken kunt u de secties opnieuw ordenen of verwijderen zoals u dat wilt.",
 				content4Div1: "Hebt u een fout gevonden of wilt u uw materiaal wijzigen? Geen probleem. Zoek naar het bewerkingspictogram dat overal in de app beschikbaar is om wijzigingen in uw inhoud door te voeren. U zult de bewerkingsfuncties vaak gebruiken wanneer u uw %TPL_NAME% ontwikkelt.",
-				content5Div1: "Uw %TPL_NAME% wordt opgeslagen op uw %PORTAL%-account en is standaard privé. U kunt beslissen om dit met uw organisatie te delen of met de hele wereld. We bieden u zelfs een verkorte URL zodat het delen nog makkelijker gaat.",
+				content5Div1: "Als u uw %TPL_NAME% opslaat is dit in eerste instantie privé. Gebruik de knop Delen om het met anderen te delen. U kunt uw %TPL_NAME% publiekelijk delen zodat het toegankelijk is.",
+				content5Div2: "Afhankelijk van uw account heeft u wellicht ook de optie om uw %TPL_NAME% te delen met mensen binnen uw organisatie, zodat anderen er geen toegang tot hebben.",
 				content6Div1: "De titel van uw Home-sectie is tevens de titel van uw journaal. Beschouw uw Home-sectie als de \'voorpagina\' van uw verhaal. De titel van de Home-sectie blijft zichtbaar als uw lezers door het Journaal bladeren.",
 				content6Div2: "Uw %LAYOUT_TITLE% hoeft niet alleen maar uit tekst te bestaan, maar overweeg om foto\'s en video\'s bij te sluiten om het verhaal tot leven te brengen, en om lange stukken tekst te onderbreken!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

@@ -62,7 +62,7 @@
 				url: "Adres URL pliku wideo dostępnego w serwisie Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Dziennik mapy nie jest w stanie odtwarzać zwykłych plików wideo (np. w formacie avi, mpeg), ale może odtwarzać hostowane pliki wideo, w które wbudowane są odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
+				explain1: "Aplikacja nie jest w stanie odtwarzać zwykłych plików wideo (np. w formacie avi, mpeg), ale może odtwarzać hostowane pliki wideo, które mają wbudowane odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
 				explain2: "Funkcja ta jest udostępniana w ramach większości usług hostowania plików wideo w Internecie, konieczne jest znalezienie opcji osadzenia pliku wideo, skopiowanie danego kodu oraz skorzystanie z witryny %WEBPAGE%.",
 				explain3: "Ewentualnie, jeżeli użytkownik chce samodzielnie hostować plik wideo, może utworzyć stronę HTML, w ramach której wykorzystywany będzie odtwarzacz plików wideo, taki jak %EXAMPLE%, hostować tę stronę, a także skorzystać z witryny %WEBPAGE%.",
 				webpage: "Obiekt witryny internetowej"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(obraz nie zostanie przycięty)",
 				lblPosition3Explain2: "(szerokość będzie zawsze dopasowana do panelu)",
 				lblPosition4Explain: "(obraz może zostać zniekształcony)",
-				unloadLbl: "Usuń, gdy czytelnik przechodzi do innej sekcji",
-				unloadHelp: "Gdy na stronie internetowej udostępnione są materiały audio lub wideo, opcja ta powinna być zaznaczona, aby po przejściu czytelnika do innej sekcji odtwarzanie tych treści było przerywane. Opcję tę należy odznaczyć, aby na przykład podczas czytania czasopisma przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli strona internetowa jest aplikacją, opcję tę należy odznaczyć, aby uniknąć ponownego wczytywania tej aplikacji, gdy czytelnik powróci do danej sekcji."
+				unloadLbl: "Usuń, gdy czytelnik przechodzi dalej",
+				unloadHelp: "Gdy na stronie internetowej udostępnione są materiały audio lub wideo, opcja ta powinna być zaznaczona, aby po przejściu czytelnika dalej odtwarzanie tych treści było przerywane. Opcję tę należy wyłączyć, aby na przykład podczas czytania tekstu przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli strona internetowa jest aplikacją, opcję tę należy wyłączyć, aby uniknąć ponownego wczytywania tej aplikacji, gdy czytelnik powróci do niej."
 			},
 			editorActionGeocode: {
 				lblTitle: "Lokalizuj adres lub miejsce",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

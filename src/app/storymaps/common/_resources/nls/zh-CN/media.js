@@ -62,7 +62,7 @@
 				url: "Vimeo 视频的 URL"
 			},
 			videoSelectorOther: {
-				explain1: "地图日志无法播放原始视频(如 avi、mpeg)，但可以播放带有内置播放器的托管视频文件(如 YouTube 或 Vimeo)。",
+				explain1: "应用程序无法播放原始视频(如 avi、mpeg)，但可以播放带有内置播放器的托管视频文件(如 YouTube 或 Vimeo)。",
 				explain2: "大多数在线视频托管服务均提供此功能，您必须查找此选项以嵌入视频，复制给定代码并使用 %WEBPAGE%。",
 				explain3: "或者，如果您希望自己托管视频，则可以创建使用视频播放器(如 %EXAMPLE%)的 HTML 页面，托管此页面并同样使用 %WEBPAGE%。",
 				webpage: "网页要素"
@@ -93,14 +93,14 @@
 				lblPosition3: "适应",
 				lblPosition4: "拉伸",
 				lblPosition5: "自定义",
-				tooltipDimension: "可使用“px”或“%”指定值",
+				tooltipDimension: "可使用 'px' 或 '%' 指定值",
 				tooltipDimension2: "值必须在 'px'中指定",
 				lblPosition2Explain: "（可裁切）",
 				lblPosition3Explain: "（不裁切）",
 				lblPosition3Explain2: "(宽度将始终适应面板)",
 				lblPosition4Explain: "（可变形）",
 				unloadLbl: "读者定位到其他部分时进行卸载",
-				unloadHelp: "如果网页中包含音频或视频介质，请将该选项选中以在读者定位到其他部分时停止内容播放。取消选中该选项可使读者在浏览日志的同时持续播放音轨。<br />如果网页是应用程序，请取消选中该选项，则应用程序不必在读者返回此部分时重新加载。"
+				unloadHelp: "如果网页中包含音频或视频介质，请将该选项选中以在读者定位到其他部分时停止内容播放。取消选中该选项可使读者在浏览故事的同时持续播放音轨。<br />如果网页是应用程序，请取消选中该选项，这样应用程序不必在读者返回此部分时重新加载。"
 			},
 			editorActionGeocode: {
 				lblTitle: "定位地址或地点",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

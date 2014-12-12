@@ -70,11 +70,10 @@
 				copy: "Kopier",
 				copied: "Kopiert",
 				open: "Åpne",
-				embed: "bygge inn på webområde",
+				embed: "Bygg inn på webside",
 				embedExplain: "Bruk følgende HTML-kode for å bygge inn historien på en webside.",
 				size: "Størrelse (bredde/høyde):"
 			}
         }
     })
-
 );

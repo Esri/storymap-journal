@@ -62,10 +62,12 @@ define(["lib-build/tpl!./SidePanelSection",
 				// For Firefox who remember and apply scroll position on page reload
 				setTimeout(function(){
 					container.find('.sections')[0].scrollTop = 0;
-					if ( _isFirstLoad )
-						_selectReady = true;
-					_isFirstLoad = false;
 				}, 0);
+				
+				if ( _isFirstLoad )
+					_selectReady = true;
+				
+				_isFirstLoad = false;
 				
 				// For IE11 that can't seems to hide the scrollbar otherwise
 				setTimeout(function(){
@@ -232,7 +234,10 @@ define(["lib-build/tpl!./SidePanelSection",
 				
 				container.show();
 				setTimeout(function(){
-					container.find(".sections").focus();
+					// If not in a frame, focus the panel so that keyboard events works
+					if ( window.self === window.top )
+						container.find(".sections").focus();
+					
 					loadVisibleIframe();
 				}, 0);
 			}

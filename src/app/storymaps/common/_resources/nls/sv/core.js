@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Lägg till",
@@ -28,8 +28,8 @@
 				buttonSettings: "Inställningar",
 				buttonHelp: "Hjälp",
 				buttonPreview: "Visa live",
-				tooltipFirstSave: "Den här funktionen finns inte tillgänglig förrän applikationen sparas",
-				tooltipNotShared: "Den här funktionen finns inte tillgänglig förrän applikationen delas",
+				tooltipFirstSave: "Funktionen finns inte tillgänglig förrän du sparar.",
+				tooltipNotShared: "Funktionen finns inte tillgänglig förrän du delar.",
 				noPendingChange: "Ingen väntande ändring",
 				unSavedChangePlural: "Väntande ändringar",
 				closeWithPendingChange: "Är du säker på att du vill bekräfta åtgärden? Dina ändringar sparas inte.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Det gick inte att spara applikationen",
 				err1Div1: "Det går inte att spara applikationen eftersom du redan har ett annat objekt med samma namn (se din <a class='linkagolroot' target='_blank'>innehållsmapp</a>).",
-				err1Div2: "Ändra titeln på startavsnittet och spara applikationen.",
-				btnOk: "Redigera titeln på startavsnittet"
+				err1Div2: "Ändra titeln på applikationen och spara den sedan.",
+				btnOk: "Redigera titeln på applikationen"
 			},
 			share: {
 				firstSaveTitle: "Applikationen har sparats",
@@ -66,7 +66,7 @@
 				shareHeader2: "Din applikation är tillgänglig för organisationens medlemmar (inloggning krävs).",
 				shareLinkCopy: "Kopiera",
 				shareLinkCopied: "Kopierad",
-				shareQ0: "Hur bäddar jag in applikationen på en webbplats?",
+				shareQ0: "Hur bäddar jag in applikationen i en webbsida?",
 				shareQ1Opt1: "Hur behåller jag applikationen privat?",
 				shareQ1Opt2: "Hur behåller jag applikationen privat eller delar den publikt?",
 				shareA1: "Använd %SHAREIMG% på <a href='%LINK1%' target='_blank'>applikationens objektsida</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Genomklickningslänkar",
 				logoSocialExplain: "Anpassa rubriklänken.",
 				logoSocialText: "Text",
-				logoSocialLink: "Länk"
+				logoSocialLink: "Länk",
+				lblSmallHeader: "Använd kompakt rubrik (ingen undertitel)"
+			},
+			header: {
+				title: "Redigera titel för %TPL_NAME%",
+				subtitle: "Redigera undertitel för %TPL_NAME%"
 			}
 		}
 	})
-
 );

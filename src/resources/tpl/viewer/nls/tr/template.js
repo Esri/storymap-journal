@@ -70,11 +70,10 @@
 				copy: "Kopyala",
 				copied: "Kopyalandı",
 				open: "Aç",
-				embed: "Web sitesinin içine yerleştir",
-				embedExplain: "Bülteni bir web sitesinin içine yerleştirmek için aşağıdaki HTML kodunu kullanın.",
+				embed: "Web sayfasının içine yerleştir",
+				embedExplain: "Bülteni bir web sayfasının içine yerleştirmek için aşağıdaki HTML kodunu kullanın.",
 				size: "Boyut (genişlik/yükseklik):"
 			}
         }
     })
-
 );

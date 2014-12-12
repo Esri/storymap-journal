@@ -85,11 +85,12 @@
 				lblLink: "Besök webbplatsen för Esris berättelsekartor.",
 				content1Div1: "Du kan integrera flera olika stilar när du skapar din berättelse. <strong>%LAYOUT_TITLE%</strong> innehåller text, bilder och videoklipp medan kartorna oftast hamnar i <strong>huvudscenen</strong>. Med %TPL_NAME% kan du dock ta med bilder, tabeller och videoklipp även i huvudscenen.",
 				content1Div2: "Genom att lägga till avsnitt kan du anpassa berättelseupplevelsen. När användarna bläddrar igenom %LAYOUT_TITLE%-texten kan en karta i huvudscenen panorera eller zooma till viktiga punkter, eller så kan nya kartor och bilder växlas automatiskt för att understryka ditt budskap.",
-				content2Div1: "Här kan du ändra utseendet för %TPL_NAME%. Färgscheman, layout, bredd och teckensnitt ställs in här.",
-				content2Div2: "Du kan även lägga till delningslänkar till Facebook, Twitter och Bitly så att användarna enkelt kan sprida din %TPL_NAME% till andra.",
+				content2Div1: "I dialogrutan Inställningar kan du ändra utseendet för %TPL_NAME%. Du kan ändra layout, välja ett annat färgschema, ändra teckensnitt o.s.v.",
+				content2Div2: "Du kan även byta ut Esri-logotypen mot din egen logotyp för att visa ditt varumärke. Du kan också ange vilken webbplats som ska öppnas när läsarna klickar på logotypen så att de kan få mer information.",
 				content3Div1: "Ditt innehåll är ordnat i avsnitt. Du kan ha så många avsnitt du vill (tänk dig dem som minikapitel). Flödet för kapitlen är viktigt. Med Organisera kan du ändra ordning på eller ta bort avsnitt som du vill.",
 				content4Div1: "Har du hittat ett fel eller vill du ändra ditt material? Inga problem. Titta efter redigeringsikonen i appen om du vill göra ändringar i innehållet. Du kommer att använda redigeringsfunktionerna många gånger medan du utvecklar din %TPL_NAME%!",
-				content5Div1: "Din %TPL_NAME% sparas i ditt %PORTAL%-konto. Som standard är den privat, men du kan välja att dela den med din organisation eller låta den vara öppen för världen. Vi tillhandahåller till och med en förkortad URL för att det ska vara enklare att dela.",
+				content5Div1: "När du sparar din %TPL_NAME% är den privat i början. Använd knappen Dela om du vill dela den med andra. Du kan dela din %TPL_NAME% offentligt så alla kan komma åt den.",
+				content5Div2: "Beroende på konto kanske du också kan dela din %TPL_NAME% enbart med personer inom din organisation så att andra inte kommer åt den.",
 				content6Div1: "Titeln på startavsnittet är också titeln på din journal. Du kan tänka dig startavsnittet som försättsbladet för din berättelse. Titeln på startavsnittet fortsätter att visas när läsarna navigerar i journalen.",
 				content6Div2: "Din %LAYOUT_TITLE% behöver inte bara bestå av text, du kan även ta med foton och videoklipp för att göra berättelsen mer levande och dela upp långa stycken text!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

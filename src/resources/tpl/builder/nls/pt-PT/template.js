@@ -85,11 +85,12 @@
 				lblLink: "Visite o site web Story Maps.",
 				content1Div1: "Pode integrar vários estilos ao construir a sua história. O <strong>%LAYOUT_TITLE%</strong> contém tipicamente o seu texto, imagens e vídeo, enquanto os seus mapas tendem a estar no <strong>Ecrã Principal</strong>. No entanto, o %TPL_NAME% permite-lhe também apresentar imagens, gráficos e vídeos no ecrã principal.",
 				content1Div2: "Adicionar secções permite-lhe verdadeiramente personalizar a sua experiência de storytelling. À medida que os leitores fazem scroll para baixo no seu texto %LAYOUT_TITLE%, um mapa no Ecrã Principal permite mover ou ampliar para pontos importantes, ou novos mapas e imagens podem ser automaticamente carregados para enfatizar a sua mensagem.",
-				content2Div1: "Aqui está onde pode ajustar o aspeto do seu %TPL_NAME%. Esquemas de cores, layouts, larguras e tipos de letra são refinados aqui.",
-				content2Div2: "Pode ainda adicionar ligações de partilha no Facebook, Twitter e Bitly para que os leitores possam facilmente partilhar o seu %TPL_NAME% com outros.",
+				content2Div1: "Esta caixa de diálogo de Definições é onde pode alterar o aspeto do seu %TPL_NAME%. Pode alterar o layout, escolher um esquema de cores diferente, alterar o tipo de letra, etc.",
+				content2Div2: "Pode ainda substituir o logo da Esri pelo seu próprio logo para espelhar a sua marca. Pode também especificar o site web que será iniciado se os leitores clicarem no seu logo, para que possam obter mais informações.",
 				content3Div1: "O seu conteúdo é organizado em secções. Pode ter quantas secções pretender (pense nelas como mini-capítulos). O fluxo desses capítulos é importante; em Organizar, pode reordenar ou eliminar secções à sua vontade.",
 				content4Div1: "Encontrou um erro ou pretende alterar o seu material? Sem problema. Procure o ícone de edição em toda a sua aplicação para efetuar alterações ao seu conteúdo. Utilizará as funções de edição muitas vezes à medida que desenvolve o seu %TPL_NAME%!",
-				content5Div1: "O seu %TPL_NAME% encontra-se guardado na conta do seu %PORTAL% e éprivado por defeito. Pode decidir partilhá-lo com a sua organização ou abri-lo ao mundo. Até lhe fornecemos um URL curto para poder partilhar facilmente.",
+				content5Div1: "Guando guarda o seu %TPL_NAME% este é privado inicialmente. Utilize o botão Partilhar para o partilhar com outros. Pode partilhar o seu %TPL_NAME% publicamente para que toda a gente possa aceder-lhe.",
+				content5Div2: "Dependendo do seu tipo de conta, poderá também ter a opção de partilhar o seu %TPL_NAME% apenas com pessoas no interior da sua organização, para que outros possam aceder-lhe.",
 				content6Div1: "O título da sua Secção Inicial é também o título do seu Jornal; pense na sua secção inicial como a capa da sua história. O título da Secção Inicial manter-se-á visível quando os seus leitores navegarem pelo Jornal´.",
 				content6Div2: "O seu %LAYOUT_TITLE% não tem de ter apenas texto. Considere incluir fotografias e vídeos para ajudar a dar vida à história e para quebrar secções longas de texto!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

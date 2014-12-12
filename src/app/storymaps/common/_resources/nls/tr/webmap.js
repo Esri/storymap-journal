@@ -10,6 +10,8 @@
 				lblOverview: "Genel Bakış Haritası",
 				lblLegend: "Gösterim",
 				loadingTitle: "Başlık yükleniyor",
+				entry: "Giriş",
+				entries: "Girişler",
 				section: "Bölüm",
 				sections: "Bölümler",
 				and: "ve",
@@ -22,12 +24,14 @@
 				newMap: "Yeni seçilen web haritası",
 				webmapDefault: "Web haritası varsayılanı",
 				customCfg: "Özel yapılandırma",
-				tooltipLocation: "Okuyucularınız bu bölüme geldiğinde kullanılacak harita konumunu tanımlayın.",
+				tooltipLocation: "Bu haritanın görüntüleyeceği konumu tanımlayın.",
 				tooltipContent: "Görünür katmanları tanımlayın.",
-				tooltipPopup: "Okuyucularınız bu bölüme geldiğinde görüntülenecek bir açılır pencere seçin.",
-				tooltipOverview: "Ana harita boyunca küçük bir genel bakış haritası görüntüle.",
+				tooltipPopup: "Bu harita görüntülendiğinde açılacak bir açılır pencere seçin.",
+				tooltipOverview: "Ana haritayla birlikte küçük bir genel bakış haritası görüntüleyin.",
 				tooltipLegend: "Harita gösterimini harita üzerinde görüntüleyin, haritada bir çok katman ve sembol olduğunda yararlıdır.",
-				mapCfgInvite: "Haritanızı yapılandırmak için şu denetimleri kullanın"
+				mapCfgInvite: "Haritanızı yapılandırmak için şu denetimleri kullanın",
+				lblLocationAlt: "Bu haritadan alındı",
+				tooltipLocationAlt: "Bu haritanın konumu dizideki birinci harita ile eşitlenir. Dizileriniz için bu davranışı değiştirmek amacıyla Ayarlar > Harita Seçenekleri\'ne gidin."
 			},
 			configure: {
 				btnReset: "Sıfırla",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

@@ -62,7 +62,7 @@
 				url: "URL van een Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Het Kaartjournaal kan geen onbewerkte video afspelen (zoals avi of mpeg), maar het kan wel gehoste videobestanden met ingebouwde spelers afspelen (zoals YouTube of Vimeo).",
+				explain1: "De applicatie kan geen onbewerkte video afspelen (zoals avi of mpeg), maar het kan wel gehoste videobestanden met ingebouwde spelers afspelen (zoals YouTube of Vimeo).",
 				explain2: "De meeste online videoservices bieden deze functie. U moet de optie vinden om de video in te kunnen sluiten, de verstrekte code kopieren en de %WEBPAGE% gebruiken.",
 				explain3: "Als u de video zelf wilt hosten, kunt u een HTML-pagina maken die een videospeler gebruikt zoals %EXAMPLE%. Host die pagina en gebruik tevens de %WEBPAGE%.",
 				webpage: "Functie webpagina"
@@ -99,8 +99,8 @@
 				lblPosition3Explain: "(wordt niet bijgesneden)",
 				lblPosition3Explain2: "(breedte past altijd in het deelvenster)",
 				lblPosition4Explain: "(kan worden vervormd)",
-				unloadLbl: "Laden ongedaan maken als de lezer naar een andere sectie gaat",
-				unloadHelp: "Als de webpagina audio of video bevat, laat u deze optie aangevinkt om het afspelen van deze inhoud te stoppen wanneer de lezer naar een andere sectie gaat. Vink de optie uit als u bijvoorbeeld wilt dat een soundtrack blijft spelen wanneer de lezer door het journaal bladert.<br />Als de webpagina een applicatie is, vinkt u deze optie uit zodat de applicatie niet opnieuw wordt geladen als de lezer terugkeert naar die sectie."
+				unloadLbl: "Laden ongedaan maken als de lezer weggaat",
+				unloadHelp: "Als de webpagina audio of video bevat, laat u deze optie aangevinkt om het afspelen van deze inhoud te stoppen wanneer de lezer naar een andere sectie gaat. Vink de optie uit als u bijvoorbeeld wilt dat een soundtrack blijft spelen wanneer de lezer door het verhaal bladert.<br />Als de webpagina een applicatie is, vinkt u deze optie uit zodat de applicatie niet opnieuw wordt geladen als de lezer er naar terugkeert."
 			},
 			editorActionGeocode: {
 				lblTitle: "Een adres of plaats zoeken",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

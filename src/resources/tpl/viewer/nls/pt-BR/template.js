@@ -70,11 +70,10 @@
 				copy: "Copiar",
 				copied: "Copiado",
 				open: "Abrir",
-				embed: "Anexar no site da web",
-				embedExplain: "Utilize o seguinte código HTML para anexar o diário em um site da web.",
+				embed: "Anexar na página da web",
+				embedExplain: "Utilize o seguinte código HTML para anexar o diário em uma página da web.",
 				size: "Tamanho (largura/altura):"
 			}
         }
     })
-
 );

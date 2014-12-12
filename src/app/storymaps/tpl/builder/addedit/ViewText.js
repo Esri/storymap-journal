@@ -5,9 +5,7 @@ define(["lib-build/tpl!./ViewText",
 		"storymaps/common/builder/ckeditor/plugins/storymapsInlineMedia/dialog/Media",
 		"../../ui/StoryText",
 		"storymaps/common/utils/CommonHelper",
-		"dojo/topic",
-		"lib-app/bootstrap-datetimepicker/js/bootstrap-datetimepicker",
-		"lib-build/css!lib-app/bootstrap-datetimepicker/css/bootstrap-datetimepicker"], 
+		"dojo/topic"], 
 	function (
 		viewTpl,
 		viewCss,
@@ -567,7 +565,7 @@ define(["lib-build/tpl!./ViewText",
 					// Other elements are inserted as plain text
 					// See http://docs.ckeditor.com/#!/guide/dev_allowed_content_rules
 					// *{*}; to allow any style
-					extraAllowedContent: 'h1 h2 h3 h4 h5 h6 table tr th td caption div span img figure figcaption iframe; *(*); *[*]; a[data-*]',
+					extraAllowedContent: 'h1 h2 h3 h4 h5 h6 sub sup table tr th td caption div span img figure figcaption iframe; *(*); *[*]; a[data-*]',
 					// Elements to be removed when executing the "remove " format" command
 					removeFormatTags: 
 						// Default

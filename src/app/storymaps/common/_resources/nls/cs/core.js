@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Přidat",
@@ -28,8 +28,8 @@
 				buttonSettings: "Nastavení",
 				buttonHelp: "Nápověda",
 				buttonPreview: "Živý náhled",
-				tooltipFirstSave: "Tato funkce nebude k dispozici, dokud nebude aplikace uložena.",
-				tooltipNotShared: "Tato funkce není k dispozici, dokud aplikace nebude sdílena.",
+				tooltipFirstSave: "Tato funkce není k dispozici, dokud aplikaci neuložíte.",
+				tooltipNotShared: "Tato funkce není k dispozici, dokud aplikaci nenasdílíte.",
 				noPendingChange: "Žádná neuložená změna",
 				unSavedChangePlural: "Neuložené změny",
 				closeWithPendingChange: "Opravdu chcete potvrdit tuto akci? Vaše změny budou ztraceny.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Chyba při ukládání aplikace",
 				err1Div1: "Aplikaci nelze uložit, protože již máte uloženou položku se stejným názvem (viz vaše <a class='linkagolroot' target='_blank'>složka obsahu</a>).",
-				err1Div2: "Změňte název domovské části a uložte aplikaci.",
-				btnOk: "Upravit název domovské části"
+				err1Div2: "Změňte název aplikace a uložte ji.",
+				btnOk: "Změňte název aplikace."
 			},
 			share: {
 				firstSaveTitle: "Aplikace úspěšně uložena",
@@ -66,7 +66,7 @@
 				shareHeader2: "Vaše aplikace je přístupná členům vaší organizace (je vyžadováno přihlášení).",
 				shareLinkCopy: "Kopírovat",
 				shareLinkCopied: "Zkopírováno",
-				shareQ0: "Jak vložím aplikaci do webových stránek?",
+				shareQ0: "Jak vložím aplikaci do webové stránky?",
 				shareQ1Opt1: "Jak lze aplikaci ponechat jako soukromou?",
 				shareQ1Opt2: "Jak lze aplikaci ponechat jako soukromou nebo ji veřejně sdílet?",
 				shareA1: "Použijte %SHAREIMG% na <a href='%LINK1%' target='_blank'>stránce položek aplikace</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Odkaz při kliknutí na obrázek",
 				logoSocialExplain: "Odkaz v záhlaví si můžete přizpůsobit.",
 				logoSocialText: "Text",
-				logoSocialLink: "Odkaz"
+				logoSocialLink: "Odkaz",
+				lblSmallHeader: "Použít kompaktní záhlaví (bez podnázvu)"
+			},
+			header: {
+				title: "Změňte název šablony %TPL_NAME%.",
+				subtitle: "Změňte podnázev šablony %TPL_NAME%."
 			}
 		}
 	})
-
 );

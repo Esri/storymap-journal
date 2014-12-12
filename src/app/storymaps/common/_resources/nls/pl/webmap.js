@@ -10,6 +10,8 @@
 				lblOverview: "Mapa przeglądowa",
 				lblLegend: "Legenda",
 				loadingTitle: "Wczytywanie tytułu",
+				entry: "Wpis",
+				entries: "Wpisy",
 				section: "Sekcja",
 				sections: "Sekcje",
 				and: "i",
@@ -22,12 +24,14 @@
 				newMap: "Nowo wybrana mapa internetowa",
 				webmapDefault: "Domyślne ustawienia mapy",
 				customCfg: "Konfiguracja niestandardowa",
-				tooltipLocation: "Określ lokalizację na mapie, która będzie używana, gdy przeglądający ją użytkownicy przejdą do tej sekcji.",
+				tooltipLocation: "Określ lokalizację do wyświetlania przez tę mapę.",
 				tooltipContent: "Określ widoczne warstwy.",
-				tooltipPopup: "Wybierz okno podręczne, które ma być wyświetlane po przejściu użytkowników do tej sekcji.",
-				tooltipOverview: "Wyświetl w rogu niewielką mapę przeglądową razem z mapą główną",
+				tooltipPopup: "Wybierz okno podręczne, które zostanie otwarte w momencie wyświetlenia tej mapy.",
+				tooltipOverview: "Wyświetl małą mapę przeglądową wraz z mapą główną.",
 				tooltipLegend: "Wyświetl legendę mapy, przydaje się ona, gdy mapa ma wiele warstw i symboli.",
-				mapCfgInvite: "Użyj tych kontrolek do konfiguracji mapy"
+				mapCfgInvite: "Użyj tych kontrolek do konfiguracji mapy",
+				lblLocationAlt: "Przejęte z pierwszej mapy",
+				tooltipLocationAlt: "Lokalizacja tej mapy została zsynchronizowana z pierwszej mapą w serii. Aby zmienić to zachowanie serii przejdź do menu Ustawienia > Opcje mapy."
 			},
 			configure: {
 				btnReset: "Resetuj",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

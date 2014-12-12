@@ -85,11 +85,12 @@
 				lblLink: "Gå til Esri-webområdet for historiekart.",
 				content1Div1: "Du kan integrere en lang rekke ulike stiler når du bygger opp historien din. <strong>%LAYOUT_TITLE%</strong> inneholder vanligvis teksten din, bildene og videoene dine, mens kartene dine vanligvis havner på <strong>hovedstadiet</strong>. %TPL_NAME% gjør imidlertid at du kan ta med bilder, diagrammer og videoklipp på hovedstadiet, også.",
 				content1Div2: "Ved å legge til seksjoner kan du virkelig tilpasse historieopplevelsen. Etter hvert som leserne ruller gjennom %LAYOUT_TITLE%-teksten din, kan du gjøre slik at de ser et kart på hovedstadiet der det panoreres eller zoomes inn til viktige punkter, eller det kan lastes inn nye kart og bilder automatisk for å underbygge budskapet ditt.",
-				content2Div1: "Her kan du justere hvordan %TPL_NAME% skal se ut. Du kan finjustere fargevalg, oppsett, bredder og skrifter her.",
-				content2Div2: "I tillegg kan du legge til delingskoblinger til Facebook, Twitter og Bitly, slik at leserne enkelt kan fortelle andre om %TPL_NAME%.",
+				content2Div1: "I dialogboksen Innstillinger kan du endre utseendet på din %TPL_NAME%. Du kan endre oppsett, velge et annet fargeoppsett, endre skrifter, osv.",
+				content2Div2: "Du kan også bytte ut Esri-logoen med din egen logo for å fremheve varemerket ditt. I tillegg kan du angi hvilken webside som skal åpnes hvis leserne klikker på logoen din, slik at de kan få mer informasjon.",
 				content3Div1: "Innholdet ditt er organisert i seksjoner. Du kan ha så mange seksjoner du vil (se på dem som minikapitler). Flyten til disse kapitlene er viktig. Derfor kan du ved å klikke på Organiser endre rekkefølgen på seksjoner eller slette seksjoner hvis du ønsker.",
 				content4Div1: "Har du funnet en feil eller ønsker å endre materialet? Ikke noe problem. Se etter redigeringsikonet i programmet for å gjøre endringer av innholdet. Du kommer til å bruke redigeringsfunksjonene mange ganger etter hvert som du utvikler %TPL_NAME%!",
-				content5Div1: "%TPL_NAME% lagres i %PORTAL%-kontoen din og er som standard privat. Du kan bestemme om du vil dele den bare med organisasjonen, eller om den skal være åpen for alle. Vi gir deg til og med en forkortet, stabil URL-adresse som du enkelt kan dele.",
+				content5Div1: "Når du lagrer din %TPL_NAME%, er den som standard privat. Du kan bruke delingsknappen for å dele den med andre. Du kan dele din %TPL_NAME% offentlig, slik at den er tilgjengelig for alle.",
+				content5Div2: "Avhengig av hvilken konto du har, kan det hende du også har muligheten til å dele din %TPL_NAME% bare med personer i organisasjonen din, slik at andre ikke har tilgang til den.",
 				content6Div1: "Tittelen på startseksjonen er også tittelen på historien. Se på startseksjonen som fortellingens forside. Tittelen på startseksjonen forblir synlig når leserne navigerer i historiekartet.",
 				content6Div2: "Din %LAYOUT_TITLE% må ikke bare være tekst, så vurder å bruke bilder og videoer for å gjøre fortellingen levende, og å bryte opp store deler med tekst!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

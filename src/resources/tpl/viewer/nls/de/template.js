@@ -70,11 +70,10 @@
 				copy: "Kopieren",
 				copied: "Kopiert",
 				open: "Öffnen",
-				embed: "In Website einbetten",
-				embedExplain: "Verwenden Sie den folgenden HTML-Code, um das Journal in eine Website einzubetten.",
+				embed: "In Webseite einbetten",
+				embedExplain: "Verwenden Sie den folgenden HTML-Code, um das Journal in eine Webseite einzubetten.",
 				size: "Größe (Breite/Höhe):"
 			}
         }
     })
-
 );

@@ -10,6 +10,8 @@
 				lblOverview: "鹰眼图",
 				lblLegend: "图例",
 				loadingTitle: "加载标题",
+				entry: "条目",
+				entries: "条目",
 				section: "节",
 				sections: "节",
 				and: "和",
@@ -22,12 +24,14 @@
 				newMap: "新选择的 web 地图",
 				webmapDefault: "默认 Web 地图",
 				customCfg: "自定义配置",
-				tooltipLocation: "定义读者导航到此部分时所用的地图位置。",
+				tooltipLocation: "定义此地图将显示的位置。",
 				tooltipContent: "定义可见图层。",
-				tooltipPopup: "选择读者导航到此节时要显示的弹出窗口。",
-				tooltipOverview: "显示主地图的同时显示一个小鹰眼图",
+				tooltipPopup: "选择显示此地图时将打开的弹出窗口。",
+				tooltipOverview: "显示主地图的同时显示一个小总览图。",
 				tooltipLegend: "在地图上显示地图图例，地图具有许多图层和符号的情况下非常有用。",
-				mapCfgInvite: "使用这些控件来配置地图"
+				mapCfgInvite: "使用这些控件来配置地图",
+				lblLocationAlt: "继承自第一张地图",
+				tooltipLocationAlt: "此地图的位置与系列中的第一张地图保持同步。要更改系列的此行为，请转到\“设置 > 地图选项\”。"
 			},
 			configure: {
 				btnReset: "重置",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

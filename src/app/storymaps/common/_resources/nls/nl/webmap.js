@@ -10,6 +10,8 @@
 				lblOverview: "Overzichtskaart",
 				lblLegend: "Legenda",
 				loadingTitle: "Titel laden",
+				entry: "Invoer",
+				entries: "Invoer",
 				section: "Sectie",
 				sections: "Secties",
 				and: "en",
@@ -22,12 +24,14 @@
 				newMap: "Nieuw geselecteerde webmap",
 				webmapDefault: "Standaard van webmap",
 				customCfg: "Aangepaste configuratie",
-				tooltipLocation: "Definieer de kaartlocatie die zal worden gebruikt wanneer uw lezers naar deze sectie gaan.",
+				tooltipLocation: "Definieer de locatie die deze kaart zal weergeven.",
 				tooltipContent: "Definieer de zichtbare kaartlagen.",
-				tooltipPopup: "Kies een pop-up die moet worden weergegeven wanneer uw lezers naar deze sectie gaan.",
-				tooltipOverview: "Geef een kleine overzichtskaart weer samen met de hoofdkaart",
+				tooltipPopup: "Kies een pop-up die moet worden geopend als deze kaart wordt weergegeven.",
+				tooltipOverview: "Geef een kleine overzichtskaart weer samen met de hoofdkaart.",
 				tooltipLegend: "Geef de kaartlegenda weer op de kaart. Dit is handig als de kaart verschillende lagen en symbolen heeft.",
-				mapCfgInvite: "Gebruik deze bedieningselementen om uw kaart te configureren"
+				mapCfgInvite: "Gebruik deze bedieningselementen om uw kaart te configureren",
+				lblLocationAlt: "Overgenomen van de eerste kaart",
+				tooltipLocationAlt: "De locatie van deze kaart is gesynchroniseerd met de eerste kaart in de serie. Om dit gedrag te wijzigen voor uw serie gaat u naar Instellingen > Kaartopties."
 			},
 			configure: {
 				btnReset: "Opnieuw instellen",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

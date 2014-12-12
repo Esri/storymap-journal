@@ -85,11 +85,12 @@
 				lblLink: "Külastage Esri kaardilugude veebisaiti.",
 				content1Div1: "Artikli koostamisel saate kaasata mitmesuguseid laade. <strong>%LAYOUT_TITLE%</strong> sisaldab enamasti teksti, pilte ja videoid, kaardid aga asuvad <strong>põhisektsioonis</strong>. %TPL_NAME% lubab teil siiski ka pilte, diagramme ja videot põhisektsioonis kasutada.",
 				content1Div2: "Jaotiste lisamisega saate oma loo jutustada täpselt nii, nagu soovite. Kui lugeja liigub jaotise %LAYOUT_TITLE% tekstis kerides allapoole, saate põhisektsioonis kaarti liigutada või olulisi kohti suuremana näidata; samuti saab Teie sõnumi toetamiseks automaatselt uusi kaarte ja pilte sisse ja välja lülitada.",
-				content2Div1: "Siin saate kohandada malli %TPL_NAME% ilmet. Muuhulgas saate siin määratleda värviskeemid, paigutused, laiused ja fondid.",
-				content2Div2: "Samuti saate lisada Facebooki, Twitteri ja Bitly kaudu jagamise lingid, et lugejad saaksid Teie malli %TPL_NAME% mugavalt edasi levitada.",
+				content2Div1: "Dialoogis Seaded saate muuta malli %TPL_NAME% välimust. Saate muuta paigutust, valida erineva värviskeemi, muuta teksti fonti jne.",
+				content2Div2: "Samuti saate asendada Esri logo Teie kaubamärki tutvustava logoga. Samuti saate määrata veebisaidi, mis avaneb, kui lugejad klikivad Teie logol, et saada rohkem teavet.",
 				content3Div1: "Sisu korraldatakse jaotistena. Jaotiste arv pole piiratud (võite neid käsitleda miniatuursete peatükkidena). Kuna nende peatükkide voog peaks olema sujuv, saate korraldamisaknas jaotiste järjestust muuta või jaotisi ka kustutada.",
 				content4Div1: "Kas olete leidnud vea või soovite materjali muuta? Ärge muretsege. Rakenduse muutmisikooni kaudu saate sisu igal ajal muuta. Muutmisvõimaluste kasutamist tuleb teil malli %TPL_NAME% väljatöötamisel kindlasti ohtralt ette!",
-				content5Div1: "%TPL_NAME% salvestatakse teie portaali %PORTAL% kontole ja see on vaikimisi privaatne. Te saate valida, kas soovite seda jagada üksnes oma organisatsiooni piires või kogu maailmaga. Selleks, et seda oleks mugavam jagada, anname teile ka lühikese püsilingi.",
+				content5Div1: "%TPL_NAME% salvestatakse algselt privaatsena. Nupu Jaga abil saate jagada seda teistega. Malli %TPL_NAME% saate jagada avalikult, nii et igaühel on sellele juurdepääs.",
+				content5Div2: "Olenevalt teie kontost saate valida ka malli %TPL_NAME% jagamise ainult oma organisatsiooni inimestega, nii et teistel puuduks sellele juurdepääs.",
 				content6Div1: "Kodujaotise pealkiri on ka teie ajakirja pealkiri, käsitlege kodujaotist oma loo esilehena. Kodujaotise pealkiri on nähtav ka siis, kui lugejad teie ajakirja sees liiguvad.",
 				content6Div2: "Paigutus %LAYOUT_TITLE% ei pea sisaldama ainult teksti, võite lisada ka pilte ja videoid, et muuta lugu vaheldusrikkamaks ja eraldada pikki tekstijaotisi!"
 			},
@@ -105,5 +106,4 @@
 			}
         }
     })
-
 );

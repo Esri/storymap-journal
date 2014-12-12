@@ -62,7 +62,7 @@
 				url: "URL d\'une vidéo Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "Le journal cartographique ne peut pas lire de vidéos brutes (avi, mpeg), mais il peut lire les fichiers vidéo hébergés dans lesquels des lecteurs sont intégrés (YouTube ou Vimeo).",
+				explain1: "L\'application ne peut pas lire de vidéos brutes (avi, mpeg), mais elle peut lire les fichiers vidéo hébergés dans lesquels des lecteurs sont intégrés (YouTube ou Vimeo).",
 				explain2: "La plupart des services d\'hébergement de vidéos en ligne offrent cette fonctionnalité. Vous devez trouver l\'option d\'incorporation de la vidéo, copier le code donné et utiliser la page %WEBPAGE%.",
 				explain3: "Si vous souhaitez héberger la vidéo même, vous pouvez également créer une page HTML qui utilise un lecteur vidéo, tel que %EXAMPLE%, héberger cette page et également utiliser la page %WEBPAGE%.",
 				webpage: "Page Web"
@@ -93,14 +93,14 @@
 				lblPosition3: "Ajuster",
 				lblPosition4: "Etirer",
 				lblPosition5: "Personnalisé",
-				tooltipDimension: "La valeur peut être spécifiée en 'px' ou '%'",
-				tooltipDimension2: "La valeur doit être spécifiée en 'px'",
+				tooltipDimension: "La valeur peut être spécifiée en \'px\' ou \'%\'",
+				tooltipDimension2: "La valeur doit être spécifiée en \'px\'",
 				lblPosition2Explain: "(peut être rognée)",
 				lblPosition3Explain: "(ne sera pas rognée)",
 				lblPosition3Explain2: "(la largeur s\'adapte toujours au volet)",
 				lblPosition4Explain: "(peut être déformée)",
-				unloadLbl: "Décharger lorsque le lecteur quitte cette section pour accéder à une autre section",
-				unloadHelp: "Si la page Web comporte un support audio ou vidéo, cette option doit rester activée pour empêcher la lecture du contenu lorsque le lecteur quitte cette section pour accéder à une autre section. Désactivez cette option pour continuer la lecture d\'une piste audio pendant que le lecteur avance dans le journal.<br />Si la page Web est une application, désactivez cette option pour que l\'application ne se recharge pas si ce lecteur revient à cette section."
+				unloadLbl: "Décharger lorsque le lecteur quitte cette section",
+				unloadHelp: "Si la page Web comporte un support audio ou vidéo, cette option doit rester activée pour empêcher la lecture du contenu lorsque le lecteur quitte cette section. Désactivez cette option pour continuer la lecture d\'une piste audio pendant que le lecteur avance dans le récit.<br />Si la page Web est une application, désactivez cette option pour que l\'application ne se recharge pas si ce lecteur revient à cette section."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localiser une adresse ou un lieu",
@@ -114,5 +114,4 @@
 			}
 		}
 	})
-
 );

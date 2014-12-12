@@ -10,6 +10,8 @@
 				lblOverview: "Yleiskatsauskartta",
 				lblLegend: "Selite",
 				loadingTitle: "Ladataan otsikkoa",
+				entry: "Merkintä",
+				entries: "Merkinnät",
 				section: "Osa",
 				sections: "osaa",
 				and: "ja",
@@ -22,12 +24,14 @@
 				newMap: "Äskettäin valittu Web-kartta",
 				webmapDefault: "Web-kartan oletusarvo",
 				customCfg: "Mukautettu konfiguraatio",
-				tooltipLocation: "Määritä karttasijainti, jota käytetään, kun lukijat siirtyvät tähän osaan.",
+				tooltipLocation: "Määritä sijainti, joka näkyy tässä kartassa.",
 				tooltipContent: "Määritä näkyvät karttatasot.",
-				tooltipPopup: "Valitse ponnahdusikkuna, joka näytetään, kun lukijat siirtyvät tähän osaan.",
-				tooltipOverview: "Näytä pieni yleiskatsauskartta pääkartan ohessa",
+				tooltipPopup: "Valitse ponnahdusikkuna, joka avautuu, kun tämä kartta näytetään.",
+				tooltipOverview: "Näytä pieni yleiskatsauskartta pääkartan ohessa.",
 				tooltipLegend: "Tuo näkyviin kartan selite karttaan. Se on hyödyllinen apuominaisuus, kun kartassa on useita karttatasoja ja symboleja.",
-				mapCfgInvite: "Määritä karttasi näiden säätimien avulla"
+				mapCfgInvite: "Määritä karttasi näiden säätimien avulla",
+				lblLocationAlt: "Peritty ensimmäisestä kartasta",
+				tooltipLocationAlt: "Tämän kartan sijainti on synkronoitu sarjan ensimmäiseen karttaan. Jos haluat muuttaa tätä toimintatapaa sarjassasi, valitse Asetukset > Kartan asetukset."
 			},
 			configure: {
 				btnReset: "Palauta",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "追加",
@@ -28,8 +28,8 @@
 				buttonSettings: "設定",
 				buttonHelp: "ヘルプ",
 				buttonPreview: "最新表示",
-				tooltipFirstSave: "この機能はアプリケーションを保存するまで利用できません",
-				tooltipNotShared: "この機能はアプリケーションを共有するまで利用できません",
+				tooltipFirstSave: "これは保存するまで利用できません。",
+				tooltipNotShared: "これは共有するまで利用できません。",
 				noPendingChange: "保留中の変更はありません",
 				unSavedChangePlural: "保留中の変更",
 				closeWithPendingChange: "このアクションを確認しますか？変更内容は失われます。",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "アプリケーションの保存中にエラーが発生しました",
 				err1Div1: "すでに同じ名前のアイテムがあるためアプリケーションが保存できません (<a class='linkagolroot' target='_blank'>コンテンツ フォルダ</a>をご参照ください)。",
-				err1Div2: "ホーム セクションのタイトルを変更して、アプリケーションを保存してください。",
-				btnOk: "ホーム セクションのタイトルの編集"
+				err1Div2: "アプリケーションのタイトルを変更して保存してください。",
+				btnOk: "アプリケーション タイトルの編集"
 			},
 			share: {
 				firstSaveTitle: "アプリケーションが保存されました",
@@ -66,7 +66,7 @@
 				shareHeader2: "アプリケーションには組織のメンバーがアクセスできます (ログインが必要)。",
 				shareLinkCopy: "コピー",
 				shareLinkCopied: "コピー",
-				shareQ0: "Web サイトにアプリケーションを埋め込む方法",
+				shareQ0: "Web ページにアプリケーションを埋め込む方法",
 				shareQ1Opt1: "アプリケーションをプライベートにする方法",
 				shareQ1Opt2: "アプリケーションのプライベート使用とパブリック使用を切り替える方法",
 				shareA1: "<a href='%LINK1%' target='_blank'>アプリケーション アイテム ページ</a>で %SHAREIMG% を使用します。",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "クリックスルー リンク",
 				logoSocialExplain: "ヘッダー リンクをカスタマイズします。",
 				logoSocialText: "テキスト",
-				logoSocialLink: "リンク"
+				logoSocialLink: "リンク",
+				lblSmallHeader: "コンパクトなヘッダーを使用 (サブタイプなし)"
+			},
+			header: {
+				title: "%TPL_NAME% のタイトルの編集",
+				subtitle: "%TPL_NAME% のサブタイトルの編集"
 			}
 		}
 	})
-
 );

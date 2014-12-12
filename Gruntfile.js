@@ -221,17 +221,11 @@
 							'styles.js', 
 							'lang/**', 
 							'skins/**',
-							'plugins/widget/**',
-							'plugins/lineutils/**',
-							'plugins/image2/**',
-							'plugins/tableresize/**',
-							'plugins/confighelper/**',
 							'plugins/colordialog/**',
+							'plugins/confighelper/**',
+							'plugins/image2/**',
 							'plugins/link/**',
-							'plugins/fakeobjects/**',
-							'plugins/iframe/**',
-							'plugins/magicline/**',
-							'plugins/pastefromword/**'
+							'plugins/widget/**'
 						],
 						dest: 'deploy/resources/lib/ckeditor/'
 					},
@@ -337,17 +331,51 @@
 			},
 			
 			jshint: {
-				common: [
-					'src/app/storymaps/common/**/*.js', 
-					// Exclude browse-dialog files
-					'!src/app/storymaps/common/builder/browse-dialog/**/*.js',
-					// Exclude localized NLS
-					'!src/app/storymaps/common/_resources/nls/*/*.js'
-				],
-				tpl: ['src/app/storymaps/tpl/**/*.js'],
-				tplnls: ['src/resources/**/nls/*.js'],
-				options: {
-					jshintrc: '.jshintrc',
+				common: {
+					options: {
+						jshintrc: '.jshintrc'
+					},
+					files: {
+						src: [
+							'src/app/storymaps/common/**/*.js', 
+							// Exclude browse-dialog files
+							'!src/app/storymaps/common/builder/browse-dialog/**/*.js',
+							// Exclude NLS
+							'!src/app/storymaps/common/_resources/nls/**/*.js'
+						]
+					}
+				},
+				tpl: {
+					options: {
+						jshintrc: '.jshintrc'
+					},
+					files: {
+						src: ['src/app/storymaps/tpl/**/*.js']
+					}
+				},
+				"nls-en": {
+					options: {
+						jshintrc: '.jshintrc'
+					},
+					files: {
+						src: [
+							'src/resources/**/nls/*.js',
+							'src/app/storymaps/common/_resources/nls/*.js'
+						]
+					}
+				},
+				"nls-all": {
+					options: {
+						"smarttabs": true,
+						"-W100": true,
+						"-W044": true
+					},
+					files: {
+						src: [
+							'src/app/storymaps/common/_resources/nls/*/*.js', 
+							'src/resources/**/nls/*/*.js'
+						]
+					}
 				}
 			},
 			
@@ -380,7 +408,8 @@
 			// Comment out to disable code linting
 			'jshint:common',
 			'jshint:tpl',
-			'jshint:tplnls',
+			'jshint:nls-en',
+			'jshint:nls-all',
 			// Initialize deploy folder
 			'clean', 
 			'mkdir',

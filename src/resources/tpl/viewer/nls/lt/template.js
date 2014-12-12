@@ -70,11 +70,10 @@
 				copy: "Kopijuoti",
 				copied: "Nukopijuota",
 				open: "Atverti",
-				embed: "Įterpti į svetainę",
-				embedExplain: "Jei į svetainę norite įterpti žurnalą, naudokite šį HTML kodą.",
+				embed: "Įterpti į tinklalapį",
+				embedExplain: "Jei į tinklalapį norite įterpti žurnalą, naudokite šį HTML kodą.",
 				size: "Dydis (plotis / aukštis):"
 			}
         }
     })
-
 );

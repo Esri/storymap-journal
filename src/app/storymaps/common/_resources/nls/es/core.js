@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Agregar",
@@ -28,8 +28,8 @@
 				buttonSettings: "Configuración",
 				buttonHelp: "Ayuda",
 				buttonPreview: "Ver en directo",
-				tooltipFirstSave: "Esta función no está disponible hasta que se guarda la aplicación",
-				tooltipNotShared: "Esta función no está disponible hasta que se comparte la aplicación",
+				tooltipFirstSave: "Esto no está disponible hasta que guardes.",
+				tooltipNotShared: "Esto no está disponible hasta que compartas.",
 				noPendingChange: "Sin cambios pendientes",
 				unSavedChangePlural: "Cambios pendientes",
 				closeWithPendingChange: "¿Estás seguro de que deseas confirmar esta acción? Los cambios se perderán.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Error al guardar la aplicación",
 				err1Div1: "La aplicación no se puede guardar porque ya tienes otro elemento con el mismo nombre (comprueba la <a class='linkagolroot' target='_blank'>carpeta de contenido</a>).",
-				err1Div2: "Modifica el título de la sección de inicio y guarda la aplicación.",
-				btnOk: "Editar título de la sección de inicio"
+				err1Div2: "Modifica el título de tu aplicación y, a continuación, guárdala.",
+				btnOk: "Editar título de la aplicación"
 			},
 			share: {
 				firstSaveTitle: "La aplicación se ha guardado correctamente",
@@ -66,7 +66,7 @@
 				shareHeader2: "Tu aplicación está disponible para los miembros de tu organización (se requiere inicio de sesión).",
 				shareLinkCopy: "Copiar",
 				shareLinkCopied: "Copiado",
-				shareQ0: "¿Cómo se integra la aplicación en un sitio web?",
+				shareQ0: "¿Cómo se integra la aplicación en una página web?",
 				shareQ1Opt1: "¿Cómo puedo hacer que la aplicación siga siendo privada?",
 				shareQ1Opt2: "¿Cómo puedo hacer que la aplicación siga siendo privada o que se comparta públicamente?",
 				shareA1: "Usa %SHAREIMG% en <a href='%LINK1%' target='_blank'>la página del elemento de la aplicación</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Enlace click-through",
 				logoSocialExplain: "Personaliza el vínculo del encabezado.",
 				logoSocialText: "Texto",
-				logoSocialLink: "Vínculo"
+				logoSocialLink: "Vínculo",
+				lblSmallHeader: "Usar encabezado compacto (sin subtítulo)"
+			},
+			header: {
+				title: "Editar el título de tu %TPL_NAME%",
+				subtitle: "Editar el subtítulo de tu %TPL_NAME%"
 			}
 		}
 	})
-
 );

@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Lisää",
@@ -28,8 +28,8 @@
 				buttonSettings: "Asetukset",
 				buttonHelp: "Ohje",
 				buttonPreview: "Näytä reaaliaikaisesti",
-				tooltipFirstSave: "Tämä toiminto ei ole käytettävissä, ennen kuin sovellus on tallennettu",
-				tooltipNotShared: "Tämä toiminto ei ole käytettävissä, ennen kuin sovellus on jaettu",
+				tooltipFirstSave: "Tämä toiminto ei ole käytettävissä ennen tallennusta.",
+				tooltipNotShared: "Tämä toiminto ei ole käytettävissä ennen jakamista.",
 				noPendingChange: "Ei odottavaa muutosta",
 				unSavedChangePlural: "Odottavat muutokset",
 				closeWithPendingChange: "Haluatko varmasti vahvistaa tämän toiminnon? Menetät tekemäsi muutokset.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Virhe tallennettaessa sovellusta",
 				err1Div1: "Sovellusta ei voi tallentaa, koska toisella kohteella on sama nimi (katso <a class='linkagolroot' target='_blank'>sisältökansio</a>).",
-				err1Div2: "Muokkaa Kotisivu-osan otsikkoa ja tallenna sovellus.",
-				btnOk: "Muokkaa Kotisivu-osan otsikkoa"
+				err1Div2: "Muokkaa sovelluksen otsikkoa ja tallenna sovellus sen jälkeen.",
+				btnOk: "Muokkaa sovelluksen otsikkoa"
 			},
 			share: {
 				firstSaveTitle: "Sovellus on tallennettu",
@@ -66,14 +66,14 @@
 				shareHeader2: "Organisaatiosi jäsenet voivat käyttää sovellustasi (sisäänkirjauduttuaan).",
 				shareLinkCopy: "Kopioi",
 				shareLinkCopied: "Kopioitu",
-				shareQ0: "Miten upotan sovelluksen verkkosivustoon?",
+				shareQ0: "Miten upotan sovelluksen Web-sivulle?",
 				shareQ1Opt1: "Miten voin pitää sovelluksen yksityisenä?",
 				shareQ1Opt2: "Miten säilytän sovelluksen yksityisenä tai jaan sen julkisesti?",
 				shareA1: "Käytä kohdetta %SHAREIMG% <a href='%LINK1%' target='_blank'>sovelluskohteen sivulla</a>.",
 				shareQ2bis: "Miten palaan luontitoiminnon käyttöliittymään?",
 				shareA2div1: "Tallenna ja käytä uudelleen seuraavaa linkkiä %LINK1% tai käytä <a href='%LINK2%' target='_blank'>sovelluskohteen sivua</a>.",
 				shareA2div2: "Koska olet sovelluksen omistaja, kun olet kirjautunut %PORTAL%-sivustoon, sovelluksessa näkyy painike, jolla voita avata luontitoiminnon:",				
-				shareQ3: "Minne tiedot on tallennettu?",
+				shareQ3: "Minne aineistot on tallennettu?",
 				shareA3: "Tarinan %TPL_NAME% aineisto ja määritykset tallennetaan <a href='%LINK2%' target='_blank'>tähän Web-sovelluskohteeseen</a>. Jos olet käyttänyt Flickr-, Picasa-, Facebook- tai YouTube-tuontia, kuviasi ja videoitasi ei kopioida portaaliin %PORTAL%."
 			},
 			settings: {
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Click-through-linkki",
 				logoSocialExplain: "Mukauta ylätunnisteen linkkiä.",
 				logoSocialText: "Teksti",
-				logoSocialLink: "Linkki"
+				logoSocialLink: "Linkki",
+				lblSmallHeader: "Käytä tiivistä otsikko (ei alaotsikkoa)"
+			},
+			header: {
+				title: "Muokkaa tarinan %TPL_NAME% otsikkoa",
+				subtitle: "Muokkaa tarinan %TPL_NAME% alaotsikkoa"
 			}
 		}
 	})
-
 );

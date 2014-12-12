@@ -10,6 +10,8 @@
 				lblOverview: "Oversiktskart",
 				lblLegend: "Tegnforklaring",
 				loadingTitle: "Laster inn tittel",
+				entry: "Oppføring",
+				entries: "Oppføringer",
 				section: "Seksjon",
 				sections: "Seksjoner",
 				and: "og",
@@ -22,12 +24,14 @@
 				newMap: "Nylig valgt webkart",
 				webmapDefault: "Webkartstandard",
 				customCfg: "Tilpasset konfigurasjon",
-				tooltipLocation: "Definer kartlokasjonen som skal brukes når leserne navigerer til denne seksjonen.",
+				tooltipLocation: "Definer lokasjonen som dette kartet skal vise.",
 				tooltipContent: "Definer de synlige lagene.",
-				tooltipPopup: "Velg et sprettoppvindu som skal vises når leserne navigerer til denne seksjonen.",
-				tooltipOverview: "Vis et lite oversiktskart sammen med hovedkartet",
+				tooltipPopup: "Velg en popup som skal åpnes når dette kartet vises.",
+				tooltipOverview: "Vis et lite oversiktskart sammen med hovedkartet.",
 				tooltipLegend: "Vis kartets tegnforklaring, som er nyttig når kartet har mange lag og symboler.",
-				mapCfgInvite: "Bruk disse kontrollene til å konfigurere kartet"
+				mapCfgInvite: "Bruk disse kontrollene til å konfigurere kartet",
+				lblLocationAlt: "Hentet fra det første kartet",
+				tooltipLocationAlt: "Lokasjonen på dette kartet synkroniseres med det første kartet i serien. Hvis du vil endre denne innstillingen for serien, går du til Innstillinger > Kartalternativer."
 			},
 			configure: {
 				btnReset: "Tilbakestill",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

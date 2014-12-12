@@ -10,6 +10,8 @@
 				lblOverview: "Pārskata karte",
 				lblLegend: "Leģenda",
 				loadingTitle: "Virsraksta ielāde",
+				entry: "Ieraksts",
+				entries: "Ieraksti",
 				section: "Sadaļa",
 				sections: "Sadaļas",
 				and: "un",
@@ -22,12 +24,14 @@
 				newMap: "Nesen izvēlētā web karte",
 				webmapDefault: "Web kartes noklusējums",
 				customCfg: "Pielāgota konfigurācija",
-				tooltipLocation: "Definējiet kartes izvietojumu, kas tiks izmantots, kad lasītāji virzīsies uz šo sadaļu.",
+				tooltipLocation: "Definējiet izvietojumu, kuru parādīs šī karte.",
 				tooltipContent: "Definējiet redzamos slāņus.",
-				tooltipPopup: "Izvēlieties uznirstošo logu, kuru rādīt, kad lasītāji virzīsies uz šo sadaļu.",
-				tooltipOverview: "Attēlot mazu pārskata karti blakus galvenajai kartei",
+				tooltipPopup: "Izvēlieties uznirstošo logu, kas jāatver, kad tiek parādīta šī karte.",
+				tooltipOverview: "Attēlot mazu pārskata karti blakus galvenajai kartei.",
 				tooltipLegend: "Attēlojiet kartē apzīmējumus, kas ir noderīgi, ja kartē ir daudz slāņu un simbolu.",
-				mapCfgInvite: "Izmantojiet šīs vadīklas, lai konfigurētu savu  karti"
+				mapCfgInvite: "Izmantojiet šīs vadīklas, lai konfigurētu savu  karti",
+				lblLocationAlt: "Mantots no pirmās kartes",
+				tooltipLocationAlt: "Šīs kartes izvietojums ir sinhronizēts ar sērijas pirmo karti. Lai mainītu šo rīcību savai sērijai, dodieties uz Iestatījumi > Kartes opcijas."
 			},
 			configure: {
 				btnReset: "Atiestatīt",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

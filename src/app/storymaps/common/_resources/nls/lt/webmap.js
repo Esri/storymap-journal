@@ -10,6 +10,8 @@
 				lblOverview: "Apžvalgos žemėlapis",
 				lblLegend: "Legenda",
 				loadingTitle: "Įkeliamas pavadinimas",
+				entry: "Įrašas",
+				entries: "Įrašai",
 				section: "Skiltis",
 				sections: "Skiltys",
 				and: "ir",
@@ -22,12 +24,14 @@
 				newMap: "Naujai pasirinktas internetinis žemėlapis",
 				webmapDefault: "Numatytasis internetinis žemėlapis",
 				customCfg: "Adaptuota konfigūracija",
-				tooltipLocation: "Nustatykite žemėlapio vietą, kuri bus naudojama, kai skaitytojai pereis į šią skiltį.",
+				tooltipLocation: "Nustatykite vietą, kurią rodys šis žemėlapis.",
 				tooltipContent: "Nustatykite matomus sluoksnius.",
-				tooltipPopup: "Pasirinkite iškylantį langą, kuris bus rodomas, kai skaitytojai pereis į šią skiltį.",
-				tooltipOverview: "Kartu su pagrindiniu žemėlapiu rodyti mažą apžvalgos žemėlapį",
+				tooltipPopup: "Pasirinkite iškylantįjį langą, kuris bus atidarytas, kai bus rodomas šis žemėlapis.",
+				tooltipOverview: "Kartu su pagrindiniu žemėlapiu rodyti mažą apžvalgos žemėlapį.",
 				tooltipLegend: "Žemėlapyje rodyti žemėlapio legendą. Tai naudinga, kai žemėlapyje yra daug sluoksnių ir simbolių.",
-				mapCfgInvite: "Konfigūruokite žemėlapį naudodami šiuos valdiklius"
+				mapCfgInvite: "Konfigūruokite žemėlapį naudodami šiuos valdiklius",
+				lblLocationAlt: "Paveldėta iš pirmo žemėlapio",
+				tooltipLocationAlt: "Šio žemėlapio vieta sinchronizuojama su pirmu sekos žemėlapiu. Norėdami pakeisti šį savo sekos veikimą, eikite į Nustatymai > Žemėlapio parinktys."
 			},
 			configure: {
 				btnReset: "Atkurti",
@@ -61,5 +65,4 @@
 			}
 		}
 	})
-
 );

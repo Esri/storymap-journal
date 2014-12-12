@@ -9,7 +9,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 [Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
 [Application Download (source code not included)](http://links.esri.com/storymaps/map_journal_template_zip)
 
-**Latest release is version 1.1.2**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+**Latest release is version 1.2.0**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
 ## Help content
 
@@ -48,7 +48,7 @@ See [customize the look and feel section](#customize-the-look-and-feel) or [deve
 ## Feedback / support
 We would love to hear from you!
 * [StoryMaps Website](http://storymaps.arcgis.com/)
-* [Let us know about your application](http://storymapsdev.arcgis.com/en/gallery/submission-form/)
+* [Let us know about your application](http://storymaps.arcgis.com/en/gallery/submission-form/)
 * [Story Maps forum on GeoNet](https://geonet.esri.com/community/gis/web-gis/storymaps/content)
 * [@EsriStoryMaps](http://twitter.com/EsriStoryMaps)
 * [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
@@ -179,7 +179,7 @@ themes: [
 ### Other customization
 Most of the look and feel customization can be done using the [regular Application Download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html overrides directly into `index.html`. 
 
-As the application Javascript and CSS are minified, **we don't recommend that you directely edit those files** (e.g. `app-viewer-min.css`, `app-viewer-min.js`, ...). In addition to beeing hard to edit, this will make application update complex for you.
+As the application Javascript and CSS are minified, **we don't recommend that you directely edit those files** (e.g. `app-viewer-min.css`, `app-viewer-min.js`, ...). In addition to being hard to edit, this will make application update complex for you.
 
 If you want to change the behavior of one functionality or want to add new one, follow the [developer guide](#developer-guide) below.
 
@@ -212,7 +212,7 @@ It requires knowledge of HTML, Javascript and CSS languages.
 If you only need to customize look and feel, you should be able to do so using the [customize section above](#customize-the-look-and-feel).
 
 ### Application life cycle
-Map Journal fires three events that allow customization with lose integration. This mean that you don't need to understand the application internals to implement simple extension.
+Map Journal fires events that allow customization with lose integration. This mean that you don't need to understand the application internals to implement simple extension.
 
 To try those events, look for the `Custom Javascript` block at the far end of index.html.
 

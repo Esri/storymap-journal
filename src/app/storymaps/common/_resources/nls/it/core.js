@@ -1,5 +1,5 @@
 ﻿define(
-	({
+	 ({
 		commonCore: {
 			common: {
 				add: "Aggiungi",
@@ -28,8 +28,8 @@
 				buttonSettings: "Impostazioni",
 				buttonHelp: "Guida",
 				buttonPreview: "Visualizza in tempo reale",
-				tooltipFirstSave: "Questa funzione non è disponibile finché non si salva l\'applicazione",
-				tooltipNotShared: "Questa funzione non è disponibile finché l\'applicazione non è condivisa",
+				tooltipFirstSave: "Questa funzione è disponibile solo dopo il salvataggio.",
+				tooltipNotShared: "Questa funzione è disponibile solo dopo la condivisione.",
 				noPendingChange: "Nessuna modifica in sospeso",
 				unSavedChangePlural: "Modifiche in sospeso",
 				closeWithPendingChange: "Confermare l\'azione? Le modifiche apportate andranno perse.",
@@ -42,8 +42,8 @@
 			saveError: {
 				title: "Errore durante il salvataggio dell\'applicazione",
 				err1Div1: "Non è possibile salvare l\'applicazione perché è già presente un altro elemento con lo stesso nome (vedere la <a class='linkagolroot' target='_blank'>cartella dei contenuti</a>).",
-				err1Div2: "Modificare il titolo della prima sezione e salvare l\'applicazione.",
-				btnOk: "Modifica il titolo della prima sezione"
+				err1Div2: "Modificare il titolo dell\'applicazione, quindi salvare.",
+				btnOk: "Modifica il titolo dell\'applicazione"
 			},
 			share: {
 				firstSaveTitle: "Salvataggio dell\'applicazione completato",
@@ -66,7 +66,7 @@
 				shareHeader2: "L\'applicazione è accessibile ai membri dell\'organizzazione (accesso obbligatorio).",
 				shareLinkCopy: "Copia",
 				shareLinkCopied: "Copiato",
-				shareQ0: "Come si incorpora l\'applicazione in un sito Web?",
+				shareQ0: "Come si incorpora l\'applicazione in una pagina Web?",
 				shareQ1Opt1: "Come si mantiene privata l\'applicazione?",
 				shareQ1Opt2: "Come si mantiene privata o si condivide pubblicamente l\'applicazione?",
 				shareA1: "Utilizzare %SHAREIMG% nella <a href='%LINK1%' target='_blank'>pagina degli elementi dell\'applicazione</a>.",
@@ -98,9 +98,13 @@
 				logoCustomTargetPlaceholder: "Collegamento clickthrough",
 				logoSocialExplain: "Personalizzare il collegamento nell\'intestazione.",
 				logoSocialText: "Testo",
-				logoSocialLink: "Collegamento"
+				logoSocialLink: "Collegamento",
+				lblSmallHeader: "Usa intestazione compressa (senza sottotitolo)"
+			},
+			header: {
+				title: "Modifica il titolo di %TPL_NAME%",
+				subtitle: "Modifica il sottotitolo di %TPL_NAME%"
 			}
 		}
 	})
-
 );
