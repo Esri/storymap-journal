@@ -1,5 +1,5 @@
-Map Journal
-===========
+Story Map Journal
+=================
 
 The Story Map Journal is ideal when you want to combine narrative text with maps and other embedded content. A Map Journal contains entries, or sections, that users simply scroll through. Each section in a Map Journal has an associated map, image, video or web page. Actions can also be defined in journal sections so that, for example, clicking a word automatically zooms the section’s map to a particular location.
 
@@ -49,7 +49,7 @@ See [customize the look and feel section](#customize-the-look-and-feel) or [deve
 We would love to hear from you!
 * [StoryMaps Website](http://storymaps.arcgis.com/)
 * [Let us know about your application](http://storymaps.arcgis.com/en/gallery/submission-form/)
-* [Story Maps forum on GeoNet](https://geonet.esri.com/community/gis/web-gis/storymaps/content)
+* [Story Maps forum on GeoNet](http://links.esri.com/storymaps/story_maps_geonet)
 * [@EsriStoryMaps](http://twitter.com/EsriStoryMaps)
 * [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
 
@@ -126,14 +126,18 @@ Yes, Map Journal is included with Portal for ArcGIS starting at version 10.3.
 
 If you are using a previous version of Portal, you will have to deploy the following version [Map Journal V1.0.2 - portal](https://github.com/Esri/map-journal-storytelling-template-js/releases/download/V1.0.2/Storytelling-MapJournal-1.0.2-portal.zip) in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. 
 
-Note that when using Portal 10.2.1 or 10.2.2, it is required that you use Map Journal V1.0.2 or below and the JS API in version 3.9 (Map Journal V1.1 and above are not compatible, JS API 3.10 and above are not compatible). The previous link is the only version of Map Journal that is compatible with Portal 10.2.1 or 10.2.2. That version use the Javascript API V3.9 hosted in ArcGIS Online, optionaly you can modify it to use the API included on your Portal. To change the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 100. 
+Note that when using Portal 10.2.1 or 10.2.2, it is required that you use Map Journal V1.0.2 or below and the JS API in version 3.9 (Map Journal V1.1 and above are not compatible, JS API 3.10 and above are not compatible). The previous link is the only version of Map Journal that is compatible with Portal 10.2.1 or 10.2.2. That version use the Javascript API V3.9 hosted in ArcGIS Online, optionaly you can modify it to use the API included on your Portal. To change the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 75. 
 
 If the folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal` already contain a previous version, make sure to first delete all of its content. Then refer your Portal documentation for instructions on [publishing a new web application item](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_applications/019300000031000000/) and adding it to a group and [configuring the web application gallery](http://resources.arcgis.com/en/help/main/10.2/index.html#/Configure_map_viewer/017s00000024000000/) to use that group. If you choose to deploy the template in another folder, some configuration will be required (see the configuration section in index.html). 
 
 Also note that the web application gallery preview feature redirects to the StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
 
 #### Can the template be used offline?
-Yes, by using Portal for ArcGIS. When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file `app/config.js`.
+Yes, by using Portal for ArcGIS and configuring the template to use the ArcGIS API for Javascript included with the Portal. 
+
+To edit the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 75. 
+
+When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file `app/config.js`.
 
 #### Can I use the builder with the downloadable?
 Yes, when the template is configured with an application ID, adding the URL parameter 'edit' will open the builder. You will be prompted for user authentication through the Identity Manager.
@@ -386,7 +390,6 @@ Some open-source components of this project are licensed under other License ter
 | CKEditor 				| LGPL		|
 | jQuery 				| MIT 		|
 | jQuery Colorbox 		| MIT 		|
-| Spectrum 				| MIT 		|
 | iDangero.us swiper 	| MIT 		|
 | ZeroClipboard 		| MIT 		|
 | History.js			| BSD 		|
@@ -395,7 +398,6 @@ Some open-source components of this project are licensed under other License ter
 | Hammer.JS 			| MIT 		| 
 | jQuery mousewheel 	| MIT 		|
 | jQuery UI Touch Punch | MIT 		|
-| Spin.js 				| MIT 		|
 
 [](Esri Tags: Storytelling MapJournal ArcGIS-Online Template Map Journal)
 [](Esri Language: JavaScript)
