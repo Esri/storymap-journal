@@ -703,7 +703,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 							left: 0,
 							right: 0
 						})
-						.css('background-image', 'url(' + pictureContainer.data('src') + ')');
+						.css('background-image', 'url("' + pictureContainer.data('src') + '")');
 					
 					_this.updateMainStageWithLayoutSettings();
 					

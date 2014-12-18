@@ -7,9 +7,9 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 
 [View it live](http://links.esri.com/storymaps/map_journal_example_side_panel) | 
 [Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
-[Application Download (source code not included)](http://links.esri.com/storymaps/map_journal_template_zip)
+[Download](http://links.esri.com/storymaps/map_journal_template_zip)
 
-**Latest release is version 1.2.0**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+**Latest release is version 1.2.1**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
 ## Help content
 
