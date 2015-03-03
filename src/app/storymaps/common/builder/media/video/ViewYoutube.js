@@ -44,19 +44,23 @@ define(["lib-build/tpl!./ViewVideoCommon",
 			
 			function check()
 			{
-				var url = container.find(".url").val(); 
+				var url = container.find(".url").val(),
+					fetchVideoSnippet = ! (app.isPortal && app.cfg.YOUTUBE_DISABLE_ON_PORTAL); 
 				
 				activateLoadingIndicator();
 				
-				_youtube.checkVideoUrl(url).then(
+				_youtube.checkVideoUrl(url, fetchVideoSnippet).then(
 					function(data){
 						container.find(".loadingMsg").html('<span class="glyphicon glyphicon-ok"></span>');
 						
 						container.find(".video-detail-container").fadeIn().html(viewTplDetail({
+							fetchVideoSnippet: fetchVideoSnippet,
 							thumbUrl: data.thumbUrl,
 							title: data.title,
 							description: data.description,
-							btnSelect: i18n.commonMedia.videoSelectorCommon.select
+							btnSelect: i18n.commonMedia.videoSelectorCommon.select,
+							// TODO NLS
+							videoNotChecked: "The video hasn't been checked on YouTube but its address looks good."
 						}));
 						
 						container.find(".btn-select-video").click(function(){
@@ -75,9 +79,14 @@ define(["lib-build/tpl!./ViewVideoCommon",
 							});
 						});
 					},
-					function(){
+					function(error){
 						container.find(".loadingMsg").html('');
-						container.find(".errorMsg").show().html(i18n.commonMedia.videoSelectorCommon.notFound);
+						
+						if ( error == "NOT_AUTHORIZED" )
+							// TODO NLS
+							container.find(".errorMsg").show().html("YouTube check has failed, please check YouTube API key.");
+						else
+							container.find(".errorMsg").show().html(i18n.commonMedia.videoSelectorCommon.notFound);
 					}
 				);
 			}

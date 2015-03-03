@@ -105,6 +105,15 @@ define(["lib-build/tpl!./ViewText",
 					"AddPopupFontStyleStrong", 
 					$("#addEditPopup .cke_wysiwyg_frame")
 				);
+				
+				// Title placeholder
+				CommonHelper.addCSSRule(
+					".titleContainerAdd .title::-webkit-input-placeholder { color: " + _appColors.text + "; }\
+					.titleContainerAdd .title:-moz-placeholder { color: " + _appColors.text + "; opacity:  1; }\
+					.titleContainerAdd .title::-moz-placeholder {  color: " + _appColors.text + "; opacity:  1; }\
+					.titleContainerAdd .title:-ms-input-placeholder { color: " + _appColors.text + "; }",
+					"AddPopupTitlePlaceholder"
+				);
 			};
 			
 			this.getData = function()
@@ -446,7 +455,7 @@ define(["lib-build/tpl!./ViewText",
 							overflow: "hidden"
 						})
 						.prepend('<span class="cke_button" style="cursor:default;float:left;padding: 4px 1px 0px 6px;">'
-								+ ' <span style="font-size:0.8em; margin-top: -4px;display: inline-block;margin-bottom: 0px;height: 18px;font-size: 0.8em;width: 68px;word-break: break-word;white-space: normal; color: #428BC9">' 
+								+ ' <span style="font-size:0.8em; margin-top: -4px;display: inline-block;margin-bottom: 0px;height: 18px;font-size: 0.8em;width: 68px;word-wrap: break-word;white-space: normal; color: #428BC9">' 
 								+    i18n.builder.addEditViewText.editorActionsTitle
 								+ ' <img src="resources/tpl/builder/icons/builder-help.png" style="vertical-align: -4px; width: 14px; margin-left: 2px; margin-right: 1px">'
 								+ ' </span>'

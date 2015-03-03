@@ -18,6 +18,32 @@ define(["dojo/topic",
 		var _fullScreenMediaIsOpening = false; 
 	
 		/*
+		 * Prepare all content that come from the rich text editor for display
+		 * (section title and content)
+		 */
+		function prepareEditorContent(str, addTabIndex)
+		{
+			// Replace &nbsp; by a space space is not the only character of a tag
+			//  i.e. <p>&nbsp;<p> or <p class="foo">&nbsp;</p> is not changed but all others &nbsp; are replaced by a space
+			var str2 = str.replace(/(?!>)(&nbsp;)(?!<\/)/g, ' ');
+			
+			// Add tabindex to not empty elements
+			if ( addTabIndex ) {
+				str2 = $('<div><div class="content">' + str2 + '</div></div>');
+				str2.find('.content > *').each(function(i, elem){
+					var $elem = $(elem);
+					if ( $elem.html() != "&nbsp;" )
+						$elem.attr("tabindex", "0");
+				});
+				
+				return $(str2.html()).html();				
+			}
+			else {
+				return str2;
+			}
+		}
+		
+		/*
 		 * Prepare story text content for display
 		 * All panels have to call that function
 		 */
@@ -126,6 +152,7 @@ define(["dojo/topic",
 					.addClass(hasWidth ? "has-width" : "no-width")
 					.addClass(floatRight ? "float-right" : "");
 				$(node)
+					.wrap("<div class='image-wrapper'></div>")
 					.after($('<span class="btn-fullscreen"></span>').click(mediaFullScreen))
 					.click(mediaFullScreen);
 			});
@@ -300,6 +327,7 @@ define(["dojo/topic",
 		}
 		
 		return {
+			prepareEditorContent: prepareEditorContent,
 			createMainMediaActionLink: createMainMediaActionLink,
 			createMediaFullScreenButton: createMediaFullScreenButton,
 			performAction: performAction,

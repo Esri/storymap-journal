@@ -117,7 +117,7 @@ define([
           pagingLinks: this._pagingLinks,
           sort: this._sort
         }, this.domNode);
-
+        this._grid.startup();
 
       },
 

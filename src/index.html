@@ -19,6 +19,7 @@
 		<meta name="description" content="This story map was created with the Esri Tpl application in ArcGIS Online.">
 		
 		<!-- Facebook sharing -->
+		<meta property="og:type" content="article"/>
 		<meta property="og:title" content="Story Map Journal"/>
 		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
 		<meta property="og:image" content="resources/common/icons/esri-globe.png"/>
@@ -59,8 +60,8 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.2.1',
-				pathJSAPI: '//js.arcgis.com/3.12/'
+				version: '1.3.0',
+				pathJSAPI: '//js.arcgis.com/3.13/'
 			};
 		</script>
 	</head>
@@ -82,33 +83,33 @@
 							<div class="navDots vertical">
 								<!-- navigation dots -->
 							</div>
-							<div class="header">
+							<div class="header" aria-hidden="true">
 								<div class="linkSocialContainer">
 									<span class="linkContainer"></span>
 									<span class="shareBtns">
-										<i class="shareIcon blackHover share_facebook icon-facebook-squared"></i>
-										<i class="shareIcon blackHover share_twitter icon-twitter"></i>
-										<i class="shareIcon blackHover share_bitly icon-link"></i>
-										<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
+										<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="-1"></i>
+										<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
+										<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="-1"></i>
+										<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
 									</span>
 								</div>
 								<table class="logoContainer">
 									<tr>
 										<td class="logoWrapper">
-											<a class="logoLink" target="_blank">
+											<a class="logoLink" target="_blank" tabindex="-1">
 												<img class="logoImg"/>
 											</a>
 										</td>
 									</tr>
 								</table>
 							</div>
-							<div class="appTitle"></div>
+							<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
 							<div class="separator"></div>
 							<div class="sectionsWrapper">
 								<div class="panelEditBtn">
 									<div class="panelEditBtnInner"></div>
 								</div>
-								<div class="sections" tabindex="0">
+								<div class="sections">
 									<!-- sections injected here -->
 								</div>
 							</div>
@@ -173,27 +174,27 @@
 		
 		<div id="floatingPanel" class="floatingPanel sectionPanel">
 			<div class="backdrop"></div>
-			<div class="header">
+			<div class="header" aria-hidden="true">
 				<div class="linkSocialContainer">
 					<span class="linkContainer"></span>
 					<span class="shareBtns">
-						<i class="shareIcon blackHover share_facebook icon-facebook-squared"></i>
-						<i class="shareIcon blackHover share_twitter icon-twitter"></i>
-						<i class="shareIcon blackHover share_bitly icon-link"></i>
-						<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
+						<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="-1"></i>
+						<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
+						<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="-1"></i>
+						<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
 					</span>
 				</div>
 				<table class="logoContainer">
 					<tr>
 						<td class="logoWrapper">
-							<a class="logoLink" target="_blank">
+							<a class="logoLink" target="_blank" tabindex="-1">
 								<img class="logoImg"/>
 							</a>
 						</td>
 					</tr>
 				</table>
 			</div>
-			<div class="appTitle"></div>
+			<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
 			<div class="separator"></div>
 			<div class="panelEditBtn">
 				<div class="panelEditBtnInner"></div>

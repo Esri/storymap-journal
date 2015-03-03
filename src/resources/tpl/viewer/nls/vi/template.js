@@ -11,7 +11,7 @@
 				loadBuilder: "Chuyển sang chế độ bộ thiết lập",
 				long: "Map Journal đang khởi tạo",
 				long2: "Cảm ơn bạn đã đợi",
-				failButton: "Tải lại ứng dụng"
+				failButton: "Tải lại ứng dụng này"
 			},
 			signin: {
 				title: "Yêu cầu xác thực",

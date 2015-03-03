@@ -141,6 +141,11 @@ html.dj_ie9 .mainMediaContainer.has-error .mainStageErrorContainer {
 	display: none;
 }
 
+/* Somehow there is a conflict */
+.esriPopup .titlePane .spinner {
+	display: none !important;
+}
+
 /*
  * Loading
  */

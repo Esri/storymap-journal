@@ -13,7 +13,7 @@
 				open: "Apri",
 				start: "Avvia",
 				loading: "Caricamento in corso",
-				disabledAdmin: "Questa feature è stata disabilitata dall\'Amministratore",
+				disabledAdmin: "Questa feature è stata disabilitata dall\'amministratore",
 				width: "Larghezza",
 				height: "Altezza"
 			},
@@ -46,7 +46,7 @@
 				btnOk: "Modifica il titolo dell\'applicazione"
 			},
 			share: {
-				firstSaveTitle: "Salvataggio dell\'applicazione completato",
+				firstSaveTitle: "Salvataggio dell\'applicazione riuscito",
 				firstSaveHeader: "L\'applicazione è stata salvata in %PORTAL% ma non è ancora condivisa.",
 				firstSavePreview: "Anteprima",
 				firstSaveShare: "Condividi",

@@ -15,7 +15,7 @@ define(["lib-build/css!./MainView",
 		"storymaps/common/mapcontrols/overview/Overview",
 		"lib-build/css!storymaps/common/ui/Modal.css",
 		"lib-build/css!storymaps/common/utils/SocialSharing.css",
-		"lib-build/css!storymaps/common/ui/loadingIndicator/loadingIndicator.css",
+		"lib-build/css!storymaps/common/ui/loadingIndicator/LoadingIndicator.css",
 		// Utils
 		"storymaps/common/utils/CommonHelper",
 		"dojo/has",
@@ -126,6 +126,41 @@ define(["lib-build/css!./MainView",
 				
 				topic.subscribe("ADDEDIT_LOAD_WEBMAP", app.ui.mainStage.loadTmpWebmap);
 				topic.subscribe("ADDEDIT_SHOW_WEBMAP", app.ui.mainStage.showWebmapById);
+				
+				// Prevent focus on mousedown 
+				// Focus stay allowed with keyboard with 508
+				$("body").on("mousedown", "*", function(e) {
+					if (($(this).is(":focus") || $(this).is(e.target)) && $(this).css("outline-style") == "none") {
+						$(this).css("outline", "none").on("blur", function() {
+							$(this).off("blur").css("outline", "");
+						});
+						
+						// Prevent outline over image-container in description panel - Unsure why needed
+						if ( $(this).parents(".image-container").length ) {
+							$(this).parents(".image-container").css("outline", "none").on("blur", function() {
+								$(this).off("blur").css("outline", "");
+							});
+						}
+						// Prevent outline over image caption container in description panel - Unsure why needed
+						else if ( $(this).parents("figure.caption").length ) {
+							$(this).parents("figure.caption").css("outline", "none").on("blur", function() {
+								$(this).off("blur").css("outline", "");
+							});
+						}
+						// Prevent outline over paragraph in description panel - Unsure why needed
+						else if ( $(this).parents("p").length ) {
+							$(this).parents("p").css("outline", "none").on("blur", function() {
+								$(this).off("blur").css("outline", "");
+							});
+						}
+						// Prevent outline over title in description panel - Unsure why needed
+						else if ( $(this).parents(".title").length ) {
+							$(this).parents(".title").css("outline", "none").on("blur", function() {
+								$(this).off("blur").css("outline", "");
+							});
+						}
+					}
+				});
 				
 				return true;
 			};

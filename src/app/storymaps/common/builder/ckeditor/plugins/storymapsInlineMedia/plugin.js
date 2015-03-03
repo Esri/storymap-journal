@@ -44,7 +44,7 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							title: title,
 							width: mediaImg.attr('width'),
 							height: mediaImg.attr('height'),
-							activateFullScreen: mediaImg.parents("image-container").hasClass("activate-fullscreen")
+							activateFullScreen: mediaImg.parents(".image-container").hasClass("activate-fullscreen")
 						}
 					};
 				}

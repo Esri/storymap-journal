@@ -45,15 +45,15 @@
 				step2NextTooltip: "Wpisz tytuł sekcji i zawartość, która będzie wyświetlana w układzie %LAYOUT-TYPE%",
 				stepNextTooltipNext: "aby przejść do kolejnego etapu",
 				stepNextTooltipAdd: "aby dodać sekcję",
-				firstAddExplain: "Pierwsza sekcja to sekcja Start, którą należy postrzegać jako „okładkę” swojej historii. Tytuł, który właśnie podałeś, będzie wyświetlony dużą czcionką.",
+				firstAddExplain: "Pierwsza sekcja to sekcja Start, którą należy postrzegać jako „okładkę” swojej historii. Zdefiniowany tytuł będzie wyświetlony dużą czcionką.",
 				firstAddLeanMore: "Dowiedz się więcej",
 				titlePlaceholder: "Tytuł sekcji..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",
-				editorActionsTitle: "Operacje w obszarze głównym",
+				editorActionsTitle: "Działania w obszarze głównym",
 				editorActionsHelpDescr: "Użyj tych kontrolek do utworzenia łączy, które zmienią obszar główny. Na przykład, gdy użytkownik kliknie łącze, może nastąpić powiększenie mapy do określonej lokalizacji, wyświetlenie innej mapy internetowej lub wyświetlenie obrazu.",
-				mainStageDisabled: "Operacje w obszarze głównym nie mogą być wykonywane, gdy okno edytora jest zmaksymalizowane."
+				mainStageDisabled: "Działania w obszarze głównym są wyłączone, gdy okno edytora jest zmaksymalizowane."
 			},
 			organizePopup: {
 				title: "Organizuj",
@@ -67,7 +67,7 @@
 				firstSectionExplain: "(Sekcji Start nie można przenieść).",
 				exportMainStage: "Zawartość obszaru głównego",
 				exportPanel: "Zawartość panelu",
-				exportActions: "Operacje w obszarze głównym"
+				exportActions: "Działania w obszarze głównym"
 			},
 			exportData: {
 				btn: "Eksportuj zasoby",
@@ -86,7 +86,7 @@
 				content1Div1: "Podczas tworzenia opowiadania możesz łączyć różne style. W układzie <strong>%LAYOUT_TITLE%</strong> zwykle znajduje się tekst, obrazy oraz filmy wideo, mapy natomiast są na ogół widoczne w <strong>obszarze głównym</strong>. Jednak aplikacja %TPL_NAME% pozwala również na umieszczenie w obszarze głównym także obrazów obiektów, diagramów i filmów wideo.",
 				content1Div2: "Dodanie sekcji umożliwia personalizację korzystania z aplikacji opowiadania. Możliwe jest dostosowanie aplikacji tak, aby podczas przewijania tekstu w układzie %LAYOUT_TITLE% mapa znajdująca się w obszarze głównym była przesuwana i powiększana do najważniejszych punktów lub automatycznie przełączane były nowe mapy i obrazy, stanowiące kontekst dla przekazywanych treści.",
 				content2Div1: "W Ustawieniach można dokonać zmiany wyglądu aplikacji %TPL_NAME%. Możesz zmienić układ, wybrać inny schemat kolorów, zmienić czcionkę itd.",
-				content2Div2: "Możesz również zmienić logo Esri na logo własnej marki. Możesz też określić witrynę internetową, która zostanie uruchomiona, jeśli czytelnicy klikną Twoje logo, aby uzyskać więcej informacji.",
+				content2Div2: "Możesz również zmienić logo Esri na logo własnej marki. Możesz też podać witrynę internetową, która zostanie uruchomiona, jeśli czytelnicy klikną Twoje logo, aby uzyskać więcej informacji.",
 				content3Div1: "Zawartość jest podzielona na sekcje. Liczba sekcji, które można dodać jest nieograniczona (sekcje są w postaci niewielkich rozdziałów). Sposób i kolejność prezentacji rozdziałów są bardzo ważne. Na ekranie Organizuj można zmieniać kolejność sekcji lub usuwać je wedle uznania.",
 				content4Div1: "Czy znaleziono błąd w aplikacji, czy chcesz zmienić materiały? Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
 				content5Div1: "Po zapisaniu aplikacja %TPL_NAME% pozostaje aplikacją prywatną. Aby udostępnić ją innym, należy kliknąć przycisk Udostępnij. Jeśli upublicznisz aplikację %TPL_NAME%, wszyscy będą mogli mieć do niej dostęp.",

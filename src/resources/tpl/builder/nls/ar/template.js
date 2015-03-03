@@ -78,7 +78,7 @@
 				lblAdd: "إضافة مقطع",
 				lblSettings: "الإعدادات",
 				lblOrga: "تنظيم المحتويات",
-				lblEdit: "تحرير",
+				lblEdit: "عمليات التحرير",
 				lblPublish: "مشاركة",
 				lblTips: "تلميحات",
 				lblMore: "هل تريد المزيد؟",

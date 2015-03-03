@@ -5,7 +5,7 @@
 				add: "Adicionar",
 				edit: "Editar",
 				save: "Salvar",
-				next: "Avançcar",
+				next: "Avançar",
 				cancel: "Cancelar",
 				back: "Voltar",
 				apply: "Aplicar",

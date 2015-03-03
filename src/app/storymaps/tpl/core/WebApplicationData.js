@@ -135,9 +135,10 @@ define(["dojo/_base/lang"],
 			 */
 			getTitle: function()
 			{
-				// If it's the first section - reuse the title as app title
-				// TODO shoudn't be done here
-				if ( app.isDirectCreationFirstSave && this.getStorySections().length > 0 )
+				var title = _data.values.title;
+				
+				// Reuse the title as app title
+				if ( (app.isDirectCreationFirstSave || title === undefined) && this.getStorySections().length > 0 )
 					this.setTitle($("<div>" + this.getStorySections()[0].title + "</div>").text());
 				
 				return _data.values.title;

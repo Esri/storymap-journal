@@ -27,7 +27,7 @@
 				tooltipLocation: "Definisce la posizione visualizzata da questa mappa.",
 				tooltipContent: "Definisce i layer visibili.",
 				tooltipPopup: "Consente di scegliere un popup da aprire quando viene visualizzata questa mappa.",
-				tooltipOverview: "Consente di visualizzare una piccola mappa d\'insieme insieme alla mappa principale.",
+				tooltipOverview: "Consente di visualizzare una piccola mappa d\'insieme assieme alla mappa principale.",
 				tooltipLegend: "Consente di visualizzare la legenda della mappa, utile quando la mappa contiene numerosi layer e simboli.",
 				mapCfgInvite: "Utilizzare questi controlli per configurare la mappa",
 				lblLocationAlt: "Ereditata dalla prima mappa",

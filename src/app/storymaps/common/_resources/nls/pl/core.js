@@ -18,7 +18,7 @@
 				height: "Wysokość"
 			},
 			inlineFieldEdit: {
-				editMe: "Przeprowadź edycję"
+				editMe: "Edytuj!"
 			},
 			builderPanel: {
 				panelHeader: "Kreator szablonu %TPL_NAME%",
@@ -47,8 +47,8 @@
 			},
 			share: {
 				firstSaveTitle: "Aplikacja zapisana pomyślnie",
-				firstSaveHeader: "Aplikacja została zapisana w portalu %PORTAL%, jednak nie została jeszcze udostępniona.",
-				firstSavePreview: "Podgląd",
+				firstSaveHeader: "Twoja aplikacja została zapisana w portalu %PORTAL%, jednak nie została jeszcze udostępniona.",
+				firstSavePreview: "Zobacz podgląd",
 				firstSaveShare: "Udostępnij",
 				firstSaveA1: "Jeżeli nie znasz jeszcze portalu %PORTAL% lub chcesz szybko uzyskać dostęp do interfejsu kreatora, możesz zapisać następujące łącze: %LINK1%",
 				firstSaveA1bis: "Aplikację można również znaleźć w Twoim <a href='%LINK2%' target='_blank'>folderze zasobów w portalu %PORTAL%</a>.",

@@ -33,7 +33,7 @@
 				noPendingChange: "Žádná neuložená změna",
 				unSavedChangePlural: "Neuložené změny",
 				closeWithPendingChange: "Opravdu chcete potvrdit tuto akci? Vaše změny budou ztraceny.",
-				saveError: "Uložení se nezdařilo, zkuste to prosím znovu.",
+				saveError: "Uložení se nezdařilo, zkuste to znovu.",
 				shareStatus1: "Aplikace ještě nebyla uložena.",
 				shareStatus2: "Aplikace je sdílená veřejně.",
 				shareStatus3: "Aplikace je sdílená v rámci organizace.",

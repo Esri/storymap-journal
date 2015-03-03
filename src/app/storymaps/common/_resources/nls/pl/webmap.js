@@ -24,8 +24,8 @@
 				newMap: "Nowo wybrana mapa internetowa",
 				webmapDefault: "Domyślne ustawienia mapy",
 				customCfg: "Konfiguracja niestandardowa",
-				tooltipLocation: "Określ lokalizację do wyświetlania przez tę mapę.",
-				tooltipContent: "Określ widoczne warstwy.",
+				tooltipLocation: "Definiuj lokalizację do wyświetlania przez tę mapę.",
+				tooltipContent: "Definiuj widoczne warstwy.",
 				tooltipPopup: "Wybierz okno podręczne, które zostanie otwarte w momencie wyświetlenia tej mapy.",
 				tooltipOverview: "Wyświetl małą mapę przeglądową wraz z mapą główną.",
 				tooltipLegend: "Wyświetl legendę mapy, przydaje się ona, gdy mapa ma wiele warstw i symboli.",
@@ -53,11 +53,11 @@
 			mapdlg:{
 				items:{
 					organizationLabel: "Moja instytucja",
-					onlineLabel: "ArcGIS Online",
+					onlineLabel: "Usługa ArcGIS Online",
 					contentLabel: "Moje zasoby",
 					favoritesLabel: "Moje ulubione"
 				},
-				title: "Wybór mapy internetowej",
+				title: "Wybierz mapę  internetową",
 				searchTitle: "Wyszukaj",
 				ok: "OK",
 				cancel: "Anuluj",

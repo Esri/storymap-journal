@@ -1,17 +1,21 @@
 <div class="video-detail">
-	<table>
-		<tr>
-			<td><img src="<%= thumbUrl %>" /></td>
-			<td style="padding-left: 10px">
-				<strong>
-					<%= title %>
-				</strong>
-				<div style="max-height: 100px; overflow-y: auto;">
-					<%= description %>
-				</div>
-			</td>
-		</tr>
-	</table>
+	<% if ( typeof(fetchVideoSnippet) === "undefined" || fetchVideoSnippet ){ %>
+		<table>
+			<tr>
+				<td><img src="<%= thumbUrl %>" /></td>
+				<td style="padding-left: 10px">
+					<strong>
+						<%= title %>
+					</strong>
+					<div style="max-height: 100px; overflow-y: auto; word-wrap: break-word; word-break: break-word;">
+						<%= description %>
+					</div>
+				</td>
+			</tr>
+		</table>
+	<% } else { %>
+		<div style="font-style: italic; margin: 15px 0 25px 0;"><%= videoNotChecked %></div>
+	<% } %>
 	<div style="text-align: center; margin-top: 10px;">
 		<button class="btn btn-primary btn-select-video"><%= btnSelect %></button>
 	</div>

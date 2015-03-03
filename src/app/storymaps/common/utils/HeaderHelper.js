@@ -49,7 +49,7 @@ define([
 			setLink: function(container, headerCfg)
 			{
 				if( headerCfg.linkURL && headerCfg.linkText )
-					container.find('.linkContainer').html('<a href="' + headerCfg.linkURL + '" class="link" target="_blank">' + headerCfg.linkText + '</a>');
+					container.find('.linkContainer').html('<a href="' + headerCfg.linkURL + '" class="link" target="_blank" tabindex="-1">' + headerCfg.linkText + '</a>');
 				else 
 					container.find('.linkContainer').html(headerCfg.linkText);
 			},
@@ -111,6 +111,14 @@ define([
 				container.find(".share_bitly").off('click').click(function(){
 					var url = $(this).data('url') || document.location.href;
 					_shareDialog.present(SocialSharing.cleanURL(url, true));
+				});
+				
+				// Bind keyboard enter to click
+				container.find(".shareIcon, .share-all").off('keypress').keypress(function (e) {
+					if(e.which == 13) {
+						$(this).click();
+						return false;  
+					}
 				});
 				
 				$(window).resize(function(){

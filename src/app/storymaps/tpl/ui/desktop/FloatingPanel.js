@@ -119,6 +119,11 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					// Scroll up
 					if ( container.find('.swiper-slide-visible').length )
 						container.find('.swiper-slide-visible')[0].scrollTop = 0;
+					
+					// Fix content scrolling under the title sometimes when navigating fast btw section
+					setTimeout(function(){
+						_swipePane && _swipePane.resizeFix();
+					}, 50);					
 				}
 				
 				updateAppTitle();
@@ -202,12 +207,96 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				
 				// Fix weird issue on Chrome where home section title wasn't appearing
 				// TODO this should be cleaned-up
-				setTimeout(function(){
-					container.find('.section').eq(0).find('.title').css("margin-top", container.find('.section').eq(0).find('.title').css("margin-top"));
-				}, 200);
+				if ( has("chrome") ) {
+					setTimeout(function(){
+						container.find('.section').eq(0).find('.title').css(
+							"margin-top", 
+							container.find('.section').eq(0).find('.title').css("margin-top")
+						);
+					}, 200);
+				}
+				
 				
 				// Builder edit btn
 				container.find(".panelEditBtn").toggle(!! (isInBuilder && sections && sections.length));
+				
+				var titles = container.find('.title');
+				
+				// Fire a click event when focusing through keyboard and prevent double event when clicking with mouse
+				titles
+					.focus(function(){
+						if (!$(this).data("mouseDown")  && ! $(this).parents('.section').hasClass("swiper-slide-active")){
+							onDotNavigation($(this).parents(".section").index());
+						}
+					})
+					.mousedown(function(){
+						$(this).data("mouseDown", true);
+					})
+					.mouseup(function(){
+						$(this).removeData("mouseDown");
+					});
+				
+				titles.each(function(i, title){
+					var $title = $(title),
+						sectionLastContent = $title,
+						tabableContent = sectionLastContent.siblings(".content").find("[tabindex=0]");
+					
+					if ( tabableContent.length )
+						sectionLastContent = tabableContent.last();
+					
+					sectionLastContent.on('keydown', function(e) {
+						if( e.keyCode === 9 ) {
+							if ( ! e.shiftKey ) {
+								if ( i < titles.length - 1 ) {
+									onDotNavigation(i + 1);
+									setTimeout(function(){
+										titles.eq(i + 1).focus();
+									}, 200);
+								}
+								else {
+									focusHeader();
+								}
+							}
+							return false;
+						}
+					});
+					
+					$title.on('keydown', function(e) {
+						if( e.keyCode === 9 ) {
+							if ( e.shiftKey ) {
+								if ( i > 0 ) {
+									onDotNavigation(i - 1);
+									setTimeout(function(){
+										titles.eq(i - 1).focus();
+									}, 200);
+								}
+								else {
+									focusHeader();
+								}
+								return false;
+							}
+						}
+					});
+				});
+			}
+			
+			function focusHeader()
+			{
+				container.find(".header").removeAttr("aria-hidden");
+				
+				if ( ! container.find(".header .linkContainer a").length )
+					container.find(".header .linkContainer").attr("tabindex", "0");
+				else
+					container.find(".header .linkContainer a").attr("tabindex", "0");
+				
+				container.find(".header .shareIcon").attr("tabindex", "0");
+				
+				if ( container.find(".header .linkContainer a").length )
+					container.find(".header .linkContainer a")[0].focus();
+				else if ( container.find(".header .linkContainer").length )
+					container.find(".header .linkContainer")[0].focus();
+				else if ( container.find(".header .shareIcon:visible").length )
+					container.find(".header .shareIcon")[0].focus();
 			}
 			
 			function createSectionBlock(index, status, content, title)
@@ -221,8 +310,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
-					title: title,
-					content: content,
+					title: StoryText.prepareEditorContent(title),
+					content: StoryText.prepareEditorContent(content, true),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					shareURL: CommonHelper.getAppViewModeURL() + "&section=" + (index+1),
 					scroll: i18n.viewer.floatLayout.scroll

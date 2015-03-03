@@ -47,7 +47,7 @@
 				select: "Wybierz ten plik wideo"
 			},
 			videoSelectorHome: {
-				other: "Inny"
+				other: "Inne"
 			},
 			videoSelectorYoutube: {
 				url: "Adres URL pliku wideo dostępnego w serwisie YouTube",
@@ -104,7 +104,7 @@
 			},
 			editorActionGeocode: {
 				lblTitle: "Lokalizuj adres lub miejsce",
-				mapMarkerExplain: "Po kliknięciu łącza na mapie wyświetlony zostanie marker"
+				mapMarkerExplain: "Po kliknięciu łącza na mapie wyświetlony zostanie znak"
 			},
 			editorActionMedia: {
 				lblTitle: "Zmień zasoby w obszarze głównym"

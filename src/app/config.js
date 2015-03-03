@@ -89,6 +89,7 @@ app.cfg = {
 	 */
 	
 	HELP_URL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
+	HELP_URL_PORTAL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
 	
 	// Control the authorized data source (for initialization and import screen)
 	AUTHORIZED_IMPORT_SOURCE: {
@@ -105,6 +106,11 @@ app.cfg = {
 	// To use Facebook import on Portal for ArcGIS, create your own ID at https://developers.facebook.com/ 
 	// or set AUTHORIZED_IMPORT_SOURCE.facebook to false
 	FACEBOOK_APP_ID: "276669785846752",
+	// This Youtube key is valid for application running on arcgis.com and esri.com domains
+	// If the application is deployed on Portal for ArcGIS or your own server, the Youtube api call 
+	//  won't be perfomed until you set the following flag and provide your own key
+	YOUTUBE_DISABLE_ON_PORTAL: true,
+	YOUTUBE_API_KEY: "AIzaSyDevTFP16nz6sA-akiOVi6wWXiplJnQ4qw",
 	
 	//
 	// Builder direct creation

@@ -7,6 +7,10 @@
 	color: #CECECE;
 }
 
+.header .link {
+	font-weight: 400;
+}
+
 /**********************
  *  Side/Float panels *
  **********************/
@@ -32,7 +36,7 @@
 	font-size: 15px;
 }
 	
-.sectionPanel .link {
+.sectionPanel .content .link {
 	font-weight: 400;
 	outline: 0;
 }

@@ -391,8 +391,7 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			
 			// TODO should have an error message if not found
 			
-			// If the graphics come from a client side layer OR from a Feature Service
-			var layer = feature.getLayer() || feature.MJlayerRef,
+			var layer = feature.getLayer(),
 				fields = layer.fields,
 				objectIdFields = $.grep(fields, function(field){
 					return field.type == "esriFieldTypeOID";

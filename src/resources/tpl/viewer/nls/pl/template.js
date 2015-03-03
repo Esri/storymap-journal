@@ -21,7 +21,7 @@
 			errors: {
 				boxTitle: "Wystąpił błąd",
 				invalidConfig: "Nieprawidłowa konfiguracja",
-				invalidConfigNoApp: "Identyfikator aplikacji map internetowych nie został określony w pliku index.html.",
+				invalidConfigNoApp: "Identyfikator aplikacji tworzenia map internetowych nie został określony w pliku index.html.",
 				unspecifiedConfigOwner: "Nie skonfigurowano autoryzowanego właściciela.",
 				invalidConfigOwner: "Właściciel aplikacji nie jest autoryzowany.",
 				createMap: "Nie można utworzyć mapy",
@@ -53,11 +53,11 @@
 				back: "Wstecz"
 			},
 			headerFromCommon: {
-				storymapsText: "Mapa opowiadania",
+				storymapsText: "Mapa narracji (Story Map)",
 				builderButton: "Edytuj",
 				bitlyTooltip: "Pobierz skrócone łącze do aplikacji",
-				templateTitle: "Ustaw tytuł szablonu",
-				templateSubtitle: "Ustaw podtytuł szablonu",
+				templateTitle: "Skonfiguruj tytuł szablonu",
+				templateSubtitle: "Skonfiguruj podtytuł szablonu",
 				share: "Udostępnij"
 			},
 			overviewFromCommon: {

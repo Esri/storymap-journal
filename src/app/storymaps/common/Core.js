@@ -267,7 +267,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			// Webmap and template doesn't support preview when hosted in AGOL 
 			if ( webmapId && ! supportWebmapPreviewAGOL ) {
 				if( CommonHelper.isArcGISHosted() )
-					window.location = app.cfg.HELP_URL;
+					redirectToExternalHelp();
 				else 
 					loadWebMap(webmapId);
 				
@@ -291,7 +291,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			}
 
 			if( CommonHelper.isArcGISHosted() )
-				window.location = app.cfg.HELP_URL;
+				redirectToExternalHelp();
 			else if ( _urlParams.appid && (! app.indexCfg.authorizedOwners || ! app.indexCfg.authorizedOwners[0]) )
 				initError("unspecifiedConfigOwner");
 			else
@@ -433,6 +433,11 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 			_mainView.firstWebmapLoaded();
 			*/
+		}
+		
+		function redirectToExternalHelp()
+		{
+			window.location = app.isPortal && app.cfg.HELP_URL_PORTAL ? app.cfg.HELP_URL_PORTAL : app.cfg.HELP_URL;
 		}
 		
 		function initializeUI()

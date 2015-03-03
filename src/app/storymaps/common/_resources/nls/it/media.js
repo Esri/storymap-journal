@@ -8,7 +8,7 @@
 				lblImage: "Immagine",
 				lblVideo: "Video",
 				lblExternal: "Pagina Web",
-				disabled: "Questa feature è stata disabilitata dall\'Amministratore",
+				disabled: "Questa feature è stata disabilitata dall\'amministratore",
 				url: "Per immettere manualmente l\'indirizzo Web di un\'immagine",
 				userLookup: "Carica album",
 				notImplemented: "Non ancora implementato.",
@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "Utente Facebook",
 				rightHeader: "Pagina Facebook",
-				pageExplain: "Una pagina Facebook è un marchio/prodotto pubblico o un personaggio pubblico come <b>esrigis</b>. È possibile ottenere il nome della pagina dopo il primo \"/\" nell\'URL della pagina.",
+				pageExplain: "Una pagina Facebook è un marchio/prodotto pubblico o un personaggio pubblico come <b>esrigis</b>. È possibile ottenere il nome della pagina dopo il primo \'/\' nell\'URL della pagina.",
 				pageInputLbl: "Nome pagina",
 				lookupMsgError: "Pagina non trovata"
 			},
@@ -38,7 +38,7 @@
 				userInputLbl: "E-mail o ID Picasa/Google+",
 				signInMsg2: "Account non trovato",
 				howToFind: "Come trovare l\'ID di un account Picasa o Google+",
-				howToFind2: "Copiare le cifre tra il primo e il secondo \"/\" di qualsiasi pagina Picasa o G+"
+				howToFind2: "Copiare le cifre tra il primo e il secondo \'/\' di qualsiasi pagina Picasa o G+"
 			},
 			videoSelectorCommon: {
 				check: "Seleziona",

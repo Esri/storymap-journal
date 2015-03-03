@@ -176,8 +176,8 @@ define(["lib-build/tpl!./FloatingSwiperSection",
 				_nbSections++;
 				
 				return viewSectionTpl({
-					title: $("<div>" + title + "</div>").text(),
-					content: content,
+					title: $("<div>" + StoryText.prepareEditorContent(title) + "</div>").text(),
+					content: StoryText.prepareEditorContent(content),
 					lblTapDetails: i18n.viewer.mobileView.tapForDetails,
 					lblClickDetails: i18n.viewer.mobileView.clickForDetails.toUpperCase(),
 					lblSwipe: i18n.viewer.mobileView.swipeToExplore,

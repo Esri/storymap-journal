@@ -5,7 +5,7 @@
 				add: "Thêm",
 				edit: "Chỉnh sửa",
 				save: "Lưu",
-				next: "Tiếp",
+				next: "Tiếp theo",
 				cancel: "Hủy",
 				back: "Quay lại",
 				apply: "Áp dụng",

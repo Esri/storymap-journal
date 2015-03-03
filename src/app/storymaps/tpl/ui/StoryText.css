@@ -1,4 +1,5 @@
 .section {
+	word-wrap: break-word;
 	word-break: break-word;
 }
 
@@ -44,8 +45,6 @@
 figure {
 	margin: 15px 0;
 	display: block; /* For IE8 */
-	/* Storymaps */
-	display: inline-block;
 	max-width: 100%;
 }
 
@@ -65,21 +64,30 @@ figure figcaption {
  * Image full screen V1.0
  */
 
-.image-container {
- 	display: block;
- 	cursor: pointer;
- }
- 
+/*
+ * Extra wrapper around image and full screen button
+ *  for proper alignement of full screen button in all text centering
+ */
+
+.image-wrapper {
+	display: inline-block;
+	position: relative;
+	cursor: default;
+	pointer-events: none;
+	min-width: 36px;
+	min-height: 36px;
+	max-width: 100%;
+}
+
 .btn-fullscreen {
 	display: inline-block;
 	position: absolute;
-	top: 8px;
 	right: 10px;
 	width: 26px;
 	height: 26px;
 	background: url('../../../../resources/tpl/viewer/icons/media-fullscreen.png') 0 0;
 	opacity: 0.6;
-	margin-top: 1px;
+	margin-top: 10px;
 }
 
 .btn-fullscreen:hover {
@@ -87,26 +95,12 @@ figure figcaption {
 	cursor: pointer;
 }
 
-.has-width img {
-	padding: 10px;
-}
-
-.has-width .btn-fullscreen {
-	top: 18px;
-	right: 20px;
-}
-
 /* 
  * The container is supposed to be an image-container except when ckeditor bug and decide to use a p 
  * (seems to happen a lot when playing with alignement)
  */
 /*.image-container*/.has-width:not(.float-right) .btn-fullscreen {
-	position: relative;
 	vertical-align: top;
-	/*top: 4px;
-	right: 32px;*/
-	top: 12px;
-	right: 40px;
 }
 
 /* sometimes the RTE get rid of the fullscreen class so assume user wants that */
@@ -114,23 +108,48 @@ p.has-width.float-right img {
 	cursor: pointer;
 }
 
-.has-width.float-right .btn-fullscreen {
-	display: none;
-}
-
-.image-container.has-width.float-right .btn-fullscreen {
-	position: absolute;
-	top: 4px;
-	right: 6px;
+.image-container.has-width.float-right {
+	text-align: right !important;
 }
 
 .image-container:not(.activate-fullscreen) .btn-fullscreen {
 	display: none;
 }
 
-.image-container:not(.activate-fullscreen) {
-	cursor: default;
+p:not(.activate-fullscreen) > .image-wrapper > .btn-fullscreen {
+	display: none;
+}
+
+.image-container.activate-fullscreen > .image-wrapper,
+.image-container.activate-fullscreen > span > .image-wrapper, 
+.image-container.activate-fullscreen > p > .image-wrapper,
+/* that should not happen */
+figure > .image-wrapper {
+	cursor: pointer;
+	pointer-events: all;
+}
+
+p[tabindex='0'] > .image-wrapper {
+	cursor: pointer;
+	pointer-events: all;
+}
+
+/*
+ * Image included in a link
+ * The full screen button is not honored but the link is
+ */
+
+.image-container > a > .image-wrapper {
+	cursor: pointer;
+	pointer-events: all;
+}
+
+.image-container > a > .image-wrapper img {
 	pointer-events: none;
+}
+
+.image-container > a > .image-wrapper .btn-fullscreen {
+	display: none;
 }
 
 /*
@@ -174,6 +193,14 @@ p.has-width.float-right img {
 
 #cboxClose:hover {
 	background-position-y: -39px !important;
+}
+
+/*
+ * Iframe
+ */
+
+.iframe-container.custom iframe {
+	max-width: 100%;
 }
 
 /*

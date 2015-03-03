@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organizare",
-				lblHeader: "Trageţi şi plasaţi secţiuni pentru a vă organiza conţinutul.",
+				lblHeader: "Glisaţi şi fixaţi secţiuni pentru a vă organiza conţinutul.",
 				lblColTitle: "Titlu",
 				lblColPubDate: "Data publicării",
 				lblColStatus: "Stare",
@@ -88,9 +88,9 @@
 				content2Div1: "În caseta de dialog Setări puteţi modifica aspectul %TPL_NAME%. Modificaţi configuraţia, alegeţi o schemă diferită de culori, modificaţi caracterele textului etc.",
 				content2Div2: "De asemenea, puteţi înlocui sigla Esri cu propria siglă pentru a reflecta marca dvs. Puteţi, de asemenea, să specificaţi site-ul web care va fi lansat dacă cititorii fac clic pe siglă, pentru a le oferi mai multe informaţii.",
 				content3Div1: "Conţinutul dvs. este organizat în secţiuni. Puteţi avea oricâte secţiuni doriţi (gândiţi-vă la acestea ca la nişte mini-capitole). Succesiunea acestor capitole este importantă; în Organizare puteţi reordona sau şterge secţiuni după cum doriţi.",
-				content4Div1: "Aţi găsit o greşeală sau doriţi să modificaţi materialul? Nicio problemă. Căutaţi în aplicaţie pictograma de editare pentru modifica conţinutul. Pe măsură ce dezvoltaţi %TPL_NAME%, veţi utiliza de multe ori funcţiile de editare!",
-				content5Div1: "Atunci când salvaţi %TPL_NAME% acesta este iniţial privat. Utilizaţi butonul Partajare pentru a-l partaja cu ceilalţi. Puteţi partaja %TPL_NAME% în mod public astfel încât să îl poată accesa oricine.",
-				content5Div2: "În funcţie de contul dvs., puteţi avea opţiunea de a partaja %TPL_NAME% doar cu persoanele din organizaţia dvs., astfel încât să nu poată fi accesat de alte persoane.",
+				content4Div1: "Aţi găsit o greşeală sau doriţi să modificaţi materialul? Nicio problemă. Căutaţi în aplicaţie pictograma de editare pentru a modifica conţinutul. Pe măsură ce dezvoltaţi %TPL_NAME%, veţi utiliza de multe ori funcţiile de editare!",
+				content5Div1: "Atunci când salvaţi %TPL_NAME% acesta este iniţial privat. Utilizaţi butonul Partajare pentru a-l partaja cu ceilalţi. Puteţi partaja %TPL_NAME% în mod public, astfel încât să îl poată accesa oricine.",
+				content5Div2: "În funcţie de contul dvs., puteţi avea opţiunea de a partaja %TPL_NAME% doar cu persoanele din organizaţia dvs., astfel încât acesta să nu poată fi accesat de alte persoane.",
 				content6Div1: "Titlul secţiunii principale este şi titlul jurnalului; consideraţi secţiunea principală ca fiind o „copertă” pentru informaţiile pe care le transmiteţi. Titlul secţiunii principale va rămâne vizibil în timpul navigării cititorilor prin Jurnal.",
 				content6Div2: "%LAYOUT_TITLE% nu este obligatoriu să fie numai text. Puteţi include şi fotografii şi clipuri video pentru a ajuta la reflectarea informaţiilor şi întreruperea secţiunilor lungi de text!"
 			},

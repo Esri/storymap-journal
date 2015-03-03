@@ -153,7 +153,7 @@ define(["lib-build/css!./ViewConfigure",
 				container.find('.inline-video').toggle(_mediaType == 'video' || _mediaType == 'webpage');
 				
 				container.find('.mediaTitle').val(media ? media[media.type].title : '');
-				container.find('[value="opt-maximize"]').prop('checked', params.activateFullScreen);
+				container.find('[value="opt-maximize"]').prop('checked', media ? media[media.type].activateFullScreen : false);
 				
 
 				// Image information (inline)

@@ -12,7 +12,6 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 		"esri/geometry/webMercatorUtils",
 		"esri/symbols/SimpleMarkerSymbol",
 		//"esri/dijit/PopupMobile",
-		"esri/tasks/QueryTask",
 		"esri/tasks/query",
 		"dojo/topic",
 		"dojo/on",
@@ -34,7 +33,6 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 		webMercatorUtils,
 		SimpleMarkerSymbol,
 		//PopupMobile,
-		QueryTask,
 		Query,
 		topic,
 		on,
@@ -367,6 +365,12 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 								app.mapItem = app.maps[newWebmapId].response.itemInfo;
 								app.mapConfig = app.maps[newWebmapId];
 								
+								// Popup
+								if ( app.map.infoWindow ) {
+									$(app.map.infoWindow.domNode).addClass("light");
+									app.map.infoWindow.markerSymbol = new SimpleMarkerSymbol().setSize(0);
+								}
+								
 								updateMainMediaMapsStep2(
 									mapContainer, 
 									section, 
@@ -414,12 +418,6 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 									app.map.on("pan-end", onPanOrZoomEnd);
 								}
 								
-								// Popup
-								if ( app.map.infoWindow ) {
-									$(app.map.infoWindow.domNode).addClass("light");
-									app.map.infoWindow.markerSymbol = new SimpleMarkerSymbol().setSize(0);
-								}
-
 								setTimeout(function(){
 									stopMainStageLoadingIndicator();
 								}, 50);
@@ -599,55 +597,35 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 
 			function applyPopupConfigurationStep2(popupCfg, index)
 			{
-				var layer = app.map.getLayer(popupCfg.layerId);
+				var query = new Query(),
+					layer = app.map.getLayer(popupCfg.layerId);
 				
 				if ( ! layer )
 					return;
 				
-				// Server layer
-				if ( layer.url ) {
-					var queryTask = new QueryTask(layer.url),
-						query = new Query();
-						query.objectIds = [popupCfg.fieldValue];
-						query.returnGeometry = true;
-						query.outFields = ["*"];
-						query.outSpatialReference = app.map.spatialReference;
-
-					queryTask.execute(query, function(result){
-						var feature = result.features[0];
-						if ( feature ) {
-							if( ! feature.infoTemplate )
-								feature.setInfoTemplate(layer.infoTemplate);
-							
-							// need to store the reference to the layer manually for the builder map popup configuration
-							feature.MJlayerRef = layer;
-							applyPopupConfigurationStep3(feature, index);
-						}
-					});
+				query.objectIds = [popupCfg.fieldValue];
+				
+				// Feature Service
+				if (!layer._collection) {
+					query.returnGeometry = true;
+					query.outFields = ["*"]; // popupCfg.fieldName ?
+					query.outSpatialReference = app.map.spatialReference;
 				}
-				// Client side layer
-				else {
-					var feature = null;
-					
-					$.each(layer.graphics, function(i, g){
-						if ( g.attributes[popupCfg.fieldName] == popupCfg.fieldValue )
-							feature = g;
-					});
-					
-					if ( feature )
-						applyPopupConfigurationStep3(feature, index);
-				}
+				
+				layer.queryFeatures(query).then(function(featureSet) {
+					applyPopupConfigurationStep3(featureSet.features, index);
+				});
 			}
 			
-			function applyPopupConfigurationStep3(feature, index)
+			function applyPopupConfigurationStep3(features, index)
 			{
-				if ( ! feature )
+				if ( ! features || ! features.length )
 					return;
 				
-				var geom = feature.geometry,
+				var geom = features[0].geometry,
 					center = geom.getExtent() ? geom.getExtent().getCenter() : geom;
 				
-				app.map.infoWindow.setFeatures([feature]);
+				app.map.infoWindow.setFeatures(features);
 				app.map.infoWindow.show(center);
 				
 				// Center the map is the geometry isn't visible
