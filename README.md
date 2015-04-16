@@ -45,6 +45,8 @@ Enjoy!
 You can continue to use the builder in ArcGIS Online to modify your story.
 See [customize the look and feel section](#customize-the-look-and-feel) or [developer guide](#developer-guide) if you want to modify the app.
 
+*If you are using Portal for ArcGIS, follow the instructions at the end of `app/config.js` to configure the application to use your Portal instead of ArcGIS Online. Optionally you can also configure the application to use the ArcGIS API for JavaScript included on your Portal by editing `pathJSAPI` in `index.html`.*
+
 ## Feedback / support
 We would love to hear from you!
 * [StoryMaps Website](http://storymaps.arcgis.com/)
