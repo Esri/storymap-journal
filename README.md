@@ -197,7 +197,7 @@ Also note that the web application gallery preview feature redirects to the Stor
 #### Can the template be used offline?
 Yes, by using Portal for ArcGIS and configuring the template to use the ArcGIS API for Javascript included with the Portal. 
 
-To edit the ArcGIS API for JavaScript, edit `index.html` and locate `pathJSAPI` around line 64. The URL is "//webadaptor.domain.com/arcgis/jsapi/jsapi" where arcgis is the name of your Web Adaptor.
+To edit the ArcGIS API for JavaScript, edit `index.html` and locate `pathJSAPI` around line 64. The URL is `//webadaptor.domain.com/arcgis/jsapi/jsapi` where arcgis is the name of your Web Adaptor.
 
 When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file `app/config.js`.
 
