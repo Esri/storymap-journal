@@ -81,9 +81,69 @@ To add links in a section content, use the `Source button` of the text editor (s
 <p><a onclick="require(['dojo/topic'], function(topic){ topic.publish('story-navigate-section', 4); });">Navigate to section 4</a></p>
 ```
 
-You can also add that capability to map feature popups. This can for example allow the home section map to be the spatial index to your story. ArcGIS Online Map Viewer doesn't allow to create those links from the editor but if those links are present in your layer attributes before you upload your data to ArcGIS Online, it will works.
-
 Note that the links navigate the Journal using an index that start at 0 for the Home Section. If you remove or reorder your sections, you will have to modify the links manually.
+
+You can also add that capability to map feature popups. This can for example allow the home section map to be the spatial index to your story. To do that you need to download the application and include a piece of code in `index.html`, look at the end of the file and modify it as below. Follow the instructions to configure the web map and the layer that will receive the click event.
+
+
+```
+require(["dojo/topic"], function(topic) {
+	/*
+	 * Custom Javascript to be executed while the application is initializing goes here
+	 */
+	
+	// The application is ready
+	topic.subscribe("tpl-ready", function(){
+		/*
+		 * Custom Javascript to be executed when the application is ready goes here
+		 */
+	});
+	
+	/*
+	 * Set up a click handler on the feature of the map to navigate the story
+	 */
+	
+	// Configure the webmap id and layer id
+	// To get the layer id, just configure the webmap and run the application, 
+	//  all the layer ids of your webmap will be printed in the console  
+	var WEBMAP_ID = "0bb11c0469f042b3afaf8b0d76572822",
+		LAYER_ID = "csv_7673_0";
+	
+	var clickHandlerIsSetup = false;
+	
+	topic.subscribe("story-loaded-map", function(result){
+		if ( result.id == WEBMAP_ID && ! clickHandlerIsSetup ) {
+			var map = app.maps[result.id].response.map,
+				layer = map.getLayer(LAYER_ID);
+			
+			console.log(map.graphicsLayerIds);
+			
+			if ( layer ) {
+				layer.on("mouse-over", function(e){
+					map.setMapCursor("pointer");
+					map.infoWindow.setContent("<b>"+e.graphic.attributes.name.split(",")[0]+"</b><br/><i>Click to zoom</i>");
+					map.infoWindow.show(e.graphic.geometry);
+				});
+				
+				layer.on("mouse-out", function(e){
+					map.setMapCursor("default");
+					map.infoWindow.hide();
+				});
+				
+				layer.on("click", function(e){
+					var index = e.graphic.attributes["__OBJECTID"];
+					topic.publish("story-navigate-section", index);
+				});
+			}
+			
+			clickHandlerIsSetup = true;
+		}
+	});
+});
+```
+
+
+_Note that it used to be possible until March 2015 to include the navigation links presented above in web map feature collection attributes and to configure the web map popup to display that attributes. Unfortunately that's not a good practice anymore and those links will be removed from the web map automaticaly when they are edited. This would break your application._
 
 
 ### Security
