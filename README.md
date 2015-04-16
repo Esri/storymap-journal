@@ -45,7 +45,7 @@ Enjoy!
 You can continue to use the builder in ArcGIS Online to modify your story.
 See [customize the look and feel section](#customize-the-look-and-feel) or [developer guide](#developer-guide) if you want to modify the app.
 
-*If you are using Portal for ArcGIS, please follow the instructions at the end of `app/config.js` to configure the application. Optionally you can also configure the application to use the ArcGIS API for JavaScript included on your Portal by editing `pathJSAPI` in `index.html`.*
+*If you are using Portal for ArcGIS, please follow the instructions at the end of `app/config.js` to configure the application. Optionally you can also [configure the application](#can-the-template-be-used-offline) to use the ArcGIS API for JavaScript included on your Portal.*
 
 ## Feedback / support
 We would love to hear from you!
@@ -197,7 +197,7 @@ Also note that the web application gallery preview feature redirects to the Stor
 #### Can the template be used offline?
 Yes, by using Portal for ArcGIS and configuring the template to use the ArcGIS API for Javascript included with the Portal. 
 
-To edit the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 75. 
+To edit the ArcGIS API for JavaScript, edit `index.html` and locate `pathJSAPI` around line 64. The URL is "//webadaptor.domain.com/arcgis/jsapi/jsapi" where arcgis is the name of your Web Adaptor.
 
 When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file `app/config.js`.
 
