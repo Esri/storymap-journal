@@ -186,13 +186,25 @@ The image and videos that you include in your Journal using the builder are not 
 #### Can I deploy Map Journal on Portal for ArcGIS?
 Yes, Map Journal is included with Portal for ArcGIS starting at version 10.3.
 
-If you are using a previous version of Portal, you will have to deploy the following version [Map Journal V1.0.2 - portal](https://github.com/Esri/map-journal-storytelling-template-js/releases/download/V1.0.2/Storytelling-MapJournal-1.0.2-portal.zip) in the following folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`. 
+If you are using Portal 10.3+ and want to update Map Journal, [download the latest version](http://links.esri.com/storymaps/map_journal_template_zip). If you are using Portal 10.2.1 or 10.2.2, you can't deploy the latest version of Map Journal and have to deploy the following version [Map Journal V1.0.2 - portal](https://github.com/Esri/map-journal-storytelling-template-js/releases/download/V1.0.2/Storytelling-MapJournal-1.0.2-portal.zip).
 
-Note that when using Portal 10.2.1 or 10.2.2, it is required that you use Map Journal V1.0.2 or below and the JS API in version 3.9 (Map Journal V1.1 and above are not compatible, JS API 3.10 and above are not compatible). The previous link is the only version of Map Journal that is compatible with Portal 10.2.1 or 10.2.2. That version use the Javascript API V3.9 hosted in ArcGIS Online, optionaly you can modify it to use the API included on your Portal. To change the JavaScript API, edit `index.html` and locate `pathJSAPI` around line 75. 
+Then:
+ - Find your Portal `apps/MapJournal` folder (depending on your installation and version of Portal, this is either `C:\Program Files\ArcGIS\Portal\apps\MapSeries` or `C:\Program FilesArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`). 
+ - Remove the content of that folder
+ - Extract the archive so that `index.html` is located at `MapJournal\index.html` 
 
-If the folder `ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal` already contain a previous version, make sure to first delete all of its content. Then refer your Portal documentation for instructions on [publishing a new web application item](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_applications/019300000031000000/) and adding it to a group and [configuring the web application gallery](http://resources.arcgis.com/en/help/main/10.2/index.html#/Configure_map_viewer/017s00000024000000/) to use that group. If you choose to deploy the template in another folder, some configuration will be required (see the configuration section in index.html). 
+If Map Journal was already included in your Portal you are done (Portal for ArcGIS 10.3+).
 
-Also note that the web application gallery preview feature redirects to the StoryMaps website, the target page can be modified in `app/config.js > HELP_URL`.
+If Map Journal was not available in your Portal:
+ - Log into Portal for ArcGIS and open My Content > Add Item > Application > Web Mapping Application > Configurable. Configure the URL to `https://portal.domain.com/arcgis/apps/MapJournal`. More details in the following documentation [publishing a new web application item](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_applications/019300000031000000/).
+ - Create a new group that will reference the template available in your Portal
+ - Share the newly created item with that group
+ - Open My Organization > Edit Settings > Map  and set the `Web App Templates` to the newly created group. More details in the following documentation [configuring the web application gallery](http://resources.arcgis.com/en/help/main/10.2/index.html#/Configure_map_viewer/017s00000024000000/)
+ - Now when you share a web map, the template should be an option
+
+_Note that the archive you downloaded is using the ArcGIS API for JavaScript hosted in ArcGIS Online. This can create some incompatibility with your Portal, if you run into issue, please see the next section to update it._
+
+Also note that the web application gallery preview feature redirects to the StoryMaps website, the target page can be modified in `app/config.js > HELP_URL_PORTAL`.
 
 #### Can the template be used offline?
 Yes, by using Portal for ArcGIS and configuring the template to use the ArcGIS API for Javascript included with the Portal. 
