@@ -189,7 +189,7 @@ Yes, Map Journal is included with Portal for ArcGIS starting at version 10.3.
 If you are using Portal 10.3+ and want to update Map Journal, [download the latest version](http://links.esri.com/storymaps/map_journal_template_zip). If you are using Portal 10.2.1 or 10.2.2, you can't deploy the latest version of Map Journal and have to deploy the following version [Map Journal V1.0.2 - portal](https://github.com/Esri/map-journal-storytelling-template-js/releases/download/V1.0.2/Storytelling-MapJournal-1.0.2-portal.zip).
 
 Then:
- - Find your Portal `apps/MapJournal` folder (depending on your installation and version of Portal, this is either `C:\Program Files\ArcGIS\Portal\apps\MapSeries` or `C:\Program FilesArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`). 
+ - Find your Portal `apps/MapJournal` folder (depending on your installation and version of Portal, this is either `C:\Program Files\ArcGIS\Portal\apps\MapSeries` or `C:\Program Files\ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`). 
  - Remove the content of that folder
  - Extract the archive so that `index.html` is located at `MapJournal\index.html` 
 
