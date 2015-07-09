@@ -915,7 +915,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				// app.portal.portalHostname also include the portal instance name so we remove it first
 				
 				// Skip if the URL is already a full path
-				if ( ! app.cfg.HELP_URL_PORTAL.startsWith('//') ) {
+				if ( ! app.cfg.HELP_URL_PORTAL.match('^//') ) {
 					var portalHost = app.portal.portalHostname.split('/')[0];
 					app.cfg.HELP_URL_PORTAL = '//' + portalHost + app.portal.helpBase + app.cfg.HELP_URL_PORTAL;
 				}
