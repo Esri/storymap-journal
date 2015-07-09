@@ -118,8 +118,12 @@ define(["lib-build/tpl!./ViewText",
 			
 			this.getData = function()
 			{
+				var text = CKEDITOR.instances.addEditRTE ? CKEDITOR.instances.addEditRTE.getData() : "";
+				// That special character that can be copy/pasted from word would break the Journal after it his saved on Portal and reloaded  
+				text = text.replace(new RegExp(String.fromCharCode(8232), 'g')," ");
+				
 				return {
-					text: CKEDITOR.instances.addEditRTE ? CKEDITOR.instances.addEditRTE.getData() : "",
+					text: text,
 					actions: _textActions
 				};
 			};
@@ -330,7 +334,7 @@ define(["lib-build/tpl!./ViewText",
 						var updateMainStageCommand = function() {
 							var selectedText = editor.getSelection() ? editor.getSelection().getSelectedText() : null,
 								path = editor.elementPath(),
-								elem = path.lastElement && path.lastElement.getAscendant( 'a', true ),
+								elem = path && path.lastElement && path.lastElement.getAscendant( 'a', true ),
 								elemIsLink = elem && elem.getName() == 'a',
 								elemIsZoom = elem && elem.getAttribute('data-storymaps-type') == "zoom",
 								elemIsMedia= elem && elem.getAttribute('data-storymaps-type') == "media";

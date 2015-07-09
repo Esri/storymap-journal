@@ -34,7 +34,7 @@ define(["lib-build/tpl!./ViewHeader",
 				_logoTargetInput = _contentContainer.find("#logoTargetInput");
 				
 				_logoInput.keydown(onLogoInputEnter);
-				_logoInput.blur(loadCustomLogo);
+				_logoInput.focusout(loadCustomLogo);
 				_logoTargetInput.keydown(onTargetInputEnter);
 		
 				$("input[type=radio]", _contentContainer).click(onLogoRadioClick);

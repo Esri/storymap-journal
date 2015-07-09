@@ -524,7 +524,7 @@ define(["lib-build/tpl!./SidePanelSection",
 				container.find('.sections').scroll(onScroll);
 				
 				if ( isInBuilder )
-					container.find('.panelEditBtn').click(onClickEdit);
+					container.find('.panelEditBtn').off('click').click(onClickEdit);
 			}
 		};
 	}

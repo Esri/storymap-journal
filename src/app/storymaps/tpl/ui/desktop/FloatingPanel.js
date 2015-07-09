@@ -123,7 +123,9 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					// Fix content scrolling under the title sometimes when navigating fast btw section
 					setTimeout(function(){
 						_swipePane && _swipePane.resizeFix();
-					}, 50);					
+					}, 50);
+					
+					removeScrollInvite();
 				}
 				
 				updateAppTitle();
@@ -670,7 +672,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				app.map && app.map.disableKeyboardNavigation();
 				
 				if ( isInBuilder )
-					container.find('.panelEditBtn').click(onClickEdit);
+					container.find('.panelEditBtn').off('click').click(onClickEdit);
 				
 				$(document).keyup(onKeyboardEvent);
 			}

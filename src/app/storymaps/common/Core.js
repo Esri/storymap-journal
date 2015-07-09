@@ -19,6 +19,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		"dojo/topic",
 		"dojo/on",
 		"dojo/_base/lang",
+		"dojo/_base/array",
 		"dojo/Deferred",
 		"dojo/DeferredList",
 		"dojo/query",
@@ -45,6 +46,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		topic,
 		on,
 		lang,
+		array,
 		Deferred,
 		DeferredList,
 		query,
@@ -108,8 +110,21 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			
 			document.title = app.cfg.TPL_NAME;
 			
+			//
+			// Instantiate FastClick to make the app more responsive except on the map due to conflict with popup charts
+			//
+			
 			if( has("touch") )
 				$("body").addClass("hasTouch");
+			
+			FastClick.prototype._needsClick = FastClick.prototype.needsClick;
+			FastClick.prototype.needsClick = function(target) {
+				if ($(target).parents('.esriPopup').length) {
+					return true;
+				}
+				return FastClick.prototype._needsClick.call(this, target);
+			};
+			
 			FastClick.attach(document.body);
 			
 			// App is embedded
@@ -346,6 +361,19 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 							initError("invalidConfigOwner");
 							return;
 						}
+					}
+					
+					// App proxies
+					if (itemRq && itemRq.appProxies) {
+						var layerMixins = array.map(itemRq.appProxies, function (p) {
+							return {
+								"url": p.sourceUrl,
+								"mixin": {
+									"url": p.proxyUrl
+								}
+							};
+						});
+						app.data.setAppProxies(layerMixins);
 					}
 					
 					// If in builder, check that user is app owner or org admin
@@ -878,6 +906,20 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				app.cfg.AUTHORIZED_IMPORT_SOURCE.featureService = false;
 
 			app.isPortal = !! app.portal.isPortal;
+			
+			// Help URL on Portal for ArcGIS
+			if ( app.isPortal && app.portal.helpBase && app.portal.portalHostname ) {
+				// app.cfg.HELP_URL_PORTAL contains the page in the help doc 
+				// app.portal.helpBase contains the path to the home of help
+				// app.portal.helpBase should always be relative to the hostname and include the optional portal instance name
+				// app.portal.portalHostname also include the portal instance name so we remove it first
+				
+				// Skip if the URL is already a full path
+				if ( ! app.cfg.HELP_URL_PORTAL.startsWith('//') ) {
+					var portalHost = app.portal.portalHostname.split('/')[0];
+					app.cfg.HELP_URL_PORTAL = '//' + portalHost + app.portal.helpBase + app.cfg.HELP_URL_PORTAL;
+				}
+			}
 		}
 		
 		//

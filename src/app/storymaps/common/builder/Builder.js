@@ -6,6 +6,7 @@ define(["lib-build/css!./Builder",
 		"../utils/CommonHelper",
 		"../utils/WebMapHelper",
 		"dojo/_base/lang",
+		"dojo/_base/array",
 		"dojo/has",
 		"esri/arcgis/utils",
 		"esri/IdentityManager",
@@ -21,6 +22,7 @@ define(["lib-build/css!./Builder",
 		CommonHelper, 
 		WebMapHelper, 
 		lang, 
+		array,
 		has, 
 		arcgisUtils,
 		IdentityManager, 
@@ -379,9 +381,9 @@ define(["lib-build/css!./Builder",
 		function saveApp(nextFunction)
 		{
 			var portalUrl = getPortalURL(),
-				uid = IdentityManager.findCredential(portalUrl).userId,
-				token  = IdentityManager.findCredential(portalUrl).token,
-				appItem = lang.clone(app.data.getWebAppItem());
+				appItem = lang.clone(app.data.getWebAppItem()),
+				uid = appItem.owner || IdentityManager.findCredential(portalUrl).userId,
+				token  = IdentityManager.findCredential(portalUrl).token;
 
 			// Remove properties that don't have to be committed
 			delete appItem.avgRating;
@@ -422,6 +424,9 @@ define(["lib-build/css!./Builder",
 			appItem.tags = appItem.tags ? appItem.tags.join(',') : '';
 			appItem.typeKeywords = appItem.typeKeywords.join(',');
 			
+			// App proxies
+			appItem.serviceProxyParams = JSON.stringify(appItem.serviceProxyParams);
+			
 			appItem = lang.mixin(appItem, {
 				f: "json",
 				token: token,
@@ -429,9 +434,18 @@ define(["lib-build/css!./Builder",
 				text: JSON.stringify(app.data.getWebAppData().get())
 			});
 			
+			var url = portalUrl + "/sharing/content/users/" + uid + (appItem.ownerFolder ? ("/" + appItem.ownerFolder) : ""); 
+			
+			// Updating
+			if ( appItem.id )
+				url += "/items/" + appItem.id + "/update";
+			// creating
+			else
+				url += "/addItem";
+			
 			var saveRq = esriRequest(
 				{
-					url: portalUrl + "/sharing/content/users/" + uid + (appItem.ownerFolder ? ("/" + appItem.ownerFolder) : "") + "/addItem",
+					url: url,
 					handleAs: 'json',
 					content: appItem
 				},

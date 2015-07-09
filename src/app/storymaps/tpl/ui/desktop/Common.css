@@ -60,6 +60,10 @@
 }
 */
 
+.sectionPanel .logoLink {
+	outline: none;
+}
+
 .sectionPanel .logoImg {
 	max-width: 250px;
 	max-height: 50px;

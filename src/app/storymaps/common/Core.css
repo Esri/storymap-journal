@@ -58,6 +58,10 @@ textarea {
 	resize: none;
 }
 
+audio {
+	max-width: 100%;
+}
+
 #contentPanel {
 	position: relative;
 	width:100%;
@@ -84,6 +88,7 @@ a:hover{
  */
 ::-webkit-scrollbar {
 	width: 8px;
+	height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -117,7 +122,7 @@ a:hover{
 }
 
 #fatalError > table {
-	margin-top: -85px;
+	margin-top: -42px;
 	margin-left:-247px;
 	max-width: 490px;
 	min-height: 85px;

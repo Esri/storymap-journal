@@ -16,6 +16,8 @@ define(["./WebApplicationData",
 			var _appItem = null;
 			// A cache for webmap title and sharing in builder mode for Add/Edit dialog
 			var _webmapsTitleAndSharingCache = {};
+			// App proxies
+			var _appProxies = null;
 	
 			/*
 			 * Template common get/set
@@ -53,8 +55,16 @@ define(["./WebApplicationData",
 			
 			this.userIsAppOwner = function()
 			{
-				return  (app.portal && app.portal.getPortalUser() && app.portal.getPortalUser().username == this.getWebAppItem().owner)
-						|| (CommonHelper.getPortalUser() != null && CommonHelper.getPortalUser() == this.getWebAppItem().owner);
+				var portalUser = app.portal ? app.portal.getPortalUser() : null;
+				
+				return  (portalUser && portalUser.username == this.getWebAppItem().owner)
+						|| (CommonHelper.getPortalUser() != null && CommonHelper.getPortalUser() == this.getWebAppItem().owner)
+						// Admin
+						|| (portalUser && portalUser.role == "org_admin")
+						// Admin privilege through a role
+						|| (portalUser && portalUser.privileges && $.inArray("portal:admin:updateItems", portalUser.privileges) > -1 )
+						// Group with shared ownership
+						|| this.getWebAppItem().itemControl == "update";
 			};
 	
 			this.userIsOrgaPublisher = function()
@@ -69,6 +79,16 @@ define(["./WebApplicationData",
 					return false;
 				
 				return !! app.portal.getPortalUser().orgId;
+			};
+			
+			this.getAppProxies = function()
+			{
+				return _appProxies;
+			};
+			
+			this.setAppProxies = function(appProxies)
+			{
+				_appProxies = appProxies;
 			};
 
 			/*

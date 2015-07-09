@@ -14,6 +14,7 @@ define(["lib-build/css!./MainView",
 		"storymaps/common/mapcontrols/legend/Legend",
 		"storymaps/common/mapcontrols/overview/Overview",
 		"lib-build/css!storymaps/common/ui/Modal.css",
+		"lib-build/css!storymaps/common/_resources/font/sharing/css/fontello.css",
 		"lib-build/css!storymaps/common/utils/SocialSharing.css",
 		"lib-build/css!storymaps/common/ui/loadingIndicator/LoadingIndicator.css",
 		// Utils
@@ -42,6 +43,7 @@ define(["lib-build/css!./MainView",
 		Legend,
 		Overview,
 		modalCss,
+		socialSharingIconCss,
 		socialSharingCss,
 		loadingIndicatorCss,
 		CommonHelper, 
@@ -63,6 +65,26 @@ define(["lib-build/css!./MainView",
 			this.init = function(core) 
 			{			
 				_core = core;
+				
+				//----------------------------------------------
+				// Development - TODO to be removed for release
+				//----------------------------------------------
+				/*
+				if ( app.isProduction ) {
+					require(["esri/IdentityManager", "dojo/on"], function(IdentityManager, on){
+						CommonHelper.isArcGISHosted = function(){ return true; };
+						
+						on(IdentityManager, 'dialog-create', function(){
+							on(IdentityManager.dialog, 'show', function(){
+								IdentityManager.dialog.txtUser_.set('value', window.configOptions.username);
+								IdentityManager.dialog.txtPwd_.set('value', window.configOptions.password);
+								IdentityManager.dialog.btnSubmit_.onClick();
+							});
+						});
+					});
+				}
+				*/
+				//----------------------------------------------
 				
 				// Do not allow builder under IE 10
 				if( app.isInBuilder && has("ie") && has("ie") < 10) {
@@ -147,18 +169,31 @@ define(["lib-build/css!./MainView",
 								$(this).off("blur").css("outline", "");
 							});
 						}
-						// Prevent outline over paragraph in description panel - Unsure why needed
-						else if ( $(this).parents("p").length ) {
-							$(this).parents("p").css("outline", "none").on("blur", function() {
-								$(this).off("blur").css("outline", "");
-							});
-						}
 						// Prevent outline over title in description panel - Unsure why needed
 						else if ( $(this).parents(".title").length ) {
 							$(this).parents(".title").css("outline", "none").on("blur", function() {
 								$(this).off("blur").css("outline", "");
 							});
 						}
+						// Prevent outline over paragraph in description panel - Unsure why needed
+						else if ( $(this).parentsUntil(".content", "div").length ) {
+							$(this).parentsUntil(".content", "div").css("outline", "none").on("blur", function() {
+								$(this).off("blur").css("outline", "");
+							});
+						}
+						// Prevent outline over paragraph in description panel - Unsure why needed
+						else if ( $(this).parents("p").length ) {
+							$(this).parents("p").css("outline", "none").on("blur", function() {
+								$(this).off("blur").css("outline", "");
+							});
+						}
+						// Prevent outline over ul in description panel - Unsure why needed
+						else if ( $(this).parents("ul").length ) {
+							$(this).parents("ul").css("outline", "none").on("blur", function() {
+								$(this).off("blur").css("outline", "");
+							});
+						}
+						
 					}
 				});
 				
@@ -210,7 +245,8 @@ define(["lib-build/css!./MainView",
 					usePopupManager: true,
 					ignorePopups: false,
 					bingMapsKey: commonConfig.bingMapsKey,
-					editable: false
+					editable: false,
+					layerMixins: app.data.getAppProxies()
 				}); 
 			};
 			
@@ -570,6 +606,9 @@ define(["lib-build/css!./MainView",
 			function navigateStoryToIndex(index)
 			{
 				console.log("tpl.core.MainView - navigateStoryToIndex - ", index);
+				
+				if ( index < 0 || index > app.data.getStoryLength() - 1 )
+					return;
 				
 				// Change current section
 				app.data.setCurrentSectionIndex(index);

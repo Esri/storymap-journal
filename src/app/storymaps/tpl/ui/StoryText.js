@@ -123,7 +123,11 @@ define(["dojo/topic",
 		function mediaFullScreen(e)
 		{
 			var target = $(e.target),
-				imgNode = target.is("img") ? target : target.siblings('img');
+				imgNode = target.is("img") ? target : target.siblings('img'),
+				section = target.parents('.section');
+			
+			if ( ! (section.hasClass('active') || section.hasClass('swiper-slide-active')) )
+				return;
 			
 			_fullScreenMediaIsOpening = true;
 			

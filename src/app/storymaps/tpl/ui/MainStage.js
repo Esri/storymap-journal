@@ -99,7 +99,18 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				// Add new container
 				$.each(embeds, function(i, embedInfo) {
 					// TODO this has to be reviewed to not allow content to be loaded too early? or give the same option for url?
-					var embedContainer = $('.embedContainer[data-src="' + (embedInfo.url || embedInfo.ts) + '"]');
+					
+					var embedUrl = embedInfo.url,
+						embedhash = "";
+					
+					if ( embedUrl.lastIndexOf('#') > 0 ) {
+						embedUrl = embedUrl.substring(0, embedUrl.lastIndexOf('#'));
+						embedhash = embedInfo.url.substring(embedInfo.url.lastIndexOf('#') + 1);
+						
+						embedInfo.hash = embedhash;
+					}
+					
+					var embedContainer = $('.embedContainer[data-src="' + (embedUrl || embedInfo.ts) + '"]');
 					if ( ! embedContainer.length ) {
 						
 						//
@@ -110,7 +121,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						//
 						
 						$("#mainStagePanel .medias").append(mainMediaContainerEmbedTpl({ 
-							url: embedInfo.url,
+							url: embedUrl,
 							frameTag: embedInfo.frameTag,
 							// Introduced in V1.1
 							unload: !!(embedInfo.unload === undefined || embedInfo.unload)
@@ -132,16 +143,22 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					}
 				});
 				
+
 				// Remove unused containers
 				$('.embedContainer').each(function() {
 					var embedSRC = $(this).data('ts') || $(this).data('src');
 					var embedInUse = $.grep(embeds, function(embed){
-						return embedSRC == embed.url || embedSRC == embed.ts;
+						var embedUrl = embed.url;
+						if ( embedUrl.lastIndexOf('#') > 0 )
+							embedUrl = embedUrl.substring(0, embedUrl.lastIndexOf('#'));
+						
+						return embedSRC == embedUrl || embedSRC == embed.ts;
 					}).length > 0;
 					
 					if ( ! embedInUse )
 						$(this).parent().remove();
 				});
+
 				
 				setMapControlsColor();
 			};
@@ -187,8 +204,14 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					updateMainMediaPicture(media.image.url, media.image.display);
 				else if ( media.type == "video" )
 					updateMainMediaEmbed(media.video.url, media.video);
-				else if ( media.type == "webpage" )
-					updateMainMediaEmbed(media.webpage.url || media.webpage.ts, media.webpage);
+				else if ( media.type == "webpage" ){
+					var embedUrl = media.webpage.url;
+				
+					if ( embedUrl.lastIndexOf('#') > 0 )
+						embedUrl = embedUrl.substring(0, embedUrl.lastIndexOf('#'));
+					
+					updateMainMediaEmbed(embedUrl || media.webpage.ts, media.webpage);
+				}
 			}
 			
 			function startMainStageLoadingIndicator()
@@ -482,7 +505,17 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						
 						if ( layer.layerObject) {
 							override = $(layerCfg).filter(function(i, l){ return l.id == layer.layerObject.id; });
-							layer.layerObject.setVisibility(override.length ? override[0].visibility : layer.visibility);
+							
+							var updateVisibility = function()
+							{
+								layer.layerObject.setVisibility(override.length ? override[0].visibility : layer.visibility);
+							};
+							
+							if ( layer.layerObject.loaded )
+								updateVisibility();
+							else {
+								layer.layerObject.on("load", updateVisibility);
+							}
 						}
 						else if ( layer.featureCollection && layer.featureCollection.layers ) {
 							$.each(layer.featureCollection.layers, function(i, fcLayer){
@@ -716,6 +749,11 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 							left: 0,
 							right: 0
 						});
+					
+					if ( cfg.hash ) {
+						url = url + '#' + cfg.hash;
+						embedContainer.attr('src', url);
+					}
 					
 					// TODO this fail if no src attr is set on the iframe (srcdoc)
 					//  as a workaround <iframe srcdoc="http://" src="about:blank></iframe>

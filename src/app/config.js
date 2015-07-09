@@ -89,7 +89,7 @@ app.cfg = {
 	 */
 	
 	HELP_URL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
-	HELP_URL_PORTAL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
+	HELP_URL_PORTAL: "#/Story_Map_Journal/0193000000v4000000/",
 	
 	// Control the authorized data source (for initialization and import screen)
 	AUTHORIZED_IMPORT_SOURCE: {

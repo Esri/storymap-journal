@@ -5,6 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		
+		<meta name="fragment" content="!">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		
@@ -16,13 +17,13 @@
 			 - create and fill out extensively an ArcGIS Online item that link to your final application
 			 - edit the following four tags as well as the title tag above on line 4
 		-->
-		<meta name="description" content="This story map was created with the Esri Tpl application in ArcGIS Online.">
+		<meta name="description" content="This story map was created with the Story Map Journal application in ArcGIS Online.">
 		
 		<!-- Facebook sharing -->
 		<meta property="og:type" content="article"/>
 		<meta property="og:title" content="Story Map Journal"/>
 		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
-		<meta property="og:image" content="resources/common/icons/esri-globe.png"/>
+		<meta property="og:image" content="http://www.arcgis.com/apps/MapJournal/resources/common/icons/esri-globe.png"/>
 		
 		<!-- 
 			This application is released under the Apache License V2.0 by Esri http://www.esri.com/
@@ -60,8 +61,8 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.3.0',
-				pathJSAPI: '//js.arcgis.com/3.13/'
+				version: '1.4.0',
+				pathJSAPI: '//js.arcgis.com/3.14/'
 			};
 		</script>
 	</head>
@@ -138,20 +139,7 @@
 								<!-- Maps and media injected here -->
 							</div>
 							<div id="mainStageLoadingIndicator" class="loadingIndicator">
-							<div class="load-indicator icon-spin1 animate-spin"></div>
-								<script>
-									// Alternate loader on IE and FF
-									if (navigator.userAgent.indexOf('MSIE') !== -1 
-											|| navigator.appVersion.indexOf('Trident/') > 0
-											|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-										document.write('\
-											<style>\
-										 		.load-indicator { display: none; }\
-										 		.loadingIndicator { opacity: 1.0; margin-top: -60px; margin-left: -32px; }\
-										 	</style>\
-										    <img src="resources/tpl/viewer/icons/loading-light.gif" />');
-									}
-								</script>
+								<img src="resources/tpl/viewer/icons/loading-light.gif" />
 							</div>
 							<!-- Back button -->
 							<div class="mediaBackContainer">
@@ -300,73 +288,14 @@
 			}
 			
 			.loadingIndicator {
-				width: 110px;
-				height: 80px;
-				margin-left: -60px;
-				margin-top: -80px;
-				color: #000;
+				margin-left: -17px;
+				margin-top: -20px;
 			}
-			
-			.loadingIndicator.fadeOut {
-				opacity: 1.0;
-				-webkit-animation: initial;
-				-moz-animation: initial;
-				-ms-animation: initial;
-				-o-animation: initial;
-				animation: initial;
-				-webkit-animation-fill-mode: initial;
-				-moz-animation-fill-mode: initial;
-				animation-fill-mode: initial;
-			}
-			
-			.animate-spin {
-				display: inline-block;
-				font-size: 80px;
-				line-height: 1;
-				font-family: sans-serif  !important;
-			}
-			
-			/*
-			 * Inlining of resources/tpl/viewer/font/font/css/fontello.css and animation.css
-			 */
-			@font-face{font-family:'fontello';src:url(resources/tpl/viewer/font/font/fontello.eot?22851922);src:url(resources/tpl/viewer/font/font/fontello.eot?22851922#iefix) format("embedded-opentype"),url(resources/tpl/viewer/font/font/fontello.woff?22851922) format("woff"),url(resources/tpl/viewer/font/font/fontello.ttf?22851922) format("truetype"),url(resources/tpl/viewer/font/font/fontello.svg?22851922#fontello) format("svg");font-weight:400;font-style:normal}[class^="icon-"]:before,[class*=" icon-"]:before{font-family:"fontello";font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em}.icon-spin1:before{content:'\e800'}.icon-link:before{content:'\e801'}.icon-facebook-squared:before{content:'\e802'}.icon-twitter:before{content:'\e803'}.animate-spin{-moz-animation:spin 2s infinite linear;-o-animation:spin 2s infinite linear;-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;display:inline-block}@-moz-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-webkit-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-o-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@-ms-keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes spin{0%{-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-moz-transform:rotate(359deg);-o-transform:rotate(359deg);-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
 		</style>
-		
-		<script>
-			// Loading indicator get fade effect except on IE and FF
-			if ( ! (navigator.userAgent.indexOf('MSIE') !== -1 
-					|| navigator.appVersion.indexOf('Trident/') > 0
-					|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ) {
-				document.write('<style>.loadingIndicator {\
-					opacity: 0.0;\
-					-webkit-animation: fadein 3s;\
-					-moz-animation: fadein 3s;\
-					-ms-animation: fadein 3s;\
-					-o-animation: fadein 3s;\
-					animation: fadein 3s;\
-					-webkit-animation-fill-mode: forwards;\
-					-moz-animation-fill-mode: forwards;\
-					animation-fill-mode: forwards;\
-				}</style>');
-			}
-		</script>
 		
 		<div id="loadingOverlay"></div>
 		<div id="loadingIndicator" class="loadingIndicator">
-			<div class="load-indicator icon-spin1 animate-spin"></div>
-			<script>
-				// Alternate loader on IE and FF
-				if (navigator.userAgent.indexOf('MSIE') !== -1 
-						|| navigator.appVersion.indexOf('Trident/') > 0
-						|| navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-					document.write('\
-						<style>\
-					 		.load-indicator { display: none; }\
-					 		.loadingIndicator { opacity: 1.0; margin-top: -60px; margin-left: -32px; }\
-					 	</style>\
-						<img src="resources/tpl/viewer/icons/loading-light.gif" />');
-				}
-			</script>
+			<img src="resources/tpl/viewer/icons/loading-light.gif" />
 		</div>
 		<div id="loadingMessage"></div>
 		
