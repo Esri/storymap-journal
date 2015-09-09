@@ -55,7 +55,9 @@ define({
 			headerFromCommon: {
 				storymapsText: "A story map",
 				builderButton: "Edit",
-				bitlyTooltip: "Get a short link to the application",
+				facebookTooltip: "Share on Facebook",
+				twitterTooltip: "Share on Twitter",
+				bitlyTooltip: "Get a short link",
 				templateTitle: "Set template title",
 				templateSubtitle: "Set template subtitle",
 				share: "Share"

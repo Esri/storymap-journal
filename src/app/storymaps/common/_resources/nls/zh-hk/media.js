@@ -56,7 +56,9 @@
 				howToFind: "如何查詢 YouTube 使用者名稱",
 				howToFind2: "使用者名稱顯示在影片下方",
 				found: "已找到",
-				noData: "未找到公開影片"
+				noData: "未找到公開影片",
+				videoNotChecked: "此影片在 YouTube 上未經檢查，但影片的位址看似正常。",
+				checkFailedAPI: "YouTube 檢查已失敗，請檢查 YouTube API 金鑰。"
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo 影片的 URL"

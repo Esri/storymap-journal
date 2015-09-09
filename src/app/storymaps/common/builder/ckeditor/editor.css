@@ -41,6 +41,10 @@ body
 	margin: 20px;
 }
 
+body.first-section {
+	font-size: 18px;
+}
+
 /*
 body.error-no-content {
 	color: #F00 !important;	
@@ -88,7 +92,8 @@ blockquote
 
 a
 {
-	color: #0782C1;
+	font-weight: bold;
+	color: #555;
 }
 
 ol,ul,dl
@@ -162,6 +167,11 @@ img {
 	max-width: 100%;
 }
 
+.cke_image_nocaption {
+	max-width: 100%;
+	max-height: 100%;
+}
+
 figure figcaption
 {
 	text-align: left;
@@ -177,7 +187,7 @@ figure figcaption
  */
 
 a[data-storymaps] {
- 	border-bottom: 1px dashed #0782C1;
+ 	border-bottom: 1px dashed #555;
 	text-decoration: none;
 	pointer-events: none;
 	cursor: default;
@@ -186,6 +196,10 @@ a[data-storymaps] {
 /*
  * Iframe style
  */
+
+iframe {
+	border: none;
+}
 
 .image-container > span.cke_widget_wrapper:after,
 .cke_widget_element > span.cke_image_resizer_wrapper:after,

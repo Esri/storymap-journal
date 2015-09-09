@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Een kaartverhaal",
 				builderButton: "Bewerken",
-				bitlyTooltip: "Een korte koppeling naar de applicatie maken",
+				facebookTooltip: "Delen op Facebook",
+				twitterTooltip: "Delen op Twitter",
+				bitlyTooltip: "Ontvang een korte URL",
 				templateTitle: "Titel voor template instellen",
 				templateSubtitle: "Subtitel voor template instellen",
 				share: "Delen"

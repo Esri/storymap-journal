@@ -134,6 +134,12 @@
 	padding: 3px 7px;
 }
 
+@-moz-document url-prefix() { 
+	.navDots .tooltip-inner {
+		white-space: pre-wrap;
+	}
+}
+
 /*
  * Navigation groups
  */

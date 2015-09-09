@@ -85,6 +85,7 @@
 	padding: 0 25px 4px 25px;
 	transition: max-height .3s;
 	overflow: hidden;
+	visibility: hidden;
 }
 
 .sectionPanel .appTitle * {
@@ -94,6 +95,7 @@
 .sectionPanel .appTitle.anchored {
 	height: auto;
 	max-height: 100px;
+	visibility: visible;
 }
 
 .sectionPanel .separator {

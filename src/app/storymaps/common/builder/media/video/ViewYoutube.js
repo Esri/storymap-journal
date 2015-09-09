@@ -59,8 +59,7 @@ define(["lib-build/tpl!./ViewVideoCommon",
 							title: data.title,
 							description: data.description,
 							btnSelect: i18n.commonMedia.videoSelectorCommon.select,
-							// TODO NLS
-							videoNotChecked: "The video hasn't been checked on YouTube but its address looks good."
+							videoNotChecked: i18n.commonMedia.videoSelectorYoutube.videoNotChecked
 						}));
 						
 						container.find(".btn-select-video").click(function(){
@@ -83,8 +82,7 @@ define(["lib-build/tpl!./ViewVideoCommon",
 						container.find(".loadingMsg").html('');
 						
 						if ( error == "NOT_AUTHORIZED" )
-							// TODO NLS
-							container.find(".errorMsg").show().html("YouTube check has failed, please check YouTube API key.");
+							container.find(".errorMsg").show().html(i18n.commonMedia.videoSelectorYoutube.checkFailedAPI);
 						else
 							container.find(".errorMsg").show().html(i18n.commonMedia.videoSelectorCommon.notFound);
 					}

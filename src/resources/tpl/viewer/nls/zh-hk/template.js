@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "故事地圖",
 				builderButton: "編輯",
-				bitlyTooltip: "取得應用程式的短連結",
+				facebookTooltip: "在 Facebook 上分享",
+				twitterTooltip: "在 Twitter 上分享",
+				bitlyTooltip: "取得短連結",
 				templateTitle: "設置範本標題",
 				templateSubtitle: "設置範本子標題",
 				share: "分享"

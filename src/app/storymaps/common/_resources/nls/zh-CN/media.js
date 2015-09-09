@@ -56,7 +56,9 @@
 				howToFind: "如何查找 YouTube 用户名",
 				howToFind2: "用户名显示在视频下方",
 				found: "已找到",
-				noData: "未找到公开视频"
+				noData: "未找到公开视频",
+				videoNotChecked: "未在 YouTube 上检查该视频，但其地址看起来一切正常。",
+				checkFailedAPI: "YouTube 检查失败，请检查 YouTube API 密钥。"
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo 视频的 URL"

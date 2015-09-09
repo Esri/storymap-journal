@@ -33,35 +33,17 @@ define([
         this._galleryTemplate = this._galleryTemplate ||
           "<div class='itemGrid'>" +
             "<img alt='' src='${thumbnailUrl:_formatThumbnail}'>" +
-            "<div class='truncate itemTitle'>${title:_formatTitle}</div>" +
+            "<div class='itemTitle'>${title:_formatTitle}</div>" +
             "<span class='itemOwner'>${owner}</span>" +
             "<p class='itemText snippet' style='display:none;'>${snippet}</p>" +
           "</div>";
 
-        this._detailsTemplate = this._detailsTemplate ||
-          "<div class='itemDetail'>" +
-            "<img alt='' src='${thumbnailUrl:_formatThumbnail}'>" +
-            "<p class='truncate itemTitle'>${title}</p>" +
-              "<span class='itemOwner'>${owner}</span>" +
-            "</p>" +
-            "<p class='itemText'>${snippet}</p>" +
-         "</div>";
-
         this._renderers = lang.mixin(this._renderers || {}, {
           gallery: lang.hitch(this, function (obj) {
-            obj.snippet = obj.snippet || "";
+        	obj.snippet = obj.snippet || obj.description || obj.title || "";
             var div = put("div"),
               node = new (declare([WidgetBase, TemplatedMixin, WidgetsInTemplateMixin], {
                 templateString: dojoString.substitute(this._galleryTemplate, obj, null, this)
-              }))();
-            div.appendChild(node.domNode);
-            return div;
-          }),
-          details: lang.hitch(this, function (obj) {
-            obj.snippet = obj.snippet || "";
-            var div = put("div"),
-              node = new (declare([WidgetBase, TemplatedMixin, WidgetsInTemplateMixin], {
-                templateString: dojoString.substitute(this._detailsTemplate, obj, null, this)
               }))();
             div.appendChild(node.domNode);
             return div;
@@ -95,7 +77,7 @@ define([
         this._store = this.store ||  new Cache(new PortalItemStore({'portal': this.portal, galleryType: this.galleryType}), new Memory({data:[]}));
         this._rowsPerPage = this.rowsPerPage || 8;
         this._sort = this.sort || [{ attribute: "title", descending: false }];
-        this._pagingLinks = !this.pagingLinks ? false : 8;
+        this._pagingLinks = !this.pagingLinks ? false : 3;
       
         // !!!!
         // Seems to be quite important to assign an id to the grid, and apply
@@ -115,6 +97,7 @@ define([
           previousNextArrows: this._pagingLinks,
           rowsPerPage: this._rowsPerPage,
           pagingLinks: this._pagingLinks,
+          pagingTextBox: true,
           sort: this._sort
         }, this.domNode);
         this._grid.startup();
@@ -146,6 +129,7 @@ define([
       _showSnippet: function(show, event) {
         var row = this._grid.row(event);
         if (row){
+          query(".itemGrid .itemTitle", row.element).style("display", (show ? "none": ""));
           query(".itemGrid .itemOwner", row.element).style("display", (show ? "none": ""));
           query(".itemGrid > img", row.element).style("display", (show ? "none" : ""));
           query(".itemGrid .snippet", row.element).style("display", (show ? "" : "none"));

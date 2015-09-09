@@ -56,7 +56,9 @@ define({
 				howToFind: "How to find a YouTube user name",
 				howToFind2: "User name is displayed under videos",
 				found: "Found",
-				noData: "No public videos found"
+				noData: "No public videos found",
+				videoNotChecked: "The video hasn't been checked on YouTube but its address looks good.",
+				checkFailedAPI: "YouTube check has failed, please check YouTube API key."
 			},
 			videoSelectorVimeo: {
 				url: "URL of a Vimeo video"

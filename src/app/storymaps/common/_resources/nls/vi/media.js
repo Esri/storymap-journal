@@ -56,7 +56,9 @@
 				howToFind: "Cách tìm tên đăng nhập Youtube",
 				howToFind2: "Tên đăng nhập được hiển thị dưới video",
 				found: "Tìm thấy",
-				noData: "Không tìm thấy video công khai"
+				noData: "Không tìm thấy video công khai",
+				videoNotChecked: "Video chưa được kiểm tra trên YouTube nhưng địa chỉ của nó có vẻ ổn.",
+				checkFailedAPI: "Kiểm tra YouTube thất bại, vui lòng kiểm tra khóa API của YouTube."
 			},
 			videoSelectorVimeo: {
 				url: "URL của một video trên Vimeo"

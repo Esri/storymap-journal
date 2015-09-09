@@ -56,7 +56,9 @@
 				howToFind: "Kaip rasti YouTube vartotojo vardą",
 				howToFind2: "Vartotojo vardas rodomas po video",
 				found: "Rasta",
-				noData: "Nerasta viešų video"
+				noData: "Nerasta viešų video",
+				videoNotChecked: "Vaizdo įrašas nebuvo patikrintas „YouTube“, bet jo adresas atrodo tinkamas.",
+				checkFailedAPI: "„YouTube“ patikra nepavyko, patikrinkite „YouTube“ API raktą."
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo vaizdo įrašo URL"

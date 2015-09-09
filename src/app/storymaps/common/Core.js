@@ -1,4 +1,5 @@
 define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
+		"lib-build/css!storymaps/common/ui/Modal.css",
 		"lib-build/css!./Core",
 		"lib-app/jquery",
 		"./utils/Polyfills",
@@ -28,6 +29,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		"lib-app/history.min"],
 	function(
 		bootstrapCss,
+		modalCss,
 		viewCss,
 		jquery,
 		Polyfills,

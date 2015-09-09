@@ -46,7 +46,7 @@ function defineDojoConfig()
 		parseOnLoad: true,
 		isDebug: false,
 		useDeferredInstrumentation: true,
-		cacheBust: ! app.isProduction,
+		//cacheBust: ! app.isProduction,
 		packages: [
 			{
 				name: 'storymaps',

@@ -121,6 +121,10 @@ define([
 					}
 				});
 				
+				container.find('.share_facebook').attr("title", i18n.viewer.headerFromCommon.facebookTooltip);
+				container.find('.share_twitter').attr("title", i18n.viewer.headerFromCommon.twitterTooltip);
+				container.find('.share_bitly').attr("title", i18n.viewer.headerFromCommon.bitlyTooltip);
+				
 				$(window).resize(function(){
 					resizeLinkContainer(container);
 				});

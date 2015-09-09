@@ -15,6 +15,11 @@
     height: 100%;
 }
 
+/* Chrome 45 issue in builder with Floating layout */
+.builder-mode.layout-float #mainStagePanel {
+	width: 100%;
+}
+
 /*
  * One container with Map or any media
  */

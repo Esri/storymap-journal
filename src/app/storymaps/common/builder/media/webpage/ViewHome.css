@@ -22,3 +22,15 @@
 	color: red;
 	margin-top: 10px;
 }
+
+.webpageSelectorHome label {
+	display: block;
+}
+
+.webpageSelectorHome .form-control {
+	display: inline-block;
+}
+
+.webpageSelectorHome .btn-cfg {
+	vertical-align: top;
+}

@@ -56,7 +56,9 @@
 				howToFind: "Kā atrast YouTube lietotāja vārdu",
 				howToFind2: "Lietotāja vārds ir attēlots zem video",
 				found: "Atrasts",
-				noData: "Nav atrasti publiski video"
+				noData: "Nav atrasti publiski video",
+				videoNotChecked: "Video nav pārbaudīts vietnē YouTube, bet tā adrese šķiet droša.",
+				checkFailedAPI: "Pārbaude YouTube neizdevās. Pārbaudiet YouTube API atslēgu."
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo video URL"

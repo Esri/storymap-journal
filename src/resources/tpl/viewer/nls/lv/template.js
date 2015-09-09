@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Stāstu karte",
 				builderButton: "Rediģēt",
-				bitlyTooltip: "Iegūstiet īso saiti uz aplikāciju",
+				facebookTooltip: "Koplietot Facebook",
+				twitterTooltip: "Koplietot Twitter",
+				bitlyTooltip: "Iegūt īso saiti",
 				templateTitle: "Iestatīt šablona virsrakstu",
 				templateSubtitle: "Iestatīt šablona apakšvirsrakstu",
 				share: "Koplietot"

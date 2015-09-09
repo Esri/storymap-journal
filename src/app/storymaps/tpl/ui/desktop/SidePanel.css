@@ -18,7 +18,7 @@
 /* to hide the scrollbar */
 .sidePanel .sectionsWrapper {
 	position: relative;
-	margin-right: -20px;
+	margin-right: -21px;
 }
 
 .sidePanel .sectionsWrapper.ie11fix {
@@ -143,18 +143,20 @@ body.layout-side-right .sidePanel .navDots {
 .sidePanel .section:first-child .title {
 	/*display: none;*/
 	font-size: 2.3em;
-	line-height: 1.1em;
 	padding: 10px 0 0 0;
 }
 
+.sidePanel .section .title * {
+	line-height: 1.2em;
+}
+
 .sidePanel .content {
-	margin-top: 10px;
+	margin: 20px 0;
 	font-size: 1.0em;
 }
 
 .sidePanel .section:first-child .content {
-	margin-top: 10px;
-	font-size: 1.1em;
+	font-size: 18px;
 }
 
 .sidePanel .section:first-child .content {

@@ -31,7 +31,7 @@
 				tooltipLegend: "在地圖上顯示地圖圖例，在地圖有許多圖層和符號的情況下非常有用。",
 				mapCfgInvite: "使用這些控制項設定地圖",
 				lblLocationAlt: "繼承自第一張地圖",
-				tooltipLocationAlt: "此地圖的位置與系列中的第一張地圖保持同步。要變更系列的此行為，請轉到\\“設定 > 地圖選項\\”。"
+				tooltipLocationAlt: "此地圖的位置與系列中的第一張地圖保持同步。要變更系列的此行為，請轉到\“設定 > 地圖選項\”。"
 			},
 			configure: {
 				btnReset: "重設",

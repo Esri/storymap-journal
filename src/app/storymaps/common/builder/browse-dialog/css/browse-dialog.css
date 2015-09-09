@@ -27,9 +27,12 @@ body{
     overflow: hidden;
 }
 .itemGrid .itemText{
+    padding:0;
+	margin:0;
     font-size:8pt;
     text-align: left;
     margin:0;
+    height:100px;
 }
 .itemTitle{
     white-space:nowrap;
@@ -37,6 +40,7 @@ body{
     text-overflow:ellipsis;
 }
 .itemOwner{
+	color:#757170;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;

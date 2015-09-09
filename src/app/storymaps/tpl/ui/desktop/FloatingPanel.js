@@ -491,7 +491,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					//console.log(slide, slideHeight, scrollTop, scrollHeight, delta);
 					
 					// Going down and reach bottom
-					if (delta < 0 && slideHeight + scrollTop >= scrollHeight){
+					if (delta < 0 && slideHeight + scrollTop >= (scrollHeight-1)){
 						// Scroll has been delayed once
 						if(_scrollDelayed || forceNextIfReady) {
 							_swipePane.swipeNext();
@@ -565,9 +565,9 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				if ( anchorTitle != titleIsAnchored ) {
 					container.find('.appTitle').toggleClass('anchored', anchorTitle);
 					container.find('.header').toggleClass('titleanchored', anchorTitle);
-					setTimeout(function(){
-						_this.resize();
-					}, 250);
+					
+					setTimeout(function(){ _this.resize(); }, 350);
+					setTimeout(function(){ _this.resize(); }, 500);
 				}
 			}
 			

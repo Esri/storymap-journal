@@ -56,7 +56,9 @@
 				howToFind: "Cum găsiţi un nume de utilizator YouTube",
 				howToFind2: "Numele de utilizator este afişat sub videoclipuri",
 				found: "Găsit",
-				noData: "Nu a fost găsit niciun videoclip public"
+				noData: "Nu a fost găsit niciun videoclip public",
+				videoNotChecked: "Clipul video nu a fost verificat pe YouTube, dar adresa pare bună.",
+				checkFailedAPI: "Verificarea YouTube a eşuat, verificaţi cheia API de YouTube."
 			},
 			videoSelectorVimeo: {
 				url: "URL al unui clip video de pe Vimeo"

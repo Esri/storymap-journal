@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Карта истории",
 				builderButton: "Редактировать",
-				bitlyTooltip: "Получить короткую ссылку на приложение",
+				facebookTooltip: "Разместить в Facebook",
+				twitterTooltip: "Разместить в Twitter",
+				bitlyTooltip: "Получить краткую ссылку",
 				templateTitle: "Ввести заголовок шаблона",
 				templateSubtitle: "Ввести подзаголовок шаблона",
 				share: "Общий доступ"

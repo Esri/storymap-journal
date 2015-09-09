@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Kaardilugu",
 				builderButton: "Muuda",
-				bitlyTooltip: "Tekita kiirlink rakendusele",
+				facebookTooltip: "Jaga Facebookis",
+				twitterTooltip: "Jaga Twitteris",
+				bitlyTooltip: "Hangi lühike link",
 				templateTitle: "Määra mallile pealkiri",
 				templateSubtitle: "Määra mallile alampealkiri",
 				share: "Jaga"

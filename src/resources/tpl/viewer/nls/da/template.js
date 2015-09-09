@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "Et historiekort",
 				builderButton: "Redigér",
-				bitlyTooltip: "Hent et kortere link til applikationen",
+				facebookTooltip: "Del på Facebook",
+				twitterTooltip: "Del på Twitter",
+				bitlyTooltip: "Hent et kort link",
 				templateTitle: "Indstil skabelontitel",
 				templateSubtitle: "Indstil skabelonundertitel",
 				share: "Del"

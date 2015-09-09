@@ -198,6 +198,10 @@ p[tabindex='0'] > .image-wrapper {
 /*
  * Iframe
  */
+ 
+.section iframe {
+	border: none;
+}
 
 .iframe-container.custom iframe {
 	max-width: 100%;

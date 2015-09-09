@@ -14,7 +14,7 @@
 				failButton: "Įkelti aplikaciją iš naujo"
 			},
 			signin: {
-				title: "Autentifikacija būtina",
+				title: "Autentikacija būtina",
 				explainViewer: "Norėdami pasiekti aplikaciją, prisijunkite prie paskyros, esančios %PORTAL_LINK%.",
 				explainBuilder: "Norėdami konfigūruoti aplikaciją, prisijunkite prie paskyros, esančios %PORTAL_LINK%."
 			},
@@ -55,13 +55,15 @@
 			headerFromCommon: {
 				storymapsText: "Pristatomasis žemėlapis",
 				builderButton: "Redaguoti",
-				bitlyTooltip: "Gauti sutrumpintą aplikacijos nuorodą",
-				templateTitle: "Nustatyti šablono antraštę",
-				templateSubtitle: "Nustatyti šablono paantraštę",
+				facebookTooltip: "Dalintis Facebook",
+				twitterTooltip: "Dalintis Twitter",
+				bitlyTooltip: "Gauti trumpą nuorodą",
+				templateTitle: "Nustatyti šablono pavadinimą",
+				templateSubtitle: "Nustatyti šablono antraštę",
 				share: "Bendrinti"
 			},
 			overviewFromCommon: {
-				title: "Apžvalgos žemėlapis"
+				title: "Apžvalga"
 			},
 			legendFromCommon: {
 				title: "Legenda"

@@ -59,7 +59,9 @@ define(["lib-build/tpl!./WebMapSelector",
 					_mapConfig = {
 						extent: cfg.media.webmap.extent,
 						layers: cfg.media.webmap.layers,
-						popup:  cfg.media.webmap.popup
+						popup:  cfg.media.webmap.popup,
+						legend:  cfg.media.webmap.legend,
+						overview:  cfg.media.webmap.overview
 					};
 					
 					// TODO should be able to know if this is the webmap initial extent or not
@@ -135,11 +137,11 @@ define(["lib-build/tpl!./WebMapSelector",
 					popup:  isPopupCustom  && _mapConfig ? _mapConfig.popup  : null,
 					overview: {
 						enable: container.find('.opt-checkbox-overview').prop('checked'),
-						openByDefault: true
+						openByDefault: _mapConfig && _mapConfig.overview ? _mapConfig.overview.openByDefault : true
 					},
 					legend: {
 						enable: container.find('.opt-checkbox-legend').prop('checked'),
-						openByDefault: false
+						openByDefault: _mapConfig && _mapConfig.legend ? _mapConfig.legend.openByDefault : false
 					}
 				};
 			};
@@ -164,9 +166,9 @@ define(["lib-build/tpl!./WebMapSelector",
 						usage += usage ? " " + i18n.commonWebmap.selector.and + " " : "";
 
 						if ( webmap.actions.length == 1 )
-							usage += i18n.commonWebmap.selector.action + " " + webmap.actions[0];
+							usage += i18n.commonWebmap.selector.action.toLowerCase() + " " + webmap.actions[0];
 						else
-							usage += i18n.commonWebmap.selector.sections + " " + webmap.actions.join(', ');
+							usage += i18n.commonWebmap.selector.actions.toLowerCase() + " " + webmap.actions.join(', ');
 					}
 					
 					if ( ! webmap.sections && ! webmap.actions ) {

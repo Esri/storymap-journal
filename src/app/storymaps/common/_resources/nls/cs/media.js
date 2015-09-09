@@ -56,7 +56,9 @@
 				howToFind: "Jak najít uživatelské jméno YouTube",
 				howToFind2: "Uživatelské jméno se zobrazuje pod videi",
 				found: "Nalezeno",
-				noData: "Nenalezena žádná veřejná videa"
+				noData: "Nenalezena žádná veřejná videa",
+				videoNotChecked: "Video nebylo zkontrolováno na YouTube, ale jeho adresa vypadá správně.",
+				checkFailedAPI: "Kontrola na YouTube se nezdařila, zkontrolujte klíč YouTube API."
 			},
 			videoSelectorVimeo: {
 				url: "Adresa URL videa ve službě Vimeo"

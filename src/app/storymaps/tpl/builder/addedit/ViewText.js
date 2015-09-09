@@ -24,7 +24,8 @@ define(["lib-build/tpl!./ViewText",
 				_editorDialogInlineMedia = new EditorDialogInlineMedia($("#addEditPopupDialogInlineMedia")),
 				_textActions = null,
 				_appColors = null,
-				_selectedMediaType = null;
+				_selectedMediaType = null,
+				_mode = null;
 			
 			container.append(viewTpl({
 				editorPlaceholder: i18n.builder.addEditViewText.editorPlaceholder,
@@ -39,6 +40,7 @@ define(["lib-build/tpl!./ViewText",
 				var mediaType = 'webmap';
 				
 				_appColors = appColors;
+				_mode = cfg.mode;
 				
 				if ( cfg.mode == "edit" && cfg.section && cfg.section.media )
 					mediaType = cfg.section.media.type;
@@ -71,6 +73,11 @@ define(["lib-build/tpl!./ViewText",
 				// Set RTE style
 				CKEDITOR.instances.addEditRTE.editable().setStyle("background-color", _appColors.panel);
 				CKEDITOR.instances.addEditRTE.editable().setStyle("color", _appColors.text);
+				$(CKEDITOR.instances.addEditRTE.editable().$).toggleClass(
+					'first-section', 
+					(app.data.getCurrentSectionIndex() === 0 && _mode == "edit")
+					|| (app.data.getCurrentSectionIndex() === null && _mode == "add")
+				);
 				CKEDITOR.instances.addEditRTE.window.$.scroll(0, 0);
 				
 				container.find("#cke_1_contents").css("height", 228);
@@ -533,6 +540,32 @@ define(["lib-build/tpl!./ViewText",
 						targetField['default'] = '_blank';
 						infoTab.get('linkType').style = 'display: none';
 						infoTab.get('urlOptions').children[0].children.shift();
+						
+						// Prevent the dialog from stripping the protocol and forcing to https
+						var url = infoTab.get('url');
+						url.onKeyUp = function(){};
+						url.setup = function(data) {
+							this.allowOnChange = false;    
+							if (data.url) {
+								var value = '';        
+								if (data.url.protocol) {
+									value += data.url.protocol;
+								}
+								if (data.url.url) {
+									value += data.url.url;
+								}
+								this.setValue(value);
+							}
+							this.allowOnChange = true;
+						};
+						url.commit = function(data) {
+							var url = this.getValue();
+							if ( ! url.match(/^http:\/\/|https:\/\/|ftp:|mailto:|\/\//) ) {
+								url = 'http://' + url;
+							}
+						
+							data.url = { protocol: '', url: url };
+						};
 					}
 					
 					// Open inline media cfg on image double click 
@@ -566,6 +599,9 @@ define(["lib-build/tpl!./ViewText",
 
 					],
 					customConfig: '',
+					
+					removePlugins: 'liststyle,tableresize,tabletools,contextmenu',
+					disableNativeSpellChecker: false,
 					
 					// V1.0 behavior, ACF filtering off
 					// Everything pasted was kept ; most of tag soup were cleaned but far from perfect

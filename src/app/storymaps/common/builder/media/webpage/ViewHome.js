@@ -36,6 +36,15 @@ define(["lib-build/tpl!./ViewHome",
 			
 			this.postDisplay = function()
 			{
+				// Resize url field to adjust localization
+				if ( container.find(".webpageSelectorHome").width() ) {
+					container.find(".url, .textarea").css("width", 
+						container.find(".webpageSelectorHome").width()
+						- 5
+						- container.find('.btn-cfg').outerWidth()
+					);
+				}
+				
 				// Focus the expected field
 				container.find(container.find('.textarea').val() ? '.textarea' : '.url').focus();
 			};
@@ -43,14 +52,26 @@ define(["lib-build/tpl!./ViewHome",
 			
 			function checkError()
 			{
-				var urlVal = container.find('.url').val(),
-					embedVal = container.find('.textarea').val();
+				var hasUrl = checkErrorURL(),
+					hasEmbed = checkErrorEmbed();
 
 				// TODO url check
 				
-				container.find('.error').toggle(!! urlVal && !! embedVal).html(i18n.commonMedia.webpageSelectorHome.lblError1);
+				container.find('.error').toggle(hasUrl && hasEmbed).html(i18n.commonMedia.webpageSelectorHome.lblError1);
 				
-				return (urlVal && embedVal) || (!urlVal && !embedVal);
+				return (hasUrl && hasEmbed) || (!hasUrl && !hasEmbed);
+			}
+			
+			function checkErrorURL()
+			{
+				var val = container.find('.url').val();
+				return !! val;
+			}
+			
+			function checkErrorEmbed()
+			{
+				var val = container.find('.textarea').val();
+				return !! val;
 			}
 			
 			function getData()
@@ -68,7 +89,10 @@ define(["lib-build/tpl!./ViewHome",
 			
 			function onDataUpdate()
 			{
-				container.find('.btn-cfg-embed').attr("disabled", checkError());
+				container.find('.btn-cfg-url').attr("disabled", ! checkErrorURL() || checkErrorEmbed());
+				container.find('.btn-cfg-embed').attr("disabled", ! checkErrorEmbed() || checkErrorURL());
+				
+				checkError();
 			}
 			
 			
@@ -76,11 +100,20 @@ define(["lib-build/tpl!./ViewHome",
 			{
 				container.find('.url').bind('input propertychange', onDataUpdate);
 				container.find('.textarea').bind('input propertychange', onDataUpdate);
+				
+				container.find('.btn-cfg-url').click(function() {
+					showView("configure", { 
+						media: {
+							type: "webpage",
+							webpage: getData()
+						}
+					}); 
+				});
+				
 				container.find('.btn-cfg-embed').click(function() {
-					var urlVal = container.find('.url').val(),
-						embedVal = container.find('.textarea').val();
+					var embedVal = container.find('.textarea').val();
 					
-					if ( embedVal && ! urlVal && (! embedVal.match(/^<iframe.*<\/iframe>$/) || embedVal.match(/iframe/g).length > 2) ) {
+					if ( ! embedVal.match(/^<iframe.*<\/iframe>$/) || embedVal.match(/iframe/g).length > 2 ) {
 						container.find('.error')
 							.show()
 							.html(i18n.commonMedia.webpageSelectorHome.lblError2.replace('%IFRAMETAG%', '"&lt;iframe&gt;"'));

@@ -56,7 +56,9 @@
 				howToFind: "Kuidas leida YouTube’i kasutajanime",
 				howToFind2: "Kasutajanime kuvatakse videote all",
 				found: "Leitud",
-				noData: "Avalikke videoid ei leitud"
+				noData: "Avalikke videoid ei leitud",
+				videoNotChecked: "Seda videot pole YouTube’is kontrollitud, kuid aadress tundub sobivat.",
+				checkFailedAPI: "YouTube’i kontroll nurjus, kontrollige YouTube’i API võtit."
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo video URL"

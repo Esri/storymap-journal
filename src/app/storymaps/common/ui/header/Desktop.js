@@ -130,7 +130,9 @@ define(["lib-build/css!./Desktop",
 			this.initLocalization = function()
 			{
 				container.find('.switchBuilder').html('<div class="text_edit_icon editIcon"></div>' + i18n.viewer.commonHeader.builderButton);
-				container.find('.share_bitly').attr("title", i18n.viewer.commonHeader.bitlyTooltip);
+				container.find('.share_facebook').attr("title", i18n.viewer.headerFromCommon.facebookTooltip);
+				container.find('.share_twitter').attr("title", i18n.viewer.headerFromCommon.twitterTooltip);
+				container.find('.share_bitly').attr("title", i18n.viewer.headerFromCommon.bitlyTooltip);
 			};
 		};
 	}

@@ -9,7 +9,7 @@
         <div class="search esriFloatTrailing esriTrailingMargin1" style="width:250px;">
           <div id="search-form" style="position:relative;">
             <input class="esriSearchBox" type="text" data-dojo-type="dijit/form/TextBox" trim="true" id="browse-id-search-box" data-dojo-attach-point="searchText" data-dojo-attach-event="onKeyPress:_onSearchKeyPress,onFocus:_onSearchBoxFocus,onBlur:_onSearchBoxBlur" alt="${i18n.searchTitle}" title="${i18n.searchTitle}" placeholder="${i18n.placeholder}" />
-            <button class="esriLeadingMargin13 esriSearchButton" id="search-box_submit" alt="${i18n.searchTitle}" title="searchTitle" data-dojo-attach-point="searchButton" data-dojo-attach-event="onclick:_onSearchClick" >&nbsp;&nbsp;</button>
+            <button class="esriLeadingMargin13 esriSearchButton dijitDialogCloseIcon hide" id="clear-box_submit" alt="${i18n.searchTitle}" title="searchTitle" data-dojo-attach-point="clearButton" data-dojo-attach-event="onclick:_onSearchClear" >&nbsp;&nbsp;</button>
           </div>
         </div>
         <div style="position:relative; width:565px;clear:both;" data-dojo-attach-point="gallery"  id="gallery"></div>

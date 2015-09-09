@@ -56,7 +56,9 @@
 				howToFind: "W jaki sposób wyszukać nazwę użytkownika serwisu YouTube",
 				howToFind2: "Nazwa użytkownika jest wyświetlana pod każdym filmem",
 				found: "Znaleziono",
-				noData: "Nie znaleziono żadnych filmów publicznych"
+				noData: "Nie znaleziono żadnych filmów publicznych",
+				videoNotChecked: "Materiał wideo nie został sprawdzony w serwisie YouTube, ale jego adres wygląda na poprawny.",
+				checkFailedAPI: "Podczas sprawdzania YouTube wystąpił błąd. Sprawdź klucz YouTube API."
 			},
 			videoSelectorVimeo: {
 				url: "Adres URL pliku wideo dostępnego w serwisie Vimeo"

@@ -7,7 +7,7 @@
 				lblContent: "Turinys",
 				lblPopup: "Iškylantis langas",
 				lblControls: "Priedai",
-				lblOverview: "Apžvalgos žemėlapis",
+				lblOverview: "Apžvalga",
 				lblLegend: "Legenda",
 				loadingTitle: "Įkeliamas pavadinimas",
 				entry: "Įrašas",

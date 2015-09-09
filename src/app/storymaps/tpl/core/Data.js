@@ -298,8 +298,10 @@ define(["./WebApplicationData",
 				
 				var store = function(id, type, value)
 				{
-					if ( webmapsInfoHash[id] )
-						webmapsInfoHash[id][type].push(value);
+					if ( webmapsInfoHash[id] ){
+						if ( webmapsInfoHash[id][type].indexOf(value) == -1 )
+							webmapsInfoHash[id][type].push(value);
+					}
 					else {
 						webmapsInfoHash[id] = {
 							sections: [],

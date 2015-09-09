@@ -56,7 +56,9 @@
 				howToFind: "YouTube-käyttäjätunnuksen etsiminen",
 				howToFind2: "Käyttäjätunnus näkyy videoissa",
 				found: "Löytyi",
-				noData: "Yhtään julkista videota ei löytynyt"
+				noData: "Yhtään julkista videota ei löytynyt",
+				videoNotChecked: "Videota ei ole tarkistettu YouTubessa, mutta videon osoite näyttää oikealta.",
+				checkFailedAPI: "YouTube-tarkistus epäonnistui. Tarkista API -avain."
 			},
 			videoSelectorVimeo: {
 				url: "Vimeo-videon URL-osoite"

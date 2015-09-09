@@ -61,6 +61,10 @@
     user-select: text;
 }
 
+body.layout-side #AddEditTitleEditor * {
+	line-height: 1.2em;
+}
+
 /*
  * Title text editor
  */

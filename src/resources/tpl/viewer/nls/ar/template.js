@@ -55,7 +55,9 @@
 			headerFromCommon: {
 				storymapsText: "قصة داخل خريطة",
 				builderButton: "تحرير",
-				bitlyTooltip: "الحصول على رابط قصير إلى التطبيق",
+				facebookTooltip: "مشاركة على الفيس بوك",
+				twitterTooltip: "مشاركة على تويتر",
+				bitlyTooltip: "الحصول على رابط قصير",
 				templateTitle: "تحديد عنوان القالب",
 				templateSubtitle: "تحديد العنوان الفرعي للقالب",
 				share: "مشاركة"

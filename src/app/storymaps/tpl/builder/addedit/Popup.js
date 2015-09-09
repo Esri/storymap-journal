@@ -62,21 +62,15 @@ define(["lib-build/tpl!./Popup",
 				_isTemporaryHide = false;
 				app.isAddEditInProgress = true;
 				
-				var sectionName = "Home Section";
-				if ( cfg.sectionIndex > 0 || (cfg.mode == "add" && app.data.getStoryLength() > 0) )
-					sectionName = "Section " + (cfg.mode == "add" ? app.data.getStoryLength() : cfg.sectionIndex);
-				
 				// Title / submit
 				if ( cfg.mode == "add" ) {
 					container.find('.modal-logo').removeClass("edit");
 					container.find('.modal-title').html(cfg.title ? i18n.builder.addEditPopup.titleAddHome : i18n.builder.addEditPopup.titleAdd);
-					container.find('.modal-subtitle').html(sectionName);
 					_btnSubmit.html(i18n.commonCore.common.add);
 				}
 				else {
 					container.find('.modal-logo').addClass("edit");
 					container.find('.modal-title').html(i18n.builder.addEditPopup.titleEdit);
-					container.find('.modal-subtitle').html(sectionName);
 					_btnSubmit.html(i18n.commonCore.common.save);
 				}
 				
@@ -225,7 +219,9 @@ define(["lib-build/tpl!./Popup",
 							],
 							uiColor: '#FCFCFC',
 							floatSpaceDockedOffsetX: $("#AddEditTitleEditor").width() - 194,
-							floatSpaceDockedOffsetY: - 1
+							floatSpaceDockedOffsetY: - 1,
+							removePlugins: 'liststyle,tableresize,tabletools,contextmenu',
+							disableNativeSpellChecker: false
 						});
 					}
 				}
@@ -298,11 +294,6 @@ define(["lib-build/tpl!./Popup",
 			
 			function onClickSubmit()
 			{
-				if ( _btnSubmit.html() == "NEXT" ) {
-					showTab(1);
-					return;
-				}
-				
 				var errorInStep = [],
 					sectionTitle = "",
 					viewMediaData = _viewMainStage.getData(),
@@ -312,8 +303,10 @@ define(["lib-build/tpl!./Popup",
 					var fontSize = ! app.data.getStoryLength() ? "36px" : "22px";
 					sectionTitle = '<strong><span style="font-size: ' + fontSize + '">' + container.find('.title').val() + '</span></strong>';
 				}
-				else
+				else {
+					CKEDITOR.instances.AddEditTitleEditor.focus();
 					sectionTitle = CKEDITOR.instances.AddEditTitleEditor.getData();
+				}
 				
 				var postErrorCheck = function() {
 					if ( ! sectionTitle )
