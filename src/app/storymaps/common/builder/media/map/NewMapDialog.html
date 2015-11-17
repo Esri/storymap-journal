@@ -1,0 +1,46 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-logo"></div>
+		<div class="modal-header">
+			<h4 class="modal-title"><%= newTitle %></h4>
+		</div>
+
+		<div class="modal-body">
+			<form>
+				<div class="form-group"> <!-- has-feedback -->
+					<label for="inputNewMapTitle"><%= titleLbl %></label>
+					<input type="text" class="form-control" id="inputNewMapTitle" placeholder="<%= titlePh %>">
+					<!--<span class="glyphicon glyphicon-asterisk form-control-feedback" aria-hidden="true"></span>-->
+				</div> 
+				<div class="form-group" style="display: none">
+					<label for="inputNewMapTags">Tags</label>
+					<input type="text" class="form-control" id="inputNewMapTags" placeholder="Tags">
+				</div>
+				<!--
+				<div class="form-group">
+					<label for="inputNewMapFolder">Folder</label>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownnewMapFolder" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							Fetching folders...
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownnewMapFolder">
+							<li><a href="#">Foo</a></li>
+							<li><a href="#">bar</a></li>
+						</ul>
+					</div>	
+				</div>
+				-->
+				<div class="form-group folder-label">
+					<%= lblFolder %>
+				</div>
+			</form>
+		</div>
+
+		<div class="modal-footer">
+		<span class="error"></span>
+			<button class="btnSubmit btn btn-primary"></button>
+			<button type="button" class="btn btnCancel btn-naked btn-close"><%= btnCancel %></button>
+		</div>
+	</div>
+</div>

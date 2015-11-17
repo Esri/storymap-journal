@@ -102,6 +102,10 @@ define(["lib-build/tpl!./Media",
 			function initEvents()
 			{
 				container.find(".btnSubmit").click(onClickSubmit);
+				
+				container.on('shown.bs.modal', function(){
+					_viewMediaSelector.postDisplay();
+				});
 			}
 	
 			this.initLocalization = function()

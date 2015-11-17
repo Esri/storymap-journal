@@ -1,0 +1,6 @@
+
+.share-group:before { content: '\e800'; } /* '' */
+.share-torso:before { content: '\e801'; } /* '' */
+.share-clipboard:before { content: '\e802'; } /* '' */
+.share-ok:before { content: '\e803'; } /* '' */
+.share-globe:before { content: '\e805'; } /* '' */

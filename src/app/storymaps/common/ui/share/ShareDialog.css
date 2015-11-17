@@ -7,6 +7,7 @@
 body.mobile-view .shareDialog {
 	margin-top: 40px;
 	padding: 20px;
+	z-index: 1200;
 }
 
 .shareDialog .modal-logo {
@@ -26,12 +27,25 @@ body.mobile-view .shareDialog {
 .shareDialog .embed-title {
 	font-size: 1.3em;
 	color: #4B8BC9; 
-	margin: 15px 0 5px 0;
+	margin: 0px 0 5px 0;
 }
 
-body.mobile-view .shareDialog .bitlylink {
-	width: 100%;
-	margin-bottom: 15px;
+.shareDialog .social-container {
+	text-align: center;
+	font-size: 35px;
+}
+
+body:not(.mobile-view) .shareDialog .social-container {
+	padding: 0 0 15px 0;
+}
+
+.shareDialog .shareIcon {
+	padding: 0 8px;
+}
+	
+body.mobile-view .shareDialog .share-url-container {
+	text-align: center;
+	margin: 20px 0;
 }
 
 body.mobile-view .shareDialog .btn-bitlylink-copy,
@@ -39,4 +53,8 @@ body.mobile-view .shareDialog .btn-bitlylink-open,
 body.mobile-view .shareDialog .embed-title,
 body.mobile-view .shareDialog .share-embed-container {
 	display: none;
+}
+
+.shareDialog  .share-embed-container .share-btn {
+	padding-top: 17px;
 }

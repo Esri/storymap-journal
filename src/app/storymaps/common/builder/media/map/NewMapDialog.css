@@ -1,0 +1,22 @@
+.mapEditPopupNewMap .modal-dialog {
+	width: 560px;
+	margin-top: 220px;
+}
+
+.mapEditPopupNewMap .form-control-feedback {
+	display: inline-block;
+	color: #F00;
+	margin-top: 3px;
+	right: 5px;
+}
+
+.mapEditPopupNewMap .folder-label {
+	font-style: italic;
+	font-size: .9em;
+}
+
+.mapEditPopup .modal-footer .error {
+	float: none;
+	margin-right: 10px;
+	font-size: 18px;
+}

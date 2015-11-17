@@ -100,7 +100,9 @@ define([
 				container.find('.dropdown-toggle').dropdown();
 				
 				// Delete tooltip
-				container.find('*[data-toggle=tooltip]').tooltip();
+				container.find('*[data-toggle=tooltip]').tooltip({
+					trigger: 'hover'
+				});
 				
 				// Edit and delete button click handlers
 				container.find('.deleteSectionBtn').click(onClickDelete);
@@ -216,7 +218,8 @@ define([
 				});
 				
 				container.find('.exportHelp').tooltip({
-					html: true
+					html: true,
+					trigger: 'hover'
 				});
 				
 				container.find('.btn-export').click(onClickExport);

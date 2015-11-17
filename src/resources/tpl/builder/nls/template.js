@@ -57,7 +57,7 @@ define({
 			},
 			organizePopup: {
 				title: "Organize",
-				lblHeader: "Drag and drop sections to organize your content.",
+				lblHeader: "Drag and drop sections to organize your story.",
 				lblColTitle: "Title",
 				lblColPubDate: "Publication date",
 				lblColStatus: "Status",

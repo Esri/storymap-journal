@@ -64,7 +64,7 @@
 				url: "URL de um vídeo do Vimeo"
 			},
 			videoSelectorOther: {
-				explain1: "O aplicativo não pode reproduzir vídeos pesados (ex: avi,mpeg), mas ele pode reproduzir arquivos de vídeo hospedados que têm botões de reprodução embutidos (ex: YouTube ou Vimeo).",
+				explain1: "A história não pode executar vídeos brutos (por exemplo, avi, mpeg) mas ela pode executar arquivos de vídeo hospedados com tocadores embutidos (por exemplo, YouTube ou Vimeo).",
 				explain2: "A maioria dos serviços de hospedagem de vídeo online oferecem esste recurso, você tem que encontrar a opção para embutir o vídeo, copiar o código fornecido e utilizar o %WEBPAGE%.",
 				explain3: "Alternativamente, se desejar você mesmo hospedar o vídeo, é possível criar uma página HTML que utiliza um botão de reprodução de vídeo como %EXAMPLE%, hospedar esta página e também utilizar o %WEBPAGE%.",
 				webpage: "Recurso da página da web"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(a largura sempre se ajustará no painel)",
 				lblPosition4Explain: "(pode distorcer)",
 				unloadLbl: "Descarregar quando o leitor navegar",
-				unloadHelp: "Se a Página da Web tiver mídia de áudio ou vídeo, mantenha esta opção marcada para impedir que o conteúdo seja reproduzido quando o leitor navegar. Desmarque-a, por exemplo, para manter a reprodução da trilha sonora conforme o leitor avançar pelo diário.<br /> Se a Página da Web for um aplicativo, desmarque esta opção para que o aplicativo não recarregue se o leitor retornar para ele."
+				unloadHelp: "Se a Página da Web tiver mídia de áudio ou de vídeo, mantenha esta opção marcada para interromper a execução do conteúdo quando o leitor navegar fora da página. Desmarque isto, por exemplo, para manter uma trilha sonora tocando quando o leitor avançar pela história.<br />Se a Página da Web for um aplicativo, desmarque esta opção de forma que a história não recarregue se o leitor retornar a ela."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizar um endereço ou lugar",

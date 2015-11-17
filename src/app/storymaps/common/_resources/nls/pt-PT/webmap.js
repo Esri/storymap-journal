@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Mapa web",
+				lblWebMap: "Mapa",
 				lblLocation: "Local",
 				lblContent: "Conteúdo",
 				lblPopup: "Janela Pop-up",
@@ -17,12 +17,14 @@
 				and: "e",
 				action: "Ação na secção",
 				actions: "Ação nas secções",
-				originalWebmap: "Mapa web utilizado para publicar o %TPL_NAME%",
-				browseMaps: "Procurar mapas",
-				current: "Mapa web atual",
-				select: "Selecionar um mapa web",
-				newMap: "Novo mapa web selecionado",
-				webmapDefault: "Mapa web por defeito",
+				originalWebmap: "Mapa utilizado para publicar o %TPL_NAME%",
+				browseMaps: "Selecionar um mapa",
+				createMap: "Criar um mapa",
+				current: "Mapa atual",
+				select: "Selecionar ou criar um mapa",
+				newMap: "Mapa web recém-selecionado",
+				newCreatedMap: "Mapa web recém-criado",
+				webmapDefault: "Padrão de mapa",
 				customCfg: "Configuração personalizada",
 				tooltipLocation: "Defina a localização em que o mapa exibido.",
 				tooltipContent: "Definir as camadas visíveis.",
@@ -47,6 +49,29 @@
 				popupExplain: "Configure o aspeto da janela popup exibida aos leitores.",
 				popupSave: "Guarde a configuração da janela popup.",
 				hintNavigation: "Navegação no mapa desativada."
+			},
+			editor: {
+				loading: "Por favor aguarde enquanto o editor de mapas está a carregar",
+				newTitle: "Criar um novo mapa",
+				editTitle: "Editar mapa",
+				titleLbl: "Título",
+				titlePh: "Título do mapa...",
+				folderLbl: "O mapa será criado no mesmo mapa que a história.",
+				creating: "A criar o mapa",
+				saving: "A guardar o mapa",
+				success: "Mapa guardado",
+				successCreate: "Mapa criado",
+				cancelTitle: "Rejeitar alterações não guardadas?",
+				errorDuplicate: "Já existe um mapa com esse título.",
+				errorCreate: "Impossível criar mapa. Por favor, tente novamente.",
+				errorSave: "Não é possível guardar mapa. Por favor, tente novamente.",
+				notavailable1: "Lamentamos, criar ou editar um mapa não é suportado no Firefox devido a uma limitação técnica. Poderá querer construir a sua história utilizando outro navegador web ou optar pela seguinte resolução alternativa.",
+				notavailable2: "Lamentamos, criar ou editar um mapa não é suportado porque a aplicação do story map não se encontra alojada em %PRODUCT%. Por favor contacte o seu administrador ArcGIS para obter mais informações.",
+				notavailable3: "Lamentamos, criar ou editar um mapa não é suportado nesta versão do Portal for ArcGIS (requer a versão 10.4 ou posterior). Por favor contacte o seu administrador ArcGIS para obter mais informações.",
+				notavailable4: "Pode criar um mapa utilizando %MV%, e depois regressar aqui para o adicionar à sua história.",
+				notavailable5: "Pode criar um mapa utilizando %MV%, e depois regressar aqui e %apply% para ver as alterações.",
+				notavailable6: "visualizador de mapas",
+				notavailable7: "recarregar o mapa"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "O Meu Conteúdo",
 					favoritesLabel: "Os Meus Favoritos"
 				},
-				title: "Selecionar Mapa Web",
+				title: "Selecionar um mapa",
 				searchTitle: "Pesquisar",
 				ok: "Ok",
 				cancel: "Cancelar",
-				placeholder: "Introduza termo de pesquisa o ID de Mapa Web..."
+				placeholder: "Introduza termo de pesquisa ou a ID de mapa web..."
 			}
 		}
 	})

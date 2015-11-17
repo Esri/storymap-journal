@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organisera",
-				lblHeader: "Organisera innehållet genom att dra och släppa avsnitt.",
+				lblHeader: "Organisera berättelsen genom att dra och släppa avsnitt.",
 				lblColTitle: "Titel",
 				lblColPubDate: "Publiceringsdatum",
 				lblColStatus: "Status",

@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organizar",
-				lblHeader: "Arraste e solte secções para organizar o seu conteúdo.",
+				lblHeader: "Arraste e solte secções para organizar a sua história.",
 				lblColTitle: "Título",
 				lblColPubDate: "Data de publicação",
 				lblColStatus: "Estado",

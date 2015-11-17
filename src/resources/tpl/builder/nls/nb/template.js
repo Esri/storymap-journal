@@ -10,7 +10,7 @@
 			},
 			common: {
 				lblStatus1: "Publisert",
-				lblStatus2: "Skisse",
+				lblStatus2: "Utkast",
 				lblStatus3: "Skjult"
 			},
 			settingsLayoutOptions: {
@@ -21,7 +21,7 @@
 				cfgMedium: "Middels",
 				cfgLarge: "Stor",
 				socialLinksLabel: "Vis delingskoblinger nederst i hver seksjon",
-				socialLinksDescr: "Dette gjør at leserne kan referere til og fremme bestemte seksjoner av %TPL_NAME%. Hvis du for eksempel bruker et delingsikon for seksjoner, lander leserne på den bestemte %TPL_NAME%-seksjonen i stedet for på begynnelsen av historien. Leserne kan bruke koblingen for sosiale medier i tittelseksjonen for å fremme hele %TPL_NAME% (overskriftskategorien) og få dem til å lande på starten av %TPL_NAME%."
+				socialLinksDescr: "Dette gjør at leserne kan referere til og promotere bestemte seksjoner av %TPL_NAME%. Hvis du for eksempel bruker et delingsikon for seksjoner, lander leserne på den bestemte %TPL_NAME%-seksjonen i stedet for på begynnelsen av historien. Leserne kan bruke koblingen for sosiale medier i tittelseksjonen for å fremme hele %TPL_NAME% (overskriftskategorien) og få dem til å lande på starten av %TPL_NAME%."
 			},
 			settingsLayoutFonts: {
 				title: "Skrifter",
@@ -38,14 +38,14 @@
 				titleAddHome: "Legg til Hjem-seksjon",
 				titleEdit: "Rediger seksjon",
 				step: "Trinn",
-				stepMainStageExplain: "Hovedstadieinnhold",
+				stepMainStageExplain: "Hovedinnhold",
 				stepPanelExplain: "Innhold",
 				stepMainStageNextTooltip: "Angi seksjonstittelen, og velg innholdet i hovedstadiet",
 				stepMainStageNextTooltip2: "Velg innholdet på hovedstadiet",
 				step2NextTooltip: "Angi seksjonstittelen og %LAYOUT-TYPE%-innholdet",
 				stepNextTooltipNext: "for å gå til neste trinn",
 				stepNextTooltipAdd: "for å legge til seksjonen",
-				firstAddExplain: "Den første seksjonen er Hjem-seksjonen. Tenk på den seksjonen som omslaget i fortellingen. Tittelen du nettopp definerte, vises med store skrifttyper.",
+				firstAddExplain: "Den første seksjonen er Hjem-seksjonen. Tenk på den seksjonen som forsiden i fortellingen. Tittelen du nettopp definerte, vises med store skrifttyper.",
 				firstAddLeanMore: "Finn ut mer",
 				titlePlaceholder: "Seksjonstittel..."
 			},
@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organiser",
-				lblHeader: "Dra og slipp seksjoner for å organisere innholdet.",
+				lblHeader: "Dra og slipp avsnitt for å organisere historien.",
 				lblColTitle: "Tittel",
 				lblColPubDate: "Publiseringsdato",
 				lblColStatus: "Status",

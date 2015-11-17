@@ -64,7 +64,7 @@ define({
 				url: "URL of a Vimeo video"
 			},
 			videoSelectorOther: {
-				explain1: "The application cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
+				explain1: "The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
 				explain2: "Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%.",
 				explain3: "Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%.",
 				webpage: "Web page feature"
@@ -102,7 +102,7 @@ define({
 				lblPosition3Explain2: "(width will always fit the panel)",
 				lblPosition4Explain: "(may distort)",
 				unloadLbl: "Unload when reader navigates away",
-				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the application does not reload if the reader returns to it."
+				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it."
 			},
 			editorActionGeocode: {
 				lblTitle: "Locate an address or place",

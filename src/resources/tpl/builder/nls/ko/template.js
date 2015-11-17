@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "구성",
-				lblHeader: "섹션을 끌어서 놓고 콘텐츠를 구성합니다.",
+				lblHeader: "섹션을 드래그 앤 드롭하여 스토리를 구성합니다.",
 				lblColTitle: "제목",
 				lblColPubDate: "발행 날짜",
 				lblColStatus: "상태",

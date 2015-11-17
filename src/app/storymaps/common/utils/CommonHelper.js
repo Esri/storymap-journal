@@ -1,6 +1,7 @@
 define(["dojo/cookie", 
 		"dojo/has", 
 		"esri/urlUtils",
+		"esri/arcgis/utils",
 		"esri/geometry/webMercatorUtils",
 		"esri/geometry/Point",
 		"esri/geometry/Extent",
@@ -12,6 +13,7 @@ define(["dojo/cookie",
 		cookie, 
 		has, 
 		urlUtils,
+		arcgisUtils,
 		webMercatorUtils,
 		Point,
 		Extent,
@@ -241,14 +243,26 @@ define(["dojo/cookie",
 				var portalUrl = sharingUrl.split('/sharing/')[0];
 				return portalUrl + '/home/webmap/viewer.html';
 			},
-			getItemURL: function(sharingUrl, id)
+			getPortalURL: function()
 			{
-				var portalUrl = sharingUrl.split('/sharing/')[0];
-				return portalUrl + '/home/item.html?id=' + id;
+				return arcgisUtils.arcgisUrl.split('/sharing/')[0];
 			},
-			getMyContentURL: function(sharingurl)
+			getItemURL: function(id)
 			{
-				return sharingurl.split('/sharing/')[0] + '/home/content.html';
+				return this.getPortalURL() + '/home/item.html?id=' + id;
+			},
+			getMyContentURL: function()
+			{
+				return this.getPortalURL() + '/home/content.html';
+			},
+			getMyStoriesURL: function()
+			{
+				if ( app.isPortal ){
+					return this.getPortalURL() + '/apps/MyStories/';
+				}
+				else {
+					return '//storymaps.arcgis.com/en/my-stories/';
+				}
 			},
 			browserSupportAttachementUsingFileReader: function()
 			{

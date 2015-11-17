@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Mapa internetowa",
+				lblWebMap: "Mapa",
 				lblLocation: "Lokalizacja",
 				lblContent: "Zawartość",
 				lblPopup: "Okno podręczne",
@@ -17,12 +17,14 @@
 				and: "i",
 				action: "Operacja w sekcji",
 				actions: "Operacja w sekcjach",
-				originalWebmap: "Mapa internetowa użyta do publikacji aplikacji %TPL_NAME%",
-				browseMaps: "Odszukaj mapy",
-				current: "Bieżąca mapa internetowa",
-				select: "Wybierz mapę internetową",
-				newMap: "Nowo wybrana mapa internetowa",
-				webmapDefault: "Domyślne ustawienia mapy",
+				originalWebmap: "Mapa użyta do publikacji aplikacji %TPL_NAME%",
+				browseMaps: "Wybierz mapę",
+				createMap: "Tworzenie mapy",
+				current: "Bieżąca mapa",
+				select: "Wybierz lub utwórz mapę",
+				newMap: "Nowo wybrana mapa",
+				newCreatedMap: "Nowo utworzona mapa",
+				webmapDefault: "Mapa domyślna",
 				customCfg: "Konfiguracja niestandardowa",
 				tooltipLocation: "Definiuj lokalizację do wyświetlania przez tę mapę.",
 				tooltipContent: "Definiuj widoczne warstwy.",
@@ -47,6 +49,29 @@
 				popupExplain: "Kliknij obiekt, aby otworzyć pożądane okno podręczne.",
 				popupSave: "Zapisz konfigurację okna podręcznego",
 				hintNavigation: "Nawigacja mapy jest wyłączona."
+			},
+			editor: {
+				loading: "Trwa wczytywanie edytora map. Czekaj.",
+				newTitle: "Utwórz nową mapę",
+				editTitle: "Edytuj mapę",
+				titleLbl: "Tytuł",
+				titlePh: "Tytuł mapy...",
+				folderLbl: "Mapa zostanie utworzona w tym samym folderze, w którym znajduje się narracja.",
+				creating: "Trwa tworzenie mapy",
+				saving: "Trwa zapisywanie mapy",
+				success: "Mapa została zapisana",
+				successCreate: "Mapa została utworzona",
+				cancelTitle: "Odrzucić wszystkie niezapisane zmiany?",
+				errorDuplicate: "Mapa o takim tytule już istnieje",
+				errorCreate: "Nie można utworzyć mapy. Spróbuj ponownie.",
+				errorSave: "Nie można zapisać mapy. Spróbuj ponownie.",
+				notavailable1: "Przykro nam, ale funkcja tworzenia lub edytowania mapy nie jest obsługiwana przez przeglądarkę Firefox z powodu ograniczeń technicznych. Użyj innej przeglądarki w celu zbudowania narracji lub z skorzystaj z poniższego rozwiązania zastępczego.",
+				notavailable2: "Przykro nam, ale funkcja tworzenia lub edytowania mapy nie jest obsługiwana, ponieważ aplikacja mapy narracyjnej nie jest hostowana przez produkt %PRODUCT%. Aby uzyskać więcej informacji, skontaktuj się z administratorem oprogramowania ArcGIS.",
+				notavailable3: "Przykro nam, ale funkcja tworzenia lub edytowania mapy nie jest obsługiwana w tej wersji witryny Portal for ArcGIS (konieczna jest wersja 10.4 lub nowsza). Aby uzyskać więcej informacji, skontaktuj się z administratorem oprogramowania ArcGIS.",
+				notavailable4: "Można utworzyć mapę za pomocą produktu %MV%, następnie wrócić tutaj i dodać ją do narracji.",
+				notavailable5: "Można edytować mapę za pomocą produktu %MV%, następnie wrócić tutaj i kliknąć przycisk %apply%, aby zobaczyć zmiany.",
+				notavailable6: "przeglądarka map",
+				notavailable7: "wczytaj ponownie mapę"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "Moje zasoby",
 					favoritesLabel: "Moje ulubione"
 				},
-				title: "Wybierz mapę  internetową",
+				title: "Wybierz mapę",
 				searchTitle: "Wyszukaj",
 				ok: "OK",
 				cancel: "Anuluj",
-				placeholder: "Wpisz wyszukiwane hasło lub identyfikator mapy internetowej..."
+				placeholder: "Wpisz termin wyszukiwania lub identyfikator mapy internetowej..."
 			}
 		}
 	})

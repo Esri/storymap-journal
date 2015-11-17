@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Järjestä",
-				lblHeader: "Järjestä sisältösi vetämällä ja pudottamalla osioita.",
+				lblHeader: "Järjestä tarinasi vetämällä ja pudottamalla osioita.",
 				lblColTitle: "Otsikko",
 				lblColPubDate: "Julkaisupäivämäärä",
 				lblColStatus: "Tila",

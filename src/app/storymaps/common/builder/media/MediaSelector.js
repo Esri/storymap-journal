@@ -75,8 +75,12 @@ define(["lib-build/tpl!./MediaSelector",
 			initEvents();
 			
 			this.present = function(cfg) 
-			{			
-				_mapSelector && _mapSelector.present(cfg);
+			{
+				if ( _mapSelector ) {
+					_mapSelector.present(cfg);
+					_mapSelector.activate();
+				}
+				
 				_imageSelector.present(cfg);
 				_videoSelector.present(cfg);
 				_webpageSelector.present(cfg);
@@ -146,14 +150,22 @@ define(["lib-build/tpl!./MediaSelector",
 				_videoSelector.deactivate();
 				_webpageSelector.deactivate();
 				
-				//if ( mediaType == "map" )
-					//_mapSelector.activate();
+				if ( _selectedMediaType == "webmap" ) {
+					_mapSelector.activate();
+					// Can't figure out why in some case
+					setTimeout(_mapSelector.activate, 0);
+				}
 				if ( _selectedMediaType == "image" )
 					_imageSelector.activate();
 				else if ( _selectedMediaType == "video" )
 					_videoSelector.activate();
 				else if ( _selectedMediaType == "webpage" )
 					_webpageSelector.activate();
+			};
+			
+			this.postDisplay = function()
+			{
+				_mapSelector.postDisplay();
 			};
 			
 			function initUIAdd()

@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "ترتيب",
-				lblHeader: "سحب وإفلات المقاطع لتنظيم المحتويات.",
+				lblHeader: "اسحب الأقسام وأفلتها لتنظيم القصة.",
 				lblColTitle: "العنوان",
 				lblColPubDate: "تاريخ المنشور",
 				lblColStatus: "حالة",

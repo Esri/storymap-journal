@@ -9,8 +9,8 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		
-		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
-		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
+		<link type="image/ico" rel="shortcut icon" href="resources/tpl/viewer/icons/favicon.ico">
+		<link type="image/ico" rel="icon"  href="resources/tpl/viewer/icons/favicon.ico">
 		
 		<!-- 
 			To correctly reference your Map Journal in search engine:
@@ -44,6 +44,7 @@
 				// Optionally to be able to use the appid URL parameter, configure here the list of application author 
 				//  whose application are allowed to be viewed by this Map Journal deployment
 				// This is the Portal username of the Journal owner (e.g. ["user1"], ["user1", "user2"])
+				// To authorize all users you can use ["*"]
 				authorizedOwners: [""]
 			};
 			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required  
@@ -61,8 +62,8 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.5.0',
-				pathJSAPI: '//js.arcgis.com/3.14/'
+				version: '1.6.0',
+				pathJSAPI: '//js.arcgis.com/3.15/'
 			};
 		</script>
 	</head>
@@ -105,6 +106,9 @@
 								</table>
 							</div>
 							<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
+							<span class="error-status">
+								<button class="btn btn-xs btn-warning check-story"></button>
+							</span>
 							<div class="separator"></div>
 							<div class="sectionsWrapper">
 								<div class="panelEditBtn">
@@ -183,6 +187,9 @@
 				</table>
 			</div>
 			<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
+			<span class="error-status">
+				<button class="btn btn-xs btn-warning check-story"></button>
+			</span>
 			<div class="separator"></div>
 			<div class="panelEditBtn">
 				<div class="panelEditBtnInner"></div>
