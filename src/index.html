@@ -4,61 +4,61 @@
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-		
+
 		<meta name="fragment" content="!">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		
+
 		<link type="image/ico" rel="shortcut icon" href="//resources.esri.com/favicon.ico">
 		<link type="image/ico" rel="icon"  href="//resources.esri.com/favicon.ico">
-		
-		<!-- 
+
+		<!--
 			To correctly reference your Map Journal in search engine:
 			 - create and fill out extensively an ArcGIS Online item that link to your final application
 			 - edit the following four tags as well as the title tag above on line 4
 		-->
 		<meta name="description" content="This story map was created with the Story Map Journal application in ArcGIS Online.">
-		
+
 		<!-- Facebook sharing -->
 		<meta property="og:type" content="article"/>
 		<meta property="og:title" content="Story Map Journal"/>
 		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
 		<meta property="og:image" content="http://www.arcgis.com/apps/MapJournal/resources/common/icons/esri-globe.png"/>
-		
-		<!-- 
+
+		<!--
 			This application is released under the Apache License V2.0 by Esri http://www.esri.com/
 			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
 			https://github.com/Esri/map-journal-storytelling-template-js
 		-->
-		
+
 		<script type="text/javascript">
 			//-------------------------------------------------------------------------------------------
 			//     Application configuration (ignored on ArcGIS Online, Portal and during development)
 			//-------------------------------------------------------------------------------------------
 			var configOptions = {
-				// Enter an application ID created through the Map Journal builder 
-				appid: "",
+				// Enter an application ID created through the Map Journal builder
+				appid: "0b0815b9007343e1868452eb3b268fbc",
 				// Optionally to secure Journal's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
 				// User will need to sign-in to access the viewer even if your application is public
 				oAuthAppId: "",
-				// Optionally to be able to use the appid URL parameter, configure here the list of application author 
+				// Optionally to be able to use the appid URL parameter, configure here the list of application author
 				//  whose application are allowed to be viewed by this Map Journal deployment
 				// This is the Portal username of the Journal owner (e.g. ["user1"], ["user1", "user2"])
 				authorizedOwners: [""]
 			};
-			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required  
-			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapJournal/ or /apps/MapJournal/. 
-			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required 
-			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
+			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required
+			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapJournal/ or /apps/MapJournal/.
+			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required
+			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed
 			//  on Portal for ArcGIS as /home/MapJournal/ or /apps/MapJournal/, that configuration is available in ../commonConfig.js
 		</script>
-		
+
 		<!--
-		
+
 			Edit below at your own risk
-		
+
 		-->
-		
+
 		<script type="text/javascript">
 			var app = {
 				version: '1.5.0',
@@ -70,10 +70,10 @@
 		<style>
 			/* CUSTOM CSS RULES */
 		</style>
-		
+
 		<!-- Builder top panel is injected here -->
 		<div id="builderPanel" class="hide mainViewAboveMap"></div>
-		
+
 		<!-- Content -->
 		<div id="contentPanel" class="mobileView">
 			<table class="containerPanelInner">
@@ -159,7 +159,7 @@
 			</table>
 		</div>
 		<!-- /Content -->
-		
+
 		<div id="floatingPanel" class="floatingPanel sectionPanel">
 			<div class="backdrop"></div>
 			<div class="header" aria-hidden="true">
@@ -213,7 +213,7 @@
 			<div class="builder-mask"></div>
 			<div class="firstAddExplain"></div>
 		</div>
-		
+
 		<!-- Mobile -->
 		<div id="mobileView" class="floatingSwiper">
 			<div class="swiper-container">
@@ -240,35 +240,35 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- Loading -->
 		<style>
 			#loadingOverlay {
-				position: absolute; 
-				top: 0; 
-				left: 0; 
-				z-index: 1100; 
-				width: 100%; 
-				height: 100%; 
-				overflow: hidden; 
-				background-color: #E5E5E5; 
-				-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3); 
-				-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3); 
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1100;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #E5E5E5;
+				-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+				-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
 				box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
 			}
-			
+
 			@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 			@-moz-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 			@-webkit-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 			@-ms-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 			@-o-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-			
+
 			@keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
 			@-moz-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
 			@-webkit-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
 			@-ms-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
 			@-o-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
-			
+
 			#loadingOverlay.fadeOut {
 				-webkit-animation: fadeout 1.1s;
 				-moz-animation: fadeout 1.1s;
@@ -279,32 +279,32 @@
 				-moz-animation-fill-mode:forwards;
 				animation-fill-mode:forwards;
 			}
-			
+
 			#loadingIndicator {
 				position: fixed;
 				top: 50%;
 				left: 50%;
 				z-index: 1101;
 			}
-			
+
 			.loadingIndicator {
 				margin-left: -17px;
 				margin-top: -20px;
 			}
 		</style>
-		
+
 		<div id="loadingOverlay"></div>
 		<div id="loadingIndicator" class="loadingIndicator">
 			<img src="resources/tpl/viewer/icons/loading-light.gif" />
 		</div>
 		<div id="loadingMessage"></div>
-		
+
 		<!-- Share dialog -->
 		<div class="modal fade shareDialog" id="shareDialog" role="dialog" data-backdrop="static" tabindex="-1"></div>
-		
+
 		<!-- Builder views are injected here -->
 		<div id="builder-views"></div>
-		
+
 		<!-- Fatal error box -->
 		<div id="fatalError">
 			<table border="0">
@@ -317,14 +317,14 @@
 				</tr>
 			</table>
 		</div>
-		
+
 		<script type="text/javascript" src="app/main-config.js"></script>
 		<script type="text/javascript">
 			require(["dojo/topic"], function(topic) {
 				/*
 				 * Custom Javascript to be executed while the application is initializing goes here
 				 */
-				
+
 				// The application is ready
 				topic.subscribe("tpl-ready", function(){
 					/*
