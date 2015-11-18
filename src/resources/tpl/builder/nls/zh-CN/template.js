@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "组织",
-				lblHeader: "拖放节以对内容进行组织。",
+				lblHeader: "拖放节以对故事进行组织。",
 				lblColTitle: "标题",
 				lblColPubDate: "发布日期",
 				lblColStatus: "状态",

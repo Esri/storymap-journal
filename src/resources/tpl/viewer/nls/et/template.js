@@ -5,33 +5,33 @@
 				close: "Sulge"
 			},
 			loading: {
-				step1: "Rakenduse laadimine",
+				step1: "Loo laadimine",
 				step2: "Andmete laadimine",
 				step3: "Lähtestamine",
 				loadBuilder: "Koostajale lülitamine",
 				long: "Kaardiajakirja lähtestamine",
 				long2: "Täname ootamast",
-				failButton: "Laadi rakendus uuesti"
+				failButton: "Laadi lugu uuesti"
 			},
 			signin: {
 				title: "Autentimine on nõutav",
-				explainViewer: "Rakendusele juurdepääsuks logige sisse portaali %PORTAL_LINK% kontoga.",
-				explainBuilder: "Rakenduse konfigureerimiseks logige sisse portaali %PORTAL_LINK% kontoga."
+				explainViewer: "Loole juurdepääsuks logige sisse kontoga %PORTAL_LINK%.",
+				explainBuilder: "Loo konfigureerimiseks logige sisse kontoga %PORTAL_LINK%."
 			},
 			errors: {
 				boxTitle: "Esines tõrge",
 				invalidConfig: "Vigane konfiguratsioon",
 				invalidConfigNoApp: "Veebikaardi rakenduse identifikaatorit pole failis index.html määratud.",
 				unspecifiedConfigOwner: "Autoriseeritud omanikku pole määratud.",
-				invalidConfigOwner: "Rakenduse omanik pole autoriseeritud.",
+				invalidConfigOwner: "Loo omanikul puuduvad õigused.",
 				createMap: "Kaarti ei saa luua",
 				invalidApp: "Rakendust %TPL_NAME% ei eksisteeri või see pole kättesaadav.",
 				appLoadingFail: "Midagi läks valesti, rakendust %TPL_NAME% ei laaditud õigesti.",
-				notConfiguredDesktop: "Rakendust pole veel konfigureeritud.",
-				notConfiguredMobile: "Rakenduse %TPL_NAME% koostajat ekraani sellise eraldusvõime puhul ei toetata.",
-				notAuthorized: "Teil ei ole luba sellele rakendusele juurde pääseda",
+				notConfiguredDesktop: "Lugu pole veel konfigureeritud.",
+				notConfiguredMobile: "Selle kuvasuuruse korral koosturit %TPL_NAME% ei toetata.",
+				notAuthorized: "Teil puudub õigus sellele loole juurde pääseda",
 				noBuilderIE: "Internet Exploreri versioonist %VERSION% varasemad versioonid ei toeta koostajat. %UPGRADE%",
-				noViewerIE: "Internet Explorer versioonist %VERSION% varasemad versioonid ei toeta seda rakendust. %UPGRADE%",
+				noViewerIE: "Seda lugu ei toetata Internet Exploreri varasemas versioonis %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Värskendage oma brauserit</a>.",
 				mapLoadingFail: "Midagi läks valesti ning kaarti ei laaditud õigesti.",
 				signOut: "Logi välja"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "Hangi lühike link",
 				templateTitle: "Määra mallile pealkiri",
 				templateSubtitle: "Määra mallile alampealkiri",
-				share: "Jaga"
+				share: "Jaga",
+				checking: "Loo sisu vaatamine",
+				fix: "Parandage loos ilmnevad probleemid",
+				noerrors: "Probleeme ei tuvastatud"
 			},
 			overviewFromCommon: {
 				title: "Ülevaatekaart"

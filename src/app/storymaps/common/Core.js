@@ -9,7 +9,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		"./utils/CommonHelper",
 		"esri/urlUtils",
 		// Builder
-		"./builder/BuilderHelper",
+		"./builder/MyStoriesWrapper",
 		// Utils
 		"dojo/has",
 		"esri/IdentityManager",
@@ -38,7 +38,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		arcgisUtils,
 		CommonHelper,
 		urlUtils,
-		BuilderHelper,
+		MyStoriesWrapper,
 		has,
 		IdentityManager,
 		ArcGISOAuthInfo,
@@ -254,7 +254,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 							if ( ! builder )
 								portalLogin().then(initStep2);
 							else
-								initStep2();
+								portalLogin().then(initStep2);
 						}, 
 						function() {
 							// Not signed-in, redirecting to OAuth sign-in page 
@@ -292,7 +292,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			}
 			
 			// Direct creation and not signed-in
-			if ( app.isDirectCreation && isProd() && ! CommonHelper.getPortalUser() ) {
+			if ( app.isDirectCreation && isProd() && ! (CommonHelper.getPortalUser() || app.portal.getPortalUser()) ) {
 				redirectToSignIn();
 				return;
 			}
@@ -358,6 +358,9 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 						
 						if( owner ) 
 							ownerFound = $.inArray(owner, app.indexCfg.authorizedOwners) != -1;
+
+						if ( ! ownerFound && app.indexCfg.authorizedOwners[0] == "*" )
+							ownerFound = true;
 						
 						if ( ! ownerFound ) {
 							initError("invalidConfigOwner");
@@ -516,6 +519,19 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			
 			_mainView.appInitComplete();
 			app.builder && app.builder.appInitComplete();
+			
+			// Load My Stories in builder or viewer if user is owning the story
+			if ( app.isInBuilder || app.data.userIsAppOwner() ) {
+				if ( has("ff") ) {
+					$(".builderShare #my-stories-frame").remove();
+				}
+				
+				if ( has("ff") || ! app.isInBuilder ) {
+					$("body").append('<div id="my-stories-hidden-container"><iframe id="my-stories-frame"></iframe></div>');
+				}
+				
+				MyStoriesWrapper.loadMyStories();
+			}
 		}
 		
 		function displayApp()

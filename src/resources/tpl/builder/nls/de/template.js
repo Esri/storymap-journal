@@ -3,10 +3,10 @@
 		builder: {
 			layouts: {
 				mainStage: "Hauptanzeige",
-				sideTitle: "Seitenfenster",
+				sideTitle: "Seitenbereich",
 				sideDescr: "Ein Layout für einen umfangreichen Text, der sich durch die Kombination von Fotos, Videos und Karten in einer klar fokussierten Botschaft auszeichnet.",
-				floatTitle: "Unverankertes Fenster",
-				floatDescr: "Ein Layout, das die Karte in den Mittelpunkt stellt, während die Informationen über ein transparentes Fenster mit Text in Kurzform angezeigt werden."
+				floatTitle: "Unverankerter Bereich",
+				floatDescr: "Ein Layout, das die Karte in den Mittelpunkt stellt, während die Informationen über einen transparenten Bereich mit Text in Kurzform angezeigt werden."
 			},
 			common: {
 				lblStatus1: "Veröffentlicht",
@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Organisieren",
-				lblHeader: "Inhalte durch Ziehen und Ablegen von Abschnitten organisieren.",
+				lblHeader: "Story durch Ziehen und Ablegen von Abschnitten organisieren.",
 				lblColTitle: "Titel",
 				lblColPubDate: "Veröffentlichungsdatum",
 				lblColStatus: "Status",
@@ -66,7 +66,7 @@
 				deleteTooltip: "Löschen",
 				firstSectionExplain: "(Der Startseitenabschnitt kann nicht verschoben werden)",
 				exportMainStage: "Inhalt der Hauptanzeige",
-				exportPanel: "Fensterinhalt",
+				exportPanel: "Bereichsinhalt",
 				exportActions: "Aktionen der Hauptanzeige"
 			},
 			exportData: {

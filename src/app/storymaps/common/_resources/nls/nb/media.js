@@ -64,15 +64,15 @@
 				url: "Nettadressen for en Vimeo-video"
 			},
 			videoSelectorOther: {
-				explain1: "Programmet kan ikke spille av råvideoer (f.eks. AVI- og MPEG-format), men det kan spille av hostede videofiler som har innebygde spillere (f.eks. YouTube og Vimeo).",
-				explain2: "De fleste nettbaserte videovertstjenestene har denne funksjonen. Du må finne alternativet for å bygge inn videoen, kopiere den oppgitte koden og bruke %WEBPAGE%.",
-				explain3: "Du kan eventuelt være vert for videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
+				explain1: "Historien kan ikke spille av råvideoer (f.eks. AVI- eller MPEG-filer), men den kan spille av hostede videofiler som har innebygde spillere (f.eks. YouTube eller Vimeo).",
+				explain2: "De fleste nettbaserte videotjenester har denne funksjonen. Du må finne alternativet for å bygge inn videoen, kopiere den oppgitte koden og bruke %WEBPAGE%.",
+				explain3: "Du kan eventuelt være lagre og administrere videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
 				webpage: "Nettsidefunksjon"
 			},
 			webpageSelectorHome: {
 				lblUrl: "Nettside-URL",
 				lblEmbed: "Bygg inn kode",
-				lblOR: "OR",
+				lblOR: "ELLER",
 				lblError1: "Feil, fjern ett av de to inndatafeltene.",
 				lblError2: "Innbygging av kode kan inneholde bare én %IFRAMETAG%",
 				configure: "Konfigurer"
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(bredden passer alltid med panelet)",
 				lblPosition4Explain: "(kan bli forvrengt / vises skjevt)",
 				unloadLbl: "Last ut når leseren navigerer bort",
-				unloadHelp: "Hvis websiden inneholder lyd- eller videomedier, beholder du avmerkingen for dette alternativet, slik at dette innholdet ikke spilles av når leseren navigerer bort. Du kan fjerne avmerkingen hvis du for eksempel vil spille av et lydspor mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at programmet ikke lastes inn på nytt hvis leseren går tilbake til det."
+				unloadHelp: "Hvis websiden har lyd- eller videomedier, beholder du dette alternativet avmerket for å forhindre at det innholdet spilles av når leseren navigerer bort. Fjern merket for eksempel for å la et lydspor fortsette å spilles av mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at historien ikke lastes inn på nytt hvis leseren går tilbake til den."
 			},
 			editorActionGeocode: {
 				lblTitle: "Finn en adresse eller et sted",

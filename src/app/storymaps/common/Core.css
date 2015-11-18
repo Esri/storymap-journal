@@ -66,6 +66,7 @@ audio {
 	position: relative;
 	width:100%;
 	height:100%;
+	-webkit-overflow-scrolling: touch;
 }
 
 .bingLogo-lg {
@@ -164,6 +165,28 @@ a:hover{
 	margin-left: 4px;
 }
 
+.small-loader {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../../../resources/tpl/viewer/icons/loading-light.gif);
+	background-size: 17px 20px;
+    background-repeat: no-repeat;
+	vertical-align: -5px;
+	margin-right: 2px;
+}
+
+/*
+ * My Stories
+ */
+
+#my-stories-hidden-container {
+	position: absolute; 
+	bottom: -800px; 
+	left: 0; 
+	visibility: hidden;
+}
+
 /*
  * Bootstrap override
  */
@@ -175,4 +198,18 @@ a:hover{
 input[type="radio"], 
 input[type="checkbox"] {
 	margin: 4px 0 0;
+}
+
+/* looks like ugify is not happy and is not altering this since bootstrap 3.3.5 */
+.btn .caret {
+	border-top: 4px dashed;
+}
+
+.dropup .btn .caret {
+	border-top: 0;
+	border-bottom: 4px dashed;
+}
+
+.claro .dijitTooltip {
+	box-sizing: initial;
 }

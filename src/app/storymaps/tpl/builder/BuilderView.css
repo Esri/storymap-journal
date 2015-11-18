@@ -16,6 +16,12 @@
 	height: 31px;
 	background: url(../../../../resources/tpl/builder/icons/builder-logo.png);
 }
+
+#builderPanel .builder-save {
+	background-color: #428BC9;
+	border-color: #428BC9;
+	color: #FFF;
+}
  
 /* CKEDITOR
  *  Remove popup white background

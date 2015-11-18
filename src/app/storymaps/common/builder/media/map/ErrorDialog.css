@@ -1,0 +1,11 @@
+.mapErrorDialog .modal-dialog {
+	width: 560px;
+	margin-top: 220px;
+}
+
+.mapErrorDialog a {
+	color: #428bca;
+	font-weight: normal;
+	text-decoration: underline;
+	cursor: pointer;
+}

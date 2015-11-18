@@ -147,6 +147,7 @@ define(["lib-build/css!./MainView",
 				
 				topic.subscribe("ADDEDIT_LOAD_WEBMAP", app.ui.mainStage.loadTmpWebmap);
 				topic.subscribe("ADDEDIT_SHOW_WEBMAP", app.ui.mainStage.showWebmapById);
+				topic.subscribe("ADDEDIT_RELOAD_CURRENT_WEBMAP", app.ui.mainStage.reloadCurrentWebmap);
 				
 				// Prevent focus on mousedown 
 				// Focus stay allowed with keyboard with 508

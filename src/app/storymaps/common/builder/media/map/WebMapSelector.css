@@ -2,6 +2,11 @@
 	position: relative;
 }
 
+.webmapSelector .map-cfg {
+	width: 100%;
+}
+
+
 .webmapSelector .map-cfg-webmap .map-cfg-title {
 	vertical-align: middle;
 }
@@ -11,7 +16,7 @@
  */
 
 .webmapSelector .webmaps-list-btn {
-	width: 370px;
+	width: 100%;
 	text-align: left;
 }
 
@@ -31,7 +36,7 @@
  */
 
 .webmapSelector .webmaps-list {
-	width: 370px;
+	width: 100%;
 }
 
 .webmapSelector .webmaps-list a {
@@ -47,6 +52,7 @@
 .webmapSelector .title {
 	font-weight: bold;
 	font-size: 0.8em;
+	display: inline-block;
 }
 
 .webmapSelector .info {
@@ -71,7 +77,8 @@
 	margin-top: 4px;
 }
 
-.webmapSelector .browse-webmap .title {
+.webmapSelector .browse-webmap .title,
+.webmapSelector .create-webmap .title {
 	font-size: 1em;
 	line-height: 1.8em;
 }

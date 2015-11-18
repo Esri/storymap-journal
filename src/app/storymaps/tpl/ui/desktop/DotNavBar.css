@@ -134,11 +134,15 @@
 	padding: 3px 7px;
 }
 
+
+/* On Firefox tooltip get cropped with ellipsis */
 @-moz-document url-prefix() { 
 	.navDots .tooltip-inner {
-		white-space: pre-wrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
+
 
 /*
  * Navigation groups

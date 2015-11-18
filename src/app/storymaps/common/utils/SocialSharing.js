@@ -1,6 +1,7 @@
-define(["dojo/Deferred"], 
+define(["dojo/Deferred", "esri/urlUtils"], 
 	function(
-		Deferred
+		Deferred,
+		urlUtils
 	){
 		return {
 			shareFacebook: function (title, subtitle, optionalImageURL, url)
@@ -106,13 +107,28 @@ define(["dojo/Deferred"],
 			},
 			cleanURL: function(url, noEncoding)
 			{
-				// If sharing in builder mode the link will always open the viewer
-				// TODO clean, should get all url parameters, filter edit and rebuild URL
-				url = url.replace(/\?edit(=.*)*&/, '?');
-				url = url.replace(/\&edit(=.*)*/, '');
-				url = url.replace(/\?edit/, '');
+				var urlParams = urlUtils.urlToObject(url);
+				var newUrl = urlParams.path;
 				
-				return noEncoding ? url : encodeURIComponent(url);
+				if ( urlParams.query ) {
+					delete urlParams.query.edit;
+					delete urlParams.query.locale;
+					delete urlParams.query.folderId;
+					delete urlParams.query.webmap;
+					
+					$.each(Object.keys(urlParams.query), function(i, k){ 
+						if ( i === 0 ){
+							newUrl += '?';
+						}
+						else {
+							newUrl += '&';
+						}
+						
+						newUrl += k + '=' + urlParams.query[k];
+					});
+				}
+				
+				return noEncoding ? newUrl : encodeURIComponent(newUrl);
 			}
 		};
 	}

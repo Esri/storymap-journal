@@ -6,10 +6,12 @@
 	<div class="builder-cmd builder-help"><%= btnHelp %></div>
 </div>
 <div class="status-bar">
-	<div style="display: inline-block">
-		<div class="save-counter"><%= saveCounter %></div>
-		<div class="sharing-status"></div>
+	<div class="status-bar-info">
+		<span class="status-msg"></span>
+		<span class="status-btns">
+			<button class="btn btn-warning check-story"></button>
+			<button type="button" class="btn btn-default builder-save disabled" tabindex="-1"><%= btnSave %></button>
+		</span>
 	</div>
-	<button type="button" class="btn btn-default btn-sm builder-save disabled" tabindex="-1"><%= btnSave %></button>
 </div>
 <div class="builder-mask"></div>

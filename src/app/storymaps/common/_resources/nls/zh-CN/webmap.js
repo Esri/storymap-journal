@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Web 地图",
+				lblWebMap: "地图",
 				lblLocation: "位置",
 				lblContent: "内容",
 				lblPopup: "弹出窗口",
@@ -17,12 +17,14 @@
 				and: "和",
 				action: "节中的操作",
 				actions: "节中的操作",
-				originalWebmap: "用于发布 %TPL_NAME% 的 Web 地图",
-				browseMaps: "浏览地图",
-				current: "当前 web 地图",
-				select: "选择 web 地图",
-				newMap: "新选择的 web 地图",
-				webmapDefault: "默认 Web 地图",
+				originalWebmap: "用于发布 %TPL_NAME% 的地图",
+				browseMaps: "选择地图",
+				createMap: "创建地图",
+				current: "当前地图",
+				select: "选择或创建地图",
+				newMap: "新选择的地图",
+				newCreatedMap: "新创建的地图",
+				webmapDefault: "默认地图",
 				customCfg: "自定义配置",
 				tooltipLocation: "定义此地图将显示的位置。",
 				tooltipContent: "定义可见图层。",
@@ -47,6 +49,29 @@
 				popupExplain: "单击要素以打开您要显示的弹出窗口。",
 				popupSave: "保存弹出窗口配置",
 				hintNavigation: "地图导航已禁用。"
+			},
+			editor: {
+				loading: "正在加载地图编辑器，请稍候",
+				newTitle: "创建新地图",
+				editTitle: "编辑地图",
+				titleLbl: "标题",
+				titlePh: "地图标题...",
+				folderLbl: "将在故事所在的文件夹内创建地图。",
+				creating: "正在创建地图",
+				saving: "正在保存地图",
+				success: "已保存地图",
+				successCreate: "已创建地图",
+				cancelTitle: "是否放弃所有未保存更改?",
+				errorDuplicate: "已经存在具有相同标题的地图",
+				errorCreate: "无法创建地图。请重试。",
+				errorSave: "无法保存地图。请重试。",
+				notavailable1: "抱歉，因为技术限制，无法在 Firefox 中创建或编辑地图。您可使用其他不同的 Web 浏览器或使用以下的解决方案来构建您的故事。",
+				notavailable2: "抱歉，因为故事地图应用程序未托管在 %PRODUCT% 中，所以不支持创建或编辑地图。有关详细信息，请联系您的 ArcGIS 管理员。",
+				notavailable3: "抱歉，此版本的 Portal for ArcGIS 不支持创建或编辑地图(需要 10.4 或更高版本)。有关详细信息，请联系您的 ArcGIS 管理员。",
+				notavailable4: "您可使用 %MV% 创建地图，然后返回此处将其添加到您的故事中。",
+				notavailable5: "您可使用 %MV% 编辑地图，然后返回此处并 %apply% 以查看您的更改。",
+				notavailable6: "地图查看器",
+				notavailable7: "重新加载地图"
 			}
 		},
 		configure: {
@@ -57,7 +82,7 @@
 					contentLabel: "我的内容",
 					favoritesLabel: "我的收藏夹"
 				},
-				title: "选择 Web 地图",
+				title: "选择地图",
 				searchTitle: "搜索",
 				ok: "确定",
 				cancel: "取消",

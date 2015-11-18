@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Webmap",
+				lblWebMap: "Kaart",
 				lblLocation: "Locatie",
 				lblContent: "Inhoud",
 				lblPopup: "Pop-up",
@@ -17,12 +17,14 @@
 				and: "en",
 				action: "Actie in sectie",
 				actions: "Actie in secties",
-				originalWebmap: "Webmap die wordt gebruikt om de %TPL_NAME% te publiceren",
-				browseMaps: "Bladeren naar kaarten",
-				current: "Huidige webmap",
-				select: "Een webmap selecteren",
-				newMap: "Nieuw geselecteerde webmap",
-				webmapDefault: "Standaard van webmap",
+				originalWebmap: "Kaart die wordt gebruikt om de %TPL_NAME% te publiceren",
+				browseMaps: "Een kaart selecteren",
+				createMap: "Een kaart maken",
+				current: "Huidige kaart",
+				select: "Selecteer of maak een kaart",
+				newMap: "Nieuw geselecteerde kaart",
+				newCreatedMap: "Nieuw gemaakte kaart",
+				webmapDefault: "Kaartstandaard",
 				customCfg: "Aangepaste configuratie",
 				tooltipLocation: "Definieer de locatie die deze kaart zal weergeven.",
 				tooltipContent: "Definieer de zichtbare kaartlagen.",
@@ -47,6 +49,29 @@
 				popupExplain: "Klik op een object op de pop-up te openen die u wilt weergeven.",
 				popupSave: "De pop-upconfiguratie opslaan",
 				hintNavigation: "Kaartnavigatie is uitgeschakeld."
+			},
+			editor: {
+				loading: "Even geduld terwijl we de kaarteditor laden",
+				newTitle: "Nieuwe kaart maken",
+				editTitle: "Kaart bewerken",
+				titleLbl: "Titel",
+				titlePh: "Kaarttitel...",
+				folderLbl: "De kaart zal aangemaakt worden in dezelfde map als het verhaal.",
+				creating: "De kaart aanmaken",
+				saving: "De kaart opslaan",
+				success: "Kaart opgeslagen",
+				successCreate: "Kaart aangemaakt",
+				cancelTitle: "Niet-bewaarde wijzigingen verwijderen?",
+				errorDuplicate: "U heeft al een kaart met die titel",
+				errorCreate: "Kan de kaart niet maken. Probeer het opnieuw.",
+				errorSave: "Kan de kaart niet opslaan. Probeer het opnieuw.",
+				notavailable1: "Het spijt ons; het aanmaken of bewerken van een kaart wordt niet ondersteund in Firefox omwille van een technische beperking. Creëer uw verhaal d.m.v. een andere webbrowser of gebruik de volgende oplossing.",
+				notavailable2: "Het spijt ons; het aanmaken of bewerken van een kaart wordt niet ondersteund omdat de story map applicatie niet gehost wordt in %PRODUCT%. Neem contact op met uw ArcGIS beheerder voor meer informatie.",
+				notavailable3: "Het spijt ons; het aanmaken of bewerken van een kaart wordt niet ondersteund in deze versie van Portal for ArcGIS (versie 10.4 of hoger vereist). Neem contact op met uw ArcGIS beheerder voor meer informatie.",
+				notavailable4: "U kunt een kaart aanmaken d.m.v. %MV%, en dan hier terugkeren om ze aan uw verhaal toe te voegen.",
+				notavailable5: "U kunt een kaart bewerken d.m.v. %MV%, en dan hier terugkeren om ze aan uw verhaal toe te voegen.",
+				notavailable6: "map viewer",
+				notavailable7: "de kaart opnieuw laden"
 			}
 		},
 		configure: {
@@ -57,7 +82,7 @@
 					contentLabel: "Mijn Content",
 					favoritesLabel: "Mijn Favorieten"
 				},
-				title: "Webmap selecteren",
+				title: "Een kaart selecteren",
 				searchTitle: "Zoeken",
 				ok: "OK",
 				cancel: "Annuleren",

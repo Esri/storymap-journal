@@ -1,16 +1,17 @@
 /*
- * All screens
+ * Dialog
  */
 
-#sharePopup .modal-body {
+.builderShare .modal-dialog {
+	width: 900px;
+	max-width: 100%;
+}
+
+.builderShare .modal-body {
 	overflow: visible;
 }
 
-#sharePopup .hide {
-	display: none;
-}
-
-#sharePopup .modal-logo {
+.builderShare .modal-logo {
 	position: absolute;
 	top: -20px;
 	left: -20px;
@@ -23,195 +24,293 @@
 	border-radius: 24px;
 }
 
-#sharePopup .modal-logo.firstSave {
-	background-position: 0 -84px;
-}
-
-#sharePopup .modal-footer {
+.builderShare .modal-footer {
 	margin-top: 15px;
 }
 
-#sharePopup .header {
-	margin-bottom: 15px;
-}
-
-#sharePopup .question {
-	margin-top: 15px;
-	color: #4B8BC9;
-	cursor: pointer;
-}
-
-#sharePopup .question:before {
-	display: inline-block;
-	width: 24px;
-	height: 24px;
-	content: "";
-	background: url(../_resources/icons/builder-share-tooltips.png);
-	background-size: auto 24px;
-	vertical-align: -8px;
-	margin-right: 6px;
-}
-
-#sharePopup .answer {
-	margin-top: 4px;
-	margin-left: 30px;
-}
-
-#sharePopup .bitlylink {
-	display: inline-block;
-	width: 230px;
-	height: 34px; 
-	text-align: center;
-	font-size: 20px; 
-}
-
-/*
- * First save
- */
-
-#sharePopup .first-save .question1 {
-	cursor: default;
-	font-size: 1.2em;
-}
-
-#sharePopup .first-save .question1:before {
+.builderShare .hide {
 	display: none;
 }
 
-#sharePopup .first-save .answer1 {
-	margin-left: 0;
+/*
+ * Sharing buttons
+ */
+
+.builderShare .app-sharing-container {
+	display: block;
+	text-align: center;
+	font-size: 1.5em;
 }
 
-#sharePopup .first-save .btns {
-	margin: 30px;
+.builderShare .app-sharing-wrapper {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	margin-left: -6px;
+}
+
+.builderShare .app-sharing-wrapper:first-child .app-sharing-icon {
+	border-left-width: 1px;
+	border-radius: 6px 0 0 6px;
+	padding: 3px 8px 6px 8px;
+	vertical-align: 1px;
+}
+
+.builderShare .app-sharing-wrapper:nth-child(3) .app-sharing-icon {
+	border-right-width: 1px;
+	border-radius: 0 6px 6px 0;
+}
+
+.builderShare .locked {
+	cursor: default;
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.builderShare .app-sharing-icon {
+	background: transparent;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C1CCD2;
+	border-radius: 0px;
+	border-left-width: 0px;
+	border-right-width: 1px;
+	color: #396e8b;
+	display: inline-block;
+	font-size: 2.4rem;
+	padding: 1px 6px 1px;
+}
+
+.builderShare .app-sharing-icon.active {
+    background: #396e8b;
+    color: white;
+}
+
+.builderShare .tooltip-content {
+	font-size: 1.8em;
+}
+
+/* the user icon */
+.builderShare .glyphicon-user:before {
+	font-size: 2rem;
+	margin-right: 4px;
+}
+
+.builderShare .app-sharing-private {
+	font-family: 'open_sansregular', sans-serif;
+}
+
+.builderShare .app-sharing-loading {
+	position: absolute;
+	display: none;
+	top: 0px;
+	left: 50%;
+	width: 33px;
+	height: 39px;
+	margin-left: -17px;
+	background: url(../../../../resources/tpl/viewer/icons/loading-light.gif);
+	background-size: 33px 39px;
+	background-repeat: no-repeat;
+}
+
+.builderShare .app-sharing-container .tooltip-inner {
 	text-align: center;
 }
 
-#sharePopup .first-save .btns .btn {
-	text-transform: uppercase;
-	margin: 0 10px;
-}
+/*
+ * Preview / view live
+ */
 
-#sharePopup .first-save #firstSavebitly2 {
-	margin: 10px 0;
+.builderShare .preview-container {
+	position: absolute;
+	margin-top: 5px;
 }
 
 /*
- * Shared
+ * Sharing action result
  */
 
-#sharePopup .collapse {
-	/*margin-left: 4px;*/
+.builderShare .sharing-action-result {
+	display: inline-block;
+	padding: 5px;
+	border-radius: 4px;
+	margin-top: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	font-weight: bold;
 }
 
-#sharePopup .shareImgContainer {
+.builderShare .sharing-action-result.status-ok {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+/*
+ * Story Status
+ */
+
+.builderShare .story-status {
+	width: 85%;
+	text-align: center;
+	font-size: 120%;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;	
+	color: #CC3333;
+}
+
+
+/*
+ * Views
+ */
+
+.builderShare .views {
+	width: 100%;
+	height: 300px;
+	padding-top: 30px;
+}
+
+.builderShare .views .view {
+	display: none;
+	width: 100%;
+}
+
+.builderShare .views .view.active {
+	display: block;
+}
+
+/*
+ * View toggle 
+ */
+
+.builderShare .view-toggle-container {
 	width: 100%;
 	text-align: center;
-	margin-top: 10px;
-}
-
-#sharePopup .answer:not(.shared-answer0) a:not(.btn) {
-	color: #2200CC;
-	font-weight: normal;
-	text-decoration: underline;	
-}
-
-#sharePopup .share-link .bitlylink {
-	margin-right: 5px;
-}
-
-#sharePopup .share-link .btn {
-	margin-left: 8px;
-	text-transform: uppercase;
-	vertical-align: 2px;
-}
-
-#sharePopup .shared-dialog .explain {
-	margin-top: 15px;
-}
-
-#sharePopup .shareImg {
-	display: inline-block;
-	width: 73px;
-	height: 22px;
-	vertical-align: -5px;
-	background: url(../_resources/icons/builder-share-shareBtn.png);
-}
-
-#sharePopup .switchBuilderImg {
-	display: inline-block;
-	width: 424px;
-	height: 46px;
-	background: url(../_resources/icons/builder-share-switch.png);
-	border: 1px solid #428BC9;
-}
-
-#sharePopup .shared-question1:before {
-	background-position: 24px 0;
-}
-
-#sharePopup .shared-question2:before {
-	background-position: 48px 0;
-}
-
-#sharePopup .shared-question3:before {
-	background-position: 72px 0;
+	margin: 40px 0 -10px 0;
 }
 
 /*
- * Not shared
+ * View: private story call to action
  */
-
-#sharePopup .not-shared {
+ 
+.builderShare .private-story-call-to-action {
 	text-align: center;
+	font-size: 1.8em;
+	color: #339933;
+	margin-top: 85px;
 }
 
-#sharePopup .btn-sharePublicWrapper {
+/*
+ * View: My Stories
+ */
+
+.builderShare .sharing-container {
+	width: 100%;
+	text-align: center;
+	margin: 5px 0 0 0;
+}
+
+.builderShare #my-stories-frame {
+	width: 100%;
+	height: 285px;
+	border: none;
+}
+
+/*
+ * My stories -- checking loading indicator
+ */
+
+.builderShare .story-checking-container {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 130%;
+	color: #396e8b;
+	margin: 80px 0 110px 0;
+}
+
+/*
+ * View: socialize
+ */
+ 
+.builderShare .view-share {
+	margin-top: 35px;
+}
+
+.builderShare .view-share .socialize-title,
+.builderShare .view-share .embed-title {
+	font-size: 1.3em;
+	color: #4B8BC9; 
+	margin: 15px 0 20px 0;
+}
+
+.builderShare .view-share .btn-bitlylink-open {
+	display: none !important;
+}
+
+.builderShare .view-share .social-container {
+	font-size: 2.8em;
+	margin-top: 15px;
+}
+
+.builderShare .share-url-container {
 	display: inline-block;
 }
 
-#sharePopup .btn-sharePublic,
-#sharePopup .btn-shareOrga {
-	text-transform: uppercase;
+.builderShare .share-url-container .bitlylink {
+	font-size: 26px;
+	width: 340px;
+	height: 46px;
+	padding-left: 27px;
 }
 
-#sharePopup .not-shared .header {
-	font-family: 'open_sanssemibold', sans-serif;
-	margin-bottom: 20px;
+.builderShare .share-url-container .share-btn {
+	height: 44px;
+	padding-top: 6px;
 }
 
-#sharePopup .share-warning {
+.builderShare .social-container .shareIcon:nth-child(2) {
+	margin-left: 10px;
+}
+
+
+.builderShare .share-embed-container .embedTextarea {
+	height: 86px;
+}
+
+.builderShare .share-embed-container .embed-explain {
 	display: none;
-	margin-top: 20px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight:bold !important;
-	font-size:14px;
-	color:#c43d40 !important;
 }
 
-#sharePopup .share-warning a {
-	color: #C43D40;
-	font-weight:bold;
+/*
+ * Footer
+ */
+
+.builderShare .footer-msg {
+	float: left;
 }
 
-#sharePopup .footer {
-	margin-top: 30px;
+.builderShare .footer-msg a {
+	color: #428bca;
+	font-weight: normal;
+	vertical-align: -5px;
 }
 
-#sharePopup .footer .popover {
-	max-width: 400px !important;
+/*
+ * Firefox trick
+ */
+
+#my-stories-hidden-container.active {
+	display: block;
+	z-index: 999;
+	visibility: visible !important;
+	bottom: inherit !important;
 }
 
-#sharePopup .sharing-status.error a {
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight:bold !important;
-	font-size:14px;
-	color:#c43d40 !important;
-	margin-top: 8px;
-}
-
-#sharePopup .modal-footer .error {
-	max-width: 460px;
-	text-align: left;
-	margin-top: -5px;
+#my-stories-hidden-container #my-stories-frame {
+	border: none; 
+	width: 100%; 
+	height: 100%;
 }

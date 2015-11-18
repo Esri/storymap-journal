@@ -61,6 +61,14 @@ define(["lib-build/tpl!./Landing",
 			{			
 				container.toggle(state);
 				$("#builderQuotes").toggle(state);
+				
+				if ( ! getTitle() && app.isGalleryCreation ) {
+					container.find(".landing-add-container .add-title")
+						.val(app.data.getWebAppItem().title)
+						.select();
+					onTitleChange();
+				}
+				
 				focus();
 			};
 			
@@ -89,7 +97,7 @@ define(["lib-build/tpl!./Landing",
 			{
 				container.find(".landing-add-container .add-title")
 					.bind('input propertychange', onTitleChange)
-					.keyup(function(e){ e.keyCode == 13 && $(this).val() && onClickAdd(); });
+					.keyup(function(e){ e.keyCode == 13 && $(this).val() && container.is(':visible') && onClickAdd(); });
 				container.find(".landing-add-container .landing-btn").click(onClickAdd);
 				container.find(".landing-tour-container").click(helpCallback);
 				

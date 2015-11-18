@@ -239,6 +239,7 @@ define([],
 					&& app.cfg.HELP_URL_PORTAL
 					
 					&& app.cfg.TPL_NAME
+					&& app.cfg.TPL_ID
 					&& app.cfg.WEBAPP_TAG
 					&& app.cfg.WEBAPP_KEYWORD_GENERIC
 					&& app.cfg.WEBAPP_KEYWORD_APP

@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Web karte",
+				lblWebMap: "Karte",
 				lblLocation: "Izvietojums",
 				lblContent: "Saturs",
 				lblPopup: "Uznirstošais logs",
@@ -17,12 +17,14 @@
 				and: "un",
 				action: "Darbība sadaļā",
 				actions: "Darbība sadaļās",
-				originalWebmap: "Web karte, kas izmantota %TPL_NAME% publicēšanai",
-				browseMaps: "Pārlūkot, lai atrastu kartes",
-				current: "Pašreizējā web karte",
-				select: "Izvēlēties web karti",
-				newMap: "Nesen izvēlētā web karte",
-				webmapDefault: "Web kartes noklusējums",
+				originalWebmap: "Karte, kas izmantota  %TPL_NAME% publicēšanai",
+				browseMaps: "Kartes atlase",
+				createMap: "Kartes izveide",
+				current: "Pašreizējā karte",
+				select: "Kartes atlase vai izveide",
+				newMap: "Jaunākā atlasītā karte",
+				newCreatedMap: "Jaunākā izveidotā karte",
+				webmapDefault: "Noklusējuma karte",
 				customCfg: "Pielāgota konfigurācija",
 				tooltipLocation: "Definējiet izvietojumu, kuru parādīs šī karte.",
 				tooltipContent: "Definējiet redzamos slāņus.",
@@ -47,6 +49,29 @@
 				popupExplain: "Noklikšķiniet uz elementa, lai atvērtu uznirstošo logu, kuru vēlaties attēlot.",
 				popupSave: "Saglabāt uznirstošā loga konfigurāciju",
 				hintNavigation: "Kartes navigācija ir atspējota."
+			},
+			editor: {
+				loading: "Pagaidiet, kamēr ielādējas karšu redaktors",
+				newTitle: "Jaunas kartes izveide",
+				editTitle: "Kartes rediģēšana",
+				titleLbl: "Nosaukums",
+				titlePh: "Kartes nosaukums...",
+				folderLbl: "Karte tiks izveidota mapē, kurā ir stāsts.",
+				creating: "Izveido karti",
+				saving: "Saglabā karti",
+				success: "Karte ir saglabāta",
+				successCreate: "Karte ir izveidota",
+				cancelTitle: "Vai atmest nesaglabātās izmaiņas?",
+				errorDuplicate: "Jums jau ir karte ar šādu nosaukumu",
+				errorCreate: "Neizdevās izveidot karti. Mēģiniet vēlreiz.",
+				errorSave: "Neizdevās saglabāt karti. Mēģiniet vēlreiz.",
+				notavailable1: "Atvainojiet! Kartes izveide vai rediģēšana tehnisku ierobežojumu dēļ pārlūkprogrammā Firefox netiek atbalstīta. Izveidojiet savu stāstu, izmantojot citu pārlūkprogrammu vai tālāk minēto risinājumu.",
+				notavailable2: "Atvainojiet! Kartes izveide vai rediģēšana netiek atbalstīta, jo karšu stāsta lietotne nav viesota produktā %PRODUCT%. Lai saņemtu papildinformāciju, sazinieties ar savu ArcGIS administratoru.",
+				notavailable3: "Atvainojiet! Kartes izveide vai rediģēšana šajā Portal for ArcGIS versijā netiek atbalstīta (nepieciešama 10.4 vai jaunāka versija). Lai saņemtu papildinformāciju, sazinieties ar savu ArcGIS administratoru.",
+				notavailable4: "Varat izveidot karti ar %MV% un atgriezties šeit, lai to pievienotu savam stāstam.",
+				notavailable5: "Varat rediģēt karti ar %MV%, atgriezties šeit un %apply%, lai redzētu jūsu veiktās izmaiņas.",
+				notavailable6: "karšu skatītājs",
+				notavailable7: "atkārtota kartes ielāde"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "Mans saturs",
 					favoritesLabel: "Mani favorīti"
 				},
-				title: "Web kartes izvēle",
+				title: "Kartes atlase",
 				searchTitle: "Meklēšana",
 				ok: "Labi",
 				cancel: "Atcelt",
-				placeholder: "Ievadiet meklējamo vienumu vai Web kartes ID..."
+				placeholder: "Ievadiet meklējamo vārdu vai tīmekļa kartes ID..."
 			}
 		}
 	})

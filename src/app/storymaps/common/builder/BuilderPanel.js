@@ -56,10 +56,10 @@ define(["lib-build/tpl!./BuilderPanel",
 					}
 				});
 				
-				if ( app.isDirectCreationFirstSave )
-					container.find(".status-bar").addClass("hideCounterAndSharing");
-				
 				createSavePopover();
+				
+				topic.subscribe("MYSTORIES_SCAN", updateCheckBtn);
+				updateCheckBtn("start");
 			};
 			
 			//
@@ -70,7 +70,11 @@ define(["lib-build/tpl!./BuilderPanel",
 			{
 				console.log("common.builder.Builder - save");
 				
-				container.find('.builder-save').addClass('saving').html(i18n.commonCore.builderPanel.buttonSaving + ' <span class="smallLoader"></span>');
+				if ( container.find('.builder-save').hasClass('disabled') ) {
+					return;
+				}
+				
+				container.find('.builder-save').addClass('saving').html('<span class="small-loader"></span>' + i18n.commonCore.builderPanel.buttonSaving);
 				changeBuilderPanelButtonState(false);
 				
 				if (app.isDirectCreationFirstSave) {
@@ -92,13 +96,20 @@ define(["lib-build/tpl!./BuilderPanel",
 							});
 						}
 						
+						// TODO make that an option
 						if ( foundDuplicate ) {
 							container.find('.builder-save').removeClass('saving').html(i18n.commonCore.common.save);
 							_saveErrorPopup.present().then(function(){
-								app.builder.openEditPopup({
-									sectionIndex: 0,
-									displayTab: 'main-stage'
-								});
+								if ( app.appCfg.useStandardHeader ){
+									app.ui.headerDesktop.setTitleError();
+								}
+								else {
+									app.builder.openEditPopup({
+										sectionIndex: 0,
+										displayTab: 'main-stage'
+									});
+								}
+								
 							});
 						}
 						else
@@ -158,7 +169,7 @@ define(["lib-build/tpl!./BuilderPanel",
 				resetSaveCounter();
 				changeBuilderPanelButtonState(true);
 				
-				container.find('.builder-save').html(i18n.commonCore.builderPanel.buttonSaved + ' <span class="glyphicon glyphicon-ok"></span>');
+				container.find('.builder-save').html('<span class="glyphicon glyphicon-ok"></span> ' + i18n.commonCore.builderPanel.buttonSaved);
 				
 				setTimeout(function(){
 					container.find('.builder-save').removeClass('saving').html(i18n.commonCore.common.save);
@@ -197,7 +208,7 @@ define(["lib-build/tpl!./BuilderPanel",
 			
 			this.hasPendingChange = function()
 			{
-				return container.find(".save-counter").html() && container.find(".save-counter").html() != i18n.commonCore.builderPanel.noPendingChange;
+				return ! container.find(".builder-save").hasClass("disabled");
 			};
 	
 			this.incrementSaveCounter = function(/*nb*/)
@@ -271,46 +282,120 @@ define(["lib-build/tpl!./BuilderPanel",
 			function changeBuilderPanelButtonState(activate)
 			{
 				container.find(".builder-cmd").attr("disabled", ! activate);
+				_this.resize();
 			}
 			
 			this.updateSharingStatus = function()
 			{
 				/*
-				 * Sharing status
-				 */
-				if( app.isDirectCreationFirstSave || app.isGalleryCreation )
-					container.find(".sharing-status").html(i18n.commonCore.builderPanel.shareStatus1);
-				else if ( app.data.getWebAppItem().access == "public" )
-					container.find(".sharing-status").html(i18n.commonCore.builderPanel.shareStatus2);
-				else if ( app.data.getWebAppItem().access == "account" )
-					container.find(".sharing-status").html(i18n.commonCore.builderPanel.shareStatus3);
-				else
-					container.find(".sharing-status").html(i18n.commonCore.builderPanel.shareStatus4);
-				
-				/*
 				 * Share & preview button state
 				 */
 				
-				var disableShare = app.isDirectCreationFirstSave,
+				var disableShare = app.isDirectCreationFirstSave || app.isGalleryCreation,
 					disablePreview =  app.data.getWebAppData().isBlank() || app.data.getWebAppItem().access == "private";
 				
 				container.find('.builder-share').toggleClass("disabled", disableShare);
 				container.find('.builder-preview').toggleClass("disabled", disablePreview);
 				
 				if ( disableShare )
-					container.find('.builder-share').tooltip();
+					container.find('.builder-share').tooltip({
+						trigger: 'hover'
+					});
 				else
 					container.find('.builder-share').tooltip('destroy');
 				
 				if ( disablePreview )
-					container.find('.builder-preview').tooltip();
+					container.find('.builder-preview').tooltip({
+						trigger: 'hover'
+					});
 				else
 					container.find('.builder-preview').tooltip('destroy');
+				
+				// TODO get that outside
+				if ( app.ui.headerDesktop )
+					app.ui.headerDesktop.toggleSocialBtnAppSharing(disablePreview);
+				
+				/*
+				 * Status
+				 */
+				
+				updateStatus();
 			};
+			
+			function updateStatus()
+			{
+				container.find(".status-msg").show();
+				
+				if( app.isDirectCreationFirstSave || app.isGalleryCreation )
+					container.find(".status-msg").html(i18n.commonCore.builderPanel.status6);
+				else if ( app.mystories && app.mystories.hasCheckErrors ) {
+					if ( app.data.getWebAppItem().access == "public" )
+						container.find(".status-msg").html(i18n.commonCore.builderPanel.status1);
+					else if ( app.data.getWebAppItem().access == "account" )
+						container.find(".status-msg").html(i18n.commonCore.builderPanel.status1);
+					else
+						container.find(".status-msg").html(i18n.commonCore.builderPanel.status2);
+				}
+				else {
+					if ( app.data.getWebAppItem().access == "public" )
+						container.find(".status-msg").html(i18n.commonCore.builderPanel.status3);
+					else if ( app.data.getWebAppItem().access == "account" )
+						container.find(".status-msg").html(i18n.commonCore.builderPanel.status4);
+					else
+						container.find(".status-msg").html(i18n.commonCore.builderPanel.status5);
+				}
+				
+				_this.resize();
+			}
+			
+			/*
+			 * My Stories error checking
+			 */
+			
+			function checkForErrors()
+			{
+				app.builder.openSharePopup();
+			}
+			
+			function updateCheckBtn(status)
+			{
+				var checkBtn = container.find('.check-story');
+				
+				if( ! app.data.getStoryLength() ) {
+					checkBtn.hide();
+				}
+				else {
+					if ( status == "start" ) {
+						checkBtn
+							.html('<span class="small-loader"></span>' + i18n.commonCore.builderPanel.checking)
+							.show()
+							.css("cursor", "default")
+							.off('click');
+						
+						container.find(".status-msg").hide();
+					}
+					else if ( status == "error" ) {
+						checkBtn
+							.html(i18n.commonCore.builderPanel.fix)
+							.show()
+							.css("cursor", "pointer")
+							.click(checkForErrors);
+						
+						_this.updateSharingStatus();
+					}
+					else {
+						checkBtn.hide();
+						_this.updateSharingStatus();
+					}
+				}
+			}
 			
 			this.resize = function()
 			{
-				//
+				container.find('.status-msg').css(
+					'max-width',
+					$(window).width() - (container.find('.buttons').position().left + container.find('.buttons').outerWidth() + container.find('.status-btns').outerWidth() + 20)
+				);
 			};
 			
 			function initLocalization()

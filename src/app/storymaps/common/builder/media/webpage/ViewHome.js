@@ -113,7 +113,7 @@ define(["lib-build/tpl!./ViewHome",
 				container.find('.btn-cfg-embed').click(function() {
 					var embedVal = container.find('.textarea').val();
 					
-					if ( ! embedVal.match(/^<iframe.*<\/iframe>$/) || embedVal.match(/iframe/g).length > 2 ) {
+					if ( ! embedVal.match(/^<iframe.*<\/iframe>$/) || embedVal.match(/<iframe/g).length > 2 ) {
 						container.find('.error')
 							.show()
 							.html(i18n.commonMedia.webpageSelectorHome.lblError2.replace('%IFRAMETAG%', '"&lt;iframe&gt;"'));

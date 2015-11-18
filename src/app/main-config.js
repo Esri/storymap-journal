@@ -76,6 +76,10 @@ function defineDojoConfig()
 			['underscore', 'lib-build/lodash']
 		]
 	};
+	
+	if (location.search.match(/locale=([\w\-]+)/)) {
+		window.dojoConfig.locale = RegExp.$1;
+	}
 }
 
 app.isProduction = false;

@@ -1,306 +1,448 @@
-define(["lib-build/tpl!./SharePopup",
+define([
+        "lib-build/tpl!./SharePopup",
 		"lib-build/css!./SharePopup",
+		"./SharePopupError",
+		"./MyStoriesWrapper",
 		"../utils/CommonHelper",
 		"../ui/share/ShareURLPanel",
-		"../ui/share/ShareEmbedPanel"
+		"../ui/share/ShareEmbedPanel",
+		"../utils/HeaderHelper",
+		"dojo/topic",
+		"dojo/has"
 	], 
-	function (viewTpl, viewCss, CommonHelper, ShareURLPanel, ShareEmbedPanel) {
+	function (
+		viewTpl, 
+		viewCss, 
+		SharePopupError,
+		MyStoriesWrapper,
+		CommonHelper, 
+		ShareURLPanel, 
+		ShareEmbedPanel, 
+		HeaderHelper,
+		topic,
+		has
+	) {
 		return function SharePopup(container)
 		{
 			container.append(viewTpl({
-				firstSavePreview: i18n.commonCore.share.firstSavePreview,
-				firstSaveShare: i18n.commonCore.share.firstSaveShare
+				title: i18n.commonCore.share.shareTitle,
+				// Sharing buttons
+				btnPrivate: i18n.commonCore.share.btnPrivate,
+				btnPrivateTooltip: i18n.commonCore.share.btnPrivateTooltip,
+				btnOrg: i18n.commonCore.share.btnOrg,
+				btnOrgTooltip: i18n.commonCore.share.btnOrgTooltip,
+				btnPublic: i18n.commonCore.share.btnPublic,
+				btnPublicTooltip: i18n.commonCore.share.btnPublicTooltip,
+				// Loading
+				loadingMessage: i18n.commonCore.share.loadingMessage,
+				// View toggle
+				btnToggle: i18n.commonCore.share.viewToggle1,
+				// Socialize
+				socialize: i18n.commonCore.share.socialize,
+				embedTitle: i18n.viewer.shareFromCommon.embed,
+				// Footer
+				close: i18n.commonCore.common.close
 			}));
 			
 			var _this = this,
+				_errorPopup = new SharePopupError($('#sharePopupError')),
 				_shareURLPanel = new ShareURLPanel(container.find('.share-url-panel')),
-				_shareEmbedPanel = new ShareEmbedPanel(container.find('.shared-answer0'));
+				_shareEmbedPanel = new ShareEmbedPanel(container.find('.share-embed-panel'));
 			
-			container.find('.answer').collapse();
+			initEvents();
 			
-			container.on('shown.bs.modal', function () {
-				_shareURLPanel.focus();
+			topic.subscribe("MY-STORIES-REFRESH", function(){
+				refreshMyStories({
+					isRefresh: true
+				});
 			});
 			
-			this.present = function(isFirstSave) 
+			this.present = function(isFirstSave, headerCfg) 
 			{			
-				//isFirstSave = true;
-				//app.data.getWebAppItem().access = "private";
+				var appUrl = CommonHelper.getAppViewModeURL();
 				
-				var appUrl = CommonHelper.getAppViewModeURL(),
-					itemUrl = CommonHelper.getItemURL(app.indexCfg.sharingurl, app.data.getWebAppItem().id),
-					// TODO support no webmap
-					webmapUrl = CommonHelper.getItemURL(app.indexCfg.sharingurl, app.data.getWebMap() ? app.data.getWebMap().item.id : null),
-					contentUrl = CommonHelper.getMyContentURL(app.indexCfg.sharingurl);
-				
-				// Clean UI
-				container.find('.modal-logo').toggleClass('firstSave', isFirstSave);
-				container.find('.share, .first-save, .not-shared').addClass('hide');
-				container.find('.modal-footer .success, .modal-footer .error').hide();
-				
-				if (isFirstSave) 
-					presentFirstSave(appUrl, contentUrl);
-				else {
-					var isPrivate = app.data.getWebAppItem().access == "private";
-					if ( isPrivate ) 
-						presentSharing(itemUrl, appUrl, webmapUrl, function(){
-							presentShared(appUrl, itemUrl, webmapUrl, contentUrl);
+				// Handle My Stories not being available
+				// app.portal.hasMyStories tells if My Stories is accessible (using PortalVersionTest which is using an image)
+				if ( ! app.portal.hasMyStories || ! app.isProduction || ! MyStoriesWrapper.myStoriesIsSameDomain() ) {
+					var error = "";
+					
+					//app.isProduction = true;
+					//app.isPortal = true;
+					
+					// Development mode
+					if ( ! app.isProduction && ! app.portal.hasMyStories ) {
+						error = "DEV";
+					}
+					// Same domain but no My Stories it has to be a Portal < 10.4 that has been updated
+					else if ( app.isProduction && app.isPortal && MyStoriesWrapper.myStoriesIsSameDomain() && ! app.portal.hasMyStories ) {
+						error = "PORTAL";
+					}
+					// Sane error it has to be cross-domain (either on Portal or AGOL)
+					else if ( app.isProduction && (! app.portal.hasMyStories || ! MyStoriesWrapper.myStoriesIsSameDomain()) ) {
+						error = "DOMAIN";
+					}
+					
+					if ( error ) {
+						_errorPopup.present({
+							error: error,
+							isPortal: app.isPortal,
+							itemURL: CommonHelper.getItemURL(app.data.getWebAppItem().id),
+							mycontentURL: CommonHelper.getMyContentURL(),
+							mystoriesURL: CommonHelper.getMyStoriesURL()
 						});
-					else 
-						presentShared(appUrl, itemUrl, webmapUrl, contentUrl);
 						
-					container.find('.modal-title').html(i18n.commonCore.share.shareTitle);
-					displayShareDialog(isPrivate);
+						return;
+					}
 				}
 				
-				container.find('.btn-preview').off('click').click(function(){
-					window.open(CommonHelper.getAppViewModeURL(), '_blank');
-				});
+
+				/*
+				 * Socialize
+				 */
 				
-				container.find('.btnClose').html(i18n.commonCore.common.close);
-				container.find(".modal-header .close").attr("data-dismiss", "modal");
+				_shareURLPanel.present(appUrl, false);
+				_shareEmbedPanel.present(appUrl);
+				HeaderHelper.setSocial(container, headerCfg);
+				HeaderHelper.initEvents(container, "bottom");
+				
+				/*
+				 * My Stories
+				 */
+				
+				if ( app.mystories ) {
+					container.find('.app-sharing-icon').tooltip({ 
+						placement: 'top',
+						container: '.app-sharing-container',
+						trigger: 'hover'
+					});
+					refreshMyStories();
+					
+					var msg = '<a href="' + CommonHelper.getMyStoriesURL() + '" target="_blank">' + i18n.commonCore.share.mystoriesinvite + '</a>';
+					container.find('.footer-msg').html(msg);
+				}
+				else {
+					container.find('.app-sharing-icon')
+						.removeClass('active')
+						.addClass('locked');
+				}
+				
+				container.find('.sharing-action-result').addClass('hide');
+				
+				// Toggle the 'share with org' button
+				container.find('.app-sharing-wrapper').eq(1).toggle(app.portal.isOrganization !== false);
+				
 				container.modal({keyboard: true});
 			};
 			
-			// First save in from scratch mode: dialog with the admin link
-			function presentFirstSave(appUrl, contentUrl)
-			{	
-				container.find('.modal-title').html(i18n.commonCore.share.firstSaveTitle);
-				container.find('.first-save .header').html(i18n.commonCore.share.firstSaveHeader.replace("%PORTAL%", app.portal.portalName));
-				
-				container.find('.first-save .btn-share').off('click').click(function(){
-					_this.present();
-				});
-				
-				container.find('.first-save .question1').html(i18n.commonCore.share.shareQ2bis);
-					
-				container.find('.first-save .answer1').html(
-					i18n.commonCore.share.firstSaveA1
-						.replace("%PORTAL%", app.portal.portalName)
-						.replace('%LINK1%', '<div style="text-align: center; margin-top: 8px; margin-bottom: 8px;"><input type="text" class="form-control bitlylink" id="firstSavebitly2" value="' + appUrl + '&edit' + '"/></div>')
-					+ i18n.commonCore.share.firstSaveA1bis
-						.replace("%PORTAL%", app.portal.portalName)
-						.replace('%LINK2%', contentUrl)
-				);
-				
-				container.find('.first-save').removeClass('hide');
-				
-				if (app.cfg.HEADER_SOCIAL && app.cfg.HEADER_SOCIAL.bitly && app.cfg.HEADER_SOCIAL.bitly.enable)
-					getBitLy(appUrl + '&edit', '#firstSavebitly2');
-				else
-					setTimeout(function(){ $("#firstSavebitly2").focus(); }, 100);
-			}
-			
-			// Sharing screen
-			function presentSharing(itemUrl, appUrl, webmapUrl, successCallback)
+			function toggleViews()
 			{
-				container.find('.share .not-shared .header').html(i18n.commonCore.share.sharePrivateHeader);
+				var isPrivate = app.data.getWebAppItem().access == "private";
 				
-				// Share public
-				container.find('.not-shared .btn-sharePublic').html(i18n.commonCore.share.sharePrivateBtn1);
-				if( app.portal && app.portal.canSharePublic !== undefined && ! app.portal.canSharePublic ) {
-					container.find('.not-shared .btn-sharePublic').addClass("disabled");
-					container.find('.not-shared .btn-sharePublicWrapper').tooltip({ placement: 'top', title: i18n.commonCore.common.disabledAdmin });
+				if ( container.find('.views .view-my-stories').hasClass('active') ) {
+					if ( isPrivate ) {
+						container.find('.views .view-share').toggleClass('active', false);
+						container.find('.views .view-my-stories').toggleClass('active', false);
+						container.find('.views .view-private-story').toggleClass('active', true);
+						
+						container.find('.view-toggle-btn').html(i18n.commonCore.share.viewToggle1);
+					}
+					else {
+						container.find('.views .view-share').toggleClass('active', true);
+						container.find('.views .view-my-stories').toggleClass('active', false);
+						container.find('.views .view-private-story').toggleClass('active', false);
+						
+						container.find('.view-toggle-btn').html(i18n.commonCore.share.viewToggle1);
+					}
+					
+					if ( has("ff") ) {
+						$("#my-stories-hidden-container").removeClass("active");
+					}
 				}
 				else {
-					container.find('.btn-sharePublic').off('click').on('click', function() {
-						share("public", successCallback);
-					});
+					container.find('.views .view-share').toggleClass('active', false);
+					container.find('.views .view-my-stories').toggleClass('active', true);
+					container.find('.views .view-private-story').toggleClass('active', false);
+					
+					container.find('.view-toggle-btn').html(i18n.commonCore.share.viewToggle2);
+					
+					_this.updateMyStoriesPosition();
 				}
-				
-				// Share with organization
-				if( app.portal && app.portal.isOrganization ) {
-					container.find('.not-shared .btn-shareOrga').html(i18n.commonCore.share.sharePrivateBtn2);
-					container.find('.btn-shareOrga').off('click').on('click', function() {
-						share("account", successCallback);
-					});
+			}
+			
+			this.updateMyStoriesPosition = function()
+			{
+				// Firefox can't load MyStories if the dialog is not visible
+				// So MyStories is loaded as a div outside the boundary of the screen
+				// It's display as an overlay of the dialog when user wants it
+				if ( has("ff") ) {
+					var containerPos = container.find(".view-my-stories")[0].getBoundingClientRect();
+					$("#my-stories-hidden-container")
+						.addClass("active")
+						.css({
+							top: containerPos.top,
+							left: containerPos.left,
+							width: containerPos.right - containerPos.left,
+							height: container.find(".story-status").is(":visible") ? 270 : 300
+						});
 				}
-				else
-					container.find('.not-shared .btn-shareOrga').remove();
-					
-				// If user is not webmap owner (and he hasn't disabled warning)
-				if ( app.data.getWebMap() && app.data.getWebMap().item.owner != app.portal.getPortalUser().username ) {
-					var sharingStatus = null;
-					
-					if (app.data.getWebMap().item.access == "account") {
-						sharingStatus = i18n.commonCore.share.sharePrivateWarningWith1;
-						container.find('.not-shared .btn-sharePublic').addClass("disabled").off('click');
-					}
-					else if (app.data.getWebMap().item.access == "private") {
-						sharingStatus = i18n.commonCore.share.sharePrivateWarningWith2;
-						container.find('.not-shared .btn-sharePublic, .not-shared .btn-shareOrga').addClass("disabled").off('click');
-					}
-					
-					if( sharingStatus ) {
-						container.find('.share-warning').html(
-							i18n.commonCore.share.sharePrivateWarning
-								.replace('%WITH%', sharingStatus)
-								.replace('%LINK%', webmapUrl)
-						).show();
-					}
-				}
-					
-				container.find('.modal-footer .error').html(
-					i18n.commonCore.share.sharePrivateErr
-					+ ' ' 
-					+ i18n.commonCore.share.shareA1.toLowerCase()
-						.replace('%shareimg%', '<div class="shareimg"></div>')
-						.replace('%link1%', itemUrl)
-					+ '.'
-				);
-			}
+			};
 			
-			// Alrady shared screen
-			function presentShared(appUrl, itemUrl, webmapUrl, contentUrl)
-			{
-				_shareURLPanel.present(appUrl);
-				
-				// Explain
-				container.find('.shared-dialog .explain').html(
-					app.data.getWebAppItem().access == "public" ? i18n.commonCore.share.shareHeader1 : i18n.commonCore.share.shareHeader2
-				);
-				
-				// Question 0
-				container.find('.shared-question0')
-					.html(i18n.commonCore.share.shareQ0)
-					.on('click', function() { 
-						container.find('.shared-answer0').collapse('toggle');
-					}
-				);
-				
-				_shareEmbedPanel.present(appUrl);
-				
-				// Question 1
-				container.find('.shared-question1')
-					.html(app.data.getWebAppItem().access == "account" ? i18n.commonCore.share.shareQ1Opt2 : i18n.commonCore.share.shareQ1Opt1)
-					.on('click', function() { 
-						container.find('.shared-answer1').collapse('toggle');
-					}
-				);
-					
-				container.find('.shared-answer1').html(i18n.commonCore.share.shareA1
-					.replace('%SHAREIMG%', '<span class="shareImg"></span>')
-					.replace('%LINK1%', itemUrl)
-					.replace('%LINK2%', webmapUrl)
-				);
-				
-				// Question 2
-				container.find('.shared-question2')
-					.html(i18n.commonCore.share.shareQ2bis)
-					.on('click', function() { 
-						container.find('.shared-answer2').collapse('toggle');
-					}
-				);
-				
-				container.find('.shared-answer2').html(i18n.commonCore.share.shareA2div1
-					.replace('%LINK1%', '<input type="text" class="form-control bitlylink" id="firstSavebitly3" value="' + appUrl + '&edit' + '" style="width: 170px; margin-bottom: 0px; height: 22px; font-size: 14px;"/>')
-					.replace('%LINK2%', itemUrl)
-					+ '<div style="margin-top: 3px">' + i18n.commonCore.share.shareA2div2.replace("%PORTAL%", app.portal.portalName) + '</div>'
-					+ '<div class="shareImgContainer"><span class="switchBuilderImg"></span></div>'
-				);
-				
-				// Question 3
-				container.find('.shared-question3')
-					.html(i18n.commonCore.share.shareQ3)
-					.on('click', function() { 
-						container.find('.shared-answer3').collapse('toggle');
-					}
-				);
-				container.find('.shared-answer3').html(i18n.commonCore.share.shareA3
-					.replace('%TPL_NAME%', app.cfg.TPL_NAME)
-					.replace('%LINK1%', webmapUrl)
-					.replace('%LINK2%', itemUrl)
-					.replace('%LINK3%', contentUrl)
-					.replace("%PORTAL%", app.portal.portalName)
-				);
-				
-				if (app.cfg.HEADER_SOCIAL && app.cfg.HEADER_SOCIAL.bitly && app.cfg.HEADER_SOCIAL.bitly.enable) {
-					getBitLy(appUrl, '#firstSavebitly1');
-					getBitLy(appUrl + '&edit', '#firstSavebitly3');
-				}
-				else
-					setTimeout(function(){ $("#firstSavebitly1").focus(); }, 100);
-					
-				container.find('.answer').collapse('hide');
-			}
+			/*
+			 * My Stories
+			 */
 			
-			function displayShareDialog(displayNotShared)
+			function onChangeAppSharing()
 			{
-				container.find('.share').removeClass('hide');
-				container.find('.not-shared').toggleClass('hide', ! displayNotShared);
-				container.find('.shared-dialog').toggleClass('hide', displayNotShared);
-			}
+				var level = $(this).data('sharing'),
+					levelIndex = level == 'private' ? 0 : (level == 'organization' ? 1 : 2),
+					actualLevelIndex = container.find('.app-sharing-icon.active').index();
 			
-			function share(type, successCallback)
-			{
-				sharePrepare();
-				app.builder.shareAppAndWebmap(type, function(success){
-					if (success) {
-						successCallback();
-						shareSuccess();
-					}
-					else 
-						shareError();
-				});
-			}
-			
-			function sharePrepare()
-			{
-				container.find('.modal-footer .footer-status').hide();
-				container.find('.share .btn, .btnClose').attr("disabled", "disabled");
-				container.find('.modal-footer .success').html(i18n.commonCore.share.sharePrivateProgress);
-				container.find('.modal-footer .success').show();
-				container.find('.modal-footer .error').hide();
-			}
-			
-			function shareSuccess()
-			{
-				container.find('.modal-footer .success').html(i18n.commonCore.share.sharePrivateOk);
-				setTimeout(function(){
-					container.find('.modal-footer .success').hide();
-					displayShareDialog(false);
-					container.find('.share .btn, .btnClose').removeAttr("disabled");
-					$("#firstSavebitly1").focus();
-				}, 1500);
-			}
-			
-			function shareError()
-			{
-				container.find('.modal-footer .success').hide();
-				container.find('.modal-footer .error').show();
-				container.find('.share .btn, .btnClose').removeAttr("disabled");
-			}
-			
-			function getBitLy(targetUrl, nodeSelector)
-			{
-				var bitlyUrls = [
-					"http://api.bitly.com/v3/shorten?callback=?", 
-					"https://api-ssl.bitly.com/v3/shorten?callback=?"
-				];
-				var bitlyUrl = location.protocol == 'http:' ? bitlyUrls[0] : bitlyUrls[1];
+				console.log('Changing sharing level to:', level);
 				
-				$.getJSON(
-					bitlyUrl, 
-					{ 
-						"format": "json",
-						"apiKey": app.cfg.HEADER_SOCIAL.bitly.key,
-						"login": app.cfg.HEADER_SOCIAL.bitly.login,
-						"longUrl": targetUrl
-					},
-					function(response)
-					{
-						if( ! response || ! response || ! response.data.url )
-							return;
+				container.find('.app-sharing-icon').removeClass('active');
+				$(this).addClass('active');
+				
+				container.find('.app-sharing-icon').addClass('locked');
+				container.find('.sharing-action-result').addClass('hide');
+				container.find('.app-sharing-wrapper').eq(levelIndex).find('.app-sharing-loading').show();
+				container.find('.btn-open').addClass('disabled');
+				
+				app.mystories.share(
+					level
+				).then(
+					onChangeAppSharingSuccess,
+					function(result){
+						if ( result.needsUserInput && result.delayPromise ){
+							app.mystories.hasCheckErrors = true;
 							
-						container.find(nodeSelector).val(response.data.url);
+							result.delayPromise.then(
+								onChangeAppSharingSuccess,
+								function(result){ onChangeAppSharingError(result, actualLevelIndex); }
+							);
+
+							refreshMyStories({
+								postSharing: true,
+								previousLevelIndex: actualLevelIndex,
+								targetLevelIndex: levelIndex,
+								needsUserInput: true
+							});
+						}
+						else {
+							onChangeAppSharingError(result, actualLevelIndex);
+						}
 						
-						// TODO: has to happen after the modal fading
-						
-						setTimeout(function(){
-							container.find(nodeSelector).focus();
-						}, 400);
+						// TODO
+						//container.find('.sharing-action-result').html(result.message);
 					}
 				);
+			}
+			
+			function onChangeAppSharingSuccess(result)
+			{
+				console.log(result);
+				
+				app.mystories.hasCheckErrors = ! result.allClear;
+				
+				container.find('.app-sharing-icon').removeClass('locked');
+				container.find('.app-sharing-loading').hide();
+				container.find('.btn-open').removeClass('disabled');
+				
+				// Some content has been shared up in the process
+				if ( result.storyAndContent ) {
+					container.find('.sharing-action-result')
+						.removeClass('hide')
+						.addClass('status-ok')
+						.html(result.message);
+				}
+				
+				if ( result.targetAccess == 'private')
+					app.data.getWebAppItem().access = 'private';
+				else if ( result.targetAccess == 'organization')
+					app.data.getWebAppItem().access = 'account';
+				else if ( result.targetAccess == 'public')
+					app.data.getWebAppItem().access = 'public';
+				
+				refreshMyStories();
+			}
+			
+			function onChangeAppSharingError(result, actualLevelIndex)
+			{
+				console.error('sharing failed');
+				
+				app.mystories.hasCheckErrors = ! result.allClear;
+				
+				container.find('.app-sharing-icon').removeClass('locked active');
+				container.find('.app-sharing-icon').eq(actualLevelIndex).addClass('active');
+				container.find('.app-sharing-loading').hide();
+				container.find('.btn-open').removeClass('disabled');
+				container.find('.sharing-action-result').removeClass('hide status-ok').html(result.message);
+			}
+			
+			function refreshMyStories(params)
+			{
+				var isPrivate = app.data.getWebAppItem().access == "private",
+					isOrg = app.data.getWebAppItem().access == "account",
+					isFromScratch = app.isDirectCreationFirstSave || app.isGalleryCreation,
+					sharingLevelIndex = isPrivate ? 0 : (isOrg ? 1 : 2),
+					status = "";
+				
+				params = params || {};
+			
+				/*
+				 * Container
+				 */
+				container.find('.story-checked-container').toggleClass('hide', app.mystories.isChecking);
+				container.find('.story-checking-container').toggleClass('hide', ! app.mystories.isChecking);
+
+				/*
+				 * Sharing buttons
+				 */
+				container.find('.app-sharing-icon').removeClass('locked active');
+				
+				if ( isFromScratch ) {
+					container.find('.app-sharing-icon').addClass('locked');
+				}
+				else if ( isPrivate || params.needsUserInput && params.targetLevelIndex === 0 ) {
+					container.find('.app-sharing-icon').eq(0).addClass('active');
+				}
+				else if ( isOrg || params.needsUserInput && params.targetLevelIndex === 1 ) {
+					container.find('.app-sharing-icon').eq(1).addClass('active');
+				}
+				else {
+					container.find('.app-sharing-icon').eq(2).addClass('active');
+				}
+				
+				var lvl;
+				if ( ! isFromScratch && ! app.mystories.forcedIgnoreIssues ) {
+					if ( params.needsUserInput ) {
+						lvl = params.targetLevelIndex;
+						
+						container.find('.app-sharing-loading').hide();
+						
+						if ( lvl == 2 ) {
+							container.find('.app-sharing-icon').eq(2).toggleClass('locked', true);
+						}
+						else if ( lvl == 1 ) {
+							container.find('.app-sharing-icon').eq(2).toggleClass('locked', true);
+							container.find('.app-sharing-icon').eq(1).toggleClass('locked', true);
+						}
+						else if ( lvl === 0 ) {
+							container.find('.app-sharing-icon').eq(0).toggleClass('locked', true);
+						}
+					}
+					else if ( app.mystories.hasCheckErrors ) {
+						lvl = params.postSharing ? params.previousLevelIndex : sharingLevelIndex;
+						
+						if ( lvl == 2 ) {
+							container.find('.app-sharing-icon').toggleClass('locked', false);
+						}
+						else if ( lvl == 1 ) {
+							container.find('.app-sharing-icon').toggleClass('locked', true);
+							container.find('.app-sharing-icon').eq(0). toggleClass('locked', false);
+						}
+						else if ( lvl === 0 ) {
+							container.find('.app-sharing-icon').toggleClass('locked', true);
+						}
+					}
+					else {
+						container.find('.app-sharing-icon').toggleClass('locked', app.mystories.isChecking);
+					}
+				}
+				
+				/*
+				 * Label and view
+				 */
+				
+				if ( ! app.mystories.isChecking ) {
+					if ( app.mystories.hasCheckErrors || app.mystories.forcedIgnoreIssues ) {
+						status +=  i18n.commonCore.share.statusError;
+					}
+					
+					container.find('.story-status').hide();
+					
+					if ( app.mystories.hasCheckErrors || app.mystories.forcedIgnoreIssues ) {
+						container.find('.story-status').html(status).show();
+						
+						if ( isPrivate ) {
+							var status2 = i18n.commonCore.share.statusPrivate;
+							status2 += "<br />";
+							status2 += i18n.commonCore.share.statusNoErrPrivate;
+							
+							container.find('.private-story-call-to-action').html(status2);
+						}
+					}
+					else if ( isPrivate ) {
+						status += i18n.commonCore.share.statusPrivate;
+						status += "<br />";
+						status += i18n.commonCore.share.statusNoErrPrivate;
+						
+						container.find('.private-story-call-to-action').html(status);
+					}
+					
+					if ( ! params.isRefresh || app.mystories.forcedIgnoreIssues ) {
+						var myStoriesActive = !! ( (app.mystories.hasCheckErrors && !app.mystories.forcedIgnoreIssues) || params.needsUserInput || isFromScratch);
+						
+						container.find('.views .view-share').toggleClass('active', ! (app.mystories.hasCheckErrors && !app.mystories.forcedIgnoreIssues) && ! params.needsUserInput && ! isPrivate && ! isFromScratch);
+						container.find('.views .view-my-stories').toggleClass('active', myStoriesActive);
+						container.find('.views .view-private-story').toggleClass('active', (! app.mystories.hasCheckErrors || app.mystories.forcedIgnoreIssues) && ! params.needsUserInput && isPrivate);
+						
+						if ( has("ff") ) {
+							$("#my-stories-hidden-container").toggleClass("active", myStoriesActive);
+							if ( myStoriesActive ) {
+								_this.updateMyStoriesPosition();
+							}
+						}
+					}
+				}
+				
+				/*
+				 * Preview / view live
+				 */
+				
+				container.find('.btn-open').toggle(! isFromScratch);
+				container.find('.btn-open').html(isPrivate ? i18n.commonCore.share.preview : i18n.commonCore.share.viewlive);
+				
+				/*
+				 * View toggle
+				 */
+				
+				container.find('.view-toggle-container').toggleClass('hide', (app.mystories.hasCheckErrors && ! app.mystories.forcedIgnoreIssues) || isFromScratch);
+				container.find('.view-toggle-btn').html(i18n.commonCore.share.viewToggle1);
+				
+				/*
+				 * Refresh builder header
+				 */
+				
+				topic.publish(
+					"MYSTORIES_SCAN", 
+					app.mystories.hasCheckErrors || params.needsUserInput ? "error" : null
+				);
+			}
+			
+			/*
+			 * Init
+			 */
+			
+			function initEvents()
+			{
+				container.find('.app-sharing-icon').click(onChangeAppSharing);
+				container.find('.view-toggle-btn').click(toggleViews);
+				
+				container.find('.btn-open').off('click').click(function(){
+					window.open(CommonHelper.getAppViewModeURL(), '_blank');
+				});
+				
+				container.on('hide.bs.modal', function(){
+					if ( has("ff") ) {
+						$("#my-stories-hidden-container").removeClass("active");
+					}
+				});
+				
+				container.on('shown.bs.modal', function(){
+					if ( has("ff") ) {
+						_this.updateMyStoriesPosition();
+					}
+				});
 			}
 		};
 	}

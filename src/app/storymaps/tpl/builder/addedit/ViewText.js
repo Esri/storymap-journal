@@ -5,7 +5,9 @@ define(["lib-build/tpl!./ViewText",
 		"storymaps/common/builder/ckeditor/plugins/storymapsInlineMedia/dialog/Media",
 		"../../ui/StoryText",
 		"storymaps/common/utils/CommonHelper",
-		"dojo/topic"], 
+		"dojo/topic",
+		"dojo/_base/lang"
+	], 
 	function (
 		viewTpl,
 		viewCss,
@@ -14,7 +16,8 @@ define(["lib-build/tpl!./ViewText",
 		EditorDialogInlineMedia,
 		StoryText,
 		CommonHelper,
-		topic
+		topic,
+		lang
 	){
 		return function ViewText(container, onDataChangeCallback) 
 		{
@@ -60,6 +63,12 @@ define(["lib-build/tpl!./ViewText",
 				// Text / map actions
 				_textActions = cfg.mode == "edit" && cfg.section && cfg.section.contentActions ? cfg.section.contentActions : [];
 				//initTextAction();
+				
+				if ( cfg.actionId ) {
+					topic.publish("EDITOR-OPEN-MEDIA", {
+						selectedActionId: cfg.actionId
+					});
+				}
 			};
 			
 			this.postDisplay = function()
@@ -78,7 +87,10 @@ define(["lib-build/tpl!./ViewText",
 					(app.data.getCurrentSectionIndex() === 0 && _mode == "edit")
 					|| (app.data.getCurrentSectionIndex() === null && _mode == "add")
 				);
-				CKEDITOR.instances.addEditRTE.window.$.scroll(0, 0);
+				
+				try {
+					CKEDITOR.instances.addEditRTE.window.$.scroll(0, 0);
+				} catch( e ) { }
 				
 				container.find("#cke_1_contents").css("height", 228);
 				container.find("#cke_1_contents").css(
@@ -268,6 +280,7 @@ define(["lib-build/tpl!./ViewText",
 						getEditorPopupHeight()
 					).then(function(cfg){
 						params.editorCallback(cfg);
+						setTimeout(_this.postDisplay, 50);
 					});
 					
 					temporaryCopyImageServiceUserName();
@@ -302,6 +315,27 @@ define(["lib-build/tpl!./ViewText",
 				});
 				
 				return media;
+			}
+			
+			function duplicateAction(id)
+			{
+				// Create an id slightly more complex than usual as user may be copy/pasting multiple ID
+				//  at the same time, we can't rely on Date.now to be unique
+				var newId = "MJ-ACTION-" + Date.now() + '-' + Math.floor((Math.random() * 99999) + 1);
+				
+				var action = $.grep(_textActions, function(action){
+					return action.id == id;
+				});
+				
+				if ( action && action.length ) {
+					var newAction = lang.clone(action[0]);
+					newAction.id = newId;
+					_textActions.push(newAction);
+					return newId;
+				}
+				else {
+					return null;
+				}
 			}
 			
 			function initRTE(mediaType)
@@ -474,7 +508,10 @@ define(["lib-build/tpl!./ViewText",
 						);
 					container.find(".cke_button__media_icon").parents(".cke_toolgroup").find(".cke_button").eq(0).hover(
 						function(){
-							container.find('.mainstagetooltip').tooltip({ html: true }).tooltip('show');
+							container.find('.mainstagetooltip').tooltip({ 
+								html: true,
+								trigger: 'hover'
+							}).tooltip('show');
 						},
 						function(){
 							container.find('.mainstagetooltip').tooltip('hide');
@@ -525,6 +562,47 @@ define(["lib-build/tpl!./ViewText",
 							}
 						]
 					]);
+					
+					// On paste, check if the  content include Main Stage Actions
+					//  and duplicate them so they are configurable
+					editor.on('paste', function (ev) {
+						var textNode = $(ev.data.dataValue),
+							newActionId = null,
+							textNodeSingle = textNode.is('a[data-storymaps]'),
+							textNodeMulti = textNode.find('a[data-storymaps]');
+						
+						if ( textNodeSingle ) {
+							newActionId = duplicateAction(textNode.data('storymaps'));
+							if ( newActionId ) {
+								textNode.attr('data-storymaps', newActionId);
+								ev.data.dataValue = textNode.prop('outerHTML');
+							}
+							else {
+								textNode.removeAttr('data-storymaps');
+								textNode.removeAttr('data-storymaps-type');
+								ev.data.dataValue = textNode.html();
+							}
+						}
+						else if ( textNodeMulti.length ) {
+							$.each(textNodeMulti, function(i, action){
+								var $action = $(action);
+								var newActionId = duplicateAction($action.data('storymaps'));
+								if ( newActionId ) {
+									$action.attr('data-storymaps', newActionId);
+								}
+								else {
+									$action.removeAttr('data-storymaps');
+									$action.removeAttr('data-storymaps-type');
+									$action.replaceWith($action.html());
+								}
+							});
+							ev.data.dataValue = $.fn.append.apply($('<div>'), textNode).html();
+						}
+					});
+					
+					editor.on('mode', function(){
+						_this.postDisplay();
+					});
 				});
 
 				// Set target="_blank" for links
@@ -614,7 +692,7 @@ define(["lib-build/tpl!./ViewText",
 					// Other elements are inserted as plain text
 					// See http://docs.ckeditor.com/#!/guide/dev_allowed_content_rules
 					// *{*}; to allow any style
-					extraAllowedContent: 'h1 h2 h3 h4 h5 h6 sub sup table tr th td caption div span img figure figcaption iframe; *(*); *[*]; a[data-*]',
+					extraAllowedContent: 'h1 h2 h3 h4 h5 h6 sub sup table tr th td caption div span img figure figcaption style audio source embed iframe; *(*); *[*]; a[data-*]',
 					// Elements to be removed when executing the "remove " format" command
 					removeFormatTags: 
 						// Default

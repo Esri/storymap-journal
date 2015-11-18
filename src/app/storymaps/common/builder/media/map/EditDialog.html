@@ -1,0 +1,31 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-logo"></div>
+		<div class="modal-header">
+			<h4 class="modal-title"></h4>
+		</div>
+
+		<div class="modal-body">
+			<div class="loading-container">
+				<div style="padding-top: 200px;">
+					<img src="resources/tpl/viewer/icons/loading-light.gif" />
+				</div>
+				<div class="loading-lbl"><%= loadingLabel %></div>
+			</div>
+			<div class="error-container hide">
+				<div class="error-msg"></div>
+			</div>
+			
+			<div class="webmap-builder-container">
+				<iframe class="webmap-builder"></iframe>
+			</div>
+			
+		</div>
+
+		<div class="modal-footer">
+			<span class="error"></span>
+			<button class="btnSubmit btn btn-primary hide" ></button>
+			<button type="button" class="btn btnCancel btn-naked btn-close"></button>
+		</div>
+	</div>
+</div>
