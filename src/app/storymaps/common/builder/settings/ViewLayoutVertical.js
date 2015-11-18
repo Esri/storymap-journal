@@ -19,7 +19,10 @@ define(["lib-build/tpl!./ViewLayoutVertical",
 					helpExplain: mode == "init" ? i18n.commonCore.settingsLayout.explainInit : null
 				}));
 				
-				_contentContainer.find('.help').tooltip({placement: 'right'});
+				_contentContainer.find('.help').tooltip({
+					placement: 'right',
+					trigger: 'hover'
+				});
 			};
 			
 			this.present = function(settings) 

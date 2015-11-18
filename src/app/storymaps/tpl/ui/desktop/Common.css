@@ -106,6 +106,32 @@
 }
 
 /*
+ * My Stories
+ */
+
+.sectionPanel .error-status {
+	display: none;
+	position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.sectionPanel .error-status.enabled {
+	display: inline-block;
+}
+
+.sectionPanel .error-status .check-story {
+    margin-top: -2px;
+    margin-right: 10px;
+}
+
+.sectionPanel .error-status .check-story.btn-success {
+	pointer-events: none;
+}
+
+/*
  *
  * Add/Organize
  *

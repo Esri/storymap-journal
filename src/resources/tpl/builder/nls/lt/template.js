@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Tvarkyti",
-				lblHeader: "Nuvilkite skiltis į norimas vietas ir sutvarkykite turinį.",
+				lblHeader: "Nuvilkite skiltis į norimas vietas ir sutvarkykite pasakojimą.",
 				lblColTitle: "Pavadinimas",
 				lblColPubDate: "Publikavimo data",
 				lblColStatus: "Būsena",
@@ -83,7 +83,7 @@
 				lblTips: "Patarimai",
 				lblMore: "Norite daugiau?",
 				lblLink: "Apsilankykite Esri pristatomųjų žemėlapių svetainėje.",
-				content1Div1: "Kurdami pasakojimą galite integruoti įvairius stilius. Paprastai <strong>%LAYOUT_TITLE%</strong> pateikiami tekstas, vaizdai ir video, o žemėlapiai dažniausiai būna <strong>pagrindinėje srityje</strong>. Tačiau, naudodami %TPL_NAME%, ir pagrindinėje srityje galite pridėti vaizdų, diagramų ir video.",
+				content1Div1: "Kurdami pasakojimą galite integruoti įvairius stilius. Paprastai <strong>%LAYOUT_TITLE%</strong> pateikiami tekstas, vaizdai ir vaizdo įrašai, o žemėlapiai dažniausiai būna <strong>pagrindinėje srityje</strong>. Tačiau, naudodami %TPL_NAME%, ir pagrindinėje srityje galite pridėti vaizdų, diagramų ir video.",
 				content1Div2: "Pridėdami skilčių galite labai įvairiai adaptuoti savo pasakojimą. Kai skaitytojai slinks %LAYOUT_TITLE% tekstu, gali būti prastumiamas pagrindinėje srityje esantis žemėlapis ir keičiamas jo mastelis, kad būtų rodomi pagrindiniai taškai arba gali būti automatiškai perjungiami nauji žemėlapiai ir vaizdai, sustiprinantys jūsų pasakojimo įspūdį.",
 				content2Div1: "Nustatymų dialogo lange galite pakeisti savo %TPL_NAME% išvaizdą. Galite pakeisti maketą, pasirinkti kitą spalvų schemą, pakeisti teksto šriftą ir t. t.",
 				content2Div2: "Esri logotipą galite pakeisti savo logotipu. Taip pat galite nurodyti svetainę, kuri bus paleista skaitytojams paspaudus jūsų logotipą, kad jie galėtų gauti daugiau informacijos.",

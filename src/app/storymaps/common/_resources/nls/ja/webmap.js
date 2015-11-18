@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Web マップ",
+				lblWebMap: "マップ",
 				lblLocation: "位置",
 				lblContent: "コンテンツ",
 				lblPopup: "ポップアップ",
@@ -17,12 +17,14 @@
 				and: "および",
 				action: "セクション内のアクション",
 				actions: "セクション内のアクション",
-				originalWebmap: "%TPL_NAME% の公開に使用される Web マップ",
-				browseMaps: "マップの参照",
-				current: "現在の Web マップ",
-				select: "Web マップの選択",
-				newMap: "新しく選択した Web マップ",
-				webmapDefault: "Web マップのデフォルト",
+				originalWebmap: "%TPL_NAME% の公開に使用されるマップ",
+				browseMaps: "マップの選択",
+				createMap: "マップの作成",
+				current: "現在のマップ",
+				select: "マップの選択または作成",
+				newMap: "新しく選択したマップ",
+				newCreatedMap: "新しく作成したマップ",
+				webmapDefault: "マップのデフォルト",
 				customCfg: "カスタム構成",
 				tooltipLocation: "このマップが表示される場所を定義します。",
 				tooltipContent: "表示レイヤを定義します。",
@@ -47,6 +49,29 @@
 				popupExplain: "フィーチャをクリックして、表示するポップアップを開きます。",
 				popupSave: "ポップアップ構成の保存",
 				hintNavigation: "マップ ナビゲーションは無効化されています。"
+			},
+			editor: {
+				loading: "マップ エディターを読み込んでいます。しばらくお待ちください",
+				newTitle: "マップの新規作成",
+				editTitle: "マップの編集",
+				titleLbl: "タイトル",
+				titlePh: "マップ タイトル...",
+				folderLbl: "マップは、ストーリーと同じフォルダーに作成されます。",
+				creating: "マップを作成しています",
+				saving: "マップを保存しています",
+				success: "マップが保存されました",
+				successCreate: "マップが作成されました",
+				cancelTitle: "保存されていない変更内容をすべて破棄しますか？",
+				errorDuplicate: "そのタイトルのマップはすでに存在しています。",
+				errorCreate: "マップを作成できません。もう一度やり直してください。",
+				errorSave: "マップを保存できません。もう一度やり直してください。",
+				notavailable1: "技術的な制限のため、マップの作成または編集は Firefox ではサポートされていません。別の Web ブラウザーを使用してストーリーを作成するか、次の回避策を適用してください。",
+				notavailable2: "ストーリー マップ アプリケーションが %PRODUCT% でホストされていないため、マップの作成または編集がサポートされていません。詳細については、ArcGIS 管理者に問い合わせてください。",
+				notavailable3: "このバージョンの Portal for ArcGIS では、マップの作成または編集はサポートされていません (10.4 以降が必要です)。詳細については、ArcGIS 管理者に問い合わせてください。",
+				notavailable4: "%MV% を使用してマップを作成し、その後、ここに戻ってそのマップをストーリーに追加できます。",
+				notavailable5: "%MV% を使用してマップを編集し、その後、ここに戻って%apply%し、変更内容を表示できます。",
+				notavailable6: "マップ ビューアー",
+				notavailable7: "マップの再読み込み"
 			}
 		},
 		configure: {
@@ -57,7 +82,7 @@
 					contentLabel: "マイ コンテンツ",
 					favoritesLabel: "お気に入り"
 				},
-				title: "Web マップの選択",
+				title: "マップの選択",
 				searchTitle: "検索",
 				ok: "OK",
 				cancel: "キャンセル",

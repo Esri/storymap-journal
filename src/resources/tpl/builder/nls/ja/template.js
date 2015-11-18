@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "整理",
-				lblHeader: "セクションをドラッグ アンド ドロップして、コンテンツを整理します。",
+				lblHeader: "セクションをドラッグ アンド ドロップして、ストーリーを整理します。",
 				lblColTitle: "タイトル",
 				lblColPubDate: "公開日",
 				lblColStatus: "ステータス",

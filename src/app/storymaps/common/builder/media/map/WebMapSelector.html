@@ -6,18 +6,30 @@
 			</td>
 			<td class="map-cfg-btns">
 				<div class="webmaps-list-container">
-					<div class="radio-value btn-group">
-						<button class="btn btn-default dropdown-toggle webmaps-list-btn" type="button" data-toggle="dropdown">
-							<span class="webmaps-list-btn-inner"></span>&nbsp;<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu webmaps-list"></ul>
-					</div>
-					<span class="selected-map-sharing-status"></span>
-					<!-- 
-					<a href="#" class="help" data-toggle="tooltip" data-placement="right" data-original-title="" title="Make sure your webmaps are shared publicly">
-						<img src="resources/tpl/builder/icons/builder-help.png">
-					</a>
-					 -->
+					<table style="width: 100%;">
+						<tr>
+							<td>
+								<div class="radio-value btn-group" style="width: 100%;">
+									<button class="btn btn-default dropdown-toggle webmaps-list-btn" type="button" data-toggle="dropdown">
+										<span class="webmaps-list-btn-inner"></span>&nbsp;<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu webmaps-list"></ul>
+								</div>
+							</td>
+							<td class="selected-map-edit-container">
+								<span class="btn btn-naked selected-map-edit" style="padding-right: 0px">
+									<span class="glyphicon glyphicon-edit" style="margin-right: 3px;"></span>
+									<%= lblEdit %>
+								</span>
+								<span class="selected-map-sharing-status"></span>
+								<!-- 
+								<a href="#" class="help" data-toggle="tooltip" data-placement="right" data-original-title="" title="Make sure your webmaps are shared publicly">
+									<img src="resources/tpl/builder/icons/builder-help.png">
+								</a>
+								 -->
+							</td>
+						</tr>
+					</table>
 				</div>
 			</td>
 		</tr>

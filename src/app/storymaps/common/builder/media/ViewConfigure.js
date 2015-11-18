@@ -110,7 +110,7 @@ define(["lib-build/css!./ViewConfigure",
 				container.find('.position-video').toggle(_mediaType == 'video' || _mediaType == 'webpage');
 				container.find(".media-configure-position").removeClass("selected");
 				
-				var display = _mediaType == 'image' ? displayMode[1] : displayMode[2],
+				var display = _mediaType == 'image' ? displayMode[1] : displayMode[3],
 					width = null,
 					height = null;
 				
@@ -353,16 +353,19 @@ define(["lib-build/css!./ViewConfigure",
 				
 				container.find('.dimHelp').tooltip('destroy').tooltip({
 					title: i18n.commonMedia.mediaConfigure.tooltipDimension,
-					html: true
+					html: true,
+					trigger: 'hover'
 				});
 				
 				container.find('.dimHelp2').tooltip('destroy').tooltip({
 					title: i18n.commonMedia.mediaConfigure.tooltipDimension2,
-					html: true
+					html: true,
+					trigger: 'hover'
 				});
 				
 				container.find('.maximizeHelp, .unloadHelp').tooltip({
-					html: true
+					html: true,
+					trigger: 'hover'
 				});
 			}
 			

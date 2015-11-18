@@ -26,8 +26,6 @@ define([
 			{
 				var resultDeferred = new Deferred();
 				
-				container.find('.linkagolroot').attr('href', CommonHelper.getMyContentURL(app.indexCfg.sharingurl));
-				
 				container.on('hide.bs.modal', function(){
 					resultDeferred.resolve();
 				});

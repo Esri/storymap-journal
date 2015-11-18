@@ -31,7 +31,10 @@ define(["lib-build/tpl!./ViewLayoutHorizontal",
 					_contentContainer.find('.layout-thumb').eq(i).attr("src", layout.thumbnail);
 				});
 				
-				_contentContainer.find('.help').tooltip({placement: 'right'});
+				_contentContainer.find('.help').tooltip({
+					placement: 'right',
+					trigger: 'hover'
+				});
 				_contentContainer.find('.layout-live').click(onLayoutPreview);
 				_contentContainer.find('.layout').click(onLayoutSelect);
 				_contentContainer.find('.btn-start').click(onClickStart);

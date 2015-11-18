@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Webkarte",
+				lblWebMap: "Karte",
 				lblLocation: "Position",
 				lblContent: "Inhalt",
 				lblPopup: "Pop-up",
@@ -18,11 +18,13 @@
 				action: "Aktion in Abschnitt",
 				actions: "Aktion in Abschnitten",
 				originalWebmap: "Zum Veröffentlichen von %TPL_NAME% verwendete Karte",
-				browseMaps: "Nach Karten suchen",
-				current: "Aktuelle Webkarte",
-				select: "Webkarte auswählen",
-				newMap: "Neu ausgewählte Webkarte",
-				webmapDefault: "Webkartenstandard",
+				browseMaps: "Eine Karte auswählen",
+				createMap: "Eine Karte erstellen",
+				current: "Aktuelle Karte",
+				select: "Karte auswählen oder erstellen",
+				newMap: "Neu ausgewählte Karte",
+				newCreatedMap: "Neu erstellte Karte",
+				webmapDefault: "Kartenstandard",
 				customCfg: "Benutzerdefinierte Konfiguration",
 				tooltipLocation: "Die Position definieren, die diese Karte anzeigt.",
 				tooltipContent: "Die sichtbaren Layer definieren.",
@@ -47,6 +49,29 @@
 				popupExplain: "Klicken Sie auf ein Feature, um das Pop-up zu öffnen, das Sie anzeigen möchten.",
 				popupSave: "Pop-up-Konfiguration speichern",
 				hintNavigation: "Kartennavigation ist deaktiviert."
+			},
+			editor: {
+				loading: "Bitte warten. Der Karten-Editor wird geladen.",
+				newTitle: "Neue Karte erstellen",
+				editTitle: "Karte bearbeiten",
+				titleLbl: "Titel",
+				titlePh: "Kartentitel...",
+				folderLbl: "Die Karte wird im selben Ordner wie die Story erstellt.",
+				creating: "Karte wird erstellt",
+				saving: "Karte wird gespeichert",
+				success: "Karte wurde gespeichert",
+				successCreate: "Karte wurde erstellt",
+				cancelTitle: "Alle nicht gespeicherten Änderungen verwerfen?",
+				errorDuplicate: "Eine Karte mit diesem Titel ist bereits vorhanden",
+				errorCreate: "Die Karte kann nicht erstellt werden. Versuchen Sie es erneut.",
+				errorSave: "Die Karte kann nicht gespeichert werden. Versuchen Sie es erneut.",
+				notavailable1: "Das Erstellen oder Bearbeiten von Karten ist in Firefox aus technischen Gründen nicht möglich. Verwenden Sie zum Erstellen Ihrer Story einen anderen Webbrowser oder den folgenden Workaround.",
+				notavailable2: "Das Erstellen oder Bearbeiten von Karten wird nicht unterstützt, da die Story Map-Anwendung nicht in %PRODUCT% gehostet wird. Weitere Informationen erhalten Sie bei Ihrem ArcGIS-Administrator.",
+				notavailable3: "Das Erstellen oder Bearbeiten von Karten wird in dieser Version von Portal for ArcGIS nicht unterstützt (Version 10.4 oder höher erforderlich). Weitere Informationen erhalten Sie bei Ihrem ArcGIS-Administrator.",
+				notavailable4: "Sie können eine Karte mit %MV% erstellen und anschließend hier Ihre Story hinzufügen.",
+				notavailable5: "Sie können die Karte mit %MV% bearbeiten und anschließend %apply%, um Ihre Änderungen anzuzeigen.",
+				notavailable6: "Map Viewer",
+				notavailable7: "die Karte neu laden"
 			}
 		},
 		configure: {
@@ -57,7 +82,7 @@
 					contentLabel: "Eigene Inhalte",
 					favoritesLabel: "Eigene Favoriten"
 				},
-				title: "Webkarte auswählen",
+				title: "Eine Karte auswählen",
 				searchTitle: "Suchen",
 				ok: "OK",
 				cancel: "Abbrechen",

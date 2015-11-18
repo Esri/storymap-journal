@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Bản đồ web",
+				lblWebMap: "Bản đồ",
 				lblLocation: "Vị trí",
 				lblContent: "Nội dung",
 				lblPopup: "Cửa sổ pop-up",
@@ -17,12 +17,14 @@
 				and: "và",
 				action: "Hành động trong phần",
 				actions: "Hành động trong các phần",
-				originalWebmap: "Bản đồ web được dùng để xuất bản %TPL_NAME%",
-				browseMaps: "Duyệt Bản đồ",
-				current: "Bản đồ web hiện tại",
-				select: "Chọn bản đồ web",
-				newMap: "Bản đồ web mới được chọn",
-				webmapDefault: "Bản đồ web mặc định",
+				originalWebmap: "Bản đồ được dùng để xuất bản %TPL_NAME%",
+				browseMaps: "Chọn bản đồ",
+				createMap: "Tạo bản đồ",
+				current: "Bản đồ hiện tại",
+				select: "Chọn hoặc tạo bản đồ",
+				newMap: "Bản đồ mới được chọn",
+				newCreatedMap: "Bản đồ mới được tạo",
+				webmapDefault: "Mặc định bản đồ",
 				customCfg: "Cầu hình tùy chỉnh",
 				tooltipLocation: "Xác định vị trí bản đồ này sẽ hiển thị.",
 				tooltipContent: "Xác định các lớp nhìn thấy được.",
@@ -47,6 +49,29 @@
 				popupExplain: "Bấm vào một đối tượng để mở cửa sổ popup mà bạn muốn hiển thị.",
 				popupSave: "Lưu cấu hình cửa sổ pop-up",
 				hintNavigation: "Điều hướng bản đồ bị tắt."
+			},
+			editor: {
+				loading: "Vui long chờ trong khi trình biên tập bản đồ đang được tải",
+				newTitle: "Tạo bản đồ mới",
+				editTitle: "Chỉnh sửa bản đồ",
+				titleLbl: "Tiêu đề",
+				titlePh: "Tiêu đề bản đồ...",
+				folderLbl: "Bản đồ sẽ được tạo trong cùng thư mục với câu chuyện.",
+				creating: "Đang tạo bản đồ",
+				saving: "Đang lưu bản đồ",
+				success: "Bản đồ đã được lưu",
+				successCreate: "Bản đồ đã được tạo",
+				cancelTitle: "Bạn có muốn hủy mọi thay đổi chưa được lưu không?",
+				errorDuplicate: "Bạn đã có bản đồ với tiêu đề đó",
+				errorCreate: "Không thể tạo bản đồ. Vui lòng thử lại.",
+				errorSave: "Không thể lưu bản đồ. Vui lòng thử lại.",
+				notavailable1: "Xin lỗi, tạo hoặc chỉnh sửa bản đồ không được hỗ trợ trong Firefox do hạn chế kỹ thuật. Có thể bạn sẽ muốn xây dựng câu chuyện của mình bằng cách sử dụng trình duyệt web khác hoặc sử dụng cách khắc phục sau.",
+				notavailable2: "Xin lỗi, tạo hoặc chỉnh sửa bản đồ không được hỗ trợ do ứng dụng story map không được lưu trữ trong %PRODUCT%. Vui lòng liên hệ người quản trị ArcGIS của bạn để biết thêm thông tin.",
+				notavailable3: "Xin lỗi, tạo hoặc chỉnh sửa bản đồ không được hỗ trợ trong phiên bản Portal for ArcGIS này (yêu cầu phiên bản 10.4 trở lên). Vui lòng liên hệ người quản trị ArcGIS của bạn để biết thêm thông tin.",
+				notavailable4: "Bạn có thể tạo bản đồ bằng cách sử dụng %MV%, rồi quay lại đây để thêm vào câu chuyện của bạn.",
+				notavailable5: "Bạn có thể chỉnh sửa bản đồ bằng cách sử dụng %MV%, rồi quay lại đây và %áp dụng% các thay đổi của bạn.",
+				notavailable6: "trình xem bản đồ",
+				notavailable7: "tải lại bản đồ"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@
 					contentLabel: "Nội dung của tôi",
 					favoritesLabel: "Yêu thích của tôi"
 				},
-				title: "Chọn Bản đồ Web",
+				title: "Chọn bản đồ",
 				searchTitle: "Tìm kiếm",
 				ok: "Ok",
 				cancel: "Hủy",
-				placeholder: "Nhập cụm từ tìm kiếm hoặc ID Bản đồ Web..."
+				placeholder: "Nhập cụm từ tìm kiếm hoặc ID bản đồ web..."
 			}
 		}
 	})

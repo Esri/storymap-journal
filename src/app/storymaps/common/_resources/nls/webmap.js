@@ -2,7 +2,7 @@ define({
 	root: ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Web map",
+				lblWebMap: "Map",
 				lblLocation: "Location",
 				lblContent: "Content",
 				lblPopup: "Popup",
@@ -17,12 +17,14 @@ define({
 				and: "and",
 				action: "Action in section",
 				actions: "Action in sections",
-				originalWebmap: "Web map used to publish the %TPL_NAME%",
-				browseMaps: "Browse for Maps",
-				current: "Current web map",
-				select: "Select a web map",
-				newMap: "Newly selected web map",
-				webmapDefault: "Web map default",
+				originalWebmap: "Map used to publish the %TPL_NAME%",
+				browseMaps: "Select a map",
+				createMap: "Create a map",
+				current: "Current map",
+				select: "Select or create a map",
+				newMap: "Newly selected map",
+				newCreatedMap: "Newly created map",
+				webmapDefault: "Map default",
 				customCfg: "Custom configuration",
 				tooltipLocation: "Define the location that this map will display.",
 				tooltipContent: "Define the visible layers.",
@@ -47,6 +49,29 @@ define({
 				popupExplain: "Click on a feature to open the popup you want to display.",
 				popupSave: "Save the popup configuration",
 				hintNavigation: "Map navigation is disabled."
+			},
+			editor: {
+				loading: "Please wait while the map editor is loading",
+				newTitle: "Create new map",
+				editTitle: "Edit map",
+				titleLbl: "Title",
+				titlePh: "Map title...",
+				folderLbl: "The map will be created in the same folder as the story.",
+				creating: "Creating the map",
+				saving: "Saving the map",
+				success: "Map saved",
+				successCreate: "Map created",
+				cancelTitle: "Discard any unsaved changes?",
+				errorDuplicate: "You already have a map with that title",
+				errorCreate: "Unable to create map. Please try again.",
+				errorSave: "Unable to save map. Please try again.",
+				notavailable1: "Sorry, creating or editing a map is not supported in Firefox due to a technical limitation. You may want to build your story using a different web browser or use the following workaround.",
+				notavailable2: "Sorry, creating or editing a map is not supported since the story map application is not hosted in %PRODUCT%. Please contact your ArcGIS administrator for more information.",
+				notavailable3: "Sorry, creating or editing a map is not supported on this version of Portal for ArcGIS (requires 10.4 or later). Please contact your ArcGIS administrator for more information.",
+				notavailable4: "You can create a map using %MV%, then come back here to add it to your story.",
+				notavailable5: "You can edit the map using %MV%, then come back here and %apply% to see your changes.",
+				notavailable6: "map viewer",
+				notavailable7: "reload the map"
 			}
 		},
 		configure: {
@@ -57,11 +82,11 @@ define({
 					contentLabel: "My Content",
 					favoritesLabel: "My Favorites"
 				},
-				title: "Select Web Map",
+				title: "Select a map",
 				searchTitle: "Search",
 				ok: "Ok",
 				cancel: "Cancel",
-				placeholder: "Enter search term or Web Map ID..."
+				placeholder: "Enter search term or web map ID..."
 			}
 		}
 	}),

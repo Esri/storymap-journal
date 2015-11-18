@@ -2,7 +2,7 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Daugialypė informacija",
+				lblSelect1: "Medija",
 				lblSelect2: "Turinys",
 				lblMap: "Žemėlapis",
 				lblImage: "Paveikslėlis",
@@ -54,9 +54,9 @@
 				pageInputLbl: "Vartotojo vardas",
 				lookupMsgError: "Vartotojas nerastas",
 				howToFind: "Kaip rasti YouTube vartotojo vardą",
-				howToFind2: "Vartotojo vardas rodomas po video",
+				howToFind2: "Vartotojo vardas rodomas po vaizdo įrašo",
 				found: "Rasta",
-				noData: "Nerasta viešų video",
+				noData: "Nerasta viešų vaizdo įrašų",
 				videoNotChecked: "Vaizdo įrašas nebuvo patikrintas „YouTube“, bet jo adresas atrodo tinkamas.",
 				checkFailedAPI: "„YouTube“ patikra nepavyko, patikrinkite „YouTube“ API raktą."
 			},
@@ -64,9 +64,9 @@
 				url: "Vimeo vaizdo įrašo URL"
 			},
 			videoSelectorOther: {
-				explain1: "Aplikacija negali paleisti neapdorotų video (pvz., avi, mpeg), bet ji gali leisti patalpintus video failus, kuriuose yra integruoti leistuvai (pvz., YouTube ar Vimeo).",
+				explain1: "Pasakojimas negali paleisti neapdorotų vaizdo įrašų (pvz., avi, mpeg), bet jis gali leisti patalpintus vaizdo failus, kuriuose yra integruoti leistuvai (pvz., YouTube ar Vimeo).",
 				explain2: "Dauguma vaizdo įrašų talpinimo paslaugų siūlo tokią funkciją, tereikia rasti vaizdo įrašo integravimo parinktį, nukopijuoti pateiktą kodą ir naudoti %WEBPAGE%.",
-				explain3: "Be to, jei norite patalpinti video patys, galite sukurti HTML puslapį, kuriame būtų naudojamas vaizdo leistuvas, pvz., %EXAMPLE%, patalpinti tą puslapį ir taip pat naudoti %WEBPAGE%.",
+				explain3: "Be to, jei norite patalpinti vaizdo įrašą patys, galite sukurti HTML puslapį, kuriame būtų naudojamas vaizdo leistuvas, pvz., %EXAMPLE%, patalpinti tą puslapį ir taip pat naudoti %WEBPAGE%.",
 				webpage: "Tinklalapio elementas"
 			},
 			webpageSelectorHome: {
@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(plotis visada atitiks skydą)",
 				lblPosition4Explain: "(gali būti iškraipoma)",
 				unloadLbl: "Iškelti, kai skaitytojas palieka šią dalį",
-				unloadHelp: "Jeigu tinklalapyje yra garso arba vaizdo medija, palikite šią parinktį pažymėtą, kad sustabdytumėte turinio leidimą, kai skaitytojas išeina. Panaikinkite žymėjimą, pavyzdžiui, jei norite leisti garso takelį, kai skaitytojas keliauja pasakojimu.<br />Jeigu tinklalapis yra aplikacija, panaikinkite šios parinkties žymėjimą, kad skaitytojui grįžus, aplikacija nebūtų įkeliama iš naujo."
+				unloadHelp: "Jeigu tinklalapis turi garsinės arba vaizdinės medijos, palikite šią parinktį pažymėtą, kad turinys nebūtų leidžiamas, kai skaitytojas nutolsta. Parinktį pažymėkite, jeigu, pvz., norite leisti garso takelį skaitytojui keliaujant per pasakojimą.<br />Jeigu tinklalapis yra aplikacija, pašalinkite žymę, kad skaitytojui sugrįžus pasakojimas nebūtų įkeltas iš naujo."
 			},
 			editorActionGeocode: {
 				lblTitle: "Raskite adresą arba vietą",
@@ -112,7 +112,7 @@
 				lblTitle: "Keisti pagrindinės srities turinį"
 			},
 			editorInlineMedia: {
-				lblTitle: "Įterpti paveikslėlį, video arba tinklalapį"
+				lblTitle: "Įterpti paveikslėlį, vaizdo įrašą arba tinklalapį"
 			}
 		}
 	})

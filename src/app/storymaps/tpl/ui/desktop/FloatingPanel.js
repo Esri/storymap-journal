@@ -7,6 +7,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 		"storymaps/common/utils/HeaderHelper",
 		"storymaps/common/utils/CommonHelper",
 		"dojo/has",
+		"dojo/topic",
 		"lib-app/jquery.hammer.min",
 		"lib-app/jquery",
 		"lib-app/swiper/idangerous.swiper",
@@ -22,7 +23,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 		StoryText,
 		HeaderHelper,
 		CommonHelper,
-		has
+		has,
+		topic
 	){		
 		return function FloatingPanel(container, isInBuilder, navigationCallback)
 		{
@@ -69,6 +71,11 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					if ( sections.length == 1 ) {
 						container.find(".navDots").hide();
 						container.find('.sections').css(layoutOptions.layoutCfg.position == "left" ? "padding-left" : "padding-right", "3%");
+					}
+					
+					if ( app.data.userIsAppOwner() ) {
+						container.find('.error-status').addClass('enabled');
+						topic.subscribe("MYSTORIES_SCAN", updateErrorStatus);
 					}
 				}
 			};
@@ -416,7 +423,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				
 				container.find(".scroll").show();
 				container.find(".scrollInner").tooltip({
-					title: i18n.viewer.sideLayout.scroll
+					title: i18n.viewer.sideLayout.scroll,
+					trigger: 'hover'
 				});
 				
 				CommonHelper.addCSSRule(".scroll .tooltip-inner { background-color: " + colors.text + "; color: " + colors.panel + "; }");
@@ -601,6 +609,36 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					sectionIndex: _this.getSectionNumber(),
 					displayTab: 'content'
 				});
+			}
+			
+			/*
+			 * My Stories
+			 */
+			
+			function updateErrorStatus(status)
+			{
+				var checkBtn = container.find('.check-story');
+				
+				if ( status == "start" ) {
+					checkBtn
+						.html('<span class="small-loader"></span>' +  i18n.viewer.headerFromCommon.checking)
+						.css("cursor", "default");
+				}
+				else if ( status == "error" ) {
+					checkBtn
+						.html(i18n.viewer.headerFromCommon.fix)
+						.css("cursor", "pointer")
+						.click(CommonHelper.switchToBuilder)
+						.show()
+						.removeClass('btn-warning')
+						.addClass('btn-danger');
+				}
+				else {
+					checkBtn
+						.html(i18n.viewer.headerFromCommon.noerrors)
+						.removeClass('btn-warning')
+						.addClass('btn-success');
+				}
 			}
 			
 			/*

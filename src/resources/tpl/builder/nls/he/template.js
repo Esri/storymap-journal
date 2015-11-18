@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "ארגן",
-				lblHeader: "גרור ושחרר חלקים כדי לארגן את התוכן שלך.",
+				lblHeader: "גרור ושחרר קטעים כדי לארגן את הסיפור שלך.",
 				lblColTitle: "כותרת",
 				lblColPubDate: "תאריך הפצה",
 				lblColStatus: "סטטוס",

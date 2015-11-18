@@ -2,7 +2,7 @@
 	 ({
 		commonWebmap: {
 			selector: {
-				lblWebMap: "Internetinis žemėlapis",
+				lblWebMap: "Žemėlapis",
 				lblLocation: "Vieta",
 				lblContent: "Turinys",
 				lblPopup: "Iškylantis langas",
@@ -17,12 +17,14 @@
 				and: "ir",
 				action: "Veiksmas skiltyje",
 				actions: "Veiksmai skiltyse",
-				originalWebmap: "Internetinis žemėlapis, naudotas publikuoti %TPL_NAME%",
-				browseMaps: "Ieškoti žemėlapių",
-				current: "Dabartinis internetinis žemėlapis",
-				select: "Pasirinkite internetinį žemėlapį",
-				newMap: "Naujai pasirinktas internetinis žemėlapis",
-				webmapDefault: "Numatytasis internetinis žemėlapis",
+				originalWebmap: "Žemėlapis, naudojamas publikuoti %TPL_NAME%",
+				browseMaps: "Pasirinkti žemėlapį",
+				createMap: "Kurti žemėlapį",
+				current: "Esamas žemėlapis",
+				select: "Pasirinkti arba kurti žemėlapį",
+				newMap: "Naujai pasirinktas žemėlapis",
+				newCreatedMap: "Naujai sukurtas žemėlapis",
+				webmapDefault: "Numatytieji žemėlapio nustatymai",
 				customCfg: "Adaptuota konfigūracija",
 				tooltipLocation: "Nustatykite vietą, kurią rodys šis žemėlapis.",
 				tooltipContent: "Nustatykite matomus sluoksnius.",
@@ -47,6 +49,29 @@
 				popupExplain: "Spustelėkite elementą, kad atidarytumėte norimą rodyti iškylantį langą.",
 				popupSave: "Išsaugoti iškylančio lango konfigūraciją",
 				hintNavigation: "Žemėlapio navigacija išjungta."
+			},
+			editor: {
+				loading: "Palaukite, kol žemėlapių rengyklė pasikraus",
+				newTitle: "Kurti naują žemėlapį",
+				editTitle: "Redaguoti žemėlapį",
+				titleLbl: "Antraštė",
+				titlePh: "Žemėlapio pavadinimas...",
+				folderLbl: "Žemėlapis bus sukurtas tame pačiame aplanke kaip ir pasakojimas.",
+				creating: "Kuriamas žemėlapis",
+				saving: "Įrašomas žemėlapis",
+				success: "Žemėlapis įrašytas",
+				successCreate: "Žemėlapis sukurtas",
+				cancelTitle: "Atsisakyti neįrašytų pakeitimų?",
+				errorDuplicate: "Žemėlapis tokiu pavadinimu jau yra",
+				errorCreate: "Žemėlapio sukurti nepavyko. Pabandykite dar kartą.",
+				errorSave: "Nepavyko išsaugoti žemėlapio. Pabandykite dar kartą.",
+				notavailable1: "Deja, naršyklėje Firefox žemėlapio kūrimas arba redagavimas nepalaikomas dėl techninių galimybių ribotumo. Pasakojimą verčiau kurti kitą žiniatinklio naršykle arba pasitelkite problemos sprendimą.",
+				notavailable2: "Deja, žemėlapio kūrimas arba redagavimas nepalaikomas, nes pasakojimo aplikacijos nėra %PRODUCT%. Norėdami gauti daugiau informacijos, susisiekite su ArcGIS administratoriumi.",
+				notavailable3: "Deja, pasakojimo kūrimas arba redagavimas nepalaikomas šioje Portal for ArcGIS versijoje (reikalinga10.4 arba naujesnė versija). Norėdami gauti daugiau informacijos, susisiekite su ArcGIS administratoriumi.",
+				notavailable4: "Galite sukurti žemėlapį naudodami %MV%, tada grįžti čia ir įtraukti jį į savo pasakojimą.",
+				notavailable5: "Žemėlapį galite redaguoti naudodami %MV%, grįžti čia ir %apply%, kad matytumėte savo pakeitimus",
+				notavailable6: "žemėlapių peržiūros programa",
+				notavailable7: "įkelti žemėlapį iš naujo"
 			}
 		},
 		configure: {
@@ -57,7 +82,7 @@
 					contentLabel: "Turinys",
 					favoritesLabel: "Mėgstamiausi"
 				},
-				title: "Pasirinkite internetinį žemėlapį",
+				title: "Pasirinkti žemėlapį",
 				searchTitle: "Ieškoti",
 				ok: "Gerai",
 				cancel: "Atšaukti",

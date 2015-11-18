@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Paiguta",
-				lblHeader: "Sisu korraldamiseks lohistage loo jaotised soovitud kohta.",
+				lblHeader: "Loo korraldamiseks lohistage loo jaotised soovitud kohta.",
 				lblColTitle: "Pealkiri",
 				lblColPubDate: "Avaldamise kuupäev",
 				lblColStatus: "Staatus",

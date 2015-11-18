@@ -64,7 +64,7 @@
 				url: "Vimeo 视频的 URL"
 			},
 			videoSelectorOther: {
-				explain1: "应用程序无法播放原始视频(如 avi、mpeg)，但可以播放带有内置播放器的托管视频文件(如 YouTube 或 Vimeo)。",
+				explain1: "此故事无法播放原始视频(例如 avi、mpeg)，但可以播放带有内置播放器的托管视频文件(例如 YouTube 或 Vimeo)。",
 				explain2: "大多数在线视频托管服务均提供此功能，您必须查找此选项以嵌入视频，复制给定代码并使用 %WEBPAGE%。",
 				explain3: "或者，如果您希望自己托管视频，则可以创建使用视频播放器(如 %EXAMPLE%)的 HTML 页面，托管此页面并同样使用 %WEBPAGE%。",
 				webpage: "网页要素"

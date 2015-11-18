@@ -3,6 +3,7 @@ define(["lib-build/css!./Builder",
 		"./BuilderPanel",
 		"./settings/SettingsPopup",
 		"./BuilderHelper",
+		"./MyStoriesWrapper",
 		"../utils/CommonHelper",
 		"../utils/WebMapHelper",
 		"dojo/_base/lang",
@@ -19,6 +20,7 @@ define(["lib-build/css!./Builder",
 		BuilderPanel, 
 		SettingsPopup, 
 		BuilderHelper, 
+		MyStoriesWrapper,
 		CommonHelper, 
 		WebMapHelper, 
 		lang, 
@@ -70,6 +72,9 @@ define(["lib-build/css!./Builder",
 			
 			topic.subscribe("BUILDER_INCREMENT_COUNTER", _builderPanel.incrementSaveCounter);	
 			topic.subscribe("HEADER_EDITED", headerEdited);
+			
+			// My Stories
+			topic.subscribe("BUILDER-MY-STORIES-CHECK", MyStoriesWrapper.scanStory);
 			
 			// Reload / close confirmation if there is unsaved change
 			window.onbeforeunload = function (e) {
@@ -564,7 +569,18 @@ define(["lib-build/css!./Builder",
 			if (response && response.success) {
 				_builderPanel.saveSucceeded();
 				app.data.updateAfterSave();
-				app.isGalleryCreation = false;
+				
+				// Initialize My Stories
+				if ( app.isGalleryCreation || app.isDirectCreationFirstSave ){
+					app.isDirectCreationFirstSave = false;
+					app.isGalleryCreation = false;
+					// Delay a little to be sure the share dialog will be open when the scan will be done
+					setTimeout(window.myStoriesInit, 200);
+				}
+				else {
+					MyStoriesWrapper.scanStory();
+				}
+				
 				_builderPanel.updateSharingStatus();
 			}
 			else

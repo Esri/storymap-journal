@@ -2,52 +2,76 @@
 	<div class="modal-content">
 		<div class="modal-logo"></div>
 		<div class="modal-header">
-			<h3 class="modal-title"></h3>
+			<h3 class="modal-title"><%= title %></h3>
 		</div>
 		<div class="modal-body">
-			<div class="first-save hide">
-				<div class="header"></div>
-				<div class="btns">
-					<button class="btn btn-primary btn-preview"><%= firstSavePreview %></button>
-					<button class="btn btn-primary btn-share"><%= firstSaveShare %></button>
-				</div>
-				<div class="question question1"></div>
-				<div class="answer answer1"></div>
-			</div>
-			<div class="share">
-				<div class="not-shared hide">
-					<div class="header"></div>
-					<div class="share-btn">
-						<button class="btn btn-default btn-preview"><%= firstSavePreview %></button>
-						<span class="btn-sharePublicWrapper">
-							<button class="btn btn-primary btn-sharePublic"></button>
-						</span>
-						<button class="btn btn-primary btn-shareOrga"></button>
+			<div class="sharing-container">
+				<div class="btn-group app-sharing-container">
+					<div class="app-sharing-wrapper">
+						<div class="app-sharing-loading"></div>
+						<button class="app-sharing-icon glyphicon glyphicon-user" data-sharing="private" title="<%= btnPrivateTooltip %>"><span class="app-sharing-private"><%= btnPrivate %></span></button>
 					</div>
-					<div class="share-warning"></div>
+					<div class="app-sharing-wrapper">
+						<div class="app-sharing-loading"></div>
+						<button class="app-sharing-icon share-group" data-sharing="organization" title="<%= btnOrgTooltip %>"><%= btnOrg %></button>						
+					</div>
+					<div class="app-sharing-wrapper">
+						<div class="app-sharing-loading"></div>
+						<button class="app-sharing-icon share-globe" data-sharing="public" title="<%= btnPublicTooltip %>"><%= btnPublic %></button>
+					</div>
+					<span class="preview-container">
+						<button class="btn btn-naked btn-link btn-open"></button>
+					</span>
 				</div>
-				<div class="shared-dialog">
-					<div class="share-url-panel"></div>
-					<div class="explain"></div>
-					
-					<div class="question shared-question0"></div>
-					<div class="answer shared-answer0"></div>
-					
-					<div class="question shared-question1"></div>
-					<div class="answer shared-answer1"></div>
-					
-					<div class="question shared-question2"></div>
-					<div class="answer shared-answer2"></div>
-					
-					<div class="question shared-question3"></div>
-					<div class="answer shared-answer3"></div>
+				<div class="sharing-action-result hide"></div>
+			</div>
+			
+			<div class="story-checked-container hide">
+				<div class="story-status"></div>
+				
+				<div class="views">
+					<div class="view view-share active" style="text-align: center">
+						<table style="width: 100%">
+							<tr style="vertical-align: top;">
+								<td style="width: 50%">
+									<div class="socialize-title"><%= socialize %></div>
+									<div class="share-url-panel"></div>
+									<div class="social-container">
+										<i class="shareIcon blackHover share_facebook icon-facebook-squared"></i>
+										<i class="shareIcon blackHover share_twitter icon-twitter"></i>
+									</div>
+								</td>
+								<td style="width: 50%">
+									<div class="embed-title"><%= embedTitle %></div>
+									<div class="share-embed-panel"></div>
+								</td>
+							</tr>
+							
+						</table>
+					</div>
+					<div class="view view-my-stories">
+						<iframe id="my-stories-frame"></iframe>
+					</div>
+					<div class="view view-private-story">
+						<div class="private-story-call-to-action"></div>
+					</div>
 				</div>
+				
+				<div class="view-toggle-container">
+					<div class="btn btn-default view-toggle-btn"><%= btnToggle %></div>
+				</div>
+			</div>
+			
+			<div class="story-checking-container">
+				<div style="margin: 20px 0;">
+					<img src="resources/tpl/viewer/icons/loading-light.gif" />
+				</div>
+				<%= loadingMessage %>
 			</div>
 		</div>
 		<div class="modal-footer">
-			<span class="footer-status success"></span>
-			<span class="footer-status error"></span>
-			<button class="btnClose btn btn-naked btn-close" data-dismiss="modal" aria-hidden="true"></button>
+			<span class="footer-msg"></span>
+			<button class="btnClose btn btn-naked btn-close" data-dismiss="modal" aria-hidden="true"><%= close %></button>
 		</div>
 	</div>
 </div>

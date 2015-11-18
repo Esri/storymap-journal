@@ -75,7 +75,8 @@ define([
 			this.updateTooltipPlacement = function(placement)
 			{
 				container.find('.dot').tooltip('destroy').tooltip({
-					placement: placement
+					placement: placement,
+					trigger: 'hover'
 				});
 			};
 			
@@ -135,7 +136,8 @@ define([
 				);
 				
 				container.find('.dot').tooltip({
-					placement: _params.tooltipPosition
+					placement: _params.tooltipPosition,
+					trigger: 'hover'
 				});
 				
 				setColor();

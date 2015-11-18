@@ -95,6 +95,11 @@ figure figcaption {
 	cursor: pointer;
 }
 
+.image-container.has-width img {
+	height: inherit;
+}
+
+
 /* 
  * The container is supposed to be an image-container except when ckeditor bug and decide to use a p 
  * (seems to happen a lot when playing with alignement)

@@ -1,9 +1,15 @@
 define([
         "lib-build/tpl!./ShareEmbedPanel",
-		"lib-build/css!./ShareEmbedPanel"
+		"lib-build/css!./ShareEmbedPanel",
+		"dojo/has",
+		"lib-app/ZeroClipboard/ZeroClipboard.min",
+		"lib-build/css!storymaps/common/_resources/font/builder-share/css/share-font.css"
     ], 
 	function (
-		viewTpl
+		viewTpl,
+		viewCss,
+		has,
+		ZeroClipboard
 	) {
 		return function ShareEmbedPanel(container)
 		{
@@ -32,6 +38,8 @@ define([
 			
 			buildEmbedSizeList();
 			
+			initEvents();
+			
 			this.present = function(url)
 			{
 				_url = url;
@@ -40,6 +48,11 @@ define([
 				container.find('.embed-lbl-size').html(i18n.viewer.shareFromCommon.size);
 				
 				container.find('.embed-sizes a').eq(0).click();
+				
+				// Touch device don't likely have flash...
+				container.find('.share-embed-wrapper').toggleClass('touch', !! has("touch"));
+				container.find('.share-clipboard').attr('title', i18n.viewer.shareFromCommon.copy);
+				container.find('.share-status').html(i18n.viewer.shareFromCommon.copied);
 			};
 			
 			function buildEmbedSizeList()
@@ -64,6 +77,34 @@ define([
 						.replace("%WIDTH%", width)
 						.replace("%HEIGHT%", height)
 				);
+				
+				//
+				// Copy button
+				//
+				
+				ZeroClipboard.config( { swfPath: (app.isProduction ? "resources/lib/" : "lib-app") + "/ZeroClipboard/ZeroClipboard.swf"  } );
+				var bitLyCopy = new ZeroClipboard(container.find(".share-btn"));
+				
+				bitLyCopy.on("copy", function (event) {
+					var clipboard = event.clipboardData;
+					clipboard.setData("text/plain", container.find(".embedTextarea").val());
+					container.find(".share-btn").removeClass('share-clipboard').addClass('share-ok');
+					container.find(".share-status").show();
+					container.find(".embedTextarea")[0].selectionStart = container.find(".embedTextarea")[0].selectionEnd = -1;
+					
+					container.find(".bitlylink").focus();
+					setTimeout(function(){
+						container.find(".share-btn").addClass('share-clipboard').removeClass('share-ok');
+						container.find(".share-status").hide();
+					}, 2000);
+				});
+			}
+			
+			function initEvents()
+			{
+				container.find(".embedTextarea").click(function(){
+					this.setSelectionRange(0, this.value.length);
+				});
 			}
 		};
 	}

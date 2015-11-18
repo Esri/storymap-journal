@@ -10,15 +10,17 @@ define([
 		
 		function resizeLinkContainer(container)
 		{
-			container.find(".linkContainer").css(
-				"width",
-				// TODO remove that ugly hack (186 is the width of the responsive view header container)
-				(container.find(".logoContainer").position()||{ left: 186 }).left
-				- container.find(".linkContainer").parent().position().left
-				- container.find(".shareBtns").outerWidth() 
-				// need a margin if there is a logo
-				- ($(".logoContainer").width() > 1 ? 14 : 4)
-			);
+			if ( container.find(".linkContainer").parent().length ) {
+				container.find(".linkContainer").css(
+						"width",
+						// TODO remove that ugly hack (186 is the width of the responsive view header container)
+						(container.find(".logoContainer").position()||{ left: 186 }).left
+						- container.find(".linkContainer").parent().position().left
+						- container.find(".shareBtns").outerWidth() 
+						// need a margin if there is a logo
+						- ($(".logoContainer").width() > 1 ? 14 : 4)
+					);
+			}
 		}
 		
 		return {

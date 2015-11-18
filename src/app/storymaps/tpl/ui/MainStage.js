@@ -675,6 +675,11 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					query.outSpatialReference = app.map.spatialReference;
 				}
 				
+				// TODO: Image Services
+				if ( ! layer.queryFeatures ) {
+					return;
+				}
+				
 				layer.queryFeatures(query).then(function(featureSet) {
 					applyPopupConfigurationStep3(featureSet.features, index);
 				});
@@ -730,6 +735,12 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 							.css("marginRight", - $(".mediaBackContainer .backButton").outerWidth() / 2);
 					}
 				}
+				else if ( index === null ) {
+					$('.mediaBackContainer')
+						.show()
+						.css("marginLeft", - $(".mediaBackContainer .backButton").outerWidth() / 2)
+						.css("marginRight", - $(".mediaBackContainer .backButton").outerWidth() / 2);
+				}
 			}
 			
 			function setMapControlsColor()
@@ -746,6 +757,29 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 			this.showWebmapById = function(webmapId)
 			{
 				updateMainMediaMaps(webmapId, null, null, null);
+			};
+			
+			this.reloadCurrentWebmap = function()
+			{
+				var currentSection = app.data.getCurrentSection();
+				
+				if ( currentSection && currentSection.media && currentSection.media.webmap ) {
+					var webmapId = currentSection.media.webmap.id,
+						mapContainer = $('.mapContainer[data-webmapid="' + webmapId + '"]');
+				
+					mapContainer.parent().remove();
+					if ( app.maps[webmapId] ) {
+						app.maps[webmapId].response.map.destroy();
+						delete app.maps[webmapId];
+					}
+				
+					$("#mainStagePanel .medias").append(mainMediaContainerMapTpl({ 
+						webmapid: webmapId, 
+						isTemporary: false
+					}));
+					
+					topic.publish("story-navigate-section", app.data.getCurrentSectionIndex());
+				}
 			};
 
 			this.loadTmpWebmap = function(webmapId)
@@ -836,7 +870,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					//  as a workaround <iframe srcdoc="http://" src="about:blank></iframe>
 					if ( ! embedContainer.attr('src') ){
 						// Loading indicator
-						embedContainer.load(stopMainStageLoadingIndicator);
+						embedContainer.off('load').load(stopMainStageLoadingIndicator);
 						startMainStageLoadingIndicator();
 						
 						// TODO youtube recommand an origin param "&origin=" + encodeURIComponent(document.location.origin)

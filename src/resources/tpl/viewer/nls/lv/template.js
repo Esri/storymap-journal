@@ -5,33 +5,33 @@
 				close: "Aizvērt"
 			},
 			loading: {
-				step1: "Aplikācijas ielāde",
+				step1: "Ielādē stāstu",
 				step2: "Datu ielāde",
 				step3: "Inicializēšana",
 				loadBuilder: "Pārslēgšanās uz veidotāju",
 				long: "Karšu žurnāls tiek inicializēts",
 				long2: "Paldies, ka uzgaidījāt",
-				failButton: "Pārlādēt aplikāciju"
+				failButton: "Stāsta atkārtota ielāde"
 			},
 			signin: {
 				title: "Nepieciešama autentifikācija",
-				explainViewer: "Lai piekļūtu aplikācijai, pierakstieties %PORTAL_LINK%, izmantojot kontu.",
-				explainBuilder: "Lai konfigurētu aplikāciju, pierakstieties %PORTAL_LINK%, izmantojot kontu."
+				explainViewer: "Lai piekļūtu stāstam, pierakstieties portālā %PORTAL_LINK%, izmantojot kontu.",
+				explainBuilder: "Lai konfigurētu stāstu, pierakstieties portālā %PORTAL_LINK%, izmantojot kontu."
 			},
 			errors: {
 				boxTitle: "Kļūda",
 				invalidConfig: "Nederīga konfigurācija",
 				invalidConfigNoApp: "Web kartēšanas aplikācijas identifikators nav norādīts šeit: index.html.",
 				unspecifiedConfigOwner: "Autorizētais īpašnieks nav konfigurēts.",
-				invalidConfigOwner: "Aplikācijas īpašnieks nav autorizēts.",
+				invalidConfigOwner: "Stāsta īpašnieks nav autorizēts.",
 				createMap: "Nevar izveidot karti",
 				invalidApp: "%TPL_NAME% nepastāv vai tai nevar piekļūt.",
 				appLoadingFail: "Radās kļūda, %TPL_NAME% netika ielādēta pareizi.",
-				notConfiguredDesktop: "Aplikācija vēl nav konfigurēta.",
-				notConfiguredMobile: "%TPL_NAME% veidotājs ekrānā ar šādu izšķirtspēju netiek atbalstīts.",
-				notAuthorized: "Jums nav tiesību piekļūt šai aplikācijai",
+				notConfiguredDesktop: "Stāsts vēl nav konfigurēts.",
+				notConfiguredMobile: "%TPL_NAME% veidotājs netiek atbalstīts displejā ar šādiem izmēriem.",
+				notAuthorized: "Jūs neesat pilnvarots piekļūt šim stāstam",
 				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
-				noViewerIE: "Šī aplikācija netiek atbalstīta Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
+				noViewerIE: "Šis stāsts netiek atbalstīts Internet Explorer versijās, kas ir vecākas par %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
 				mapLoadingFail: "Diemžēl radās kļūda, karte netika ielādēta pareizi.",
 				signOut: "Izrakstīties"
@@ -60,7 +60,10 @@
 				bitlyTooltip: "Iegūt īso saiti",
 				templateTitle: "Iestatīt šablona virsrakstu",
 				templateSubtitle: "Iestatīt šablona apakšvirsrakstu",
-				share: "Koplietot"
+				share: "Koplietot",
+				checking: "Pārbauda jūsu stāsta saturu",
+				fix: "Problēmu labošana jūsu stāstā",
+				noerrors: "Nav konstatētas problēmas"
 			},
 			overviewFromCommon: {
 				title: "Pārskata karte"

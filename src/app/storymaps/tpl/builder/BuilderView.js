@@ -19,6 +19,8 @@ define(["lib-build/tpl!./BuilderView",
 		"storymaps/common/builder/media/MediaSelector",
 		"./addedit/Popup",
 		"./OrganizePopup",
+		// Map Editor
+		"storymaps/common/builder/media/map/EditDialog",
 		// Utils
 		"dojo/Deferred",
 		"dojo/topic",
@@ -47,6 +49,8 @@ define(["lib-build/tpl!./BuilderView",
 		MediaSelector,
 		AddEditPopup,
 		OrganizePopup, 
+		// Map Editor
+		MapEditDialog,
 		// Utils
 		Deferred,
 		topic,
@@ -58,12 +62,14 @@ define(["lib-build/tpl!./BuilderView",
 			
 			var _this = this,
 				_settingsPopup = null,
+				_handleMyStoriesFirstAdd = null,
 				_landingUI = new Landing($("#builderLanding"), firstAdd, clickHelp),
 				_helpUI = new Help($("#builderHelp")),
 				_initPopup = new InitPopup($("#initPopup")),
 				_sharePopup = new SharePopup($('#sharePopup')),
 				_addEditPopup = new AddEditPopup($('#addEditPopup')),
-				_organizePopup = new OrganizePopup($('#organizePopup'));
+				_organizePopup = new OrganizePopup($('#organizePopup')),
+				_mapEditDialog = new MapEditDialog($('#mapEditPopup'));
 
 			this.init = function(settingsPopup)
 			{
@@ -76,6 +82,8 @@ define(["lib-build/tpl!./BuilderView",
 				app.builder.openSharePopup = openSharePopup;
 				app.builder.openEditPopup = openEditPopup;
 				app.builder.openHelpPopup = openHelpPopup;
+				app.builder.getAddEditEntryTitle = getAddEditEntryTitle;
+				app.builder.openMapViewer = openMapViewer;
 				
 				CKEDITOR.disableAutoInline = true;
 				
@@ -126,6 +134,13 @@ define(["lib-build/tpl!./BuilderView",
 						app.ui.floatingPanel.enableSwiperKeybordEvent();
 					}
 				});
+				
+				//
+				// My Stories
+				//
+				
+				topic.subscribe("MY-STORIES-EDIT-MEDIA", myStoriesEditMedia);
+				topic.subscribe("MY-STORIES-EDIT-MAP", myStoriesEditMap);
 			};
 			
 			this.appInitComplete = function()
@@ -144,6 +159,9 @@ define(["lib-build/tpl!./BuilderView",
 						displayTab: CommonHelper.getUrlParams().debugView || "content" ,
 						sectionIndex: CommonHelper.getUrlParams().debugIndex || 0 
 					});
+				
+				if ( ! app.isProduction && CommonHelper.getUrlParams().debug == "share" )
+					setTimeout(openSharePopup, 1000);
 				
 				updateAddButtonStatus();
 			};
@@ -192,6 +210,13 @@ define(["lib-build/tpl!./BuilderView",
 					setTimeout(function(){
 						clickAdd(title);
 						$("body").css("pointer-events", "inherit");
+						
+						if ( ! _handleMyStoriesFirstAdd ) {
+							_handleMyStoriesFirstAdd = topic.subscribe("BUILDER-MY-STORIES-CHECK", function(){
+								setTimeout(window.myStoriesInit, 300);
+								_handleMyStoriesFirstAdd.remove();
+							});
+						}
 					}, 100);
 				}, 1800);
 			}
@@ -220,6 +245,9 @@ define(["lib-build/tpl!./BuilderView",
 						
 						// After first section added - placement of Add/Orga - TODO remove after title optimization
 						topic.publish("CORE_RESIZE");
+						
+						// Check the story
+						topic.publish("BUILDER-MY-STORIES-CHECK");
 					},
 					function(){
 						$(".firstAddExplain").hide();
@@ -287,7 +315,8 @@ define(["lib-build/tpl!./BuilderView",
 					displayTab: cfg.displayTab,
 					webmaps: app.data.getWebmapsInfo(),
 					section: app.data.getStoryByIndex(cfg.sectionIndex),
-					sectionIndex: cfg.sectionIndex
+					sectionIndex: cfg.sectionIndex,
+					actionId: cfg.actionId
 				}).then(
 					function(updatedSection) {
 						app.data.editSection(cfg.sectionIndex, updatedSection);
@@ -298,15 +327,25 @@ define(["lib-build/tpl!./BuilderView",
 							index: cfg.sectionIndex,
 							section: updatedSection
 						});
+						
 						topic.publish("BUILDER_INCREMENT_COUNTER", 1);
 						popupDeferred.resolve();
+						
+						// Check the story
+						topic.publish("BUILDER-MY-STORIES-CHECK");
 					},
 					function(){
 						checkForTemporaryMaps();
+						popupDeferred.reject();
 					}
 				);
 				
 				return popupDeferred;
+			}
+			
+			function getAddEditEntryTitle()
+			{
+				return _addEditPopup.getAddEditEntryTitle();
 			}
 			
 			//
@@ -334,6 +373,9 @@ define(["lib-build/tpl!./BuilderView",
 						
 						topic.publish("story-update-sections");
 						topic.publish("BUILDER_INCREMENT_COUNTER", 1); // TODO
+						
+						// Check the story
+						topic.publish("BUILDER-MY-STORIES-CHECK");
 					},
 					function(){
 						_this.updateUI();
@@ -426,7 +468,7 @@ define(["lib-build/tpl!./BuilderView",
 			
 			function openSharePopup(isFirstSave)
 			{
-				_sharePopup.present(isFirstSave);
+				_sharePopup.present(isFirstSave, Core.getHeaderUserCfg());
 			}
 			
 			//
@@ -474,10 +516,84 @@ define(["lib-build/tpl!./BuilderView",
 				}, 50);
 			}
 			
+			//
+			// My Stories
+			//
+			
+			function myStoriesEditMedia(params)
+			{
+				params = params || {};
+				
+				var index = parseInt(params.index, 10);
+				
+				if ( index < 0 || index > app.data.getStoryLength() - 1 ) {
+					return;
+				}
+				
+				$(".builderShare").modal('hide');
+				
+				topic.publish("story-navigate-section", params.index);
+				
+				if ( params.type == 'main-stage' ) {
+					app.builder.openEditPopup({
+						sectionIndex: params.index
+					}).then(function(){
+						app.builder.openSharePopup();
+					}, function(){
+						app.builder.openSharePopup();
+					});
+				}
+				else if ( params.type == 'main-stage-action' ) {
+					app.builder.openEditPopup({
+						sectionIndex: params.index,
+						actionId: params.actionId,
+						displayTab: 'content'
+					}).then(function(){
+						app.builder.openSharePopup();
+					}, function(){
+						app.builder.openSharePopup();
+					});
+				}
+			}
+			
+			function myStoriesEditMap(params)
+			{
+				params = params || {};
+				
+				if ( $.inArray(params.id, app.data.getWebmaps()) < 0 ) {
+					return;
+				}
+				
+				$(".builderShare").modal('hide');
+				
+				openMapViewer({
+					id: params.id
+				}).then(
+					function(){
+						app.builder.openSharePopup();
+					},
+					function(){
+						app.builder.openSharePopup();
+					}
+				);
+			}
+			
+			//
+			// Map Viewer
+			//
+			
+			function openMapViewer(params)
+			{
+				return _mapEditDialog.present(params);
+			}
+			
 			/*jshint -W098 */
 			this.resize = function(cfg)
 			{
-				//
+				// On Firefox and share dialog is displayed
+				if ( has("ff") && $("#sharePopup").hasClass("in") ) {
+					_sharePopup.updateMyStoriesPosition();
+				}
 			};
 	
 			this.initLocalization = function()

@@ -57,7 +57,7 @@
 			},
 			organizePopup: {
 				title: "Düzenle",
-				lblHeader: "İçeriğinizi düzenlemek için sürükleyip bırakın.",
+				lblHeader: "Hikayenizi düzenlemek için bölümleri sürükleyip bırakın.",
 				lblColTitle: "Başlık",
 				lblColPubDate: "Yayımlanma tarihi",
 				lblColStatus: "Durum",

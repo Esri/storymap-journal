@@ -4,11 +4,15 @@ define(["lib-build/tpl!./WebMapSelector",
 		"lib-build/css!../../browse-dialog/css/browse-dialog",
 		"lib-build/css!../../browse-dialog/storymaps-override",
 		"./MapConfigOverlay",
+		"./MapViewerWrapperUtils",
+		"./ErrorDialog",
 		"esri/geometry/Extent",
 		"dojo/Deferred",
 		"dojo/topic",
 		"dijit/registry",
-		"dojo/on"], 
+		"dojo/on",
+		"dojo/has"
+	], 
 	function (
 		viewTpl,
 		viewCss,
@@ -16,20 +20,26 @@ define(["lib-build/tpl!./WebMapSelector",
 		browseDlgCss,
 		browseDlgCss2,
 		MapConfigOverlay,
+		MapViewerWrapperUtils,
+		ErrorDialog,
 		Extent,
 		Deferred,
 		topic,
 		registry,
-		on
+		on,
+		has
 	){
 		return function WebMapSelector(container, openConfigureCallback, closeConfigureCallback, onDataChangeCallback) 
 		{
-			var _cfg = null,
+			var _this = this,
+				_cfg = null,
 				_browseDialog = null,
-				_mapConfig = null;
+				_mapConfig = null,
+				_errorDialog = new ErrorDialog($("#mapErrorDialog"));
 			
 			container.append(viewTpl({
 				lblWebmap: i18n.commonWebmap.selector.lblWebMap,
+				lblEdit: i18n.commonCore.common.edit,
 				lblLocation: i18n.commonWebmap.selector.lblLocation,
 				lblContent: i18n.commonWebmap.selector.lblContent,
 				lblPopup: i18n.commonWebmap.selector.lblPopup,
@@ -111,6 +121,8 @@ define(["lib-build/tpl!./WebMapSelector",
 					_browseDialog = null;
 				}
 				buildBrowseDialog();
+				
+				this.postDisplay();
 			};
 			
 			this.checkError = function()
@@ -146,6 +158,24 @@ define(["lib-build/tpl!./WebMapSelector",
 				};
 			};
 			
+			this.activate = function()
+			{
+				_this.postDisplay();
+			};
+			
+			this.postDisplay = function()
+			{
+				if ( container.find('.webmapSelector').width() === 0 ) {
+					return;
+				}
+				
+				// Optional but allow the list to be slightly wider
+				container.find('.selected-map-edit-container').css(
+					'width',
+					container.find('.selected-map-edit').width() 
+				);
+			};
+			
 			function buildWebmapList(currentMap, webmaps)
 			{
 				container.find('.webmaps-list').empty();
@@ -178,7 +208,8 @@ define(["lib-build/tpl!./WebMapSelector",
 					addWebMapListItem('', webmap.id, title, usage, sharing);
 				});
 				
-				addWebMapListItem('action-btn browse-webmap', '', i18n.commonWebmap.selector.browseMaps, app.portal.portalName);
+				addWebMapListItem('action-btn browse-webmap', '', i18n.commonWebmap.selector.browseMaps, '' /*app.portal.portalName*/);
+				addWebMapListItem('action-btn create-webmap', '', i18n.commonWebmap.selector.createMap, '');
 				
 				if ( currentMap ) {
 					container.find('.webmaps-list-btn-inner')
@@ -189,6 +220,7 @@ define(["lib-build/tpl!./WebMapSelector",
 				else
 					container.find('.webmaps-list-btn-inner').html(i18n.commonWebmap.selector.select);
 				
+				container.find('.selected-map-edit').toggle(!! currentMap);
 				
 				container.find('.webmaps-list li:not(.action-btn) a').click(function(){
 					container.find('.webmaps-list-btn-inner')
@@ -206,6 +238,8 @@ define(["lib-build/tpl!./WebMapSelector",
 				container.find('.browse-webmap a').click(function(){
 					_browseDialog.show();
 				});
+				
+				container.find('.create-webmap a').click(createNewWebmap);
 			}
 			
 			function addWebMapListItem(cssClass, webmap, title, info, status)
@@ -243,25 +277,53 @@ define(["lib-build/tpl!./WebMapSelector",
 				
 				on(_browseDialog, "close", function(){
 					if (_browseDialog.get("selected")) {
-						container.find('.webmaps-list-btn-inner')
-							.data('webmap', _browseDialog.get("selected").id)
-							.html(
-								'<span class="title">' 
-								+ _browseDialog.get("selected").title
-								+ '</span>'
-								+ '<span class="info">' + i18n.commonWebmap.selector.newMap + '</span>'
-							);
-						container.find('.selected-map-sharing-status').html(_browseDialog.get("selected").access);
-						// Reset Map Config
-						_mapConfig = {};
-						updateStatusConfigureButton();
+						newMapSelected(
+							_browseDialog.get("selected").id,
+							_browseDialog.get("selected").title,
+							false
+						);
 					}
 				});
 			}
 			
+			function newMapSelected(id, title, justCreated)
+			{
+				var newMapLabel = justCreated ? i18n.commonWebmap.selector.newCreatedMap : i18n.commonWebmap.selector.newMap;
+				
+				container.find('.webmaps-list-btn-inner')
+					.data('webmap', id)
+					.html(
+						'<span class="title">' 
+						+ title
+						+ '</span>'
+						+ '<span class="info">' + newMapLabel + '</span>'
+					);
+				
+				//container.find('.selected-map-sharing-status').html(_browseDialog.get("selected").access);
+				container.find('.selected-map-edit').toggle(true);
+				
+				// Reset Map Config
+				_mapConfig = {};
+				updateStatusConfigureButton();
+				
+				onDataChangeCallback && onDataChangeCallback({
+					newMedia: {
+						type: 'webmap',
+						webmap: {
+							id: id,
+							title: title
+						}
+					}
+				});
+				
+				_this.postDisplay();
+			}
+			
 			function initEvents()
 			{
-				container.find('.help').tooltip();
+				container.find('.help').tooltip({
+					trigger: 'hover'
+				});
 				
 				// TODO shouldn't subscribe to that topic globally
 				topic.subscribe("LOADED_WEBMAP_INFOS", onWebmapLoaded);
@@ -282,6 +344,8 @@ define(["lib-build/tpl!./WebMapSelector",
 				container.find('.map-cfg-popup .btn[data-value="custom"]').click(function(){
 					onClickConfigure("POPUP");
 				});
+				
+				container.find('.selected-map-edit').click(editCurrentWebmap);
 			}
 			
 			function getSelectedWebmap()
@@ -298,6 +362,121 @@ define(["lib-build/tpl!./WebMapSelector",
 			function isCurrentSectionWebmapSelected()
 			{
 				return _cfg.media && _cfg.media.webmap && _cfg.media.webmap.id == getSelectedWebmap();
+			}
+			
+			/*
+			 * Create/edit map
+			 */
+			
+			function createNewWebmap()
+			{
+				if  ( isTouchOnly() ) {
+					_errorDialog.present({
+						newMap: true,
+						error: "TOUCH_ONLY",
+						url: MapViewerWrapperUtils.getMapViewerURL(),
+						isPortal: app.isPortal
+					});
+				}
+				else if ( ! MapViewerWrapperUtils.isWhiteListedDomain() && app.isProduction ) {
+					_errorDialog.present({
+						newMap: true,
+						error: "DOMAIN",
+						url: MapViewerWrapperUtils.getMapViewerURL(),
+						isPortal: app.isPortal
+					});
+				}
+				else if ( app.isPortal && ! app.portal.hasMyStories ) {
+					_errorDialog.present({
+						newMap: true,
+						error: "PORTAL",
+						url: MapViewerWrapperUtils.getMapViewerURL(),
+						isPortal: app.isPortal
+					});
+				}
+				else {
+					app.builder.openMapViewer({
+						newMap: true,
+						title: app.builder.getAddEditEntryTitle()
+					}).then(
+						function(result){
+							if ( result.newMap ) {
+								newMapSelected(
+									result.newMapInfos.id, 
+									result.newMapInfos.title,
+									true
+								);
+							}
+						},
+						function(e)
+						{
+							if ( e == "DEV_TOKEN" || e == "DEV_FAIL" ) {
+								_errorDialog.present({
+									newMap: true,
+									error: e
+								});
+							}
+						}
+					);
+				}
+			}
+			
+			function editCurrentWebmap()
+			{
+				if  ( isTouchOnly() ) {
+					_errorDialog.present({
+						newMap: false,
+						error: "TOUCH_ONLY",
+						url: MapViewerWrapperUtils.getMapViewerLink(getSelectedWebmap()),
+						isPortal: app.isPortal
+					});
+				}
+				else if ( ! MapViewerWrapperUtils.isWhiteListedDomain() && app.isProduction ) {
+					_errorDialog.present({
+						newMap: false,
+						error: "DOMAIN",
+						url: MapViewerWrapperUtils.getMapViewerLink(getSelectedWebmap()),
+						isPortal: app.isPortal
+					});
+				}
+				else if ( app.isPortal && ! app.portal.hasMyStories ) {
+					_errorDialog.present({
+						newMap: false,
+						error: "PORTAL",
+						url: MapViewerWrapperUtils.getMapViewerLink(getSelectedWebmap()),
+						isPortal: app.isPortal
+					});
+				}
+				else {
+					app.builder.openMapViewer({
+						id: getSelectedWebmap()
+					}).then(
+						function(result)
+						{
+							if ( result.newMap ) {
+								newMapSelected(
+									result.newMapInfos.id, 
+									result.newMapInfos.title,
+									true
+								);
+							}
+						},
+						function(e)
+						{
+							if ( e == "DEV_TOKEN" || e == "DEV_FAIL" ) {
+								_errorDialog.present({
+									newMap: false,
+									error: e
+								});
+							}
+						}
+					);
+				}
+			}
+			
+			function isTouchOnly()
+			{
+				return has("touch") && (/Android|webOS|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile/i).test(navigator.userAgent);
 			}
 			
 			/*

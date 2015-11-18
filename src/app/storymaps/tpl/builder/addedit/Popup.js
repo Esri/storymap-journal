@@ -118,7 +118,8 @@ define(["lib-build/tpl!./Popup",
 						theme: WebApplicationData.getTheme().colors,
 						contentLabel: true
 					}),
-					html: true
+					html: true,
+					trigger: 'hover'
 				});
 				
 				_viewMainStage.present(
@@ -151,6 +152,11 @@ define(["lib-build/tpl!./Popup",
 				_popupDeferred.reject();
 			};
 			
+			this.getAddEditEntryTitle = function()
+			{
+				return container.find('.title').val();
+			};
+			
 			function initEvents()
 			{
 				// TODO don't do that and only require a title
@@ -175,6 +181,12 @@ define(["lib-build/tpl!./Popup",
 				container.on('shown.bs.modal', function () {
 					if ( _ckeditorReady )
 						postDisplay();
+					// From some reason in Edge, CKEditor don't fire instanceReady for the main Editor 
+					//  so got to force calling postDisplay
+					else if ( navigator.userAgent.match(/Edge\/\d+/) ) {
+						if ( ! _ckeditorReady )
+							postDisplay();
+					}
 					else {
 						_ckeEditorReadyListener.removeListener();
 						CKEDITOR.on('instanceReady', function(){
@@ -183,6 +195,8 @@ define(["lib-build/tpl!./Popup",
 							_ckeditorReady = true;
 						});
 					}
+					
+					_viewMainStage.postDisplay();
 				});
 				
 				container.on('hide.bs.modal', function () {
@@ -375,7 +389,8 @@ define(["lib-build/tpl!./Popup",
 				else 
 					_btnSubmit.html(i18n.commonCore.common.add);
 				
-				_btnSubmit.attr("disabled", disableButton);
+				_btnSubmit.toggleClass("disabled", !! disableButton);
+				
 				if ( disableButton ) {
 					var tooltip = "";
 					if ( currentStep <= 0 ) {
@@ -391,7 +406,8 @@ define(["lib-build/tpl!./Popup",
 						
 					container.find('.btnSubmitWrapper').tooltip({
 						container: '.btnSubmitTooltipContainer',
-						title: tooltip
+						title: tooltip,
+						trigger: 'hover'
 					});
 				}
 				else
