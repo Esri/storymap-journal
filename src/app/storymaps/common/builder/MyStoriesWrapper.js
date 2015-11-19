@@ -110,6 +110,7 @@ define([
 				app.isInBuilder ? IdentityManager.toJson() : null,
 				app.isDirectCreationFirstSave || app.isGalleryCreation ? null : app.data.getWebAppItem(),
 				app.cfg.TPL_ID,
+				app.isPortal,
 				// Open a section/entry configuration
 				function(index, type, actionId){
 					// type = "main-stage" || "main-stage-action" || "description" 

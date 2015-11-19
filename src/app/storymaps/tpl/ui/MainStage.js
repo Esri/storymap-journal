@@ -855,7 +855,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					embedContainer
 						.removeClass("center fit fill stretch")
 						.addClass(cfg.display)
-						.attr("data-unload", cfg.unload === undefined || cfg.unload)
+						.attr("data-unload", cfg.hash === undefined && (cfg.unload === undefined || cfg.unload))
 						.css({
 							left: 0,
 							right: 0

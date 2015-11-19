@@ -236,7 +236,9 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 			// Load the Portal
 			app.portal = new arcgisPortal.Portal(app.indexCfg.sharingurl.split('/sharing/')[0]);
-			app.portal.on("load", function(){
+			app.portal.on("load", function(response){
+				app.isPortal = !! response.isPortal;
+				
 				definePortalConfig();
 				
 				// If app is configured to use OAuth
