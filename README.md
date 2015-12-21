@@ -152,10 +152,6 @@ require(["dojo/topic"], function(topic) {
 });
 ```
 
-
-_Note that it used to be possible until March 2015 to include the navigation links presented above in web map feature collection attributes and to configure the web map popup to display that attributes. Unfortunately that's not a good practice anymore and those links will be removed from the web map automaticaly when they are edited. This would break your application._
-
-
 ### Security
 
 #### Can I keep my Journal private?
