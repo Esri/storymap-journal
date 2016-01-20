@@ -41,8 +41,8 @@ app.cfg = {
 			sizes: { small: '30%', medium: '40%', large: '50%' },
 			positions: ["left", "right"],
 			themes: [
-				{name: "side-default-1", themeMajor: "white", dotNav: "#cff2fa", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", softText: "#6eff00", softBtn: "#444",    esriLogo: "black"},
-				{name: "side-default-2", themeMajor: "white", dotNav: "#726458", panel: "#FFF8E9", media: "#C9C1B9", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black"},
+				{name: "side-default-1", themeMajor: "white", dotNav: "#cff2fa", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", softText: "#444", softBtn: "#444",    esriLogo: "black"},
+				{name: "side-default-2", themeMajor: "white", dotNav: "#cff2fa", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", softText: "#6eff00", softBtn: "#444",    esriLogo: "black"},
 				{name: "side-default-3", themeMajor: "white", dotNav: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#aaa",    esriLogo: "black"},
 				{name: "side-default-4", themeMajor: "black", dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA",    esriLogo: "white"},
 				{name: "side-default-5", themeMajor: "white", dotNav: "#68AAE1", panel: "#FFFFFF", media: "#E8E8DF", text: "#000000", textLink: "#555", softText: "#FFF",    softBtn: "#4D4D4D", esriLogo: "black"},
