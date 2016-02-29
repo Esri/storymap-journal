@@ -9,6 +9,11 @@
 	width: 200px;
 }
 
+.legendContainer table {
+	border-collapse: initial !important;
+	border-spacing: 2px !important;
+}
+
 .legendContainer .glyphicon-chevron-up,
 .legendContainer .glyphicon-chevron-down {
 	display: none !important;
@@ -33,6 +38,7 @@
 	max-height: 400px;
 	overflow-x: hidden;
 	margin-right: -10px;
+	margin-left: 8px !important;
 }
 
 .legendContainer .content.settingsOpen {

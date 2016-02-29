@@ -147,7 +147,7 @@ define(["lib-build/css!./MapCommand",
 			}
 			
 			// Use bigger icon on touch devices
-			this.setMobile(has('touch'));
+			this.setMobile(!! has('touch'));
 		};
 	}
 );

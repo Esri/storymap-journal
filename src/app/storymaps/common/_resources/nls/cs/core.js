@@ -18,7 +18,8 @@
 				height: "Výška",
 				create: "Vytvořit",
 				yes: "Ano",
-				no: "Ne"
+				no: "Ne",
+				mystories: "Moje příběhy"
 			},
 			inlineFieldEdit: {
 				editMe: "Edituj mě!"
@@ -30,9 +31,10 @@
 				buttonShare: "Sdílet",
 				buttonSettings: "Nastavení",
 				buttonHelp: "Nápověda",
-				buttonPreview: "Živý náhled",
+				buttonPreview: "Zobrazit příběh",
 				tooltipFirstSave: "Tato funkce není k dispozici, dokud aplikaci neuložíte.",
 				tooltipNotShared: "Tato funkce není k dispozici, dokud aplikaci nenasdílíte.",
+				tooltipNotShared2: "Váš příběh není sdílen, máte k němu přístup jenom vy.",
 				noPendingChange: "Žádná neuložená změna",
 				unSavedChangePlural: "Neuložené změny",
 				closeWithPendingChange: "Opravdu chcete potvrdit tuto akci? Vaše změny budou ztraceny.",
@@ -52,10 +54,21 @@
 				err1Div2: "Změňte název příběhu a poté ho uložte.",
 				btnOk: "Změňte název příběhu"
 			},
+			saveErrorSocial: {
+				title: "Aktualizace sdílení na sociálních sítích",
+				panel1: "Vzhled vašeho příběhu na sociálních médiích byl aktualizován, název vaší položky webové aplikace ArcGIS se však neshoduje s názvem vašeho příběhu.",
+				panel1tooltip: "Pokud definujete název, shrnutí a náhledový obrázek, váš příběh bude vypadat následovně:",
+				panel2:	"Název, který chcete použít na sociálních sítích:",
+				panel2q1: "Název příběhu (doporučeno)",
+				panel2q1tooltip: "Pokud zvolíte tuto možnost, název položky se změní tak, aby se shodoval s názvem příběhu, a následující změny provedené v nástroji pro tvorbu se synchronizují.",
+				panel2q2: "Název položky",
+				panel3: "Chcete-li dále vylepšit vzhled příběhu na sociálních sítích, přejděte na ${MYSTORIES} a přidejte shrnutí a náhledový obrázek.",
+				panel4: "Příště již neupozorňovat u tohoto příběhu"
+			},
 			share: {
 				shareTitle: "Sdílejte svůj příběh",
 				preview: "Náhled",
-				viewlive: "Živý náhled",
+				viewlive: "Zobrazit příběh",
 				btnPrivate: "Soukromé",
 				btnPrivateTooltip: "Příběh můžete vidět pouze vy",
 				btnOrg: "Organizace",
@@ -74,23 +87,24 @@
 				notavailable2: "Je nám líto, sdílení vašeho příběhu z nástroje pro tvorbu není podporováno v této verzi Portal for ArcGIS (vyžaduje 10.4 nebo novější).",
 				notavailable3: "Tento příběh můžete sdílet z %LINK%.",
 				notavailable4: "Moje příběhy",
-				notavailable5: "je to stránka položky",
+				notavailable5: "stránku položky",
 				notavailable6: "Je nám líto, tato funkce není v režimu vývoje plně podporována. V závislosti na vašem scénáři nasazení může být tato funkce podporována při nasazení.",
 				notavailable7: "Nezapomeňte v %MYCONTENT% ověřit, že mapy a vrstvy použité ve vašem příběhu jsou také sdílené.",
-				notavailable8: "Můj obsah"
+				notavailable8: "Můj obsah",
+				mystoriesinvite2: "Chcete-li vylepšit vzhled příběhu na sociálních sítích, přejděte na ${MYSTORIES} a přidejte shrnutí a náhledový obrázek."
 			},
 			settings: {
 				header: "Nastavení",
 				tabError: "Zkontrolujte prosím, nejsou-li v záložkách chyby."
 			},
 			settingsLayout: {
-				title: "Rozvržení stránky",
+				title: "Rozvržení",
 				explain: "Jaké rozvržení chcete použít?",
 				explainInit: "Rozvržení můžete kdykoli změnit v dialogu nastavení.",
 				viewExample: "Zobrazit živý příklad"
 			},
 			settingsTheme: {
-				title: "Motiv"
+				title: "Téma"
 			},
 			settingsHeader: {
 				title: "Záhlaví",

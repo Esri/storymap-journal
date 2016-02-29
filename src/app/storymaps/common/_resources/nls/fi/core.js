@@ -18,7 +18,8 @@
 				height: "Korkeus",
 				create: "Luo",
 				yes: "Kyllä",
-				no: "Ei"
+				no: "Ei",
+				mystories: "Omat tarinat"
 			},
 			inlineFieldEdit: {
 				editMe: "Muokkaa minua!"
@@ -30,9 +31,10 @@
 				buttonShare: "Jaa",
 				buttonSettings: "Asetukset",
 				buttonHelp: "Ohje",
-				buttonPreview: "Näytä reaaliaikaisesti",
+				buttonPreview: "Näytä tarina",
 				tooltipFirstSave: "Tämä toiminto ei ole käytettävissä ennen tallennusta.",
 				tooltipNotShared: "Tämä toiminto ei ole käytettävissä ennen jakamista.",
+				tooltipNotShared2: "Tainaasi ei ole jaettu. Vain sinä voit lukea sen.",
 				noPendingChange: "Ei odottavaa muutosta",
 				unSavedChangePlural: "Odottavat muutokset",
 				closeWithPendingChange: "Haluatko varmasti vahvistaa tämän toiminnon? Menetät tekemäsi muutokset.",
@@ -52,10 +54,21 @@
 				err1Div2: "Muokkaa tarinan otsikkoa ja tallenna sovellus sen jälkeen.",
 				btnOk: "Muokkaa tarinan otsikkoa"
 			},
+			saveErrorSocial: {
+				title: "Sosiaalisen median jakamispäivitys",
+				panel1: "Tarinasi ulkoasua sosiaalisessa mediassa on parannettu, mutta ArcGIS-Web-sovelluskohteen otsikko ei ole sama kuin tarinan otsikko.",
+				panel1tooltip: "Jos määrität otsikon, yhteenvedon ja pikkukuvan, tarinasi näyttää tältä:",
+				panel2:	"Mitä otsikkoa haluat käyttää sosiaalisessa mediassa:",
+				panel2q1: "Tarinan otsikko (suositus)",
+				panel2q1tooltip: "Valitsemalla tämän vaihtoehdon kohteen otsikkoa muutetaan siten, että se vastaa tarinan otsikkoa ja luontitoiminnon uudet muutokset synkronoidaan.",
+				panel2q2: "Kohteen otsikko",
+				panel3: "Jos haluat edelleen parantaa tarinan ulkoasua sosiaalisessa mediassa, lisää yhteenveto ja pikkukuva käyttämällä toimintoa ${MYSTORIES}.",
+				panel4: "Älä varoita minua enää uudelleen tästä tarinasta"
+			},
 			share: {
 				shareTitle: "Jaa tarinasi",
 				preview: "Esikatselu",
-				viewlive: "Näytä reaaliaikaisesti",
+				viewlive: "Näytä tarina",
 				btnPrivate: "Yksityinen",
 				btnPrivateTooltip: "Vain sinä näet tarinan",
 				btnOrg: "Organisaatio",
@@ -77,7 +90,8 @@
 				notavailable5: "sen kohdesivu",
 				notavailable6: "Tätä ominaisuutta ei tueta täysin kehittäjätilassa. Käyttöönottoskenaariosi mukaan tämä ominaisuus on ehkä tuettu käyttöönotettaessa.",
 				notavailable7: "Varmista vierailemalla kohteessa %MYCONTENT%, että tarinassasi käytetyt kartat ja karttatasot jaetaan myös.",
-				notavailable8: "Oma sisältö"
+				notavailable8: "Oma sisältö",
+				mystoriesinvite2: "Jos haluat parantaa tarinan ulkoasua sosiaalisessa verkostossa, lisää yhteenveto ja pikkukuva käyttämällä toimintoa ${MYSTORIES}."
 			},
 			settings: {
 				header: "Asetukset",

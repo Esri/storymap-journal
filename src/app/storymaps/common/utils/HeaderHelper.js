@@ -80,9 +80,38 @@ define([
 					&& app.cfg.HEADER_SOCIAL.bitly.key && (!socialCfg || socialCfg.bitly)
 				);
 			},
+			toggleSocialBtnAppSharing: function(container, disable)
+			{
+				// TODO has to reset the correct title here so if user share the app the "Share on xyz" is present
+				if ( disable ) {
+					container.find(".shareIcon").attr("title", "");
+				}
+				
+				container.find(".shareIcon")
+					.toggleClass("disabled", !! disable)
+					.tooltip(disable ? {
+						title: i18n.commonCore ? i18n.commonCore.builderPanel.tooltipNotShared : "",
+						container: 'body'
+					} : 'destroy');
+			},
+			disableSocialBtnAppSharingAutoplay: function(container, placement)
+			{
+				container.find(".shareIcon").attr("title", "");
+				
+				container.find(".shareIcon")
+					.toggleClass("disabled", true)
+					.tooltip({
+						title: i18n.viewer.headerFromCommon.tooltipAutoplayDisabled,
+						container: 'body',
+						placement: placement ? placement : 'bottom'
+					});
+			},
 			initEvents: function(container/*, bitlyPlacement*/)
 			{
 				container.find(".share_facebook").off('click').click(function(){
+					if ( $(this).hasClass("disabled") )
+						return;
+					
 					var title = $('<div>' + app.data.getWebAppData().getTitle() + '</div>').text(),
 						subtitle = $('<div>' + app.data.getWebAppData().getSubtitle() + '</div>').text();
 
@@ -94,6 +123,9 @@ define([
 					);
 				});
 				container.find(".share_twitter").off('click').click(function(){
+					if ( $(this).hasClass("disabled") )
+						return;
+					
 					var title = $('<div>' + app.data.getWebAppData().getTitle() + '</div>').text();
 					
 					SocialSharing.shareTwitter(
@@ -111,12 +143,18 @@ define([
 				});
 				*/
 				container.find(".share_bitly").off('click').click(function(){
+					if ( $(this).hasClass("disabled") )
+						return;
+					
 					var url = $(this).data('url') || document.location.href;
 					_shareDialog.present(SocialSharing.cleanURL(url, true));
 				});
 				
 				// Bind keyboard enter to click
 				container.find(".shareIcon, .share-all").off('keypress').keypress(function (e) {
+					if ( $(this).hasClass("disabled") )
+						return;
+					
 					if(e.which == 13) {
 						$(this).click();
 						return false;  

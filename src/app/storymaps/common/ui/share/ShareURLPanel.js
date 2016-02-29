@@ -17,13 +17,16 @@ define([
 		{
 			container.append(viewTpl({ }));
 			
-			var _linkField = container.find(".bitlylink");
+			var _linkField = container.find(".bitlylink"),
+				_url = null;
 			
 			initEvents();
 			
 			this.present = function(url, selectUrl)
 			{
-				buildShortLink(url, selectUrl);
+				_url = SocialSharing.cleanURL(url, true);
+				
+				buildShortLink(_url, selectUrl);
 				
 				container.find('.btn-bitlylink-open').html(i18n.viewer.shareFromCommon.open);
 				
@@ -36,6 +39,18 @@ define([
 			this.focus = function()
 			{
 				_linkField.select();
+			};
+			
+			this.setAutoplay = function(isAutoplay)
+			{
+				var url = _url;
+				
+				if ( isAutoplay ) {
+					url += url.match(/\?/) ? '&' : '?';
+					url += 'autoplay';
+				}
+				
+				buildShortLink(url);
 			};
 			
 			function buildShortLink(url, selectUrl)

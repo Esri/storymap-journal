@@ -18,7 +18,8 @@
 				height: "Aukštis",
 				create: "Sukurti",
 				yes: "Taip",
-				no: "Ne"
+				no: "Ne",
+				mystories: "Mano pasakojimai"
 			},
 			inlineFieldEdit: {
 				editMe: "Redaguoti mane!"
@@ -30,9 +31,10 @@
 				buttonShare: "Bendrinti",
 				buttonSettings: "Nuostatos",
 				buttonHelp: "Pagalba",
-				buttonPreview: "Peržiūrėti veikiančią",
+				buttonPreview: "Žiūrėti pasakojimą",
 				tooltipFirstSave: "Kol neišsaugosite, tai nepasiekiama.",
 				tooltipNotShared: "Kol nebendrinsite, tai nepasiekiama.",
+				tooltipNotShared2: "Jūsų pasakojimas nebendrinamas, jį galite pasiekti tik jūs.",
 				noPendingChange: "Laukiančių pakeitimų nėra",
 				unSavedChangePlural: "Nepatvirtinti pakeitimai",
 				closeWithPendingChange: "Ar tikrai norite patvirtinti šį veiksmą? Pakeitimai bus prarasti.",
@@ -52,10 +54,21 @@
 				err1Div2: "Pakeiskite savo pasakojimo pavadinimą ir įrašykite.",
 				btnOk: "Redaguoti pasakojimo pavadinimą"
 			},
+			saveErrorSocial: {
+				title: "Bendrinimo socialinėje žiniasklaidoje naujinimas",
+				panel1: "Jūsų pasakojimo išvaizda buvo patobulinta socialiniame tinkle, tačiau ArcGIS internetinės aplikacijos elemento antraštė nesutampa su jūsų pasakojimo pavadinimu.",
+				panel1tooltip: "Pateikus pavadinimą, santrauką ir miniatiūros vaizdą, jūsų pasakojimas atrodys taip:",
+				panel2:	"Kokį pavadinimą norite naudoti socialiniame tinkle:",
+				panel2q1: "Pasakojimo pavadinimas (rekomenduojama)",
+				panel2q1tooltip: "Pasirinkus šią parinktį, jūsų elemento antraštė bus modifikuota, kad sutaptų su jūsų pasakojimo pavadinimu, o kiti kūrimo priemonėje atlikti keitimai bus sinchronizuojami.",
+				panel2q2: "Elemento antraštė",
+				panel3: "Jei norite toliau tobulinti pasakojimo išvaizdą socialiniame tinkle, naudokite ${MYSTORIES}, kad pridėtumėte santrauką ir miniatiūros vaizdą.",
+				panel4: "Nebeįspėti manęs apie šį pasakojimą"
+			},
 			share: {
 				shareTitle: "Bendrinti pasakojimą",
 				preview: "Peržiūra",
-				viewlive: "Peržiūrėti veikiančią",
+				viewlive: "Žiūrėti pasakojimą",
 				btnPrivate: "Asmeninis",
 				btnPrivateTooltip: "Pasakojimą galite matyti tik jūs",
 				btnOrg: "Organizacija",
@@ -77,7 +90,8 @@
 				notavailable5: "tai elemento puslapis",
 				notavailable6: "Deja, ši funkcija nėra visiškai palaikoma programavimo režime. Atsižvelgiant į jūsų talpinimo scenarijų, ši funkcija gali būti palaikoma patalpinus.",
 				notavailable7: "Būtinai apsilankykite %MYCONTENT%, kad patvirtintumėte, jog jūsų pasakojime naudojami žemėlapiai ir sluoksniai yra taip pat bendrinami.",
-				notavailable8: "Turinys"
+				notavailable8: "Turinys",
+				mystoriesinvite2: "Jei norite tobulinti pasakojimo išvaizdą socialiniuose tinkluose, naudokite ${MYSTORIES}, kad pridėtumėte santrauką ir miniatiūros vaizdą."
 			},
 			settings: {
 				header: "Nuostatos",

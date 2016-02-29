@@ -259,9 +259,17 @@ define(["dojo/topic",
 					$('.mediaBackContainer').hide();
 				});
 				
-				// If the action is a popup, that will be decided later in applyPopupConfigurationStep2 
-				//  depending on the map context and the geometry of the feature
-				if ( ! actionChangePopup )
+				var isRealExtentChange = false;
+				if ( actionChangeExtent ) {
+					if ( ! currentMediaIsWebmap ) {
+						isRealExtentChange = true;
+					}
+					else {
+						isRealExtentChange = JSON.stringify(app.map.extent.toJson()) != JSON.stringify(action.media.webmap.extent);
+					}
+				}
+				
+				if ( isRealExtentChange || actionChangeLayers )
 					$('.mediaBackContainer')
 						.show()
 						.css("marginLeft", - $(".mediaBackContainer .backButton").outerWidth() / 2)

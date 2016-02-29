@@ -53,7 +53,7 @@ define([
         label: this.i18n.items.organizationLabel,
         value: "org"
       }, {
-        label: this.i18n.items.onlineLabel,
+        label: app.isPortal ? app.portal.name : this.i18n.items.onlineLabel,
         value: "online"
       });
       //add my favorites to the dropdown for web maps

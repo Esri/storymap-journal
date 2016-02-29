@@ -252,7 +252,12 @@ define([],
 					
 					&& app.cfg.CORS_SERVER
 					&& app.cfg.DEFAULT_SHARING_URL
-					&& app.cfg.DEFAULT_PROXY_URL; 
+					&& app.cfg.DEFAULT_PROXY_URL
+
+					&& app.cfg.BING_MAPS_KEY !== undefined
+					&& app.cfg.HELPER_SERVICES !== undefined
+					&& app.cfg.HELPER_SERVICES.geometry !== undefined
+					&& app.cfg.HELPER_SERVICES.geocode !== undefined;
 			}
 		};
 	}

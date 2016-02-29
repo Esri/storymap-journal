@@ -1,0 +1,52 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-logo"></div>
+		<div class="modal-header">
+			<h4 class="modal-title"><%= title %></h4>
+		</div>
+
+		<div class="modal-body">
+			<div class="panel1">
+				<%= panel1 %>
+				<a href="#" class="help" data-toggle="tooltip">
+					<img src="resources/tpl/builder/icons/builder-help.png" style="vertical-align: -5px;"/>
+				</a>
+			</div>
+			<div class="panel2">
+				<div class="panel2lbl"><%= panel2 %></div>
+				<div class="form-group">
+					<div class="radio">
+						<label>
+							<input type="radio" name="optErrorSocial" value="story" checked>
+							<span>
+								<%= panel2q1 %>
+								<a href="#" class="help" data-toggle="tooltip" title="<%= panel2q1tooltip %>">
+									<img src="resources/tpl/builder/icons/builder-help.png" style="vertical-align: -5px;"/>
+								</a>
+							</span>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optErrorSocial" value="item">
+							<span><%= panel2q2 %></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="panel3"><%= panel3 %></div>
+		</div>
+
+		<div class="modal-footer">
+			<div class="stop-asking">
+				<div class="checkbox">
+					<label class="disabled">
+						<input type="checkbox" value="" disabled>
+						<%= panel4 %>
+					</label>
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary"><%= btnSave %></button>
+		</div>
+	</div>
+</div>

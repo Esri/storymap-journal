@@ -40,6 +40,8 @@ define([
 				// Socialize
 				socialize: i18n.commonCore.share.socialize,
 				embedTitle: i18n.viewer.shareFromCommon.embed,
+				mystoriesinvite2: i18n.commonCore.share.mystoriesinvite2
+					.replace("${MYSTORIES}", '<a href="' + CommonHelper.getMyStoriesURL() + '" target="_blank">' + i18n.commonCore.common.mystories + '</a>'),
 				// Footer
 				close: i18n.commonCore.common.close
 			}));
@@ -128,15 +130,46 @@ define([
 				
 				container.find('.sharing-action-result').addClass('hide');
 				
-				// Toggle the 'share with org' button
-				container.find('.app-sharing-wrapper').eq(1).toggle(app.portal.isOrganization !== false);
+				// Toggle the share buttons
+				var isOrg = app.portal.isOrganization !== false,
+					enableOrg = isOrg && $.inArray("portal:user:shareToOrg", app.portal.getPortalUser().privileges) > -1,
+					enablePub = ! isOrg ||  $.inArray("portal:user:shareToPublic", app.portal.getPortalUser().privileges) > -1,
+					itemControl = app.data.getWebAppItem().itemControl,
+					storyIsPrivate = app.data.getWebAppItem().access == "private" || app.data.getWebAppItem().access == "shared",
+					storyIsOrg = app.data.getWebAppItem().access == "account",
+					userIsOwner = app.data.getWebAppItem().owner == app.portal.getPortalUser().username;
+				
+				// TODO: to review with 4.2
+				// Group with shared ownership and custom role with admin:update
+				if (itemControl == "update") {
+					enableOrg = false;
+					enablePub = false;
+				}
+				// TODO checking if the privilege is here directly would be enough if builder was not opening if user don't have proper update priv (only admin view all)
+				else if (itemControl == "admin" && ! userIsOwner) {
+					enableOrg = $.inArray("portal:admin:shareToOrg", app.portal.getPortalUser().privileges) > -1;
+					enablePub = $.inArray("portal:admin:shareToPublic", app.portal.getPortalUser().privileges) > -1;
+				}
+					
+				// TODO: in some case the button may need to be disabled
+				if (storyIsOrg) {
+					enableOrg = true;
+				}
+				else if (! storyIsPrivate) {
+					enablePub = true;
+				}
+				
+				container.find('.app-sharing-wrapper').eq(0).addClass('enabled');
+				container.find('.app-sharing-wrapper').eq(1).toggleClass('enabled', enableOrg);
+				container.find('.app-sharing-wrapper').eq(2).toggleClass('enabled', enablePub);
+				container.find('.app-sharing-wrapper.enabled:last').addClass('lastBtn');
 				
 				container.modal({keyboard: true});
 			};
 			
 			function toggleViews()
 			{
-				var isPrivate = app.data.getWebAppItem().access == "private";
+				var isPrivate = app.data.getWebAppItem().access == "private" || app.data.getWebAppItem().access == "shared";
 				
 				if ( container.find('.views .view-my-stories').hasClass('active') ) {
 					if ( isPrivate ) {
@@ -280,7 +313,7 @@ define([
 			
 			function refreshMyStories(params)
 			{
-				var isPrivate = app.data.getWebAppItem().access == "private",
+				var isPrivate = app.data.getWebAppItem().access == "private" || app.data.getWebAppItem().access == "shared",
 					isOrg = app.data.getWebAppItem().access == "account",
 					isFromScratch = app.isDirectCreationFirstSave || app.isGalleryCreation,
 					sharingLevelIndex = isPrivate ? 0 : (isOrg ? 1 : 2),

@@ -22,14 +22,17 @@
 				boxTitle: "A apărut o eroare",
 				invalidConfig: "Configurare incorectă",
 				invalidConfigNoApp: "ID-ul aplicaţiei de cartografiere web nu este specificat în index.html.",
+				invalidConfigNoAppDev: "Nu a fost specificat niciun identificator de aplicaţie web de cartografiere sau o hartă web în parametrii adresei URL (?appid=). În mod dezvoltare, configuraţia appid din index.html este ignorată.",
 				unspecifiedConfigOwner: "Proprietarul autorizat nu a fost configurat.",
 				invalidConfigOwner: "Proprietarul poveştii nu este autorizat.",
 				createMap: "Nu se poate crea harta",
 				invalidApp: "%TPL_NAME% nu există sau nu este accesibil.",
 				appLoadingFail: "Ceva nu a mers bine, %TPL_NAME% nu s-a încărcat corect.",
 				notConfiguredDesktop: "Povestea nu este configurată încă.",
-				notConfiguredMobile: "Aplicaţia de creare %TPL_NAME% nu este suportată la această dimensiune a ecranului.",
+				notConfiguredMobile: "Aplicația %TPL_NAME% nu este suportată la această dimensiune a ecranului. Dacă este posibil, redimensionaţi browserul dvs. pentru accesarea aplicației sau vă rugăm să creați scenariul dvs. pe un dispozitiv cu un ecran mai mare.",
+				notConfiguredMobile2: "Vă rugăm să rotiţi dispozitivul pe orientarea peisaj pentru a utiliza aplicația de creare pentru %TPL_NAME%.",
 				notAuthorized: "Nu sunteţi autorizat să accesaţi această poveste",
+				notAuthorizedBuilder: "Nu sunteţi autorizat să utilizaţi aplicație de creare pentru %TPL_NAME%.",
 				noBuilderIE: "Instrumentul de creare nu este acceptat în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
 				noViewerIE: "Această poveste nu este suportată în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Efectuaţi un upgrade al browserului</a>.",
@@ -63,7 +66,9 @@
 				share: "Partajare",
 				checking: "Se verifică conţinutul poveştii dvs.",
 				fix: "Remediaţi problemele din povestea dvs.",
-				noerrors: "Nu s-a găsit nicio problemă"
+				noerrors: "Nu s-a găsit nicio problemă",
+				tooltipAutoplayDisabled: "Aceasta nu este disponibilă în modul de redare automată",
+				notshared: "Scenariul nu este partajat"
 			},
 			overviewFromCommon: {
 				title: "Hartă de prezentare generală"
@@ -77,7 +82,11 @@
 				open: "Deschidere",
 				embed: "Încorporare în pagină web",
 				embedExplain: "Utilizaţi următorul cod HTML pentru a încorpora jurnalul într-o pagină web.",
-				size: "Dimensiune (lăţime/înălţime):"
+				size: "Dimensiune (lăţime/înălţime):",
+				autoplayLabel: "Mod redare automată",
+				autoplayExplain1: "Modul de redare automată va avansa prin scenariul dvs. la un interval regulat. Această opţiune este ideală pentru un chioşc sau un monitor pentru afişare publică, dar, reţineţi, că în alte situaţii poate face ca scenariul să fie dificil de urmărit. Această caracteristică nu este acceptată pe ecranele de dimensiuni mici.",
+				autoplayExplain2: "Când acest mod este activ, sunt afişate butoane pentru a reda/întrerupe scenariul şi pentru a regla viteza de navigare.",
+				linksupdated: "Legătură actualizată!"
 			}
         }
     })

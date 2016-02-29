@@ -1,6 +1,13 @@
 <div class="section swiper-slide">
 	<h1 class="title"><%= title %></h1>
-	<div class="content"><%= content %></div>
+	<div class="content">
+		<%= content %>
+		<div class="social">
+			<span class="shareIcon share_facebook icon-facebook-squared" data-url="<%= shareURL %>"> Facebook</span>
+			<span class="shareIcon share_twitter icon-twitter" data-url="<%= shareURL %>"> Twitter</span>
+			<span class="shareIcon share_bitly icon-link" data-url="<%= shareURL %>"> <%= lblShare %></span>
+		</div>	
+	</div>
 	<p class="help">
 		<span class="btnIcon glyphicon glyphicon-fullscreen"></span><%= lblTapDetails %>
 		<span class="swipe-invite"><span class="btnIcon glyphicon glyphicon-resize-horizontal"></span><%= lblSwipe %></span>

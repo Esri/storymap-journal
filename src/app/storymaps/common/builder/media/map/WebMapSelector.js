@@ -378,7 +378,15 @@ define(["lib-build/tpl!./WebMapSelector",
 						isPortal: app.isPortal
 					});
 				}
-				else if ( ! MapViewerWrapperUtils.isWhiteListedDomain() && app.isProduction ) {
+				else if ( ! app.isPortal && ! MapViewerWrapperUtils.isWhiteListedDomain() && app.isProduction ) {
+					_errorDialog.present({
+						newMap: true,
+						error: "DOMAIN",
+						url: MapViewerWrapperUtils.getMapViewerURL(),
+						isPortal: app.isPortal
+					});
+				}
+				else if ( app.isPortal && ! MapViewerWrapperUtils.viewerIsSameDomain() && app.isProduction ) {
 					_errorDialog.present({
 						newMap: true,
 						error: "DOMAIN",
@@ -431,7 +439,15 @@ define(["lib-build/tpl!./WebMapSelector",
 						isPortal: app.isPortal
 					});
 				}
-				else if ( ! MapViewerWrapperUtils.isWhiteListedDomain() && app.isProduction ) {
+				else if ( ! app.isPortal && ! MapViewerWrapperUtils.isWhiteListedDomain() && app.isProduction ) {
+					_errorDialog.present({
+						newMap: false,
+						error: "DOMAIN",
+						url: MapViewerWrapperUtils.getMapViewerLink(getSelectedWebmap()),
+						isPortal: app.isPortal
+					});
+				}
+				else if ( app.isPortal && ! MapViewerWrapperUtils.viewerIsSameDomain() && app.isProduction ) {
 					_errorDialog.present({
 						newMap: false,
 						error: "DOMAIN",

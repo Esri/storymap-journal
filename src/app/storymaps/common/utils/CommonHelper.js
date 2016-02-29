@@ -1,5 +1,11 @@
 define(["dojo/cookie", 
 		"dojo/has", 
+		"dojo/Deferred",
+		"dojo/DeferredList",
+		"./SocialSharing",
+		"esri/request",
+		"esri/dijit/Search",
+        "esri/tasks/locator",
 		"esri/urlUtils",
 		"esri/arcgis/utils",
 		"esri/geometry/webMercatorUtils",
@@ -12,6 +18,12 @@ define(["dojo/cookie",
 	function(
 		cookie, 
 		has, 
+		Deferred,
+		DeferredList,
+		SocialSharing,
+		esriRequest,
+		Search,
+		Locator,
 		urlUtils,
 		arcgisUtils,
 		webMercatorUtils,
@@ -33,11 +45,11 @@ define(["dojo/cookie",
 			switchToBuilder: function() 
 			{
 				if( document.location.search.match(/appid/) )
-					document.location = document.location.protocol + '//' + document.location.host + document.location.pathname + document.location.search + "&edit" + document.location.hash;
+					document.location = SocialSharing.cleanURL(document.location.protocol + '//' + document.location.host + document.location.pathname + document.location.search, true) + "&edit" + document.location.hash;
 				else if ( document.location.search.slice(-1) == '?' )
-					document.location = document.location.protocol + '//' + document.location.host + document.location.pathname + "edit"  + document.location.hash;
+					document.location = SocialSharing.cleanURL(document.location.protocol + '//' + document.location.host + document.location.pathname, true) + "?edit"  + document.location.hash;
 				else
-					document.location = document.location.protocol + '//' + document.location.host + document.location.pathname + "?edit"  + document.location.hash;
+					document.location = SocialSharing.cleanURL(document.location.protocol + '//' + document.location.host + document.location.pathname, true) + "?edit"  + document.location.hash;
 			},
 			isArcGISHosted: function()
 			{
@@ -343,67 +355,78 @@ define(["dojo/cookie",
 			{
 				return url && url.match(/((\.png)|(\.jp(e)?g))$/i);
 			},
-			createGeocoderOptions: function() 
+			createGeocoder: function(p) 
 			{
-				var hasEsri = false,
-					geocoders = dojo.clone(app.indexCfg.geocodeServices);
+				var resultDeferred = new Deferred();
 				
-				dojo.forEach(geocoders, function (geocoder) {
-					if (geocoder.url.indexOf(".arcgis.com/arcgis/rest/services/World/GeocodeServer") > -1) {
-						hasEsri = true;
-						geocoder.name = "Esri World Geocoder";
-						geocoder.outFields = "Match_addr, stAddr, City";
-						geocoder.singleLineFieldName = "SingleLine";
-						//geocoder.placeholder = (app.indexCfg.placefinder.placeholder === "") ? i18n.tools.search.title : app.indexCfg.placefinder.placeholder;
-						geocoder.esri = geocoder.placefinding = true;
-						/*if (app.indexCfg.placefinder.currentExtent || app.indexCfg.searchextent) {
-							geocoder.searchExtent = app.mainMap.extent;
-						}
-						if (app.indexCfg.placefinder.countryCode !== "") {
-							geocoder.sourceCountry = app.indexCfg.placefinder.countryCode;
-						}*/
-					}
+				if ( ! p || ! p.map || ! p.domNode ) {
+					resultDeferred.resolve();
+					return resultDeferred;
+				}
+				
+				if ( ! app.cfg.HELPER_SERVICES.geocode ) {
+					resultDeferred.resolve();
+					return resultDeferred;
+				}
+				
+				// Query each geocode service to configure the search widget
+				var requests = [];
+				
+				$.each(app.cfg.HELPER_SERVICES.geocode, function(index, geocoder){
+					var geocodeRequest = esriRequest({
+						url: geocoder.url,
+						content: { f: 'json' },
+						handleAs: 'json',
+						callbackParamName: 'callback'
+					});
+					requests.push(geocodeRequest);
 				});
 				
-				//only use geocoders with a singleLineFieldName that allow placefinding
-				geocoders = dojo.filter(geocoders, function (geocoder) {
-					return (esri.isDefined(geocoder.singleLineFieldName) && esri.isDefined(geocoder.placefinding) && geocoder.placefinding);
-				});
-				
-				var esriIdx;
-				if (hasEsri) {
-					for (var i = 0; i < geocoders.length; i++) {
-						if (esri.isDefined(geocoders[i].esri) && geocoders[i].esri === true) {
-							esriIdx = i;
-							break;
+				var requestList = new DeferredList(requests);
+				requestList.then(
+					function(responses){
+						var sources = [];
+						$.each(responses, function(index, response){
+							if(! response[0]) {
+								return;
+							}
+							
+							if(! response[1] || ! response[1].singleLineAddressField) {
+								return;
+							}
+							
+							var newSource = {};
+							newSource.singleLineFieldName = response[1].singleLineAddressField.name;
+							
+							var newLocator = new Locator(app.cfg.HELPER_SERVICES.geocode[index].url);
+							newSource.name = app.cfg.HELPER_SERVICES.geocode[index].name ? app.cfg.HELPER_SERVICES.geocode[index].name : response[1].name;
+							newSource.locator = newLocator;
+							
+							sources.push(newSource);
+						});
+
+						if(sources.length){
+							var search = new Search({
+								map: p.map,
+								sources: [],
+								allPlaceholder: p.placeHolder,
+								enableButtonMode: p.enableButtonMode
+							}, p.domNode);
+							
+							var searchSources = search.get("sources");
+							$.each(sources, function(index, source){
+								searchSources.push(source);
+							});
+							search.set("sources", searchSources);
+							
+							search.startup();
+							
+							resultDeferred.resolve(search);
 						}
 					}
-				}
+				);
 				
-				var options = {
-					autoNavigate: true, /* changed from false */
-					autoComplete: hasEsri,
-					theme: "simpleGeocoder"
-				};
-				
-				if(hasEsri){
-					options.minCharacters = 0;
-					options.maxLocations = 5;
-					options.searchDelay = 100;
-				}
-				
-				//If the World geocoder is primary enable auto complete 
-				if (hasEsri && esriIdx === 0) {
-					options.arcgisGeocoder = geocoders.splice(0, 1)[0]; //geocoders[0];
-					if (geocoders.length > 0) {
-						options.geocoders = geocoders;
-					}
-				} else {
-					options.arcgisGeocoder = false;
-					options.geocoders = geocoders;
-				}
-						
-				return options;	
+				return resultDeferred;
 			},
 			// Returns a function, that, as long as it continues to be invoked, will not
 			// be triggered. The function will be called after it stops being called for

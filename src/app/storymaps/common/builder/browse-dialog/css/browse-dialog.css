@@ -39,6 +39,13 @@ body{
     overflow:hidden;
     text-overflow:ellipsis;
 }
+.itemTitle.hover {
+	text-align: left;
+    word-break: break-word;
+    font-size: 90%;
+    white-space: inherit;
+    text-overflow: inherit;
+}
 .itemOwner{
 	color:#757170;
     white-space:nowrap;

@@ -83,7 +83,7 @@ define(["lib-build/tpl!./ViewHome",
 
 				return {
 					url: container.find('.url').val(),
-					frameTag: container.find('.textarea').val()
+					frameTag: container.find('.textarea').val().trim()
 				};
 			}
 			
@@ -111,7 +111,7 @@ define(["lib-build/tpl!./ViewHome",
 				});
 				
 				container.find('.btn-cfg-embed').click(function() {
-					var embedVal = container.find('.textarea').val();
+					var embedVal = container.find('.textarea').val().trim();
 					
 					if ( ! embedVal.match(/^<iframe.*<\/iframe>$/) || embedVal.match(/<iframe/g).length > 2 ) {
 						container.find('.error')

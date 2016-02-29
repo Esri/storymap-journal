@@ -18,7 +18,8 @@
 				height: "Höhe",
 				create: "Erstellen",
 				yes: "Ja",
-				no: "Nein"
+				no: "Nein",
+				mystories: "My Stories"
 			},
 			inlineFieldEdit: {
 				editMe: "Bearbeiten!"
@@ -30,9 +31,10 @@
 				buttonShare: "Freigeben",
 				buttonSettings: "Einstellungen",
 				buttonHelp: "Hilfe",
-				buttonPreview: "Live anzeigen",
+				buttonPreview: "Story anzeigen",
 				tooltipFirstSave: "Dies ist erst nach dem Speichern verfügbar.",
 				tooltipNotShared: "Dies ist erst nach dem Freigeben verfügbar.",
+				tooltipNotShared2: "Ihre Story ist nicht freigegeben, nur Sie können auf sie zugreifen.",
 				noPendingChange: "Keine ausstehende Änderung",
 				unSavedChangePlural: "Ausstehende Änderungen",
 				closeWithPendingChange: "Möchten Sie die Aktion wirklich bestätigen? Ihre Änderungen gehen dabei verloren.",
@@ -52,10 +54,21 @@
 				err1Div2: "Ändern Sie den Titel Ihrer Story, und speichern Sie sie anschließend.",
 				btnOk: "Den Titel der Story bearbeiten"
 			},
+			saveErrorSocial: {
+				title: "Freigabeaktualisierung für Social Media",
+				panel1: "Das Aussehen Ihrer Story in den Social Media wurde verbessert, der Titel Ihres ArcGIS-Webanwendungselements stimmt aber nicht mit dem Titel der Story überein.",
+				panel1tooltip: "Wenn Sie einen Titel, eine Zusammenfassung und eine Miniaturansicht definieren, sieht Ihre Story wie folgt aus:",
+				panel2:	"Welchen Titel möchten Sie in den Social Media verwenden?",
+				panel2q1: "Titel der Story (empfohlen)",
+				panel2q1tooltip: "Wenn Sie diese Option wählen, wird der Elementtitel in den Titel Ihrer Story geändert und alle weitere Änderungen im Builder werden synchronisiert.",
+				panel2q2: "Elementtitel",
+				panel3: "Wenn Sie das Aussehen Ihrer Story in den Social Media zusätzlich verbessern möchten, fügen Sie mithilfe von ${MYSTORIES} eine Zusammenfassung und eine Miniaturansicht hinzu.",
+				panel4: "Für diese Story keine Warnmeldung mehr anzeigen"
+			},
 			share: {
 				shareTitle: "Story freigeben",
 				preview: "Vorschau",
-				viewlive: "Live anzeigen",
+				viewlive: "Story anzeigen",
 				btnPrivate: "Privat",
 				btnPrivateTooltip: "Nur Sie können die Story sehen",
 				btnOrg: "Organisation",
@@ -77,7 +90,8 @@
 				notavailable5: "die Elementseite",
 				notavailable6: "Dieses Feature wird im Entwicklungsmodus leider nicht vollständig unterstützt. Je nach Entwicklungsszenario wird es möglicherweise nach der Bereitstellung unterstützt.",
 				notavailable7: "Besuchen Sie %MYCONTENT%, um sicherzustellen, dass die Karten und Layer, die Sie in Ihrer Story verwenden, ebenfalls freigegeben sind.",
-				notavailable8: "Eigene Inhalte"
+				notavailable8: "Eigene Inhalte",
+				mystoriesinvite2: "Wenn Sie das Aussehen Ihrer Story in den sozialen Netzwerken verbessern möchten, fügen Sie mithilfe von ${MYSTORIES} eine Zusammenfassung und eine Miniaturansicht hinzu."
 			},
 			settings: {
 				header: "Einstellungen",
@@ -90,7 +104,7 @@
 				viewExample: "Live-Beispiel anzeigen"
 			},
 			settingsTheme: {
-				title: "Design"
+				title: "Thema"
 			},
 			settingsHeader: {
 				title: "Kopfzeile",
@@ -105,7 +119,7 @@
 				lblSmallHeader: "Kompakte Überschrift verwenden (keinen Untertitel)"
 			},
 			header: {
-				title: "Den Titel für %TPL_NAME% bearbeiten",
+				title: "Bearbeiten Sie den Titel von %TPL_NAME%",
 				subtitle: "Den Untertitel für %TPL_NAME% bearbeiten"
 			}
 		}

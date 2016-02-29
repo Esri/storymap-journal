@@ -9,10 +9,10 @@ define([
 		};
 		
 		//
-		// To be able to use MV in development mode you need to be on a while listed domain (*.arcgis.com or *.esri.com)
+		// To be able to use MV in development mode you need to be on a while listed domain (the Portal for ArcGIS domain, *.arcgis.com or *.esri.com)
 		// Then paste a token that you get from ArcGIS Online or Portal for ArcGIS by executing 
 		//     JSON.parse(dojo.cookie("esri_auth")).token
-		// in a developer console on any page or apps running in Online or Portal
+		// in a developer console on any page or apps running in Online or Portal (IM short lived token don't work)
 		//
 		
 		var DEV_TOKEN = '';
@@ -37,7 +37,6 @@ define([
 				_viewerMapIsLoaded = false,
 				_mapViewerLoadingPolling = null,
 				_mapViewerChangesCheck = null,
-				_saveEnabled = false,
 				_mapEditable = false;
 			
 			window.addEventListener("message", receiveMessage, false);
@@ -147,7 +146,6 @@ define([
 			{
 				if ( ! _mapViewerChangesCheck ) {
 					_mapViewerChangesCheck = setInterval(unsavedChangesCheck, 1000);
-					_saveEnabled = false;
 				}
 			}
 			
@@ -203,19 +201,8 @@ define([
 						break;
 					case "unsavedChanges":
 						if ( json.value ) {
-							if ( ! _saveEnabled ) {
-								params.onEnableSave();
-							}
-							_saveEnabled = true;
+							params.onEnableSave();
 						}
-						else {
-							_saveEnabled = false;
-						}
-						/*
-						else {
-							params.disableSave();
-						}
-						*/
 						
 						break;
 					case "loaded":

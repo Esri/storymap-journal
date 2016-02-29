@@ -312,6 +312,11 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					$(".mainMediaContainer .embedContainer.custom")
 						.css({ left: 0, right: 0 })
 						.css(posDir, val);
+					
+					// Autoplay
+					$("#autoplay")
+						.css({ left: 'inherit', right: 'inherit' })
+						.css(posDir, val + mapArea / 2);
 				}
 				// Side Panel
 				else {
@@ -330,6 +335,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					$(".mainMediaContainer .imgContainer.center").css({ left: 0, right: 0 });
 					$(".mainMediaContainer .embedContainer.center").css({ left: 0, right: 0 });
 					$(".mainMediaContainer .embedContainer.custom").css({ left: 0, right: 0 });
+					$("#autoplay").css({ left: '50%', right: 'inherit' });
 				}
 			};
 			
@@ -727,6 +733,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				// Center the map is the geometry isn't visible
 				if ( ! app.map.extent.contains(center) ) {
 					app.map.centerAt(center);
+					/*
 					// Show back btn only if it's a Main Stage action
 					if ( index === null ) {
 						$('.mediaBackContainer')
@@ -734,13 +741,16 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 							.css("marginLeft", - $(".mediaBackContainer .backButton").outerWidth() / 2)
 							.css("marginRight", - $(".mediaBackContainer .backButton").outerWidth() / 2);
 					}
+					*/
 				}
+				/*
 				else if ( index === null ) {
 					$('.mediaBackContainer')
 						.show()
 						.css("marginLeft", - $(".mediaBackContainer .backButton").outerWidth() / 2)
 						.css("marginRight", - $(".mediaBackContainer .backButton").outerWidth() / 2);
 				}
+				*/
 			}
 			
 			function setMapControlsColor()

@@ -23,8 +23,7 @@ else {
 			
 		 	require([
 					"storymaps/common/Core", 
-					"storymaps/tpl/core/MainView",
-					"templateConfig/commonConfig.js?v=" + app.version
+					"storymaps/tpl/core/MainView"
 				], function(
 					Core, 
 					MainView

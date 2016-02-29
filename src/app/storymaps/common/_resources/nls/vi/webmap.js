@@ -9,6 +9,8 @@
 				lblControls: "Ứng dụng phụ",
 				lblOverview: "Bản đồ Toàn cảnh",
 				lblLegend: "Chú giải",
+				lblGeocoder: "Trình Tìm kiếm Địa chỉ hoặc Địa điểm",
+				tooltipGeocoder: "Cho phép người dùng tìm địa chỉ và địa điểm trên các bản đồ của bạn.",
 				loadingTitle: "Đang tải tiêu đề",
 				entry: "Mục nhập",
 				entries: "Các mục nhập",
@@ -45,7 +47,7 @@
 				extentTitle: "Vị trí bản đồ",
 				extentExplain: "Quay và phóng to bản đồ để xác định giao diện của bản đồ cho người đọc của bạn.",
 				extentSave: "Lưu vị trí Bản đồ",
-				popupTitle: "Cửa sổ pop-up trên Bản đồ",
+				popupTitle: "Cửa sổ pop-up bản đồ",
 				popupExplain: "Bấm vào một đối tượng để mở cửa sổ popup mà bạn muốn hiển thị.",
 				popupSave: "Lưu cấu hình cửa sổ pop-up",
 				hintNavigation: "Điều hướng bản đồ bị tắt."

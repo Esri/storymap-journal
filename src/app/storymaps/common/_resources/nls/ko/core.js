@@ -18,7 +18,8 @@
 				height: "높이",
 				create: "생성",
 				yes: "예",
-				no: "아니요"
+				no: "아니요",
+				mystories: "내 스토리"
 			},
 			inlineFieldEdit: {
 				editMe: "편집!"
@@ -30,9 +31,10 @@
 				buttonShare: "공유",
 				buttonSettings: "설정",
 				buttonHelp: "도움말",
-				buttonPreview: "실시간 보기",
+				buttonPreview: "스토리 보기",
 				tooltipFirstSave: "저장하기 전까지 사용할 수 없습니다.",
 				tooltipNotShared: "공유하기 전까지 사용할 수 없습니다.",
+				tooltipNotShared2: "스토리가 비공유 상태이므로 사용자 본인만 접근할 수 있습니다.",
 				noPendingChange: "보류 중인 변경 사항 없음",
 				unSavedChangePlural: "보류 중인 변경 내용",
 				closeWithPendingChange: "이 작업을 확인하시겠습니까? 변경 내용이 손실됩니다.",
@@ -52,10 +54,21 @@
 				err1Div2: "스토리 제목을 수정한 후에 스토리를 저장하세요.",
 				btnOk: "스토리 제목 편집"
 			},
+			saveErrorSocial: {
+				title: "소셜 미디어 공유 업데이트",
+				panel1: "소셜 미디어에서의 스토리의 외관이 향상되었지만 ArcGIS 웹 응용프로그램 항목 제목이 스토리 제목과 같지 않습니다.",
+				panel1tooltip: "제목, 요약 및 섬네일 이미지를 정의하면 스토리가 다음과 같이 보입니다:",
+				panel2:	"소셜 미디어에서 사용할 제목:",
+				panel2q1: "스토리 제목(권장됨)",
+				panel2q1tooltip: "이 옵션을 선택하면 항목 제목이 스토리 제목과 일치하도록 수정되며 빌더에서의 후속 변경 사항이 동기화됩니다.",
+				panel2q2: "항목 제목",
+				panel3: "소셜 미디어에서의 스토리의 외관을 더욱 향상시키려면 ${MYSTORIES}을(를) 사용하여 요약 및 섬네일 이미지를 추가합니다.",
+				panel4: "이 스토리에 대해 다시 경고 안 함"
+			},
 			share: {
 				shareTitle: "스토리 공유",
 				preview: "미리 보기",
-				viewlive: "실시간 보기",
+				viewlive: "스토리 보기",
 				btnPrivate: "비공개",
 				btnPrivateTooltip: "사용자 본인만 스토리를 볼 수 있음",
 				btnOrg: "기관",
@@ -77,7 +90,8 @@
 				notavailable5: "항목 페이지",
 				notavailable6: "죄송합니다. 개발 모드에서는 이 피처가 완전히 지원되지는 않습니다. 배포 시나리오에 따라 배포 시에 이 피처가 지원될 수도 있습니다.",
 				notavailable7: "%MYCONTENT%에 방문하여 내 스토리에 사용된 맵과 레이어도 공유되는지 확인하세요.",
-				notavailable8: "내 콘텐츠"
+				notavailable8: "내 콘텐츠",
+				mystoriesinvite2: "소셜 미디어에서의 스토리의 외관을 더욱 향상시키려면 ${MYSTORIES}을(를) 사용하여 요약 및 섬네일 이미지를 추가합니다."
 			},
 			settings: {
 				header: "설정",
@@ -93,7 +107,7 @@
 				title: "테마"
 			},
 			settingsHeader: {
-				title: "머리글",
+				title: "헤더",
 				logoEsri: "Esri 로고",
 				logoNone: "로고 없음",
 				logoCustom: "사용자 지정 로고",

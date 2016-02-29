@@ -18,7 +18,8 @@
 				height: "Höjd",
 				create: "Skapa",
 				yes: "Ja",
-				no: "Nej"
+				no: "Nej",
+				mystories: "Mina berättelser"
 			},
 			inlineFieldEdit: {
 				editMe: "Redigera mig!"
@@ -30,9 +31,10 @@
 				buttonShare: "Dela",
 				buttonSettings: "Inställningar",
 				buttonHelp: "Hjälp",
-				buttonPreview: "Visa live",
+				buttonPreview: "Visa berättelse",
 				tooltipFirstSave: "Funktionen finns inte tillgänglig förrän du sparar.",
 				tooltipNotShared: "Funktionen finns inte tillgänglig förrän du delar.",
+				tooltipNotShared2: "Din berättelse är inte delad och bara du har åtkomst till den.",
 				noPendingChange: "Ingen väntande ändring",
 				unSavedChangePlural: "Väntande ändringar",
 				closeWithPendingChange: "Är du säker på att du vill bekräfta åtgärden? Dina ändringar sparas inte.",
@@ -52,10 +54,21 @@
 				err1Div2: "Ändra titeln på berättelsen och spara den sedan.",
 				btnOk: "Redigera titeln på berättelsen"
 			},
+			saveErrorSocial: {
+				title: "Delningsuppdatering för sociala medier",
+				panel1: "Din berättelses presentation på sociala medier har förbättrats, men objekttiteln på ArcGIS-webbapplikationen är inte samma som berättelsens titel.",
+				panel1tooltip: "Om du definierar en titel, sammanfattning och miniatyrbild kommer din berättelse att se ut så här:",
+				panel2:	"Vilken titel skulle du vilja använda på sociala medier:",
+				panel2q1: "Titel på berättelsen (rekommenderas)",
+				panel2q1tooltip: "Om du väljer det här alternativet ändras titeln på objektet så att den överensstämmer med titeln på berättelsen. Även övriga ändringar i byggverktyget synkroniseras.",
+				panel2q2: "Titel på objektet",
+				panel3: "Om du vill förbättra presentationen av din berättelse på sociala medier ännu mer använder du ${MYSTORIES} för att lägga till en sammanfattning och en miniatyrbild.",
+				panel4: "Varna mig inte igen för den här berättelsen"
+			},
 			share: {
 				shareTitle: "Dela din berättelse",
 				preview: "Förhandsgranska",
-				viewlive: "Visa live",
+				viewlive: "Visa berättelse",
 				btnPrivate: "Privat",
 				btnPrivateTooltip: "Bara du kan se berättelsen",
 				btnOrg: "Organisation",
@@ -77,7 +90,8 @@
 				notavailable5: "dess objektsida",
 				notavailable6: "Denna funktion stöds inte fullt ut i utvecklingsläge. Beroende på ditt distributionsscenario kanske detta geoobjekt stöds vid distributionen.",
 				notavailable7: "Se till att du besöker %MYCONTENT% för att bekräfta att de kartor och lager som används i din berättelse också delas.",
-				notavailable8: "Mitt innehåll"
+				notavailable8: "Mitt innehåll",
+				mystoriesinvite2: "Om du vill förbättra presentationen av din berättelse på sociala nätverk använder du ${MYSTORIES} för att lägga till en sammanfattning och en miniatyrbild."
 			},
 			settings: {
 				header: "Inställningar",

@@ -9,6 +9,8 @@
 				lblControls: "Dodatki",
 				lblOverview: "Mapa przeglądowa",
 				lblLegend: "Legenda",
+				lblGeocoder: "Wyszukiwarka adresu lub miejsca",
+				tooltipGeocoder: "Pozwala użytkownikom znaleźć adresy i miejsca na Twoich mapach.",
 				loadingTitle: "Wczytywanie tytułu",
 				entry: "Wpis",
 				entries: "Wpisy",
@@ -46,8 +48,8 @@
 				extentExplain: "Przesuń i zmień powiększenie, aby zdefiniować wygląd mapy widoczny dla użytkowników.",
 				extentSave: "Zapisz lokalizację mapy",
 				popupTitle: "Okno podręczne mapy",
-				popupExplain: "Kliknij obiekt, aby otworzyć pożądane okno podręczne.",
-				popupSave: "Zapisz konfigurację okna podręcznego",
+				popupExplain: "Kliknij obiekt, aby otworzyć właściwe okno podręczne.",
+				popupSave: "Zapisz konfigurację okien podręcznych",
 				hintNavigation: "Nawigacja mapy jest wyłączona."
 			},
 			editor: {

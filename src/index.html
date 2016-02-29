@@ -41,17 +41,20 @@
 				// Optionally to secure Journal's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
 				// User will need to sign-in to access the viewer even if your application is public
 				oAuthAppId: "",
-				// Optionally to be able to use the appid URL parameter, configure here the list of application author 
-				//  whose application are allowed to be viewed by this Map Journal deployment
-				// This is the Portal username of the Journal owner (e.g. ["user1"], ["user1", "user2"])
-				// To authorize all users you can use ["*"]
+				// Optionally, to use the appid URL parameter, configure authorizedOwners to reference
+				//    members whose stories can be viewed by this storytelling app.
+				// To authorize stories owned by...
+				//    specific members: use ["member"] or ["member1", "member2", ...]
+				//    any ArcGIS member: use ["*"]
+				//    any member of one or more organizations: use ["[orgID]"] or ["[orgID1]", "[orgID2]", ...] (Note the use of brackets in this case, e.g., ["[nzS0F0zdNLvs7nc8]"])
+				//        You can get your orgID by going to My Organization and clicking Find...The most viewed items in the organization.
+				//        Your orgID will be shown in the search box.
 				authorizedOwners: [""]
 			};
 			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required  
 			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapJournal/ or /apps/MapJournal/. 
-			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required 
-			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
-			//  on Portal for ArcGIS as /home/MapJournal/ or /apps/MapJournal/, that configuration is available in ../commonConfig.js
+			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/config.js. This is only required
+			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten.
 		</script>
 		
 		<!--
@@ -62,8 +65,8 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.6.1',
-				pathJSAPI: '//js.arcgis.com/3.15/'
+				version: '1.7.0',
+				pathJSAPI: '//js.arcgis.com/3.16/'
 			};
 		</script>
 	</head>
@@ -108,6 +111,7 @@
 							<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
 							<span class="error-status">
 								<button class="btn btn-xs btn-warning check-story"></button>
+								<button class="btn btn-xs btn-warning share-story"></button>
 							</span>
 							<div class="separator"></div>
 							<div class="sectionsWrapper">
@@ -157,6 +161,8 @@
 							<div id="builderLanding" class="centerAlignOnFloat"></div>
 							<div id="builderHelp" class="centerAlignOnFloat"></div>
 							<div class="firstAddExplain"></div>
+							<!-- Autoplay -->
+							<div id="autoplay" class="autoplay"></div>
 						</div>
 					</td>
 				</tr>
@@ -189,6 +195,7 @@
 			<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
 			<span class="error-status">
 				<button class="btn btn-xs btn-warning check-story"></button>
+				<button class="btn btn-xs btn-warning share-story"></button>
 			</span>
 			<div class="separator"></div>
 			<div class="panelEditBtn">

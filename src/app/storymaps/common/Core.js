@@ -73,6 +73,8 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			console.log("common.core.Core - init", builder);
 			
 			_mainView = mainView;
+			
+			app.userCanEdit = false;
 
 			initLocalization();
 			
@@ -98,7 +100,8 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 					proxyurl: app.indexCfg.proxyurl,
 					sharingurl: app.indexCfg.sharingurl,
 					username: app.indexCfg.username,
-					password: app.indexCfg.password
+					password: app.indexCfg.password,
+					oAuthAppId: app.indexCfg.oAuthAppId
 				};
 			}
 			
@@ -205,6 +208,15 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				});
 			}
 			
+			// Proxy rules
+			if ( app.cfg.PROXY_RULES && app.cfg.PROXY_RULES.length ) {
+				$.each(app.cfg.PROXY_RULES, function(i, rule){
+					if ( rule && rule.urlPrefix && rule.proxyUrl ) {
+						urlUtils.addProxyRule(rule);
+					}
+				});
+			}
+			
 			// Set timeout depending on the application mode
 			esriConfig.defaults.io.timeout = app.isInBuilder ? app.cfg.TIMEOUT_BUILDER_REQUEST : app.cfg.TIMEOUT_VIEWER_REQUEST;
 			
@@ -245,7 +257,8 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				if ( app.indexCfg.oAuthAppId ) {
 					var info = new ArcGISOAuthInfo({
 						appId: app.indexCfg.oAuthAppId,
-						popup: false
+						popup: false,
+						portalUrl: 'https:' + app.indexCfg.sharingurl.split('/sharing/')[0]
 					});
 					
 					IdentityManager.registerOAuthInfos([info]);
@@ -313,7 +326,9 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				redirectToExternalHelp();
 			else if ( _urlParams.appid && (! app.indexCfg.authorizedOwners || ! app.indexCfg.authorizedOwners[0]) )
 				initError("unspecifiedConfigOwner");
-			else
+			else if ( ! app.isProduction )
+				initError("invalidConfigNoAppDev");
+			else 
 				initError("invalidConfigNoApp");
 		}
 
@@ -354,6 +369,22 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 					app.data.setWebAppItem(itemRq);
 					app.data.getWebAppData().set(dataRq);
 					
+					app.userCanEdit = app.data.userIsAppOwner();
+					
+					// Prevent app from accessing the cookie in viewer when user is not the owner
+					if ( ! app.isInBuilder && ! app.userCanEdit ) {
+						if( ! document.__defineGetter__ ) {
+							Object.defineProperty(document, 'cookie', {
+								get: function(){ return ''; },
+								set: function(){ return true; }
+							});
+						} 
+						else {
+							document.__defineGetter__("cookie", function() { return ''; });
+							document.__defineSetter__("cookie", function() {} );
+						}
+					}
+					
 					if( app.indexCfg.authorizedOwners && app.indexCfg.authorizedOwners.length > 0 && app.indexCfg.authorizedOwners[0] ) {
 						var owner = itemRq.owner,
 							ownerFound = false;
@@ -363,6 +394,17 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 						if ( ! ownerFound && app.indexCfg.authorizedOwners[0] == "*" )
 							ownerFound = true;
+						
+						if ( ! ownerFound ) {
+							$.each(app.indexCfg.authorizedOwners, function(i, owner){
+								var test = owner.match(/^\[(.*)\]$/);
+								if ( test ) {
+									if ( itemRq.orgId == test[1] ) {
+										ownerFound = true;
+									}
+								}
+							});
+						}
 						
 						if ( ! ownerFound ) {
 							initError("invalidConfigOwner");
@@ -384,7 +426,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 					}
 					
 					// If in builder, check that user is app owner or org admin
-					if (app.isInBuilder && isProd() && !app.data.userIsAppOwner()) {
+					if (app.isInBuilder && isProd() && !app.userCanEdit) {
 						initError("notAuthorized");
 						return;
 					}
@@ -428,6 +470,15 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			
 			app.portal.signIn().then(
 				function() {
+					
+					// If in builder, check that user is user can create/edit item
+					if (app.isInBuilder && ! app.data.checkUserItemPrivileges()) {
+						initError("notAuthorizedBuilder");
+						return;
+					}
+					
+					app.userCanEdit = app.data.userIsAppOwner();
+					
 					definePortalConfig();
 					resultDeferred.resolve();
 				},
@@ -523,7 +574,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			app.builder && app.builder.appInitComplete();
 			
 			// Load My Stories in builder or viewer if user is owning the story
-			if ( app.isInBuilder || app.data.userIsAppOwner() ) {
+			if ( (app.isInBuilder || app.userCanEdit) && has("ie") != 9 && ! _urlParams.preview ) {
 				if ( has("ff") ) {
 					$(".builderShare #my-stories-frame").remove();
 				}
@@ -533,6 +584,13 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				}
 				
 				MyStoriesWrapper.loadMyStories();
+			}
+			
+			// Update URL for hosted apps so that when shared it will have the proper metadata on social medias
+			if ( document.location.pathname.match(/\/apps\/[a-zA-Z]+\/$/) 
+					&& document.location.search.match(/^\?appid=/) 
+					&& (! has('ie') || has('ie') >= 10) ) {
+				History.replaceState({}, "", "index.html" + document.location.search + document.location.hash);
 			}
 		}
 		
@@ -747,7 +805,8 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		{
 			return ! app.isInBuilder && (
 				(! isProd() && !! CommonHelper.getAppID(isProd()))
-				|| isProd() && app.data.userIsAppOwner());
+				|| isProd() && app.userCanEdit)
+				&& ! _urlParams.preview;
 		}
 
 		//
@@ -881,45 +940,29 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			if ( ! app.portal )
 				return;
 			
-			// If geometry, geocode service or bing maps key are defined by portal,
-			// they override the configuration file values
-		
-			var geometryServiceURL, geocodeServices;
-			
-			//
-			// Config file
-			//
-			
-			if (commonConfig && commonConfig.CommonHelperServices) {
-				if (commonConfig.CommonHelperServices.geometry && commonConfig.CommonHelperServices.geometry) 
-					geometryServiceURL = location.protocol + commonConfig.CommonHelperServices.geometry.url;
-				if (commonConfig.CommonHelperServices.geocode && commonConfig.CommonHelperServices.geocode.length && commonConfig.CommonHelperServices.geocode[0].url) 
-					geocodeServices = commonConfig.CommonHelperServices.geocode;
-				// Deprecated syntax
-				else if (commonConfig.CommonHelperServices.geocode && commonConfig.CommonHelperServices.geocode && commonConfig.CommonHelperServices.geocode.url) 
-					geocodeServices = [{
-						name: "myGeocoder",
-						url: commonConfig.CommonHelperServices.geocode.url
-					}];
-			}
-			
-			//
-			// Portal
-			//
-			
-			if (app.portal.helperServices) {
-				if (app.portal.helperServices.geometry && app.portal.helperServices.geometry.url) 
-					geometryServiceURL = app.portal.helperServices.geometry.url;
-				
-				if (app.portal.helperServices.geocode && app.portal.helperServices.geocode.length && app.portal.helperServices.geocode[0].url ) 
-					geocodeServices = app.portal.helperServices.geocode;
+			// Use geocode service from the portal if none declared in config
+			if (! app.cfg.HELPER_SERVICES.geocode.length && app.portal.helperServices) {
+				if (app.portal.helperServices.geocode && app.portal.helperServices.geocode.length && app.portal.helperServices.geocode[0].url) {
+					$.each(app.portal.helperServices.geocode, function (index, geocoder){
+						app.cfg.HELPER_SERVICES.geocode.push(geocoder);
+					});
+				}
 			}
 
+			// Use geometry service from the portal if none declared in config
+			var geometryServiceURL;
+			if (app.cfg.HELPER_SERVICES.geometry && app.cfg.HELPER_SERVICES.geometry.url) {
+				geometryServiceURL = app.cfg.HELPER_SERVICES.geometry.url;
+			}
+			else if (app.portal.helperServices.geometry && app.portal.helperServices.geometry.url) {
+				geometryServiceURL = app.portal.helperServices.geometry.url;
+			}
 			esriConfig.defaults.geometryService = new GeometryService(geometryServiceURL);
-			app.indexCfg.geocodeServices = geocodeServices;
 
-			if( app.portal.bingKey )
-				commonConfig.bingMapsKey = app.portal.bingKey;
+			// Use bing key from the portal if none declared in config
+			if( ! app.cfg.BING_MAPS_KEY && app.portal.bingKey ) {
+				app.cfg.BING_MAPS_KEY = app.portal.bingKey;
+			}
 			
 			// Disable feature service creation as Portal for ArcGIS 10.2 doesn't support that yet
 			if( app.portal.isPortal && app.cfg && app.cfg.AUTHORIZED_IMPORT_SOURCE )
@@ -948,10 +991,29 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		
 		function initPopupPrepare()
 		{
+			var errMsg = "notConfiguredMobile";
+			
 			cleanLoadingTimeout();
 			app.isInitializing = true;
 			app.initScreenIsOpen = true;
-			initError("notConfiguredMobile", null, true);
+			
+			// Touch device 
+			if ( has("touch") && CommonHelper.isMobile() ) {
+				// in portrait mode with enough room in landscape for builder
+				if ( window.innerHeight > window.innerWidth ) {
+					if ( window.innerHeight > 768 ) {
+						errMsg = "notConfiguredMobile2";
+					}
+				}
+				// in landscape mode with enough room to fit builder but prepare in case of orientation change
+				else {
+					if ( window.innerWidth > 768 ) {
+						errMsg = "notConfiguredMobile2";
+					}
+				}
+			}
+			
+			initError(errMsg, null, true);
 			setTimeout(handleWindowResize, 50);
 		}
 		

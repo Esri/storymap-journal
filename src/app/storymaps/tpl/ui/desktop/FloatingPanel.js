@@ -6,6 +6,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 		"../StoryText",
 		"storymaps/common/utils/HeaderHelper",
 		"storymaps/common/utils/CommonHelper",
+		"storymaps/common/utils/SocialSharing",
 		"dojo/has",
 		"dojo/topic",
 		"lib-app/jquery.hammer.min",
@@ -23,6 +24,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 		StoryText,
 		HeaderHelper,
 		CommonHelper,
+		SocialSharing,
 		has,
 		topic
 	){		
@@ -73,9 +75,10 @@ define(["lib-build/tpl!./FloatingPanelSection",
 						container.find('.sections').css(layoutOptions.layoutCfg.position == "left" ? "padding-left" : "padding-right", "3%");
 					}
 					
-					if ( app.data.userIsAppOwner() ) {
+					if ( app.userCanEdit && has("ie") != 9 && ! CommonHelper.getUrlParams().preview ) {
 						container.find('.error-status').addClass('enabled');
 						topic.subscribe("MYSTORIES_SCAN", updateErrorStatus);
+						updateErrorStatus("start");
 					}
 				}
 			};
@@ -168,10 +171,31 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			this.toggleSwitchBuilderButton = function(state)
 			{
 				container.find('.switchBuilder')
-					.html('<span class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton)
+					.html('<span class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
 					.off('click')
 					.click(CommonHelper.switchToBuilder)
 					.toggle(state);
+				
+				if ( has("ff") || has("ie") || has("trident") == 7) {
+					container.find('.switch-builder-close').hide();
+				}
+				else {
+					container.find('.switch-builder-close').click(function(){
+						container.find('.switchBuilder').hide();
+						$(window).resize();
+						return false;
+					});
+				}
+			};
+			
+			this.enableAutoplay = function()
+			{
+				HeaderHelper.disableSocialBtnAppSharingAutoplay(container);
+			};
+			
+			this.toggleSocialBtnAppSharing = function(disable)
+			{
+				HeaderHelper.toggleSocialBtnAppSharing(container, disable);
 			};
 			
 			this.enableSwiperKeybordEvent = function()
@@ -254,17 +278,20 @@ define(["lib-build/tpl!./FloatingPanelSection",
 						sectionLastContent = tabableContent.last();
 					
 					sectionLastContent.on('keydown', function(e) {
-						if( e.keyCode === 9 ) {
-							if ( ! e.shiftKey ) {
-								if ( i < titles.length - 1 ) {
-									onDotNavigation(i + 1);
-									setTimeout(function(){
-										titles.eq(i + 1).focus();
-									}, 200);
-								}
-								else {
-									focusHeader();
-								}
+						if( e.keyCode === 9 && ! e.shiftKey ) {
+							// Focus out when embedded
+							if (window != window.top) {
+								return true;
+							}
+							
+							if ( i < titles.length - 1 ) {
+								onDotNavigation(i + 1);
+								setTimeout(function(){
+									titles.eq(i + 1).focus();
+								}, 200);
+							}
+							else {
+								focusHeader();
 							}
 							return false;
 						}
@@ -316,13 +343,17 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					optHtmlClass = 'draft-section';*/
 				if(status != "PUBLISHED")
 					optHtmlClass = 'hidden-section';
-					
+				
+				var shareURL = SocialSharing.cleanURL(document.location.href, true);
+				shareURL += shareURL.match(/\?/) ? '&' : '?';
+				shareURL += "section=" + (index+1);
+				
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
 					title: StoryText.prepareEditorContent(title),
 					content: StoryText.prepareEditorContent(content, true),
 					lblShare: i18n.viewer.headerFromCommon.share,
-					shareURL: CommonHelper.getAppViewModeURL() + "&section=" + (index+1),
+					shareURL: shareURL,
 					scroll: i18n.viewer.floatLayout.scroll
 				});
 			}
@@ -614,32 +645,76 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			/*
 			 * My Stories
 			 */
+
+			function removeErrorStatus()
+			{
+				container.find('.check-story').hide();
+				if ( ! container.find('.check-story').is(":visible") && ! container.find('.share-story').is(":visible") ) {
+					container.find('.error-status').removeClass("enabled");
+				}
+				return false;
+			}
+			
+			function removeErrorStatus2()
+			{
+				container.find('.share-story').hide();
+				if ( ! container.find('.check-story').is(":visible") && ! container.find('.share-story').is(":visible") ) {
+					container.find('.error-status').removeClass("enabled");
+				}
+				return false;
+			}
 			
 			function updateErrorStatus(status)
 			{
-				var checkBtn = container.find('.check-story');
+				var checkBtn = container.find('.check-story'),
+					closeBtn = $('<span aria-hidden="true" class="check-story-close">×</span>'),
+					closeBtn2 = $('<span aria-hidden="true" class="check-story-close">×</span>');
+				
+				checkBtn.off('click').removeClass("forceEvent").show();
+
+				closeBtn.click(removeErrorStatus);
+				closeBtn2.click(removeErrorStatus2);
 				
 				if ( status == "start" ) {
 					checkBtn
 						.html('<span class="small-loader"></span>' +  i18n.viewer.headerFromCommon.checking)
+						.append(closeBtn)
 						.css("cursor", "default");
 				}
 				else if ( status == "error" ) {
 					checkBtn
 						.html(i18n.viewer.headerFromCommon.fix)
+						.append(closeBtn)
 						.css("cursor", "pointer")
 						.click(CommonHelper.switchToBuilder)
-						.show()
 						.removeClass('btn-warning')
 						.addClass('btn-danger');
 				}
 				else {
 					checkBtn
 						.html(i18n.viewer.headerFromCommon.noerrors)
+						.append(closeBtn)
 						.removeClass('btn-warning')
 						.addClass('btn-success');
 				}
+
+				// IE and FF has trouble with the close button being inside a button
+				if ( (has("ff") || has("ie") || has("trident") == 7) && status != "error" ) {
+					checkBtn
+						.click(removeErrorStatus)
+						.addClass("forceEvent");
+				}
+				
+				//
+				// Sharing
+				//
+				
+				container.find(".share-story")
+					.html(i18n.viewer.headerFromCommon.notshared)
+					.append(closeBtn2)
+					.toggle(app.data.getWebAppItem().access == "private" || app.data.getWebAppItem().access == "shared");
 			}
+
 			
 			/*
 			 * Init events 

@@ -18,7 +18,8 @@
 				height: "Chiều cao",
 				create: "Tạo",
 				yes: "Có",
-				no: "Không"
+				no: "Không",
+				mystories: "Câu chuyện của Tôi"
 			},
 			inlineFieldEdit: {
 				editMe: "Chỉnh sửa tôi!"
@@ -30,9 +31,10 @@
 				buttonShare: "Chia sẻ",
 				buttonSettings: "Thiết lập",
 				buttonHelp: "Trợ giúp",
-				buttonPreview: "Xem Trực tiếp",
+				buttonPreview: "Xem câu chuyện",
 				tooltipFirstSave: "Ứng dụng này không khả dụng cho đến khi bạn lưu.",
 				tooltipNotShared: "Ứng dụng này không khả dụng cho đến khi bạn chia sẻ.",
+				tooltipNotShared2: "Câu chuyện của bạn không được chia sẻ, chỉ có bạn mới được truy cập câu chuyện này.",
 				noPendingChange: "Không có thay đổi chờ xử lý",
 				unSavedChangePlural: "Thay đổi chờ xử lý",
 				closeWithPendingChange: "Bạn có chắc chắn muốn xác nhận hành động này không? Các thay đổi của bạn sẽ bị mất.",
@@ -52,10 +54,21 @@
 				err1Div2: "Vui lòng sửa đổi tiêu đề câu chuyện của bạn, sau đó lưu lại.",
 				btnOk: "Chỉnh sửa tiêu đề câu chuyện"
 			},
+			saveErrorSocial: {
+				title: "Cập nhật chia sẻ trên mạng xã hội",
+				panel1: "Hình dạng câu chuyện của bạn trên mạng xã hội đã được cải thiện, tuy nhiên, tiêu đề mục ứng dụng web ArcGIS của bạn không giống với tiêu đề câu chuyện của bạn.",
+				panel1tooltip: "Bằng cách xác định tiêu đề, phần tổng kết và hình thu nhỏ, câu chuyện của bạn sẽ trông như thế này:",
+				panel2:	"Bạn muốn sử dụng tiêu đề nào trên mạng xã hội:",
+				panel2q1: "Tiêu đề câu chuyện (khuyến nghị)",
+				panel2q1tooltip: "Bằng cách chọn tùy chọn này, tiêu đề mục của bạn sẽ được điều chỉnh cho khớp với tiêu đề câu chuyện của bạn và các thay đổi tiếp theo trong bộ thiết lập sẽ được đồng bộ hóa.",
+				panel2q2: "Tiêu đề mục",
+				panel3: "Để cải thiện hơn nữa hình dạng của câu chuyện của bạn trên mạng xã hội, hãy sử dụng ${MYSTORIES} để thêm phần tổng kết và hình thu nhỏ.",
+				panel4: "Đừng cảnh báo lại đối với câu chuyện này"
+			},
 			share: {
 				shareTitle: "Chia sẻ câu chuyện của bạn",
 				preview: "Xem trước",
-				viewlive: "Xem trực tiếp",
+				viewlive: "Xem câu chuyện",
 				btnPrivate: "Riêng tư",
 				btnPrivateTooltip: "Chỉ có bạn được quyền xem câu chuyện",
 				btnOrg: "Tổ chức",
@@ -74,10 +87,11 @@
 				notavailable2: "Xin lỗi, chia sẻ câu chuyện của bạn từ Bộ thiết lập không được hỗ trợ trên phiên bản Portal for ArcGIS này (yêu cầu phiên bản 10.4 trở lên).",
 				notavailable3: "Bạn có thể chia sẻ câu chuyện từ %LINK%.",
 				notavailable4: "Câu chuyện của Tôi",
-				notavailable5: "Nó là trang mục",
+				notavailable5: "trang mục của câu chuyện",
 				notavailable6: "Xin lỗi, tính năng này không được hỗ trợ đầy đủ trong chế độ phát triển. Tùy theo kịch bản triển khai của bạn, tính năng này có thể được hỗ trợ khi được triển khai.",
 				notavailable7: "Hãy bảo đảm truy cập %MYCONTENT% để xác nhận bản đồ và lớp được sử dụng trong câu chuyện của bạn cũng được chia sẻ.",
-				notavailable8: "Nội dung của tôi"
+				notavailable8: "Nội dung của tôi",
+				mystoriesinvite2: "Để cải thiện hình dạng của câu chuyện của bạn trên mạng xã hội, hãy sử dụng ${MYSTORIES} để thêm phần tổng kết và hình thu nhỏ."
 			},
 			settings: {
 				header: "Thiết lập",
@@ -93,7 +107,7 @@
 				title: "Chủ đề"
 			},
 			settingsHeader: {
-				title: "Đầu mục",
+				title: "Đầu trang",
 				logoEsri: "Logo Esri",
 				logoNone: "Không có logo",
 				logoCustom: "Logo tùy chỉnh",

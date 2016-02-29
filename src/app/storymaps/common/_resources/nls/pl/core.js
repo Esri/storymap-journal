@@ -18,7 +18,8 @@
 				height: "Wysokość",
 				create: "Utwórz",
 				yes: "Tak",
-				no: "Nie"
+				no: "Nie",
+				mystories: "Moje narracje"
 			},
 			inlineFieldEdit: {
 				editMe: "Edytuj!"
@@ -30,9 +31,10 @@
 				buttonShare: "Udostępnij",
 				buttonSettings: "Ustawienia",
 				buttonHelp: "Pomoc",
-				buttonPreview: "Wyświetl dane dynamiczne",
+				buttonPreview: "Wyświetl narrację",
 				tooltipFirstSave: "Z tego elementu można skorzystać dopiero po zapisaniu.",
 				tooltipNotShared: "Z tego elementu można skorzystać dopiero po udostępnieniu.",
+				tooltipNotShared2: "Twoja narracja nie jest udostępniana, tylko Ty masz do niej dostęp.",
 				noPendingChange: "Brak oczekujących zmian",
 				unSavedChangePlural: "Oczekujące zmiany",
 				closeWithPendingChange: "Czy na pewno chcesz potwierdzić tę operację? Zmiany zostaną utracone.",
@@ -52,10 +54,21 @@
 				err1Div2: "Zmodyfikuj tytuł narracji i ponownie ją zapisz.",
 				btnOk: "Edytuj tytuł narracji"
 			},
+			saveErrorSocial: {
+				title: "Udostępnianie aktualizacji w serwisach społecznościowych",
+				panel1: "Wygląd narracji w serwisach społecznościowych został poprawiony, ale tytuł elementu aplikacji internetowej ArcGIS jest inny niż tytuł narracji.",
+				panel1tooltip: "Po zdefiniowaniu tytułu, podsumowania i obrazu miniatury, narracja będzie wyglądała następująco:",
+				panel2:	"Którego tytułu chcesz używać w serwisach społecznościowych:",
+				panel2q1: "Tytuł narracji (zalecane)",
+				panel2q1tooltip: "Po wybraniu tej opcji tytuł elementu zostanie zmodyfikowany zgodnie z tytułem narracji, a dodatkowe zmiany w kreatorze zostaną zsynchronizowane.",
+				panel2q2: "Tytuł elementu",
+				panel3: "Aby dodatkowo poprawić wygląd narracji w serwisach społecznościowych, użyj karty ${MYSTORIES} w celu dodania podsumowania i obrazu miniatury.",
+				panel4: "Nie ostrzegaj ponownie dla tej narracji"
+			},
 			share: {
 				shareTitle: "Udostępnij narrację",
 				preview: "Zobacz podgląd",
-				viewlive: "Wyświetl na żywo",
+				viewlive: "Wyświetl narrację",
 				btnPrivate: "Prywatny",
 				btnPrivateTooltip: "Tylko Ty widzisz narrację",
 				btnOrg: "Instytucja",
@@ -77,14 +90,15 @@
 				notavailable5: "to jest strona elementu",
 				notavailable6: "Przykro nam, ale ta funkcja nie jest obsługiwana w trybie deweloperskim. W zależności od planu wdrożenia ta funkcja może być obsługiwana po jej wdrożeniu.",
 				notavailable7: "Sprawdź na karcie %MYCONTENT%, czy mapy i warstwy wykorzystane w narracji zostały również udostępnione.",
-				notavailable8: "Moje zasoby"
+				notavailable8: "Moje zasoby",
+				mystoriesinvite2: "Aby poprawić wygląd narracji w sieciach społecznościowych, użyj karty ${MYSTORIES} w celu dodania podsumowania i obrazu miniatury."
 			},
 			settings: {
 				header: "Ustawienia",
 				tabError: "Sprawdź, czy poszczególne karty nie zawierają błędnych danych"
 			},
 			settingsLayout: {
-				title: "Układ",
+				title: "Kompozycja",
 				explain: "Jakiego układu chcesz użyć?",
 				explainInit: "W oknie dialogowym ustawień możesz zmienić układ w dowolnej chwili.",
 				viewExample: "Wyświetl przykład online"

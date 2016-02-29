@@ -43,6 +43,7 @@ body.mobile-view .mapCommandHomeBtn.loading.touch {
 	height: 32px;
 	background-size: 26px 26px;
 	background-color: #FFF;
+	background-repeat: no-repeat;
 	cursor: pointer;
 }
 
@@ -51,6 +52,7 @@ body.mobile-view .mapCommandHomeBtn.loading.touch {
 	width: 39px;
 	height: 38px;
 	background-size: 31px;
+	background-position: 3px 3px;
 }
 
 .mapCommandLocation.hidden {

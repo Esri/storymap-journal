@@ -73,7 +73,7 @@ define([
 
         this._view = this.view || "gallery";
         this._query = this.query;
-        this._queryOptions = this.queryOptions || {"sort":this.sort || [{ attribute: "title", descending: false }]};
+        this._queryOptions = this.queryOptions || {"sort":this.sort || [{ attribute: "modified", descending: true }]};
         this._store = this.store ||  new Cache(new PortalItemStore({'portal': this.portal, galleryType: this.galleryType}), new Memory({data:[]}));
         this._rowsPerPage = this.rowsPerPage || 8;
         this._sort = this.sort || [{ attribute: "title", descending: false }];
@@ -129,10 +129,11 @@ define([
       _showSnippet: function(show, event) {
         var row = this._grid.row(event);
         if (row){
-          query(".itemGrid .itemTitle", row.element).style("display", (show ? "none": ""));
+          //query(".itemGrid .itemTitle", row.element).style("display", (show ? "none": ""));
+          query(".itemGrid .itemTitle", row.element)[show ? "addClass" : "removeClass"]("hover");
           query(".itemGrid .itemOwner", row.element).style("display", (show ? "none": ""));
           query(".itemGrid > img", row.element).style("display", (show ? "none" : ""));
-          query(".itemGrid .snippet", row.element).style("display", (show ? "" : "none"));
+          //query(".itemGrid .snippet", row.element).style("display", (show ? "" : "none"));
         }
       },
 

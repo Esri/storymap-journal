@@ -18,7 +18,8 @@
 				height: "高さ",
 				create: "作成",
 				yes: "はい",
-				no: "いいえ"
+				no: "いいえ",
+				mystories: "マイ ストーリー"
 			},
 			inlineFieldEdit: {
 				editMe: "編集"
@@ -30,9 +31,10 @@
 				buttonShare: "共有",
 				buttonSettings: "設定",
 				buttonHelp: "ヘルプ",
-				buttonPreview: "最新表示",
+				buttonPreview: "ストーリーの表示",
 				tooltipFirstSave: "これは保存するまで利用できません。",
 				tooltipNotShared: "これは共有するまで利用できません。",
+				tooltipNotShared2: "ストーリーは共有されていません。このストーリーにアクセスできるのはあなただけです。",
 				noPendingChange: "保留中の変更はありません",
 				unSavedChangePlural: "保留中の変更",
 				closeWithPendingChange: "このアクションを確認しますか？変更内容は失われます。",
@@ -52,10 +54,21 @@
 				err1Div2: "ストーリーのタイトルを変更して保存してください。",
 				btnOk: "ストーリー タイトルの編集"
 			},
+			saveErrorSocial: {
+				title: "ソーシャル メディアでの共有の更新",
+				panel1: "ソーシャル メディアでのストーリーの外観が改善されていますが、ArcGIS Web アプリケーション アイテムのタイトルがストーリーのタイトルと同じではありません。",
+				panel1tooltip: "タイトル、サマリー、およびサムネイル画像を定義すると、ストーリーは次のように表示されます。",
+				panel2:	"ソーシャル メディアで使用するタイトル:",
+				panel2q1: "ストーリーのタイトル (推奨)",
+				panel2q1tooltip: "このオプションを選択すると、アイテムのタイトルは、ストーリーのタイトルと一致するように変更され、ビルダーでの追加の変更が同期するようになります。",
+				panel2q2: "アイテムのタイトル",
+				panel3: "ソーシャル メディアでのストーリーの外観をさらに改善するには、${MYSTORIES} を使用してサマリーとサムネイル画像を追加します。",
+				panel4: "今後、ストーリーについて警告しない"
+			},
 			share: {
 				shareTitle: "ストーリーの共有",
 				preview: "プレビュー",
-				viewlive: "最新表示",
+				viewlive: "ストーリーの表示",
 				btnPrivate: "プライベート",
 				btnPrivateTooltip: "このストーリーを表示できるのはあなただけです",
 				btnOrg: "組織",
@@ -77,7 +90,8 @@
 				notavailable5: "これはアイテム ページです",
 				notavailable6: "開発モードでは、この機能は一部サポートされません。配置シナリオによっては、配置時にこの機能がサポートされる場合があります。",
 				notavailable7: "必ず %MYCONTENT% を参照し、ストーリーで使用されているマップとレイヤーも共有されていることを確認してください。",
-				notavailable8: "マイ コンテンツ"
+				notavailable8: "マイ コンテンツ",
+				mystoriesinvite2: "ソーシャル ネットワークでのストーリーの外観を改善するには、${MYSTORIES} を使用してサマリーとサムネイル画像を追加します。"
 			},
 			settings: {
 				header: "設定",
@@ -90,7 +104,7 @@
 				viewExample: "最新例を表示"
 			},
 			settingsTheme: {
-				title: "主題"
+				title: "テーマ"
 			},
 			settingsHeader: {
 				title: "ヘッダー",

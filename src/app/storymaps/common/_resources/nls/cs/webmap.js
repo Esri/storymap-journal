@@ -9,6 +9,8 @@
 				lblControls: "Doplňky",
 				lblOverview: "Mapa přehledu",
 				lblLegend: "Legenda",
+				lblGeocoder: "Vyhledávání adresy nebo místa",
+				tooltipGeocoder: "Umožňuje uživatelům vyhledávat adresy a místa ve vašich mapách.",
 				loadingTitle: "Načítání nadpisu",
 				entry: "Záznam",
 				entries: "Záznamy",
@@ -28,7 +30,7 @@
 				customCfg: "Vlastní konfigurace",
 				tooltipLocation: "Určete oblast, kterou bude tato mapa zobrazovat.",
 				tooltipContent: "Určete viditelné vrstvy.",
-				tooltipPopup: "Vyberte vyskakovací okno, které se zobrazí po otevření mapy.",
+				tooltipPopup: "Zvolte vyskakovací okno, které se otevře po zobrazení mapy.",
 				tooltipOverview: "Zobrazí spolu s hlavní mapou malou přehledovou mapu.",
 				tooltipLegend: "Zobrazí v mapě její legendu. Užitečné v případě, kdy mapa obsahuje velké množství vrstev a symbolů.",
 				mapCfgInvite: "Pomocí těchto ovládacích prvků můžete konfigurovat mapu.",
@@ -46,8 +48,8 @@
 				extentExplain: "Pomocí posunutí a přiblížení mapy můžete nastavit, jak se zobrazí čtenářům.",
 				extentSave: "Uložit umístění mapy",
 				popupTitle: "Vyskakovací okno mapy",
-				popupExplain: "Kliknutím na prvek otevřete vyskakovací okno, s informacemi, které chcete o prvku zobrazit.",
-				popupSave: "Uložit konfiguraci vyskakovacího okna",
+				popupExplain: "Kliknutím na prvek otevřete požadované vyskakovací okno.",
+				popupSave: "Uložit konfiguraci vyskakovacích oken",
 				hintNavigation: "Navigace mapy je vypnuta."
 			},
 			editor: {

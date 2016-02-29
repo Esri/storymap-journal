@@ -23,6 +23,18 @@ define([
 				_shareURLPanel.focus();
 			});
 			
+			container.find('.autoplay-checkbox').change(function(){
+				_shareURLPanel.setAutoplay(!! this.checked);
+				_shareEmbedPanel.setAutoplay(!! this.checked);
+				container.find(".autoplay-notification")
+					.html(i18n.viewer.shareFromCommon.linksupdated)
+					.fadeIn();
+				
+				setTimeout(function(){
+					container.find(".autoplay-notification").fadeOut();
+				}, 1000);
+			});
+			
 			this.present = function(url, socialOptions)
 			{
 				socialOptions = socialOptions || {
@@ -39,6 +51,16 @@ define([
 				container.find('.modal-title').html(i18n.viewer.headerFromCommon.share);
 				container.find('.embed-title').html(i18n.viewer.shareFromCommon.embed);
 				container.find('.btn-close').html(i18n.viewer.common.close);
+				
+				container.find('.autoplay-label').html(i18n.viewer.shareFromCommon.autoplayLabel);
+				container.find('.autoplay-help').tooltip({
+					title: i18n.viewer.shareFromCommon.autoplayExplain1 
+						+ '<br /><br />' 
+						+ i18n.viewer.shareFromCommon.autoplayExplain2,
+					html: true
+				});
+				
+				container.find('.autoplay-checkbox').prop("checked", false);
 				
 				container.modal({ keyboard:true });
 			};

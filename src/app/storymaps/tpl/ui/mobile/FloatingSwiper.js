@@ -2,6 +2,7 @@ define(["lib-build/tpl!./FloatingSwiperSection",
 		"lib-build/css!./FloatingSwiper",
 		"../StoryText",
 		"storymaps/common/utils/HeaderHelper",
+		"storymaps/common/utils/SocialSharing",
 		"dojo/has",
 		"lib-app/jquery",
 		"lib-app/swiper/idangerous.swiper",
@@ -11,6 +12,7 @@ define(["lib-build/tpl!./FloatingSwiperSection",
 		viewCss,
 		StoryText,
 		HeaderHelper,
+		SocialSharing,
 		has
 	){
 		return function FloatingSwiper(container, isInBuilder, navigationCallback)
@@ -86,6 +88,16 @@ define(["lib-build/tpl!./FloatingSwiperSection",
 				_swipePane && _swipePane.resizeFix();
 			};
 			
+			this.enableAutoplay = function()
+			{
+				HeaderHelper.disableSocialBtnAppSharingAutoplay(container, "top");
+			};
+			
+			this.toggleSocialBtnAppSharing = function(disable)
+			{
+				HeaderHelper.toggleSocialBtnAppSharing(container, disable);
+			};
+			
 			/*
 			 * Sections rendering
 			 */
@@ -148,10 +160,11 @@ define(["lib-build/tpl!./FloatingSwiperSection",
 						}
 						*/
 						//if ( ! closestLink.length || container.hasClass('expanded') )
-						
+												
 						// In the embed detail view, allow to click on the previous/next buttons
 						// This require to modify iDangero.us swiper too add the clickedTarget property
-						if ( container.hasClass("hasDesktopBtn") && container.hasClass("expanded") && $(e.clickedTarget).hasClass("embed-btn2") )
+						if ( container.hasClass("hasDesktopBtn") && container.hasClass("expanded") 
+								&& ($(e.clickedTarget).hasClass("embed-btn2") || $(e.clickedTarget).hasClass("shareIcon")) )
 							return;
 						
 						// An alternative that don't require to modify the lib but it to disable the ability to close in expanded view 
@@ -175,9 +188,15 @@ define(["lib-build/tpl!./FloatingSwiperSection",
 				
 				_nbSections++;
 				
+				var shareURL = SocialSharing.cleanURL(document.location.href, true);
+				shareURL += shareURL.match(/\?/) ? '&' : '?';
+				shareURL += "section=" + _nbSections;
+				
 				return viewSectionTpl({
 					title: $("<div>" + StoryText.prepareEditorContent(title) + "</div>").text(),
 					content: StoryText.prepareEditorContent(content),
+					lblShare: i18n.viewer.headerFromCommon.share,
+					shareURL: shareURL,
 					lblTapDetails: i18n.viewer.mobileView.tapForDetails,
 					lblClickDetails: i18n.viewer.mobileView.clickForDetails.toUpperCase(),
 					lblSwipe: i18n.viewer.mobileView.swipeToExplore,

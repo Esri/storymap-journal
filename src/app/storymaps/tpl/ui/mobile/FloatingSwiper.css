@@ -98,6 +98,19 @@
 }
 
 /*
+ * Social
+ */
+
+.floatingSwiper .social {
+    text-align: center;
+	margin-top: 10px;
+}
+
+.floatingSwiper .section:first-child .social {
+    display: none;
+}
+
+/*
  * Help
  */
 

@@ -13,6 +13,8 @@ define(["lib-build/css!./MainView",
 		"storymaps/common/mapcontrols/command/MapCommand",
 		"storymaps/common/mapcontrols/legend/Legend",
 		"storymaps/common/mapcontrols/overview/Overview",
+		// Autoplay
+		"storymaps/common/ui/autoplay/Autoplay",
 		
 		"lib-build/css!storymaps/common/_resources/font/sharing/css/fontello.css",
 		"lib-build/css!storymaps/common/utils/SocialSharing.css",
@@ -42,6 +44,7 @@ define(["lib-build/css!./MainView",
 		MapCommand,
 		Legend,
 		Overview,
+		Autoplay,
 		socialSharingIconCss,
 		socialSharingCss,
 		loadingIndicatorCss,
@@ -140,6 +143,44 @@ define(["lib-build/css!./MainView",
 					navigateStoryToIndex
 				);
 				
+				// Autoplay in viewer mode
+				if ( ! app.isInBuilder && CommonHelper.getUrlParams().autoplay !== undefined && CommonHelper.getUrlParams().autoplay !== "false" ) {
+					app.ui.autoplay = new Autoplay(
+						$("#autoplay"),
+						// Callback that navigate to the next section
+						function() {
+							var nextIndex = 0;
+							
+							if( app.data.getCurrentSectionIndex() != app.data.getStoryLength() -1 ) {
+								nextIndex = app.data.getCurrentSectionIndex() + 1;
+							}
+							
+							// Delay the event so Autoplay has received the updated index before the event is fired
+							setTimeout(function(){
+								topic.publish("story-navigate-section", nextIndex);
+							}, 50);
+							
+							return nextIndex;
+						}
+					);
+					
+					// Start when app is ready
+					topic.subscribe("tpl-ready", function(){
+						if ( ! $("body").hasClass("mobile-view") ) {
+							app.ui.autoplay.start();
+						}
+					});
+					
+					// Inform autoplay of story navigation events
+					topic.subscribe("story-load-section", function(index) {
+						app.ui.autoplay.onNavigationEvent(index);
+					});
+					
+					app.ui.sidePanel.enableAutoplay();
+					app.ui.floatingPanel.enableAutoplay();
+					app.ui.mobileView.enableAutoplay();
+				}
+				
 				topic.subscribe("story-navigate-section", navigateStoryToIndex);
 				topic.subscribe("story-update-sections", updateUIStory);
 				topic.subscribe("story-update-section", updateStorySection);
@@ -163,33 +204,45 @@ define(["lib-build/css!./MainView",
 								$(this).off("blur").css("outline", "");
 							});
 						}
+						
 						// Prevent outline over image caption container in description panel - Unsure why needed
-						else if ( $(this).parents("figure.caption").length ) {
+						if ( $(this).parents("figure.caption").length ) {
 							$(this).parents("figure.caption").css("outline", "none").on("blur", function() {
 								$(this).off("blur").css("outline", "");
 							});
 						}
+						
 						// Prevent outline over title in description panel - Unsure why needed
-						else if ( $(this).parents(".title").length ) {
+						if ( $(this).parents(".title").length ) {
 							$(this).parents(".title").css("outline", "none").on("blur", function() {
 								$(this).off("blur").css("outline", "");
 							});
 						}
+						
 						// Prevent outline over paragraph in description panel - Unsure why needed
-						else if ( $(this).parentsUntil(".content", "div").length ) {
+						if ( $(this).parentsUntil(".content", "div").length ) {
 							$(this).parentsUntil(".content", "div").css("outline", "none").on("blur", function() {
 								$(this).off("blur").css("outline", "");
 							});
 						}
+						
 						// Prevent outline over paragraph in description panel - Unsure why needed
-						else if ( $(this).parents("p").length ) {
+						if ( $(this).parents("p").length ) {
 							$(this).parents("p").css("outline", "none").on("blur", function() {
 								$(this).off("blur").css("outline", "");
 							});
 						}
+						
 						// Prevent outline over ul in description panel - Unsure why needed
-						else if ( $(this).parents("ul").length ) {
+						if ( $(this).parents("ul").length ) {
 							$(this).parents("ul").css("outline", "none").on("blur", function() {
+								$(this).off("blur").css("outline", "");
+							});
+						}
+						
+						// Prevent outline over ul in description panel - Unsure why needed
+						if ( $(this).parents("ol").length ) {
+							$(this).parents("ol").css("outline", "none").on("blur", function() {
 								$(this).off("blur").css("outline", "");
 							});
 						}
@@ -212,6 +265,7 @@ define(["lib-build/css!./MainView",
 				// FromScratch doesn't get here
 				// From the webmap has the webmap id
 				app.isGalleryCreation = ! Object.keys(app.data.getWebAppData().getOriginalData().values).length;
+				app.isWebMapCreation = app.data.getWebAppData().isBlank();
 			};
 			
 			this.loadFirstWebmap = function(/*webmapIdOrJSON*/)
@@ -244,7 +298,7 @@ define(["lib-build/css!./MainView",
 					},
 					usePopupManager: true,
 					ignorePopups: false,
-					bingMapsKey: commonConfig.bingMapsKey,
+					bingMapsKey: app.cfg.BING_MAPS_KEY,
 					editable: false,
 					layerMixins: app.data.getAppProxies()
 				}); 
@@ -352,7 +406,7 @@ define(["lib-build/css!./MainView",
 				}
 				// No data in view mode
 				else if( CommonHelper.getAppID(_core.isProd()) ) {
-					if( app.data.userIsAppOwner() ){
+					if( app.userCanEdit ){
 						//app.ui.loadingIndicator.setMessage(i18n.viewer.loading.loadBuilder);
 						//setTimeout(function(){
 							CommonHelper.switchToBuilder();
@@ -405,6 +459,14 @@ define(["lib-build/css!./MainView",
 						_core.getHeaderUserCfg(),
 						appColors
 					);
+				}
+				
+				if ( app.ui.autoplay ) {
+					app.ui.autoplay.init({
+						color: appColors.dotNav,
+						themeMajor: appColors.themeMajor,
+						useBackdrop: appLayout == "float"
+					});
 				}
 			}
 
@@ -576,6 +638,11 @@ define(["lib-build/css!./MainView",
 				StoryText.styleSectionPanelContent();
 				
 				app.ui.mainStage.updateMainStageWithLayoutSettings();
+				
+				// Stop autoplay in mobile view
+				if ( cfg.isMobileView && app.ui.autoplay ) {
+					app.ui.autoplay.stop();
+				}
 			};
 			
 			//
@@ -592,6 +659,12 @@ define(["lib-build/css!./MainView",
 				this.updateUI();
 				_core.cleanLoadingTimeout();
 				$(window).resize();
+				
+				var disableSharingLinks =  app.data.getWebAppData().isBlank() || app.data.getWebAppItem().access == "private" || app.data.getWebAppItem().access == "shared";
+				app.ui.sidePanel.toggleSocialBtnAppSharing(disableSharingLinks);
+				app.ui.floatingPanel.toggleSocialBtnAppSharing(disableSharingLinks);
+				app.ui.mobileView.toggleSocialBtnAppSharing(disableSharingLinks);
+				
 				if ( ! app.isDirectCreation )
 					_core.displayApp();
 				topic.publish("tpl-ready");

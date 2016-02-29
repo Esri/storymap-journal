@@ -33,7 +33,8 @@ define([
 				_hasCreatedMap = false,
 				_hasSavedMap = false,
 				_newMapInfos = null,
-				_params = null;
+				_params = null,
+				_isSaving = false;
 			
 			initEvents();
 			
@@ -206,6 +207,11 @@ define([
 			
 			function onEnableSave()
 			{
+				// Avoid conflict if enabling save button while saved confirmation is displayed
+				if ( _isSaving ) {
+					return;
+				}
+				
 				container.find('.btnSubmit')
 					.removeClass('disabled')
 					.html(i18n.commonCore.common.save);
@@ -215,6 +221,14 @@ define([
 			
 			function createCancelButton(enableConfirmation)
 			{
+				if ( container.find('.btnCancel').hasClass('open') ) {
+					return;
+				}
+				
+				if ( enableConfirmation && container.find('.btnCancel').hasClass('has-confirmation') ) {
+					return;
+				}
+				
 				container.find('.btnCancel')
 					.off('click')
 					.confirmation('destroy');
@@ -229,9 +243,13 @@ define([
 						onConfirm: function() { onClickClose(true); },
 						btnCancelClass: 'btn btn-sm btn-default btn-cancel-popover'
 					});
+					
+					container.find('.btnCancel').addClass('has-confirmation');
 				}
 				else {
-					container.find('.btnCancel').click(onClickClose);
+					container.find('.btnCancel')
+						.click(onClickClose)
+						.removeClass('has-confirmation');
 				}
 			}
 			
@@ -244,6 +262,8 @@ define([
 				if ( container.find('.btnSubmit').hasClass('disabled') ) {
 					return;
 				}
+				
+				_isSaving = true;
 				
 				container.find('.btnSubmit')
 					.addClass('disabled')
@@ -335,6 +355,7 @@ define([
 				setTimeout(function(){
 					container.find('.btnSubmit').html(i18n.commonCore.common.save);					
 					container.find('.btnSubmit').toggleClass('disabled', true);
+					_isSaving = false;
 				}, 2000);
 			}
 			

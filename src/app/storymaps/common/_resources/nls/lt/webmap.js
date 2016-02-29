@@ -9,6 +9,8 @@
 				lblControls: "Priedai",
 				lblOverview: "Apžvalga",
 				lblLegend: "Legenda",
+				lblGeocoder: "Adreso arba vietos radimo priemonė",
+				tooltipGeocoder: "Leisti vartotojams rasti adresus ir vietas žemėlapiuose.",
 				loadingTitle: "Įkeliamas pavadinimas",
 				entry: "Įrašas",
 				entries: "Įrašai",
@@ -28,7 +30,7 @@
 				customCfg: "Adaptuota konfigūracija",
 				tooltipLocation: "Nustatykite vietą, kurią rodys šis žemėlapis.",
 				tooltipContent: "Nustatykite matomus sluoksnius.",
-				tooltipPopup: "Pasirinkite iškylantįjį langą, kuris bus atidarytas, kai bus rodomas šis žemėlapis.",
+				tooltipPopup: "Pasirinkite iškylantį langą, kuris bus atidarytas, kai bus rodomas šis žemėlapis.",
 				tooltipOverview: "Kartu su pagrindiniu žemėlapiu rodyti mažą apžvalgos žemėlapį.",
 				tooltipLegend: "Žemėlapyje rodyti žemėlapio legendą. Tai naudinga, kai žemėlapyje yra daug sluoksnių ir simbolių.",
 				mapCfgInvite: "Konfigūruokite žemėlapį naudodami šiuos valdiklius",
@@ -47,7 +49,7 @@
 				extentSave: "Išsaugoti žemėlapio vietą",
 				popupTitle: "Žemėlapio iškylantis langas",
 				popupExplain: "Spustelėkite elementą, kad atidarytumėte norimą rodyti iškylantį langą.",
-				popupSave: "Išsaugoti iškylančio lango konfigūraciją",
+				popupSave: "Įrašyti iškylančio lango konfigūraciją",
 				hintNavigation: "Žemėlapio navigacija išjungta."
 			},
 			editor: {

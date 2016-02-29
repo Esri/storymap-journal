@@ -9,6 +9,8 @@
 				lblControls: "その他",
 				lblOverview: "概観図",
 				lblLegend: "凡例",
+				lblGeocoder: "住所または場所のファインダー",
+				tooltipGeocoder: "ユーザーはマップ上の住所と場所を検索できます。",
 				loadingTitle: "タイトルを読み込んでいます",
 				entry: "エントリ",
 				entries: "エントリ",
@@ -45,7 +47,7 @@
 				extentTitle: "マップ位置",
 				extentExplain: "マップを移動および拡大/縮小して、ユーザに対する外観を定義します。",
 				extentSave: "マップ位置の保存",
-				popupTitle: "マップ ポップアップ",
+				popupTitle: "マップのポップアップ",
 				popupExplain: "フィーチャをクリックして、表示するポップアップを開きます。",
 				popupSave: "ポップアップ構成の保存",
 				hintNavigation: "マップ ナビゲーションは無効化されています。"

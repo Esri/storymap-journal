@@ -18,7 +18,8 @@
 				height: "Altura",
 				create: "Crear",
 				yes: "Sí",
-				no: "No"
+				no: "No",
+				mystories: "Mis historias"
 			},
 			inlineFieldEdit: {
 				editMe: "¡Edítame!"
@@ -30,9 +31,10 @@
 				buttonShare: "Compartir",
 				buttonSettings: "Configuración",
 				buttonHelp: "Ayuda",
-				buttonPreview: "Ver en directo",
+				buttonPreview: "Ver historia",
 				tooltipFirstSave: "Esto no está disponible hasta que guardes.",
 				tooltipNotShared: "Esto no está disponible hasta que compartas.",
+				tooltipNotShared2: "Tu historia no se ha compartido, solo tú puedes acceder a ella.",
 				noPendingChange: "Sin cambios pendientes",
 				unSavedChangePlural: "Cambios pendientes",
 				closeWithPendingChange: "¿Estás seguro de que deseas confirmar esta acción? Los cambios se perderán.",
@@ -52,10 +54,21 @@
 				err1Div2: "Modifica el título de tu historia y, a continuación, guárdala.",
 				btnOk: "Editar título de la historia"
 			},
+			saveErrorSocial: {
+				title: "Actualización de uso compartido de redes sociales",
+				panel1: "La apariencia de tu historia en las redes sociales ha mejorado, pero el título del elemento de tu aplicación web en ArcGIS no coincide con el título de tu historia.",
+				panel1tooltip: "Al definir un título, un resumen y una imagen de la vista en miniatura, tu historia tendrá este aspecto:",
+				panel2:	"Indica el título que deseas utilizar en las redes sociales:",
+				panel2q1: "Título de la historia (recomendado)",
+				panel2q1tooltip: "Si eliges esta opción, el título de tu elemento se modificará para que coincida con el título de la historia. Todos los cambios que se realicen en el builder se sincronizarán.",
+				panel2q2: "Título del elemento",
+				panel3: "Para mejorar aún más la apariencia de tu historia en las redes sociales, utiliza ${MYSTORIES} para agregar un resumen y una imagen de la vista en miniatura.",
+				panel4: "No volver a advertirme sobre esta historia"
+			},
 			share: {
 				shareTitle: "Compartir tu historia",
 				preview: "Vista previa",
-				viewlive: "Ver en directo",
+				viewlive: "Ver historia",
 				btnPrivate: "Privado",
 				btnPrivateTooltip: "Solo tú podrás ver la historia",
 				btnOrg: "Organización",
@@ -74,10 +87,11 @@
 				notavailable2: "Lo sentimos, no es posible compartir tu historia desde Builder en esta versión de Portal for ArcGIS (requiere la versión 10.4 o posterior).",
 				notavailable3: "Puedes compartir esta historia desde %LINK%.",
 				notavailable4: "Mis historias",
-				notavailable5: "es una página de elementos",
+				notavailable5: "su página de elementos",
 				notavailable6: "Lo sentimos, esta entidad no es totalmente compatible en modo de desarrollo. Según tu escenario de implementación, es posible que la entidad sea compatible al implementarla.",
 				notavailable7: "Asegúrate de visitar %MYCONTENT% para confirmar que los mapas y capas empleados en tu historia se han compartido también.",
-				notavailable8: "Mi contenido"
+				notavailable8: "Mi contenido",
+				mystoriesinvite2: "Para mejorar la apariencia de tu historia en las redes sociales, utiliza ${MYSTORIES} para agregar un resumen y una imagen de la vista en miniatura."
 			},
 			settings: {
 				header: "Configuración",

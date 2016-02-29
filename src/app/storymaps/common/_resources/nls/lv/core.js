@@ -18,7 +18,8 @@
 				height: "Augstums",
 				create: "Izveidot",
 				yes: "Jā",
-				no: "Nē"
+				no: "Nē",
+				mystories: "Mani stāsti"
 			},
 			inlineFieldEdit: {
 				editMe: "Rediģē mani!"
@@ -30,9 +31,10 @@
 				buttonShare: "Koplietot",
 				buttonSettings: "Iestatījumi",
 				buttonHelp: "Palīdzība",
-				buttonPreview: "Skatīt tiešraidē",
+				buttonPreview: "Skatīt stāstu",
 				tooltipFirstSave: "Tas nav pieejams pirms saglabāšanas.",
 				tooltipNotShared: "Tas nav pieejams pirms kopīgošanas.",
+				tooltipNotShared2: "Jūsu stāsts nav kopīgots; tam varat piekļūt tikai jūs pats.",
 				noPendingChange: "Nav neizpildītu izmaiņu",
 				unSavedChangePlural: "Gaida izmaiņas",
 				closeWithPendingChange: "Vai tiešām vēlaties apstiprināt šo darbību? Jūsu veiktās izmaiņas tiks zaudētas.",
@@ -52,10 +54,21 @@
 				err1Div2: "Lūdzu, modificējiet sava stāsta nosaukumu un saglabājiet to.",
 				btnOk: "Rediģējiet stāsta nosaukumu"
 			},
+			saveErrorSocial: {
+				title: "Sociālās multivides kopīgošanas atjaunināšana",
+				panel1: "Ir uzlabots jūsu stāsta izskats sociālajā multividē, bet jūsu ArcGIS Web lietotnes vienības virsraksts atšķiras no stāsta virsraksta.",
+				panel1tooltip: "Kad būsiet definējis virsrakstu, kopsavilkumu un sīktēla attēlu, jūsu stāsts izskatīsies šādi:",
+				panel2:	"Kādu virsrakstu vēlaties izmantot sociālajā multividē:",
+				panel2q1: "Stāsta virsraksts (ieteicams)",
+				panel2q1tooltip: "Ja izvēlēsieties šo opciju, vienības virsraksts tiks modificēts tā, lai atbilstu stāsta virsrakstam, un veidotājā tiks sinhronizētas tālākās izmaiņas.",
+				panel2q2: "Vienības virsraksts",
+				panel3: "Ja sociālajā multividē vēlaties vēl vairāk uzlabot stāsta izskatu, izmantojiet ${MYSTORIES}, lai pievienotu kopsavilkumu un sīktēla attēlu.",
+				panel4: "Vairāk nerādīt brīdinājumus par šo stāstu"
+			},
 			share: {
 				shareTitle: "Koplietojiet stāstu",
 				preview: "Priekšskatīt",
-				viewlive: "Skatīt tiešraidē",
+				viewlive: "Skatīt stāstu",
 				btnPrivate: "Privāts",
 				btnPrivateTooltip: "Stāstu varat skatīt tikai jūs",
 				btnOrg: "Organizācija",
@@ -74,10 +87,11 @@
 				notavailable2: "Atvainojiet! Stāsta koplietošana, izmantojot Builder, šajā Portal for ArcGIS versijā netiek atbalstīta (nepieciešama 10.4 vai jaunāka versija).",
 				notavailable3: "Varat koplietot šo stāstu no %LINK%.",
 				notavailable4: "Mani stāsti",
-				notavailable5: "vienības lapa",
+				notavailable5: "tā vienības lapa",
 				notavailable6: "Atvainojiet! Šis elements izstrādes režīmā netiek pilnībā atbalstīts. Iespējams, ka šis elements pēc ieviešanas tiks atbalstīts (atkarībā no jūsu ieviešanas scenārija).",
 				notavailable7: "Apmeklējiet sadaļu %MYCONTENT%, lai pārliecinātos, vai jūsu stāstā izmantotās kartes un slāņi arī tiek koplietoti.",
-				notavailable8: "Mans saturs"
+				notavailable8: "Mans saturs",
+				mystoriesinvite2: "Ja sociālajos tīklos vēlaties uzlabot stāsta izskatu, izmantojiet ${MYSTORIES}, lai pievienotu kopsavilkumu un sīktēla attēlu."
 			},
 			settings: {
 				header: "Iestatījumi",

@@ -7,8 +7,9 @@ define(["lib-build/tpl!./BuilderPanel",
 		"dojo/i18n!commonResources/nls/core.js?v=" + app.version,
 		"storymaps/common/utils/CommonHelper",
 		"./SaveErrorPopup",
+		"./SaveErrorPopupSocial",
 		"dojo/topic"],
-	function (viewTpl, cssTpl, i18n, CommonHelper, SaveErrorPopup, topic) {
+	function (viewTpl, cssTpl, i18n, CommonHelper, SaveErrorPopup, SaveErrorPopupSocial, topic) {
 		return function BuilderPanel(container, builderSave, builderDirectCreationFirstSave, builderGalleryCreationFirstSave) 
 		{
 			container.append(viewTpl({
@@ -19,18 +20,20 @@ define(["lib-build/tpl!./BuilderPanel",
 				btnHelp: i18n.commonCore.builderPanel.buttonHelp,
 				btnPreview: i18n.commonCore.builderPanel.buttonPreview,
 				tooltipFirstSave: i18n.commonCore.builderPanel.tooltipFirstSave,
-				tooltipNotShared: i18n.commonCore.builderPanel.tooltipNotShared,
+				tooltipNotShared: i18n.commonCore.builderPanel.tooltipNotShared2,
 				saveCounter: i18n.commonCore.builderPanel.noPendingChange
 			}));
 			
 			var _this = this,
 				_builderView = null,
-				_saveErrorPopup = null;
+				_saveErrorPopup = null,
+				_saveErrorPopupSocial = null;
 			
 			this.init = function(builderView) 
 			{	
 				_builderView = builderView;
 				_saveErrorPopup = new SaveErrorPopup($("#saveErrorPopup"));
+				_saveErrorPopupSocial = new SaveErrorPopupSocial($("#saveErrorPopupSocial"));
 				
 				initLocalization();
 				
@@ -126,10 +129,52 @@ define(["lib-build/tpl!./BuilderPanel",
 					builderGalleryCreationFirstSave();
 				}
 				else {
-					// Save the app 
-					// If OK and needed call save webmap 
-					// If OK call appSaveSucceeded
-					builderSave();
+					// Save of an existing app
+					
+					var storyTitle = "",
+						itemTitle = "";
+				
+					if ( app.data.getWebAppData().getTitle() ) {
+						storyTitle = app.data.getWebAppData().getTitle().trim();
+					}
+					
+					if (app.data.getWebAppItem() && app.data.getWebAppItem().title ) {
+						itemTitle = app.data.getWebAppItem().title.trim();
+					}
+					
+					// if item and story title don't match
+					//  and user hasn't chose to not be warned about it
+					//  and story is public
+					if ( ! app.builder.titleMatchOnLoad 
+							&& ! app.data.getWebAppData().getDoNotWarnTitle() 
+							&& app.data.getWebAppItem().access == "public"
+							// Extra check that title actually differs - don't show the dialog it title where not matching but user fixed it
+							&& storyTitle != itemTitle
+					) {
+						// If the warning dialog has already been displayed in the session, skip it and reuse the choice
+						if ( app.builder.titleMatchDialogDisplayed ) {
+							builderSave(app.builder.titleFromItem);
+						}
+						// Show the warning dialog
+						else {
+							app.builder.titleMatchDialogDisplayed = true;
+							
+							_saveErrorPopupSocial.present().then(
+								function(p) {
+									app.builder.titleFromItem = p && p.choice == 'item';
+									builderSave(app.builder.titleFromItem);
+								}
+							);
+						}
+					}
+					else {
+						// Save the app 
+						// If OK and needed call save webmap 
+						// If OK call appSaveSucceeded
+						var keepItemTitle = app.data.getWebAppData().getDoNotWarnTitle() 
+							|| (app.data.getWebAppItem().access != "public" && ! app.builder.titleMatchOnLoad);
+						builderSave(keepItemTitle);
+					}
 				}
 			}
 			
@@ -279,9 +324,9 @@ define(["lib-build/tpl!./BuilderPanel",
 				container.find(".builder-save").tooltip('hide');
 			}
 			
-			function changeBuilderPanelButtonState(activate)
+			function changeBuilderPanelButtonState()
 			{
-				container.find(".builder-cmd").attr("disabled", ! activate);
+				_this.updateSharingStatus();
 				_this.resize();
 			}
 			
@@ -291,11 +336,14 @@ define(["lib-build/tpl!./BuilderPanel",
 				 * Share & preview button state
 				 */
 				
-				var disableShare = app.isDirectCreationFirstSave || app.isGalleryCreation,
-					disablePreview =  app.data.getWebAppData().isBlank() || app.data.getWebAppItem().access == "private";
+				var disableShare = app.isDirectCreationFirstSave || app.isGalleryCreation || app.isWebMapCreation,
+					disablePreview =  app.data.getWebAppItem().access == "private" 
+						|| app.data.getWebAppItem().access == "shared";
 				
 				container.find('.builder-share').toggleClass("disabled", disableShare);
-				container.find('.builder-preview').toggleClass("disabled", disablePreview);
+				container.find('.builder-preview')
+					.tooltip("destroy")
+					.removeClass("disabled");
 				
 				if ( disableShare )
 					container.find('.builder-share').tooltip({
@@ -304,9 +352,18 @@ define(["lib-build/tpl!./BuilderPanel",
 				else
 					container.find('.builder-share').tooltip('destroy');
 				
-				if ( disablePreview )
+				if ( disableShare ) {
+					container.find('.builder-preview')
+						.addClass("disabled")
+						.tooltip({
+							trigger: 'hover',
+							title: i18n.commonCore.builderPanel.tooltipFirstSave
+						});
+				}
+				else if ( disablePreview )
 					container.find('.builder-preview').tooltip({
-						trigger: 'hover'
+						trigger: 'hover',
+						title: i18n.commonCore.builderPanel.tooltipNotShared2
 					});
 				else
 					container.find('.builder-preview').tooltip('destroy');
@@ -314,6 +371,10 @@ define(["lib-build/tpl!./BuilderPanel",
 				// TODO get that outside
 				if ( app.ui.headerDesktop )
 					app.ui.headerDesktop.toggleSocialBtnAppSharing(disablePreview);
+				
+				app.ui.sidePanel.toggleSocialBtnAppSharing(disablePreview);
+				app.ui.floatingPanel.toggleSocialBtnAppSharing(disablePreview);
+				app.ui.mobileView.toggleSocialBtnAppSharing(disablePreview);
 				
 				/*
 				 * Status

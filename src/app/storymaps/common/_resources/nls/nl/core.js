@@ -18,7 +18,8 @@
 				height: "Hoogte",
 				create: "Maken",
 				yes: "Ja",
-				no: "Nee"
+				no: "Nee",
+				mystories: "My Stories"
 			},
 			inlineFieldEdit: {
 				editMe: "Bewerk me!"
@@ -30,9 +31,10 @@
 				buttonShare: "Delen",
 				buttonSettings: "Instellingen",
 				buttonHelp: "Help",
-				buttonPreview: "Live weergeven",
+				buttonPreview: "Verhaal bekijken",
 				tooltipFirstSave: "Dit is niet beschikbaar totdat u opslaat.",
 				tooltipNotShared: "Dit is niet beschikbaar totdat u deelt.",
+				tooltipNotShared2: "Uw verhaal is niet gedeeld, alleen u hebt toegang.",
 				noPendingChange: "Geen wijziging in behandeling",
 				unSavedChangePlural: "Wijzigingen in behandeling",
 				closeWithPendingChange: "Weet u zeker dat u deze actie wilt bevestigen? Uw wijzigingen gaan verloren.",
@@ -52,10 +54,21 @@
 				err1Div2: "Wijzig de titel van uw verhaal en sla het op.",
 				btnOk: "De verhaaltitel bewerken"
 			},
+			saveErrorSocial: {
+				title: "Social media update aangaande het delen",
+				panel1: "De weergave van uw storyâ€™s op social media is verbeterd, maar uw ArcGIS webapplicatietitel is niet hetzelfde als uw verhaaltitel.",
+				panel1tooltip: "Door het definiëren van een titel, samenvatting en thumbnail-afbeelding, komt uw verhaal er als volgt uit te zien:",
+				panel2:	"Welke titel zou u willen gebruiken op social media:",
+				panel2q1: "Verhaaltitel (aanbevolen)",
+				panel2q1tooltip: "Door deze optie te kiezen, wordt uw itemtitel aangepast aan uw verhaaltitel en worden verdere veranderingen in de builder gesynchroniseerd.",
+				panel2q2: "Itemtitel",
+				panel3: "Gebruik ${MYSTORIES} om de weergave op social media verder te verbeteren en voeg een samenvatting en thumbnail-afbeelding toe.",
+				panel4: "Waarschuw me niet opnieuw voor dit verhaal"
+			},
 			share: {
 				shareTitle: "Uw verhaal opslaan",
 				preview: "Voorbeeld",
-				viewlive: "Live weergeven",
+				viewlive: "Verhaal bekijken",
 				btnPrivate: "Privé",
 				btnPrivateTooltip: "Alleen u kunt het verhaal weergeven",
 				btnOrg: "Organisatie",
@@ -77,7 +90,8 @@
 				notavailable5: "de itempagina ervan",
 				notavailable6: "Het spijt ons, maar deze functie wordt niet geheel ondersteund in de ontwikkelingsmodus. Afhankelijk van uw activeringsscenario kan deze functie ondersteund worden bij implementatie.",
 				notavailable7: "Bezoek %MYCONTENT% om te bevestigen dat de kaarten en kaartlagen in uw verhaal ook gedeeld zijn.",
-				notavailable8: "Mijn Content"
+				notavailable8: "Mijn Content",
+				mystoriesinvite2: "Gebruik ${MYSTORIES} om de weergave op sociale netwerken te verbeteren en voeg een samenvatting en thumbnail-afbeelding toe."
 			},
 			settings: {
 				header: "Instellingen",
@@ -105,7 +119,7 @@
 				lblSmallHeader: "Compact header gebruiken (geen subtitel)"
 			},
 			header: {
-				title: "Bewerk de titel van uw %TPL_NAME%",
+				title: "De titel van uw %TPL_NAME% bewerken",
 				subtitle: "Bewerk de subtitel van uw %TPL_NAME%"
 			}
 		}

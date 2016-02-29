@@ -18,7 +18,8 @@
 				height: "Hauteur",
 				create: "Créer",
 				yes: "Oui",
-				no: "Non"
+				no: "Non",
+				mystories: "Mes récits"
 			},
 			inlineFieldEdit: {
 				editMe: "Modifier"
@@ -30,9 +31,10 @@
 				buttonShare: "Partager",
 				buttonSettings: "Paramètres",
 				buttonHelp: "Aide",
-				buttonPreview: "Voir en direct",
+				buttonPreview: "Afficher le récit",
 				tooltipFirstSave: "Cette fonction n\'est pas disponible tant qu\'un enregistrement n\'est pas effectué.",
 				tooltipNotShared: "Cette fonction n\'est pas disponible tant qu\'un partage n\'est pas effectué.",
+				tooltipNotShared2: "Votre récit n\'est pas partagé, vous seul pouvez y accéder.",
 				noPendingChange: "Aucune modification en attente",
 				unSavedChangePlural: "Modifications en attente",
 				closeWithPendingChange: "Vouez-vous vraiment confirmer cette opération ? Vos modifications seront perdues.",
@@ -52,10 +54,21 @@
 				err1Div2: "Modifiez le titre de votre récit et enregistrez-le.",
 				btnOk: "Modifier le titre du récit"
 			},
+			saveErrorSocial: {
+				title: "Mise à jour du partage sur les réseaux sociaux",
+				panel1: "L\'apparence de votre récit sur les réseaux sociaux a été améliorée, mais le titre de votre élément d\'application Web ArcGIS n\'est pas le même que le titre de votre récit.",
+				panel1tooltip: "Si vous définissez un titre, un résumé et une image miniature, votre récit ressemblera à ceci :",
+				panel2:	"Quel titre voulez-vous utiliser sur les réseaux sociaux :",
+				panel2q1: "Titre du récit (recommandé)",
+				panel2q1tooltip: "Si vous choisissez cette option, le titre de votre élément sera modifié afin de correspondre au titre de votre récit et les autres modifications apportées dans le générateur seront synchronisées.",
+				panel2q2: "Titre de l\'élément",
+				panel3: "Pour encore améliorer l\'apparence de votre récit sur les réseaux sociaux, utilisez ${MYSTORIES} pour ajouter un résumé et une image miniature.",
+				panel4: "Ne plus m\'avertir pour ce récit"
+			},
 			share: {
 				shareTitle: "Partager votre récit",
 				preview: "Aperçu",
-				viewlive: "Voir en direct",
+				viewlive: "Afficher le récit",
 				btnPrivate: "Privé",
 				btnPrivateTooltip: "Vous seul pouvez voir le récit",
 				btnOrg: "Organisation",
@@ -74,10 +87,11 @@
 				notavailable2: "Le partage de votre récit depuis le générateur n\'est pas pris en charge dans cette version de Portal for ArcGIS (requiert la version 10.4 ou ultérieure).",
 				notavailable3: "Vous pouvez partager ce récit depuis %LINK%.",
 				notavailable4: "Mes récits",
-				notavailable5: "la page des éléments",
+				notavailable5: "sa page d\'élément",
 				notavailable6: "Cette fonctionnalité n\'est pas entièrement prise en charge en mode de développement. Selon votre type de déploiement, elle peut être prise en charge une fois déployée.",
 				notavailable7: "Consultez %MYCONTENT% pour vérifier que les cartes et couches utilisées dans votre récit sont également partagées.",
-				notavailable8: "Mon contenu"
+				notavailable8: "Mon contenu",
+				mystoriesinvite2: "Pour améliorer l\'apparence de votre récit sur les réseaux sociaux, utilisez ${MYSTORIES} pour ajouter un résumé et une image miniature."
 			},
 			settings: {
 				header: "Paramètres",

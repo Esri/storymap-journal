@@ -9,7 +9,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 [Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
 [Download](http://links.esri.com/storymaps/map_journal_template_zip)
 
-**Latest release is version 1.6.1**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+**Latest release is version 1.7.0**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
 ## Help content
 
@@ -167,13 +167,13 @@ Yes.
 
 When the Journal is hosted in ArcGIS Online or Portal for ArcGIS, users that don't have access to the Journal or a webmap used in the Journal will be redirected to the ArcGIS Online sign-in page. It is not possible to display an authentication dialog in the Map Journal when the Journal is hosted in ArcGIS Online.
 
-To use a premium layer in a public webmap, [follow that procedure](http://blogs.esri.com/esri/arcgis/2014/10/07/public-access-to-arcgis-online-premium-services/).
-
 When the Journal is hosted on your web server, an authentication dialog will appear inside the application. 
 
 Note that for that authentication to work on some older browser (Internet Explorer 9) you need to install a proxy server on your web server to make sure the login credentials can be passed securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
 
 Because of that limitation, we recommend that you configure the application to use OAuth. OAuth 2.0 based authentication is available for ArcGIS Online and Portal for ArcGIS users with developer or organizational accounts. Follow the procedure to [add an application](http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#ESRI_SECTION1_55703F1EE9C845C3B07BBD85221FB074) and [register an application](http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#ESRI_SECTION2_20AF85308FD548B5ADBAE28836F66D3F) to get an OAuth application ID. Once you have that application, open `index.html`, locate the `configOptions` section and fill the `oAuthAppId` property.
+
+If you are using secured services but don't want users to have to authenticate, you can use a proxy to store the username/password to be used, see [Working with Proxy Services](https://developers.arcgis.com/authentication/working-with-proxies/#selfhosted-proxy-service), and add a proxy rules to specify what services need to use the proxy by editing `PROXY_RULES` in `app/config.js`.
 
 ### Deployment
 Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
@@ -242,7 +242,7 @@ Example of the same application displaying two stories:
  * http://myserver.com/MapJournal/index.html?appid=c7ad1a55de0247a68454a76f251225a5
 
 ## Configuration
-In addition to the configuration offered by the builder, the files `app/config.js` and `app/commonConfig.js` provide various settings. Documentation is provided in those files.
+In addition to the configuration offered by the builder, the file `app/config.js` provide various additional settings. This is for example the place where you can override some settings like the list of Geocoder services to be used (changes override ArcGIS Online or your Organization default settings). See the documentation provided in that file for more details. 
 
 ## Customize the look and feel
 
@@ -404,7 +404,6 @@ The application is structured as this:
 | src/											| Main source code folder with index.html and the Eclipse project configuration							|
 | src/app/										| Javascript and CSS source code 																|
 | src/app/config.js			            		| App configuration file (loaded at execution time) 											|
-| src/app/commonConfig.js			            | More configuration (only used when deployed outside of ArcGIS Online and Portal for ArcGIS)	|
 | **src/app/storymaps/common/**						| Modules common across storymaps templates (main module is Core.js)							|
 | src/app/storymaps/common/builder/				| Builder modules (main module is Builder.js)													|
 | src/app/storymaps/common/mapcontrols/			| Map UI components (Overview, Legend)															|

@@ -6,7 +6,8 @@ define(["lib-build/tpl!./ViewText",
 		"../../ui/StoryText",
 		"storymaps/common/utils/CommonHelper",
 		"dojo/topic",
-		"dojo/_base/lang"
+		"dojo/_base/lang",
+		"dojo/Deferred"
 	], 
 	function (
 		viewTpl,
@@ -17,7 +18,8 @@ define(["lib-build/tpl!./ViewText",
 		StoryText,
 		CommonHelper,
 		topic,
-		lang
+		lang,
+		Deferred
 	){
 		return function ViewText(container, onDataChangeCallback) 
 		{
@@ -137,14 +139,27 @@ define(["lib-build/tpl!./ViewText",
 			
 			this.getData = function()
 			{
-				var text = CKEDITOR.instances.addEditRTE ? CKEDITOR.instances.addEditRTE.getData() : "";
-				// That special character that can be copy/pasted from word would break the Journal after it his saved on Portal and reloaded  
-				text = text.replace(new RegExp(String.fromCharCode(8232), 'g')," ");
-				
-				return {
-					text: text,
-					actions: _textActions
+				var getResult = function() {
+					var text = CKEDITOR.instances.addEditRTE ? CKEDITOR.instances.addEditRTE.getData() : "";
+					// That special character that can be copy/pasted from word would break the Journal after it his saved on Portal and reloaded  
+					text = text.replace(new RegExp(String.fromCharCode(8232), 'g')," ");
+					
+					return {
+						text: text,
+						actions: _textActions
+					};
 				};
+				
+				if ( CKEDITOR.instances.addEditRTE && CKEDITOR.instances.addEditRTE.mode == "source" ) {
+					var resultDeferred = new Deferred();
+					CKEDITOR.instances.addEditRTE.setMode("wysiwyg", function(){
+						resultDeferred.resolve( getResult() );
+					});
+					return resultDeferred;
+				}
+				else {
+					return getResult();
+				}
 			};
 			
 			this.checkError = function()
@@ -566,37 +581,41 @@ define(["lib-build/tpl!./ViewText",
 					// On paste, check if the  content include Main Stage Actions
 					//  and duplicate them so they are configurable
 					editor.on('paste', function (ev) {
-						var textNode = $(ev.data.dataValue),
-							newActionId = null,
-							textNodeSingle = textNode.is('a[data-storymaps]'),
-							textNodeMulti = textNode.find('a[data-storymaps]');
-						
-						if ( textNodeSingle ) {
-							newActionId = duplicateAction(textNode.data('storymaps'));
-							if ( newActionId ) {
-								textNode.attr('data-storymaps', newActionId);
-								ev.data.dataValue = textNode.prop('outerHTML');
-							}
-							else {
-								textNode.removeAttr('data-storymaps');
-								textNode.removeAttr('data-storymaps-type');
-								ev.data.dataValue = textNode.html();
-							}
-						}
-						else if ( textNodeMulti.length ) {
-							$.each(textNodeMulti, function(i, action){
-								var $action = $(action);
-								var newActionId = duplicateAction($action.data('storymaps'));
+						try {
+							var textNode = $(ev.data.dataValue),
+								newActionId = null,
+								textNodeSingle = textNode.is('a[data-storymaps]'),
+								textNodeMulti = textNode.find('a[data-storymaps]');
+							
+							if ( textNodeSingle ) {
+								newActionId = duplicateAction(textNode.data('storymaps'));
 								if ( newActionId ) {
-									$action.attr('data-storymaps', newActionId);
+									textNode.attr('data-storymaps', newActionId);
+									ev.data.dataValue = textNode.prop('outerHTML');
 								}
 								else {
-									$action.removeAttr('data-storymaps');
-									$action.removeAttr('data-storymaps-type');
-									$action.replaceWith($action.html());
+									textNode.removeAttr('data-storymaps');
+									textNode.removeAttr('data-storymaps-type');
+									ev.data.dataValue = textNode.html();
 								}
-							});
-							ev.data.dataValue = $.fn.append.apply($('<div>'), textNode).html();
+							}
+							else if ( textNodeMulti.length ) {
+								$.each(textNodeMulti, function(i, action){
+									var $action = $(action);
+									var newActionId = duplicateAction($action.data('storymaps'));
+									if ( newActionId ) {
+										$action.attr('data-storymaps', newActionId);
+									}
+									else {
+										$action.removeAttr('data-storymaps');
+										$action.removeAttr('data-storymaps-type');
+										$action.replaceWith($action.html());
+									}
+								});
+								ev.data.dataValue = $.fn.append.apply($('<div>'), textNode).html();
+							}
+						} catch( e ) {
+							// Could not access copied text probably because it's raw text
 						}
 					});
 					
@@ -692,7 +711,7 @@ define(["lib-build/tpl!./ViewText",
 					// Other elements are inserted as plain text
 					// See http://docs.ckeditor.com/#!/guide/dev_allowed_content_rules
 					// *{*}; to allow any style
-					extraAllowedContent: 'h1 h2 h3 h4 h5 h6 sub sup table tr th td caption div span img figure figcaption style audio source embed iframe; *(*); *[*]; a[data-*]',
+					extraAllowedContent: 'h1 h2 h3 h4 h5 h6 sub sup table tr th td caption div span select option img figure figcaption style audio source embed iframe; *(*); *[*]; a[data-*]',
 					// Elements to be removed when executing the "remove " format" command
 					removeFormatTags: 
 						// Default

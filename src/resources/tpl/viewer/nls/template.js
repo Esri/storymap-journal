@@ -22,18 +22,21 @@ define({
 				boxTitle: "An error has occurred",
 				invalidConfig: "Invalid configuration",
 				invalidConfigNoApp: "Web Mapping Application identifier not specified in index.html.",
+				invalidConfigNoAppDev: "No Web Mapping Application identifier is specified in URL parameters (?appid=). In development mode, the appid configuration in index.html is ignored.",
 				unspecifiedConfigOwner: "Authorized owner hasn't been configured.",
 				invalidConfigOwner: "Story owner is not authorized.",
 				createMap: "Unable to create map",
 				invalidApp: "The %TPL_NAME% does not exist or is inaccessible.",
 				appLoadingFail: "Something went wrong, the %TPL_NAME% did not load correctly.",
 				notConfiguredDesktop: "The story is not configured yet.",
-				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this display size.",
+				notConfiguredMobile: "The %TPL_NAME% builder is not supported at this display size. If possible, resize your browser to access the builder or please build your story on a device with a larger screen.",
+				notConfiguredMobile2: "Please rotate your device to landscape orientation to use the %TPL_NAME% builder.",
 				notAuthorized: "You are not authorized to access this story",
+				notAuthorizedBuilder: "You are not authorized to use %TPL_NAME% builder.",
 				noBuilderIE: "The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%",
 				noViewerIE: "This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>.",
-				mapLoadingFail: "Something went wrong, the Map did not load correctly.",
+				mapLoadingFail: "Something went wrong, the map did not load correctly.",
 				signOut: "Sign Out"
 			},
 			mobileView: {
@@ -63,7 +66,9 @@ define({
 				share: "Share",
 				checking: "Checking your story content",
 				fix: "Fix issues in your story",
-				noerrors: "No issues detected"
+				noerrors: "No issues detected",
+				tooltipAutoplayDisabled: "This isn't available in autoplay mode",
+				notshared: "Story not shared"
 			},
 			overviewFromCommon: {
 				title: "Overview Map"
@@ -77,7 +82,11 @@ define({
 				open: "Open",
 				embed: "Embed in web page",
 				embedExplain: "Use the following HTML code to embed the journal in a web page.",
-				size: "Size (width/height):"
+				size: "Size (width/height):",
+				autoplayLabel: "Autoplay mode",
+				autoplayExplain1: "Autoplay mode will advance through your story at a regular interval. This is ideal on a kiosk or public display monitor, but be aware that in other situations it may make the story harder to read. This feature isn't supported on small displays.",
+				autoplayExplain2: "When this mode is active there are controls to play/pause the story and adjust the navigation speed.",
+				linksupdated: "Links updated!"
 			}
         }
     }),

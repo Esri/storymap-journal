@@ -9,6 +9,8 @@
 				lblControls: "Extras",
 				lblOverview: "Mapa de Visão Geral",
 				lblLegend: "Legenda",
+				lblGeocoder: "Localizador de Endereços ou Lugares",
+				tooltipGeocoder: "Permite aos seus usuários localizar endereços e lugares em seus mapas.",
 				loadingTitle: "Carregando título",
 				entry: "Entrada",
 				entries: "Entradas",
@@ -45,9 +47,9 @@
 				extentTitle: "Localização do mapa",
 				extentExplain: "Move e amplia o mapa para definir seu visual para os leitores.",
 				extentSave: "Salvar Localização do Mapa",
-				popupTitle: "Pop-Up do Mapa",
-				popupExplain: "Clique em uma feição para abrir o pop-up que deseja exibir.",
-				popupSave: "Salve a configuração do pop-up",
+				popupTitle: "Pop-up do mapa",
+				popupExplain: "Clique em uma feição para abrir o pop-up que você deseja exibir.",
+				popupSave: "Salvar a configuração do pop-up",
 				hintNavigation: "A navegação do mapa está desabilitada."
 			},
 			editor: {

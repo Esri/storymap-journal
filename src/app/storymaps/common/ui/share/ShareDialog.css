@@ -58,3 +58,25 @@ body.mobile-view .shareDialog .share-embed-container {
 .shareDialog  .share-embed-container .share-btn {
 	padding-top: 17px;
 }
+
+/*
+ * Autoplay
+ */
+
+.shareDialog .autoplay-container {
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+body.mobile-view .shareDialog .autoplay-container {
+	display: none;
+}
+
+.shareDialog .autoplay-container .tooltip-inner {
+	max-width: 300px !important;
+}
+
+.shareDialog .autoplay-notification {
+	color: #3c763d;
+	font-weight: bold;
+}

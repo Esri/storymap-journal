@@ -18,7 +18,8 @@
 				height: "Altezza",
 				create: "Crea",
 				yes: "Sì",
-				no: "No"
+				no: "No",
+				mystories: "My Stories"
 			},
 			inlineFieldEdit: {
 				editMe: "Modifica utente"
@@ -30,9 +31,10 @@
 				buttonShare: "Condividi",
 				buttonSettings: "Impostazioni",
 				buttonHelp: "Guida",
-				buttonPreview: "Visualizza in tempo reale",
+				buttonPreview: "Visualizza storia",
 				tooltipFirstSave: "Questa funzione è disponibile solo dopo il salvataggio.",
 				tooltipNotShared: "Questa funzione è disponibile solo dopo la condivisione.",
+				tooltipNotShared2: "La storia non è condivisa, è accessibile solo dall\'utente corrente.",
 				noPendingChange: "Nessuna modifica in sospeso",
 				unSavedChangePlural: "Modifiche in sospeso",
 				closeWithPendingChange: "Confermare l\'azione? Le modifiche apportate andranno perse.",
@@ -52,10 +54,21 @@
 				err1Div2: "Modificare il titolo della storia, quindi salvarla.",
 				btnOk: "Modifica il titolo della storia"
 			},
+			saveErrorSocial: {
+				title: "Aggiornamento condivisione con social media",
+				panel1: "L\'aspetto della storia sui social media è stata migliorata, ma il titolo dell\'elemento applicazione Web ArcGIS è diverso dal titolo della storia.",
+				panel1tooltip: "Se si definisce un titolo, un riepilogo e un\'immagine di anteprima, l\'aspetto della storia sarà:",
+				panel2:	"Specificare il titolo che si desidera utilizzare sui social media:",
+				panel2q1: "Titolo della storia (consigliato)",
+				panel2q1tooltip: "Se si sceglie questa opzione, il titolo dell\'elemento verrà modificato per corrispondere al titolo della storia e ulteriori modifiche nel generatore verranno sincronizzate.",
+				panel2q2: "Titolo elemento",
+				panel3: "Per migliorare ulteriormente l\'aspetto della storia sui social media utilizzare ${MYSTORIES} per aggiungere un riepilogo e un\'immagine di anteprima.",
+				panel4: "Non visualizzare più avvisi per questa storia"
+			},
 			share: {
 				shareTitle: "Condividi la storia",
 				preview: "Anteprima",
-				viewlive: "Visualizza in tempo reale",
+				viewlive: "Visualizza storia",
 				btnPrivate: "Privato",
 				btnPrivateTooltip: "La storia può essere visualizzata solo dall\'utente corrente",
 				btnOrg: "Organizzazione",
@@ -77,7 +90,8 @@
 				notavailable5: "la sua pagina degli elementi",
 				notavailable6: "Spiacenti, questa feature non è completamente supportata in modalità di sviluppo. In base allo scenario di sviluppo, essa potrebbe essere sviluppata quando viene distribuita.",
 				notavailable7: "Accertarsi di visitare %MYCONTENT% per confermare che anche le mappe e i layer utilizzati nella storia siano condivisi.",
-				notavailable8: "Contenuto personale"
+				notavailable8: "Contenuto personale",
+				mystoriesinvite2: "Per migliorare ulteriormente l\'aspetto della storia sulle reti social utilizzare ${MYSTORIES} per aggiungere un riepilogo e un\'immagine di anteprima."
 			},
 			settings: {
 				header: "Impostazioni",

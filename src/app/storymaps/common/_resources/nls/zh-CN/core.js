@@ -18,7 +18,8 @@
 				height: "高度",
 				create: "创建",
 				yes: "是",
-				no: "否"
+				no: "否",
+				mystories: "我的故事"
 			},
 			inlineFieldEdit: {
 				editMe: "编辑！"
@@ -30,9 +31,10 @@
 				buttonShare: "共享",
 				buttonSettings: "设置",
 				buttonHelp: "帮助",
-				buttonPreview: "实时查看",
+				buttonPreview: "查看故事",
 				tooltipFirstSave: "保存后，此功能才可用。",
 				tooltipNotShared: "共享后，此功能才可用。",
+				tooltipNotShared2: "您的故事尚未共享，只有您可以进行访问。",
 				noPendingChange: "无待决的更改",
 				unSavedChangePlural: "待决更改",
 				closeWithPendingChange: "是否确定要确认此操作？您的更改将丢失。",
@@ -52,10 +54,21 @@
 				err1Div2: "请修改故事的标题，然后将其保存。",
 				btnOk: "编辑故事标题"
 			},
+			saveErrorSocial: {
+				title: "社交媒体共享更新",
+				panel1: "您的故事在社交媒体上的外观已改善，但您的 ArcGIS web 应用程序项目标题与故事标题不一致。",
+				panel1tooltip: "通过定义标题、摘要和缩略图，您的故事将显示如下:",
+				panel2:	"您希望在社交媒体上使用的标题:",
+				panel2q1: "故事标题(建议)",
+				panel2q1tooltip: "通过选择此选项，可将您的项目标题修改为与故事标题相匹配的标题并同步对构建器所做的进一步更改。",
+				panel2q2: "项目标题",
+				panel3: "要进一步改善您的故事在社交媒体上的外观，请使用 ${MYSTORIES} 添加摘要和缩略图。",
+				panel4: "此故事不再提醒"
+			},
 			share: {
 				shareTitle: "共享您的故事",
 				preview: "预览",
-				viewlive: "实时查看",
+				viewlive: "查看故事",
 				btnPrivate: "私有",
 				btnPrivateTooltip: "仅限您个人可查看故事",
 				btnOrg: "组织",
@@ -74,10 +87,11 @@
 				notavailable2: "抱歉，此版本的 Portal for ArcGIS 不支持从“构建器”共享您的故事(需要 10.4 或更高版本)。",
 				notavailable3: "您可从 %LINK% 共享此故事。",
 				notavailable4: "我的故事",
-				notavailable5: "此为项页面",
+				notavailable5: "其项目页面",
 				notavailable6: "抱歉，在开发模式下无法完全支持此要素。根据您的部署方案，此要素在部署后可能被支持。",
 				notavailable7: "请务必访问 %MYCONTENT%，以确认在您的故事中使用的地图和图层同样被共享。",
-				notavailable8: "我的内容"
+				notavailable8: "我的内容",
+				mystoriesinvite2: "要改善您的故事在社交网络上的外观，请使用 ${MYSTORIES} 添加摘要和缩略图。"
 			},
 			settings: {
 				header: "设置",
@@ -90,10 +104,10 @@
 				viewExample: "查看实时示例"
 			},
 			settingsTheme: {
-				title: "专题"
+				title: "主题"
 			},
 			settingsHeader: {
-				title: "标题",
+				title: "页眉",
 				logoEsri: "Esri 徽标",
 				logoNone: "无徽标",
 				logoCustom: "自定义徽标",

@@ -18,7 +18,8 @@ define({
 				height: "Height",
 				create: "Create",
 				yes: "Yes",
-				no: "No"
+				no: "No",
+				mystories: "My Stories"
 			},
 			inlineFieldEdit: {
 				editMe: "Edit me!"
@@ -30,9 +31,10 @@ define({
 				buttonShare: "Share",
 				buttonSettings: "Settings",
 				buttonHelp: "Help",
-				buttonPreview: "View Live",
+				buttonPreview: "View story",
 				tooltipFirstSave: "This isn't available until you save.",
 				tooltipNotShared: "This isn't available until you share.",
+				tooltipNotShared2: "Your story isn't shared, only you can access it.",
 				noPendingChange: "No pending change",
 				unSavedChangePlural: "Pending changes",
 				closeWithPendingChange: "Are you sure to want to confirm this action? Your changes will be lost.",
@@ -52,10 +54,21 @@ define({
 				err1Div2: "Please modify the title of your story and then save it.",
 				btnOk: "Edit the story title"
 			},
+			saveErrorSocial: {
+				title: "Social media sharing update",
+				panel1: "Your story’s appearance on social media has been improved, but your ArcGIS web application item title is not the same as your story title.",
+				panel1tooltip: "By defining a title, summary and thumbnail image, your story will look like this:",
+				panel2:	"Which title would you like to use on social media:",
+				panel2q1: "Story title (recommended)",
+				panel2q1tooltip: "By choosing this option, your item title will be modified to match your story title and further changes in the builder will be synchronized.",
+				panel2q2: "Item title",
+				panel3: "To further improve how your story looks on social media use ${MYSTORIES} to add a summary and a thumbnail image.",
+				panel4: "Do not warn me again for this story"
+			},
 			share: {
 				shareTitle: "Share your story",
 				preview: "Preview",
-				viewlive: "View live",
+				viewlive: "View story",
 				btnPrivate: "Private",
 				btnPrivateTooltip: "Only you can see the story",
 				btnOrg: "Organization",
@@ -74,10 +87,11 @@ define({
 				notavailable2: "Sorry, sharing your story from the Builder is not supported on this version of Portal for ArcGIS (requires 10.4 or later).",
 				notavailable3: "You can share this story from %LINK%.",
 				notavailable4: "My Stories",
-				notavailable5: "it's item page",
+				notavailable5: "its item page",
 				notavailable6: "Sorry, this feature is not fully supported in development mode. Depending on your deployment scenario, this feature may be supported when deployed.",
 				notavailable7: "Make sure to visit %MYCONTENT% to confirm the maps and layers used in your story are also shared.",
-				notavailable8: "My Content"
+				notavailable8: "My Content",
+				mystoriesinvite2: "To improve how your story looks on social networks use ${MYSTORIES} to add a summary and a thumbnail image."
 			},
 			settings: {
 				header: "Settings",

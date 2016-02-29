@@ -85,7 +85,7 @@ define(["dojo/Deferred"],
 			
 			function getYoutubeEmbed(videoId)
 			{
-				return "//www.youtube.com/embed/" + videoId + "?wmode=opaque";
+				return "//www.youtube.com/embed/" + videoId + "?wmode=opaque&rel=0";
 			}
 		};
 	}

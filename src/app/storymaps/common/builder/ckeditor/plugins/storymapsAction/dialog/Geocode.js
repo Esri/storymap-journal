@@ -127,62 +127,21 @@ define(["lib-build/tpl!./Geocode",
 				//
 				// Geocoder
 				//
-				var geocoder = new Geocoder(
-					lang.mixin(
-						{
-							map: _map/*,
-							value: value*/
-						}, 
-						CommonHelper.createGeocoderOptions()
-					),
-					container.find(".geocoder")[0]
-				);
 				
-				container.find("#esri_dijit_Geocoder_0_input").attr("placeholder", i18n.commonMedia.editorActionGeocode.lblTitle + "...");
-				geocoder.startup();
-				
-				on(geocoder, "find-results", function(response){
-					//console.log('find', response.results.results[0])
-					if( response.results && response.results.results && response.results.results.length )
-						geocoder.select(response.results.results[0]);
+				CommonHelper.createGeocoder({
+					map: _map, 
+					domNode: container.find(".geocoder")[0],
+					placeHolder: i18n.commonMedia.editorActionGeocode.lblTitle
+				}).then(function(geocoder) {
+					on(geocoder, "select-result", function(response){
+						//console.log('select', response.result)
+						if( response.result && response.result.feature )
+							applyGeocodeResult(response.result.feature.geometry);
+					});
 				});
-				
-				on(geocoder, "select", function(response){
-					//console.log('select', response.result)
-					if( response.result && response.result.feature )
-						applyGeocodeResult(response.result.feature.geometry);
-				});
-				
-				/*
-				on(_geocoder, "select", function(){
-					// Close the IOS keyboard
-					if( has("ios") )
-						document.activeElement.blur();
-				});
-				*/
-				
-				on(_map, "extent-change", function(){
-					/*
-					if(_map.locatePointFromMapExtent){
-						_map.locatePointFromMapExtent = false;
-						_geocoderGraphic.setGeometry(_map.extent.getCenter());
-					}
-					*/
-				});
-				
-				// iPad keyboard workaround
-				//$("#locateMap #geocoder_input").blur(function(){ $(window).scrollTop(0); });
 				
 				container.on('shown.bs.modal', function () {
 					_map.resize();
-					/*
-					if ( value ) {
-						on.once(_map, "update-end", function(){ 
-							//setTimeout(function(){geocoder.find();}, 2000); });
-							geocoder.find();
-						});
-					}
-					*/
 				});
 			}
 			

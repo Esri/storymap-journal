@@ -44,9 +44,13 @@
 
 .builderShare .app-sharing-wrapper {
 	position: relative;
-	display: inline-block;
+	display: none;
 	text-align: center;
 	margin-left: -6px;
+}
+
+.builderShare .app-sharing-wrapper.enabled {
+	display: inline-block;
 }
 
 .builderShare .app-sharing-wrapper:first-child .app-sharing-icon {
@@ -56,9 +60,10 @@
 	vertical-align: 1px;
 }
 
-.builderShare .app-sharing-wrapper:nth-child(3) .app-sharing-icon {
+.builderShare .app-sharing-wrapper.lastBtn .app-sharing-icon {
 	border-right-width: 1px;
-	border-radius: 0 6px 6px 0;
+	border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .builderShare .locked {
@@ -236,7 +241,7 @@
  */
  
 .builderShare .view-share {
-	margin-top: 35px;
+	margin-top: 25px;
 }
 
 .builderShare .view-share .socialize-title,
@@ -282,6 +287,14 @@
 
 .builderShare .share-embed-container .embed-explain {
 	display: none;
+}
+
+.builderShare .my-stories-call {
+	margin-top: 25px;
+	color: #555;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*

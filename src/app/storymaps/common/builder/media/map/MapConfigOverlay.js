@@ -8,9 +8,7 @@ define(["lib-build/tpl!./MapConfigOverlay",
 		"dojo/Deferred",
 		"dojo/on",
 		"dojo/topic",
-		"esri/dijit/Geocoder",
-		"storymaps/common/utils/CommonHelper",
-		"dojo/_base/lang"],
+		"storymaps/common/utils/CommonHelper"],
 	function (
 		viewTpl,
 		viewCss,
@@ -22,9 +20,7 @@ define(["lib-build/tpl!./MapConfigOverlay",
 		Deferred,
 		on,
 		topic,
-		Geocoder,
-		CommonHelper,
-		lang
+		CommonHelper
 	){
 		var container = $('#mainStagePanel'),
 			_viewDeferred = null,
@@ -216,22 +212,27 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			if ( _geocoder )
 				_geocoder.destroy();
 			
+			// If map already has a geocoder through viewer config
+			if ( $(".mainMediaContainer.active .mapContainer").hasClass("has-geocoder") ) {
+				return;
+			}
+			
 			$(".mainMediaContainer.active .geocoder")
 				.html('<div class="simpleGeocoder"></div>')
 				.show();
 			
-			var geocoder = new Geocoder(
-				lang.mixin(
-					{
-						map: app.map
-					},
-					CommonHelper.createGeocoderOptions()
-				),
-				$(".mainMediaContainer.active .simpleGeocoder")[0]
-			);
-				
-			$(".mainMediaContainer.active .geocoder input").attr("placeholder", i18n2.commonMedia.editorActionGeocode.lblTitle + "...");
-			geocoder.startup();
+			try {
+				CommonHelper.createGeocoder({
+					map: app.map, 
+					domNode: $(".mainMediaContainer.active .simpleGeocoder")[0],
+					enableButtonMode: false,
+					placeHolder: i18n2.commonMedia.editorActionGeocode.lblTitle
+				}).then(function(geocoder) {
+					_geocoder = geocoder;
+				});
+			} catch(e){
+				console.error(e);
+			}
 		}
 		
 		/*
@@ -392,10 +393,15 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			// TODO should have an error message if not found
 			
 			var layer = feature.getLayer(),
-				fields = layer.fields,
-				objectIdFields = $.grep(fields, function(field){
-					return field.type == "esriFieldTypeOID";
-				});
+				fields = layer.fields;
+			
+			if ( ! fields ) {
+				return null;
+			}
+			
+			var objectIdFields = $.grep(fields, function(field){
+				return field.type == "esriFieldTypeOID";
+			});
 			
 			if ( layer && fields && ! objectIdFields.length ) {
 				objectIdFields = $.grep(fields, function(field){

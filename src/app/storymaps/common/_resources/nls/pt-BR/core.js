@@ -18,7 +18,8 @@
 				height: "Altura",
 				create: "Criar",
 				yes: "Sim",
-				no: "Não"
+				no: "Não",
+				mystories: "Minhas Histórias"
 			},
 			inlineFieldEdit: {
 				editMe: "Editar-me!"
@@ -30,9 +31,10 @@
 				buttonShare: "Compartilhar",
 				buttonSettings: "Configurações",
 				buttonHelp: "Ajuda",
-				buttonPreview: "Visualizar em Tempo Real",
+				buttonPreview: "Visualizar história",
 				tooltipFirstSave: "Isto não está disponível até que seja salvo.",
 				tooltipNotShared: "Isto não está disponível até que seja compartilhado",
+				tooltipNotShared2: "Sua história não está compartilhada, somente você pode acessá-la.",
 				noPendingChange: "Nenhuma alteração pendente",
 				unSavedChangePlural: "Alterações pendentes",
 				closeWithPendingChange: "Você tem certeza que deseja confirmar esta ação? Suas alterações serão perdidas.",
@@ -52,10 +54,21 @@
 				err1Div2: "Modifique o título da sua história e então salve-a.",
 				btnOk: "Edite o título da história"
 			},
+			saveErrorSocial: {
+				title: "Atualização de compartilhamento da mídia social",
+				panel1: "O visual da sua história na mídia social foi melhorado, mas seu título de item do aplicativo da web do ArcGIS não é o mesmo que o título da sua história.",
+				panel1tooltip: "Ao definir um título, resumo e imagem de miniatura, sua história parecerá com isto:",
+				panel2:	"Qual título você gostaria de utilizar na mídia social:",
+				panel2q1: "Título da história (recomendado)",
+				panel2q1tooltip: "Ao escolher esta opção, o título do seu item será modificado para corresponder ao título da sua história e alterações adicionais no construtor serão sincronizadas.",
+				panel2q2: "Título do item",
+				panel3: "Para melhoria adicional sobre o visual da sua história na mídia social, utilize ${MYSTORIES} para adicionar um resumo e uma imagem de miniatura.",
+				panel4: "Não me avisar novamente desta história"
+			},
 			share: {
 				shareTitle: "Compartilhe sua história",
 				preview: "Visualizar",
-				viewlive: "Visualizar em Tempo Real",
+				viewlive: "Visualizar história",
 				btnPrivate: "Privado",
 				btnPrivateTooltip: "Somente você pode visualizar a história",
 				btnOrg: "Organização",
@@ -74,10 +87,11 @@
 				notavailable2: "Desculpe, o compartilhamento da sua história a partir do Construtor não é suportado nesta versão do Portal for ArcGIS (exige 10.4 ou superior).",
 				notavailable3: "Você pode compartilhar esta história do %LINK%.",
 				notavailable4: "Minhas Histórias",
-				notavailable5: "é a página do item",
+				notavailable5: "sua página do item",
 				notavailable6: "Desculpe, este recurso não é completamente suportado em modo de desenvolvimento. Dependendo do seu cenário de implantação, este recurso pode ser suportado quando implantado.",
 				notavailable7: "Tenha certeza de visitar o %MYCONTENT% para confirmar que os mapas e camadas utilizadas na sua história também estão compartilhadas.",
-				notavailable8: "Meu Conteúdo"
+				notavailable8: "Meu Conteúdo",
+				mystoriesinvite2: "Para melhoria sobre o visual da sua história em redes sociais, utilize ${MYSTORIES} para adicionar um resumo e uma imagem de miniatura."
 			},
 			settings: {
 				header: "Configurações",

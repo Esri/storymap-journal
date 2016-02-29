@@ -9,6 +9,8 @@
 				lblControls: "Lisandid",
 				lblOverview: "Ülevaatekaart",
 				lblLegend: "Legend",
+				lblGeocoder: "Aadressi- või kohaleidja",
+				tooltipGeocoder: "Võimaldab kasutajatel teie kaartidel aadresse ja kohti otsida.",
 				loadingTitle: "Pealkirja laadimine",
 				entry: "Sissekanne",
 				entries: "Sissekanded",
@@ -46,7 +48,7 @@
 				extentExplain: "Saate kaarti liigutada ja suumida, et määrata selle kuvamine lugejatele.",
 				extentSave: "Salvesta kaardi asukoht",
 				popupTitle: "Kaardi hüpikaken",
-				popupExplain: "Klikkige objekti, et avada hüpikaken, mida soovite kuvada.",
+				popupExplain: "Klõpsake objekti, et avada hüpikaken, mida soovite kuvada.",
 				popupSave: "Salvesta hüpikakna konfiguratsioon",
 				hintNavigation: "Kaardil navigeerimine on välja lülitatud."
 			},

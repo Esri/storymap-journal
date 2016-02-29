@@ -22,18 +22,21 @@
 				boxTitle: "오류가 발생했습니다.",
 				invalidConfig: "잘못된 구성",
 				invalidConfigNoApp: "웹 매핑 응용프로그램 식별자가 index.html에 지정되어 있지 않습니다.",
+				invalidConfigNoAppDev: "URL 매개변수에 웹 매핑 응용프로그램 식별자(?appid=)가 지정되어 있지 않습니다. 개발 모드에서 index.html의 AppId 구성이 무시됩니다.",
 				unspecifiedConfigOwner: "권한 있는 소유자가 구성되지 않음",
 				invalidConfigOwner: "스토리 소유자가 인증되지 않았습니다.",
 				createMap: "맵을 생성할 수 없음",
 				invalidApp: "%TPL_NAME%이(가) 존재하지 않거나 여기에 액세스할 수 없습니다.",
 				appLoadingFail: "문제가 발생했습니다. %TPL_NAME%이(가) 올바르게 로드되지 않았습니다.",
 				notConfiguredDesktop: "스토리가 아직 구성되지 않았습니다.",
-				notConfiguredMobile: "이 디스플레이 크기에서는 %TPL_NAME% 빌더가 지원되지 않습니다.",
+				notConfiguredMobile: "%TPL_NAME% 빌더는 이 디스플레이 크기에서 지원되지 않습니다. 가능한 경우 빌더에 접근할 수 있도록 브라우저의 크기를 조정하거나 화면이 더 큰 기기에서 스토리를 만드세요.",
+				notConfiguredMobile2: "%TPL_NAME% 빌더를 사용하려면 기기를 가로 방향으로 회전하세요.",
 				notAuthorized: "이 스토리에 접근할 권한 없음",
+				notAuthorizedBuilder: "%TPL_NAME% 빌더를 사용할 수 있는 권한이 없습니다.",
 				noBuilderIE: "이 빌더는 %VERSION%. %UPGRADE% 이전 버전의 Internet Explorer에서 지원되지 않습니다.",
 				noViewerIE: "이 스토리는 %VERSION% 이전 버전의 Internet Explorer에서 지원되지 않습니다. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>브라우저를 업데이트하세요</a>.",
-				mapLoadingFail: "문제가 발생하여 맵이 올바르게 로드되지 않았습니다.",
+				mapLoadingFail: "오류가 발생했습니다. 맵을 올바르게 불러오지 않았습니다.",
 				signOut: "로그아웃"
 			},
 			mobileView: {
@@ -63,7 +66,9 @@
 				share: "공유",
 				checking: "스토리 콘텐츠를 확인하는 중",
 				fix: "스토리의 문제 해결",
-				noerrors: "문제가 감지되지 않음"
+				noerrors: "문제가 감지되지 않음",
+				tooltipAutoplayDisabled: "자동 재생 모드에서는 사용할 수 없습니다.",
+				notshared: "스토리가 공유되지 않음"
 			},
 			overviewFromCommon: {
 				title: "개요 맵"
@@ -77,7 +82,11 @@
 				open: "열기",
 				embed: "웹 페이지에 포함",
 				embedExplain: "다음 HTML 코드를 사용하여 저널을 웹 페이지에 포함시킵니다.",
-				size: "크기(너비/높이):"
+				size: "크기(너비/높이):",
+				autoplayLabel: "자동 재생 모드",
+				autoplayExplain1: "자동 재생 모드를 사용하면 스토리가 주기적으로 진행됩니다. 이 기능은 키오스크 또는 공공의 디스플레이 모니터에는 적합하지만 그 이외의 환경에서는 스토리 읽기가 더욱 어려워질 수 있습니다. 소형 디스플레이에서는 이 기능이 지원되지 않습니다.",
+				autoplayExplain2: "이 모드가 활성화되면 스토리를 재생/일시정지하고 탐색 속도를 조정하는 컨트롤이 나타납니다.",
+				linksupdated: "링크가 업데이트되었습니다!"
 			}
         }
     })

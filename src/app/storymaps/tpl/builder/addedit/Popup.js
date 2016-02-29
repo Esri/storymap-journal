@@ -308,6 +308,18 @@ define(["lib-build/tpl!./Popup",
 			
 			function onClickSubmit()
 			{
+				var viewTextData = _viewContentPanel.getData();
+				
+				if ( viewTextData.promise ) {
+					viewTextData.then(onClickSubmitStep2);
+				}
+				else {
+					onClickSubmitStep2();
+				}
+			}
+			
+			function onClickSubmitStep2()
+			{
 				var errorInStep = [],
 					sectionTitle = "",
 					viewMediaData = _viewMainStage.getData(),

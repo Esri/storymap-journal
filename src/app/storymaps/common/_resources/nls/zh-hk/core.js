@@ -18,7 +18,8 @@
 				height: "高度",
 				create: "建立(C)",
 				yes: "是",
-				no: "否"
+				no: "否",
+				mystories: "我的經驗"
 			},
 			inlineFieldEdit: {
 				editMe: "編輯!"
@@ -30,9 +31,10 @@
 				buttonShare: "分享",
 				buttonSettings: "設定",
 				buttonHelp: "說明",
-				buttonPreview: "即時檢視",
+				buttonPreview: "檢視故事",
 				tooltipFirstSave: "儲存後，此功能才可用。",
 				tooltipNotShared: "分享後，此功能才可用。",
+				tooltipNotShared2: "您的故事未分享，只有您可以存取。",
 				noPendingChange: "無待決的變更",
 				unSavedChangePlural: "待決變更",
 				closeWithPendingChange: "是否確定要確認此操作？您的變更將遺失。",
@@ -52,10 +54,21 @@
 				err1Div2: "請修改故事的標題，然後將其儲存。",
 				btnOk: "編輯故事標題"
 			},
+			saveErrorSocial: {
+				title: "社交媒體分享更新",
+				panel1: "您在社交媒體上的故事外觀已優化，但您的 ArcGIS Web 應用程式項目標題不同於您的故事標題。",
+				panel1tooltip: "藉由定義標題、摘要和縮圖圖片，您的故事外觀類似於：",
+				panel2:	"您要在社交媒體上使用哪個標題:",
+				panel2q1: "故事標題（建議）",
+				panel2q1tooltip: "藉由選擇此選項，將修改您的項目標題來符合您的故事標題，並在將同步的建立器中進一步變更。",
+				panel2q2: "項目標題",
+				panel3: "要進一步優化您在社交媒體上的故事外觀，請使用 ${MYSTORIES} 以新增摘要和縮圖圖片。",
+				panel4: "請勿再針對此故事發出警告"
+			},
 			share: {
 				shareTitle: "分享您的故事",
 				preview: "預覽",
-				viewlive: "即時檢視",
+				viewlive: "檢視故事",
 				btnPrivate: "私有",
 				btnPrivateTooltip: "只有您能看到故事",
 				btnOrg: "組織",
@@ -77,14 +90,15 @@
 				notavailable5: "其項目頁面",
 				notavailable6: "很抱歉，開發模式不完全支援此圖徵。依據您的部署情況，可能在部署時支援此圖徵。",
 				notavailable7: "請務必造訪 %MYCONTENT%，確認另外分享您故事中使用的地圖和圖層。",
-				notavailable8: "我的內容"
+				notavailable8: "我的內容",
+				mystoriesinvite2: "要優化您在社交網路上的故事外觀，請使用 ${MYSTORIES} 以新增摘要和縮圖圖片。"
 			},
 			settings: {
 				header: "設定",
 				tabError: "請檢查所有索引標籤中的錯誤"
 			},
 			settingsLayout: {
-				title: "版面設定",
+				title: "版面配置",
 				explain: "想要使用哪種版面設定？",
 				explainInit: "可隨時在設定對話方塊中變更版面設定。",
 				viewExample: "查看即時範例"

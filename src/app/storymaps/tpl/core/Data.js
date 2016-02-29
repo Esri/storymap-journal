@@ -59,20 +59,20 @@ define(["./WebApplicationData",
 				
 				return  (portalUser && portalUser.username == this.getWebAppItem().owner)
 						|| (CommonHelper.getPortalUser() != null && CommonHelper.getPortalUser() == this.getWebAppItem().owner)
-						// Admin
-						|| (portalUser && portalUser.role == "org_admin")
-						// Admin privilege through a role
+						// Admin privilege
 						|| (portalUser && portalUser.privileges && $.inArray("portal:admin:updateItems", portalUser.privileges) > -1 )
 						// Group with shared ownership
 						|| this.getWebAppItem().itemControl == "update";
 			};
-	
-			this.userIsOrgaPublisher = function()
-			{
-				var user = app.portal ? app.portal.getPortalUser() : null;
-				return user && user.orgId && (user.role == 'org_admin' || user.role == 'org_publisher');
-			};
 			
+			this.checkUserItemPrivileges = function()
+			{
+				var portalUser = app.portal ? app.portal.getPortalUser() : null;
+				
+				return (portalUser && ! portalUser.orgId && ! portalUser.privileges)
+						|| (portalUser && portalUser.privileges && $.inArray("portal:user:createItem", portalUser.privileges) > -1);
+			};
+	
 			this.isOrga = function()
 			{
 				if ( ! app.portal || ! app.portal.getPortalUser() )
