@@ -191,6 +191,7 @@ define(["dojo/topic",
 			
 			if ( action.type == "media" ) {
 				var actionIsWebmap = action.media.type == "webmap",
+					actionChangeWebmap = currentWebmapId && actionIsWebmap && currentWebmapId != action.media.webmap.id,
 					actionChangeExtent = !! (actionIsWebmap && action.media.webmap.extent),
 					actionChangeLayers = !! (actionIsWebmap && action.media.webmap.layers),
 					actionChangePopup = !! (actionIsWebmap && action.media.webmap.popup);
@@ -269,7 +270,8 @@ define(["dojo/topic",
 					}
 				}
 				
-				if ( isRealExtentChange || actionChangeLayers )
+				if ( actionChangeWebmap || ! actionIsWebmap || ! currentMediaIsWebmap 
+						|| isRealExtentChange || actionChangeLayers )
 					$('.mediaBackContainer')
 						.show()
 						.css("marginLeft", - $(".mediaBackContainer .backButton").outerWidth() / 2)

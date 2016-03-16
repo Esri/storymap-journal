@@ -152,7 +152,7 @@ define(["dojo/_base/lang"],
 				if ( this.getStorySections().length > 0 )
 					this.setTitle($("<div>" + this.getStorySections()[0].title + "</div>").text());
 				
-				return _data.values.title || "";
+				return _data.values.title ? _data.values.title.trim() : "";
 			},
 			setTitle: function(title)
 			{
