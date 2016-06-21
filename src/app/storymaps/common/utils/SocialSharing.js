@@ -6,23 +6,10 @@ define(["dojo/Deferred", "esri/urlUtils"],
 		return {
 			shareFacebook: function (title, subtitle, optionalImageURL, url)
 			{
-				var options = '&p[title]=' + encodeURIComponent(title)
-								+ '&p[summary]=' + subtitle
-								+ '&p[url]=' + this.cleanURL(url || document.location.href);
-				
-				if ( optionalImageURL )
-					options += '&p[images][0]=' + encodeURIComponent(optionalImageURL);
-				else
-					options += '&p[images][0]=' + encodeURIComponent($("meta[property='og:image']").attr("content"));
-			
-				// Provide multiple images doesn't seems to be supported anymore 
-				/*if ($("meta[property='og:image']").attr("content")) {
-					options += '&p[images][' + counter + ']=' + encodeURIComponent($("meta[property='og:image']").attr("content"));
-					counter++;
-				}*/
+				var options = this.cleanURL(url || document.location.href);
 				
 				window.open(
-					'http://www.facebook.com/sharer.php?s=100' + options, 
+					'http://www.facebook.com/sharer/sharer.php?u=' + options, 
 					'', 
 					'toolbar=0,status=0,width=626,height=436'
 				);
