@@ -19,10 +19,10 @@ app.cfg = {
 	// If disabled author won't be able to activate them
 	// if disabled after a journal has been created, this will override the settings
 	HEADER_SOCIAL: {
-		facebook: true,
-		twitter: true,
+		facebook: false,
+		twitter: false,
 		bitly: {
-			enable: true,
+			enable: false,
 			login: "esristorymaps",
 			key: "R_14fc9f92e48f7c78c21db32bd01f7014"
 		}
