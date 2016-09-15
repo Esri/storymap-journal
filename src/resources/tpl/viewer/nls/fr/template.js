@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Ce récit n'est pas pris en charge dans Internet Explorer avant la version %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Mettez votre navigateur à jour</a>.",
       "mapLoadingFail": "Une erreur s'est produite et la carte n'a pas été correctement chargée.",
-      "signOut": "Se déconnecter"
+      "signOut": "Se déconnecter",
+      "print0": "Impossible d'imprimer ce récit.",
+      "print1": "Pour imprimer ce récit, utilisez le bouton d'impression situé dans la boîte de dialogue de partage.",
+      "print2": "Une version imprimable du récit est généralement accessible via la boîte de dialogue de partage, mais elle a été désactivée par l'auteur."
     },
     "mobileView": {
       "tapForDetails": "Touchez pour obtenir des détails",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Mode de lecture automatique",
       "autoplayExplain1": "Le mode de lecture automatique fait avancer votre récit à intervalle régulier. Il est idéal pour les écrans publics, mais, dans d'autres cas, il peut compliquer la lecture du récit. Cette fonctionnalité n'est pas prise en charge sur les petits écrans.",
       "autoplayExplain2": "Lorsque ce mode est actif, vous disposez de contrôles pour lire le récit ou le mettre en pause, ainsi que régler la vitesse de navigation.",
-      "linksupdated": "Liens mis à jour"
+      "linksupdated": "Liens mis à jour",
+      "print": "Imprimer",
+      "printInstruction1": "Attendez le chargement de l'intégralité du contenu avant d'imprimer cette page",
+      "printInstruction1a": "Une partie du contenu risque de ne pas s'imprimer si vous n'activez pas \"Imprimer les images et couleurs d'arrière-plan\" dans la boîte de dialogue de configuration de l'impression",
+      "printInstruction2": "Cette page ne peut pas être partagée avec d'autres utilisateurs. Partagez plutôt le lien ${link}",
+      "link": "permettant d'accéder au récit",
+      "printOptPageBreak": "Commencer chaque section sur une nouvelle page",
+      "printWarning": "Il s'agit d'une version imprimée d'une Story Map. Le contenu dynamique, tel que les vidéos et les cartes interactives, est seulement disponible dans la version en ligne, accessible via le lien ${link}",
+      "printMSWarning": "dans le récit en ligne uniquement",
+      "printVideoWarning": "Cette vidéo peut être consultée dans la version en ligne de cette Story Map"
     }
   }
 });

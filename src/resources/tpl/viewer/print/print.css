@@ -1,0 +1,298 @@
+/* The fonts will only get loaded in production build */
+@font-face {
+	font-family: 'open_sansregular';
+	src: url('../../../common/font/OpenSans-Regular-webfont.eot');
+	src: url('../../../common/font/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../../../common/font/OpenSans-Regular-webfont.woff') format('woff'),
+		url('../../../common/font/OpenSans-Regular-webfont.ttf') format('truetype'),
+		url('../../../common/font/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'open_sanssemibold';
+	src: url('../../../common/font/OpenSans-Semibold-webfont.eot');
+	src: url('../../../common/font/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../../../common/font/OpenSans-Semibold-webfont.woff') format('woff'),
+		url('../../../common/font/OpenSans-Semibold-webfont.ttf') format('truetype'),
+		url('../../../common/font/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*
+ * Bootstrap extract for print icon
+ */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../lib/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-print:before {
+  content: "\e045";
+}
+
+html, body, h1, h2, h4, h5, h6, p, ul, form {
+    margin: 0;
+}
+
+body {
+	font-family: 'open_sansregular', sans-serif;
+	/* Safe A4 and US Letter */
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-print-color-adjust: exact;
+}
+
+strong {
+	font-family: 'open_sanssemibold', sans-serif;
+	font-weight: normal;
+}
+
+/*
+ * Print warning
+ */
+
+.print-warning {
+	position: relative;
+	display: block;
+	margin: 20px auto;
+	padding: 10px;
+	background-color: #CCC;
+	color: #000;
+	border-radius: 2px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.print-warning a {
+	color: #0060B6 !important;
+}
+
+@media print {
+	.print-warning {
+		display: none;
+	}
+}
+
+.share-warning {
+	font-size: 14px;
+	margin-top: 8px;
+}
+
+.print-warning2 {
+	margin: 8px 0;
+}
+
+.print-btn {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	margin-left: 20px;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	padding: 7px 10px;
+	cursor: pointer;
+}
+
+.print-btn:hover {
+	background-color: #e6e6e6;
+	border-color: #adadad;
+}
+
+.print-options {
+	font-size: 14px;
+    margin-top: 8px;
+}
+
+.print-options input {
+	vertical-align: -2px;
+}
+
+/*
+ * Header
+ */
+
+header {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.story-title {
+	font-size: 2.3em;
+    padding: 10px 0 0;
+}
+
+.story-warning {
+	display: block;
+	margin-top: 10px;
+	font-size: 80%;
+}
+
+/*
+ * Section
+ */
+
+section {
+	/*page-break-inside: avoid;*/
+	margin-top: 20px;
+	word-wrap: break-word;
+}
+
+section.blackText * {
+	color: #000 !important;
+}
+
+section.page-break {
+	page-break-before: always;
+}
+
+section:nth-of-type(1) {
+	font-size: 18px;
+	page-break-before: auto;
+	page-break-inside: auto;
+}
+
+.title-media-block {
+	page-break-inside: avoid;
+}
+
+section:nth-of-type(1) .title-media-block {
+	page-break-inside: auto;
+}
+
+/*
+ * Main Stage
+ */
+
+.media-image {
+	page-break-inside: avoid;
+	text-align: center;
+}
+
+
+.media-image img {
+	max-width: 100%;
+}
+
+.media-map, .media-video iframe, .media-webpage iframe {
+	page-break-inside: avoid;
+	width: 100%;
+	height: 500px;
+}
+
+/*
+ * Narrative content
+ */
+
+.section-narrative {
+	padding: 20px 0 0 0;
+}
+
+/* Inline video & web page */
+.section-narrative .iframe-container iframe {
+	page-break-inside: avoid;
+	width: 100%;
+	height: 400px;
+}
+
+/* Inline image */
+.section-narrative img,
+.section-narrative .image-container img {
+	page-break-inside: avoid;
+	max-width: 100%;
+}
+
+a {
+	font-family: 'open_sanssemibold', sans-serif;
+	color: #555;
+}
+
+ol,ul,dl {
+	/* IE7: reset rtl list margin. (#7334) */
+	*margin-right: 0px;
+	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
+	padding: 0 40px;
+}
+
+hr {
+	border: 0px;
+	border-top: 1px solid #ccc;
+}
+
+blockquote {
+	font-style: italic;
+	font-family: Georgia, Times, "Times New Roman", serif;
+	border: none;
+}
+
+figure {
+	margin: 15px 0;
+	display: block;
+	display: inline-block;
+}
+
+
+figure figcaption{
+	text-align: left;
+	display: block;
+	font-size: 0.7em;
+	color: #ADADAD;
+	margin-top: 6px;
+}
+
+.image-container {
+	width: 100%;
+}
+
+a[data-storymaps] {
+ 	border-bottom: 1px dashed #555;
+	text-decoration: none;
+	pointer-events: none;
+	cursor: default;
+}
+
+a[data-storymaps]:after {
+	content: attr(data-warning);
+	font-size: 95%;
+    padding-left: 4px;
+}
+
+iframe {
+	border: none;
+}
+
+.media-video-warning {
+	display: block;
+	font-size: 80%;
+	text-align: center;
+}
+
+/*
+ * Map Legend
+ */
+
+.media-map-legend {
+	page-break-inside: avoid;
+}
+
+.esriLegendService {
+	display: inline-block !important;
+	margin-right: 20px;
+}

@@ -26,7 +26,7 @@
 	height: 48px;
 	background: url(../../../../../../resources/tpl/builder/icons/builder-edit-noborder.png);
 	background-position: 0 -41px;
-	
+
 	background-repeat: no-repeat;
 	background-size: 40px;
 	border: 4px solid #FFF;
@@ -35,7 +35,7 @@
 
 .mapEditPopup .embed-title {
 	font-size: 1.3em;
-	color: #4B8BC9; 
+	color: #4B8BC9;
 	margin: 15px 0 5px 0;
 }
 
@@ -62,7 +62,7 @@
 .mapEditPopup .webmap-builder-container.hide {
 	display: block !important;
 	visibility: hidden;
-	pointer-events: none;	
+	pointer-events: none;
 }
 
 .mapEditPopup .webmap-builder {
@@ -78,8 +78,8 @@
 	font-size: 18px;
 }
 
-/* 
- *Cancel popover 
+/*
+ *Cancel popover
  */
 .mapEditPopup .modal-dialog > .popover .popover-title,
 .mapEditPopup .modal-dialog > .popover .popover-content {

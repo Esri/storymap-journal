@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Vidutinis",
       "cfgLarge": "Didelis",
       "socialLinksLabel": "Kiekvienos skilties apačioje rodomos bendrinimo nuorodos",
-      "socialLinksDescr": "Skaitytojai gali nurodyti ir reklamuoti konkrečias jūsų %TPL_NAME% skiltis. Pvz., jei naudojate skilties bendrinimo piktogramą, skaitytojai bus nukreipti į konkrečią %TPL_NAME% skiltį, o ne į pasakojimo pradžią. Be to, skaitytojai gali naudoti pavadinimo skiltyje pateiktą socialinių tinklų nuorodą ir reklamuoti visą %TPL_NAME% (antraštės skirtukas), tada jie bus nukreipti į %TPL_NAME% pradžią."
+      "socialLinksDescr": "Skaitytojai gali nurodyti ir reklamuoti konkrečias jūsų %TPL_NAME% skiltis. Pvz., jei naudojate skilties bendrinimo piktogramą, skaitytojai bus nukreipti į konkrečią %TPL_NAME% skiltį, o ne į pasakojimo pradžią. Be to, skaitytojai gali naudoti pavadinimo skiltyje pateiktą socialinių tinklų nuorodą ir reklamuoti visą %TPL_NAME% (antraštės skirtukas), tada jie bus nukreipti į %TPL_NAME% pradžią.",
+      "socialDisabled": "Šis elementas galimas tik naudojant slankiojančio skydelio išdėstymą",
+      "socialWarning": "Jūsų pasakojimui naudojamas šoninio skydelio išdėstymas, tačiau šią parinktį rekomenduojame naudoti tik su slankiojančio skydelio išdėstymu, kad išvengtumėte situacijų, kai skydelis sustoja taip, kad pasakojimuose su nuotraukomis rodomas ne tas skyrius, kurio jums reikia. Šią parinktį galite naudoti toliau, tačiau ją išjungę, pasakojimą toliau galėsite rodyti tik naudodami slankiojo skydelio išdėstymą."
     },
     "settingsLayoutFonts": {
       "title": "Šriftai",

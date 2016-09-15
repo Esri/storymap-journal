@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Moyen",
       "cfgLarge": "Grand",
       "socialLinksLabel": "Afficher les liens de partage au bas de chaque section",
-      "socialLinksDescr": "Ceci permet aux lecteurs de référencer et de promouvoir des sections spécifiques de votre %TPL_NAME%. Par exemple, si vous utilisez une icône de partage des sections, les lecteurs accéderont directement à cette section de %TPL_NAME% spécifique et non au début de votre narration. Vos lecteurs peuvent utiliser le lien de réseau social dans la section de titre pour promouvoir l'intégralité de votre %TPL_NAME% (onglet d'en-tête) et faciliter l'accès au début de %TPL_NAME%."
+      "socialLinksDescr": "Ceci permet aux lecteurs de référencer et de promouvoir des sections spécifiques de votre %TPL_NAME%. Par exemple, si vous utilisez une icône de partage des sections, les lecteurs accéderont directement à cette section de %TPL_NAME% spécifique et non au début de votre narration. Vos lecteurs peuvent utiliser le lien de réseau social dans la section de titre pour promouvoir l'intégralité de votre %TPL_NAME% (onglet d'en-tête) et faciliter l'accès au début de %TPL_NAME%.",
+      "socialDisabled": "Cette fonctionnalité n'est actuellement disponible qu'avec la mise en page Volet flottant.",
+      "socialWarning": "Votre récit utilise la mise en page Volet latéral, mais nous recommandons désormais d'utiliser cette option uniquement avec la mise en page Volet flottant afin d'éviter que le volet ne se positionne pas de lui-même dans la section souhaitée pour les narrations avec images. Vous pouvez continuer à utiliser cette option, mais si vous la désactivez, elle ne sera ensuite disponible qu'avec la mise en page Volet flottant."
     },
     "settingsLayoutFonts": {
       "title": "Polices",

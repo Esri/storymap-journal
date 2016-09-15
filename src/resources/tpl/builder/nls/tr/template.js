@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Orta",
       "cfgLarge": "Büyük",
       "socialLinksLabel": "Paylaşma bağlantılarını her bölümün en altında görüntüle",
-      "socialLinksDescr": "Bu, okuyuculara %TPL_NAME% öğenizin belirli bölümlerine başvuru yapma ve bunları tanıtma olanağı sağlar. Örneğin, bölüm paylaşımlı simge kullanıyorsanız, okuyucular hikayenizin başlangıcı yerine o belirli %TPL_NAME% bölümüne gider. okuyucularınız başlık bölümündeki sosyal medya bağlantısını kullanarak %TPL_NAME% (başlık sekmesi) öğenizin tamamını tanıtabilir ve %TPL_NAME% başlangıcına gidilmesini sağlayabilir."
+      "socialLinksDescr": "Bu, okuyuculara %TPL_NAME% öğenizin belirli bölümlerine başvuru yapma ve bunları tanıtma olanağı sağlar. Örneğin, bölüm paylaşımlı simge kullanıyorsanız, okuyucular hikayenizin başlangıcı yerine o belirli %TPL_NAME% bölümüne gider. okuyucularınız başlık bölümündeki sosyal medya bağlantısını kullanarak %TPL_NAME% (başlık sekmesi) öğenizin tamamını tanıtabilir ve %TPL_NAME% başlangıcına gidilmesini sağlayabilir.",
+      "socialDisabled": "Bu detay yalnızca Kayan Panel düzeni için kullanılabilir",
+      "socialWarning": "Hikayeniz Yan Panel düzenini kullanıyor, ancak panelin resimli açıklamalar için kendisini istenen bölüme yerleştirmemesi gibi bir sorun yaşamamak için bu seçeneği şu an yalnızca Kayan Panel düzeni için kullanmanızı öneririz. Bu seçeneği kullanmayı sürdürebilirsiniz, ancak devre dışı bıraktığınızda, yalnızca Kayan Panel düzeni ile kullanılabilecektir."
     },
     "settingsLayoutFonts": {
       "title": "Yazı Tipleri",

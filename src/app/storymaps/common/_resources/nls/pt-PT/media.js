@@ -31,13 +31,15 @@ define({
       "rightHeader": "Página do Facebook",
       "pageExplain": "Uma página do Facebook é uma celebridade ou marca/produto público, como <b>esrigis</b>. Pode obter o nome da página após a primeira barra ( / ) no URL da página.",
       "pageInputLbl": "Nome da página",
-      "lookupMsgError": "Página não encontrada"
+      "lookupMsgError": "Página não encontrada",
+      "warning": "O suporte para Facebook foi descontinuado, ${learn}.",
+      "learn": "saber mais"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Email ou ID do Picasa/Google+",
+      "userInputLbl": "Email ou id do Picasa",
       "signInMsg2": "Conta não encontrada",
-      "howToFind": "Como encontrar o ID de uma conta de Picasa ou Google+",
-      "howToFind2": "Copiar os dígitos que estão entre a primeira e a segunda barra ( / ) de qualquer página Picasa ou G+"
+      "howToFind": "Como encontrar a id do Picasa",
+      "howToFind2": "Copiar os dígitos que estão entre a primeira e a segunda  '/'  de qualquer página do Picasa"
     },
     "videoSelectorCommon": {
       "check": "Verificar",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(a largura será sempre ajustada ao painel)",
       "lblPosition4Explain": "(pode distorcer)",
       "unloadLbl": "Descarregue quando o leitor navegar para uma secção diferente",
-      "unloadHelp": "Se a Página Web tiver media em áudio ou em vídeo, mantenha esta opção selecionada para que esse conteúdo pare de ser reproduzido quando navegar para fora do leitor. Desselecione-a, por exemplo, para manter uma banda sonora a tocar enquanto o leitor avança pela história.<br />Caso a página web seja uma aplicação, desselecione esta opção para que a história não seja recarregada se o leitor regressar."
+      "unloadHelp": "Se a Página Web tiver media em áudio ou em vídeo, mantenha esta opção selecionada para que esse conteúdo pare de ser reproduzido quando navegar para fora do leitor. Desselecione-a, por exemplo, para manter uma banda sonora a tocar enquanto o leitor avança pela história.<br />Caso a página web seja uma aplicação, desselecione esta opção para que a história não seja recarregada se o leitor regressar.",
+      "embedProtocolLabel": "Carregar página através de uma ligação segura (HTTPS)",
+      "embedProtocolWarning1": "A sua história está configurada para ser carregada através de uma ligação segura (https), portanto a exibição de página web na história também tem de utilizar uma ligação segura. Caso a página não seja carregada, isso poderá dever-se ao facto de não se encontrar disponível através de uma ligação segura ou não poder ser incluída na sua história (alguns sites web restringem esta ação). Poderá ter de criar uma hiperligação para que a a página seja aberta num novo separador de navegador.",
+      "embedProtocolWarning2": "A sua história está configurada para ser carregada através de uma ligação insegura (http), por isso pode optar por carregar estab página através de uma ligação segura (recomendado) ou insegura. Caso a página não seja carregada, isso poderá dever-se ao facto de a mesma não suportar o tipo de ligação que escolheu ou não poder ser incluída na sua história (alguns sites web restringem esta ação). Poderá ter de criar uma hiperligação para que a a página seja aberta num novo separador de navegador."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizar um endereço ou lugar",

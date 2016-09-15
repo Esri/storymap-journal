@@ -80,7 +80,7 @@ body.layout-side #AddEditTitleEditor * {
 /*
  * Title text editor
  */
- 
+
 .cke_editable {
 	padding: 6px 12px;
 	border: 1px solid #ccc;
@@ -221,7 +221,7 @@ input[type=text]:focus, textarea:focus {
 /*
  * TODO
  */
- 
+
 .addEditPopup .webmapSelector {
 	margin-bottom: -15px;
-} 
+}

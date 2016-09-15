@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Srednje",
       "cfgLarge": "Veliko",
       "socialLinksLabel": "Prikaži poveznice za dijeljenje na dnu svakog odjeljka",
-      "socialLinksDescr": "To omogućuje čitateljima da referenciraju i promoviraju određene odjeljke predloška %TPL_NAME%. Primjerice, ako upotrijebite ikonu za dijeljenje u odjeljku, čitatelji će biti prebačeni na taj određeni odjeljak predloška %TPL_NAME%, a ne na početak vaše priče. Vaši čitatelji mogu upotrijebiti poveznicu društvenih medija u naslovu kako bi promovirali vaš cijeli predložak %TPL_NAME% (kartica zaglavlja) i kako bi se prebacili na početak predloška %TPL_NAME%."
+      "socialLinksDescr": "To omogućuje čitateljima da referenciraju i promoviraju određene odjeljke predloška %TPL_NAME%. Primjerice, ako upotrijebite ikonu za dijeljenje u odjeljku, čitatelji će biti prebačeni na taj određeni odjeljak predloška %TPL_NAME%, a ne na početak vaše priče. Vaši čitatelji mogu upotrijebiti poveznicu društvenih medija u naslovu kako bi promovirali vaš cijeli predložak %TPL_NAME% (kartica zaglavlja) i kako bi se prebacili na početak predloška %TPL_NAME%.",
+      "socialDisabled": "Ova je značajka dostupna samo s izgledom plutajuće ploče",
+      "socialWarning": "Vaša priča upotrebljava izgled bočne ploče, no sada preporučujemo upotrebu te opcije samo s izgledom plutajuće ploče kako bi se izbjegao problem u kojem se ploča ne želi postaviti u željeni odjeljak za priče sa slikama. Možete nastaviti upotrebljavati ovu opciju, no ako je onemogućite, tada će biti dostupna samo kada upotrebljavate izgled plutajuće ploče."
     },
     "settingsLayoutFonts": {
       "title": "Fontovi",

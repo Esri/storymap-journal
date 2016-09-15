@@ -4,23 +4,23 @@ define(["dojo/_base/lang"],
 		/**
 		 * WebApplicationData
 		 * @class WebApplicationData
-		 * 
+		 *
 		 * R/W of the Web mapping Application data
 		 */
-		
+
 		var _originalData = {};
-		var _data = { 
+		var _data = {
 			values: {}
 		};
-		
+
 		return {
 			set: function(data)
 			{
 				_originalData = lang.clone(data);
-				
+
 				if( ! data || ! data.values )
 					return;
-				
+
 				/*
 				if ( data.values.story.entries ) {
 					data.values.story.sections = lang.clone(data.values.story.entries);
@@ -28,20 +28,20 @@ define(["dojo/_base/lang"],
 					_originalData = lang.clone(data);
 				}
 				*/
-				
-				_data = data; 
+
+				_data = data;
 			},
 			get: function()
 			{
 				var data = lang.clone(_data);
-				
+
 				data.values.template = data.values.template || {};
 				data.values.template = {
 					name: data.values.template.name || app.cfg.TPL_NAME,
 					createdWith: data.values.template.createdWith || app.version,
 					editedWith: app.version
 				};
-				
+
 				return data;
 			},
 			getOriginalData: function()
@@ -80,16 +80,16 @@ define(["dojo/_base/lang"],
 							delete data.values.firstRecordAsIntro;
 							hasDoneCleaning = true;
 						}
-							
+
 						if (data.values.fieldsOverride){
 							delete data.values.fieldsOverride;
 							hasDoneCleaning = true;
-						} 
-							
+						}
+
 						if (data.values.sourceLayer){
 							delete data.values.sourceLayer;
 							hasDoneCleaning = true;
-						} 
+						}
 					}
 				}
 				return hasDoneCleaning;
@@ -102,11 +102,11 @@ define(["dojo/_base/lang"],
 			{
 				_originalData = lang.clone(_data);
 			},
-			
+
 			/*
 			 * Versioning
 			 */
-			
+
 			// Last saved template version
 			getTemplateVersion: function()
 			{
@@ -117,7 +117,7 @@ define(["dojo/_base/lang"],
 			{
 				return _data.values.template ? _data.values.template.creaedWith : null;
 			},
-			
+
 			/*
 			 * Warning when item and story title differ
 			 */
@@ -125,12 +125,12 @@ define(["dojo/_base/lang"],
 			{
 				return _data.values.doNotWarnTitle || false;
 			},
-			
+
 			setDoNotWarnTitle: function(value)
 			{
 				_data.values.doNotWarnTitle = value;
 			},
-			
+
 			/*
 			 * Webmap id
 			 */
@@ -142,7 +142,7 @@ define(["dojo/_base/lang"],
 			{
 				_data.values.webmap = webmap;
 			},
-			
+
 			/*
 			 * Header
 			 */
@@ -151,7 +151,7 @@ define(["dojo/_base/lang"],
 				// Reuse the title as app title
 				if ( this.getStorySections().length > 0 )
 					this.setTitle($("<div>" + this.getStorySections()[0].title + "</div>").text());
-				
+
 				return _data.values.title ? _data.values.title.trim() : "";
 			},
 			setTitle: function(title)
@@ -166,16 +166,16 @@ define(["dojo/_base/lang"],
 			{
 				_data.values.subtitle = subtitle;
 			},
-			
+
 			/*
 			 * Settings
 			 */
-			
+
 			getSettings: function()
 			{
 				return _data.values.settings || {};
 			},
-			
+
 			/*
 			 * Layout
 			 */
@@ -189,7 +189,7 @@ define(["dojo/_base/lang"],
 				_data.values.settings.layout = layout;
 			},
 			getLayoutId: function()
-			{	
+			{
 				return this.getLayout().id || app.cfg.LAYOUTS[0].id;
 			},
 			// The static configuration of the layout
@@ -197,21 +197,21 @@ define(["dojo/_base/lang"],
 			{
 				var layout = layoutId || this.getLayoutId(),
 					layoutCfg = $.grep(app.cfg.LAYOUTS, function(l){ return l.id == layout; });
-				
+
 				return layoutCfg && layoutCfg.length ? layoutCfg[0] : null;
 			},
-			
-			
+
+
 			/*
 			 * Layout options
 			 */
 			getLayoutOptions: function()
 			{
 				var layoutOptions = lang.clone(this.getSettings().layoutOptions) || {};
-				
+
 				layoutOptions.layoutCfg = this.getLayoutCfg();
 				layoutOptions.socialLinks = layoutOptions.socialLinks === undefined ? false : layoutOptions.socialLinks;
-				
+
 				return layoutOptions;
 			},
 			setLayoutOptions: function(layoutOptions)
@@ -228,21 +228,21 @@ define(["dojo/_base/lang"],
 				var cfg = {},
 					rawCfg = ((this.getSettings().layoutOptions || {}).layoutCfg) || {},
 					layoutProp = this.getLayoutProperties();
-				
+
 				if ( ! layoutProp )
 					return null;
-				
+
 				if ( layoutProp.sizes ) {
 					cfg.sizeLbl = rawCfg.size || 'medium';
 					cfg.sizeVal = layoutProp.sizes[cfg.sizeLbl];
 				}
-				
+
 				if ( layoutProp.positions )
 					cfg.position = rawCfg.position || layoutProp.positions[0];
-				
+
 				return cfg;
 			},
-			
+
 			/*
 			 * Theme
 			 */
@@ -250,7 +250,7 @@ define(["dojo/_base/lang"],
 			{
 				return this.getSettings().theme || {};
 			},
-			setTheme: function(theme) 
+			setTheme: function(theme)
 			{
 				_data.values.settings = _data.values.settings || {};
 				_data.values.settings.theme = theme;
@@ -258,7 +258,7 @@ define(["dojo/_base/lang"],
 			getColors: function()
 			{
 				var cfgColors = this.getTheme().colors;
-				
+
 				// If colors are defined, check if that theme is present in the config file
 				// If present reuse the values from config, else use the values from the item
 				// This allow an user to override his theme from the config file as well as administrator update
@@ -266,7 +266,7 @@ define(["dojo/_base/lang"],
 					var matchedTheme = $.grep(this.getLayoutProperties().themes, function(theme) {
 						return theme.name == cfgColors.name;
 					});
-					
+
 					if ( matchedTheme && matchedTheme.length )
 						return matchedTheme[0];
 					else
@@ -277,18 +277,18 @@ define(["dojo/_base/lang"],
 			},
 			getFonts: function()
 			{
-				var outputFonts = { 
+				var outputFonts = {
 						sectionTitle: app.cfg.FONTS.sectionTitle[0],
 						sectionContent: app.cfg.FONTS.sectionContent[0]
 					},
 					cfgFonts = this.getTheme().fonts || { };
-				
+
 				if ( cfgFonts.sectionTitle ) {
 					outputFonts.sectionTitle = $.grep(app.cfg.FONTS.sectionTitle, function(font) {
 						return font.id == cfgFonts.sectionTitle.id;
 					})[0] || cfgFonts.sectionTitle;
 				}
-				
+
 				if ( cfgFonts.sectionContent ) {
 					outputFonts.sectionContent = $.grep(app.cfg.FONTS.sectionContent, function(font) {
 						return font.id == cfgFonts.sectionContent.id;
@@ -297,7 +297,7 @@ define(["dojo/_base/lang"],
 
 				return outputFonts;
 			},
-			
+
 			/*
 			 * Header
 			 */
@@ -305,7 +305,7 @@ define(["dojo/_base/lang"],
 			{
 				return this.getSettings().header || {};
 			},
-			setHeader: function(header) 
+			setHeader: function(header)
 			{
 				_data.values.settings = _data.values.settings || {};
 				_data.values.settings.header = header;
@@ -321,23 +321,23 @@ define(["dojo/_base/lang"],
 			getLogoURL: function()
 			{
 				var logoURL = ! this.getHeader().logoURL ? app.cfg.HEADER_LOGO_URL : this.getHeader().logoURL;
-				
+
 				if ( logoURL == app.cfg.HEADER_LOGO_URL && this.getColors() && this.getColors().esriLogo == "white" )
 					logoURL = "resources/tpl/viewer/icons/esri-logo-white.png";
-				
+
 				return logoURL;
 			},
 			getLogoTarget: function()
 			{
 				return ! this.getHeader().logoURL || this.getHeader().logoURL == app.cfg.HEADER_LOGO_URL
-					? app.cfg.HEADER_LOGO_TARGET 
+					? app.cfg.HEADER_LOGO_TARGET
 					: this.getHeader().logoTarget;
 			},
 			getSocial: function()
 			{
 				return this.getHeader().social;
 			},
-			
+
 			/*
 			 * Map Journal
 			 */
@@ -348,16 +348,16 @@ define(["dojo/_base/lang"],
 			getStorySections: function()
 			{
 				var story = this.getStory();
-				
+
 				// FS will use story.order to return sections in the correct order
-				
+
 				/*
 				var arr = [];
 				for(var i=0;i<1000;i++)
 					arr.push(story.sections[0]);
 				return arr;
 				*/
-				
+
 				return story.sections || [];
 			},
 			getStoryStorage: function()

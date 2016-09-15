@@ -1,9 +1,9 @@
 define(["lib-build/tpl!./Landing",
-		"lib-build/css!./Landing"], 
+		"lib-build/css!./Landing"],
 	function (
 		viewTpl
 	){
-		return function Landing(container, addFirstSectionCallback, helpCallback) 
+		return function Landing(container, addFirstSectionCallback, helpCallback)
 		{
 			var QUOTES = [
 				[
@@ -47,52 +47,52 @@ define(["lib-build/tpl!./Landing",
 					"--Robert McKee"
 				]
 			];
-			
+
 			container.append(viewTpl({
 				lblAdd: i18n.builder.landing.lblAdd,
 				phAdd: i18n.builder.landing.phAdd,
 				lblOR: i18n.builder.landing.lblOR,
 				lblHelp: i18n.builder.landing.lblHelp
 			}));
-			
+
 			initEvents();
-			
-			this.toggle = function(state) 
-			{			
+
+			this.toggle = function(state)
+			{
 				container.toggle(state);
 				$("#builderQuotes").toggle(state);
-				
-				if ( ! getTitle() && app.isGalleryCreation ) {
+
+				if ( ! getTitle() && (app.isGalleryCreation || app.isWebMapCreation) ) {
 					container.find(".landing-add-container .add-title")
 						.val(app.data.getWebAppItem().title)
 						.select();
 					onTitleChange();
 				}
-				
+
 				focus();
 			};
-			
+
 			this.focus = function()
 			{
 				container.find(".landing-add-container .add-title").focus();
 			};
-			
+
 			function getTitle()
 			{
 				return container.find(".landing-add-container .add-title").val();
 			}
-			
+
 			function onTitleChange()
 			{
 				container.find(".landing-add-container .landing-btn").toggleClass("disabled", ! getTitle());
 			}
-			
+
 			function onClickAdd()
 			{
 				if ( ! $(this).hasClass("disabled") )
 					addFirstSectionCallback(getTitle());
 			}
-			
+
 			function initEvents()
 			{
 				container.find(".landing-add-container .add-title")
@@ -100,10 +100,10 @@ define(["lib-build/tpl!./Landing",
 					.keyup(function(e){ e.keyCode == 13 && $(this).val() && container.is(':visible') && onClickAdd(); });
 				container.find(".landing-add-container .landing-btn").click(onClickAdd);
 				container.find(".landing-tour-container").click(helpCallback);
-				
+
 				$("#builderQuotes").html(
-					'<div style="padding: 0 18%">' 
-					+ QUOTES[Math.floor(Math.random() * QUOTES.length)].join("<br />") 
+					'<div style="padding: 0 18%">'
+					+ QUOTES[Math.floor(Math.random() * QUOTES.length)].join("<br />")
 					+ "</div>"
 				);
 			}

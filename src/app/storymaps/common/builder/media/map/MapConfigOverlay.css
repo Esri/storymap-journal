@@ -55,7 +55,7 @@
 	max-width: 500px;
 	/* need to set fixed height because of the expand button */
 	/*height: 360px;*/
-	border-right: none; 
+	border-right: none;
 	padding-bottom: 0.5em;
 	transition: margin 0.6s;
 }
@@ -76,7 +76,7 @@ body.layout-float .mapConfigOverlay.toc {
 
 /*
  * TOC component override
- */ 
+ */
 
 .tocContainer .TableOfContents {
 	width: auto !important;
@@ -99,7 +99,7 @@ body.layout-float .mapConfigOverlay.toc {
 
 .tocContainer .TableOfContents .toc-layer:last-child .toc-title {
 	border-bottom: none;
-} 
+}
 
 .tocContainer .TableOfContents .toc-checkbox {
 	top: 0;
@@ -114,7 +114,7 @@ body.layout-float .mapConfigOverlay.toc {
 	font-family: inherit;
 	margin: 0;
 }
-    
+
 .tocContainer .TableOfContents .icon-check-1:before {
 	content: "\e067";
 }

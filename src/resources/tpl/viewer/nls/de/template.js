@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Diese Story wird von Internet Explorer vor Version %VERSION% nicht unterstützt. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Aktualisieren Sie Ihren Browser</a>.",
       "mapLoadingFail": "Ein Fehler ist aufgetreten. Die Karte wurde nicht korrekt geladen.",
-      "signOut": "Abmelden"
+      "signOut": "Abmelden",
+      "print0": "Diese Story kann leider nicht gedruckt werden.",
+      "print1": "Verwenden Sie zum Drucken dieser Story die Schaltfläche \"Drucken\" im Freigabe-Dialogfeld.",
+      "print2": "Eine druckbare Version dieser Story kann in der Regel über das Freigabe-Dialogfeld aufgerufen werden. Dieses Dialogfeld wurde jedoch leider vom Autor deaktiviert."
     },
     "mobileView": {
       "tapForDetails": "Zum Anzeigen von Details tippen",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Modus für automatische Wiedergabe",
       "autoplayExplain1": "Im Modus für automatische Wiedergabe wird die Story regelmäßig fortgesetzt. Er ist ideal für Kiosks oder öffentliche Monitore. In anderen Situationen wird dadurch allerdings die Lesbarkeit der Story beeinträchtigt. Dieses Feature wird für kleine Anzeigegrößen nicht unterstützt.",
       "autoplayExplain2": "Ist dieser Modus aktiviert, stehen Steuerelemente für Wiedergabe/Pause der Story und zum Einstellen der Navigationsgeschwindigkeit zur Verfügung.",
-      "linksupdated": "Links aktualisiert!"
+      "linksupdated": "Links aktualisiert!",
+      "print": "Drucken",
+      "printInstruction1": "Warten Sie, bis der gesamte Inhalt geladen wurde, bevor Sie diese Seite drucken.",
+      "printInstruction1a": "Einige Inhalte werden möglicherweise nicht gedruckt, es sei denn, Sie aktivieren die Option \"Hintergrundfarben und -bilder drucken\" im Setup-Dialogfeld \"Seite drucken\".",
+      "printInstruction2": "Diese Seite kann nicht für andere freigegeben werden; geben Sie stattdessen ${link} frei.",
+      "link": "Link zur Story",
+      "printOptPageBreak": "Jeden Abschnitt auf einer neuen Seite beginnen",
+      "printWarning": "Dies ist eine gedruckte Version einer Story Map. Dynamische Inhalte wie Videos und interaktive Karten sind nur in der Online-Version unter ${link} verfügbar.",
+      "printMSWarning": "Link ist nur in Online-Story verfügbar",
+      "printVideoWarning": "Dieses Video kann in der Online-Version dieser Story Map angezeigt werden."
     }
   }
 });

@@ -3,7 +3,7 @@ define([],
 		/**
 		 * BuilderHelper
 		 * @class BuilderHelper
-		 * 
+		 *
 		 * Collection of helper functions for Builder
 		 */
 		return {

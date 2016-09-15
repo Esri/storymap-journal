@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebooki leht",
       "pageExplain": "Facebooki leht on avalik kaubamärk/toode nagu <b>esrigis</b>. Saad lehe nime pärast esimest '/' lehekülje URL-il.",
       "pageInputLbl": "Lehe nimi",
-      "lookupMsgError": "Lehte ei leitud"
+      "lookupMsgError": "Lehte ei leitud",
+      "warning": "Facebooki tuge ei pakuta enam, ${learn}.",
+      "learn": "lisateave"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "e-post või Picasa/Google+ ID",
+      "userInputLbl": "E-post või Picasa ID",
       "signInMsg2": "Kontot ei leitud",
-      "howToFind": "Kuidas leida Picasa või Google+ konto ID-d",
-      "howToFind2": "Kopeeri numbrikohad esimese ja teise '/' vahelt Picasa või G+ lehelt"
+      "howToFind": "Kuidas leida Picasa ID-d?",
+      "howToFind2": "Kopeerige mis tahes Picasa lehe esimese ja teise kaldkriipsu vahel asuvad numbrikohad"
     },
     "videoSelectorCommon": {
       "check": "Kontrolli",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(laius on alati paneelile vastav)",
       "lblPosition4Explain": "(võib moonutada)",
       "unloadLbl": "Laadi maha, kui lugeja liigub mujale",
-      "unloadHelp": "Kui veebileht sisaldab audio- või videosisu, jätke see valik märgituks, et lõpetada selle sisu esitamine, kui lugeja liigub mujale. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks samal ajal, kui lugeja läbi loo liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et kasutaja naasmisel ei laaditaks lugu uuesti."
+      "unloadHelp": "Kui veebileht sisaldab audio- või videosisu, jätke see valik märgituks, et lõpetada selle sisu esitamine, kui lugeja liigub mujale. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks samal ajal, kui lugeja läbi loo liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et kasutaja naasmisel ei laaditaks lugu uuesti.",
+      "embedProtocolLabel": "Lehe laadimine turvalise ühenduse (HTTPS) kaudu",
+      "embedProtocolWarning1": "Lugu on konfigureeritud nii, et see laaditakse turvalise ühenduse (https) kaudu, seega peavad ka loos kuvatavad veebilehed kasutama turvalist ühendust. Kui lehte ei laadita, võib põhjus olla selles, et leht pole turvalise ühenduse kaudu saadaval või ei saa seda teie loosse lisada (mõni veebisait seab sellele piiranguid). Võib olla peate looma hüperlingi, et avada leht uuel brauseri vahekaardil.",
+      "embedProtocolWarning2": "Lugu on konfigureeritud nii, et see laaditakse mitteturvalise ühenduse (http) kaudu, seega saate valida, kas see leht laaditakse turvalise (soovitatav) või mitteturvalise ühenduse kaudu. Kui lehte ei laadita, võib põhjus olla selles, et leht ei toeta teie valitud ühendusetüüpi või ei saa seda teie loosse lisada (mõni veebisait seab sellele piiranguid). Võib olla peate looma hüperlingi, et avada leht uuel brauseri vahekaardil."
     },
     "editorActionGeocode": {
       "lblTitle": "Märgi aadress või asukoht",

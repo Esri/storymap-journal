@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook stranica",
       "pageExplain": "Facebook stranica je javni brend/proizvod ili svetski poznat <b>esrigis</b>. Možete da dobijete naziv stranice nakon prve ‘/’u URL adresi stranice.",
       "pageInputLbl": "Naziv stranice",
-      "lookupMsgError": "Stranica nije pronađena"
+      "lookupMsgError": "Stranica nije pronađena",
+      "warning": "Podrška za Facebook je ukinuta, ${learn}.",
+      "learn": "saznajte više"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-pošta ili Picasa/Google+ ID",
+      "userInputLbl": "E-pošta ili ID naloga za stranicu Picasa",
       "signInMsg2": "Nalog nije pronađen",
-      "howToFind": "Kako da pronađete ID naloga za stranicu Picasa ili Google+",
-      "howToFind2": "Kopirajte cifre između prvog i drugog ‘/’ na Picasa ili Google+ stranici"
+      "howToFind": "Kako da pronađete ID naloga za stranicu Picasa",
+      "howToFind2": "Kopirajte cifre između prvog i drugog znaka „/” na bilo kojoj Picasa stranici"
     },
     "videoSelectorCommon": {
       "check": "Proverite",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(širina će se uvek uklopiti u tablu)",
       "lblPosition4Explain": "(izobličenje je moguće)",
       "unloadLbl": "Poništi učitavanje kada čitalac napusti stranicu",
-      "unloadHelp": "Ako veb stranica ima sadržaje audio ili video formata, označite ovu opciju kao potvrđenu da zaustavite reprodukciju tog sadržaja kada čitalac napusti stranicu. Označite je kao nepotvrđenu da zvuk nastavi sa reprodukcijom kako čitalac „ide“ kroz priču.<br />Ako je veb stranica aplikacija, označite ovu opciju kao nepotvrđenu tako da se priča ne učitava ponovo kada se čitalac vrati na nju."
+      "unloadHelp": "Ako veb stranica ima sadržaje audio ili video formata, označite ovu opciju kao potvrđenu da zaustavite reprodukciju tog sadržaja kada čitalac napusti stranicu. Označite je kao nepotvrđenu da zvuk nastavi sa reprodukcijom kako čitalac „ide“ kroz priču.<br />Ako je veb stranica aplikacija, označite ovu opciju kao nepotvrđenu tako da se priča ne učitava ponovo kada se čitalac vrati na nju.",
+      "embedProtocolLabel": "Učitaj stranicu preko bezbedne veze (HTTPS)",
+      "embedProtocolWarning1": "Vaša priča je konfigurisana tako da se učita preko bezbedne veze (https), tako da prikaz veb stranice u priči takođe mora da koristi bezbednu vezu. Ako se stranica ne učitava, to može biti usled toga što nije dostupna preko bezbedne veze ili što ne može da bude uključena u vašu priču (neki veb sajtovi ograničavaju ovo). Možda ćete morati da kreirate hiperlink da biste otvorili stranicu u novoj kartici pregledača.",
+      "embedProtocolWarning2": "Vaša priča je konfigurisana tako da se učita preko bezbedne veze (https), tako da možete da izaberete da učitate ovu stranicu putem bezbedne veze (preporučeno) ili nebezbedne veze. Ako se stranica ne učitava, to može biti usled toga što ne podržava vrstu veze koju ste izabrali ili što ne može da bude uključena u vašu priču (neki veb sajtovi ograničavaju ovo). Možda ćete morati da kreirate hiperlink da biste otvorili stranicu u novoj kartici pregledača."
     },
     "editorActionGeocode": {
       "lblTitle": "Locirajte adresu ili mesto",

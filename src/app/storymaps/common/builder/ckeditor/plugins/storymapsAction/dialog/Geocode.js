@@ -11,7 +11,7 @@ define(["lib-build/tpl!./Geocode",
 		"esri/symbols/PictureMarkerSymbol",
 		"dojo/_base/lang",
 		"dojo/on",
-		"dojo/Deferred"], 
+		"dojo/Deferred"],
 	function (
 		viewTpl,
 		viewCss,
@@ -28,7 +28,7 @@ define(["lib-build/tpl!./Geocode",
 		on,
 		Deferred
 	){
-		return function Geocode(container) 
+		return function Geocode(container)
 		{
 			container.append(viewTpl({
 				lblTitle: i18n.commonMedia.editorActionGeocode.lblTitle,
@@ -36,33 +36,33 @@ define(["lib-build/tpl!./Geocode",
 				btnOk: i18n.commonCore.common.apply,
 				btnCancel: i18n.commonCore.common.cancel
 			}));
-			
+
 			var _cfg = null,
 				_map = null,
 				_geocoderGraphic = null,
 				_dialogDeferred = null;
-			
+
 			initEvents();
-			
-			this.present = function(cfg, contentHeight) 
-			{			
+
+			this.present = function(cfg, contentHeight)
+			{
 				_cfg = cfg;
 				_dialogDeferred = new Deferred();
-				
+
 				initMap(_cfg.mode == "add" ? _cfg.text : "");
-				
+
 				container.find(".mapMarker").prop('checked', _cfg.mode == "add" || _cfg.edit.zoom.mapMarker);
-				
-				container.find(".modal-content").css("min-height", contentHeight);
-				
+
+				container.find(".modal-content").css("min-height", Math.max(contentHeight, 539));
+
 				container.modal({keyboard: true});
 				return _dialogDeferred;
 			};
-			
+
 			function onClickSubmit()
 			{
 				var hasError = false;
-				
+
 				if ( ! hasError ) {
 					_dialogDeferred.resolve({
 						id: _cfg.mode == "add" ? "MJ-ACTION-" + Date.now() : null,
@@ -76,17 +76,17 @@ define(["lib-build/tpl!./Geocode",
 					container.modal('toggle');
 				}
 			}
-			
+
 			function initMap(/*value*/)
 			{
 				if ( ! app.map || ! app.map.layerIds || ! app.map.layerIds.length )
 					return;
-				
+
 				if ( _map ) {
 					container.find('#esri_dijit_Geocoder_0_input').val(/*value*/ '');
 					return;
 				}
-				
+
 				_map = new Map(container.find(".map")[0], {
 					slider: true,
 					//center: _tempItemData.point,
@@ -95,27 +95,27 @@ define(["lib-build/tpl!./Geocode",
 					// iOS requirement
 					//autoResize: false
 				});
-				
+
 				// Add a basemap - copy first layer, default to light grey canvas if bing or not tile/dynamic
 				_map.addLayer(CommonHelper.cloneLayer(app.map.getLayer(app.map.layerIds[0])));
-				
+
 				var pointLayer = new GraphicsLayer();
-				
+
 				_geocoderGraphic = new Graphic(
-					new Point(app.map.extent.getCenter()), 
+					new Point(app.map.extent.getCenter()),
 					new PictureMarkerSymbol(app.cfg.SECTION_ACTION_ZOOM_MAP_MARKER, 32, 32)
 				);
-				
+
 				pointLayer.add(_geocoderGraphic);
 				_map.addLayer(pointLayer);
-				
+
 				// Edit Point Location
 				on.once(_map, "update-end", function() {
 					_map.disableKeyboardNavigation();
 					new MovableGraphic(
-						_map, 
-						pointLayer, 
-						_geocoderGraphic, 
+						_map,
+						pointLayer,
+						_geocoderGraphic,
 						function(e){
 							_geocoderGraphic.setGeometry(e.geometry);
 							if( ! _map.extent.contains(e.geometry) )
@@ -123,13 +123,13 @@ define(["lib-build/tpl!./Geocode",
 						}
 					);
 				});
-				
+
 				//
 				// Geocoder
 				//
-				
+
 				CommonHelper.createGeocoder({
-					map: _map, 
+					map: _map,
 					domNode: container.find(".geocoder")[0],
 					placeHolder: i18n.commonMedia.editorActionGeocode.lblTitle
 				}).then(function(geocoder) {
@@ -139,25 +139,25 @@ define(["lib-build/tpl!./Geocode",
 							applyGeocodeResult(response.result.feature.geometry);
 					});
 				});
-				
+
 				container.on('shown.bs.modal', function () {
 					_map.resize();
 				});
 			}
-			
+
 			var applyGeocodeResult = function(geom)
 			{
 				_geocoderGraphic.setGeometry(geom);
-				
-				//if( ! _map.extent.contains(geom) ) 
+
+				//if( ! _map.extent.contains(geom) )
 				//	_map.locatePointFromMapExtent = true;
 			};
-			
+
 			function initEvents()
 			{
 				container.find(".btnSubmit").click(onClickSubmit);
 			}
-	
+
 			this.initLocalization = function()
 			{
 				//

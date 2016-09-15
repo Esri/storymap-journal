@@ -94,17 +94,18 @@ html.dj_ie9 .mainMediaContainer.has-error .mainStageErrorContainer {
 	text-align: center;
 	padding: 15px;
 }
-	
+
 /*
  * Map
  */
- 
+
 .mapContainer {
     border:none;
     padding:0;
     height:100%;
     width:100% !important;
     overflow:hidden;
+    background-color: #FFF;
 }
 
 .mapContainer.legend {

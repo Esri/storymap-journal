@@ -13,7 +13,7 @@ define(["lib-build/tpl!./MediaSelector",
 		VideoSelector,
 		WebpageSelector
 	){
-		return function MediaSelector(container, mapCfg, smallSize, onDataChangeCallback, backButton) 
+		return function MediaSelector(container, mapCfg, smallSize, onDataChangeCallback, backButton)
 		{
 			// TODO params with boolean for each media type
 			container.append(viewTpl({
@@ -25,7 +25,7 @@ define(["lib-build/tpl!./MediaSelector",
 				lblSelect: smallSize ? i18n.commonMedia.mediaSelector.lblSelect1 : i18n.commonMedia.mediaSelector.lblSelect2,
 				notImplemented: i18n.commonMedia.mediaSelector.notImplemented
 			}));
-			
+
 			var _this = this,
 				_mediaType = ["webmap", "image", "video", "webpage"],
 				_selectedMediaType = null,
@@ -60,7 +60,7 @@ define(["lib-build/tpl!./MediaSelector",
 					onDataChangeCallback,
 					backButton
 				);
-			
+
 			if ( mapCfg ) {
 				_mapSelector = new WebMapSelector(
 					container.find('.mapMediaContainer'),
@@ -69,32 +69,32 @@ define(["lib-build/tpl!./MediaSelector",
 					onDataChangeCallback
 				);
 			}
-			
+
 			container.find('.mediaSelector').toggleClass('smallSize', smallSize);
-			
+
 			initEvents();
-			
-			this.present = function(cfg) 
+
+			this.present = function(cfg)
 			{
 				if ( _mapSelector ) {
 					_mapSelector.present(cfg);
 					_mapSelector.activate();
 				}
-				
+
 				_imageSelector.present(cfg);
 				_videoSelector.present(cfg);
 				_webpageSelector.present(cfg);
-				
+
 				if ( cfg.mode == "add" )
 					initUIAdd(cfg);
 				else
 					initUIEdit(cfg);
 			};
-			
+
 			this.getData = function()
 			{
 				var selectedMedia = container.find('.mainMediaTypeContainer.current').index();
-				
+
 				if ( selectedMedia === 0 )
 					return {
 						media: {
@@ -123,14 +123,14 @@ define(["lib-build/tpl!./MediaSelector",
 							webpage: _webpageSelector.getData()
 						}
 					};
-				
+
 				return { };
 			};
-			
+
 			this.checkError = function(saveBtn)
 			{
 				var selectedMedia = container.find('.mainMediaTypeContainer.current').index();
-				
+
 				if ( selectedMedia === 0 )
 					return _mapSelector.checkError();
 				else if ( selectedMedia == 1  )
@@ -139,17 +139,17 @@ define(["lib-build/tpl!./MediaSelector",
 					return _videoSelector.checkError();
 				else if ( selectedMedia == 3 )
 					return _webpageSelector.checkError();
-				
+
 				return true;
 			};
-			
+
 			this.activate = function()
 			{
 				//_mapSelector.deactivate();
 				_imageSelector.deactivate();
 				_videoSelector.deactivate();
 				_webpageSelector.deactivate();
-				
+
 				if ( _selectedMediaType == "webmap" ) {
 					_mapSelector.activate();
 					// Can't figure out why in some case
@@ -162,18 +162,18 @@ define(["lib-build/tpl!./MediaSelector",
 				else if ( _selectedMediaType == "webpage" )
 					_webpageSelector.activate();
 			};
-			
+
 			this.postDisplay = function()
 			{
 				_mapSelector.postDisplay();
 			};
-			
+
 			function initUIAdd()
 			{
 				// Click/focus/click weirdness seems needed for ipad
 				container.find('.media-type').eq(_mapSelector ? 0 : 1).click().focus().click();
 			}
-			
+
 			function initUIEdit(cfg)
 			{
 				var typeIndex = $.inArray(cfg.media.type, ['webmap', 'image', 'video', 'frame']);
@@ -184,16 +184,16 @@ define(["lib-build/tpl!./MediaSelector",
 			{
 				container.find('.media-type').click(function () {
 					_selectedMediaType = _mediaType[$(this).parents('.media-type-wrapper').index()];
-					
+
 					container.find('.media-type-wrapper').removeClass("current");
 					$(this).parents('.media-type-wrapper').addClass("current");
-					
+
 					container.find('.mainMediaTypeContainer')
 						.hide().removeClass('current')
 						.eq($(this).parents('.media-type-wrapper').index()).addClass('current').show();
-					
+
 					_this.activate();
-					
+
 					onDataChangeCallback && onDataChangeCallback(_selectedMediaType);
 				});
 			}

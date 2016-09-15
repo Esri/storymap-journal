@@ -36,7 +36,10 @@ define({
       "noViewerIE": "低於版本 %VERSION% 的 Internet Explorer 不支援該故事。%UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>請更新您的瀏覽器</a>。",
       "mapLoadingFail": "發生了一些錯誤，地圖未正確載入。",
-      "signOut": "登出"
+      "signOut": "登出",
+      "print0": "很抱歉，無法列印此故事。",
+      "print1": "若要列印此故事，請使用分享對話方塊中的列印按鈕。",
+      "print2": "很抱歉，一般可透過分享對話方塊存取故事的可列印版本，但創作者已停用此對話方塊。"
     },
     "mobileView": {
       "tapForDetails": "點選查看詳細資訊",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "自動播放模式",
       "autoplayExplain1": "自動播放模式將以一定間隔向前播放您的故事。這很適用於書報攤或公共顯示器，但請注意，在其他情況下可能會使得故事更難閱讀。此圖徵不支援小畫面。",
       "autoplayExplain2": "啟用此模式時，可使用控制項來播放/暫停故事和調整瀏覽速度。",
-      "linksupdated": "已更新連結!"
+      "linksupdated": "已更新連結!",
+      "print": "列印",
+      "printInstruction1": "請等到全部內容皆載入完畢，再列印此頁面",
+      "printInstruction1a": "除非您在「列印頁面」設定對話方塊中啟用「列印背景顏色和圖片」，否則可能無法列印部分內容",
+      "printInstruction2": "無法與其他人分享此頁面，請改為分享 ${link}",
+      "link": "連結至故事",
+      "printOptPageBreak": "在一個新頁面上開始每個部分",
+      "printWarning": "這是列印版本的故事地圖。只能在 ${link} 的線上版本中取得影片和互動式地圖之類的動態內容",
+      "printMSWarning": "只能在線上故事中取得的連結",
+      "printVideoWarning": "可在此故事地圖的線上版本中檢視這段影片"
     }
   }
 });

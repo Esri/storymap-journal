@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Ta narracja nie jest obsługiwana przez przeglądarkę Internet Explorer w wersji starszej niż %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Zaktualizuj przeglądarkę</a>.",
       "mapLoadingFail": "Wystąpił pewien problem, nie wczytano mapy prawidłowo.",
-      "signOut": "Wyloguj się"
+      "signOut": "Wyloguj się",
+      "print0": "Niestety, tej narracji nie można wydrukować.",
+      "print1": "Aby wydrukować tę narrację, użyj przycisku drukowania znajdującego się w oknie dialogowym udostępniania.",
+      "print2": "Niestety, wersja narracji przeznaczona do druku jest zwykle dostępna za pośrednictwem okna dialogowego udostępniania, ale to okno zostało zablokowane przez autora."
     },
     "mobileView": {
       "tapForDetails": "Wskaż, aby uzyskać szczegółowe informacje",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Tryb automatycznego odtwarzania",
       "autoplayExplain1": "W trybie automatycznego odtwarzania narracja jest prezentowana w stałym tempie. Ten tryb doskonale nadaje się do monitora kiosku internetowego lub wyświetlacza publicznego, ale należy pamiętać, że w innych sytuacjach może pogorszyć czytelność narracji. Ta funkcja nie jest obsługiwana na małych wyświetlaczach.",
       "autoplayExplain2": "Po włączeniu tego trybu udostępniane są elementy sterujące do włączania odtwarzania/wstrzymywania narracji oraz do regulacji szybkości nawigacji.",
-      "linksupdated": "Zaktualizowano łącza!"
+      "linksupdated": "Zaktualizowano łącza!",
+      "print": "Drukuj",
+      "printInstruction1": "Poczekaj na wczytanie całej zawartości przed drukowaniem tej strony",
+      "printInstruction1a": "Niektóre zasoby mogą nie być drukowane, dopóki nie zostanie włączona opcja „Drukuj kolory i obrazy w tle” w oknie dialogowym ustawień drukowania",
+      "printInstruction2": "Tej strony nie można udostępnić innym użytkownikom, zamiast niej można udostępnić łącze ${link}",
+      "link": "łącze do narracji",
+      "printOptPageBreak": "Zacznij każdą sekcję na nowej stronie",
+      "printWarning": "To jest drukowana wersja mapy narracyjnej. Zasoby dynamiczne, takie jak wideo i mapy interaktywne są dostępne wyłącznie w wersji online na stronie ${link}",
+      "printMSWarning": "łącze dostępne tylko w narracji online",
+      "printVideoWarning": "To wideo można obejrzeć w wersji online tej mapy narracyjnej"
     }
   }
 });

@@ -4,17 +4,17 @@ function loadJS(url, isExternal)
 		url = document.location.protocol == 'file:' ? 'http:' + url : url;
 	else
 		url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
-		
+
 	document.write("<script language='javascript' type='text/javascript' src='" + url + "'><\/script>");
 }
 
 function loadCSS(url, isExternal)
 {
-	if( isExternal ) 
+	if( isExternal )
 		url = document.location.protocol == 'file:' ? 'http:' + url : url;
 	else
 		url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
-		
+
 	var el = document.createElement("link");
 	el.setAttribute("rel", "stylesheet");
 	el.setAttribute("type", "text/css");
@@ -69,7 +69,7 @@ function defineDojoConfig()
 			['underscore', 'lib-build/lodash']
 		]
 	};
-	
+
 	if (location.search.match(/locale=([\w\-]+)/)) {
 		window.dojoConfig.locale = RegExp.$1;
 	}
@@ -83,7 +83,7 @@ app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fr
 app.indexCfg = configOptions;
 
 loadCSS(app.pathJSAPI + "esri/css/esri.css", true);
-loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);	
+loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);
 
 if( app.isProduction ) {
 	if ( app.isInBuilder )
@@ -113,7 +113,7 @@ if (window.location.href.toLowerCase().indexOf("storymaps.esri.com") >= 0) {
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-26529417-1']);
 	_gaq.push(['_trackPageview']);
-	
+
 	(function() {
 		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';

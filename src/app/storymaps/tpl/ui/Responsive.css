@@ -5,8 +5,8 @@ body.mobile-view #loadingOverlay {
 	top: 0px;
 }
 
-body.mobile-view #header, 
-body.mobile-view #sidePanel, 
+body.mobile-view #header,
+body.mobile-view #sidePanel,
 body.mobile-view #floatingPanel {
 	display: none !important;
 }
@@ -18,7 +18,7 @@ body.mobile-view #mobileView {
 /*
  * Main Stage floating panel media rules
  */
- 
+
 body.mobile-view .mainMediaContainer .embedContainer.center,
 body.mobile-view .mainMediaContainer .embedContainer.custom {
 	left: 0 !important;
@@ -29,9 +29,9 @@ body.mobile-view .mainMediaContainer .embedContainer.custom {
  * Map, Map extras
  */
 
-body.mobile-view .overview, 
-body.mobile-view .overview 
-body.mobile-view .esriOverviewMap, 
+body.mobile-view .overview,
+body.mobile-view .overview
+body.mobile-view .esriOverviewMap,
 body.mobile-view .overview img {
 	z-index: 0 !important;
 	visibility: hidden !important;
@@ -56,19 +56,19 @@ body.mobile-view .mediaBackContainer {
  * Builder
  */
 
-body.mobile-view #builderPanel, 
+body.mobile-view #builderPanel,
 body.mobile-view #builderLanding {
 	display: none !important;
 }
 
-body.mobile-view .modal, 
+body.mobile-view .modal,
 body.mobile-view .modal-backdrop {
 	display: none !important;
 }
 
-body.mobile-view #builderHelp, 
-body.mobile-view #builderHelpMaskOverlay, 
-body.mobile-view #builderLanding, 
+body.mobile-view #builderHelp,
+body.mobile-view #builderHelpMaskOverlay,
+body.mobile-view #builderLanding,
 body.mobile-view #builderQuotes {
 	display: none !important;
 }

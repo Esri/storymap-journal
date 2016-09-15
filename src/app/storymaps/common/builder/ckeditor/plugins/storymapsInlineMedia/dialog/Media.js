@@ -2,7 +2,7 @@ define(["lib-build/tpl!./Media",
 		"lib-build/css!./Media",
 		"lib-build/css!../../Common",
 		"storymaps/common/builder/media/MediaSelector",
-		"dojo/Deferred"], 
+		"dojo/Deferred"],
 	function (
 		viewTpl,
 		viewCss,
@@ -10,7 +10,7 @@ define(["lib-build/tpl!./Media",
 		MediaSelector,
 		Deferred
 	){
-		return function Media(container) 
+		return function Media(container)
 		{
 			container.append(viewTpl({
 				lblTitle: i18n.commonMedia.editorInlineMedia.lblTitle,
@@ -28,27 +28,27 @@ define(["lib-build/tpl!./Media",
 					updateSubmitButton,
 					container.find('.btn-back')
 				);
-			
+
 			initEvents();
-			
-			this.present = function(cfg, contentHeight) 
-			{			
+
+			this.present = function(cfg, contentHeight)
+			{
 				_cfg = cfg;
 				_dialogDeferred = new Deferred();
-				
+
 				_viewMediaSelector.present({
 					mode: cfg.mode,
 					webmaps: null,
 					media: cfg.mode == "edit" ? cfg.edit.media : null,
 					keepLastDataSource: true
 				}, function(){});
-				
+
 				container.find(".modal-content").css("min-height", contentHeight);
-				
+
 				container.modal({keyboard: true});
 				return _dialogDeferred;
 			};
-			
+
 			function updateSubmitButton()
 			{
 				var data = _viewMediaSelector.getData();
@@ -57,18 +57,18 @@ define(["lib-build/tpl!./Media",
 					! (data.media && data.media.type && data.media[data.media.type])
 				);
 			}
-			
+
 			function onClickSubmit()
 			{
 				var hasError = _viewMediaSelector.checkError(container.find(".btnSubmit"));
-				
+
 				var postErrorCheck = function()
 				{
 					var media = _viewMediaSelector.getData().media;
 					_dialogDeferred.resolve(media[media.type]);
 					container.modal('toggle');
 				};
-				
+
 				if ( hasError instanceof Deferred ) {
 					hasError.then(function(hasError){
 						if ( ! hasError )
@@ -78,12 +78,12 @@ define(["lib-build/tpl!./Media",
 				else if ( ! hasError )
 					postErrorCheck();
 			}
-			
+
 			function initEvents()
 			{
 				container.find(".btnSubmit").click(onClickSubmit);
 			}
-	
+
 			this.initLocalization = function()
 			{
 				//

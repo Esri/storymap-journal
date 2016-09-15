@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Denne historien er ikke støttet i Internet Explorer før versjon %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Oppdater webleseren</a>.",
       "mapLoadingFail": "Noe gikk galt, og kartet ble ikke lastet inn på riktig måte.",
-      "signOut": "Logg ut"
+      "signOut": "Logg ut",
+      "print0": "Beklager, denne fortellingen kan ikke skrives ut.",
+      "print1": "For å skrive ut denne fortellingen bruker du utskriftsknappen i delingsdialogboksen.",
+      "print2": "Beklager, en utskriftsvennlig versjon av fortellingen er vanligvis tilgjengelig gjennom delingsdialogen, men denne dialogen har blitt deaktivert av forfatteren."
     },
     "mobileView": {
       "tapForDetails": "Trykk for å se detaljer",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Automatisk avspillingsmodus",
       "autoplayExplain1": "Automatisk avspillingsmodus går videre i historien med gitte intervaller. Dette fungerer utmerket til kiosker eller informasjonsskjermer, men kan i andre situasjoner gjøre det vanskeligere å lese historien. Denne funksjonen støttes ikke på små skjermer.",
       "autoplayExplain2": "Når denne modusen er aktivert, vises det kontroller for å spille av/pause historien og justere navigeringshastigheten.",
-      "linksupdated": "Koblingene ble oppdatert"
+      "linksupdated": "Koblingene ble oppdatert",
+      "print": "Skriv ut",
+      "printInstruction1": "Vent til alt innholdet er lastet inn før du skriver ut denne siden",
+      "printInstruction1a": "Noe innhold kan ikke skrives ut hvis du aktiverer «Skriv ut bakgrunnsfarger og bilder» i dialogboksen Skriv ut.",
+      "printInstruction2": "Denne siden kan ikke deles med andre, del i stedet koblingen ${link}",
+      "link": "koble til fortellingen",
+      "printOptPageBreak": "Begynn hver del på en ny side",
+      "printWarning": "Dette er en trykt versjon av et fortellingskart. Dynamisk innhold som videoer og interaktive kart er bare tilgjengelig i den elektroniske versjonen på ${link}",
+      "printMSWarning": "koblingen er bare tilgjengelig i fortellingen på nett",
+      "printVideoWarning": "Denne videoen kan sees i den elektroniske versjonen av dette fortellingskartet"
     }
   }
 });

@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Dit verhaal wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Werk uw browser bij</a>.",
       "mapLoadingFail": "Er is een probleem opgetreden. De kaart is niet correct geladen.",
-      "signOut": "Afmelden"
+      "signOut": "Afmelden",
+      "print0": "Onze excuses, dit verhaal kan niet worden afgedrukt.",
+      "print1": "Om dit verhaal af te drukken, gebruik de knop Afdrukken in het dialoogvenster Delen.",
+      "print2": "Onze excuses, een afdrukbare versie van het verhaal is gewoonlijk beschikbaar via het dialoogvenster Delen, maar dit dialoogvenster is door de auteur uitgeschakeld."
     },
     "mobileView": {
       "tapForDetails": "Tik voor details",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Autoplaymodus",
       "autoplayExplain1": "Autoplaymodus speelt uw verhaal regelmatig af. Dit is ideaal voor een kiosk of monitor in een openbare ruimte, maar houd er rekening mee dat het verhaal in andere situaties moeilijker te lezen is. Deze functie wordt niet ondersteund op kleine schermen.",
       "autoplayExplain2": "Wanneer deze modus actief is, kan het verhaal worden afgespeeld en gepauzeerd en kan de navigatiesnelheid worden aangepast.",
-      "linksupdated": "Links bijgewerkt!"
+      "linksupdated": "Links bijgewerkt!",
+      "print": "Afdrukken",
+      "printInstruction1": "Wacht tot alle content geladen is alvorens de pagina af te drukken",
+      "printInstruction1a": "Bepaalde content wordt mogelijk niet afgedrukt tenzij u \"Achtergrondkleuren en beelden afdrukken\" activeert in het dialoogvenster Pagina afdrukken",
+      "printInstruction2": "Deze pagina kan niet met anderen gedeeld worden, deel in plaats daarvan de ${link}",
+      "link": "koppeling naar het verhaal",
+      "printOptPageBreak": "Begin elke sectie op een nieuwe pagina",
+      "printWarning": "Dit is een afgedrukt versie van een storymap. Dynamische content zoals video's en interactieve kaarten is alleen beschikbaar in de onlineversie op ${link}",
+      "printMSWarning": "koppeling beschikbaar in het onlineverhaal",
+      "printVideoWarning": "Deze video kan bekeken worden in de onlineversie van deze storymap"
     }
   }
 });

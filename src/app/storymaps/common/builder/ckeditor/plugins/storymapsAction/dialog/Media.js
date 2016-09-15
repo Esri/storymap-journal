@@ -3,7 +3,7 @@ define(["lib-build/tpl!./Media",
 		"lib-build/css!../../Common",
 		"storymaps/common/builder/media/MediaSelector",
 		"dojo/Deferred",
-		"dojo/topic"], 
+		"dojo/topic"],
 	function (
 		viewTpl,
 		viewCss,
@@ -12,7 +12,7 @@ define(["lib-build/tpl!./Media",
 		Deferred,
 		topic
 	){
-		return function Media(container) 
+		return function Media(container)
 		{
 			container.append(viewTpl({
 				lblTitle: i18n.commonMedia.editorActionMedia.lblTitle,
@@ -33,39 +33,39 @@ define(["lib-build/tpl!./Media",
 					updateSubmitButton,
 					container.find('.btn-back')
 				);
-			
+
 			initEvents();
-			
-			this.present = function(cfg, contentHeight) 
-			{			
+
+			this.present = function(cfg, contentHeight)
+			{
 				_cfg = cfg;
 				_dialogDeferred = new Deferred();
-				
+
 				_viewMediaSelector.present({
 					mode: cfg.mode,
 					webmaps: cfg.webmaps,
 					media: cfg.media,
 					disableMapExtras: cfg.disableMapExtras
 				}, function(){});
-				
+
 				container.find(".modal-content").css("min-height", contentHeight);
-				
+
 				container.modal({keyboard: true});
 				return _dialogDeferred;
 			};
-			
+
 			function onOpenConfigure()
 			{
 				container.modal('toggle');
 				topic.publish("TOGGLE-ADD-EDIT");
 			}
-			
+
 			function onCloseConfigure()
 			{
 				container.modal('toggle');
 				topic.publish("TOGGLE-ADD-EDIT");
 			}
-			
+
 			function updateSubmitButton()
 			{
 				var data = _viewMediaSelector.getData();
@@ -74,11 +74,11 @@ define(["lib-build/tpl!./Media",
 					! (data.media && data.media.type && data.media[data.media.type])
 				);
 			}
-			
+
 			function onClickSubmit()
 			{
 				var hasError = _viewMediaSelector.checkError(container.find(".btnSubmit"));
-				
+
 				var postErrorCheck = function()
 				{
 					_dialogDeferred.resolve({
@@ -88,7 +88,7 @@ define(["lib-build/tpl!./Media",
 					});
 					container.modal('toggle');
 				};
-				
+
 				if ( hasError instanceof Deferred ) {
 					hasError.then(function(hasError){
 						if ( ! hasError )
@@ -98,16 +98,16 @@ define(["lib-build/tpl!./Media",
 				else if ( ! hasError )
 					postErrorCheck();
 			}
-			
+
 			function initEvents()
 			{
 				container.find(".btnSubmit").click(onClickSubmit);
-				
+
 				container.on('shown.bs.modal', function(){
 					_viewMediaSelector.postDisplay();
 				});
 			}
-	
+
 			this.initLocalization = function()
 			{
 				//

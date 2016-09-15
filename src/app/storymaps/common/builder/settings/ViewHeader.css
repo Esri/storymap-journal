@@ -5,7 +5,7 @@
 .settings-header {
 	position: relative;
 	margin-top: 18px;
-} 
+}
 
 .settings-header .settings-simulator {
 	position: relative;
@@ -46,7 +46,7 @@
 /*
  * Simulator
  */
- 
+
 .settings-header .imgLogo {
 	position: absolute;
 	top: 8px;
@@ -67,7 +67,7 @@
 	margin-left: 0;
 }
 
-.settings-header #logoInput, 
+.settings-header #logoInput,
 .settings-header #logoTargetInput {
 	width: 100%;
 }

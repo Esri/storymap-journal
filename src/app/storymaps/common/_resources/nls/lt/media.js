@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook puslapis",
       "pageExplain": "Facebook puslapis yra viešas prekės ženklas, produktas ar įžymybė kaip <b>esrigis</b>. Jūs galite pamatyti puslapio pavadinimą po pirmo '/' puslapio URL.",
       "pageInputLbl": "Puslapio pavadinimas",
-      "lookupMsgError": "Puslapis nerastas"
+      "lookupMsgError": "Puslapis nerastas",
+      "warning": "Facebook palaikymas nutrauktas, ${learn}.",
+      "learn": "sužinokite daugiau"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E. pašto arba Picasa / Google+ ID",
+      "userInputLbl": "El. pašto adresas arba Picasa ID",
       "signInMsg2": "Paskyra nerasta",
-      "howToFind": "Kaip surasti Picasa arba Google+ paskyros ID",
-      "howToFind2": "Nukopijuokite skaičius tarp pirmo ir antro '/' bet kuriame Picasa ar G+ puslapyje"
+      "howToFind": "Kaip surasti Picasa ID",
+      "howToFind2": "Nukopijuokite skaičius tarp pirmo ir antro „/“ bet kuriame Picasa puslapyje"
     },
     "videoSelectorCommon": {
       "check": "Tikrinti",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(plotis visada atitiks skydą)",
       "lblPosition4Explain": "(gali būti iškraipoma)",
       "unloadLbl": "Iškelti, kai skaitytojas palieka šią dalį",
-      "unloadHelp": "Jeigu tinklalapis turi garsinės arba vaizdinės medijos, palikite šią parinktį pažymėtą, kad turinys nebūtų leidžiamas, kai skaitytojas nutolsta. Parinktį pažymėkite, jeigu, pvz., norite leisti garso takelį skaitytojui keliaujant per pasakojimą.<br />Jeigu tinklalapis yra aplikacija, pašalinkite žymę, kad skaitytojui sugrįžus pasakojimas nebūtų įkeltas iš naujo."
+      "unloadHelp": "Jeigu tinklalapis turi garsinės arba vaizdinės medijos, palikite šią parinktį pažymėtą, kad turinys nebūtų leidžiamas, kai skaitytojas nutolsta. Parinktį pažymėkite, jeigu, pvz., norite leisti garso takelį skaitytojui keliaujant per pasakojimą.<br />Jeigu tinklalapis yra aplikacija, pašalinkite žymę, kad skaitytojui sugrįžus pasakojimas nebūtų įkeltas iš naujo.",
+      "embedProtocolLabel": "Įkelkite puslapį naudodami saugų ryšį (HTTPS)",
+      "embedProtocolWarning1": "Jūsų pasakojimas sukonfigūruotas taip, kad būtų įkeliamas naudojant saugų ryšį (https), todėl jei savo pasakojime naudojate kitą tinklalapį, jo rodymui taip pat turi būti naudojamas saugus ryšys. Jei puslapis nerodomas, taip gali būti todėl, kad jis neprieinamas naudojant saugų ryšį arba jo negalima įtraukti į jūsų pasakojimą (kai kurios svetainės tai apriboja). Jums gali tekti sukurti hipersaitą, kad galėtumėte atidaryti puslapį naujame naršyklės skirtuke.",
+      "embedProtocolWarning2": "Jūsų pasakojimas sukonfigūruotas taip, kad jį būtų galima įkelti naudojant nesaugų ryšį (http), todėl šis puslapis gali būti įkeliamas naudojant tiek saugų (rekomenduojama), tiek nesaugų ryšį. Jei puslapis nerodomas, taip gali būti todėl, kad jis nepalaiko jūsų pasirinkto ryšio tipo arba jo negalima įtraukti į jūsų pasakojimą (kai kurios svetainės tai apriboja). Jums gali tekti sukurti hipersaitą, kad galėtumėte atidaryti puslapį naujame naršyklės skirtuke."
     },
     "editorActionGeocode": {
       "lblTitle": "Raskite adresą arba vietą",

@@ -95,12 +95,12 @@
 }
 
 /* Firefox don't like this - vertical align on top instead */
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
 	#headerDesktop .rightArea .logo a {
 		position:relative;
 		display: inline-block;
 	}
-	
+
 	#headerDesktop .rightArea .logo a img {
 		bottom: initial;
 		top: initial;
@@ -120,8 +120,8 @@
 
 #headerDesktop .switchBuilder {
 	display: none;
-	position:absolute; 
-	right: 180px; 
+	position:absolute;
+	right: 180px;
 	top: 30px;
 	padding-left: 35px;
 }
@@ -147,7 +147,7 @@
 }
 
 /* Reduce the width of the field to be sure that icon will stay visible */
-#headerDesktop .text_edit_label { 
+#headerDesktop .text_edit_label {
 	max-width: 94%;
 	overflow: hidden;
 }

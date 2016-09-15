@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-side",
       "pageExplain": "En Facebook-side er for et offisielt merke, et produkt eller en kjendis, for eksempel <b>esrigis</b>. Du finner navnet på siden etter første / i sidens URL-adresse.",
       "pageInputLbl": "Sidenavn",
-      "lookupMsgError": "Finner ikke siden"
+      "lookupMsgError": "Finner ikke siden",
+      "warning": "Facebook-støtte har blitt avviklet, ${learn}.",
+      "learn": "få mer informasjon"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-postadresse eller Picasa-/Google+-ID",
+      "userInputLbl": "E-post eller Picasa-ID",
       "signInMsg2": "Finner ikke kontoen",
-      "howToFind": "Slik finner du en konto-ID for Picasa eller Google+",
-      "howToFind2": "Kopier tallene mellom første og andre/ på en tilfeldig side på Picasa eller G+"
+      "howToFind": "Slik finner du en Picasa-ID",
+      "howToFind2": "Kopier tallene mellom første og andre / på en tilfeldig side på Picasa"
     },
     "videoSelectorCommon": {
       "check": "Kontroller",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(bredden passer alltid med panelet)",
       "lblPosition4Explain": "(kan bli forvrengt / vises skjevt)",
       "unloadLbl": "Last ut når leseren navigerer bort",
-      "unloadHelp": "Hvis websiden har lyd- eller videomedier, beholder du dette alternativet avmerket for å forhindre at det innholdet spilles av når leseren navigerer bort. Fjern merket for eksempel for å la et lydspor fortsette å spilles av mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at historien ikke lastes inn på nytt hvis leseren går tilbake til den."
+      "unloadHelp": "Hvis websiden har lyd- eller videomedier, beholder du dette alternativet avmerket for å forhindre at det innholdet spilles av når leseren navigerer bort. Fjern merket for eksempel for å la et lydspor fortsette å spilles av mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at historien ikke lastes inn på nytt hvis leseren går tilbake til den.",
+      "embedProtocolLabel": "Last inn scenen med en sikker tilkobling (HTTPS)",
+      "embedProtocolWarning1": "Fortellingen din er konfigurert til å lastes inn over en sikker tilkobling (https), så nettsideshowet i fortellingen må også bruke en sikker tilkobling. Hvis siden ikke lastes inn, kan det være fordi den ikke er tilgjengelig via en sikker tilkobling, eller at den ikke kan tas med i fortellingen (noen nettsteder begrenser dette). Du må kanskje opprette en hyperkobling for å åpne siden i en ny fane i nettleseren.",
+      "embedProtocolWarning2": "Fortellingen din er konfigurert til å lastes inn over en usikret tilkobling (http), så du kan velge å laste inn denne siden over en sikker (anbefalt) eller usikret tilkobling. Hvis siden ikke lastes inn, kan det være fordi den ikke støtter tilkoblingstypen du valgte eller at den ikke kan tas med i fortellingen (noen nettsteder begrenser dette). Du må kanskje opprette en hyperkobling for å åpne siden i en ny fane i nettleseren."
     },
     "editorActionGeocode": {
       "lblTitle": "Finn en adresse eller et sted",

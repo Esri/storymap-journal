@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Keskisuuri",
       "cfgLarge": "Suuri",
       "socialLinksLabel": "Näytä jakamislinkit kunkin osan alareunassa",
-      "socialLinksDescr": "Tämän toiminnon avulla lukijat voivat viitata tiettyihin tarinan %TPL_NAME% osiin tai mainostaa niitä. Jos käytät esimerkiksi osien jakamiskuvaketta, lukijat päätyvät tarinan %TPL_NAME% tiettyyn osaan eivätkä tarinan alkuun. Lukijat voivat käyttää otsikko-osan sosiaalisen median linkkiä koko tarinan %TPL_NAME% (Otsikko-välilehti) mainostamiseen, jolloin he päätyvät tarinan %TPL_NAME% alkuun."
+      "socialLinksDescr": "Tämän toiminnon avulla lukijat voivat viitata tiettyihin tarinan %TPL_NAME% osiin tai mainostaa niitä. Jos käytät esimerkiksi osien jakamiskuvaketta, lukijat päätyvät tarinan %TPL_NAME% tiettyyn osaan eivätkä tarinan alkuun. Lukijat voivat käyttää otsikko-osan sosiaalisen median linkkiä koko tarinan %TPL_NAME% (Otsikko-välilehti) mainostamiseen, jolloin he päätyvät tarinan %TPL_NAME% alkuun.",
+      "socialDisabled": "Tämä kohde on käytettävissä vain Kelluva ruutu -asettelussa.",
+      "socialWarning": "Tarinasi käyttää Sivupaneeli-asettelua, mutta suosittelemme käyttämään tätä vaihtoehtoa vain Kelluva paneeli -asettelun yhteydessä, jotta ruutu sijoittuu haluamaasi sijaintiin kuvia sisältävissä tarinoissa. Voit jatkaa tämän vaihtoehdon käyttöä, mutta jos poistat sen käytöstä, se on sen jälkeen käytettävissä vain Kelluva ruutu -asettelua käytettäessä."
     },
     "settingsLayoutFonts": {
       "title": "Fontit",

@@ -1,6 +1,6 @@
 define(["lib-build/tpl!./ViewFlickr",
 		"lib-build/css!./ViewFlickr",
-		"storymaps/common/utils/connector/Flickr", 
+		"storymaps/common/utils/connector/Flickr",
 		"lib-build/tpl!./ViewFlickrSet"],
 	function (
 		viewTpl,
@@ -8,31 +8,31 @@ define(["lib-build/tpl!./ViewFlickr",
 		FlickrConnector,
 		viewTplSet
 	){
-		return function ViewFlickr(container, showView) 
+		return function ViewFlickr(container, showView)
 		{
 			var _flickr = new FlickrConnector(app.cfg.FLICKR_API_KEY);
-			
+
 			container.append(viewTpl({
 				fieldUserName: i18n.commonMedia.imageSelectorFlickr.userInputLbl,
 				btnSearch: i18n.commonMedia.mediaSelector.userLookup
 			}));
-			
+
 			init();
-			
+
 			this.present = function(params)
 			{
 				if (! params || ! params.isReturning) {
 					if( ! container.find(".userName").val() )
 						container.find('.btn-userLogin').attr("disabled", "disabled");
 				}
-				
+
 				container.show();
-				
+
 				// Resize url field to adjust localization
 				if ( container.find(".imageSelectorFlickr").width() ) {
 					container.find(".userName")
-						.css("width", 
-							container.find(".imageSelectorFlickr").width() 
+						.css("width",
+							container.find(".imageSelectorFlickr").width()
 							- 85
 							- 40
 							- container.find('.btn-userLogin').outerWidth()
@@ -40,25 +40,25 @@ define(["lib-build/tpl!./ViewFlickr",
 						.focus();
 				}
 			};
-			
+
 			function login()
 			{
 				var userName = container.find(".userName").val(),
 					// TODO params with nbCol
-					nbCol = container.parents('.smallSize').length ? 3 : 4; 
-				
+					nbCol = container.parents('.smallSize').length ? 3 : 4;
+
 				activateLoadingIndicator();
-				
+
 				_flickr.connect(userName, true, false).then(
 					function(data){
 						var setsHTML = "";
-						
+
 						if ( ! data || ! data.sets || ! data.sets.length ) {
 							container.find(".loadingMsg").html('');
 							container.find(".errorMsg").show().html(i18n.commonMedia.mediaSelector.noData);
 							return;
 						}
-						
+
 						$.each(data.sets, function(i, set){
 							setsHTML += viewTplSet({
 								id: set.id,
@@ -68,7 +68,7 @@ define(["lib-build/tpl!./ViewFlickr",
 								style: (i % nbCol === 0) ? "clear:both" : ""
 							});
 						});
-						
+
 						container.find(".sets").removeClass("disabled").show().html(setsHTML);
 						container.find(".sets").off('click').click(onSelectSet);
 						container.find(".loadingMsg").html('<span class="glyphicon glyphicon-ok"></span>');
@@ -79,12 +79,12 @@ define(["lib-build/tpl!./ViewFlickr",
 					}
 				);
 			}
-			
+
 			function onSelectSet(evt)
 			{
 				activateLoadingIndicator();
 				container.find(".sets").addClass("disabled");
-				
+
 				_flickr.getPicturesInSet(
 					$(evt.target).data('id') || $(evt.target).parents('.set').data('id'),
 					{
@@ -94,13 +94,13 @@ define(["lib-build/tpl!./ViewFlickr",
 					function(data) {
 						//var albumTitle = _container.find("#flickrListSet option:selected").text();
 						//albumTitle = albumTitle.split(/\ \([0-9]+\)/)[0];
-						
+
 						container.find(".loadingMsg").html("");
 						container.find(".sets").removeClass("disabled");
-						
+
 						if( ! data.length )
 							return;
-						
+
 						showView('picker', { data: data });
 					},
 					function() {
@@ -109,13 +109,13 @@ define(["lib-build/tpl!./ViewFlickr",
 					}
 				);
 			}
-			
+
 			function activateLoadingIndicator()
 			{
 				container.find(".loadingMsg").html('<span class="smallLoader"></span>');
 				container.find(".errorMsg").hide();
 			}
-			
+
 			function init()
 			{
 				container.find('.btn-userLogin').click(login);
@@ -125,7 +125,7 @@ define(["lib-build/tpl!./ViewFlickr",
 							container.find('.btn-userLogin').removeAttr("disabled");
 						else
 							container.find('.btn-userLogin').attr("disabled", "disabled");
-						
+
 						container.find(".loadingMsg").html("");
 						container.find(".errorMsg").hide();
 						container.find(".sets").html("");

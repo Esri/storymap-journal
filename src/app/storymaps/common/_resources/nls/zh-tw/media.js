@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook 頁面",
       "pageExplain": "Facebook 頁面屬￿公開品牌/產品或像 <b>esrigis</b> 一樣的名品。您可以在 URL 頁面的第一個 '/' 後面取得頁面名稱。",
       "pageInputLbl": "頁面名稱",
-      "lookupMsgError": "未找到頁面"
+      "lookupMsgError": "未找到頁面",
+      "warning": "Facebook 支援已中斷，${learn}。",
+      "learn": "瞭解詳細資訊"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "電子郵件或 Picasa/Google+ ID",
+      "userInputLbl": "電子郵件或 Picasa id",
       "signInMsg2": "未找到帳戶",
-      "howToFind": "如何查詢 Picasa 或 Google+ 帳戶 ID",
-      "howToFind2": "複製任何 Picasa 或 G+ 頁面第一個和第二個 '/' 之間的數字"
+      "howToFind": "如何尋找 Picasa id",
+      "howToFind2": "複製任何 Picasa 頁面第一個和第二個 '/' 之間的數字"
     },
     "videoSelectorCommon": {
       "check": "勾選",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(寬度將始終適合面板)",
       "lblPosition4Explain": "（可變形）",
       "unloadLbl": "讀者定位到其他部分時進行卸載",
-      "unloadHelp": "如果網頁中包含音頻或影片介質，請將該選項選中以在讀者定位到其他部分時停止內容播放。取消勾選該選項可使讀者在瀏覽故事的同時持續播放音軌。<br />如果網頁是應用程式，請取消勾選該選項，這樣故事不必在讀者返回此部分時重新載入。"
+      "unloadHelp": "如果網頁中包含音頻或影片介質，請將該選項選中以在讀者定位到其他部分時停止內容播放。取消勾選該選項可使讀者在瀏覽故事的同時持續播放音軌。<br />如果網頁是應用程式，請取消勾選該選項，這樣故事不必在讀者返回此部分時重新載入。",
+      "embedProtocolLabel": "透過安全連線 (HTTPS) 載入頁面",
+      "embedProtocolWarning1": "已將您的故事配置為透過安全連線 (https) 載入，所以故事中顯示的網頁也必須使用安全連線。如果網頁未載入故事，則可能是因為無法透過安全連線取得，或無法在您的故事中包含它 (部分網站限制這種作法)。您可能需要建立超連結，以便在新的瀏覽器頁籤中開啟網頁。",
+      "embedProtocolWarning2": "已將您的故事配置為透過不安全連線 (http) 載入，所以您可以選擇透過安全 (建議作法) 或不安全連線載入此網頁。如果網頁未載入，則可能是因為它不支援您選擇的連線類型，或無法在您的故事中包含它 (部分網站限制這種作法)。您可能需要建立超連結，以便在新的瀏覽器頁籤中開啟網頁。"
     },
     "editorActionGeocode": {
       "lblTitle": "定位地址或地點",

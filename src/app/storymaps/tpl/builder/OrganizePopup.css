@@ -47,7 +47,7 @@
 
 .organizePopup .organizeTable {
 	margin-bottom: 0;
-} 
+}
 
 .organizePopup .organizeTable .firstSection {
 	min-height: 47px;
@@ -124,13 +124,13 @@
 .organizePopup .deleteSectionBtn {
 	width: 2em !important;
 	padding: 2px 0 5px 0;
-	height: 26px;	
+	height: 26px;
 }
 
 /*
  * Export
  */
- 
+
 .organizePopup .btn-export {
 	background-color: #B7B7B7;
 	color: white;

@@ -9,7 +9,7 @@ CKEDITOR.plugins.add('storymapsSwitchToPopup', {
 				});
 			}
 		};
-		
+
 		editor.addCommand('switchToPopupCommand', new CKEDITOR.switchToPopupCommand());
 		editor.ui.addButton( 'SwitchToPopup', {
 			label: 'Insert a media',

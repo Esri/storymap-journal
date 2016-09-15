@@ -1,0 +1,30 @@
+.editorDialogNavigate .modal-dialog {
+	margin-top: 363px;
+	width: 400px;
+}
+
+.editorDialogNavigate .modal-content {
+	margin-top: 363px;
+	width: 400px;
+	min-height: inherit;
+}
+
+.editorDialogNavigate .modal-body {
+	height: 120px;
+	min-height: inherit;
+}
+
+.editorDialogNavigate .form-group {
+	margin-top: 10px;
+}
+
+.editorDialogNavigate .sections-list {
+	max-height: 150px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.editorDialogNavigate .sections-list a {
+	white-space: normal;
+	min-width: 290px;
+}

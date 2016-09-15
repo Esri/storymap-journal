@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-sivu",
       "pageExplain": "Facebook-sivu on julkinen tuotemerkki tai tunnettu tuote, kuten <b>esrigis</b>. Saat sivun nimen sivun URL-osoitteessa olevan ensimmäisen vinoviivan (/) jälkeen.",
       "pageInputLbl": "Sivun nimi",
-      "lookupMsgError": "Sivua ei löydy"
+      "lookupMsgError": "Sivua ei löydy",
+      "warning": "Facebook-tuki on lopetettu, ${learn}.",
+      "learn": "lisätietoja"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Sähköpostiosoite tai Picasa-/Google+-tunnus",
+      "userInputLbl": "Sähköpostiosoite tai Picasa-tunnus",
       "signInMsg2": "Tiliä ei löydy",
-      "howToFind": "Picasa- tai Google+-tilitunnuksen etsiminen",
-      "howToFind2": "Kopioi minkä tahansa Picasa- tai Google+-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
+      "howToFind": "Picasa-tunnuksen etsiminen",
+      "howToFind2": "Kopioi minkä tahansa Picasa-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
     },
     "videoSelectorCommon": {
       "check": "Valitse",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(leveys sopii aina paneeliin)",
       "lblPosition4Explain": "(voi vääristyä)",
       "unloadLbl": "Poista lataus, kun lukija siirtyy",
-      "unloadHelp": "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan."
+      "unloadHelp": "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan.",
+      "embedProtocolLabel": "Lataa sivu suojatun yhteyden kautta (HTTPS)",
+      "embedProtocolWarning1": "Tarinasi on määritetty latautumaan suojatun yhteyden (https) kautta, joten tarinassa näkyvän verkkosivun on käytettävä myös suojattua yhteyttä. Jos sivu ei lataudu, se ei ole ehkä käytettävissä suojatun yhteyden kautta tai suojattua yhteyttä ei voi lisätä tarinaasi (jotkin verkkosivustot estävät tämän). Sinun on ehkä luotava hyperlinkki, jotta voit avata sivun uudessa välilehdessä selaimessa.",
+      "embedProtocolWarning2": "Tarinasi on määritetty latautumaan suojaamattoman yhteyden (http) kautta, joten voit valita, ladataanko tämä sivu suojatun (suositus) vai suojaamattoman yhteyden kautta. Jos sivu ei lataudu, se ei ehkä tue valitsemaasi yhteystyyppiä tai valittua yhteyttä ei voi lisätä tarinaasi (jotkin verkkosivustot estävät tämän). Sinun on ehkä luotava hyperlinkki, jotta voit avata sivun uudessa välilehdessä selaimessa."
     },
     "editorActionGeocode": {
       "lblTitle": "Paikanna osoite tai paikka",

@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Tento příběh není podporován v prohlížeči Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Prosím, aktualizujte prohlížeč</a>.",
       "mapLoadingFail": "Něco se pokazilo, mapa se nenahrála správně.",
-      "signOut": "Odhlásit"
+      "signOut": "Odhlásit",
+      "print0": "Je nám líto, tento příběh nelze vytisknout.",
+      "print1": "Chcete-li tento příběh vytisknout, použijte tlačítko tisku v dialogovém okně sdílení.",
+      "print2": "Omlouváme se. Tisknutelná verze příběhu je zpravidla přístupná přes dialogové okno sdílení, ale autor toto dialogové okno zakázal."
     },
     "mobileView": {
       "tapForDetails": "Klepnutím zobrazíte podrobnosti.",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Režim automatického přehrávání",
       "autoplayExplain1": "Režim automatického přehrávání bude příběhem procházet v pravidelných intervalech. Ideální pro použití na výstavních stáncích nebo veřejných monitorech, buďte si však vědomi toho, že v některých případech to může znesnadnit čtení příběhu. Tato funkce není podporována na malých obrazovkách.",
       "autoplayExplain2": "Je-li tento režim aktivní, budou k dispozici ovládací prvky ke spuštění/pozastavení přehrávání příběhu a k nastavení rychlosti procházení.",
-      "linksupdated": "Odkazy aktualizovány!"
+      "linksupdated": "Odkazy aktualizovány!",
+      "print": "Tisk",
+      "printInstruction1": "Před vytisknutím této stránky počkejte, než se načte všechen obsah.",
+      "printInstruction1a": "Některý obsah se nemusí vytisknout, pokud neaktivujete volbu „Tisknout obrázky a barvy pozadí“ v dialogovém okně nastavení tisknuté stránky.",
+      "printInstruction2": "Tuto stránku nelze sdílet s ostatními, sdílejte místo toho ${link}.",
+      "link": "odkaz na příběh",
+      "printOptPageBreak": "Zahajte každou sekci na nové straně",
+      "printWarning": "Toto je tištěná verze mapy s příběhem. Dynamický obsah, jako jsou videa a interaktivní mapy, je k dispozici pouze v online verzi na adrese ${link}.",
+      "printMSWarning": "odkaz je k dispozici pouze v online příběhu",
+      "printVideoWarning": "Toto video lze zobrazit v online verzi této mapy s příběhem."
     }
   }
 });

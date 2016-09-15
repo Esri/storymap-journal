@@ -31,40 +31,22 @@
 	text-transform: uppercase;
 }
 
-#addEditPopup .mainStageActionExpandBtn {
-	width: 6px;
-	height: 18px;
-	background: url(../../../../../resources/tpl/builder/icons/editor-collapse-expand.png);
-	background-repeat: no-repeat;
-	background-position: 9px 4px;
-	cursor: pointer;
-	margin-right: 6px;
-	margin-left: -8px;
-}
-
-#addEditPopup .mainStageActionExpandBtn.expand {
-	color: #FFF;
-	background-position: -9px 4px;
-	margin-right: 2px;
-	margin-left: 10px;
-}
-
 
 /*
  * Editor customization
  */
- 
+
  /* Link dialog : the ID doesn't seems to be stable */
  .cke_editor_addEditRTE_dialog .cke_dialog_contents_body {
  	height: 90px !important;
  }
- 
+
 .cke_editor_addEditRTE_dialog .cke_resizer {
  	display: none;
 }
- 
+
 #cke_1_path {
-	display: none !important; 
+	display: none !important;
 }
 
 .cke_maximized #cke_1_contents {

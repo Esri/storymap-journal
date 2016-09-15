@@ -38,6 +38,18 @@
 	cursor: pointer;
 }
 
+a[data-storymaps].navigate-error {
+	border-bottom: 1px dashed red;
+	color: red;
+}
+
+a[data-storymaps].navigate-error-silent {
+	border-bottom: none;
+	cursor: default;
+	color: inherit;
+	font-weight: normal;
+}
+
 /*
  * Inline media
  */
@@ -100,8 +112,8 @@ figure figcaption {
 }
 
 
-/* 
- * The container is supposed to be an image-container except when ckeditor bug and decide to use a p 
+/*
+ * The container is supposed to be an image-container except when ckeditor bug and decide to use a p
  * (seems to happen a lot when playing with alignement)
  */
 /*.image-container*/.has-width:not(.float-right) .btn-fullscreen {
@@ -126,7 +138,7 @@ p:not(.activate-fullscreen) > .image-wrapper > .btn-fullscreen {
 }
 
 .image-container.activate-fullscreen > .image-wrapper,
-.image-container.activate-fullscreen > span > .image-wrapper, 
+.image-container.activate-fullscreen > span > .image-wrapper,
 .image-container.activate-fullscreen > p > .image-wrapper,
 /* that should not happen */
 figure > .image-wrapper {
@@ -160,18 +172,18 @@ p[tabindex='0'] > .image-wrapper {
 /*
  * Image full screen compatibility for V1.0-beta
  */
- 
+
 .btn-fullscreen-container {
  	display: block;
 }
- 
+
 .btn-fullscreen-container > span {
  	display: block;
 }
 
 /*
- * Image full screen modal 
- */ 
+ * Image full screen modal
+ */
 
 #cboxContent {
 	position: initial !important;
@@ -203,7 +215,7 @@ p[tabindex='0'] > .image-wrapper {
 /*
  * Iframe
  */
- 
+
 .section iframe {
 	border: none;
 }
@@ -215,7 +227,7 @@ p[tabindex='0'] > .image-wrapper {
 /*
  * Main Stage BACK
  */
- 
+
 .mediaBackContainer {
 	display: none;
 	position: absolute;
@@ -223,19 +235,19 @@ p[tabindex='0'] > .image-wrapper {
 	text-align:center;
 	z-index: 30;
 }
- 
+
 .backButton {
-	display:inline-block; 
+	display:inline-block;
 	border: 1px solid #428BC9;
-	border-top: none; 
-	background-color: #FFF; 
-	color: #000; 
-	font-size: 20px; 
+	border-top: none;
+	background-color: #FFF;
+	color: #000;
+	font-size: 20px;
 	padding: 9px 18px 6px 15px;
 	cursor: pointer;
 	z-index: 30;
 	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-} 
+}
 
 .backArrow {
 	display: inline-block;

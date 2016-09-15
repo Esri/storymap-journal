@@ -79,7 +79,7 @@ define({
     "mapdlg": {
       "items": {
         "organizationLabel": "Moja instytucja",
-        "onlineLabel": "Usługa ArcGIS Online",
+        "onlineLabel": "ArcGIS Online",
         "contentLabel": "Moje zasoby",
         "favoritesLabel": "Moje ulubione"
       },

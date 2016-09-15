@@ -7,16 +7,16 @@ define([
 		var CONFIG = {
 			mapViewerOpt: 'embedded=1&hide=bm,share,save,analysis,directions,measure'
 		};
-		
+
 		//
 		// To be able to use MV in development mode you need to be on a while listed domain (the Portal for ArcGIS domain, *.arcgis.com or *.esri.com)
-		// Then paste a token that you get from ArcGIS Online or Portal for ArcGIS by executing 
+		// Then paste a token that you get from ArcGIS Online or Portal for ArcGIS by executing
 		//     JSON.parse(dojo.cookie("esri_auth")).token
 		// in a developer console on any page or apps running in Online or Portal (IM short lived token don't work)
 		//
-		
+
 		var DEV_TOKEN = '';
-		
+
 		/*
 		 * Params must define the following Map Viewer callback
 		 * - onLoad
@@ -25,10 +25,10 @@ define([
 		 * - onSaveError
 		 * And a reference to the frame window object
 		 * - frameWindow
-		 * 
+		 *
 		 * use load() to start the process
 		 *  - newMap: boolean
-		 *  - id: map id when not creating a new map 
+		 *  - id: map id when not creating a new map
 		 */
 		return function MapViewerWrapper(params)
 		{
@@ -38,26 +38,26 @@ define([
 				_mapViewerLoadingPolling = null,
 				_mapViewerChangesCheck = null,
 				_mapEditable = false;
-			
+
 			window.addEventListener("message", receiveMessage, false);
-			
+
 			this.load = function(newMap, id)
 			{
 				var url = "";
-				
+
 				if ( ! newMap && ! id ) {
 					throw "INVALID CALL TO MapViewerWrapper.load";
 				}
-				
-				if ( ! params || ! params.onSaveSucceed || ! params.onSaveError 
+
+				if ( ! params || ! params.onSaveSucceed || ! params.onSaveError
 						|| ! params.onLoad || ! params.onError || ! params.onEnableSave
 						|| ! params.frameWindow
 				) {
 					throw "INVALID CALL TO MapViewerWrapper.load";
 				}
-				
+
 				url += MapViewerWrapperUtils.getMapViewerURL();
-				
+
 				if ( newMap ) {
 					url += '?' + CONFIG.mapViewerOpt;
 				}
@@ -65,21 +65,21 @@ define([
 					url += '?webmap=' + id;
 					url += '&' + CONFIG.mapViewerOpt;
 				}
-				
+
 				// Map Viewer is using the locale declared in user profile whereas the app are using the one declared by browser
 				// Need to force the locale to make sure the experience between builder and MV is consistent
 				url += '&locale=' + dojo.locale;
-				
+
 				// If the app is on a white listed domain or same domain than MV, the MV need the esri_auth token
 				// In a development environment, that cookie is not likely to not be present
 				// So developer need to provide token in DEV_TOKEN properties above
-				if ( MapViewerWrapperUtils.isWhiteListedDomain() 
-						&& ! MapViewerWrapperUtils.viewerIsSameDomain() 
+				if ( MapViewerWrapperUtils.isWhiteListedDomain()
+						&& ! MapViewerWrapperUtils.viewerIsSameDomain()
 						&& dojo.cookie("esri_auth")
 				) {
 					url += '#' + JSON.parse(dojo.cookie("esri_auth")).token;
 				}
-				else if ( MapViewerWrapperUtils.isWhiteListedDomain() 
+				else if ( MapViewerWrapperUtils.isWhiteListedDomain()
 						&& ! MapViewerWrapperUtils.viewerIsSameDomain()
 						&& DEV_TOKEN
 				) {
@@ -93,21 +93,21 @@ define([
 				else if ( MapViewerWrapperUtils.isWhiteListedDomain() && ! app.isProduction && ! DEV_TOKEN ) {
 					throw "DEV_TOKEN";
 				}
-				
+
 				_viewerIsLoaded = false;
 				_viewerMapIsLoaded = false;
 				_mapEditable = false;
 				_mapViewerLoadingPolling = setInterval(mapViewerLoadingPolling, 500);
-				
+
 				return url;
 			};
-			
+
 			this.cancelLoading = function()
 			{
 				clearInterval(_mapViewerLoadingPolling);
 				stopUnsavedChangesCheck();
 			};
-			
+
 			this.send = function(json)
 			{
 				console.log("MV sending", json);
@@ -118,7 +118,7 @@ define([
 					params.onError(error );
 				}
 			};
-			
+
 			this.close = function()
 			{
 				if ( _mapViewerLoadingPolling ) {
@@ -126,11 +126,11 @@ define([
 				}
 				stopUnsavedChangesCheck();
 			};
-			
+
 			function mapViewerLoadingPolling()
 			{
 				if ( ! _viewerMapIsLoaded ) {
-					// when saving a map at viewer startup make sure this is called quickly to pass the caller source to the viewer, 
+					// when saving a map at viewer startup make sure this is called quickly to pass the caller source to the viewer,
 					// so the viewer can send a message once the map finished loading or an error occurred
 					// otherwise there will be no feedback after the save operation
 					_this.send({
@@ -141,14 +141,14 @@ define([
 					clearInterval(_mapViewerLoadingPolling);
 				}
 			}
-			
+
 			function startUnsavedChangesCheck()
 			{
 				if ( ! _mapViewerChangesCheck ) {
 					_mapViewerChangesCheck = setInterval(unsavedChangesCheck, 1000);
 				}
 			}
-			
+
 			function stopUnsavedChangesCheck()
 			{
 				if ( _mapViewerChangesCheck ) {
@@ -156,14 +156,14 @@ define([
 					_mapViewerChangesCheck = null;
 				}
 			}
-			
+
 			function unsavedChangesCheck()
 			{
 				_this.send({
 					type: "hasUnsavedChanges"
 				});
 			}
-			
+
 			function receiveMessage(event)
 			{
 				if ( event.origin !== MapViewerWrapperUtils.getPortalDomain() ) {
@@ -185,13 +185,13 @@ define([
 						// TODO
 						// json.webmapId
 						startUnsavedChangesCheck();
-						
+
 						setTimeout(function(){
 							_this.send({
 								type: "isWebmapEditable"
 							});
 						}, 1000);
-						
+
 						break;
 					case "webmapEditable":
 						// If the map is not editable, enable the save button so it can be copied
@@ -203,21 +203,21 @@ define([
 						if ( json.value ) {
 							params.onEnableSave();
 						}
-						
+
 						break;
 					case "loaded":
 						_viewerMapIsLoaded = json.value;
-						
+
 						if (_viewerMapIsLoaded) {
 							console.log("MV loaded - map too");
-							
+
 							if ( ! _viewerIsLoaded ) {
 								params.onLoad();
-								
+
 								_this.send({
 									type: "getWebmapId"
 								});
-								
+
 								_viewerIsLoaded = true;
 							}
 							else {
@@ -227,22 +227,22 @@ define([
 									});
 								}, 1000);
 							}
-						} 
+						}
 						else {
 							console.log("MV loaded - map not yet");
-							
+
 							// This message is fired after MV is loaded until all layers are loaded
 							// So only catch the event once
 							if ( ! _viewerIsLoaded ) {
 								// Shortly after MV is loaded, before all layer are loaded -> display the MV
 								// This prevent waiting from broken layer to timeout before displaying it
 								setTimeout(params.onLoad, 500);
-								
+
 								_this.send({
 									type: "getWebmapId"
 								});
 							}
-							
+
 							_viewerIsLoaded = true;
 						}
 						break;

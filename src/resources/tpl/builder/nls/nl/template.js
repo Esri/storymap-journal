@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Middel",
       "cfgLarge": "Groot",
       "socialLinksLabel": "Koppelingen om te delen weergeven onder aan elke sectie",
-      "socialLinksDescr": "Hiermee kunnen lezers verwijzen naar specifieke secties van uw %TPL_NAME% en deze promoten. Als u bijvoorbeeld een pictogram voor het delen van secties gebruikt, worden lezers naar die specifieke %TPL_NAME%-sectie gebracht in plaats van naar het begin van uw verhaal. Uw lezers kunnen de sociale-mediakoppeling in de titelsectie gebruiken om uw volledige %TPL_NAME% (tabblad Koptekst) te promoten en naar het begin van de %TPL_NAME% te worden gebracht."
+      "socialLinksDescr": "Hiermee kunnen lezers verwijzen naar specifieke secties van uw %TPL_NAME% en deze promoten. Als u bijvoorbeeld een pictogram voor het delen van secties gebruikt, worden lezers naar die specifieke %TPL_NAME%-sectie gebracht in plaats van naar het begin van uw verhaal. Uw lezers kunnen de sociale-mediakoppeling in de titelsectie gebruiken om uw volledige %TPL_NAME% (tabblad Koptekst) te promoten en naar het begin van de %TPL_NAME% te worden gebracht.",
+      "socialDisabled": "Deze feature is alleen beschikbaar met de lay-out Zwevend paneel",
+      "socialWarning": "Uw verhaal maakt gebruik van de lay-out Zijpaneel, maar we raden u aan om deze optie alleen te gebruiken met de lay-out Zwevend paneel om te vermijden dat het paneel zich niet in de gewenste sectie plaatst bij verhalen met afbeeldingen. U kunt deze optie blijven gebruiken, maar als u ze uitschakelt, zal ze alleen beschikbaar zijn bij gebruik van de lay-out Zwevend paneel."
     },
     "settingsLayoutFonts": {
       "title": "Lettertypen",

@@ -15,31 +15,31 @@
 	-webkit-animation-duration: 3.0s;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-iteration-count: infinite;
-	
+
 	-moz-animation-name: blinker2;
 	-moz-animation-duration: 3.0s;
 	-moz-animation-timing-function: linear;
 	-moz-animation-iteration-count: infinite;
-	
+
 	animation-name: blinker2;
 	animation-duration: 3.0s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 }
 
-@-moz-keyframes blinker2 {  
+@-moz-keyframes blinker2 {
     0% { opacity: 1.0; }
     50% { opacity: 0.8; }
     100% { opacity: 1.0; }
 }
 
-@-webkit-keyframes blinker2 {  
+@-webkit-keyframes blinker2 {
     0% { opacity: 1.0; }
     50% { opacity: 0.8; }
     100% { opacity: 1.0; }
 }
 
-@keyframes blinke2r {  
+@keyframes blinke2r {
     0% { opacity: 1.0; }
     50% { opacity: 0.8; }
     100% { opacity: 1.0; }

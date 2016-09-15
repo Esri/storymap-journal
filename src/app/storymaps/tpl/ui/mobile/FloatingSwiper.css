@@ -32,7 +32,7 @@
 
 .floatingSwiper:not(.expanded) .swiper-container {
 	cursor: pointer;
-} 
+}
 
 .floatingSwiper .section {
 	padding: 15px;
@@ -159,20 +159,20 @@
 
 .floatingSwiper .expanded-close {
 	cursor: pointer;
-} 
+}
 
 .floatingSwiper .glyphicon-fullscreen {
 	font-size: 0.85em;
 }
- 
+
 .floatingSwiper .btnIcon {
-	margin-right: 4px; 
+	margin-right: 4px;
 }
 
 .floatingSwiper .btnIcon:nth-child(2) {
 	margin-left: 6px;
 }
-	
+
 .floatingSwiper .backmap {
 	display: inline-block;
 	background: url(../../../../../resources/tpl/viewer/icons/map-icon.png);
@@ -219,7 +219,7 @@
 /*
  * Embed view
  */
- 
+
 .floatingSwiper.hasDesktopBtn:not(.expanded) .swiper-container {
 	padding: 0 51px;
 }
@@ -269,7 +269,7 @@
 }
 
 .floatingSwiper:not(.expanded) .embed-btn-container.disabled {
-	cursor: default;	
+	cursor: default;
 }
 
 /* Buttons */
@@ -340,7 +340,7 @@
 .floatingSwiper .embed-btn2-left.disabled {
 	background-position: 42px 0;
 }
-	
+
 .floatingSwiper .embed-btn2-right {
 	background-position: 0 -42px;
 }

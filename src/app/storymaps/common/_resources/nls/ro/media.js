@@ -31,13 +31,15 @@ define({
       "rightHeader": "Pagină Facebook",
       "pageExplain": "O pagină de Facebook este o marcă sau un produs public sau o celebritate precum <b>esrigis</b>. Puteţi prelua numele paginii după primul caracter „/” din URL-ul paginii.",
       "pageInputLbl": "Nume pagină",
-      "lookupMsgError": "Pagină negăsită"
+      "lookupMsgError": "Pagină negăsită",
+      "warning": "Asistenţa Facebook a fost suspendată, ${learn}.",
+      "learn": "aflaţi mai multe"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail sau ID Picasa/Google+",
+      "userInputLbl": "E-mail sau ID Picasa",
       "signInMsg2": "Cont negăsit",
-      "howToFind": "Găsirea unui ID de cont Picasa sau Google+",
-      "howToFind2": "Copiaţi cifrele dintre primul şi al doilea caracter „/” a unei pagini Picasa sau G+"
+      "howToFind": "Găsirea unui ID Picasa",
+      "howToFind2": "Copiaţi cifrele dintre primul şi al doilea caracter „/” al oricărei pagini Picasa"
     },
     "videoSelectorCommon": {
       "check": "Bifaţi",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(lăţimea va corespunde întotdeauna panoului)",
       "lblPosition4Explain": "(poate fi distorsionat)",
       "unloadLbl": "Se revocă încărcarea când cititorul trece în altă secţiune",
-      "unloadHelp": "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca povestea să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă."
+      "unloadHelp": "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca povestea să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă.",
+      "embedProtocolLabel": "Încărcaţi pagina printr-o conexiune securizată (HTTPS)",
+      "embedProtocolWarning1": "Scenariul dvs. este configurat să se încarce printr-o conexiune securizată (https), astfel că pagina web afişată în scenariu trebuie să utilizeze şi ea o conexiune securizată. Dacă pagina nu se încarcă, este posibil să nu fie disponibilă printr-o conexiune securizată, sau să nu poată fi inclusă în scenariul dvs. (unele site-uri web au restricţii în acest sens). Este posibil să fie nevoie să creaţi un hiperlink pentru a deschide pagina într-o filă de browser nouă.",
+      "embedProtocolWarning2": "Scenariul dvs. este configurat să se încarce printr-o conexiune nesecurizată (http), astfel că puteţi alege să încărcaţi această pagină printr-o conexiune securizată (recomandat) sau o conexiune nesecurizată. Dacă pagina nu se încarcă, este posibil să nu accepte tipul de conexiune selectat de dumneavoastră, sau să nu poată fi inclusă în scenariul dvs. (unele site-uri web au restricţii în acest sens). Este posibil să fie nevoie să creaţi un hiperlink pentru a deschide pagina într-o filă de browser nouă."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizaţi o adresă sau un loc",

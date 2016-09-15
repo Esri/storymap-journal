@@ -1,27 +1,27 @@
 define(["lib-build/tpl!./ViewLayoutOptions",
 		"lib-build/css!./ViewLayoutOptions",
-		"dojo/topic", 
+		"dojo/topic",
 		"../../core/WebApplicationData"
 	],
 	function (
 		viewTpl,
 		viewCss,
-		topic, 
+		topic,
 		WebApplicationData
 	){
-		return function ViewLayoutOptions() 
-		{			
+		return function ViewLayoutOptions()
+		{
 			var _this = this,
 				_titleContainer = null,
 				_contentContainer = null,
 				_layout = null,
 				_theme = null;
-			
+
 			this.init = function(titleContainer, contentContainer)
 			{
 				_titleContainer = titleContainer;
 				_contentContainer = contentContainer;
-				
+
 				_contentContainer.append(viewTpl({
 					cfgLeft: i18n.builder.settingsLayoutOptions.cfgLeft,
 					cfgRight: i18n.builder.settingsLayoutOptions.cfgRight,
@@ -29,56 +29,64 @@ define(["lib-build/tpl!./ViewLayoutOptions",
 					cfgMedium: i18n.builder.settingsLayoutOptions.cfgMedium,
 					cfgLarge: i18n.builder.settingsLayoutOptions.cfgLarge,
 					socialLinksLabel: i18n.builder.settingsLayoutOptions.socialLinksLabel,
-					socialLinksDescr: i18n.builder.settingsLayoutOptions.socialLinksDescr.replace(/%TPL_NAME%/g, app.cfg.TPL_NAME)
+					socialLinksDescr: i18n.builder.settingsLayoutOptions.socialLinksDescr.replace(/%TPL_NAME%/g, app.cfg.TPL_NAME),
+					socialWarning: i18n.builder.settingsLayoutOptions.socialWarning
 				}));
-				
+
 				topic.subscribe("SETTINGS_LAYOUT_CHANGE", function(layout){
 					_layout = layout;
+
+					if (_layout == "side") {
+						_contentContainer.find('[value = "sociallinks"]').prop('checked', false);
+					}
+
 					updateUI();
 					// Reset the position but keep the size
 					_contentContainer.find('.btn-position .btn').eq(_layout == "side" ? 0 : 1).click();
 				});
-				
+
 				topic.subscribe("SETTINGS_THEME_CHANGE", function(theme){
 					_theme = theme;
 					updateUI();
 				});
-				
+
 				_contentContainer.find('.btn-position .btn').click(function(){
 					_contentContainer.find('.btn-position .btn').removeClass('btn-primary');
 					$(this).addClass('btn-primary');
 					updateUI();
 					triggerEvent();
 				});
-				
+
 				_contentContainer.find('.btn-size .btn').click(function(){
 					_contentContainer.find('.btn-size .btn').removeClass('btn-primary');
 					$(this).addClass('btn-primary');
 					updateUI();
 					triggerEvent();
 				});
+
+				_contentContainer.find('[value = "sociallinks"]').change(updateUI);
 			};
-			
-			this.present = function(settings) 
-			{	
+
+			this.present = function(settings)
+			{
 				_layout = WebApplicationData.getLayoutId();
 				_theme = WebApplicationData.getTheme();
-				
+
 				_contentContainer.find('[value = "sociallinks"]').prop('checked', settings.socialLinks);
-				
+
 				_contentContainer.find('.btn-position .btn[data-value="' + settings.layoutCfg.position + '"]').click();
 				_contentContainer.find('.btn-size .btn[data-value="' + settings.layoutCfg.sizeLbl + '"]').click();
-				
+
 				updateUI();
 			};
-			
+
 			this.show = function()
 			{
 				//
 			};
-			
+
 			this.save = function()
-			{			
+			{
 				return {
 					layoutCfg: {
 						size: _contentContainer.find('.btn-size .btn-primary').data('value'),
@@ -87,32 +95,50 @@ define(["lib-build/tpl!./ViewLayoutOptions",
 					socialLinks: _contentContainer.find('[value = "sociallinks"]').prop('checked')
 				};
 			};
-			
+
 			function triggerEvent()
 			{
 				topic.publish("SETTINGS_LAYOUT_OPTIONS_CHANGE", _this.save());
 			}
-			
+
 			function updateUI()
 			{
 				if ( ! _layout || ! _theme )
 					return;
-				
-				_contentContainer.find(".thumbnail-position").html(app.appCfg.getLayoutThumnail({ 
+
+				_contentContainer.find(".thumbnail-position").html(app.appCfg.getLayoutThumnail({
 					layout: _layout,
 					options: _this.save().layoutCfg,
 					theme: _theme.colors,
 					contentLabel: true
 				}));
-				
-				_contentContainer.find(".thumbnail-size").html(app.appCfg.getLayoutThumnail({ 
+
+				_contentContainer.find(".thumbnail-size").html(app.appCfg.getLayoutThumnail({
 					layout: _layout,
 					options: _this.save().layoutCfg,
 					theme: _theme.colors,
 					contentSize: true
 				}));
+
+				// Disable sharing links on Side Panel
+				var showWarning = _layout == 'side' && _this.save().socialLinks;
+				var disableSocial = _layout == 'side' && ! showWarning;
+
+				_contentContainer.find(".opt-layout-side-warning").toggle(showWarning);
+				_contentContainer.find(".opt-layout-side .opt-explain").toggle(! showWarning);
+
+				_contentContainer.find(".opt-layout-side")
+					.toggleClass("disabled", disableSocial)
+					.attr("title", disableSocial ? i18n.builder.settingsLayoutOptions.socialDisabled : "");
+
+				if (disableSocial) {
+					_contentContainer.find("input[value=sociallinks]").attr("disabled", "disabled");
+				}
+				else {
+					_contentContainer.find("input[value=sociallinks]").removeAttr("disabled");
+				}
 			}
-			
+
 			this.initLocalization = function()
 			{
 				_titleContainer.html(i18n.builder.settingsLayoutOptions.title);

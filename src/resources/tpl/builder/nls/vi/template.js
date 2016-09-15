@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Trung bình",
       "cfgLarge": "Lớn",
       "socialLinksLabel": "Hiển thị liên kết chia sẻ ở cuối mỗi phần",
-      "socialLinksDescr": "Điều này cho phép người đọc tham chiếu và thúc đẩy các phần cụ thể của %TPL_NAME%. Ví dụ: nếu bạn sử dụng một biểu tượng trong phần chia sẻ, người đọc sẽ dừng ở phần %TPL_NAME% cụ thể đó chứ không phải là khi bắt đầu câu chuyện của bạn. Người đọc có thể sử dụng liên kết truyền thông xã hội trong phần tiêu đề để thúc đẩy toàn bộ %TPL_NAME% (tab đầu trang) và dừng tại thời điểm bắt đầu %TPL_NAME%."
+      "socialLinksDescr": "Điều này cho phép người đọc tham chiếu và thúc đẩy các phần cụ thể của %TPL_NAME%. Ví dụ: nếu bạn sử dụng một biểu tượng trong phần chia sẻ, người đọc sẽ dừng ở phần %TPL_NAME% cụ thể đó chứ không phải là khi bắt đầu câu chuyện của bạn. Người đọc có thể sử dụng liên kết truyền thông xã hội trong phần tiêu đề để thúc đẩy toàn bộ %TPL_NAME% (tab đầu trang) và dừng tại thời điểm bắt đầu %TPL_NAME%.",
+      "socialDisabled": "Tính năng này chỉ khả dụng với bố cục Bảng điều khiển Nổi",
+      "socialWarning": "Câu chuyện của bạn đang sử dụng bố cục Bảng điều khiển Bên, tuy nhiên chúng tôi khuyến nghị chỉ sử dụng tùy chọn này với bố cục Bảng điều khiển Nổi để tránh gặp sự cố về các bảng điều khiển có thể không nằm đúng vị trí mong muốn theo từng phần câu chuyện bằng hình ảnh. Bạn có thể tiếp tục sử dụng tùy chọn này, tuy nhiên nếu bạn vô hiệu hóa nó, tùy chọn này sẽ chỉ khả dụng nếu sử dụng bố cục Bảng điều khiển Nổi."
     },
     "settingsLayoutFonts": {
       "title": "Phông chữ",

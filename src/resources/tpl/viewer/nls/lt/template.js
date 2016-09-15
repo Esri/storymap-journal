@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Pasakojimas neveikia Internet Explorer, jei jo versija senesnė nei %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Atnaujinkite naršyklę</a>.",
       "mapLoadingFail": "Įvyko klaida ir žemėlapio nepavyko tinkamai įkelti.",
-      "signOut": "Atsijungti"
+      "signOut": "Atsijungti",
+      "print0": "Deja, šio pasakojimo išspausdinti nepavyko.",
+      "print1": "Norėdami išspausdinti šį pasakojimą, naudokite spausdinimo mygtuką, esantį bendrinimo dialogo lange.",
+      "print2": "Šio pasakojimo spaudos versija paprastai pasiekiama bendrinimo dialogo lange. Deja, autorius šį dialogo langą yra išjungęs."
     },
     "mobileView": {
       "tapForDetails": "Išsamiai informacijai bakstelėkite",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Automatinio paleidimo režimas",
       "autoplayExplain1": "Veikiant automatinio paleidimo režimu, jūsų pasakojimas bus pateikiamas reguliariais intervalais. Tai puikiai tinkama parinktis informaciniuose terminaluose arba viešuosiuose ekranuose, tačiau nepamirškite, kad kitais atvejais pasakojimą gali būti sudėtinga perskaityti. Ši funkcija nepalaikoma mažuose ekranuose.",
       "autoplayExplain2": "Kai šis režimas aktyvus, yra valdikliai, kuriais galima leisti / pristabdyti pasakojimą ir reguliuoti naršymo greitį.",
-      "linksupdated": "Nuorodos atnaujintos!"
+      "linksupdated": "Nuorodos atnaujintos!",
+      "print": "Spausdinti",
+      "printInstruction1": "Prieš spausdindami šį puslapį, palaukite, kol bus įkeltas visas turinys",
+      "printInstruction1a": "Dalies turinio gali nepavykti išspausdinti, jei nuostatų dialogo lange Spausdinti puslapį neįjungsite „Spausdinti fono spalvas ir atvaizdus“",
+      "printInstruction2": "Šio puslapio negalima bendrinti su kitais. Užuot bendrinę puslapį, bendrinkite šią nuorodą ${link}",
+      "link": "nuoroda į pasakojimą",
+      "printOptPageBreak": "Kiekvieną skyrių pradėkite naujame puslapyje",
+      "printWarning": "Tai yra žemėlapių pasakojimų spausdinta versija. Dinaminis turinys, pvz., vaizdo įrašai ir interaktyvūs žemėlapiai, prieinami tik internetinėje versijoje ${link}",
+      "printMSWarning": "Nuoroda prieinama tik pasakojime internete",
+      "printVideoWarning": "Šį vaizdo įrašą galima peržiūrėti internetinėje žemėlapio pasakojimo versijoje"
     }
   }
 });

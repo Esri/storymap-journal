@@ -1,9 +1,9 @@
 /*
  * Application unique help container
  */
- 
+
 #builderHelp {
-	display: none; 
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -45,7 +45,7 @@
 /*
  * Common
  */
- 
+
 .builderHelp .help-header,
 .builderHelp .helpNav,
 .builderHelp .helpFooter {
@@ -65,7 +65,7 @@
 	text-align: left;
 	line-height: 1.1;
 	font-size: 1.4em;
-	font-family: 'open_sanssemibold', sans-serif;	
+	font-family: 'open_sanssemibold', sans-serif;
 	margin: -2px 14px 15px 14px;
 }
 
@@ -198,7 +198,7 @@
 /*
  * Content
  */
- 
+
 .builderHelp .helpText {
 	font-size: 1em;
 	margin: 0.5em;

@@ -31,13 +31,15 @@ define({
       "rightHeader": "Trang Facebook",
       "pageExplain": "Trang Facebook là một thương hiệu/sản phẩm công cộng hay nổi tiếng như <b>esrigis</b>. Bạn có thể lấy tên trang sau '/' đầu tiên trong URL trang.",
       "pageInputLbl": "Tên trang",
-      "lookupMsgError": "Không tìm thấy trang"
+      "lookupMsgError": "Không tìm thấy trang",
+      "warning": "Hỗ trợ Facebook đã bị chấm dứt, ${learn}.",
+      "learn": "tìm hiểu thêm"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "ID Email hoặc ID Picasa/Google+",
+      "userInputLbl": "Email hoặc id Picasa",
       "signInMsg2": "Không tìm thấy tài khoản",
-      "howToFind": "Cách tìm ID tài khoản Picasa hoặc Google+",
-      "howToFind2": "Sao chép chữ số giữa '/' đầu tiên và thứ hai của bất kỳ trang Picasa hoặc G+ nào"
+      "howToFind": "Cách tìm id Picasa",
+      "howToFind2": "Sao chép chữ số giữa '/' đầu tiên và thứ hai của bất kỳ trang Picasa nào"
     },
     "videoSelectorCommon": {
       "check": "Kiểm tra",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(chiều rộng sẽ luôn luôn vừa với bảng điều khiển)",
       "lblPosition4Explain": "(có thể bóp méo)",
       "unloadLbl": "Không tải khi người đọc điều hướng ra ngoài",
-      "unloadHelp": "Nếu Trang Web có phương tiện âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi người đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát rãnh âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu Trang Web là một ứng dụng, bỏ chọn tùy chọn này để câu chuyện không tải lại nếu người đọc quay lại."
+      "unloadHelp": "Nếu Trang Web có phương tiện âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi người đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát rãnh âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu Trang Web là một ứng dụng, bỏ chọn tùy chọn này để câu chuyện không tải lại nếu người đọc quay lại.",
+      "embedProtocolLabel": "Tải trang qua kết nối bảo mật (HTTPS)",
+      "embedProtocolWarning1": "Câu chuyện của bạn được cấu hình để tải qua kết nối bảo mật (https), do đó, trang web được hiển thị trong câu chuyện cũng phải sử dụng kết nối bảo mật. Nếu trang không tải, có thể là do trang không khả dụng qua kết nối bảo mật hoặc không thể được đưa vào trong câu chuyện của bạn (một số trang web có giới hạn này). Có thể bạn sẽ phải tạo đường link để mở trang trong tab trình duyệt mới.",
+      "embedProtocolWarning2": "Câu chuyện của bạn được cấu hình để tải qua kết nối không bảo mật (http), do đó, bạn có thể chọn tải trang này qua kết nối bảo mật (khuyến cáo) hoặc không bảo mật. Nếu trang không tải, có thể là do trang không hỗ trợ loại kết nối bạn chọn hoặc không thể được đưa vào trong câu chuyện của bạn (một số trang web có giới hạn này). Có thể bạn sẽ phải tạo đường link để mở trang trong tab trình duyệt mới."
     },
     "editorActionGeocode": {
       "lblTitle": "Định vị một địa chỉ hoặc địa điểm",

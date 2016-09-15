@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Tarinaa ei tueta Internet Explorerin versiota %VERSION% edeltävissä versioissa. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Päivitä selain</a>.",
       "mapLoadingFail": "Tapahtui virhe, eikä kartta latautunut oikein.",
-      "signOut": "Kirjaudu ulos"
+      "signOut": "Kirjaudu ulos",
+      "print0": "Valitettavasti tätä tarinaa ei voi tulostaa.",
+      "print1": "Jos haluat tulostaa tämän tarinan, käytä tulostuspainiketta jakamisen valintaikkunassa.",
+      "print2": "Tarinan tulostettava versio on tavallisesti käytettävissä jakamisen valintaikkunassa, mutta tekijä on poistanut kyseisen valintaikkunan käytöstä."
     },
     "mobileView": {
       "tapForDetails": "Saat tiedot näkyviin napauttamalla",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Automaattisen toiston tila",
       "autoplayExplain1": "Automaattisen toiston tilassa tarina etenee säännöllisin väliajoin. Tämä soveltuu hyvin kioskin näyttöön tai julkiseen näyttöön. Huomaa kuitenkin, että muissa tilanteissa tarinan lukeminen voi olla vaikeampaa. Tätä ominaisuutta ei tueta pienissä näytöissä.",
       "autoplayExplain2": "Kun tämä tila on käytössä, tarinan voi toistaa tai keskeyttää tai sen nopeutta voi säätää ohjausobjekteilla.",
-      "linksupdated": "Linkit on päivitetty."
+      "linksupdated": "Linkit on päivitetty.",
+      "print": "Tulosta",
+      "printInstruction1": "Odota, että koko sisältö on latautunut, ennen kuin tulostat tämän sivun",
+      "printInstruction1a": "Kaikkea sisältöä ei ehkä tulosteta, ellet ota Tulosta taustavärit ja kuvat -asetusta käyttöön Tulostussivun asetukset -valintaikkunassa",
+      "printInstruction2": "Tätä sivua ei voi jakaa muiden kanssa. Jaa sen sijaan ${link}",
+      "link": "linkki tarinaan",
+      "printOptPageBreak": "Aloita jokainen osa uudelta sivulta",
+      "printWarning": "Tämä on tarinakartan tulostettu versio. Dynaaminen sisältö, kuten videot ja vuorovaikutteiset kartat, ovat käytettävissä vain online-versiossa osoitteessa ${link}",
+      "printMSWarning": "linkki käytettävissä vain online-tarinassa",
+      "printVideoWarning": "Tämän videon voi katsoa tarinakartan online-versiossa"
     }
   }
 });

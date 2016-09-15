@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-side",
       "pageExplain": "En Facebook-side er et offentligt varemærke//produkt eller en celebritet ligesom <b>esrigis</b>. Du kan få sidenavnet efter den første '/' i sidens URL.",
       "pageInputLbl": "Sidenavn",
-      "lookupMsgError": "Side ikke fundet"
+      "lookupMsgError": "Side ikke fundet",
+      "warning": "Facebook-understøttelse er blevet standset, ${learn}.",
+      "learn": "lær mere"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail eller Picasa/Google+ ID",
+      "userInputLbl": "E-mail eller Picasa-id",
       "signInMsg2": "Kontoen kunne ikke findes",
-      "howToFind": "Sådan findes et Picasa- eller Google+ konto-ID",
-      "howToFind2": "Kopier tal mellem første og anden '/' på Picasa eller en G+-side"
+      "howToFind": "Sådan finder du et Picasa-id",
+      "howToFind2": "Kopiér tal mellem første og anden '/' på en vilkårlig Picasa-side"
     },
     "videoSelectorCommon": {
       "check": "Kontrollér",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(bredden vil altid passe til panelet)",
       "lblPosition4Explain": "(kan forvrænges)",
       "unloadLbl": "Udlæs, når læseren navigerer væk",
-      "unloadHelp": "Bevar markeringen af denne indstilling, hvis websiden har medier med lyd eller video, for at forhindre, at indholdet afspilles, når læseren navigerer til en anden sektion. Fjern markeringen, hvis lydsporet skal afspilles, mens læseren gennemgår historien.<br />Fjern markeringen af denne indstilling, hvis websiden er en applikation, så genindlæses historien ikke, hvis læseren vender tilbage til den."
+      "unloadHelp": "Bevar markeringen af denne indstilling, hvis websiden har medier med lyd eller video, for at forhindre, at indholdet afspilles, når læseren navigerer til en anden sektion. Fjern markeringen, hvis lydsporet skal afspilles, mens læseren gennemgår historien.<br />Fjern markeringen af denne indstilling, hvis websiden er en applikation, så genindlæses historien ikke, hvis læseren vender tilbage til den.",
+      "embedProtocolLabel": "Indlæs side via en sikker forbindelse (HTTPS)",
+      "embedProtocolWarning1": "Din historie er konfigureret til at blive indlæst via en sikker forbindelse (https), så de websider, der vises i historien, skal også indlæses via en sikker forbindelse. Hvis siden ikke indlæses, kan det skyldes, at den ikke er tilgængelig via en sikker forbindelse, eller fordi den ikke kan medtages i din historie (nogle websteder forhindrer dette). Du skal måske oprette et hyperlink for at åbne siden på en ny browserfane.",
+      "embedProtocolWarning2": "Din historie er konfigureret til at blive indlæst via en usikker forbindelse (https), så du kan vælge at indlæse denne side via en sikker (anbefales) eller en usikker forbindelse. Hvis siden ikke indlæses, kan det skyldes, at den ikke understøtter den forbindelsestype, du har valgt, eller at den ikke kan medtages i din historie (nogle websteder forhindrer dette). Du skal måske oprette et hyperlink for at åbne siden på en ny browserfane."
     },
     "editorActionGeocode": {
       "lblTitle": "Find en adresse eller et sted",

@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Priča nije podržana na pregledaču Internet Explorer pre verzije %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href=’http://browsehappy.com/’ target=’_blank’>Ažurirajte pregledač</a>.",
       "mapLoadingFail": "Došlo je do greške, mapa se nije učitala pravilno.",
-      "signOut": "Odjavite se"
+      "signOut": "Odjavite se",
+      "print0": "Žao nam je, ovu priču nije moguće štampati.",
+      "print1": "Da biste odštampali ovu priču, upotrebite dugme za štampanje koje se nalazi u dijalogu za deljenje.",
+      "print2": "Žao nam je, verzija ove priče koja može da se štampa je uglavnom dostupna putem dijaloga za deljenje, ali je autor onemogućio ovaj dijalog."
     },
     "mobileView": {
       "tapForDetails": "Dodirnite za detalje",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Režim automatske reprodukcije",
       "autoplayExplain1": "Režim automatske reprodukcije će ići kroz priču uobičajenim intervalom. Ovo je idealno na terminalima ili javim ekranima, ali imajte u vidu da u drugim situacijama čitanje priče može da bude otežano. Ova funkcija nije podržana na ekranima malih dimenzija.",
       "autoplayExplain2": "Kada je ovaj režim aktiviran, postoje kontrole da se priča reprodukuje/pauzira i da se prilagodi brzina navigacije.",
-      "linksupdated": "Linkovi su ažurirani!"
+      "linksupdated": "Linkovi su ažurirani!",
+      "print": "Odštampaj",
+      "printInstruction1": "Pre štampanja ove stranice sačekajte da se učita sav sadržaj",
+      "printInstruction1a": "Neki sadržaj možda neće moći da se odštampa dok ne omogućite opciju „Odštampaj boje i slike u pozadini” u dijalogu za podešavanje stranice za štampanje",
+      "printInstruction2": "Ovu stranicu nije moguće podeliti sa drugima, umesto toga podelite ${link}",
+      "link": "link za priču",
+      "printOptPageBreak": "Svaki odeljak počnite na novoj stranici",
+      "printWarning": "Ovo je odštampana verzija story mape. Dinamički sadržaj kao što su video snimci i interaktivne mape je dostupan samo u verziji na mreži na ${link}",
+      "printMSWarning": "link je dostupan samo u priči na mreži",
+      "printVideoWarning": "Ovaj video snimak može da se prikaže samo u verziji na mreži ove story mape"
     }
   }
 });

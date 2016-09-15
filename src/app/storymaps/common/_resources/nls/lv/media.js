@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook Lapa",
       "pageExplain": "Facebook lapa ir publisks zīmols/produkts vai slavenība, piem., <b>esrigis</b>. Jūs varat saņemt lapas nosaukumu, pēc pirmās '/' lapas URL.",
       "pageInputLbl": "Lapas nosaukums",
-      "lookupMsgError": "Lapa nav atrasta"
+      "lookupMsgError": "Lapa nav atrasta",
+      "warning": "Facebook atbalsts ir pārtraukts, ${learn}.",
+      "learn": "uzzināt vairāk"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-pasta adrese vai Picasa/Google+ ID",
+      "userInputLbl": "E-pasts vai Picasa ID",
       "signInMsg2": "Konts nav atrasts",
-      "howToFind": "Kā atrast Picasa vai Google+ konta ID",
-      "howToFind2": "Kopēt ciparus starp pirmo un otro '/' no jebkura Picasa vai G+ lapa"
+      "howToFind": "Picasa ID atrašana",
+      "howToFind2": "Iekopējiet ciparus starp jebkuras Picasa lapas pirmo un otro '/'."
     },
     "videoSelectorCommon": {
       "check": "Pārbaudīt",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(platums vienmēr atbildīs panelim)",
       "lblPosition4Explain": "(var tikt izkropļots)",
       "unloadLbl": "Izlādēt, ja lasītājs pārvietojas uz citurieni",
-      "unloadHelp": "Ja tīmekļa lapā ir audio vai video multivide, atzīmējiet šo iespēju, lai šis saturs netiktu atskaņots brīdī, kad lasītājs naviģē tālāk. Noņemiet atzīmi, ja vēlaties, lai, piemēram, tiktu turpināta skaņu celiņa atskaņošana, kamēr lasītājs virzās uz priekšu stāstā.<br />Ja tīmekļa lapa ir lietotne, noņemiet atzīmi pie šīs iespējas, lai stāsts netiktu ielādēts atkārtoti, lasītājam atgriežoties šajā sadaļā."
+      "unloadHelp": "Ja tīmekļa lapā ir audio vai video multivide, atzīmējiet šo iespēju, lai šis saturs netiktu atskaņots brīdī, kad lasītājs naviģē tālāk. Noņemiet atzīmi, ja vēlaties, lai, piemēram, tiktu turpināta skaņu celiņa atskaņošana, kamēr lasītājs virzās uz priekšu stāstā.<br />Ja tīmekļa lapa ir lietotne, noņemiet atzīmi pie šīs iespējas, lai stāsts netiktu ielādēts atkārtoti, lasītājam atgriežoties šajā sadaļā.",
+      "embedProtocolLabel": "Ielādēt lapu, izmantojot drošu savienojumu (HTTPS)",
+      "embedProtocolWarning1": "Jūsu stāsts ir konfigurēts, lai tiktu ielādēts, izmantojot drošu savienojumu (https), tāpēc arī stāstā iekļautai tīmekļa lapai ir jāizmanto drošs savienojums. Ja lapa netiek ielādēta, tas var būt tāpēc, ka tā nav pieejama drošā savienojumā, vai tā nevar tikt iekļauta jūsu stāstā (dažas tīmekļa vietnes ierobežo šo iespēju). Iespējams, būs nepieciešams izveidot hipersaiti, lai atvērtu lapu jaunā pārlūkprogrammas cilnē.",
+      "embedProtocolWarning2": "Jūsu stāsts ir konfigurēts, lai tiktu ielādēts, izmantojot nedrošu savienojumu (http), tāpēc jūs varat izvēlēties ielādēt šo lapu, izmantojot drošu (ieteicams) vai nedrošu savienojumu. Ja lapa netiek ielādēta, tas var būt tāpēc, ka tā neatbalsta jūsu atlasīto savienojuma veidu, vai tā nevar tikt iekļauta jūsu stāstā (dažas tīmekļa vietnes ierobežo šo iespēju). Iespējams, būs nepieciešams izveidot hipersaiti, lai atvērtu lapu jaunā pārlūkprogrammas cilnē."
     },
     "editorActionGeocode": {
       "lblTitle": "Adreses vai vietas noteikšana",

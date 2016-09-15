@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Vidējs",
       "cfgLarge": "Liels",
       "socialLinksLabel": "Katras sadaļas apakšā parādīt koplietošanas saites",
-      "socialLinksDescr": "Tas sniedz lasītājiem iespēju veidot atsauces uz jūsu %TPL_NAME%, kā arī reklamēt konkrētas šī vienuma sadaļas. Piemēram, ja izmantosiet sadaļu koplietošanas ikonu, lasītāji nokļūs šajā konkrētajā %TPL_NAME% sadaļā, nevis jūsu stāsta sākumā. Jūsu lasītāji var izmantot virsraksta sadaļā esošo sociālās multivides saiti, lai reklamētu visu jūsu %TPL_NAME% (galvenes cilne), kā arī varat veicināt viņu nokļūšanu %TPL_NAME% sākumā."
+      "socialLinksDescr": "Tas sniedz lasītājiem iespēju veidot atsauces uz jūsu %TPL_NAME%, kā arī reklamēt konkrētas šī vienuma sadaļas. Piemēram, ja izmantosiet sadaļu koplietošanas ikonu, lasītāji nokļūs šajā konkrētajā %TPL_NAME% sadaļā, nevis jūsu stāsta sākumā. Jūsu lasītāji var izmantot virsraksta sadaļā esošo sociālās multivides saiti, lai reklamētu visu jūsu %TPL_NAME% (galvenes cilne), kā arī varat veicināt viņu nokļūšanu %TPL_NAME% sākumā.",
+      "socialDisabled": "Šis elements ir pieejams tikai peldošā paneļa izkārtojumā",
+      "socialWarning": "Jūsu stāstam tiek izmantots sāna paneļa izkārtojums, bet būtu ieteicams šo opciju izmantot tikai kopā ar peldošā paneļa izkārtojumu, lai izvairītos no problēmas, kad panelis stāstos ar attēliem netiek novietots vēlamajā sadaļā. Jūs varat turpināt izmantot šo opciju, bet, ja tā tiks atspējota, tā būs pieejama tikai, izmantojot peldošā paneļa izkārtojumu."
     },
     "settingsLayoutFonts": {
       "title": "Fonti",

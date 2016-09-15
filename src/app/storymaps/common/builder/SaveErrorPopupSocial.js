@@ -17,7 +17,7 @@ define([
 		return function SaveErrorPopupSocial(container)
 		{
 			var _resultDeferred = null;
-			
+
 			container.append(viewTpl({
 				title: i18n.commonCore.saveErrorSocial.title,
 				panel1: i18n.commonCore.saveErrorSocial.panel1,
@@ -30,26 +30,26 @@ define([
 				panel4: i18n.commonCore.saveErrorSocial.panel4,
 				btnSave: i18n.commonCore.common.save
 			}));
-			
+
 			initEvents();
-			
+
 			this.present = function()
 			{
 				_resultDeferred = new Deferred();
-				
+
 				container.find('.panel1 .help').tooltip({
 					title: i18n.commonCore.saveErrorSocial.panel1tooltip + '<img src="resources/tpl/builder/icons/builder-help-social.png"/>',
 					html: true,
 					placement: 'right'
 				});
-				
+
 				container.find('.panel2 .help').tooltip();
-				
+
 				container.modal({ keyboard: false });
-				
+
 				return _resultDeferred;
 			};
-			
+
 			function initEvents()
 			{
 				container.find("input[name='optErrorSocial']").change(function () {
@@ -58,7 +58,7 @@ define([
 						container.find('.stop-asking input')
 							.attr('disabled', 'disabled')
 							.prop('checked', false);
-						
+
 						container.find('.stop-asking label').addClass('disabled');
 					}
 					else {
@@ -66,12 +66,12 @@ define([
 						container.find('.stop-asking label').removeClass('disabled');
 					}
 				});
-				
+
 				container.find(".btn-primary").click(function(){
 					if ( container.find('.stop-asking input').is(':checked') ) {
 						WebApplicationData.setDoNotWarnTitle(true);
 					}
-					
+
 					_resultDeferred.resolve({
 						choice: container.find("input[name='optErrorSocial']:checked").val()
 					});

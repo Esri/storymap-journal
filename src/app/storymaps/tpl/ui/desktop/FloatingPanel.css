@@ -19,7 +19,7 @@
 }
 
 .floatingPanel .appTitle {
-	opacity: 0.9;	
+	opacity: 0.9;
 }
 
 .floatingPanel .scroll {
@@ -152,7 +152,7 @@ body.builder-mode .floatingPanel {
 }
 
 /* Display hidden in builder */
-/*body.builder-mode .sidePanel .draft-section,*/ 
+/*body.builder-mode .sidePanel .draft-section,*/
 body.builder-mode .sidePanel .hidden-section {
 	display: block;
 }

@@ -77,7 +77,7 @@ define({
       "loadingMessage": "Pārbaude, vai stāstā nav problēmu",
       "viewToggle1": "Rādīt stāsta saturu",
       "viewToggle2": "Aizvērt stāsta saturu",
-      "socialize": "Socializācija",
+      "socialize": "Socializējies",
       "statusPrivate": "Jūsu stāsts ir privāts. To varat skatīt tikai jūs.",
       "statusError": "Jūsu stāsta saturā ir problēmas, ko lasītāji pamanīs. Varat noteikt un salabot šīs problēmas tālāk.",
       "statusNoErrPrivate": "Koplietojiet savu stāstu, kad būsiet gatavs!",

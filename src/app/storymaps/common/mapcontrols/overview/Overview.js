@@ -10,19 +10,19 @@ define(["lib-build/tpl!./Overview",
 		"dojo/on",
 		"dojo/topic"],
 	function (
-		viewTpl, 
+		viewTpl,
 		viewCss,
 		commonCss,
-		OverviewMap, 
+		OverviewMap,
 		BasemapGallery,
-		ArcGISTiledMapServiceLayer, 
+		ArcGISTiledMapServiceLayer,
 		arcgisUtils,
-		Deferred, 
-		dom, 
-		on, 
+		Deferred,
+		dom,
+		on,
 		topic
 	){
-		return function Overview(map, container, isInBuilder) 
+		return function Overview(map, container, isInBuilder)
 		{
 			var _overviewMap = null,
 				_settings = null,
@@ -33,7 +33,7 @@ define(["lib-build/tpl!./Overview",
 				_expandFactor = null,
 				_expandFactorChanged = false,
 				_recColor = null;*/
-			
+
 			var tplStrings = {
 				isInBuilder: isInBuilder,
 				title: i18n.viewer.overviewFromCommon.title,
@@ -41,46 +41,46 @@ define(["lib-build/tpl!./Overview",
 				basemapGalleryBtnLabel: '',
 				expandFactorLabel: ''
 			};
-			
+
 			if ( isInBuilder ) {
 				tplStrings.settings = i18n.commonMapControls.common.settings;
 				tplStrings.openDefault = i18n.commonMapControls.common.openDefault;
 				tplStrings.basemapGalleryBtnLabel = i18n.commonMapControls.overview.basemapGalleryBtnLabel;
 				tplStrings.expandFactorLabel = i18n.commonMapControls.overview.expandFactorLabel;
 			}
-			
+
 			container.append(viewTpl(tplStrings));
-			
+
 			this.toggle = function(activate, appColors)
 			{
 				container.toggle(!!activate);
-				
+
 				if ( activate && ! _overviewMap )
 					display(appColors);
 				else if ( ! activate )
 					destroy();
 			};
-			
+
 			this.toggleExpanded = function(expanded)
 			{
 				container.find('.overviewContainer').toggleClass("collapsed", ! expanded);
 			};
-			
+
 			this.setColors = function(appColors)
 			{
 				_containerColor = appColors.dotNav;
-				
+
 				container.find('.overviewContainer').css({
 					backgroundColor: appColors.dotNav,
 					color: appColors.text
 				});
-				
+
 				container.find(".titleBtn").css("color", appColors.softText);
 				container.find(".settingsGear, .collapseBtn").css("color", appColors.softBtn);
-				
+
 				container.find(".ovwHighlight").css("border", "3px solid " + appColors.dotNav);
 			};
-			
+
 			function display(appColors)
 			{
 				container.find('.overviewMapContainer').html('<div class="overviewMap"></div>');
@@ -92,25 +92,25 @@ define(["lib-build/tpl!./Overview",
 					/*expandFactor: _expandFactor*/
 				}, container.find('.overviewMap')[0]);
 				_overviewMap.startup();
-				
+
 				var borderColor = appColors ? appColors.dotNav : _containerColor;
 				if ( borderColor )
 					container.find(".ovwHighlight").css("border", "3px solid " + borderColor);
 			}
-			
+
 			function destroy()
 			{
-				if ( _overviewMap ) 
+				if ( _overviewMap )
 					_overviewMap.destroy();
 				_overviewMap = null;
 			}
-			
+
 			function toggleMinimizedState()
 			{
 				container.find('.overviewContainer').toggleClass("collapsed");
 				container.find('.settingsOverlay').hide();
 			}
-			
+
 			function init()
 			{
 				container.find(".titleBtn").click(toggleMinimizedState);
@@ -123,29 +123,29 @@ define(["lib-build/tpl!./Overview",
 					}
 					else
 						container.off('mouseleave');
-					
+
 					container.find(".settingsOverlay").toggle();
 				});
-				
+
 				container.find('.expandStartup').change(onSettingsChange);
 			}
-			
+
 			//
 			// Builder
 			//
-			
+
 			this.setSettings = function(settings)
 			{
 				_settings = settings;
 				container.find('.expandStartup').prop('checked', _settings.openByDefault);
 			};
-			
+
 			function onSettingsChange()
 			{
 				_settings.openByDefault = container.find('.expandStartup').prop('checked');
 				topic.publish("BUILDER_INCREMENT_COUNTER", 1);
 			}
-			
+
 			init();
 		};
 	}
@@ -236,7 +236,7 @@ define(["lib-build/tpl!./Overview",
 			plop(parseInt($('.expandFactorSpinner input').val(), 10));
 		});
 
-	
+
 	} else {
 		// Viewer mode
 		container.find(".settingsGear").hide();

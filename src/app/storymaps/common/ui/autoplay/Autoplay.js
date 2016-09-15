@@ -5,17 +5,17 @@ define([
 		"dojo/has",
 		"lib-app/bootstrap-slider/js/bootstrap-slider",
 		"lib-build/css!lib-app/bootstrap-slider/css/slider"
-    ], 
+    ],
 	function (
 		viewTpl,
 		viewCss,
 		topic,
 		has
 	) {
-		
+
 	var FADE_DELAY = 6000,
 		DEFAULT_VALUE = 10;
-		
+
 		return function Autoplay(container, loadNext)
 		{
 			var _isPlaying = false,
@@ -24,35 +24,35 @@ define([
 				// UI
 				_mouseMoveTime = null,
 				_isHoverWidget = false;
-			
-			if ( ! container 
+
+			if ( ! container
 					|| ! loadNext || typeof loadNext !== 'function') {
 				console.log("Autoplay: failed to initialize");
 			}
-			
+
 			container
 				.append(viewTpl({ }))
 				.show();
-			
+
 			initEvents();
-			
+
 			//
 			// Public methods
 			//
-			
+
 			this.init = function(params)
 			{
 				if ( ! params ) {
 					return;
 				}
-				
+
 				if ( params.color ) {
 					if ( params.useBackdrop ) {
 						container.find('.backdrop').css({
 							backgroundColor: params.color,
 							display: 'block'
 						});
-						
+
 						// Cancel default color
 						container.find('.autoplay-container').css({
 							backgroundColor: 'inherit'
@@ -64,24 +64,24 @@ define([
 						});
 					}
 				}
-				
+
 				if ( params.themeMajor ) {
 					container.addClass('theme-' + params.themeMajor);
 				}
 			};
-			
+
 			this.start = function()
 			{
 				startAutoplay(false);
 				updatePlayPauseButton(true);
 			};
-			
+
 			this.stop = function()
 			{
 				pause();
 				updatePlayPauseButton(false);
 			};
-			
+
 			// On user navigation: allow autoplay to Listen for app navigation even and stop autoplay if not in sync
 			this.onNavigationEvent = function(index)
 			{
@@ -89,22 +89,22 @@ define([
 					onPlayPauseClick();
 				}
 			};
-			
+
 			//
 			// Autoplay start & stop
 			//
-			
+
 			function start(delay, immediate)
 			{
 				console.log("Autoplay: start, delay:", delay, "immediate:", immediate);
-				
+
 				_isPlaying = true;
-				
+
 				// Clean up
 				if ( _timeout ) {
 					clearTimeout(_timeout);
 				}
-				
+
 				if (immediate) {
 					loadNextWrapper(delay);
 				}
@@ -114,108 +114,108 @@ define([
 					}, delay);
 				}
 			}
-			
+
 			function pause()
 			{
 				if ( ! _isPlaying ) {
 					return;
 				}
-				
+
 				console.log("Autoplay: pause");
-				
+
 				_isPlaying = false;
-				
+
 				if ( _timeout ) {
 					clearTimeout(_timeout);
 				}
 			}
-			
+
 			function loadNextWrapper(delay)
 			{
 				_nextIndex = loadNext();
-				
+
 				_timeout = setTimeout(function() {
 					loadNextWrapper(delay);
 				}, delay);
 			}
-			
-			
+
+
 			///////////////////
 			//  UI
 			///////////////////
-			
+
 			//
 			// Play/pause button
 			//
-			
+
 			function isPlaying()
 			{
 				return container.find(".btn-play-container").hasClass("status-play");
 			}
-			
+
 			function updatePlayPauseButton(isPlaying)
 			{
 				container.find(".btn-play-container").removeClass("status-play status-pause");
 				container.find(".btn-play").removeClass("glyphicon-play glyphicon-pause");
-				
+
 				container.find(".btn-play-container").addClass(isPlaying ? "status-play" : "status-pause");
 				container.find(".btn-play").addClass(isPlaying ? "glyphicon-pause" : "glyphicon-play");
 			}
-			
+
 			function onPlayPauseClick()
 			{
 				var newStatus = ! isPlaying();
-				
+
 				if (newStatus){
 					startAutoplay(true);
 				}
 				else {
 					pause();
 				}
-				
+
 				updatePlayPauseButton(newStatus);
 			}
-			
+
 			function startAutoplay(immediate)
 			{
 				var delay = container.find('.slider input').slider("getValue").val() || DEFAULT_VALUE;
 				start(
-					delay * 1000, 
+					delay * 1000,
 					immediate
 				);
 			}
-			
+
 			//
 			// Container display on Desktop
 			//
-			
+
 			function activateContainer()
 			{
 				var now = Date.now();
-				
+
 				// Debounce container show
 				if ( _mouseMoveTime > Date.now() - 150 ) {
 					container.removeClass('fade');
 				}
-				
+
 				_mouseMoveTime = now;
 			}
-			
+
 			function desactivateContainer()
 			{
 				if ( ! _isHoverWidget && Date.now() > _mouseMoveTime + FADE_DELAY ) {
 					container.addClass('fade');
 				}
 			}
-			
+
 			//
 			// Init
 			//
-			
+
 			function initEvents()
 			{
 				container.find(".btn-play-container").click(onPlayPauseClick);
-				
+
 				// Slider
 				container.find('.slider-container input').slider({
 					min: 5,
@@ -225,21 +225,21 @@ define([
 						return value + 's';
 					}
 				});
-				
+
 				// Slider change
 				container.find('.slider-container input').on('slideStop', function() {
 					if ( isPlaying() ) {
 						startAutoplay(false);
 					}
 				});
-				
+
 				//
 				// Container fade
 				//
-				
+
 				if ( ! has("touch") ) {
 					_mouseMoveTime = Date.now();
-					
+
 					container.hover(
 						function() {
 							_isHoverWidget = true;
@@ -249,7 +249,7 @@ define([
 							desactivateContainer();
 						}
 					);
-					
+
 					$(window).mousemove(activateContainer);
 					setInterval(desactivateContainer, 1000);
 				}

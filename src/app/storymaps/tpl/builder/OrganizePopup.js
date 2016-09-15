@@ -21,10 +21,11 @@ define([
 		{
 			var _initDone = false,
 				_resultDeferred = null,
-				// cfg contains all sections 
+				// cfg contains all sections
 				// and sectionIndex which is the index of the current section at opening
 				_cfg = null,
-				_nbRowDeleted = null;
+				_nbRowDeleted = null,
+				_deletedRows = [];
 
 			container.append(viewTpl({
 				title: i18n.builder.organizePopup.title,
@@ -38,25 +39,26 @@ define([
 				tooltipExport: i18n.builder.exportData.tooltip,
 				btnCancel: i18n.commonCore.common.cancel
 			}));
-			
+
 			this.present = function(cfg)
 			{
 				var contentHTML = "";
-				
+
 				_resultDeferred = new Deferred();
 				_cfg = cfg;
-				
+
 				if ( ! cfg || ! cfg.story || ! cfg.story.sections || cfg.sectionIndex == null )
 					return _resultDeferred.reject();
-					
+
 				_nbRowDeleted = 0;
-				
+				_deletedRows = [];
+
 				if ( ! _initDone )
 					initUI();
-					
+
 				// Reset filter
 				//container.find('.story-filter').eq(0).click();
-				
+
 				// Table sections
 				$.each(_cfg.story.sections, function (index, section) {
 					contentHTML += entryTpl({
@@ -69,12 +71,12 @@ define([
 						firstSectionExplain: i18n.builder.organizePopup.firstSectionExplain
 					});
 				});
-				
+
 				container.find('.rows').html(contentHTML);
-				
+
 				// Reverse checkbox
 				container.find('input[name=displayReverse]').attr('checked', _cfg.story.reversed);
-				
+
 				// Date
 				container.find('.date').datetimepicker({
 					//language:  'en',
@@ -87,7 +89,7 @@ define([
 					forceParse: 0,
 					showMeridian: true
 				});
-				
+
 				// Status
 				$.each(Object.keys(app.builderCfg.STATUS), function(i, status){
 					container.find('.status-list').append('<li><a data-value="' + status + '">' + app.builderCfg.STATUS[status] + '</a></li>');
@@ -98,12 +100,12 @@ define([
 						.text($(this).text());
 				});
 				container.find('.dropdown-toggle').dropdown();
-				
+
 				// Delete tooltip
 				container.find('*[data-toggle=tooltip]').tooltip({
 					trigger: 'hover'
 				});
-				
+
 				// Edit and delete button click handlers
 				container.find('.deleteSectionBtn').click(onClickDelete);
 
@@ -113,7 +115,7 @@ define([
 					container.find(".organizeTable tbody").sortable({
 						axis: "y",
 						opacity: "0.4",
-						cursor: "move", 
+						cursor: "move",
 						helper: function (e, tr) {
 							var originals = tr.children();
 							var helper = tr.clone();
@@ -130,60 +132,75 @@ define([
 						container.find(".organizeTable tbody").sortable("destroy");
 					} catch( e ) { }
 				}
-					
-				
+
+
 				// Apply button
 				updateApplyButtonStatus();
 
 				container.modal({ keyboard:true });
 				return _resultDeferred;
 			};
-			
+
 			this.close = function()
 			{
 				container.modal('hide');
 				_resultDeferred.reject();
 			};
-			
+
 			function onClickDelete()
 			{
 				var row = $(this).closest('tr').first();
 				row.fadeOut('fast', function() {
+					_deletedRows.push(row.data('index'));
 					row.remove();
 					_nbRowDeleted++;
 					updateApplyButtonStatus();
 				});
 				return false;
 			}
-			
+
 			function onClickApply()
 			{
 				var sectionsOnApply = _cfg.story.sections.slice(0, 1),
 					newSectionIndex = 0,
 					displayReversed = container.find('input[name=displayReverse]').is(':checked'),
-					rows = container.find('.sectionRow').get();
+					rows = container.find('.sectionRow').get(),
+					// List of sections order changes (previous and new index)
+					//   used to maintain some internal values to navigate between sections
+					sectionsChanges = [];
 
 				$.each($(rows), function(i, r){
 					// Skip the HOME section
 					if ( i === 0 )
 						return;
-					
+
 					var	row = $(r),
 						sectionIndex = row.data('index'),
 						sectionPubDate = serializeDate(row.find('.form_datetime input').val()),
 						sectionStatus = row.find('.status-list-btn').data('value'),
 						section = _cfg.story.sections[sectionIndex];
-					
+
+					// If the section index change
+					if (sectionIndex != i) {
+						sectionsChanges.push({
+							oldIndex: sectionIndex,
+							newIndex: i
+						});
+					}
+
 					// Save pub date and status
 					section.pubDate = sectionPubDate;
 					section.status = sectionStatus;
-					
+
 					sectionsOnApply.push(section);
-					
+
 					if ( sectionIndex === _cfg.sectionIndex )
 						newSectionIndex = i;
 				});
-				
+
+				// Maintain the actions that allow to navigate from one section to another
+				updateContentActionsNavigate(sectionsOnApply, sectionsChanges, _deletedRows);
+
 				_resultDeferred.resolve({
 					sections: sectionsOnApply,
 					sectionIndex: newSectionIndex,
@@ -191,12 +208,77 @@ define([
 				});
 				container.modal('hide');
 			}
-			
+
+
+			// Maintain the action that allow to navigate from one section to another
+			function updateContentActionsNavigate(sections, sectionsChanges, deletedSections) {
+				console.log('Organize - update actions', sectionsChanges, deletedSections);
+
+				// Sort the sectionsChanges by the index of old sections
+				//  (was ordered by index of new sections)
+				sectionsChanges.sort(function compare(a, b) {
+					if (a.oldIndex < b.newIndex) {
+						return -1;
+					}
+					else if (a.oldIndex > b.newIndex) {
+						return 1;
+					}
+					else {
+						return 0;
+					}
+				});
+
+				// Loop through sections and actions to find navigate actions
+				for(var i = 0; i < sections.length; i++) {
+					var section = sections[i];
+
+					if (section.contentActions) {
+						for (var j = 0; j < section.contentActions.length; j++) {
+							var action = section.contentActions[j];
+
+							// If it's a navigate action
+							if (action.id && action.type == 'navigate' && action.index !== undefined) {
+								var sectionIsDeleted = deletedSections.indexOf(action.index) != -1;
+								var targetSection = app.data.getStoryByIndex(action.index);
+
+								// If the target section is hidden, keep a flag on the action
+								//   so we don't lose the target section
+								if (targetSection && (targetSection.status||'').toUpperCase() == 'HIDDEN') {
+									action.hiddenSection = true;
+								}
+								else {
+									delete action.hiddenSection;
+								}
+
+								if (sectionIsDeleted) {
+									console.log('Navigate action in section ', i, ':', action.index, '->', -1);
+									action.index = -1;
+								}
+								else {
+									// Loop through sections changes until one match is found
+									// When found, stop to avoid side effect
+									// that target the oldIndex and replace with newIndex
+									for (var k = 0; k < sectionsChanges.length; k++) {
+										var change = sectionsChanges[k];
+
+										if (action.index == change.oldIndex) {
+											action.index = change.newIndex;
+											console.log('Navigate action in section ', i, ':', change.oldIndex, '->', change.newIndex);
+											break;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
 			function onDisplayReverseChange()
 			{
 				[].reverse.call(container.find('.rows tr:not([data-index=0])')).appendTo(container.find('.rows'));
 			}
-			
+
 			function initUI()
 			{
 				// Status filter
@@ -206,27 +288,27 @@ define([
 				});
 				container.find('.story-filter').click(onClickFilter);
 				*/
-				
+
 				container.find('.btnApply').click(onClickApply);
 				container.find('input[name=displayReverse]').change(onDisplayReverseChange);
-				
+
 				container.on('hide.bs.modal', function (e) {
 					if ( $(e.target).hasClass("date") )
 						return;
-					
+
 					_resultDeferred.reject();
 				});
-				
+
 				container.find('.exportHelp').tooltip({
 					html: true,
 					trigger: 'hover'
 				});
-				
+
 				container.find('.btn-export').click(onClickExport);
-				
+
 				_initDone = true;
 			}
-			
+
 			function updateApplyButtonStatus()
 			{
 				if ( _nbRowDeleted )
@@ -240,36 +322,36 @@ define([
 						.removeClass('btn-danger')
 						.addClass('btn-primary');
 			}
-			
+
 			function serializeDate(date)
 			{
 				return locale.parse(
-					date.replace(" -", ","), 
+					date.replace(" -", ","),
 					{
-						datePattern: 'MM dd yyyy', 
+						datePattern: 'MM dd yyyy',
 						timePattern: 'hh:mm a'
 					}
 				).getTime();
 			}
-			
+
 			function unserializeDate(date)
 			{
 				var dateVal = locale.format(
-						new Date(date), 
+						new Date(date),
 						{
-							datePattern: 'MM dd yyyy', 
+							datePattern: 'MM dd yyyy',
 							timePattern: 'hh:mm a'
 						}
 					);
 				return dateVal.replace(', ', ' - ');
 			}
-			
+
 			/*
 			function onClickFilter()
 			{
 				var index = $(this).parent().index();
 				$(this).tab('show');
-				
+
 				if( index === 0 ) {
 					container.find('.rows tr').show();
 				}
@@ -282,21 +364,21 @@ define([
 				}
 			}
 			*/
-			
+
 			/*
 			 * Data export
 			 */
-			
+
 			function onClickExport()
 			{
 				var win = window.open("", "_blank"),
 					winHTML = "";
-				
+
 				$.each(app.data.getStorySections(), function(i, section) {
 					var media = section.media[section.media.type];
-					
+
 					winHTML += "<h1>" + section.title + "</h1>";
-					
+
 					winHTML += "<strong>" + i18n.builder.organizePopup.exportMainStage + "</strong>";
 					winHTML += "<table border='1' cellpadding='5'>";
 					winHTML += " <tr>";
@@ -309,14 +391,14 @@ define([
 						winHTML += " </tr>";
 					}
 					winHTML += "</table>";
-					
+
 					winHTML += "<br /><strong>" + i18n.builder.organizePopup.exportPanel + "</strong>";
 					winHTML += "<div>" + section.content + "</div>";
-					
+
 					if ( section.contentActions && section.contentActions.length ) {
 						winHTML += "<br /><strong>" + i18n.builder.organizePopup.exportActions + "</strong>";
 						winHTML += "<table border='1' cellpadding='5'>";
-						
+
 						$.each(section.contentActions, function(i, action) {
 							var actionType = action.type;
 							winHTML += "<tr>";
@@ -326,35 +408,35 @@ define([
 							//else if ( actionType == "zoom") { }
 							winHTML += "</tr>";
 						});
-						
+
 						winHTML += "</table>";
 					}
-					
+
 					winHTML += "<br /><div style='text-align:center'><hr style='width: 60%'/></div><br />";
 				});
-				
+
 				win.document.title = app.cfg.TPL_NAME + " - " + i18n.builder.exportData.btn;
 				win.document.body.innerHTML = winHTML;
 			}
-				
+
 			function exportMediaBlock(media)
 			{
 				var outHTML = "";
 				outHTML += "<td>" + media.type[0].toUpperCase() + media.type.slice(1) + "</td>";
-				
+
 				outHTML += "<td>";
 				switch(media.type) {
-					case "webmap": 
-						outHTML += media.webmap.id; 
+					case "webmap":
+						outHTML += media.webmap.id;
 						break;
-					case "image": 
-						outHTML += media.image.url; 
+					case "image":
+						outHTML += media.image.url;
 						break;
-					case "video": 
-						outHTML += media.video.url; 
+					case "video":
+						outHTML += media.video.url;
 						break;
-					case "webpage": 
-						outHTML += media.webpage.url || ("<textarea style='width: 450px; height: 60px'>" + media.webpage.frameTag + "</textarea>"); 
+					case "webpage":
+						outHTML += media.webpage.url || ("<textarea style='width: 450px; height: 60px'>" + media.webpage.frameTag + "</textarea>");
 						break;
 					default:
 						outHTML += "";

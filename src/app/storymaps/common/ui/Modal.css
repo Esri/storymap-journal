@@ -57,13 +57,13 @@
     cursor: default;
 }
 
-@media screen and (max-height: 714px) {	
+@media screen and (max-height: 714px) {
 	.modal-dialog {
 		margin-top: 47px;
 	}
 }
 
-@media screen and (max-height: 630px) {	
+@media screen and (max-height: 630px) {
 	.modal-dialog {
 		margin-top: 21px;
 	}

@@ -1,0 +1,28 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title"><%= lblTitle %></h4>
+		</div>
+
+		<div class="modal-body">
+			<form>
+				<div class="form-group">
+					<label for="sectionsList"><%= label %>: </label>
+					<div class="btn-group" id="sectionsList">
+						<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+							<span class="sections-list-btn" data-value="-1"></span>&nbsp;<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu sections-list" role="menu"></ul>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="modal-footer">
+			<span class="modal-footer-left"><button class="btn btn-back btn-naked">< <%= btnBack %></button></span>
+			<button class="btnSubmit btn btn-primary"><%= btnOk %></button>
+			<button class="btnCancel btn btn-naked btn-close" data-dismiss="modal"><%= btnCancel %></button>
+		</div>
+	</div>
+</div>

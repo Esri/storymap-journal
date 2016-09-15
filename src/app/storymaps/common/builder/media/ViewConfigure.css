@@ -7,13 +7,13 @@
 	display: inline-block;
 	background: url(../../_resources/icons/media-configure-collapse-arrows.png);
 	width: 16px;
-	height: 16px;	
+	height: 16px;
 	vertical-align: -2px;
 	opacity: 0.9;
 }
 
 .mediaSelectorConfigure .imageDetailsContainer.expanded .question {
-	background-position: 0 18px; 
+	background-position: 0 18px;
 }
 
 .mediaSelectorConfigure .imageDetailsContainer .table {
@@ -79,11 +79,11 @@
 }
 
 .mediaSelectorConfigure .media-configure-position:nth-child(1) {
-	/*vertical-align: 20px;*/	
+	/*vertical-align: 20px;*/
 }
 
 .mediaSelector.smallSize .mediaSelectorConfigure .media-configure-position {
-	width: 117px;	
+	width: 117px;
 }
 
 .mediaSelectorConfigure .media-configure-position:hover,
@@ -126,4 +126,22 @@
 
 .mediaSelectorConfigure .tooltip-arrow {
 	display: none;
+}
+
+.mediaSelectorConfigure .embedProtocol {
+	margin-top: 0;
+}
+
+.mediaSelectorConfigure .embedProtocol label.disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.mediaSelectorConfigure .embedProtocolHelp {
+	font-size: 80%;
+	margin-top: 5px;
+	max-height: 80px;
+	overflow: auto;
+	padding-left: 21px;
+	margin-bottom: -10px;
 }

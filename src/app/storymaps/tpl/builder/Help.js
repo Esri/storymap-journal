@@ -1,19 +1,19 @@
 define(["lib-build/tpl!./Help",
 		"lib-build/css!./Help",
-		"../core/WebApplicationData"], 
+		"../core/WebApplicationData"],
 	function (
 		viewTpl,
 		viewCss,
 		WebApplicationData
 	){
-		return function Help(container) 
+		return function Help(container)
 		{
 			var steps = ["add", "settings", "organize", "edit", "share", "tips"],
 				nbStep = 6;
-			
+
 			var _step = 0,
 				_closeCallback = null;
-			
+
 			container.append(viewTpl({
 				lblHelp: i18n.builder.help.lblHelp,
 				lblAdd: i18n.builder.help.lblAdd,
@@ -27,29 +27,29 @@ define(["lib-build/tpl!./Help",
 				btnNext: i18n.commonCore.common.next,
 				btnClose: i18n.commonCore.common.close
 			}));
-			
+
 			initEvents();
-			
-			this.show = function(openingStep, closeCallback) 
-			{			
+
+			this.show = function(openingStep, closeCallback)
+			{
 				var stepIndex = $.inArray(openingStep, steps);
-					
+
 				if ( stepIndex == -1 )
 					stepIndex = 0;
-				
+
 				toggleMask(true);
-			
+
 				container.find('.helpFooter .btn').removeClass("btn-success");
 				container.find('.helpBtn').eq(stepIndex).click();
-				
+
 				_closeCallback = closeCallback;
-				
+
 				if( WebApplicationData.getLayoutId() == "float" )
 					app.ui.floatingPanel.disableSwiperKeybordEvent();
-				
+
 				container.show();
 			};
-			
+
 			function drawMask()
 			{
 				var width   = $("body").width(),
@@ -58,62 +58,62 @@ define(["lib-build/tpl!./Help",
 					btnOrga = $(".builder-content-panel:visible .builder-organize"),
 					steps   = [
 						btnAdd.length ? {
-							left: btnAdd[0].getBoundingClientRect().left, 
+							left: btnAdd[0].getBoundingClientRect().left,
 							top: btnAdd[0].getBoundingClientRect().top,
 							width: btnAdd.width(),
 							height: btnAdd.height()
 						} : { },
 						{
-							left: $(".builder-settings")[0].getBoundingClientRect().left, 
+							left: $(".builder-settings")[0].getBoundingClientRect().left,
 							top: $(".builder-settings")[0].getBoundingClientRect().top,
 							width: $(".builder-settings").width(),
 							height: $(".builder-settings").height()
 						},
 						btnOrga.length ? {
-							left: btnOrga[0].getBoundingClientRect().left, 
+							left: btnOrga[0].getBoundingClientRect().left,
 							top: btnOrga[0].getBoundingClientRect().top,
 							width: btnOrga.width(),
 							height: btnOrga.height()
 						} : { },
 						null,
 						{
-							left: $(".builder-share")[0].getBoundingClientRect().left, 
+							left: $(".builder-share")[0].getBoundingClientRect().left,
 							top: $(".builder-share")[0].getBoundingClientRect().top,
 							width: $(".builder-share").width(),
 							height: $(".builder-share").height()
 						},
 						null
 					];
-				
+
 				$("#builderHelpMaskOverlay")
 					.attr("width", width)
 					.attr("height", height);
-				
+
 				var ctx = document.getElementById('builderHelpMaskOverlay').getContext("2d");
-				
+
 				ctx.globalAlpha = 0.60;
-				ctx.fillStyle = "#000"; 
+				ctx.fillStyle = "#000";
 				ctx.fillRect(0, 0, width, height);
-				
+
 				if ( ! steps[_step] )
 					return;
 
-				ctx.globalCompositeOperation = 'destination-out'; 
+				ctx.globalCompositeOperation = 'destination-out';
 				ctx.fillRect(
 					steps[_step].left - 7,
 					steps[_step].top - 7,
 					steps[_step].width + 14,
 					steps[_step].height + 12
 				);
-				
-				ctx.globalCompositeOperation = 'source-over'; 
+
+				ctx.globalCompositeOperation = 'source-over';
 				ctx.lineWidth = 4;
 				ctx.strokeStyle = '#428BC9';
 				ctx.shadowOffsetX = 3;
 				ctx.shadowOffsetY = 3;
 				ctx.shadowBlur = 5;
 				ctx.shadowColor = "#000";
-				
+
 				roundRect(
 					ctx,
 					steps[_step].left - 7,
@@ -123,9 +123,9 @@ define(["lib-build/tpl!./Help",
 					5,
 					false,
 					true
-				);				
+				);
 			}
-			
+
 			function roundRect(ctx, x, y, width, height, radius, fill, stroke)
 			{
 				if (typeof stroke === "undefined" )
@@ -144,19 +144,19 @@ define(["lib-build/tpl!./Help",
 				ctx.lineTo(x, y + radius);
 				ctx.quadraticCurveTo(x, y, x + radius, y);
 				ctx.closePath();
-				
+
 				if (stroke)
 					ctx.stroke();
 				if (fill)
 					ctx.fill();
 			}
-			
+
 			function updateContent()
 			{
 				var content = [
-					"<span style='font-size:0.9em'>" 
+					"<span style='font-size:0.9em'>"
 						+
-						app.appCfg.getLayoutThumnail({ 
+						app.appCfg.getLayoutThumnail({
 							layout: WebApplicationData.getLayoutId(),
 							options: WebApplicationData.getLayoutOptions().layoutCfg,
 							theme: WebApplicationData.getTheme().colors,
@@ -195,10 +195,10 @@ define(["lib-build/tpl!./Help",
 						+ '</div>'
 					+ "</span>"
 				];
-				
+
 				container.find(".helpText").html(content[_step]);
 			}
-			
+
 			function updateAllUI()
 			{
 				toggleBuilderButtons();
@@ -207,85 +207,85 @@ define(["lib-build/tpl!./Help",
 				updateContent();
 				updateFooterBtn();
 			}
-			
+
 			function updateNav()
 			{
 				container.find('.helpBtn')
 					.removeClass('active')
 					.eq(_step).addClass('active');
 			}
-			
+
 			function updateFooterBtn()
 			{
 				container.find('.helpFooter .btn-next').toggle(_step != nbStep - 1);
 			}
-			
+
 			function toggleMask(display)
 			{
 				$("#builderHelpMaskOverlay").toggle(display);
 			}
-			
+
 			function toggleBuilderButtons(forceHide)
 			{
 				var isStepAdd  = _step === 0,
 					isStepOrga = _step === 2;
-				
+
 				if ( app.data.getStoryLength() > 0 )
 					return;
-				
+
 				if ( forceHide )
 					isStepAdd = isStepOrga = false;
-				
+
 				$(".builder-content-panel").toggle(isStepAdd || isStepOrga);
 				$("#sidePanel .builder, #floatingPanel .builder").toggleClass("large", isStepAdd || isStepOrga);
-				
+
 				if ( isStepAdd )
 					$(".builder-add").addClass("active");
 				else if ( isStepOrga )
 					$(".builder-organize").addClass("active");
 			}
-			
+
 			function close()
 			{
 				toggleMask(false);
 				toggleBuilderButtons(true);
 				container.hide();
-				
+
 				_closeCallback && _closeCallback();
-				
+
 				if( WebApplicationData.getLayoutId() == "float" )
 					app.ui.floatingPanel.enableSwiperKeybordEvent();
 			}
-			
+
 			function initEvents()
 			{
 				$("body").append('<canvas id="builderHelpMaskOverlay"></canvas>');
-				
+
 				container.find('.helpBtn').click(function(){
 					_step = $(this).index();
 					updateAllUI();
 				});
-				
+
 				container.find('.btn-external-help').click(function(){
 					window.open(app.cfg.HELP_URL, "_blank");
 				});
-				
+
 				container.find('.helpFooter .btn-next').click(function(){
 					_step++;
-					
+
 					if ( _step == nbStep )
 						close();
 					else
 						updateAllUI();
 				});
-				
+
 				container.find('.helpFooter .btn-close').click(close);
-				
+
 				$(document).keyup(function(e) {
 					if ( e.keyCode == 27 && container.is(":visible") )
 						close();
 				});
-				
+
 				$(window).resize(drawMask);
 			}
 		};

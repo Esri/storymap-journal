@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Seda lugu ei toetata Internet Exploreri varasemas versioonis %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Värskendage oma brauserit</a>.",
       "mapLoadingFail": "Midagi läks valesti ning kaarti ei laaditud õigesti.",
-      "signOut": "Logi välja"
+      "signOut": "Logi välja",
+      "print0": "Kahjuks ei saa seda lugu printida.",
+      "print1": "Loo printimiseks kasutage jagamise dialoogis olevat printimisnuppu.",
+      "print2": "Üldjuhul pääseb loo prinditava versiooni juurde jagamisdialoogi kaudu, kuid kahjuks on autor selle dialoogi keelanud."
     },
     "mobileView": {
       "tapForDetails": "Üksikasjade kuvamiseks puudutage",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Automaatesituse režiim",
       "autoplayExplain1": "Automaatesituse režiimis keritakse teie lugu kindla ajavahemiku järel edasi. Seda on hea kasutada kioskite või avalike kohtade ekraanidel, kuid arvestage, et muudel juhtudel võib see raskendada teie loo lugemist. See funktsioon pole väikestel ekraanidel toetatud.",
       "autoplayExplain2": "Kui see režiim on aktiveeritud, saate kasutada loo esitamise või peatamise ja liikumiskiiruse reguleerimise juhtelemente.",
-      "linksupdated": "Lingid on värskendatud!"
+      "linksupdated": "Lingid on värskendatud!",
+      "print": "Prindi",
+      "printInstruction1": "Enne lehe printimist oodake, kuni kogu sisu on laaditud",
+      "printInstruction1a": "Osa sisu ei pruugita printida, kui te ei luba lehe printimise häälestusdialoogis seadet „Prindi taustavärvid ja -pildid”",
+      "printInstruction2": "Seda lehte ei saa teistega jagada, selle asemel jagage linki: ${link}",
+      "link": "lehe link",
+      "printOptPageBreak": "Alusta iga jaotist uuelt lehelt",
+      "printWarning": "See on kaardiloo prinditud versioon. Dünaamiline sisu (nt videod ja interaktiivsed kaardid) on saadaval ainult veebiversioonis aadressil ${link}",
+      "printMSWarning": "link on saadaval üksnes loo veebiversioonis",
+      "printVideoWarning": "Seda videot saab vaadata kaardiloo veebiversioonis"
     }
   }
 });

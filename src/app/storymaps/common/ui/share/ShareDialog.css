@@ -1,5 +1,5 @@
 /* Prevent rule from Responsive.css that disable app popup on mobile */
-/* TODO should flag builder dialog to obly hide them */ 
+/* TODO should flag builder dialog to obly hide them */
 .shareDialog.modal.in {
 	display: block !important;
 }
@@ -26,7 +26,7 @@ body.mobile-view .shareDialog {
 
 .shareDialog .embed-title {
 	font-size: 1.3em;
-	color: #4B8BC9; 
+	color: #4B8BC9;
 	margin: 0px 0 5px 0;
 }
 
@@ -42,7 +42,7 @@ body:not(.mobile-view) .shareDialog .social-container {
 .shareDialog .shareIcon {
 	padding: 0 8px;
 }
-	
+
 body.mobile-view .shareDialog .share-url-container {
 	text-align: center;
 	margin: 20px 0;
@@ -79,4 +79,15 @@ body.mobile-view .shareDialog .autoplay-container {
 .shareDialog .autoplay-notification {
 	color: #3c763d;
 	font-weight: bold;
+}
+
+/*
+ * Print
+ */
+
+.shareDialog .btn-print {
+	position: absolute;
+	top: 4px;
+	right: 30px;
+	padding: 3px 7px;
 }

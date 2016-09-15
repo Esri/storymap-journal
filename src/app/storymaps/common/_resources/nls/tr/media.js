@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook Sayfası",
       "pageExplain": "Facebook sayfası, <b>esrigis</b> gibi genel bir marka/ürün veya ünlü kişiliktir. Sayfa adını sayfa URL'sindeki ilk '/' karakterinden alabilirsiniz.",
       "pageInputLbl": "Sayfa adı",
-      "lookupMsgError": "Sayfa bulunamadı"
+      "lookupMsgError": "Sayfa bulunamadı",
+      "warning": "Facebook desteği artık verilmemektedir, ${learn}.",
+      "learn": "daha fazla bilgi"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-posta veya Picasa/Google+ ID",
+      "userInputLbl": "E-posta veya Picasa kimliği",
       "signInMsg2": "Hesap bulunamadı",
-      "howToFind": "Picasa ya da Google+ hesabı kimliği nasıl bulunur",
-      "howToFind2": "Herhangi bir Picasa ya da G+ sayfasının ilk ve ikinci '/' karakterleri arasındaki rakamları kopyalayın"
+      "howToFind": "Picasa kimliğini bulma",
+      "howToFind2": "Herhangi bir Picasa sayfasının ilk ve ikinci '/' karakteri arasındaki rakamları kopyalayın"
     },
     "videoSelectorCommon": {
       "check": "Kontrol",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(genişlik her zaman panele sığacaktır)",
       "lblPosition4Explain": "(şekil değiştirebilir)",
       "unloadLbl": "Okuyucu başka yere gittiğinde yüklemeyi kaldır",
-      "unloadHelp": "Web Sayfasında ses ya da video ortamı varsa, okuyucu başka bir yere gittiğinde içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu metin boyunca ilerlerken örneğin bir arka plan müziğini oynatmaya devam etmek için işareti kaldırın.<br />Web Sayfası bir uygulamaysa, bu seçeneğin işaretini kaldırarak, okuyucu geri döndüğünde hikayenin yeniden yüklenmesini önleyebilirsiniz."
+      "unloadHelp": "Web Sayfasında ses ya da video ortamı varsa, okuyucu başka bir yere gittiğinde içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu metin boyunca ilerlerken örneğin bir arka plan müziğini oynatmaya devam etmek için işareti kaldırın.<br />Web Sayfası bir uygulamaysa, bu seçeneğin işaretini kaldırarak, okuyucu geri döndüğünde hikayenin yeniden yüklenmesini önleyebilirsiniz.",
+      "embedProtocolLabel": "Sayfayı bir güvenli bağlantı üzerinden yükle (HTTPS)",
+      "embedProtocolWarning1": "Hikayeniz güvenli bir bağlantı (https) üzerinden yüklenecek şekilde yapılandırılmış, bu nedenle hikayedeki web sayfası gösteriminin de güvenli bağlantı kullanması gerekir. Sayfa yüklenmiyorsa, bunun nedeni güvenli bir bağlantı sağlanamaması veya sayfanın hikayenize eklenememesi (bazı web siteleri bunu kısıtlamaktadır) olabilir. Sayfayı yeni bir tarayıcı sekmesinde açmak için bir köprü metni oluşturmanız gerekir.",
+      "embedProtocolWarning2": "Hikayeniz güvenli olmayan bir bağlantı (http) üzerinden yüklenecek şekilde yapılandırılmış, bu nedenle bu sayfayı güvenli (önerilen) veya güvenli olmayan bağlantı üzerinden yüklemeyi seçebilirsiniz. Sayfa yüklenmiyorsa, bunun nedeni sayfanın seçtiğiniz bağlantı türünü desteklememesi veya hikayenize eklenememesi (bazı web siteleri bunu kısıtlamaktadır) olabilir. Sayfayı yeni bir tarayıcı sekmesinde açmak için bir köprü metni oluşturmanız gerekir."
     },
     "editorActionGeocode": {
       "lblTitle": "Adres veya yer bul",

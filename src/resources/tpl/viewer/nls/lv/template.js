@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Šis stāsts netiek atbalstīts Internet Explorer versijās, kas ir vecākas par %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
       "mapLoadingFail": "Ir atgadījusies kļūme — karte netika ielādēta pareizi.",
-      "signOut": "Izrakstīties"
+      "signOut": "Izrakstīties",
+      "print0": "Diemžēl šo stāstu nav iespējams drukāt.",
+      "print1": "Lai drukātu šo stāstu, izmantojiet drukas pogu, kas atrodas koplietošanas dialogā.",
+      "print2": "Atvainojiet, stāsta drukas versija parasti ir pieejama koplietošanas dialogā, bet autors šo dialogu ir atspējojis."
     },
     "mobileView": {
       "tapForDetails": "Pieskarieties, lai iegūtu detalizētu informāciju",
@@ -73,7 +76,7 @@ define({
       "title": "Pārskata karte"
     },
     "legendFromCommon": {
-      "title": "Leģenda"
+      "title": "Apzīmējumi"
     },
     "shareFromCommon": {
       "copy": "Kopēt",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Automātiskās demonstrēšanas režīms",
       "autoplayExplain1": "Automātiskās demonstrēšanas režīms darbosies jūsu stāstā ar regulāriem intervāliem. Tas ir izcili piemērots rādīšanai stendos vai publiskās demonstrēšanas monitorā, bet ņemiet vērā, ka citās situācijās šis režīms var padarīt stāstu grūtāk izlasāmu. Šī funkcija netiek atbalstīta maza izmēra displejos.",
       "autoplayExplain2": "Pēc šī režīma aktivizēšanas ir pieejamas vadīklas stāsta demonstrēšanai/apturēšanai un navigācijas ātruma regulēšanai.",
-      "linksupdated": "Saites ir atjauninātas."
+      "linksupdated": "Saites ir atjauninātas.",
+      "print": "Drukāt",
+      "printInstruction1": "Pirms lapas drukāšanas pagaidiet, līdz tiek ielādēts viss saturs.",
+      "printInstruction1a": "Daļu satura var nebūt iespējams izdrukāt, ja nebūsiet Drukas lapas iestatījumu dialogā iespējojis opciju \"Drukāt fona krāsas un attēlus\".",
+      "printInstruction2": "Šo lapu nav iespējams koplietot ar citiem, tā vietā koplietojiet ${link}",
+      "link": "saite uz stāstu",
+      "printOptPageBreak": "Sāciet katru sadaļu jaunā lapā",
+      "printWarning": "Šī ir stāsta kartes drukas versija. Dinamiskais saturs, piemēram, video un interaktīvās mapes ir pieejami tikai tiešsaistes versijā: ${link}",
+      "printMSWarning": "saite uz stāstu, kas pieejams tikai tiešsaistē",
+      "printVideoWarning": "Šo video var skatīties šīs stāstu kartes tiešsaistes versijā."
     }
   }
 });

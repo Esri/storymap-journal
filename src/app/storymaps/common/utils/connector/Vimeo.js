@@ -7,10 +7,10 @@ define(["dojo/Deferred"],
 			{
 				var resultDeferred = new Deferred(),
 					urlTest = /^.*(vimeo\.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/.exec(url);
-				
+
 				if ( urlTest && urlTest.length == 6 ) {
 					var videoId = urlTest[5];
-				
+
 					getVideoInfo(videoId).then(
 						function(data){
 							if ( data )
@@ -33,15 +33,15 @@ define(["dojo/Deferred"],
 				}
 				else
 					resultDeferred.reject("INVALID_URL");
-			
+
 				return resultDeferred;
 			};
-			
+
 			function getVideoInfo(videoId)
 			{
 				var resultDeferred = new Deferred(),
 					rqStr = '//vimeo.com/api/v2/video/' + videoId + '.json';
-		
+
 				$.ajax({
 					type:'GET',
 					url: rqStr,
@@ -59,10 +59,10 @@ define(["dojo/Deferred"],
 						resultDeferred.reject();
 					}
 				);
-				
+
 				return resultDeferred;
 			}
-			
+
 			function getVimeoEmbed(videoId)
 			{
 				return "//player.vimeo.com/video/" + videoId;

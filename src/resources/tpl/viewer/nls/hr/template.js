@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Priča nije podržana u ranijim verzijama preglednika Internet Explorer prije verzije %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Ažurirajte svoj preglednik</a>.",
       "mapLoadingFail": "Nešto nije u redu, karta se nije točno učitala.",
-      "signOut": "Odjava"
+      "signOut": "Odjava",
+      "print0": "Nažalost, ova se priča ne može ispisati.",
+      "print1": "Da biste ispisali ovu priču, upotrijebite gumb za ispis koji se nalazi u dijaloškom okviru za dijeljenje.",
+      "print2": "Nažalost, verzija za ispis priče obično je dostupna putem dijaloškog okvira za dijeljenje, no autor je onemogućio ovaj dijaloški okvir."
     },
     "mobileView": {
       "tapForDetails": "Dodirni za pojedinosti",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Način automatske reprodukcije",
       "autoplayExplain1": "Način automatske reprodukcije napredovat će kroz vašu priču u redovitim intervalima. To je idealno za kiosk ili javno prikazani zaslon, no budite svjesni da će se u drugim situacijama priča možda teže čitati. Ova značajka nije podržana na malim zaslonima.",
       "autoplayExplain2": "Kada je ovaj način rada aktivan, postoje kontrole za reprodukciju/pauziranje priče i podešavanje brzine navigacije.",
-      "linksupdated": "Poveznice ažurirane!"
+      "linksupdated": "Poveznice ažurirane!",
+      "print": "Ispis",
+      "printInstruction1": "Pričekajte da se sav sadržaj učita prije nego što ispišete ovu stranicu",
+      "printInstruction1a": "Neki se sadržaj možda neće htjeti ispisivati osim ako ne omogućite opciju „Ispisi pozadinske boje i slike” u dijaloškom okviru za postavljanje stranice za ispis.",
+      "printInstruction2": "Ova se stranica ne može dijeliti s drugima, umjesto nje podijelite ${link}",
+      "link": "poveznica na priču",
+      "printOptPageBreak": "Započnite svaki dio na novoj stranici",
+      "printWarning": "Ovo je ispisana verzija karte s pričom. Dinamički sadržaj, kao što su videozapisi i interaktivne karte, dostupan je samo u internetskoj verziji na ${link}",
+      "printMSWarning": "poveznica dostupna samo u priči na internetu",
+      "printVideoWarning": "Ovaj se videozapis može pogledati u internetskoj verziji ove karte s pričom"
     }
   }
 });

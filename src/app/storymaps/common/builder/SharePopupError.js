@@ -11,17 +11,17 @@ define([
 				title: i18n.commonCore.share.shareTitle,
 				btnClose: i18n.commonCore.common.close
 			}));
-			
+
 			this.present = function(params)
 			{
 				var errorMsg = "";
-				
+
 				// Cause
-				
+
 				// Cross domain in AGOL or Portal 10.4
 				if ( params.error == "DOMAIN" ) {
 					errorMsg += i18n.commonCore.share.notavailable1.replace(
-						'%PRODUCT%', 
+						'%PRODUCT%',
 						params.isPortal ? "Portal for ArcGIS" : "ArcGIS Online"
 					);
 				}
@@ -33,9 +33,9 @@ define([
 				else if ( params.error == "DEV" ) {
 					errorMsg += i18n.commonCore.share.notavailable6;
 				}
-				
+
 				errorMsg += '<br /><br />';
-				
+
 				// Workaround
 				if ( params.error == "DOMAIN" ) {
 					errorMsg += i18n.commonCore.share.notavailable3.replace(
@@ -48,19 +48,19 @@ define([
 						'%LINK%',
 						'<a href="' + params.itemURL + '" target="_blank">' + i18n.commonCore.share.notavailable5 + '</a>'
 					);
-					
+
 					errorMsg += ' ';
-					
+
 					errorMsg += i18n.commonCore.share.notavailable7.replace(
 						'%MYCONTENT%',
 						'<a href="' + params.mycontentURL + '" target="_blank">' + i18n.commonCore.share.notavailable8 + '</a>'
 					);
 				}
-				
+
 				container.find('.error-msg').html(errorMsg);
-				
+
 				container.modal({ keyboard: true });
-			};	
+			};
 		};
 	}
 );

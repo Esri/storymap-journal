@@ -2,13 +2,13 @@
 	margin-top: 113px;
 }
 
-@media screen and (max-height: 714px) {	
+@media screen and (max-height: 714px) {
 	.editorDialog .modal-dialog {
 		margin-top: 84px;
 	}
 }
 
-@media screen and (max-height: 630px) {	
+@media screen and (max-height: 630px) {
 	.editorDialog .modal-dialog {
 		margin-top: 58px;
 	}

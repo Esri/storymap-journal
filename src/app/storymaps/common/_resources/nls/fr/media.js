@@ -31,13 +31,15 @@ define({
       "rightHeader": "Page Facebook",
       "pageExplain": "Une page Facebook est une marque, une célébrité ou un produit public, comme <b>esrigis</b>. Vous pouvez obtenir le nom de la page après la première barre oblique inverse '/' de l'URL de la page.",
       "pageInputLbl": "Nom de page",
-      "lookupMsgError": "Page introuvable"
+      "lookupMsgError": "Page introuvable",
+      "warning": "La prise en charge de Facebook a été interrompue, ${learn}.",
+      "learn": "en savoir plus"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Adresse électronique ou identifiant Picasa/Google+",
+      "userInputLbl": "Adresse électronique ou identifiant Picasa",
       "signInMsg2": "Compte introuvable",
-      "howToFind": "Comment trouver un ID de compte Picasa ou Google+",
-      "howToFind2": "Copiez les chiffres compris entre la première et la deuxième barre oblique inverse '/' d'une page Picasa ou G+"
+      "howToFind": "Comment trouver un identifiant Picasa",
+      "howToFind2": "Copier les chiffres situés entre le premier et le deuxième '/' d'une page Picasa"
     },
     "videoSelectorCommon": {
       "check": "Vérifier",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(la largeur s'adapte toujours au volet)",
       "lblPosition4Explain": "(peut être déformée)",
       "unloadLbl": "Décharger lorsque le lecteur quitte cette section",
-      "unloadHelp": "Si la page Web comporte un support audio ou vidéo, cette option doit rester activée pour empêcher la lecture du contenu lorsque le lecteur quitte cette section. Désactivez cette option pour continuer la lecture d'une piste audio pendant que le lecteur avance dans le récit.<br />Si la page Web est une application, désactivez cette option pour que le récit ne se recharge pas si ce lecteur revient à cette section."
+      "unloadHelp": "Si la page Web comporte un support audio ou vidéo, cette option doit rester activée pour empêcher la lecture du contenu lorsque le lecteur quitte cette section. Désactivez cette option pour continuer la lecture d'une piste audio pendant que le lecteur avance dans le récit.<br />Si la page Web est une application, désactivez cette option pour que le récit ne se recharge pas si ce lecteur revient à cette section.",
+      "embedProtocolLabel": "Charger la page via une connexion sécurisée (HTTPS)",
+      "embedProtocolWarning1": "Comme votre récit est configuré de façon à se charger via une connexion sécurisée (https), la page Web affichée dans le récit doit également utiliser une connexion sécurisée. Si la page ne se charge pas, c'est peut-être qu'elle n'est pas accessible via une connexion sécurisée ou qu'elle ne peut pas être intégrée dans votre récit (certains sites Web imposent des restrictions). Vous pouvez être amené à créer un hyperlien pour ouvrir la page dans un nouvel onglet du navigateur.",
+      "embedProtocolWarning2": "Comme votre récit est configuré de façon à se charger via une connexion non sécurisée (http), vous pouvez choisir de charger cette page via une connexion sécurisée (procédure recommandée) ou non sécurisée. Si la page ne se charge pas, c'est peut-être qu'elle ne prend pas en charge le type de connexion que vous avez sélectionné ou qu'elle ne peut pas être intégrée dans votre récit (certains sites Web imposent des restrictions). Vous pouvez être amené à créer un hyperlien pour ouvrir la page dans un nouvel onglet du navigateur."
     },
     "editorActionGeocode": {
       "lblTitle": "Localiser une adresse ou un lieu",

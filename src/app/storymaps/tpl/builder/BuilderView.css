@@ -22,7 +22,7 @@
 	border-color: #428BC9;
 	color: #FFF;
 }
- 
+
 /* CKEDITOR
  *  Remove popup white background
  *  Mandatory for image editing as can't prevent double click from opening the default popup
@@ -34,9 +34,9 @@
 /*
  * Landing
  */
- 
+
 #builderLanding {
-	display: none; 
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -51,7 +51,7 @@
 /*
  * First add splash
  */
- 
+
 .firstAddExplain {
 	display: none;
 	position: absolute;
@@ -85,7 +85,7 @@ body.layout-float-left #mainStagePanel .firstAddExplain {
 /*
  * Map configuration layout specific rules
  */
- 
+
 body.layout-side-right .mapConfigOverlay.toc,
 body.layout-float-right .mapConfigOverlay.toc {
 	left: 0;
@@ -97,11 +97,11 @@ body.layout-float-right .mapConfigOverlay.toc {
 /*
  * Layout thumbnails
  */
- 
+
 .layout-thumbnail {
 	display: inline-block;
 	position: relative;
-	width: 150px; 
+	width: 150px;
 	height: 115px;
 	margin-right: 0;
 	margin-top: 0;
@@ -140,7 +140,7 @@ body.layout-float-right .mapConfigOverlay.toc {
  .layout-thumbnail .thumb-content {
  	color: black;
  }
-	
+
 .layout-thumbnail .number {
 	background: url('../../../../resources/tpl/builder/icons/layout-thumbnail-number.png');
 }
@@ -187,8 +187,8 @@ body.layout-float-right .mapConfigOverlay.toc {
 .layout-thumbnail .panel-lbl.rotate {
 	width: 110px;
 	height: 100px;
-	-webkit-transform: rotate(-90deg); 
-	-moz-transform: rotate(-90deg);	
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
 	transform: rotate(-90deg);
 }
 
@@ -257,9 +257,9 @@ body.layout-float-right .mapConfigOverlay.toc {
 }
 
 /*
- * Step Number 
+ * Step Number
  */
- 
+
 .layout-thumbnail.layout-float.pos-right.size-medium .layout-block.layout-float:nth-child(2) .number {
 	margin-left: -34px !important;
 }

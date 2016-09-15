@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Średni",
       "cfgLarge": "Duży",
       "socialLinksLabel": "Wyświetlaj łącza do udostępniania u dołu każdej sekcji",
-      "socialLinksDescr": "Umożliwia to użytkownikom tworzenie odnośników do określonych sekcji aplikacji %TPL_NAME% i ich promowanie. Na przykład, jeżeli użyjesz ikony udostępniania sekcji, użytkownicy zostaną przekierowani do określonej sekcji aplikacji %TPL_NAME%, zamiast do początku opowiadania. Użytkownicy mogą skorzystać z łącza mediów społecznościowych w sekcji tytułu, aby promować całą aplikację %TPL_NAME% (karta nagłówka) — w tym przypadku użytkownicy są przekierowywani do początku aplikacji %TPL_NAME%."
+      "socialLinksDescr": "Umożliwia to użytkownikom tworzenie odnośników do określonych sekcji aplikacji %TPL_NAME% i ich promowanie. Na przykład, jeżeli użyjesz ikony udostępniania sekcji, użytkownicy zostaną przekierowani do określonej sekcji aplikacji %TPL_NAME%, zamiast do początku opowiadania. Użytkownicy mogą skorzystać z łącza mediów społecznościowych w sekcji tytułu, aby promować całą aplikację %TPL_NAME% (karta nagłówka) — w tym przypadku użytkownicy są przekierowywani do początku aplikacji %TPL_NAME%.",
+      "socialDisabled": "Ta funkcja jest dostępna tylko w kompozycji Panel przestawny",
+      "socialWarning": "Twoja narracja używa kompozycji Panel boczny, ale obecnie zalecamy korzystanie z tej opcji tylko z kompozycją Panel przestawny, aby uniknąć problemu w sytuacji, gdy panel nie ustawi się w odpowiedniej sekcji narracji ze zdjęciami. Możesz w dalszym ciągu korzystać z tej opcji, ale jeśli ją wyłączysz, będzie ona ponownie dostępna tylko z kompozycją Panel przestawny."
     },
     "settingsLayoutFonts": {
       "title": "Czcionki",

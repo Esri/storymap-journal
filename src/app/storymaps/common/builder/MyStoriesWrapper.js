@@ -1,12 +1,12 @@
 define([
         "./PortalVersionTest",
-        "esri/IdentityManager", 
+        "esri/IdentityManager",
         "storymaps/common/utils/CommonHelper",
         "dojo/topic"
     ],
 	function(
 		PortalVersionTest,
-		IdentityManager, 
+		IdentityManager,
 		CommonHelper,
 		topic
 	) {
@@ -18,7 +18,7 @@ define([
 				document.domain = "arcgis.com";
 			} catch(e) { }
 			*/
-			
+
 			// Make sure My Stories is available
 			// This test is just checking if it's there but it won't detect if it's cross domain or not
 			PortalVersionTest.run().then(
@@ -34,23 +34,23 @@ define([
 				loadMyStoriesError
 			);
 		}
-		
+
 		function loadMyStoriesError()
 		{
 			$(".check-story").hide();
 		}
-		
+
 		function loadMyStoriesStep2()
 		{
 			// My Stories hook that My Stories will call that function when ready to use
 			window.myStoriesInit = myStoriesInit;
-			
+
 			// So that the panel appear to be in loading state
 			topic.publish("MYSTORIES_SCAN", "start");
-			
+
 			var url = '../MyStories/index.html?fromBuilder';
 			url += '&locale=' + dojo.locale;
-			
+
 			setTimeout(function(){
 				$("#my-stories-frame").attr(
 					'src',
@@ -58,30 +58,30 @@ define([
 				);
 			}, 1000);
 		}
-		
+
 		// Called when My Stories has loaded and is ready to be initialized
 		function myStoriesInit()
 		{
 			var myStories = $("#my-stories-frame")[0].contentWindow;
-			
+
 			// Check that the API is available
 			if ( ! myStories || ! myStories.init || ! myStories.check || ! myStories.share ) {
 				console.error('Failed to load My Stories');
 				return;
 			}
-			
-			if ( ! app.data.getStoryLength() ) { 
+
+			if ( ! app.data.getStoryLength() ) {
 				console.log('Skipping the initialization of My Stories until the story has content');
 				return;
 			}
-			
+
 			/*
 			 * init(identity manager, app item) -> Deferred
 			 *  - resolve: ok
 			 *  - reject: ko
 			 * check(app data) -> Deferred
 			 *  - resolve: ok
-			 *  - reject(result) 
+			 *  - reject(result)
 			 *    - result == true: the story has been scanned and there is error
 			 *    - result == false: the story hasn't been scanned successfully
 			 *  - callback to edit a section/entry
@@ -103,7 +103,7 @@ define([
 				hasCheckErrors: false,
 				hasScanErrors: false
 			};
-			
+
 			// Init with the Identity and App Item
 			// This is the only time this is passed to MyStories
 			app.mystories.init(
@@ -113,7 +113,7 @@ define([
 				app.isPortal,
 				// Open a section/entry configuration
 				function(index, type, actionId){
-					// type = "main-stage" || "main-stage-action" || "description" 
+					// type = "main-stage" || "main-stage-action" || "description"
 					topic.publish("MY-STORIES-EDIT-MEDIA", {
 						index: index,
 						type: type,
@@ -137,7 +137,7 @@ define([
 						completed: false,
 						ignoreAllIssues: false
 					};
-					
+
 					app.mystories.hasCheckErrors = ! params.ignoreAllIssues;
 					app.mystories.forcedIgnoreIssues = params.ignoreAllIssues;
 					topic.publish("MY-STORIES-REFRESH");
@@ -149,17 +149,17 @@ define([
 				}
 			);
 		}
-		
+
 		function scanStory()
 		{
 			if ( ! app.mystories )
 				return;
-			
+
 			app.mystories.isChecking = true;
 			app.mystories.hasCheckErrors = false;
-			
+
 			topic.publish("MYSTORIES_SCAN", "start");
-			
+
 			app.mystories.check(
 				app.data.getWebAppData().get()
 			).then(
@@ -168,14 +168,14 @@ define([
 					params = params || {
 						ignoreAllIssues: false
 					};
-					
-					
+
+
 					app.mystories.isChecking = false;
 					app.mystories.hasCheckErrors = false;
 					app.mystories.forcedIgnoreIssues = params.ignoreAllIssues;
-					
+
 					topic.publish("MYSTORIES_SCAN", "success");
-					
+
 					// Refresh the share dialog if open
 					if ( $('#sharePopup').is(':visible') ) {
 						app.builder.openSharePopup();
@@ -187,13 +187,13 @@ define([
 						completed: false,
 						ignoreAllIssues: false
 					};
-					
+
 					app.mystories.isChecking = false;
 					app.mystories.hasCheckErrors = true;
 					app.mystories.forcedIgnoreIssues = params.ignoreAllIssues;
-					
+
 					topic.publish("MYSTORIES_SCAN", "error");
-					
+
 					// Refresh the share dialog if open
 					if ( $('#sharePopup').is(':visible') ) {
 						app.builder.openSharePopup();
@@ -201,15 +201,15 @@ define([
 				}
 			);
 		}
-		
+
 		function myStoriesIsSameDomain()
 		{
 			var mapViewerDomain = CommonHelper.getPortalURL().split('//').slice(-1)[0],
 				mapViewerDomainSplit = mapViewerDomain.split('.'),
 				host = document.location.host,
 				hostSplit = host.split('.');
-			
-			if ( mapViewerDomain == host 
+
+			if ( mapViewerDomain == host
 					// For Portal Web Adaptor
 					|| (mapViewerDomain.split('/').length > 1 && mapViewerDomain.split('/')[0] == host)
 			) {
@@ -222,7 +222,7 @@ define([
 				return hostSplit.slice(1).join('.') == mapViewerDomainSplit.slice(-2).join('.');
 			}
 		}
-		
+
 		return {
 			loadMyStories: loadMyStories,
 			scanStory: scanStory,

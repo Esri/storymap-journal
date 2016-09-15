@@ -18,7 +18,7 @@ define({
       "create": "Erstellen",
       "yes": "Ja",
       "no": "Nein",
-      "mystories": "My Stories"
+      "mystories": "Eigene Storys"
     },
     "inlineFieldEdit": {
       "editMe": "Bearbeiten!"
@@ -85,7 +85,7 @@ define({
       "notavailable1": "Das Freigeben Ihrer Story im Manager wird nicht unterstützt, da diese Anwendung nicht in %PRODUCT% gehostet wird.",
       "notavailable2": "Das Freigeben Ihrer Story im Manager wird in dieser Version von Portal for ArcGIS nicht unterstützt (Version 10.4 oder höher erforderlich).",
       "notavailable3": "Sie können diese Story über %LINK% freigeben.",
-      "notavailable4": "My Stories",
+      "notavailable4": "Eigene Storys",
       "notavailable5": "die Elementseite",
       "notavailable6": "Dieses Feature wird im Entwicklungsmodus leider nicht vollständig unterstützt. Je nach Entwicklungsszenario wird es möglicherweise nach der Bereitstellung unterstützt.",
       "notavailable7": "Besuchen Sie %MYCONTENT%, um sicherzustellen, dass die Karten und Layer, die Sie in Ihrer Story verwenden, ebenfalls freigegeben sind.",

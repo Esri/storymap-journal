@@ -36,7 +36,10 @@ define({
       "noViewerIE": "Esta história não é suportada pelo Internet Explorer abaixo da versão %VERSION%. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Por favor atualize o seu browser</a>.",
       "mapLoadingFail": "Algo correu mal, o mapa não foi carregado correctamente.",
-      "signOut": "Terminar sessão"
+      "signOut": "Terminar sessão",
+      "print0": "Lamentamos, esta história não pode ser impressa.",
+      "print1": "Para imprimir esta história, por favor utilize o botão imprimir localizado na caixa de diálogo partilhar.",
+      "print2": "Lamentamos, uma versão imprimível da história é normalmente acessível através da caixa de diálogo partilhar, mas esta caixa de diálogo foi desativada pelo autor."
     },
     "mobileView": {
       "tapForDetails": "Toque para aceder a detalhes",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "Modo reprodução automática",
       "autoplayExplain1": "Modo reprodução automática irá avançar através da sua história em intervalos regulares. Isto é ideal num monitor de quiosque ou exibição pública, mas esteja ciente de que noutras situações pode tornar a história mais difícil de ler. Este elemento não é suportado em écrans pequenos.",
       "autoplayExplain2": "Quando este modo está activo existem controles para reproduzir/pausar a história e ajustar a velocidade de navegação.",
-      "linksupdated": "Links actualizados!"
+      "linksupdated": "Links actualizados!",
+      "print": "Imprimir",
+      "printInstruction1": "Por favor, aguarde que todo o conteúdo seja carregado antes de imprimir esta página.",
+      "printInstruction1a": "Algum conteúdo poderá não ser impresso, a não ser que ative “Imprimir Cores e Imagens de Fundo” na caixa de diálogo Página de Impressão.",
+      "printInstruction2": "Esta página não pode ser partilhada; ao invés, partilhe a ${link}",
+      "link": "ligação à história",
+      "printOptPageBreak": "Iniciar cada secção numa nova página",
+      "printWarning": "Esta é uma versão impressa de um story map. Conteúdo dinâmico, tal como vídeos e mapas interativos, encontra-se apenas disponível na versão online na ${link}",
+      "printMSWarning": "ligação disponível apenas na história online",
+      "printVideoWarning": "Este vídeo pode ser visualizado na versão online deste story map."
     }
   }
 });

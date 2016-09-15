@@ -38,3 +38,21 @@
 	overflow-y: auto;
 	height: 64px;
 }
+
+.settings-layoutoptions .opt-layout-side.disabled {
+	opacity: 0.6;
+	cursor: default;
+}
+
+.settings-layoutoptions .opt-layout-side.disabled label {
+	cursor: default;
+}
+
+.settings-layoutoptions .opt-layout-side-warning {
+	color: red;
+	font-size: 85%;
+	margin-top: 5px;
+	max-height: 70px;
+	overflow: auto;
+	padding-left: 21px;
+}

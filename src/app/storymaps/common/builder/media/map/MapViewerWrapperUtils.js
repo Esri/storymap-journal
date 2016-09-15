@@ -18,12 +18,12 @@ define(["esri/arcgis/utils"],
 			getPortalURL: function()
 			{
 				var url = arcgisUtils.arcgisUrl.split('/sharing/')[0];
-				
+
 				// Prevent SSL only org to fail loading maps for apps that are accessed over http
 				if ( app.portal.allSSL ) {
 					url = url.replace('http:', 'https:');
 				}
-				
+
 				return url;
 			},
 			getPortalDomain: function()
@@ -38,9 +38,9 @@ define(["esri/arcgis/utils"],
 					mapViewerDomainSplit = mapViewerDomain.split('.'),
 					host = document.location.host,
 					hostSplit = host.split('.');
-				
-				if ( mapViewerDomain == host 
-						// For Portal Web Adaptor 
+
+				if ( mapViewerDomain == host
+						// For Portal Web Adaptor
 						|| (mapViewerDomain.split('/').length > 1 && mapViewerDomain.split('/')[0] == host)
 				) {
 					return true;

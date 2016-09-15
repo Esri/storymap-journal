@@ -31,13 +31,15 @@ define({
       "rightHeader": "Strona Facebook",
       "pageExplain": "Strona Facebook to publiczna strona marki/produktu lub znanej osoby, np.<b>esrigis</b>. Nazwa strony została umieszczona po pierwszym znaku „/” w adresie URL strony.",
       "pageInputLbl": "Nazwa strony",
-      "lookupMsgError": "Nie znaleziono strony"
+      "lookupMsgError": "Nie znaleziono strony",
+      "warning": "Facebook nie jest już obsługiwany, ${learn}.",
+      "learn": "więcej informacji"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Adres e-mail lub identyfikator z serwisu Picasa/Google+",
+      "userInputLbl": "Adres e-mail lub identyfikator z serwisu Picasa",
       "signInMsg2": "Nie odnaleziono konta",
-      "howToFind": "Jak znaleźć identyfikator konta Picasa lub Google+",
-      "howToFind2": "Skopiuj cyfry znajdujące się między pierwszym a drugim znakiem „/” dowolnej strony Picasa lub G+"
+      "howToFind": "Jak znaleźć identyfikator Picasa",
+      "howToFind2": "Skopiuj cyfry znajdujące się między pierwszym a drugim znakiem „/” dowolnej strony Picasa"
     },
     "videoSelectorCommon": {
       "check": "Zaznacz",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(szerokość będzie zawsze dopasowana do panelu)",
       "lblPosition4Explain": "(obraz może zostać zniekształcony)",
       "unloadLbl": "Usuń, gdy czytelnik przechodzi dalej",
-      "unloadHelp": "Gdy w witrynie internetowej są udostępnione materiały audio lub wideo, ta opcja powinna być zaznaczona, aby po przejściu czytelnika dalej odtwarzanie tych treści było przerywane. Należy wyłączyć zaznaczenie opcji, aby na przykład podczas czytania tekstu przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli witryna internetowa jest aplikacją, tę opcję należy odznaczyć, aby uniknąć ponownego wczytywania tej aplikacji, gdy czytelnik do niej wróci."
+      "unloadHelp": "Gdy w witrynie internetowej są udostępnione materiały audio lub wideo, ta opcja powinna być zaznaczona, aby po przejściu czytelnika dalej odtwarzanie tych treści było przerywane. Należy wyłączyć zaznaczenie opcji, aby na przykład podczas czytania tekstu przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli witryna internetowa jest aplikacją, tę opcję należy odznaczyć, aby uniknąć ponownego wczytywania tej aplikacji, gdy czytelnik do niej wróci.",
+      "embedProtocolLabel": "Wczytywanie strony przez bezpieczne połączenie (HTTPS)",
+      "embedProtocolWarning1": "Ta narracja jest skonfigurowana do wczytywania przez bezpieczne połączenie (https), dlatego strona internetowa wyświetlana w narracji musi również używać bezpiecznego połączenia. Jeśli strona nie wczytuje się, być może nie jest dostępna przez bezpieczne połączenie albo nie może zostać włączona do narracji (niektóre witryny ograniczają tę możliwość). Może być konieczne utworzenie hiperłącza w celu otwarcia strony w nowej karcie przeglądarki.",
+      "embedProtocolWarning2": "Ta narracja jest skonfigurowana do wczytywania przez połączenie niezabezpieczone (http), dlatego ta strona internetowa może zostać wczytana przez bezpieczne połączenie (zalecane) lub przez połączenie niezabezpieczone. Jeśli strona nie wczytuje się, być może nie obsługuje wybranego typu połączenia albo nie może zostać włączona do narracji (niektóre witryny ograniczają tę możliwość). Może być konieczne utworzenie hiperłącza w celu otwarcia strony w nowej karcie przeglądarki."
     },
     "editorActionGeocode": {
       "lblTitle": "Lokalizuj adres lub miejsce",

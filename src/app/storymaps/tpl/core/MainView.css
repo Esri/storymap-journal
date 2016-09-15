@@ -1,5 +1,5 @@
 /*
- * Using a table to properly align Side Panel and Main Stage seems to be 
+ * Using a table to properly align Side Panel and Main Stage seems to be
  * the only way to have the edit button to properly overflow the Side Panel
  */
 .containerPanelInner {
@@ -45,12 +45,12 @@ body.layout-float .legendContainer {
 
 body.layout-float-left .overviewContainer {
 	left: inherit;
-	right: 20px; 
+	right: 20px;
 }
 
 body.layout-float-right .legendContainer {
 	left: 15%;
-	right: inherit; 
+	right: inherit;
 }
 
 body.layout-float-left:not(.mobile-view) .esriAttribution {

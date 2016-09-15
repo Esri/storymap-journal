@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Middels",
       "cfgLarge": "Stor",
       "socialLinksLabel": "Vis delingskoblinger nederst i hver seksjon",
-      "socialLinksDescr": "Dette gjør at leserne kan referere til og promotere bestemte seksjoner av %TPL_NAME%. Hvis du for eksempel bruker et delingsikon for seksjoner, lander leserne på den bestemte %TPL_NAME%-seksjonen i stedet for på begynnelsen av historien. Leserne kan bruke koblingen for sosiale medier i tittelseksjonen for å fremme hele %TPL_NAME% (overskriftskategorien) og få dem til å lande på starten av %TPL_NAME%."
+      "socialLinksDescr": "Dette gjør at leserne kan referere til og promotere bestemte seksjoner av %TPL_NAME%. Hvis du for eksempel bruker et delingsikon for seksjoner, lander leserne på den bestemte %TPL_NAME%-seksjonen i stedet for på begynnelsen av historien. Leserne kan bruke koblingen for sosiale medier i tittelseksjonen for å fremme hele %TPL_NAME% (overskriftskategorien) og få dem til å lande på starten av %TPL_NAME%.",
+      "socialDisabled": "Dette geoobjektet er kun tilgjengelig med Flytende panel-oppsett",
+      "socialWarning": "Din fortelling bruker Sidepanel-oppsettet, men vi anbefaler nå at dette alternativet kun brukes med Flytende panel-oppsett for å unngå problemer der panelet kanskje ikke kan posisjonere seg til den ønskede delen for fortellinger med bilder. Du kan fortsette å bruke dette alternativet, men hvis du deaktiverer det, vil det kun være tilgjengelig ved bruk av Flytende panel-oppsett."
     },
     "settingsLayoutFonts": {
       "title": "Skrifter",

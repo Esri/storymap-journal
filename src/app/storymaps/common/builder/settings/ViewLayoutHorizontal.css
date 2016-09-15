@@ -104,9 +104,9 @@
 }
 
 /*
- * Link to live app 
+ * Link to live app
  */
- 
+
 .settings-layout-horizontal .layout-live {
  	visibility: visible;
  	font-size: 0.8em;
@@ -120,7 +120,7 @@
 /*
  * Start
  */
- 
+
 .settings-layout-horizontal .start-btn-container {
 	margin-top: 15px;
 	margin-bottom: -18px;

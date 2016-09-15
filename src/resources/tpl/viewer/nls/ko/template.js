@@ -36,7 +36,10 @@ define({
       "noViewerIE": "이 스토리는 %VERSION% 이전 버전의 Internet Explorer에서 지원되지 않습니다. %UPGRADE%",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>브라우저를 업데이트하세요</a>.",
       "mapLoadingFail": "오류가 발생했습니다. 맵을 올바르게 불러오지 않았습니다.",
-      "signOut": "로그아웃"
+      "signOut": "로그아웃",
+      "print0": "죄송합니다. 이 스토리는 인쇄할 수 없습니다.",
+      "print1": "이 스토리를 인쇄하려면 공유 대화 상자에 있는 인쇄 버튼을 사용하세요.",
+      "print2": "죄송합니다. 인쇄 가능한 스토리 버전은 일반적으로 공유 대화 상자를 통해 접근할 수 있지만 작성자가 이 대화 상자를 비활성화했습니다."
     },
     "mobileView": {
       "tapForDetails": "세부정보를 보려면 누릅니다.",
@@ -85,7 +88,16 @@ define({
       "autoplayLabel": "자동 재생 모드",
       "autoplayExplain1": "자동 재생 모드를 사용하면 스토리가 주기적으로 진행됩니다. 이 기능은 키오스크 또는 공공의 디스플레이 모니터에는 적합하지만 그 이외의 환경에서는 스토리 읽기가 더욱 어려워질 수 있습니다. 소형 디스플레이에서는 이 기능이 지원되지 않습니다.",
       "autoplayExplain2": "이 모드가 활성화되면 스토리를 재생/일시정지하고 탐색 속도를 조정하는 컨트롤이 나타납니다.",
-      "linksupdated": "링크가 업데이트되었습니다!"
+      "linksupdated": "링크가 업데이트되었습니다!",
+      "print": "인쇄",
+      "printInstruction1": "이 페이지를 인쇄하기 전에 모든 콘텐츠를 불러오는 동안 기다려 주세요.",
+      "printInstruction1a": "일부 콘텐츠는 페이지 인쇄 설정 대화 상자의 ‘배경 색상 및 이미지 인쇄’를 활성화하지 않으면 인쇄할 수 없음",
+      "printInstruction2": "이 페이지는 다른 사람과 공유할 수 없으며 대신 ${link}을(를) 공유함",
+      "link": "스토리 링크",
+      "printOptPageBreak": "새 페이지에서 각 섹션 시작",
+      "printWarning": "이 스토리 맵은 인쇄된 버전의 스토리 맵입니다. 비디오 및 대화형 맵 등의 동적 콘텐츠는 ${link}의 온라인 버전에서만 제공됨",
+      "printMSWarning": "온라인 스토리에서만 제공되는 링크",
+      "printVideoWarning": "이 비디오는 온라인 버전의 이 스토리 맵에서 볼 수 있음"
     }
   }
 });

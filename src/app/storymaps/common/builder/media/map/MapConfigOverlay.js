@@ -41,7 +41,7 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			_layersOpening = null,
 			// Popup
 			_popupMapHandlers = null;
-			
+
 		container.append(viewTpl({
 			btnReset: i18n.commonWebmap.configure.btnReset,
 			btnCancel: i18n.commonWebmap.configure.btnCancel,
@@ -56,13 +56,13 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			popupExplain: i18n.commonWebmap.configure.popupExplain + " " + i18n.commonWebmap.configure.hintNavigation,
 			popupSave: i18n.commonWebmap.configure.popupSave
 		}));
-		
+
 		function present(type, media)
 		{
 			_viewDeferred = new Deferred();
-			
+
 			_media = media;
-			
+
 			// Init Map Extent
 			_extentDefined = false;
 			_ignoreNextExtentChange = false;
@@ -75,54 +75,54 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			// TODO could use dojo/aspect
 			// - aspect.before(app.map, "setExtent", function(extent){}); => extent is the asked extent
 			topic.subscribe("CORE_UPDATE_EXTENT", onResetInitialExtent);
-			
+
 			$(".mainMediaContainer.active .mapControls").addClass("hidden");
 			//container.find(".toc").addClass("collapsed");
-			
+
 			// Init Map TOC
 			_layersChanged = false;
 			_layersInitial = app.mapItem.itemData.operationalLayers;
 			_sectionDefineLayer = media ? !! media.layers : false;
 			_layersOpening = getLayersVisibilityOverride();
 			presentTableOfContents();
-			
+
 			if ( _sectionDefineExtent )
 				_extentDefined = JSON.stringify(app.lastExtentSet) != JSON.stringify(media.extent);
 			else
 				_extentDefined = JSON.stringify(app.lastExtentSet) != JSON.stringify(app.map.mapJournalInitExtent) && JSON.stringify(app.lastExtentSet) != JSON.stringify(_originalMapExtent);
-			
+
 			console.log(
-				JSON.stringify(app.lastExtentSet) != JSON.stringify(app.map.mapJournalInitExtent), 
-				JSON.stringify(app.lastExtentSet) != JSON.stringify(_originalMapExtent), 
+				JSON.stringify(app.lastExtentSet) != JSON.stringify(app.map.mapJournalInitExtent),
+				JSON.stringify(app.lastExtentSet) != JSON.stringify(_originalMapExtent),
 				app.lastExtentSet,
 				app.map.mapJournalInitExtent,
 				_originalMapExtent,
 				_sectionDefineExtent,
 				_sectionDefineLayer
 			);
-			
+
 			// Init Bottom panel
 			//toggleReset(0, _extentDefined, _sectionDefineExtent && JSON.stringify(app.lastExtentSet) != JSON.stringify(media.webmap.extent), ! _sectionDefineExtent || JSON.stringify(app.lastExtentSet) == JSON.stringify(media.webmap.extent));
 			//toggleReset(1, false, ! getLayersVisibilityOverride().length, true);
-			
+
 			/*
 			container.find(".resetSection").css("visibility", nbSection > 0 ? "visible" : "hidden");
 			container.find(".resetWebmap").css("float", nbSection > 0 ? "" : "right");
 			container.find(".resetSection").html(mode == "add" ? "Reset to<br />opening value" : "Reset to<br />section value");
 			*/
-			
+
 			openUI(type);
-			
+
 			return _viewDeferred;
 		}
-		
+
 		function close()
 		{
 			$(".mainMediaContainer.active .mapControls").removeClass("hidden");
-			
+
 			closeUI();
 			_extentChangeHandle.remove();
-			
+
 			var layers = getLayersVisibilityOverride();
 
 			_viewDeferred.resolve({
@@ -131,36 +131,36 @@ define(["lib-build/tpl!./MapConfigOverlay",
 				popup: getSelectedFeatureInfo()
 			});
 		}
-		
+
 		/*
 		 * Events
 		 */
-		
+
 		function initEvents()
 		{
 			container.find(".position .save").click(close);
 			container.find(".position .reset").click(onClickResetExtentWebmap);
 			container.find(".position .cancel").click(cancelExtent);
-			
+
 			container.find(".toc .save").click(close);
 			container.find(".toc .reset").click(onClickResetLayerWebmap);
 			container.find(".toc .cancel").click(cancelLayers);
-			
+
 			/*
 			container.find(".toc .expandButton").click(function(){
 				container.find(".toc").toggleClass("collapsed");
 			});
 			*/
-			
+
 			container.find(".popup .save").click(close);
 			container.find(".popup .reset").click(cancelPopup);
 			container.find(".popup .cancel").click(cancelPopup);
 		}
-		
+
 		/*
 		 * Map location
 		 */
-		
+
 		function onClickResetExtentWebmap()
 		{
 			app.map.setExtent(_originalMapExtent).then(function(){
@@ -168,7 +168,7 @@ define(["lib-build/tpl!./MapConfigOverlay",
 				//toggleReset(0, _extentDefined, true, ! _sectionDefineExtent);
 			});
 		}
-		
+
 		/*
 		function onClickResetExtentSection()
 		{
@@ -178,7 +178,7 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			});
 		}
 		*/
-		
+
 		function cancelExtent()
 		{
 			app.ignoreNextEvent = true;
@@ -188,15 +188,15 @@ define(["lib-build/tpl!./MapConfigOverlay",
 				close();
 			});
 		}
-		
+
 		function onResetInitialExtent()
 		{
 			_ignoreNextExtentChange = true;
 			_extentDefined = false;
 			//toggleReset(0, _extentDefined, true);
 		}
-		
-		
+
+
 		function onMapExtentChange()
 		{
 			if ( ! _ignoreNextExtentChange ) {
@@ -206,24 +206,24 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			else
 				_ignoreNextExtentChange = false;
 		}
-		
+
 		function initGeocoder()
 		{
 			if ( _geocoder )
 				_geocoder.destroy();
-			
+
 			// If map already has a geocoder through viewer config
 			if ( $(".mainMediaContainer.active .mapContainer").hasClass("has-geocoder") ) {
 				return;
 			}
-			
+
 			$(".mainMediaContainer.active .geocoder")
 				.html('<div class="simpleGeocoder"></div>')
 				.show();
-			
+
 			try {
 				CommonHelper.createGeocoder({
-					map: app.map, 
+					map: app.map,
 					domNode: $(".mainMediaContainer.active .simpleGeocoder")[0],
 					enableButtonMode: false,
 					placeHolder: i18n2.commonMedia.editorActionGeocode.lblTitle
@@ -234,11 +234,11 @@ define(["lib-build/tpl!./MapConfigOverlay",
 				console.error(e);
 			}
 		}
-		
+
 		/*
 		 * Map layer
 		 */
-		
+
 		function onClickResetLayerWebmap()
 		{
 			$.each(_layersInitial, function(i, layer){
@@ -250,25 +250,25 @@ define(["lib-build/tpl!./MapConfigOverlay",
 					});
 				}
 			});
-			
+
 			//toggleReset(1, false, true, ! _sectionDefineLayer || getLayersVisibilityOverride().toString() == _layersOpening.toString());
 		}
-		
+
 		/*
 		function onClickResetLayerSection()
 		{
 			onClickResetLayerWebmap();
-			
+
 			$.each(_layersOpening, function(i, l){
-				var layerId = l.id, 
-					layer = $.grep(_layersInitial, function(ll) { 
+				var layerId = l.id,
+					layer = $.grep(_layersInitial, function(ll) {
 						var lll = ll.featureCollection ? ll.featureCollection.layers[0].id : ll.id;
 						return lll == layerId;
 					})[0];
-				
+
 				if ( ! layer )
 					return;
-				
+
 				if ( layer.layerObject )
 					layer.layerObject.setVisibility(_layersOpening.visibility);
 				else if ( layer.featureCollection ){
@@ -277,18 +277,18 @@ define(["lib-build/tpl!./MapConfigOverlay",
 					});
 				}
 			});
-			
+
 			toggleReset(1, false, ! getLayersVisibilityOverride().length, true);
 		}
 		*/
-		
+
 		function cancelLayers()
 		{
 			$.each(_layersInitial, function(i, layer){
 				var layerObject = layer.layerObject || (layer.featureCollection ? layer.featureCollection.layers[0].layerObject : null),
 					overrideAtOpening = $(_layersOpening).filter(function(i, l){ return l.id == layerObject.id; }),
 					newVisibility = overrideAtOpening.length ? overrideAtOpening[0].visibility : layer.visibility;
-				
+
 				if ( layer.layerObject )
 					layerObject.setVisibility(newVisibility);
 				else {
@@ -299,17 +299,17 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			});
 			close();
 		}
-		
+
 		function onLayerToggle()
 		{
 			_layersChanged = getLayersVisibilityOverride().length > 0;
 			//toggleReset(1, _layersChanged, ! _layersChanged, ! _media.webmap || ! _media.webmap.layers || ! _media.webmap.layers.length ? true : getLayersVisibilityOverride().toString() == _layersOpening.toString());
 		}
-		
+
 		function getLayersVisibilityOverride()
 		{
 			var visibilityOverrides = [];
-			
+
 			$.each(_layersInitial, function(i, layer){
 				var layerObject = layer.layerObject || (layer.featureCollection ? layer.featureCollection.layers[0].layerObject : null);
 				if( layerObject && layer.visibility != layerObject.visible )
@@ -321,19 +321,19 @@ define(["lib-build/tpl!./MapConfigOverlay",
 
 			return visibilityOverrides;
 		}
-		
+
 		function presentTableOfContents()
 		{
 			if ( _tableOfContents )
 				_tableOfContents.destroy();
-			
+
 			container.find(".tocContainer").html('<div class="TableOfContents"></div>');
-			
+
 			_tableOfContents = new TableOfContents({
 				map: app.map,
 				layers: _layersInitial
 			}, container.find(".TableOfContents")[0]);
-			
+
 			if ( ! _layersInitial || ! _layersInitial.length ) {
 				container.find(".TableOfContents").html(
 					'<div style="margin-bottom: 10px;">'
@@ -346,97 +346,98 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			on(_tableOfContents, 'load', function(){
 				container.find(".toc-checkbox").addClass('glyphicon glyphicon-unchecked');
 			});
-			
+
 			_tableOfContents.startup();
 		}
-		
+
 		/*
 		 * Popup
 		 */
-		
+
 		function onPopupShow()
 		{
 			// Should use that to change the status of the save button
 		}
-		
+
 		function onPopupHide()
 		{
 			//
 		}
-		
+
 		function cancelPopup()
 		{
 			/*
 			if ( _media && _media.popup ) {
-				
+
 			}
 			*/
 			app.map.infoWindow.hide();
 			app.map.infoWindow.clearFeatures();
-			
+
 			close();
 		}
-		
+
 		function getSelectedFeatureInfo()
 		{
 			var feature = app.map.infoWindow.getSelectedFeature();
-			
+
 			if ( ! feature )
 				return null;
-			
+
 			/*
 			 * The popup's feature is saved through an attribute and it's value
 			 * Try to find an object id through type or field name
 			 * Default to the first Integer field
 			 */
-			
+
 			// TODO should have an error message if not found
-			
+
 			var layer = feature.getLayer(),
 				fields = layer.fields;
-			
+
 			if ( ! fields ) {
 				return null;
 			}
-			
+
 			var objectIdFields = $.grep(fields, function(field){
 				return field.type == "esriFieldTypeOID";
 			});
-			
+
 			if ( layer && fields && ! objectIdFields.length ) {
 				objectIdFields = $.grep(fields, function(field){
 					return field.name == "OBJECTID" || field.name == "FID";
 				});
-				
+
 				if ( ! objectIdFields.length ) {
 					objectIdFields = $.grep(fields, function(field){
 						return field.type == "esriFieldTypeInteger";
 					});
 				}
 			}
-			
+
 			if ( objectIdFields.length ) {
 				var fieldName = objectIdFields[0].name;
 				return {
 					layerId: layer.id,
 					fieldName: fieldName,
-					fieldValue: feature.attributes[fieldName]
+					fieldValue: feature.attributes[fieldName],
+					anchorPoint: app.map.infoWindow.location.toJson()
 				};
 			}
-			
+
 			return null;
 		}
-		
-		
+
+
 		/*
 		 * Common
 		 */
-		
+
 		function openUI(type)
 		{
 			$("body").addClass("builder-mask");
 			$(".panelEditBtn").fadeOut();
-			
+
 			if( type == "LOCATION"){
 				container.find(".mapConfigOverlay.position").show();
 				initGeocoder();
@@ -445,29 +446,29 @@ define(["lib-build/tpl!./MapConfigOverlay",
 				container.find(".mapConfigOverlay.toc").show();
 			else if( type == "POPUP"){
 				container.find(".mapConfigOverlay.popup").show();
-				_popupMapHandlers = [ 
+				_popupMapHandlers = [
 					app.map.infoWindow.on("show", onPopupShow),
 					app.map.infoWindow.on("hide", onPopupHide)
 				];
 			}
-			
+
 			if ( type != "LOCATION" ) {
 				app.map.disableMapNavigation();
 				$(app.map.__container).parent().find(".esriSimpleSliderTL").hide();
 			}
 		}
-		
+
 		function closeUI()
 		{
 			$("body").removeClass("builder-mask");
 			$(".panelEditBtn").fadeIn();
-			
+
 			container.find(".mapConfigOverlay").hide();
 			app.map.enableMapNavigation();
 			$(app.map.__container).parent().find(".esriSimpleSliderTL").show();
-			
+
 			$(".mainMediaContainer.active .geocoder").hide();
-			
+
 			if ( _popupMapHandlers ) {
 				_popupMapHandlers[0].remove();
 				_popupMapHandlers[1].remove();
@@ -476,8 +477,8 @@ define(["lib-build/tpl!./MapConfigOverlay",
 		}
 
 		initEvents();
-		
-		return {			
+
+		return {
 			present: present
 		};
 	}

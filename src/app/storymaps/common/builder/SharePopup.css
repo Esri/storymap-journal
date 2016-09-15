@@ -162,7 +162,7 @@
 	font-size: 120%;
 	margin-top: 30px;
 	margin-left: auto;
-	margin-right: auto;	
+	margin-right: auto;
 	color: #CC3333;
 }
 
@@ -187,7 +187,7 @@
 }
 
 /*
- * View toggle 
+ * View toggle
  */
 
 .builderShare .view-toggle-container {
@@ -199,7 +199,7 @@
 /*
  * View: private story call to action
  */
- 
+
 .builderShare .private-story-call-to-action {
 	text-align: center;
 	font-size: 1.8em;
@@ -239,7 +239,7 @@
 /*
  * View: socialize
  */
- 
+
 .builderShare .view-share {
 	margin-top: 25px;
 }
@@ -247,7 +247,7 @@
 .builderShare .view-share .socialize-title,
 .builderShare .view-share .embed-title {
 	font-size: 1.3em;
-	color: #4B8BC9; 
+	color: #4B8BC9;
 	margin: 15px 0 20px 0;
 }
 
@@ -323,7 +323,7 @@
 }
 
 #my-stories-hidden-container #my-stories-frame {
-	border: none; 
-	width: 100%; 
+	border: none;
+	width: 100%;
 	height: 100%;
 }

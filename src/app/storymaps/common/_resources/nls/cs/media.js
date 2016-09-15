@@ -31,13 +31,15 @@ define({
       "rightHeader": "Stránka služby Facebook",
       "pageExplain": "Stránka služby Facebook představuje veřejnou značku či službu nebo známou osobnost, jako je například <b>esrigis</b>. Název stránky začíná za prvním lomítkem (/) v URL adrese stránky.",
       "pageInputLbl": "Název stránky",
-      "lookupMsgError": "Stránka nenalezena"
+      "lookupMsgError": "Stránka nenalezena",
+      "warning": "Podpora Facebooku byla ukončena, ${learn}.",
+      "learn": "další informace"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail nebo identifikátor Picasa/Google+",
+      "userInputLbl": "E-mail nebo identifikátor služby Picasa",
       "signInMsg2": "Účet nenalezen",
-      "howToFind": "Jak najít identifikátor účtu Picasa nebo Google+",
-      "howToFind2": "Zkopírujte číslice mezi prvním a druhým lomítkem (/) libovolné stránky služeb Picasa nebo Google+."
+      "howToFind": "Jak zjistit identifikátor služby Picasa",
+      "howToFind2": "Zkopírujte čísla mezi prvním a druhým znakem „/“ na libovolné stránce služby Picasa"
     },
     "videoSelectorCommon": {
       "check": "Kontrola",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(šířka se vždy přizpůsobí panelu)",
       "lblPosition4Explain": "(může dojít ke zkreslení)",
       "unloadLbl": "Zrušit spouštění, když čtenář opustí stránku",
-      "unloadHelp": "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se příběh nespouštěl znovu, když se k němu čtenář vrátí."
+      "unloadHelp": "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se příběh nespouštěl znovu, když se k němu čtenář vrátí.",
+      "embedProtocolLabel": "Nahrát stránku přes zabezpečené připojení (HTTPS)",
+      "embedProtocolWarning1": "Váš příběh je nastaven, aby se nahrával přes zabezpečené připojení (https), takže webové stránky zobrazené v příběhu musí také používat zabezpečené připojení. Pokud se stránka nenačte, může být důvodem to, že není k dispozici přes zabezpečené připojení nebo ji do příběhu nelze zahrnout (některé webové stránky tuto možnost omezují). Chcete-li stránku otevírat nové kartě prohlížeče, může být nutné vytvořit hypertextový odkaz.",
+      "embedProtocolWarning2": "Váš příběh je nastaven tak, aby se nahrával přes nezabezpečené připojení (http), takže si můžete vybrat, zda se tato stránka bude nahrávat přes zabezpečené (doporučeno) nebo nezabezpečené připojení. Pokud se stránka nenačte, může být důvodem to, že nepodporuje vybraný typ připojení nebo ji do příběhu nelze zahrnout (některé webové stránky tuto možnost omezují). Chcete-li stránku otevírat nové kartě prohlížeče, může být nutné vytvořit hypertextový odkaz."
     },
     "editorActionGeocode": {
       "lblTitle": "Najít adresu nebo místo",

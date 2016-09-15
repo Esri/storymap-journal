@@ -7,17 +7,17 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	text-align: center; 
+	text-align: center;
 	padding: 12% 0;
 }
 
-@media screen and (max-height: 714px) {	
+@media screen and (max-height: 714px) {
 	#builderQuotes {
 		padding: 9% 0;
 	}
 }
 
-@media screen and (max-height: 630px) {	
+@media screen and (max-height: 630px) {
 	#builderQuotes {
 		padding: 3% 0;
 	}
@@ -67,7 +67,7 @@
 	display: inline-block;
 	width: 345px;
 }
-	
+
 .builderLanding .landing-add-container .landing-btn {
 	background: url(../../../../resources/tpl/builder/icons/builder-forward.png);
 	vertical-align: -18px;
@@ -87,13 +87,13 @@
 	display: inline-block;
 	width: 186px;
 	vertical-align: 4px;
-	border-top: 1px solid grey; 
+	border-top: 1px solid grey;
 }
 
 /*
  * Take a tour
  */
- 
+
 .builderLanding .landing-tour-container {
 	display: inline-block;
 }

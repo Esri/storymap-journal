@@ -9,11 +9,11 @@
 }
 
 .imageSelectorHome .imageSelectorTable .btn-container {
-	padding: 15px 16px;
+	padding: 15px 36px;
 }
 
 .mediaSelector.smallSize .imageSelectorHome .imageSelectorTable .btn-container {
-	padding: 15px 12px;
+	padding: 15px 30px;
 }
 
 .imageSelectorHome .imageSelectorTable .btn-img {
@@ -29,11 +29,6 @@
 	background-repeat: no-repeat;
 }
 
-.imageSelectorHome .btn-select-fb .btn-img {
-	background: url(../../../_resources/icons/media/builder-media-facebook.png);
-	background-size: 100px auto;
-	background-repeat: no-repeat;
-}
 
 .imageSelectorHome .btn-select-picasa .btn-img {
 	background: url(../../../_resources/icons/media/builder-media-picasa.png);
@@ -66,4 +61,9 @@
 	background-color: #BDD1E2;
 	cursor: pointer;
 	border-radius: 10px;
+}
+
+.facebook-warning {
+	text-align: center;
+	font-size: 80%;
 }

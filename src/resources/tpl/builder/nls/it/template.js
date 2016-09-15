@@ -20,7 +20,9 @@ define({
       "cfgMedium": "Medio",
       "cfgLarge": "Grande",
       "socialLinksLabel": "Visualizza i collegamenti per la condivisione nella parte inferiore di ogni sezione",
-      "socialLinksDescr": "In questo modo i lettori possono fare riferimento e dare maggiore risalto a sezioni specifiche di %TPL_NAME%. Se ad esempio si utilizza un'icona per condividere le sezioni, i lettori potranno passare direttamente a tale sezione specifica di %TPL_NAME% anziché partire dall'inizio della storia. I lettori possono utilizzare il collegamento ai social media nella sezione del titolo per promuovere la scheda di intestazione di %TPL_NAME% e posizionarsi all'inizio di %TPL_NAME%."
+      "socialLinksDescr": "In questo modo i lettori possono fare riferimento e dare maggiore risalto a sezioni specifiche di %TPL_NAME%. Se ad esempio si utilizza un'icona per condividere le sezioni, i lettori potranno passare direttamente a tale sezione specifica di %TPL_NAME% anziché partire dall'inizio della storia. I lettori possono utilizzare il collegamento ai social media nella sezione del titolo per promuovere la scheda di intestazione di %TPL_NAME% e posizionarsi all'inizio di %TPL_NAME%.",
+      "socialDisabled": "Questa feature è disponibile solo con layout Pannello mobile",
+      "socialWarning": "La storia utilizza il layout Pannello laterale, ma si consiglia attualmente di utilizzare questa opzione solo con layout Pannello mobile per evitare un problema quando il pannello potrebbe non posizionarsi automaticamente nella sezione desiderata per racconti con immagini. È possibile continuare a utilizzare questa opzione, ma se viene disabilitata, sarà solo disponibile quando si utilizza il layout Pannello mobile."
     },
     "settingsLayoutFonts": {
       "title": "Caratteri",

@@ -1,7 +1,7 @@
 define({
   "builder": {
     "layouts": {
-      "mainStage": "主要阶段",
+      "mainStage": "主舞台",
       "sideTitle": "侧面板",
       "sideDescr": "文本密集型故事的布局可将照片、视频和地图组合在重点明确的消息中。",
       "floatTitle": "浮动面板",
@@ -20,7 +20,9 @@ define({
       "cfgMedium": "中",
       "cfgLarge": "大",
       "socialLinksLabel": "在每节底部显示共享链接",
-      "socialLinksDescr": "这使读者可以引用并提升 %TPL_NAME% 的特定节。例如，如果使用节共享图标，读者将会定位到该特定 %TPL_NAME% 节，而并非定位到故事的开头。读者可使用标题节中的社交媒体链接来提升整个 %TPL_NAME%（标题选项卡）并定位到 %TPL_NAME% 的开头。"
+      "socialLinksDescr": "这使读者可以引用并提升 %TPL_NAME% 的特定节。例如，如果使用节共享图标，读者将会定位到该特定 %TPL_NAME% 节，而并非定位到故事的开头。读者可使用标题节中的社交媒体链接来提升整个 %TPL_NAME%（标题选项卡）并定位到 %TPL_NAME% 的开头。",
+      "socialDisabled": "此要素仅适用于浮动面板布局",
+      "socialWarning": "您的故事使用了侧面板布局，但我们在此建议您仅在浮动面板布局下使用此选项，以免出现面板未处于通过影像叙述所需部分的问题。您可以继续使用此选项，但如果您将其禁用，则该选项仅在使用浮动面板布局时方可使用。"
     },
     "settingsLayoutFonts": {
       "title": "字体",
@@ -37,10 +39,10 @@ define({
       "titleAddHome": "添加主目录部分",
       "titleEdit": "编辑节",
       "step": "步骤",
-      "stepMainStageExplain": "主要阶段内容",
+      "stepMainStageExplain": "主舞台内容",
       "stepPanelExplain": "内容",
-      "stepMainStageNextTooltip": "输入节标题并选择主要阶段内容",
-      "stepMainStageNextTooltip2": "选择主要阶段内容",
+      "stepMainStageNextTooltip": "输入章节标题并选择主舞台内容",
+      "stepMainStageNextTooltip2": "选择主舞台内容",
       "step2NextTooltip": "输入节标题和 %LAYOUT-TYPE% 内容",
       "stepNextTooltipNext": "要进行下一步",
       "stepNextTooltipAdd": "要添加节",
@@ -50,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "在此添加文本、链接和小图形。",
-      "editorActionsTitle": "主要阶段操作",
-      "editorActionsHelpDescr": "使用这些控件来创建将更改主要阶段的链接。例如，当读者单击某链接时，您会希望地图缩放至特定位置，显示其他 Web 地图或显示图像。",
-      "mainStageDisabled": "编辑器最大化时将禁用主要阶段操作"
+      "editorActionsTitle": "主舞台操作",
+      "editorActionsHelpDescr": "使用这些控件来创建将更改主舞台的链接。例如，当读者单击某链接时，您会希望地图缩放至特定位置，显示其他 Web 地图或显示图像。",
+      "mainStageDisabled": "编辑器最大化时将禁用主舞台操作"
     },
     "organizePopup": {
       "title": "组织",
@@ -64,9 +66,9 @@ define({
       "btnApplyWarning": "确认删除 %NB% 个部分",
       "deleteTooltip": "删除",
       "firstSectionExplain": "（无法移动主目录节）",
-      "exportMainStage": "主要阶段内容",
+      "exportMainStage": "主舞台内容",
       "exportPanel": "面板内容",
-      "exportActions": "主要阶段操作"
+      "exportActions": "主舞台操作"
     },
     "exportData": {
       "btn": "导出内容",
@@ -82,8 +84,8 @@ define({
       "lblTips": "提示",
       "lblMore": "是否想了解更多信息？",
       "lblLink": "访问 Esri Story Maps 网站。",
-      "content1Div1": "构建故事时，可集成各种风格。<strong>%LAYOUT_TITLE%</strong> 通常在地图要发布在<strong>主要阶段</strong>时会保留文本、图像和视频。但 %TPL_NAME% 也可以在主要阶段中展示图像、图表和视频。",
-      "content1Div2": "添加节可以使您真正自定义提供信息的经验。在读者滚动 %LAYOUT_TITLE% 文本时，主要阶段上的地图可平移或缩放至关键点或新地图，图像也可以自动切换以支持消息。",
+      "content1Div1": "构建故事时，可集成各种风格。<strong>%LAYOUT_TITLE%</strong> 通常在地图要发布在<strong>主舞台</strong>时会保留文本、图像和视频。但 %TPL_NAME% 也可以在主舞台中展示图像、图表和视频。",
+      "content1Div2": "添加章节可以使您真正自定义叙述故事的体验。在读者滚动 %LAYOUT_TITLE% 文本时，主舞台上的地图可平移或缩放至关键点或新地图，图像也可以自动切换以支持消息。",
       "content2Div1": "可在“设置”对话框中更改 %TPL_NAME% 的外观。更改布局，选择其他配色方案和更改文本字体等等。",
       "content2Div2": "您还可以使用自己的徽标来替换 Esri 徽标，以反映您的品牌。您还可以指定当读者单击您的徽标时将启动的网站，以便读者获取详细信息。",
       "content3Div1": "您的内容将组织成部分。您可拥有任意数量的部分(可将其视为微型章节)。这些章节流十分重要；可在组织内根据需要重新排序或删除部分。",
@@ -101,7 +103,7 @@ define({
     },
     "firstAddSplash": {
       "thisis": "这是",
-      "lblMain": "这是 %BR% 主要阶段"
+      "lblMain": "这是 %BR% 主舞台"
     }
   }
 });

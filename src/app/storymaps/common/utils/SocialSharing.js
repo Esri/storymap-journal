@@ -7,10 +7,10 @@ define(["dojo/Deferred", "esri/urlUtils"],
 			shareFacebook: function (title, subtitle, optionalImageURL, url)
 			{
 				var options = this.cleanURL(url || document.location.href);
-				
+
 				window.open(
-					'http://www.facebook.com/sharer/sharer.php?u=' + options, 
-					'', 
+					'http://www.facebook.com/sharer/sharer.php?u=' + options,
+					'',
 					'toolbar=0,status=0,width=626,height=436'
 				);
 			},
@@ -19,11 +19,11 @@ define(["dojo/Deferred", "esri/urlUtils"],
 				var options = 'text=' + encodeURIComponent(title)
 								+ '&url=' + this.cleanURL(url || document.location.href)
 								+ '&related=EsriStoryMaps'
-								+ '&hashtags=storymap'; 
-			
+								+ '&hashtags=storymap';
+
 				window.open(
-					'https://twitter.com/intent/tweet?' + options, 
-					'', 
+					'https://twitter.com/intent/tweet?' + options,
+					'',
 					'toolbar=0,status=0,width=626,height=436'
 				);
 			},
@@ -41,7 +41,7 @@ define(["dojo/Deferred", "esri/urlUtils"],
 					placement: placement ? placement : 'left',
 					animation: false,
 					html: true,
-					content: 
+					content:
 						'<div style="width:155px; min-height: 30px; text-align: center">'
 						+ ' <div id="bitlyLoad" style="position:absolute; top: 16px; left: 24px; width:130px; text-align:center;">'
 						+ '  <span class="smallLoader"></span>'
@@ -54,7 +54,7 @@ define(["dojo/Deferred", "esri/urlUtils"],
 						+ ' setTimeout(function(){$(document).on("click touchstart", function(src) { if( ! src || ! src.target || ! $(src.target).parents(".popover").length ){ $(".share_bitly[sharebitlyindex=' + (sharebitlyindex) + ']").popover("toggle"); $(document).off("click"); } })}, 100);'
 						+ '</script>'
 				}).popover('toggle');
-				
+
 				this.requestBitly(url).then(function(shortURL){
 					$("#bitlyLoad").fadeOut();
 					$("#bitlyInput").fadeIn();
@@ -66,16 +66,16 @@ define(["dojo/Deferred", "esri/urlUtils"],
 			requestBitly: function (url)
 			{
 				var bitlyUrls = [
-						"http://api.bitly.com/v3/shorten?callback=?", 
+						"http://api.bitly.com/v3/shorten?callback=?",
 						"https://api-ssl.bitly.com/v3/shorten?callback=?"
 					],
 					bitlyUrl = location.protocol == 'http:' ? bitlyUrls[0] : bitlyUrls[1],
 					targetUrl = url || document.location.href,
 					resultDeferred = new Deferred();
-				
+
 				$.getJSON(
-					bitlyUrl, 
-					{ 
+					bitlyUrl,
+					{
 						"format": "json",
 						"apiKey": app.cfg.HEADER_SOCIAL.bitly.key,
 						"login": app.cfg.HEADER_SOCIAL.bitly.login,
@@ -83,37 +83,37 @@ define(["dojo/Deferred", "esri/urlUtils"],
 					},
 					function(response)
 					{
-						if( ! response || ! response || ! response.data.url ) 
+						if( ! response || ! response || ! response.data.url )
 							resultDeferred.reject();
 						else
 							resultDeferred.resolve(response.data.url);
 					}
 				);
-				
+
 				return resultDeferred;
 			},
 			cleanURL: function(url, noEncoding)
 			{
 				var urlParams = urlUtils.urlToObject(url);
 				var newUrl = urlParams.path;
-				
-				
-				
+
+
+
 				if ( urlParams.query ) {
 					delete urlParams.query.edit;
 					delete urlParams.query.locale;
 					delete urlParams.query.folderId;
 					delete urlParams.query.webmap;
 					delete urlParams.query.autoplay;
-					
-					$.each(Object.keys(urlParams.query), function(i, k){ 
+
+					$.each(Object.keys(urlParams.query), function(i, k){
 						if ( i === 0 ){
 							newUrl += '?';
 						}
 						else {
 							newUrl += '&';
 						}
-						
+
 						if ( urlParams.query[k] !== undefined && urlParams.query[k] !== "" ) {
 							newUrl += k + '=' + urlParams.query[k];
 						}
@@ -122,7 +122,7 @@ define(["dojo/Deferred", "esri/urlUtils"],
 						}
 					});
 				}
-				
+
 				return noEncoding ? newUrl : encodeURIComponent(newUrl);
 			}
 		};

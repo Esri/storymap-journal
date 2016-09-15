@@ -31,13 +31,15 @@ define({
       "rightHeader": "Pagina Facebook",
       "pageExplain": "Una pagina Facebook è un marchio/prodotto pubblico o un personaggio pubblico come <b>esrigis</b>. È possibile ottenere il nome della pagina dopo il primo '/' nell'URL della pagina.",
       "pageInputLbl": "Nome pagina",
-      "lookupMsgError": "Pagina non trovata"
+      "lookupMsgError": "Pagina non trovata",
+      "warning": "Il supporto Facebook è stato interrotto, ${learn}.",
+      "learn": "ulteriori informazioni"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail o ID Picasa/Google+",
+      "userInputLbl": "E-mail o ID Picasa",
       "signInMsg2": "Account non trovato",
-      "howToFind": "Come trovare l'ID di un account Picasa o Google+",
-      "howToFind2": "Copiare le cifre tra il primo e il secondo '/' di qualsiasi pagina Picasa o G+"
+      "howToFind": "Come trovare un ID Picasa",
+      "howToFind2": "Copiare le cifre tra il primo e il secondo \"/\" di qualsiasi pagina Picasa"
     },
     "videoSelectorCommon": {
       "check": "Seleziona",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(la larghezza viene sempre adattata al pannello)",
       "lblPosition4Explain": "(possibile distorsione)",
       "unloadLbl": "Scarica quando il lettore passa a un altro elemento",
-      "unloadHelp": "Se la pagina Web dispone di supporti audio o video, mantenere l'opzione selezionata per arrestare la riproduzione del contenuto quando il lettore passa a un elemento diverso. Deselezionarla, per esempio, per mantenere la riproduzione di una colonna sonora mentre il lettore continua a leggere la storia.<br />Se la pagina Web è un'applicazione, deselezionare l'opzione in modo che la storia non venga ricaricata se il lettore torna alla pagina."
+      "unloadHelp": "Se la pagina Web dispone di supporti audio o video, mantenere l'opzione selezionata per arrestare la riproduzione del contenuto quando il lettore passa a un elemento diverso. Deselezionarla, per esempio, per mantenere la riproduzione di una colonna sonora mentre il lettore continua a leggere la storia.<br />Se la pagina Web è un'applicazione, deselezionare l'opzione in modo che la storia non venga ricaricata se il lettore torna alla pagina.",
+      "embedProtocolLabel": "Caricare una pagina su una connessione protetta (HTTPS)",
+      "embedProtocolWarning1": "La storia è configurata per il caricamento su una connessione protetta (https), pertanto anche la pagina Web mostrata nella storia deve utilizzare una connessione protetta. Se la pagina non si carica, è possibile che non sia disponibile su una connessione protetta o che non possa essere inclusa nella storia (alcuni siti Web pongono delle limitazioni). Potrebbe essere necessario creare una collegamento ipertestuale per aprire la pagina in una nuova scheda del browser.",
+      "embedProtocolWarning2": "La storia è configurata per il caricamento su una connessione non protetta (http), pertanto è possibile scegliere di caricare questa pagina su una connessione protetta (scelta consigliata) o non protetta. Se la pagina non si carica, è possibile che non supporti il tipo di connessione selezionato o che non possa essere inclusa nella storia (alcuni siti Web pongono delle limitazioni). Potrebbe essere necessario creare una collegamento ipertestuale per aprire la pagina in una nuova scheda del browser."
     },
     "editorActionGeocode": {
       "lblTitle": "Trova un indirizzo o un luogo",

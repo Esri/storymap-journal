@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-sida",
       "pageExplain": "En Facebook-sida är ett offentligt varumärke/produkt eller en kändis, till exempel <b>esrigis</b>. Du kan hitta sidnamnet efter det första '/'-tecknet i sidans webbadress.",
       "pageInputLbl": "Sidnamn",
-      "lookupMsgError": "Det gick inte att hitta sidan"
+      "lookupMsgError": "Det gick inte att hitta sidan",
+      "warning": "Facebook-stödet har avslutats, ${learn}.",
+      "learn": "läs mer"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-postadress eller ID för Picasa/Google+",
+      "userInputLbl": "E-postadress eller ID för Picasa",
       "signInMsg2": "Det gick inte att hitta kontot",
-      "howToFind": "Så här hittar du ett konto-ID för Picasa eller Google+",
-      "howToFind2": "Kopiera siffrorna mellan det första och andra '/'-tecknet på en Picasa- eller G+-sida"
+      "howToFind": "Hitta ett Picasa-ID",
+      "howToFind2": "Kopiera siffrorna mellan det första och andra \"/\"-tecknet på en Picasa-sida"
     },
     "videoSelectorCommon": {
       "check": "Kontroll",
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(bredden kommer alltid att fylla rutan)",
       "lblPosition4Explain": "(kan förvrängas)",
       "unloadLbl": "Ta bort när användaren navigerar vidare",
-      "unloadHelp": "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att berättelsen inte läses in på nytt om användaren återvänder till den."
+      "unloadHelp": "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att berättelsen inte läses in på nytt om användaren återvänder till den.",
+      "embedProtocolLabel": "Läs in sidan via en säker anslutning (HTTPS)",
+      "embedProtocolWarning1": "Berättelsen är konfigurerad att läsas in via en säker anslutning (https), så webbsidesvisningen i berättelsen måste också använda en säker anslutning. Om sidan inte läses in kan det bero på att den inte är tillgänglig via en säker anslutning eller att den inte kan inkluderas i din berättelse (vissa webbplatser begränsar det). Du kan behöva skapa en hyperlänk för att öppna i sidan i en ny webbläsarflik.",
+      "embedProtocolWarning2": "Berättelsen är konfigurerad att läsas in via en osäker anslutning (http), så du kan välja att läsa in sidan via en säker (rekommenderas) eller osäker anslutning. Om sidan inte läses in kan det bero på att den inte stöder den anslutningstyp du valde eller att den inte kan inkluderas i din berättelse (vissa webbplatser begränsar det). Du kan behöva skapa en hyperlänk för att öppna i sidan i en ny webbläsarflik."
     },
     "editorActionGeocode": {
       "lblTitle": "Hitta en adress eller plats",

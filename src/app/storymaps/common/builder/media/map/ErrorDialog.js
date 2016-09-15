@@ -13,22 +13,22 @@ define([
 			container.html(viewTpl({
 				btnClose: i18n.commonCore.common.close
 			}));
-			
+
 			initEvents();
-			
+
 			this.present = function(params)
 			{
 				var errorMsg = "";
-				
+
 				// Title
 				container.find('.modal-title').html(
 					params.newMap ? i18n.commonWebmap.editor.newTitle : i18n.commonWebmap.editor.editTitle
 				);
-				
+
 				// Cause
 				if ( params.error == "DOMAIN" ) {
 					errorMsg += i18n.commonWebmap.editor.notavailable2.replace(
-						'%PRODUCT%', 
+						'%PRODUCT%',
 						params.isPortal ? "Portal for ArcGIS" : "ArcGIS Online"
 					);
 				}
@@ -41,11 +41,11 @@ define([
 				else if ( params.error == "DEV_FAIL" ) {
 					errorMsg += "Sorry, creating or editing a map is not supported in development environment.";
 				}
-				
+
 				if ( params.error != "DEV_FAIL" && params.error != "TOUCH_ONLY" ) {
 					errorMsg += '<br /><br />';
 				}
-				
+
 				// Workaround
 				if ( params.error == "DEV_TOKEN" ) {
 					errorMsg += "To enable the map editor, please read the instructions in <i>app/storymaps/common/builder/media/map/MapViewerWrapper.js</i>.";
@@ -68,21 +68,21 @@ define([
 						'<a class="map-reload">' + i18n.commonWebmap.editor.notavailable7 + '</a>'
 					);
 				}
-				
+
 				container.find('.error-msg').html(errorMsg);
 				container.find('.map-reload').click(function(){
 					topic.publish("ADDEDIT_RELOAD_CURRENT_WEBMAP");
 				});
-				
+
 				container.modal({ keyboard: true });
-			};	
-			
+			};
+
 			function initEvents()
 			{
 				container.on('show.bs.modal', function () {
 					$('#addEditPopup .backdrop').show();
 				});
-				
+
 				container.on('hide.bs.modal', function () {
 					$('#addEditPopup .backdrop').hide();
 				});

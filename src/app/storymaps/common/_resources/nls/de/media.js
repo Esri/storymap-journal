@@ -31,13 +31,15 @@ define({
       "rightHeader": "Facebook-Seite",
       "pageExplain": "Eine Facebook-Seite entspricht einer öffentlichen Marke/einem Produkt oder einer prominenten Person wie <b>esrigis</b>. Den Seitennamen können sie dem Text nach dem ersten Schrägstrich ('/') in der Seiten-URL entnehmen.",
       "pageInputLbl": "Seitenname",
-      "lookupMsgError": "Seite nicht gefunden"
+      "lookupMsgError": "Seite nicht gefunden",
+      "warning": "Facebook wird nicht mehr unterstützt, ${learn}.",
+      "learn": "Weitere Informationen"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-Mail-Adresse oder Picasa/Google+-ID",
+      "userInputLbl": "E-Mail oder Picasa-ID",
       "signInMsg2": "Konto nicht gefunden",
-      "howToFind": "So finden Sie eine Picasa- oder Google+-Konto-ID",
-      "howToFind2": "Kopieren Sie die Ziffern zwischen dem ersten und zweiten Schrägstrich ('/') einer Picasa- oder G+-Seite"
+      "howToFind": "Eine Picasa-ID suchen",
+      "howToFind2": "Ziffern zwischen dem ersten und zweiten '/' einer beliebigen Picasa-Seite kopieren"
     },
     "videoSelectorCommon": {
       "check": "Aktivieren",
@@ -72,7 +74,7 @@ define({
       "lblUrl": "Webseiten-URL",
       "lblEmbed": "Eingebundener Code",
       "lblOR": "ODER",
-      "lblError1": "Fehler - löschen Sie den Inhalt eines der beiden Eingabefelder.",
+      "lblError1": "Fehler. Löschen Sie den Inhalt eines der beiden Eingabefelder.",
       "lblError2": "Der eingebettete Code darf nur ein %IFRAMETAG% enthalten",
       "configure": "Konfigurieren"
     },
@@ -101,7 +103,10 @@ define({
       "lblPosition3Explain2": "(Breite wird immer an den Bereich angepasst)",
       "lblPosition4Explain": "(Verzerren möglich)",
       "unloadLbl": "Wird angehalten, wenn Leser zu einem anderen Ort navigiert",
-      "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt."
+      "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt.",
+      "embedProtocolLabel": "Seite über eine sichere Verbindung (HTTPS) laden",
+      "embedProtocolWarning1": "Ihre Story ist so konfiguriert, dass sie über eine sichere Verbindung (HTTPS) geladen wird, daher muss die in der Story angezeigte Webseite ebenfalls eine sichere Verbindung verwenden. Wenn die Seite nicht geladen wird, kann dies darauf zurückzuführen sein, dass sie nicht über eine sichere Verbindung verfügbar ist oder nicht in Ihre Story eingefügt werden kann (dies wird durch einige Websites eingeschränkt). Sie müssen möglicherweise einen Hyperlink erstellen, um die Seite in einer neuen Browser-Registerkarte zu öffnen.",
+      "embedProtocolWarning2": "Ihre Story ist so konfiguriert, dass sie über eine sichere Verbindung (HTTP) geladen wird, daher können Sie diese Seite über eine sichere (empfohlen) oder eine nicht gesicherte Verbindung laden. Wenn die Seite nicht geladen wird, kann dies darauf zurückzuführen sein, dass sie den ausgewählten Verbindungstyp nicht unterstützt oder nicht in Ihre Story eingefügt werden kann (dies wird durch einige Websites eingeschränkt). Sie müssen möglicherweise einen Hyperlink erstellen, um die Seite in einer neuen Browser-Registerkarte zu öffnen."
     },
     "editorActionGeocode": {
       "lblTitle": "Adresse oder Ort suchen",

@@ -14,7 +14,7 @@
 				<div class="form-group">
 					<div class="checkbox">
 						<label>
-							<input type="checkbox" value="opt-maximize"> 
+							<input type="checkbox" value="opt-maximize">
 							<%= lblMaximize %>
 							<a href="#" class="maximizeHelp" data-toggle="tooltip" data-placement="right" data-title="<%= lblMaximizeHelp %>">
 								<img src="resources/tpl/builder/icons/builder-help.png"/>
@@ -32,7 +32,7 @@
 						<div class="position-lbl"><%= lblPosition3 %></div>
 						<div><%= lblPosition3Explain2 %></div>
 					</div>
-					
+
 					<div class="media-configure-position" data-val="custom">
 						<div class="position-selected"></div>
 						<img class="position-img" src="app/storymaps/common/_resources/icons/media-configure-position-custom.png" />
@@ -81,21 +81,21 @@
 						<div class="position-lbl"><%= lblPosition2 %></div>
 						<div><%= lblPosition2Explain %></div>
 					</div>
-					
+
 					<div class="media-configure-position" data-val="fit">
 						<div class="position-selected"></div>
 						<img class="position-img" src="app/storymaps/common/_resources/icons/media-configure-position-fit.png" />
 						<div class="position-lbl"><%= lblPosition3 %></div>
 						<div><%= lblPosition3Explain %></div>
 					</div>
-					
+
 					<div class="media-configure-position" data-val="stretch">
 						<div class="position-selected"></div>
 						<img class="position-img" src="app/storymaps/common/_resources/icons/media-configure-position-stretch.png" />
 						<div class="position-lbl"><%= lblPosition4 %></div>
 						<div><%= lblPosition4Explain %></div>
 					</div>
-					
+
 					<div class="media-configure-position" data-val="center">
 						<div class="position-selected"></div>
 						<img class="position-img" src="app/storymaps/common/_resources/icons/media-configure-position-center.png" />
@@ -111,19 +111,19 @@
 						<img class="position-img" src="app/storymaps/common/_resources/icons/media-configure-position-stretch.png" />
 						<div class="position-lbl"><%= lblPosition2 %></div>
 					</div>
-					
+
 					<div class="media-configure-position" data-val="fit">
 						<div class="position-selected"></div>
 						<img class="position-img" src="app/storymaps/common/_resources/icons/media-configure-position-fit.png" />
 						<div class="position-lbl"><%= lblPosition3 %></div>
 					</div>
-					
+
 					<div class="media-configure-position" data-val="center">
 						<div class="position-selected"></div>
 						<img class="position-img" src="app/storymaps/common/_resources/icons/media-configure-position-center.png" />
 						<div class="position-lbl"><%= lblPosition1 %></div>
 					</div>
-					
+
 					<div class="media-configure-position" data-val="custom">
 						<div class="position-selected"></div>
 						<img class="position-img" src="app/storymaps/common/_resources/icons/media-configure-position-custom.png" />
@@ -155,6 +155,17 @@
 						<img src="resources/tpl/builder/icons/builder-help.png"/>
 					</a>
 				</label>
+			</div>
+		</div>
+		<div class="form-group embedProtocol">
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" class="embedProtocolSecure" />
+					<%= embedProtocolLabel %>
+				</label>
+				<div class="embedProtocolHelp">
+					<%= embedProtocolInfo %>
+				</div>
 			</div>
 		</div>
 	</form>
