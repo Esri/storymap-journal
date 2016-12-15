@@ -45,8 +45,8 @@ define({
       "tapForDetails": "点击查看详细信息",
       "clickForDetails": "了解详细信息",
       "swipeToExplore": "滑动以进行浏览",
-      "tapForMap": "点击以返回地图",
-      "clickForMap": "返回到地图"
+      "tapForMap": "点击以返回",
+      "clickForMap": "返回"
     },
     "floatLayout": {
       "scroll": "滚动"
@@ -55,7 +55,9 @@ define({
       "scroll": "向下滚动以查看更多信息！"
     },
     "mainStage": {
-      "back": "返回"
+      "back": "返回",
+      "errorDeleted": "此链接为非活动链接(分区已被删除)",
+      "errorNotPublished": "此链接为非活动链接(分区未发布)"
     },
     "headerFromCommon": {
       "storymapsText": "故事地图",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "无法将此页面与他人共享，而是将 ${link} 进行共享",
       "link": "故事的链接",
       "printOptPageBreak": "在新页面上开始每个章节",
+      "makeTextBlack": "将所有文本设置为黑色",
       "printWarning": "这是故事地图的打印版本。视频和互动式地图等动态内容仅适用于 ${link} 的在线版本",
       "printMSWarning": "链接仅适用于在线故事",
       "printVideoWarning": "此视频可在此故事地图的在线版本中查看"

@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Voeg hier tekst, koppelingen en kleine afbeeldingen toe.",
-      "editorActionsTitle": "Acties van hoofdvenster",
-      "editorActionsHelpDescr": "Gebruik deze bedieningselementen om koppelingen te maken die het hoofdvenster zullen wijzigen. Als de lezer bijvoorbeeld op een koppeling klikt, kunt u op de kaart zoomen naar een specifieke locatie, een andere webmap weergeven of een afbeelding weergeven.",
-      "mainStageDisabled": "Acties van het hoofdvenster worden uitgeschakeld als de editor wordt gemaximaliseerd"
+      "editorActionsTitle": "Verhaalacties",
+      "editorActionsHelpDescr": "Maak koppelingen in uw verhaal waarmee u uw verhaal kunt vertellen. Een verhaalactie kan verwijzen naar een andere sectie of het hoofdvenster wijzigen. U kunt bijvoorbeeld een actie configureren om de kaart te verplaatsen naar een andere locatie, kaartlagen aan/uit zetten of de hoofdvenstermedia wijzigen naar een ​​ander beeld, video, kaart of webpagina.",
+      "mainStageDisabled": "Verhaalacties worden uitgeschakeld als de editor wordt gemaximaliseerd"
     },
     "organizePopup": {
       "title": "Rangschikken",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(De sectie Home kan niet worden verplaatst)",
       "exportMainStage": "Inhoud van het hoofdvenster",
       "exportPanel": "Inhoud van het deelvenster",
-      "exportActions": "Acties van het hoofdvenster"
+      "exportActions": "Verhaalacties"
     },
     "exportData": {
       "btn": "Inhoud exporteren",

@@ -7,8 +7,9 @@ define({
       "lblImage": "影像",
       "lblVideo": "影片",
       "lblExternal": "Web 頁面",
+      "lblUpload": "上傳",
+      "lblLink": "連結",
       "disabled": "管理員已停用此功能",
-      "url": "要手動輸入圖像的 web 地址",
       "userLookup": "載入圖片集",
       "notImplemented": "尚未實作。",
       "noData": "未找到公開圖片集"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "從社交媒體載入圖像，<br /> 或直接從 URL 進行載入"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "瀏覽圖片",
+      "lblDrop": "在這裡放置圖片，或",
+      "infoUpload": "圖片將儲存在您的 ArcGIS 帳號中，並可在您的故事中存取。",
+      "warningFileTypes": "圖片可為 .jpg、.png、.gif 或 .bmp",
+      "warningOneFile": "一次接受一個檔案。",
+      "warningFileSize": "檔案超過允許的上傳大小上限。請選擇其他檔案。",
+      "tooltipRemove": "從您的 ArcGIS 帳號刪除此未使用的圖片 <br>(如果決定稍後使用它，您將需要重新上傳它)。"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "使用者名稱",
@@ -36,9 +46,9 @@ define({
       "learn": "瞭解詳細資訊"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "電子郵件或 Picasa id",
+      "userInputLbl": "電子郵件或 Google ID",
       "signInMsg2": "未找到帳戶",
-      "howToFind": "如何尋找 Picasa id",
+      "howToFind": "如何尋找 Picasa ID",
       "howToFind2": "複製任何 Picasa 頁面第一個和第二個 '/' 之間的數字"
     },
     "videoSelectorCommon": {
@@ -51,7 +61,7 @@ define({
       "other": "其他"
     },
     "videoSelectorYoutube": {
-      "url": "Youtube 影片的 URL",
+      "url": "YouTube 影片連結",
       "pageInputLbl": "使用者名稱",
       "lookupMsgError": "未找到使用者",
       "howToFind": "如何查詢 YouTube 使用者名稱",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "YouTube 檢查已失敗，請檢查 YouTube API 金鑰。"
     },
     "videoSelectorVimeo": {
-      "url": "Vimeo 影片的 URL"
+      "url": "Vimeo 影片連結"
     },
     "videoSelectorOther": {
-      "explain1": "此故事無法播放原始影片(例如 avi、mpeg)，但可以播放帶有內建播放器的託管影片文件(例如 YouTube 或 Vimeo)。",
-      "explain2": "大多數線上影片託管服務均提供此功能，您必須查詢此選項以嵌入影片，複製給定代碼並使用 %WEBPAGE%。",
-      "explain3": "或者，如果您希望自己託管影片，則可以建立使用影片播放器(如 %EXAMPLE%)的 HTML 頁面，託管此頁面並同樣使用 %WEBPAGE%。",
-      "webpage": "網頁圖徵"
+      "explain1": "此故事地圖無法播放原始影片檔 (例如 avi、mpeg)，但可以播放帶有內建播放器的託管影片 (例如 YouTube 或 Vimeo)。",
+      "explain2": "大多數影片託管服務皆提供此功能。尋找選項來嵌入影片，複製提供的代碼，並使用 %WEBPAGE% 內容選項將它新增至您的故事。",
+      "explain3": "或者，您可以使用影片播放器 (如 %EXAMPLE%) 的 HTML 頁面來自行託管影片。接著可將該 HTML 頁面的 URL 新增至您的故事作為 %WEBPAGE%。",
+      "webpage": "Web 頁面"
     },
     "webpageSelectorHome": {
-      "lblUrl": "網頁 URL",
+      "lblUrl": "Web 頁面連結",
       "lblEmbed": "嵌入代碼",
       "lblOR": "OR",
       "lblError1": "錯誤，請清除其中一個輸入欄位。",
@@ -79,11 +89,11 @@ define({
       "configure": "設定"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "圖像 URL 應該以 http:// 開始，以 .jpg 或 .png 結束",
+      "lblURL": "圖片連結",
+      "lblURLPH": "連結應以 .jpg、.png、.gif 或 .bmp 結尾",
       "lblURLError": "此圖像可能無效。請指定圖像文件的直接連結(URL 通常以 .jpg 或 .png 結尾)。包含圖像的網頁連結無法使用。",
       "lblURLCheck": "正在檢查圖像...",
-      "lblLabel": "圖像標題",
+      "lblLabel": "Image caption",
       "lblLabel1": "說明文字",
       "lblLabel2": "懸停文字",
       "lblLabel3": "無",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "適合",
       "lblPosition4": "自動縮放",
       "lblPosition5": "自訂",
+      "lblURLHelp": "為了獲得最佳結果，圖片必須小於 400 KB。請使用 80% 品質的壓縮 JPG 圖片及這些建議的圖片寬度：為主舞台或包含最大化按鈕的敘述面板使用 2000 像素，為不含最大化按鈕的敘述面板使用 1000 像素。<br><br>如果連結的圖片繪製緩慢，會將它上傳到您的故事以獲得更好的結果。",
       "tooltipDimension": "可使用 'px' 或 '%' 指定值",
       "tooltipDimension2": "值必須在 'px'中指定",
       "lblPosition2Explain": "（可裁切）",
@@ -105,12 +116,17 @@ define({
       "unloadLbl": "讀者定位到其他部分時進行卸載",
       "unloadHelp": "如果網頁中包含音頻或影片介質，請將該選項選中以在讀者定位到其他部分時停止內容播放。取消勾選該選項可使讀者在瀏覽故事的同時持續播放音軌。<br />如果網頁是應用程式，請取消勾選該選項，這樣故事不必在讀者返回此部分時重新載入。",
       "embedProtocolLabel": "透過安全連線 (HTTPS) 載入頁面",
-      "embedProtocolWarning1": "已將您的故事配置為透過安全連線 (https) 載入，所以故事中顯示的網頁也必須使用安全連線。如果網頁未載入故事，則可能是因為無法透過安全連線取得，或無法在您的故事中包含它 (部分網站限制這種作法)。您可能需要建立超連結，以便在新的瀏覽器頁籤中開啟網頁。",
-      "embedProtocolWarning2": "已將您的故事配置為透過不安全連線 (http) 載入，所以您可以選擇透過安全 (建議作法) 或不安全連線載入此網頁。如果網頁未載入，則可能是因為它不支援您選擇的連線類型，或無法在您的故事中包含它 (部分網站限制這種作法)。您可能需要建立超連結，以便在新的瀏覽器頁籤中開啟網頁。"
+      "embedProtocolWarning1": "若您的故事未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>瞭解詳細資訊</a>",
+      "embedProtocolWarning2": "若您的故事未載入此網頁，請取消勾選此選項並再試一次。若仍未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>瞭解詳細資訊</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "定位地址或地點",
       "mapMarkerExplain": "使用者在按一下連結時會看到地圖標記"
+    },
+    "editorActions": {
+      "navigate": "導覽至部分",
+      "remove": "移除動作",
+      "preview": "預覽動作"
     },
     "editorActionMedia": {
       "lblTitle": "變更主舞台內容"

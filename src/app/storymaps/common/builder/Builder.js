@@ -1,4 +1,5 @@
 define(["lib-build/css!./Builder",
+		"lib-build/css!lib-app/font-awesome/css/font-awesome.min",
 		"esri/arcgis/Portal",
 		"./BuilderPanel",
 		"./settings/SettingsPopup",
@@ -6,6 +7,8 @@ define(["lib-build/css!./Builder",
 		"./MyStoriesWrapper",
 		"../utils/CommonHelper",
 		"../utils/WebMapHelper",
+		'./media/image/FileUploadHelper',
+		"storymaps/tpl/core/Helper",
 		"dojo/_base/lang",
 		"dojo/_base/array",
 		"dojo/has",
@@ -16,6 +19,7 @@ define(["lib-build/css!./Builder",
 		"lib-app/history.min"],
 	function(
 		viewCss,
+		fontAwesomeCss,
 		esriPortal,
 		BuilderPanel,
 		SettingsPopup,
@@ -23,6 +27,8 @@ define(["lib-build/css!./Builder",
 		MyStoriesWrapper,
 		CommonHelper,
 		WebMapHelper,
+		fileUploadHelper,
+		Helper,
 		lang,
 		array,
 		has,
@@ -471,7 +477,7 @@ define(["lib-build/css!./Builder",
 				f: "json",
 				token: token,
 				overwrite: true,
-				text: JSON.stringify(app.data.getWebAppData().get())
+				text: processForSave()
 			});
 
 			var url = portalUrl + "/sharing/content/users/" + uid + (appItem.ownerFolder ? ("/" + appItem.ownerFolder) : "");
@@ -495,6 +501,51 @@ define(["lib-build/css!./Builder",
 			);
 
 			saveRq.then(nextFunction, appSaveFailed);
+		}
+
+		function processForSave() {
+			var data = app.data.getWebAppData().get();
+			// strip token from logo in header
+			var logoURL = data && data.values && data.values.settings && data.values.settings.header && data.values.settings.header.logoURL;
+			if (logoURL) {
+				logoURL = stripTokensFromUrls(logoURL, logoURL);
+				data.values.settings.header.logoURL = logoURL;
+			}
+			var currentUploadedLogo = $('#uploadLogoInput').val();
+			if (currentUploadedLogo) {
+				currentUploadedLogo = Helper.possiblyRemoveToken(currentUploadedLogo);
+			}
+			fileUploadHelper.cleanupLogos(currentUploadedLogo);
+			// this is a little hacky
+			var simulatorPreview = $('.settings-simulator .imgLogo');
+			var currentSrc = simulatorPreview.attr('src');
+			if (currentSrc && currentSrc.indexOf(logoURL) < 0) {
+				simulatorPreview.attr('src', logoURL);
+			}
+			// strip tokens from inline images in sections
+			var sections = data && data.values && data.values.story && data.values.story.sections;
+			if (sections) {
+				_.each(sections, function(section) {
+					var jqSection = $(section.content);
+					_.each(jqSection.find('img'), function(img) {
+						section.content = stripTokensFromUrls(section.content, img.src);
+					});
+				});
+			}
+			return JSON.stringify(data);
+		}
+
+		function stripTokensFromUrls(contentStr, originalUrl) {
+			var untokenizedUrl = Helper.possiblyRemoveToken(originalUrl);
+			if (originalUrl !== untokenizedUrl) {
+				var unprotocoledUntokenizedUrl = untokenizedUrl.replace(/^https?\:\/\//, '//');
+				var splitOriginal = originalUrl.replace(/^https?\:\/\//, '//').split('?');
+				if (contentStr.match(splitOriginal[0] + '\\?' + splitOriginal[1])) {
+					return contentStr.replace(splitOriginal[0] + '?' + splitOriginal[1], unprotocoledUntokenizedUrl);
+				}
+				return contentStr.replace(decodeURI(splitOriginal[0]) + '?' + splitOriginal[1], unprotocoledUntokenizedUrl);
+			}
+			return contentStr;
 		}
 
 		//

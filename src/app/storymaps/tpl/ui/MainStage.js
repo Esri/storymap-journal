@@ -3,6 +3,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 		"lib-build/tpl!./MainMediaContainerEmbed",
 		"lib-build/css!./MainStage",
 		"../core/WebApplicationData",
+		"../core/Helper",
 		"dojo/has",
 		"esri/arcgis/utils",
 		"esri/renderers/UniqueValueRenderer",
@@ -25,6 +26,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 		mainMediaContainerEmbedTpl,
 		viewCss,
 		WebApplicationData,
+		Helper,
 		has,
 		arcgisUtils,
 		UniqueValueRenderer,
@@ -217,7 +219,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				if ( media.type == "webmap" )
 					updateMainMediaMaps(media.webmap.id, section, index, media);
 				else if ( media.type == "image" )
-					updateMainMediaPicture(media.image.url, media.image.display);
+					updateMainMediaPicture(media.image);
 				else if ( media.type == "video" )
 					updateMainMediaEmbed(media.video.url, media.video);
 				else if ( media.type == "webpage" ){
@@ -825,33 +827,49 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 			// Management of Main Stage: picture
 			//
 
-			function updateMainMediaPicture(url, display)
+			function updateMainMediaPicture(image)
 			{
 				$('.mainMediaContainer').removeClass('active');
+				var pictureContainer = $('.imgContainer[data-src="' + image.url + '"]');
 
-				var pictureContainer = $('.imgContainer[data-src="' + url + '"]');
-
-				if ( pictureContainer ) {
+				if ( pictureContainer.length ) {
 					// If image hasn't been loaded, display loading indicator
 					if ( pictureContainer.css('background-image') == 'none' ) {
 						startMainStageLoadingIndicator();
 					}
 
+					var sizedUrl = image.url;
+					if (image.sizes) {
+						var sorted = _.sortBy(image.sizes, 'width').reverse();
+						sizedUrl = sorted[0].url;
+						if (sorted.length > 1) {
+							var compareWidth = image.display && image.display === 'fit' ? $('#mainStagePanel').width() : $('body').width();
+							_.some(sorted, function(fileObj) {
+								if (fileObj.width && fileObj.width < compareWidth) {
+									return true;
+								}
+								sizedUrl = fileObj.url;
+								return false;
+							});
+						}
+					}
+					var tokenizedUrl = Helper.possiblyAddToken(sizedUrl);
+
 					pictureContainer.parent().addClass('active');
 
 					// Load a hidden image in JS
 					var tmpImg = new Image();
-					tmpImg.src = url;
+					tmpImg.src = tokenizedUrl;
 					tmpImg.onload = function() {
 						// Display the image through CSS background, thanks to browser cache no reload is needed
 						pictureContainer
 							.removeClass("center fit fill stretch")
-							.addClass(display)
+							.addClass(image.display)
 							.css({
 								left: 0,
 								right: 0
 							})
-							.css('background-image', 'url("' + pictureContainer.data('src') + '")');
+							.css('background-image', 'url("' + tokenizedUrl + '")');
 
 						_this.updateMainStageWithLayoutSettings();
 

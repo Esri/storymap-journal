@@ -13,7 +13,8 @@ define(["lib-build/tpl!./ViewVideoCommon",
 			var _youtube = new YoutubeConnector();
 
 			container.append(viewTpl({
-				serviceId: "youtube",
+				faIcon: 'youtube',
+				serviceName: 'YouTube',
 				fieldUrl: i18n.commonMedia.videoSelectorYoutube.url + "...",
 				btnCheck: i18n.commonMedia.videoSelectorCommon.check
 			}));
@@ -29,15 +30,16 @@ define(["lib-build/tpl!./ViewVideoCommon",
 
 				container.show();
 
+				var videoContainer = container.find('.videoSelectorView');
+
 				// Resize url field to adjust localization
-				if ( container.find(".videoSelectorView").width() ) {
-					container.find(".url")
-						.css("width",
-							container.find(".videoSelectorView").width()
-							- 85
-							- 40
-							- container.find('.btn-check').outerWidth()
-						)
+				if ( videoContainer.width() ) {
+					var urlInput = videoContainer.find('.url');
+					urlInput.css("width",
+						videoContainer.width()
+						- (urlInput.position().left - videoContainer.position().left)
+						- videoContainer.find('.btn-check').outerWidth()
+						- 30)
 						.focus();
 				}
 			};

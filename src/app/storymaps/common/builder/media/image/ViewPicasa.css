@@ -1,12 +1,12 @@
-.imageSelectorPicasa .service-logo {
-	display: inline-block;
-	width: 80px;
-	height: 25px;
-	background: url(../../../_resources/icons/media/builder-media-picasa.png);
-	background-repeat: no-repeat;
-	background-size: auto 30px;
-	vertical-align: top;
-	background-position: 2px 2px;
+.imageSelectorPicasa .icon {
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+.imageSelectorPicasa .title {
+	font-size: 18px;
+	vertical-align: middle;
+	margin: 0 3px;
 }
 
 .imageSelectorPicasa .userName {

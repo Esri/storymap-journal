@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Buraya metin, bağlantı ve küçük grafikler ekleyin.",
-      "editorActionsTitle": "Ana Aşama Eylemleri",
-      "editorActionsHelpDescr": "Bu denetimleri kullanarak ana aşamayı değiştirecek bağlantıları oluşturun. Örneğin, okuyucu bir bağlantıya tıkladığında haritayı belirli bir konuma yakınlaştırmak, başka bir web haritası görüntülemek veya bir resim göstermek isteyebilirsiniz.",
-      "mainStageDisabled": "Ana Aşama Eylemleri, düzenleyici maksimuma getirildiğinde devre dışı bırakılır"
+      "editorActionsTitle": "Hikaye Eylemleri",
+      "editorActionsHelpDescr": "Açıklamanızda hikayenizi anlatmanıza yardım eden bağlantılar oluşturun. Bir Hikaye Eylemi başka bir bölüme bağlanabilir veya ana sahneyi değiştirebilir. Örneğin, haritayı başka bir konuma taşıyan, harita katmanlarını açıp kapatan veya ana sahne ortamını farklı bir görüntüye, videoya, haritaya veya web sayfasına değiştiren bir eylem yapılandırabilirsiniz.",
+      "mainStageDisabled": "Hikaye Eylemleri düzenleyici ekranı kapladığında devre dışı bırakılır"
     },
     "organizePopup": {
       "title": "Düzenle",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Ana sayfa bölümü taşınamaz)",
       "exportMainStage": "Ana Aşama içeriği",
       "exportPanel": "Panel içeriği",
-      "exportActions": "Ana Aşama eylemleri"
+      "exportActions": "Hikaye eylemleri"
     },
     "exportData": {
       "btn": "İçeriği dışa aktar",

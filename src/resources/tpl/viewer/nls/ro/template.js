@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Atingeţi pentru detalii",
       "clickForDetails": "Învăţaţi mai mult",
       "swipeToExplore": "Glisaţi pentru a explora",
-      "tapForMap": "Atingeţi pentru a reveni la hartă",
-      "clickForMap": "ÎNAPOI LA HARTĂ"
+      "tapForMap": "Atingeţi pentru a reveni",
+      "clickForMap": "ÎNAPOI"
     },
     "floatLayout": {
       "scroll": "Derulare"
@@ -55,7 +55,9 @@ define({
       "scroll": "Derulare în jos pentru mai multe!"
     },
     "mainStage": {
-      "back": "Înapoi"
+      "back": "Înapoi",
+      "errorDeleted": "Acest link nu este activ (secţiunea a fost ştearsă)",
+      "errorNotPublished": "Acest link nu este activ (secţiunea nu este publicată)"
     },
     "headerFromCommon": {
       "storymapsText": "O hartă informativă",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Această pagină nu poate fi partajată cu alţi utilizatori, partajaţi în schimb linkul ${link}",
       "link": "către scenariu",
       "printOptPageBreak": "Începeţi fiecare secţiune pe o pagină nouă",
+      "makeTextBlack": "Coloraţi tot textul cu negru",
       "printWarning": "Aceasta este o versiune imprimată a unei hărţi informative. Conţinutul dinamic, cum ar fi videoclipurile şi hărţile interactive, este disponibil doar în versiunea online pe care o puteţi accesa cu linkul ${link}",
       "printMSWarning": "disponibil doar în scenariul online",
       "printVideoWarning": "Acest videoclip poate fi vizualizat în versiunea online a acestei hărţi informative"

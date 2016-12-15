@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Saat tiedot näkyviin napauttamalla",
       "clickForDetails": "Lisätietoja",
       "swipeToExplore": "Tutki pyyhkäisemällä",
-      "tapForMap": "Siirry takaisin karttaan napauttamalla",
-      "clickForMap": "TAKAISIN KARTTAAN"
+      "tapForMap": "Siirry takaisin napauttamalla",
+      "clickForMap": "PALUU"
     },
     "floatLayout": {
       "scroll": "Vieritä"
@@ -55,7 +55,9 @@ define({
       "scroll": "Saat lisää tietoja näkyviin vierittämällä alaspäin."
     },
     "mainStage": {
-      "back": "Takaisin"
+      "back": "Takaisin",
+      "errorDeleted": "Tämä linkki ei ole aktiivinen (osio on poistettu)",
+      "errorNotPublished": "Tämä linkki ei ole aktiivinen (osiota ei ole julkaistu)"
     },
     "headerFromCommon": {
       "storymapsText": "Tarinakartta",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Tätä sivua ei voi jakaa muiden kanssa. Jaa sen sijaan ${link}",
       "link": "linkki tarinaan",
       "printOptPageBreak": "Aloita jokainen osa uudelta sivulta",
+      "makeTextBlack": "Määritä kaikki teksti mustaksi",
       "printWarning": "Tämä on tarinakartan tulostettu versio. Dynaaminen sisältö, kuten videot ja vuorovaikutteiset kartat, ovat käytettävissä vain online-versiossa osoitteessa ${link}",
       "printMSWarning": "linkki käytettävissä vain online-tarinassa",
       "printVideoWarning": "Tämän videon voi katsoa tarinakartan online-versiossa"

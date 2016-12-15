@@ -7,8 +7,9 @@ define({
       "lblImage": "图像",
       "lblVideo": "视频",
       "lblExternal": "Web 页面",
+      "lblUpload": "上传",
+      "lblLink": "链接",
       "disabled": "此功能已被管理员禁用",
-      "url": "要手动输入图像的 web 地址",
       "userLookup": "加载图片集",
       "notImplemented": "尚未实现。",
       "noData": "未找到公共图片集"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "从社交媒体加载图像，<br /> 或直接从 URL 进行加载"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "浏览图像",
+      "lblDrop": "将图像放置到此处或",
+      "infoUpload": "图像将存储到您的 ArcGIS 帐户，并且仅能通过您的故事进行访问。",
+      "warningFileTypes": "图像可以为 .jpg、.png、.gif 或 .bmp 格式",
+      "warningOneFile": "每次接受一个文件。",
+      "warningFileSize": "文件超过允许的最大上传大小。请选择其他文件。",
+      "tooltipRemove": "从您的 ArcGIS 帐户中删除该未使用图像。<br>(如果稍后决定使用该图像，则需要重新上传。)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "用户名",
@@ -36,7 +46,7 @@ define({
       "learn": "了解详细信息"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "电子邮件或 Picasa ID",
+      "userInputLbl": "电子邮件或 Google ID",
       "signInMsg2": "未找到帐户",
       "howToFind": "如何查找 Picasa ID",
       "howToFind2": "复制任何 Picasa 页面的第一个和第二个 '/' 之间的数字"
@@ -51,7 +61,7 @@ define({
       "other": "其他"
     },
     "videoSelectorYoutube": {
-      "url": "Youtube 视频的 URL",
+      "url": "YouTube 视频链接",
       "pageInputLbl": "用户名",
       "lookupMsgError": "未找到用户",
       "howToFind": "如何查找 YouTube 用户名",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "YouTube 检查失败，请检查 YouTube API 密钥。"
     },
     "videoSelectorVimeo": {
-      "url": "Vimeo 视频的 URL"
+      "url": "Vimeo 视频链接"
     },
     "videoSelectorOther": {
-      "explain1": "此故事无法播放原始视频(例如 avi、mpeg)，但可以播放带有内置播放器的托管视频文件(例如 YouTube 或 Vimeo)。",
-      "explain2": "大多数在线视频托管服务均提供此功能，您必须查找此选项以嵌入视频，复制给定代码并使用 %WEBPAGE%。",
-      "explain3": "或者，如果您希望自己托管视频，则可以创建使用视频播放器(如 %EXAMPLE%)的 HTML 页面，托管此页面并同样使用 %WEBPAGE%。",
-      "webpage": "网页要素"
+      "explain1": "该故事地图无法播放原始视频文件(例如 avi 和 mpeg)，但是可以播放使用内置播放器的托管视频(例如 YouTube 或 Vimeo)。",
+      "explain2": "大部分视频托管服务均提供此功能。请查找嵌入视频的选项、复制提供的代码，然后使用 %WEBPAGE% 内容选项将其添加到故事。",
+      "explain3": "或者，您也可以通过使用视频播放器(例如 %EXAMPLE%)的 HTML 页面自己托管视频。随后，您可以将该 HTML 页面的 URL 作为 %WEBPAGE% 添加到故事。",
+      "webpage": "Web 页面"
     },
     "webpageSelectorHome": {
-      "lblUrl": "网页 URL",
+      "lblUrl": "网页链接",
       "lblEmbed": "嵌入代码",
       "lblOR": "或",
       "lblError1": "错误，请清除其中一个输入字段。",
@@ -79,11 +89,11 @@ define({
       "configure": "配置"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "图像 URL 应该以 http:// 开始，以 .jpg 或 .png 结束",
+      "lblURL": "图像链接",
+      "lblURLPH": "链接应以 .jpg、.png、.gif 或 .bmp 结尾",
       "lblURLError": "此图像可能无效。请指定图像文件的直接链接(URL 通常以 .jpg 或 .png 结尾)。包含图像的网页链接无法使用。",
       "lblURLCheck": "正在检查图像...",
-      "lblLabel": "图像标题",
+      "lblLabel": "Image caption",
       "lblLabel1": "说明文字",
       "lblLabel2": "悬停文本",
       "lblLabel3": "无",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "适应",
       "lblPosition4": "拉伸",
       "lblPosition5": "自定义",
+      "lblURLHelp": "为获得最佳效果，图像大小应小于 400 KB。请使用经过压缩的 JPG 图像(质量为 80%)，建议对具有最大化按钮的主要部分或叙述性面板采取 2000 像素的图像宽度，对不具有最大化按钮的叙述性面板采取 1000 像素的宽度。<br><br>如果已链接图像的加载速度缓慢，可以将这些图像上传到您的故事，这将缩短加载时间。",
       "tooltipDimension": "可使用 'px' 或 '%' 指定值",
       "tooltipDimension2": "值必须在 'px'中指定",
       "lblPosition2Explain": "（可裁切）",
@@ -105,12 +116,17 @@ define({
       "unloadLbl": "读者定位到其他部分时进行卸载",
       "unloadHelp": "如果网页中包含音频或视频介质，请将该选项选中以在读者定位到其他部分时停止内容播放。取消选中该选项可使读者在浏览故事的同时持续播放音轨。<br />如果网页是应用程序，请取消选中该选项，这样应用程序不必在读者返回此部分时重新加载。",
       "embedProtocolLabel": "通过安全连接(HTTPS)加载页面",
-      "embedProtocolWarning1": "由于您的故事配置为通过安全连接(https)进行加载，所以故事中显示的 web 页面也必须通过安全连接进行加载。如果该页面无法加载，可能是因为该页面无法用于安全连接或不可包含于故事当中(一些网站对其进行了限制)。您可能需要创建超链接，以便在新的浏览器选项卡中打开页面。",
-      "embedProtocolWarning2": "由于您的故事配置为通过非安全连接(http)进行加载，所以您可以选择通过安全连接(推荐)和非安全连接加载该页面。如果该页面无法加载，可能是因为该页面不支持您所选择的连接类型或不可包含于故事当中(一些网站对其进行了限制)。您可能需要创建超链接，以便在新的浏览器选项卡中打开页面。"
+      "embedProtocolWarning1": "如果您的故事未加载此页面，则出于 web 安全性的因素，无法嵌入该页面。但是可在叙述中添加链接以在新浏览器选项卡中打开页面。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>了解详细信息</a>",
+      "embedProtocolWarning2": "如果您的故事未加载此页面，请取消选中该选项并重试。如果仍未加载该页面，则出于 web 安全性的因素，无法嵌入该页面。但是可在叙述中添加链接以在新浏览器选项卡中打开页面。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>了解详细信息</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "定位地址或地点",
       "mapMarkerExplain": "用户在单击链接时会看到地图标记"
+    },
+    "editorActions": {
+      "navigate": "导航到某一分区",
+      "remove": "移除操作",
+      "preview": "预览操作"
     },
     "editorActionMedia": {
       "lblTitle": "更改主舞台内容"

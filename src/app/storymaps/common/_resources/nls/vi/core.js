@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Đầu trang",
-      "logoEsri": "Logo Esri",
-      "logoNone": "Không có logo",
-      "logoCustom": "Logo tùy chỉnh",
-      "logoCustomPlaceholder": "URL (tối đa 250x50 điểm ảnh)",
-      "logoCustomTargetPlaceholder": "Bấm vào liên kết",
-      "logoSocialExplain": "Tùy chỉnh liên kết đầu mục.",
-      "logoSocialText": "Văn bản",
-      "logoSocialLink": "Liên kết",
+      "logoEsriRadio": "Logo Esri",
+      "logoNoneRadio": "Không có logo",
+      "logoCustomRadio": "Logo của tôi",
+      "logoCustomLabel": "Ảnh:",
+      "logoCustomUploadHelp": "Logo sẽ hiển thị đẹp nhất nếu có tỷ lệ chiều rộng:chiều cao là 1:1 và 5:1. Nếu logo theo dạng liên kết hiển thị chậm, hãy lưu bản sao và tải lên tại đây.",
+      "logoCustomUploadTooltip": "Sử dụng logo đã tải lên",
+      "logoCustomUploadButton": "Tải lên logo",
+      "logoUploadSizeError": "Kích thước GIF quá lớn. Vui lòng thay đổi kích thước thành ${PIXEL-WIDTH} pixel chiều rộng.",
+      "logoCustomLinkTooltip": "Liên kết với logo",
+      "logoCustomLinkPlaceholder": "URL Hình ảnh",
+      "logoUploadGenericError": "Logo có thể là một tệp .bmp, .gif, .jpg, .jpeg, hoặc .png. Gif phải có chiều rộng dưới 250px và kích thước dưới 10Mb.",
+      "logoCustomTargetPlaceholder": "Trang web để mở khi bấm vào logo",
+      "logoSocialText": "Khẩu hiệu:",
+      "logoLink": "Liên kết:",
       "lblSmallHeader": "Sử dụng đầu trang ngắn gọn (không có phụ đề)"
     },
     "header": {
       "title": "Chỉnh sửa tiêu đề %TPL_NAME% của bạn",
       "subtitle": "Chỉnh sửa phụ đề %TPL_NAME% của bạn"
+    },
+    "sectionNavigation": {
+      "select": "Chọn phần...",
+      "section": "Phần",
+      "thisSection": "Phần này",
+      "homeSection": "Phần Trang chủ",
+      "hiddenSection": "Phần bị ẩn"
     }
   }
 });

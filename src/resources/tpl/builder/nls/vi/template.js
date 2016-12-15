@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Thêm văn bản, liên kết và đồ họa nhỏ ở đây.",
-      "editorActionsTitle": "Hành động trong Sân khấu Chính",
-      "editorActionsHelpDescr": "Sử dụng các điều khiển này để tạo ra các liên kết sẽ thay đổi giai đoạn chính. Ví dụ: khi người đọc bấm vào một liên kết, bạn có thể muốn phóng to bản đồ đến một vị trí cụ thể, hiển thị một bản đồ web hay hiển thị một hình ảnh.",
-      "mainStageDisabled": "Các hành động của Sân khấu chính được hiển thị khi trình biên tập được tối đa hóa"
+      "editorActionsTitle": "Các tương tác với Câu chuyện",
+      "editorActionsHelpDescr": "Tạo các liên kết trong câu chuyện sẽ giúp bạn kể lại câu chuyện hay hơn. Một tương tác có thể liên kết với một phần khác hoặc thay đổi giao diện chính. Ví dụ, bạn có thể cấu hình một tương tác để di chuyển bản đồ đến vị trí khác, bật/tắt lớp bản đồ hoặc thay đổi media trên trang chính sang ảnh, video, bản đồ hoặc trang web khác.",
+      "mainStageDisabled": "Các tương tác với Câu chuyện sẽ tắt khi trình biên tập đang được phóng lớn."
     },
     "organizePopup": {
       "title": "Tổ chức",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Không thể di chuyển phần trang chủ)",
       "exportMainStage": "Nội dung của Sân khấu chính",
       "exportPanel": "Nội dung của Bảng điều khiển",
-      "exportActions": "Hành động của Sân khấu chính"
+      "exportActions": "Các tương tác với Câu chuyện"
     },
     "exportData": {
       "btn": "Xuất nội dung",

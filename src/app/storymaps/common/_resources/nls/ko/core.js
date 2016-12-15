@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "헤더",
-      "logoEsri": "Esri 로고",
-      "logoNone": "로고 없음",
-      "logoCustom": "사용자 지정 로고",
-      "logoCustomPlaceholder": "URL(최대 250x50픽셀)",
-      "logoCustomTargetPlaceholder": "클릭 이동 링크",
-      "logoSocialExplain": "머리글 링크를 사용자 정의합니다.",
-      "logoSocialText": "텍스트",
-      "logoSocialLink": "링크",
+      "logoEsriRadio": "Esri 로고",
+      "logoNoneRadio": "로고 없음",
+      "logoCustomRadio": "내 로고",
+      "logoCustomLabel": "이미지:",
+      "logoCustomUploadHelp": "로고는 1:1 및 5:1 사이의 너비:높이 비율이 있을 때 가장 잘 보입니다. 연결된 로고가 느리게 그려지면 복사본을 저장하고 여기에 업로드하세요.",
+      "logoCustomUploadTooltip": "업로드한 로고 사용",
+      "logoCustomUploadButton": "로고 업로드",
+      "logoUploadSizeError": "GIF 크기가 너무 큽니다. ${PIXEL-WIDTH} 픽셀 너비로 크기를 조정하세요.",
+      "logoCustomLinkTooltip": "로고 링크",
+      "logoCustomLinkPlaceholder": "이미지 URL",
+      "logoUploadGenericError": "로고는 .bmp, .gif, .jpg, .jpeg, .png 파일 형식이 될 수 있습니다. Gif는 250px 너비 및 10Mb 크기 미만이어야 합니다.",
+      "logoCustomTargetPlaceholder": "로고를 클릭할 때 열리는 웹 페이지",
+      "logoSocialText": "설명:",
+      "logoLink": "링크:",
       "lblSmallHeader": "압축 머리글 사용(부제목 없음)"
     },
     "header": {
       "title": "%TPL_NAME% 제목 편집",
       "subtitle": "%TPL_NAME% 부제목 편집"
+    },
+    "sectionNavigation": {
+      "select": "섹션 선택...",
+      "section": "섹션",
+      "thisSection": "이 섹션",
+      "homeSection": "홈 섹션",
+      "hiddenSection": "숨겨진 섹션"
     }
   }
 });

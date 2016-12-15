@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Üksikasjade kuvamiseks puudutage",
       "clickForDetails": "Loe lähemalt",
       "swipeToExplore": "Uurimiseks svaipige",
-      "tapForMap": "Kaardile naasmiseks puudutage",
-      "clickForMap": "TAGASI KAARDI JUURDE"
+      "tapForMap": "Tagasiminemiseks puudutage",
+      "clickForMap": "TAGASI"
     },
     "floatLayout": {
       "scroll": "Keri"
@@ -55,7 +55,9 @@ define({
       "scroll": "Kerige allapoole, et näha veel teavet!"
     },
     "mainStage": {
-      "back": "Tagasi"
+      "back": "Tagasi",
+      "errorDeleted": "See link pole aktiivne (jaotis on kustutatud)",
+      "errorNotPublished": "See link pole aktiivne (jaotist pole avaldatud)"
     },
     "headerFromCommon": {
       "storymapsText": "Kaardilugu",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Seda lehte ei saa teistega jagada, selle asemel jagage linki: ${link}",
       "link": "lehe link",
       "printOptPageBreak": "Alusta iga jaotist uuelt lehelt",
+      "makeTextBlack": "Muuda kogu tekst mustaks",
       "printWarning": "See on kaardiloo prinditud versioon. Dünaamiline sisu (nt videod ja interaktiivsed kaardid) on saadaval ainult veebiversioonis aadressil ${link}",
       "printMSWarning": "link on saadaval üksnes loo veebiversioonis",
       "printVideoWarning": "Seda videot saab vaadata kaardiloo veebiversioonis"

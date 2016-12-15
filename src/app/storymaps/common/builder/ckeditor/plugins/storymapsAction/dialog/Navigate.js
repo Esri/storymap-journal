@@ -11,8 +11,8 @@ define(["lib-build/tpl!./Navigate",
 		return function Media(container)
 		{
 			container.append(viewTpl({
-				lblTitle: 'Navigate to a section',
-				label: 'Section',
+				lblTitle: i18n.commonMedia.editorActions.navigate,
+				label: i18n.commonCore.sectionNavigation.section,
 				btnOk: i18n.commonCore.common.apply,
 				btnCancel: i18n.commonCore.common.cancel,
 				btnBack: i18n.commonCore.common.back
@@ -30,7 +30,7 @@ define(["lib-build/tpl!./Navigate",
 
 				container.find('.sections-list-btn')
 					.data('value', -1)
-					.html('Select a section...');
+					.html(i18n.commonCore.sectionNavigation.select);
 
 				var listHTML = "";
 				$.each(app.data.getStorySections(), function(i, section) {
@@ -43,14 +43,14 @@ define(["lib-build/tpl!./Navigate",
 					title += $('<div>' + section.title + '</div>').text();
 
 					if (i == app.data.getCurrentSectionIndex()) {
-						title += ' (' + 'This section' + ')';
+						title += ' (' + i18n.commonCore.sectionNavigation.thisSection + ')';
 						optClass = 'disabled';
 					}
 					else if (i === 0) {
-						title += ' (' + 'Home section' + ')';
+						title += ' (' + i18n.commonCore.sectionNavigation.homeSection + ')';
 					}
 					else if (sectionIsHidden) {
-						title += ' (' + 'Hidden section' + ')';
+						title += ' (' + i18n.commonCore.sectionNavigation.hiddenSection + ')';
 						optClass = 'disabled';
 					}
 

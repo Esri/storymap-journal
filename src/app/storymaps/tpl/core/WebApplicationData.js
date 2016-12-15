@@ -1,5 +1,5 @@
-define(["dojo/_base/lang"], 
-	function(lang)
+define(["dojo/_base/lang", 'storymaps/tpl/core/Helper'],
+	function(lang, Helper)
 	{
 		/**
 		 * WebApplicationData
@@ -325,7 +325,7 @@ define(["dojo/_base/lang"],
 				if ( logoURL == app.cfg.HEADER_LOGO_URL && this.getColors() && this.getColors().esriLogo == "white" )
 					logoURL = "resources/tpl/viewer/icons/esri-logo-white.png";
 
-				return logoURL;
+				return Helper.possiblyRemoveToken(logoURL);
 			},
 			getLogoTarget: function()
 			{

@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "ヘッダー",
-      "logoEsri": "Esri ロゴ",
-      "logoNone": "ロゴなし",
-      "logoCustom": "カスタム ロゴ",
-      "logoCustomPlaceholder": "URL (最大 250x50 ピクセル)",
-      "logoCustomTargetPlaceholder": "クリックスルー リンク",
-      "logoSocialExplain": "ヘッダー リンクをカスタマイズします。",
-      "logoSocialText": "テキスト",
-      "logoSocialLink": "リンク",
+      "logoEsriRadio": "Esri ロゴ",
+      "logoNoneRadio": "ロゴなし",
+      "logoCustomRadio": "マイ ロゴ",
+      "logoCustomLabel": "イメージ:",
+      "logoCustomUploadHelp": "ロゴは、幅:高さの比が 1:1 ～ 5:1 の場合に最適に表示されます。リンク付きロゴの描画が遅い場合は、コピーを保存し、それをここでアップロードしてください。",
+      "logoCustomUploadTooltip": "アップロードされたロゴを使用",
+      "logoCustomUploadButton": "ロゴのアップロード",
+      "logoUploadSizeError": "GIF の寸法が大きすぎます。サイズを ${PIXEL-WIDTH} ピクセルの幅に変更してください。",
+      "logoCustomLinkTooltip": "ロゴへのリンク",
+      "logoCustomLinkPlaceholder": "画像 URL",
+      "logoUploadGenericError": "ロゴは、*.bmp、*.gif、*.jpg、*.jpeg、または *.png ファイルにすることができます。GIF は、幅が 250 ピクセル未満、サイズが 10 MB 未満である必要があります。",
+      "logoCustomTargetPlaceholder": "ロゴがクリックされたときに開かれる Web ページ",
+      "logoSocialText": "タグライン:",
+      "logoLink": "リンク:",
       "lblSmallHeader": "コンパクトなヘッダーを使用 (サブタイプなし)"
     },
     "header": {
       "title": "%TPL_NAME% のタイトルの編集",
       "subtitle": "%TPL_NAME% のサブタイトルの編集"
+    },
+    "sectionNavigation": {
+      "select": "セクションの選択...",
+      "section": "セクション",
+      "thisSection": "このセクション",
+      "homeSection": "ホーム セクション",
+      "hiddenSection": "非表示のセクション"
     }
   }
 });

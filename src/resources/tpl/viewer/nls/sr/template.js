@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Dodirnite za detalje",
       "clickForDetails": "Saznaj više",
       "swipeToExplore": "Brzo prevucite da istražite",
-      "tapForMap": "Dodirnite da se vratite na mapu",
-      "clickForMap": "NAZAD U MAPU"
+      "tapForMap": "Dodirnite da biste se vratili",
+      "clickForMap": "NAZAD"
     },
     "floatLayout": {
       "scroll": "Pomerajte"
@@ -55,7 +55,9 @@ define({
       "scroll": "Pomerajte za više."
     },
     "mainStage": {
-      "back": "Nazad"
+      "back": "Nazad",
+      "errorDeleted": "Ova veza nije aktivna (odeljak je izbrisan)",
+      "errorNotPublished": "Ova veza nije aktivna (odeljak nije objavljen)"
     },
     "headerFromCommon": {
       "storymapsText": "Story mapa",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Ovu stranicu nije moguće podeliti sa drugima, umesto toga podelite ${link}",
       "link": "link za priču",
       "printOptPageBreak": "Svaki odeljak počnite na novoj stranici",
+      "makeTextBlack": "Učini sav tekst crnim",
       "printWarning": "Ovo je odštampana verzija story mape. Dinamički sadržaj kao što su video snimci i interaktivne mape je dostupan samo u verziji na mreži na ${link}",
       "printMSWarning": "link je dostupan samo u priči na mreži",
       "printVideoWarning": "Ovaj video snimak može da se prikaže samo u verziji na mreži ove story mape"

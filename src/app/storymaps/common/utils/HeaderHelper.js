@@ -1,10 +1,12 @@
 define([
         "./SocialSharing",
-        "../ui/share/ShareDialog"
+        "../ui/share/ShareDialog",
+        'storymaps/tpl/core/Helper'
     ],
 	function(
 		SocialSharing,
-		ShareDialog
+		ShareDialog,
+		Helper
 	){
 		var _shareDialog = new ShareDialog($("#shareDialog"));
 
@@ -31,21 +33,27 @@ define([
 					resizeLinkContainer(container);
 				}
 				else {
-					container.find('.logoLink').css("cursor", headerCfg.logoTarget ? "pointer" : "default");
-
-					if (headerCfg.logoTarget)
-						container.find('.logoLink').attr("href", headerCfg.logoTarget);
+					var logoLink = container.find('.logoLink');
+					if (headerCfg.logoTarget) {
+						logoLink.css('cursor', 'pointer')
+										.attr('href', headerCfg.logoTarget);
+					} else {
+						logoLink.css('cursor', 'default')
+										.removeAttr('href');
+					}
 
 					resizeLinkContainer(container);
 
-					container.find('.logoImg')[0].onload = function(){
+					var logoImg = container.find('.logoImg');
+
+					logoImg[0].onload = function(){
 						resizeLinkContainer(container);
 					};
-					container.find('.logoImg')[0].onerror = function(){
+					logoImg[0].onerror = function(){
 						resizeLinkContainer(container);
 					};
 
-					container.find('.logoImg').attr("src", headerCfg.logoURL).show();
+					logoImg.attr("src", Helper.possiblyAddToken(headerCfg.logoURL)).show();
 				}
 			},
 			setLink: function(container, headerCfg)

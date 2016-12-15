@@ -46,8 +46,8 @@ define({
 				tapForDetails: "Tap for details",
 				clickForDetails: "Learn more",
 				swipeToExplore: "Swipe to explore",
-				tapForMap: "Tap to get back to the Map",
-				clickForMap: "BACK TO MAP"
+				tapForMap: "Tap to go back",
+				clickForMap: "BACK"
 			},
 			floatLayout: {
 				scroll: "Scroll"
@@ -56,7 +56,9 @@ define({
 				scroll: "Scroll down for more!"
 			},
 			mainStage: {
-				back: "Back"
+				back: "Back",
+				errorDeleted: "This link is not active (section has been deleted)",
+				errorNotPublished: "This link is not active (section is not published)"
 			},
 			headerFromCommon: {
 				storymapsText: "A story map",
@@ -96,6 +98,7 @@ define({
 				printInstruction2: "This page cannot be shared with others, instead share the ${link}",
 				link: "link to the story",
 				printOptPageBreak: "Begin each section on a new page",
+				makeTextBlack: "Make all text black",
 				printWarning: "This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}",
 				printMSWarning: "link available only in online story",
 				printVideoWarning: "This video can be viewed in the online version of this story map"
@@ -103,6 +106,7 @@ define({
         }
     }),
 	"ar": 1,
+	"bs": 1,
 	"cs": 1,
 	"da": 1,
 	"de": 1,
@@ -112,7 +116,8 @@ define({
 	"fi": 1,
 	"fr": 1,
 	"he": 1,
-	"hr": 1, 
+	"hr": 1,
+	"id": 1,
 	"it": 1,
 	"ja": 1,
 	"ko": 1,

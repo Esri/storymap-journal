@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Legg til tekst, koblinger og små grafikkelementer her.",
-      "editorActionsTitle": "Handlinger på hovedstadiet",
-      "editorActionsHelpDescr": "Bruk disse kontrollene til å opprette koblinger som vil endre hovedstadiet. Når for eksempel leseren klikker på en kobling, kan det være lurt å zoome inn kartet til en bestemt lokasjon, vise et annet webkart eller vise et bilde.",
-      "mainStageDisabled": "Handlinger på hovedstadiet deaktiveres når redigeringsverktøyet maksimeres"
+      "editorActionsTitle": "Historiehandlinger",
+      "editorActionsHelpDescr": "Opprett koblinger i fortellingen som gjør det enklere å fortelle historien. En historiehandling kan koble til en annen seksjon eller endre hovedområdet. Du kan for eksempel konfigurere en handling som flytter kartet til et annet sted, aktiverer/deaktivere kartlag eller endre medium for hovedområdet til et annet bilde, video, kart eller nettside.",
+      "mainStageDisabled": "Historiehandlinger deaktiveres når redigeringsverktøyet er maksimert"
     },
     "organizePopup": {
       "title": "Organiser",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Startseksjonen kan ikke flyttes)",
       "exportMainStage": "Innhold på hovedstadiet",
       "exportPanel": "Panelinnhold",
-      "exportActions": "Handlinger på hovedstadiet"
+      "exportActions": "Historiehandlinger"
     },
     "exportData": {
       "btn": "Eksporter innhold",

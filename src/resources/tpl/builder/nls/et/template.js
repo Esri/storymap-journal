@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Siia saate lisada teksti, lingid ja väiksemad pildid.",
-      "editorActionsTitle": "Põhisektsiooni toimingud",
-      "editorActionsHelpDescr": "Nende juhtelementide abil saate luua põhisektsiooni muutvad lingid. Näiteks võite soovida, et kui lugeja klikib kindlat linki, kuvatakse kaardil suuremana konkreetne asukoht, kuvatakse mõni muu veebikaart või kuvatakse pilt.",
-      "mainStageDisabled": "Kui redaktor on maksimeeritud, on põhisektsiooni toimingud keelatud"
+      "editorActionsTitle": "Loo toimingud",
+      "editorActionsHelpDescr": "Võimaldab luua loo jaoks lingid, mis aitavad lugu rääkida. Loo toiming võib olla link mõnele muule jaotisele või muuta pealava. Näiteks saate konfigureerida toimingu, mis liigutab kaardi teise kohta, lülitab sisse või välja kaardi kihte või muudab pealava meedia muuks pildiks, videoks, kaardiks või veebileheks.",
+      "mainStageDisabled": "Kui redaktor on maksimeeritud, on loo toimingud välja lülitatud"
     },
     "organizePopup": {
       "title": "Paiguta",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Kodujaotist ei saa teisaldada)",
       "exportMainStage": "Põhisektsiooni sisu",
       "exportPanel": "Paneeli sisu",
-      "exportActions": "Põhisektsiooni toimingud"
+      "exportActions": "Loo toimingud"
     },
     "exportData": {
       "btn": "Ekspordi sisu",

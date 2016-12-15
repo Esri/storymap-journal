@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Adicione texto, links e pequenos gráficos aqui.",
-      "editorActionsTitle": "Ações do Nível Principal",
-      "editorActionsHelpDescr": "Utilize estes controles para criar links que vão mudar o nível principal. Por exemplo, quando o leitor clicar em um link, você poderá desejar o zoom no mapa em local específico, exibir um outro mapa da web ou exibir uma imagem.",
-      "mainStageDisabled": "As Ações do Nível Principal são desabilitadas quando o editor é maximizado"
+      "editorActionsTitle": "Ações da História",
+      "editorActionsHelpDescr": "Cria links na sua narrativa que ajudam a contar sua história. Uma Ação da História pode vincular outra seção ou alterar a fase principal. Por exemplo, você pode configurar uma ação para mover o mapa para outro local, ativar ou desativar camadas do mapa, ou alterar a mídia da fase principal para uma imagem, vídeo, mapa ou página da web diferente.",
+      "mainStageDisabled": "As Ações da História são desativadas quando o editor é maximizado"
     },
     "organizePopup": {
       "title": "Organizar",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(A seção local não pode ser movida)",
       "exportMainStage": "Conteúdo do Nível Principal",
       "exportPanel": "Conteúdo do Painel",
-      "exportActions": "Ações do Nível Principal"
+      "exportActions": "Ações da história"
     },
     "exportData": {
       "btn": "Exportar conteúdo",

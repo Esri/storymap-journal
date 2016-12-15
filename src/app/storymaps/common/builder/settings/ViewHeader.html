@@ -8,30 +8,57 @@
 				<div class="radio">
 					<label>
 						<input type="radio" name="optionsLogo" id="optionsRadios2" value="esri" checked>
-						<span class="logoText"><%= logoEsri %></span>
+						<span class="logoText"><%= logoEsriRadio %></span>
 					</label>
 				</div>
 				<div class="radio">
 					<label>
 						<input type="radio" name="optionsLogo" id="optionsRadios1" value="none">
-						<span class="logoText"><%= logoNone %></span>
+						<span class="logoText"><%= logoNoneRadio %></span>
 					</label>
 				</div>
 				<div class="radio">
 					<label>
 						<input type="radio" name="optionsLogo" id="optionsRadios2" value="custom">
-						<span class="logoText"><%= logoCustom %></span>
+						<span class="logoText"><%= logoCustomRadio %></span>
 					</label>
 				</div>
 				<div class="optionsLogoCustom">
 					<table class="settings-table">
 						<tr>
-							<td class="td-lbl"><%= logoCustomlbl %></td>
-							<td class="td-input"><input class="form-control input-sm" id="logoInput" type="text" placeholder="<%= logoCustomHelp %>"></td>
+							<td class="td-lbl"><%= logoCustomLabel %></td>
+							<td class="td-first">
+								<div class="logo-btn-group btn-group">
+									<button type="button" id="uploadRadio" class="btn btn-default btn-sm active" title="<%= logoCustomUploadTooltip %>">
+										<span class="fa fa-upload"></span>
+						      </button>
+									<button type="button" id="linkRadio" class="btn btn-default btn-sm" title="<%= logoCustomLinkTooltip %>">
+										<span class="fa fa-link"></span>
+									</button>
+								</div>
+							</td>
+							<td class="td-input">
+									<div id="uploadBtn" class="btn btn-default btn-sm btn-file" title="<%= logoCustomUploadTooltip %>">
+										<span class="fa fa-upload"></span>
+										<span><%= logoCustomUploadButton %></span>
+							        <input class="file-input" type="file" accept=".png,.jpeg,.jpg,.gif,.bmp"></input>
+						      </div>
+								<input class="form-control input-sm" id="logoInput" type="text" placeholder="<%= logoCustomLinkPlaceholder %>">
+								<input class="hidden" id="uploadLogoInput" type="text"">
+								<span class="uploadHelp fa fa-info-circle" data-toggle="tooltip" data-title="<%= logoCustomUploadHelp %>"></span>
+							</td>
+						</tr>
+						<tr class="upload-warnings hidden">
+							<td></td>
+							<td class="td-input" colspan="2">
+								<span class="info-text"></span>
+							</td>
 						</tr>
 						<tr>
-							<td class="td-lbl"><%= logoLinkLbl %></td>
-							<td class="td-input"><input class="form-control input-sm" id="logoTargetInput" type="text" spellcheck="true" placeholder="<%= logoTargetHelp %>"></td>
+							<td class="td-lbl"><%= logoLink %></td>
+							<td class="td-input" colspan="2">
+								<input class="form-control input-sm" id="logoTargetInput" type="text" spellcheck="true" placeholder="<%= logoCustomTargetPlaceholder %>">
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -39,7 +66,6 @@
 		</form>
 
 		<form class="form2">
-			<p><%= socialExplain %></p>
 			<div class="form-group socialConfig">
 				<div class="checkbox">
 					<label>
@@ -62,11 +88,11 @@
 			</div>
 			<table class="settings-table">
 				<tr>
-					<td class="td-lbl"><%= socialText %></td>
+					<td class="td-lbl"><%= logoSocialText %></td>
 					<td class="td-input"><input id="selectSocialText" type="text" class="form-control input-sm" /></td>
 				</tr>
 				<tr>
-					<td class="td-lbl"><%= socialLink %></td>
+					<td class="td-lbl"><%= logoLink %></td>
 					<td class="td-input"><input id="selectSocialLink" type="text" class="form-control input-sm" /></td>
 				</tr>
 			</table>

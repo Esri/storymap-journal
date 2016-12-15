@@ -7,8 +7,9 @@ define({
       "lblImage": "Snimak",
       "lblVideo": "Video zapis",
       "lblExternal": "Veb stranica",
+      "lblUpload": "Otpremi",
+      "lblLink": "Link",
       "disabled": "Ova funkcija je onemogućena od strane administratora",
-      "url": "Da biste ručno uneli veb adresu snimka",
       "userLookup": "Učitaj albume",
       "notImplemented": "Još nije primenjeno.",
       "noData": "Nijedan javni album nije pronađen"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Učitajte snimke sa društvenih medija, <br /> ili direktno sa URL adrese"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "potražite sliku",
+      "lblDrop": "Otpustite sliku ovde ili",
+      "infoUpload": "Slike se čuvaju na ArcGIS nalog i dostupne su samo u okviru priče.",
+      "warningFileTypes": "Snimak može da bude .jpg, .png, .gif ili .bmp",
+      "warningOneFile": "Prihvataju se pojedinačne datoteke slika.",
+      "warningFileSize": "Datoteka prevazilazi maksimalnu dozvoljenu veličinu za otpremanje. Odaberite drugu datoteku.",
+      "tooltipRemove": "Izbrišite ovu nekorišćenu sliku sa ArcGIS naloga. <br> (Moraćete ponovo da je postavite ako ponovo poželite da je upotrebite.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Korisničko ime",
@@ -36,7 +46,7 @@ define({
       "learn": "saznajte više"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-pošta ili ID naloga za stranicu Picasa",
+      "userInputLbl": "E-pošta ili Google ID",
       "signInMsg2": "Nalog nije pronađen",
       "howToFind": "Kako da pronađete ID naloga za stranicu Picasa",
       "howToFind2": "Kopirajte cifre između prvog i drugog znaka „/” na bilo kojoj Picasa stranici"
@@ -51,7 +61,7 @@ define({
       "other": "Ostalo"
     },
     "videoSelectorYoutube": {
-      "url": "URL adresa Youtube video zapisa",
+      "url": "Link Youtube video snimka",
       "pageInputLbl": "Korisničko ime",
       "lookupMsgError": "Korisnik nije pronađen",
       "howToFind": "Kako da pronađete YouTube korisničko ime",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "Provera na YouTube stranici nije uspela, proverite API ključ stranice YouTube."
     },
     "videoSelectorVimeo": {
-      "url": "URL adresa Vimeo video zapisa"
+      "url": "Link Vimeo video snimka"
     },
     "videoSelectorOther": {
-      "explain1": "Priča ne može da reprodukuje neobrađene video zapise (npr. avi, mpeg) ali može da reprodukuje hostovane video datoteke koje imaju ugrađene programe za reprodukciju (npr. Youtube ili Vimeo).",
-      "explain2": "Većina servisa za hostovanje video zapisa na mreži nudi tu funkciju, vi morate da pronađete opciju da ugradite video zapis, kopirate dati kod i koristite %WEBPAGE%.",
-      "explain3": "Osim toga, ako želite da vi hostujete video zapis, možete da kreirate HTML stranicu koja koristi program za reprodukciju video zapisa, kao što je %EXAMPLE%, hostujete tu stranicu i takođe koristite %WEBPAGE%.",
-      "webpage": "Funkcija veb stranice"
+      "explain1": "Ova mapa priče ne može da reprodukuje neobrađene video datoteke (npr. avi, mpeg) ali može da reprodukuje hostovane video zapise koje imaju ugrađene programe za reprodukciju (npr. Youtube ili Vimeo).",
+      "explain2": "Većina usluga za hostovanje video zapisa nudi ovu funkciju. Pronađite opciju za umetanje video zapisa, kopirajte priloženi kod i dodajte ga u priču pomoću %WEBPAGE% opcije za sadržaj.",
+      "explain3": "Pored toga, možete i sami da hostujete video uz HTML stranicu koja koristi video plejer kao što je %EXAMPLE%. Zatim možete da dodate URL adresu te HTML stranice u priču kao %WEBPAGE%.",
+      "webpage": "Veb stranica"
     },
     "webpageSelectorHome": {
-      "lblUrl": "URL adresa veb stranice",
+      "lblUrl": "Link veb stranice",
       "lblEmbed": "Ugradi kôd",
       "lblOR": "ILI",
       "lblError1": "Greška, obrišite jedno od dva polja za unos.",
@@ -79,11 +89,11 @@ define({
       "configure": "Konfiguriši"
     },
     "mediaConfigure": {
-      "lblURL": "URL adresa",
-      "lblURLPH": "URL adresa snimka treba da počinje sa http:// i završava se sa .jpg ili .png",
+      "lblURL": "Link snimka",
+      "lblURLPH": "Link bi trebalo da se završava sa .jpg, .png, .gif ili .bmp",
       "lblURLError": "Ovaj snimak nije validan. Odredite direktnu vezu na datoteku snimka (URL adresa se obično završava sa .jpg ili .png). Veze ka veb stranici koja sadrži snimak ne rade.",
       "lblURLCheck": "Proveravanje snimka...",
-      "lblLabel": "Natpis snimka",
+      "lblLabel": "Image caption",
       "lblLabel1": "Natpis",
       "lblLabel2": "Zadrži pokazivač iznad teksta",
       "lblLabel3": "Ništa",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Uklapanje",
       "lblPosition4": "Rastezanje",
       "lblPosition5": "Prilagođeno",
+      "lblURLHelp": "Za najbolje rezultate, snimci bi trebalo da budu manji od 400 KB. Koristite komprimovane JPG snimke pri kvalitetu od 80% i preporučenim širinama: 2000 piksela za centralni deo ili tablu narativa sa dugmetom za uvećavanje, 1000 piksela za tablu narativa bez dugmeta za uvećavanje.<br><br>Ako se linkovani snimak sporo iscrtava, otpremite ga u svoju priču za bolje rezultate.",
       "tooltipDimension": "Vrednost može da bude određena u „px“ ili „%“",
       "tooltipDimension2": "Vrednost mora da bude određena u „px“ ili „%“",
       "lblPosition2Explain": "(rezanje moguće)",
@@ -105,12 +116,17 @@ define({
       "unloadLbl": "Poništi učitavanje kada čitalac napusti stranicu",
       "unloadHelp": "Ako veb stranica ima sadržaje audio ili video formata, označite ovu opciju kao potvrđenu da zaustavite reprodukciju tog sadržaja kada čitalac napusti stranicu. Označite je kao nepotvrđenu da zvuk nastavi sa reprodukcijom kako čitalac „ide“ kroz priču.<br />Ako je veb stranica aplikacija, označite ovu opciju kao nepotvrđenu tako da se priča ne učitava ponovo kada se čitalac vrati na nju.",
       "embedProtocolLabel": "Učitaj stranicu preko bezbedne veze (HTTPS)",
-      "embedProtocolWarning1": "Vaša priča je konfigurisana tako da se učita preko bezbedne veze (https), tako da prikaz veb stranice u priči takođe mora da koristi bezbednu vezu. Ako se stranica ne učitava, to može biti usled toga što nije dostupna preko bezbedne veze ili što ne može da bude uključena u vašu priču (neki veb sajtovi ograničavaju ovo). Možda ćete morati da kreirate hiperlink da biste otvorili stranicu u novoj kartici pregledača.",
-      "embedProtocolWarning2": "Vaša priča je konfigurisana tako da se učita preko bezbedne veze (https), tako da možete da izaberete da učitate ovu stranicu putem bezbedne veze (preporučeno) ili nebezbedne veze. Ako se stranica ne učitava, to može biti usled toga što ne podržava vrstu veze koju ste izabrali ili što ne može da bude uključena u vašu priču (neki veb sajtovi ograničavaju ovo). Možda ćete morati da kreirate hiperlink da biste otvorili stranicu u novoj kartici pregledača."
+      "embedProtocolWarning1": "Ako se ova stranica ne učitava u vašoj priči, može da bude ugrađena iz veb sigurnosnih razloga. Kao alternativu, dodajte link u svom narativu da biste otvorili stranicu u novoj kartici pregledača. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Saznajte više</a>",
+      "embedProtocolWarning2": "Ako se ova stranica ne učitava u vašoj priči, poništite izbor ove opcije i pokušajte ponovo. Ako se stranica i dalje ne učitava, može da bude ugrađena iz veb sigurnosnih razloga. Kao alternativu, dodajte link u svom narativu da biste otvorili stranicu u novoj kartici pregledača. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Saznajte više</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Locirajte adresu ili mesto",
       "mapMarkerExplain": "Korisnik će videti označivač mape kada klikne na link"
+    },
+    "editorActions": {
+      "navigate": "Idi na odeljak",
+      "remove": "Ukloni radnju",
+      "preview": "Pregledaj radnju"
     },
     "editorActionMedia": {
       "lblTitle": "Promenite sadržaj centralnog dela"

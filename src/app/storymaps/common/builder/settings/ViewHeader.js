@@ -1,13 +1,18 @@
 define(["lib-build/tpl!./ViewHeader",
 		"lib-build/css!./ViewHeader",
-		"../../utils/CommonHelper"],
-	function (viewTpl, viewCss, CommonHelper) {
+		'../media/image/FileUploadHelper',
+		'../media/image/ImageUploadHelper',
+		'storymaps/tpl/core/Helper',
+		"../../utils/CommonHelper",
+		'dojo/_base/lang'],
+	function (viewTpl, viewCss, fileUploadHelper, imageUploadHelper, Helper, CommonHelper, lang) {
 		return function ViewHeader()
 		{
 			var _titleContainer = null,
 				_contentContainer = null;
 
 			var _logoInput = null,
+				_logoBtn = null,
 				_logoTargetInput = null,
 				_badLogo = false;
 
@@ -16,52 +21,39 @@ define(["lib-build/tpl!./ViewHeader",
 				_titleContainer = titleContainer;
 				_contentContainer = contentContainer;
 
-				_contentContainer.append(viewTpl({
-					explain: i18n.commonCore.settingsHeader.explain,
-					logoEsri: i18n.commonCore.settingsHeader.logoEsri,
-					logoNone: i18n.commonCore.settingsHeader.logoNone,
-					logoCustom: i18n.commonCore.settingsHeader.logoCustom,
-					logoCustomlbl: "Image" + ":",
-					logoLinkLbl: i18n.commonCore.settingsHeader.logoSocialLink + ":",
-					logoCustomHelp: i18n.commonCore.settingsHeader.logoCustomPlaceholder,
-					logoTargetHelp: i18n.commonCore.settingsHeader.logoCustomTargetPlaceholder,
-					socialExplain: i18n.commonCore.settingsHeader.logoSocialExplain,
-					socialText: i18n.commonCore.settingsHeader.logoSocialText + ":",
-					socialLink: i18n.commonCore.settingsHeader.logoSocialLink + ":",
-					share: i18n.commonCore.builderPanel.buttonShare
-				}));
+				_contentContainer.append(viewTpl(_.extend({}, i18n.commonCore.settingsHeader,
+					{share: i18n.commonCore.builderPanel.buttonShare}
+				)));
 
 				_logoInput = _contentContainer.find("#logoInput");
 				_logoTargetInput = _contentContainer.find("#logoTargetInput");
+
 
 				_logoInput.keydown(onLogoInputEnter);
 				_logoInput.focusout(loadCustomLogo);
 				_logoTargetInput.keydown(onTargetInputEnter);
 
+				_logoBtn = _contentContainer.find('#uploadBtn');
+				_logoBtn.on('change', onLogoUploadChange);
+				$('.logo-btn-group').on('click', onBtnGroupClick);
+
 				$("input[type=radio]", _contentContainer).click(onLogoRadioClick);
 				$("#imgLogo", _contentContainer).error(onLogoLoadError);
 				$("#imgLogo", _contentContainer).load(onLogoLoadComplete);
+
+				$("input[name='optionsLogo']", _contentContainer).change(checkLogoOptionAndSetDisabled);
+
+				_contentContainer.find('.uploadHelp').tooltip({
+					trigger: 'hover'
+				});
+
+
 			};
 
 			this.present = function(settings)
 			{
 				var logoURL = settings.logoURL,
 					themeColor = app.data.getWebAppData().getColors();
-
-				_logoInput.attr("disabled", "true");
-				_logoTargetInput.attr("disabled", "true");
-
-				$("input[name='optionsLogo']", _contentContainer).change(function () {
-					var logoOption = $("input[name='optionsLogo']:checked", _contentContainer).val();
-					if (logoOption == "none" || logoOption == "esri" ) {
-						_logoInput.attr("disabled", "true");
-						_logoTargetInput.attr("disabled", "true");
-					}
-					else {
-						_logoInput.removeAttr("disabled");
-						_logoTargetInput.removeAttr("disabled");
-					}
-				});
 
 				$("#headerSimulator", _contentContainer).css("background-color", themeColor);
 				if (logoURL == app.cfg.HEADER_LOGO_URL || logoURL == null) {
@@ -77,13 +69,18 @@ define(["lib-build/tpl!./ViewHeader",
 				}
 				else {
 					$('input[name=optionsLogo]:eq(2)', _contentContainer).attr('checked', 'checked');
-					$("#imgLogo", _contentContainer).attr("src", logoURL);
-					$("#imgLogo", _contentContainer).show();
-					$("#logoInput", _contentContainer).val(logoURL);
+					$("#imgLogo", _contentContainer).attr("src", logoURL).show();
+					if (Helper.isAppResource(logoURL)) {
+						$("#uploadLogoInput", _contentContainer).val(logoURL);
+						onBtnGroupClick('upload');
+					} else {
+						$("#logoInput", _contentContainer).val(logoURL);
+						onBtnGroupClick('link');
+					}
 					_logoTargetInput.val(settings.logoTarget);
-					_logoInput.removeAttr("disabled");
-					_logoTargetInput.removeAttr("disabled");
 				}
+
+				checkLogoOptionAndSetDisabled();
 
 				$("#selectSocialText", _contentContainer).val(settings.linkText === undefined ? app.cfg.HEADER_LINK_TEXT : settings.linkText);
 				$("#selectSocialLink", _contentContainer).val(settings.linkURL === undefined ? app.cfg.HEADER_LINK_URL : settings.linkURL);
@@ -127,10 +124,10 @@ define(["lib-build/tpl!./ViewHeader",
 
 			this.show = function()
 			{
-				setTimeout(function(){
-					var lblMaxWidth = Math.max.apply(Math, _contentContainer.find(".td-lbl").map(function(){ return $(this).width(); }).get());
-					_contentContainer.find(".td-lbl").css("min-width", lblMaxWidth);
-				}, 200);
+        // setTimeout(function(){
+        //   var lblMaxWidth = Math.max.apply(Math, _contentContainer.find(".td-lbl").map(function(){ return $(this).width(); }).get());
+        //   _contentContainer.find(".td-lbl").css("min-width", lblMaxWidth);
+        // }, 200);
 			};
 
 			this.save = function()
@@ -138,17 +135,18 @@ define(["lib-build/tpl!./ViewHeader",
 				var logoOption = _contentContainer.find("input[name=optionsLogo]:checked").val();
 				var logoURL;
 				var logoTarget;
+				var previewLogoSrc = _contentContainer.find(".imgLogo").attr('src');
 
-				if (logoOption == "none") {
-					logoURL = "NO_LOGO";
-					logoTarget = "";
-				}
-				else if (logoOption == "esri") {
+				if (logoOption == "esri") {
 					logoURL = null;
 					logoTarget = "";
 				}
+				else if (logoOption == "none" || !previewLogoSrc) {
+					logoURL = "NO_LOGO";
+					logoTarget = "";
+				}
 				else {
-					logoURL = _badLogo ? app.cfg.HEADER_LOGO_URL : CommonHelper.prependURLHTTP(_contentContainer.find(".imgLogo").attr("src"));
+					logoURL = _badLogo ? app.cfg.HEADER_LOGO_URL : CommonHelper.prependURLHTTP(previewLogoSrc);
 					logoTarget = _logoTargetInput.val();
 				}
 
@@ -171,6 +169,110 @@ define(["lib-build/tpl!./ViewHeader",
 					}
 				};
 			};
+
+			function checkLogoOptionAndSetDisabled() {
+				var customLogoTable = _contentContainer.find('.optionsLogoCustom');
+				var logoOption = $("input[name='optionsLogo']:checked", _contentContainer).val();
+				customLogoTable.toggleClass('hidden', logoOption !== 'custom');
+			}
+
+			function onBtnGroupClick(evt) {
+				var btn;
+				if (evt === 'link') {
+					btn = $('#linkRadio');
+				} else if (evt === 'upload') {
+					btn = $('#uploadRadio');
+				} else {
+					btn = $(evt.target).closest('.btn');
+					if (btn.attr('disabled')) {
+						return;
+					}
+				}
+
+				toggleCustomLogoButtons(btn);
+				loadCustomLogo();
+
+			}
+
+			function toggleCustomLogoButtons(activeBtn) {
+				var group = _contentContainer.find('.logo-btn-group');
+				activeBtn = activeBtn || group.find('.btn.active');
+				var isUpload = activeBtn.closest('#uploadRadio').length === 1;
+
+				group.find('.btn').removeClass('active');
+				activeBtn.addClass('active');
+
+				_contentContainer.find('#uploadBtn').toggleClass('hidden', !isUpload);
+				_contentContainer.find('#logoInput').toggleClass('hidden', isUpload);
+
+			}
+
+			function hideUpload() {
+				toggleCustomLogoButtons($('#linkRadio'));
+				$('#uploadRadio').attr('disabled', 'disabled');
+			}
+
+			function onLogoUploadChange(evt) {
+				var file = evt.target.files ? evt.target.files[0] : null;
+				if (!file) {
+					console.warn('no file', evt);
+					return;
+				}
+				if (!fileUploadHelper.validateFile(file)) {
+					console.warn('file not valid');
+					setInfoText();
+					return;
+				}
+				imageUploadHelper.processLogo(file).then(lang.hitch(this, uploadFile), lang.hitch(this, processError));
+
+			}
+
+			function uploadFile(fileDetails) {
+				fileUploadHelper.uploadSingleResource(fileDetails).then(lang.hitch(this, uploadFileSuccess), lang.hitch(this, uploadFileError));
+			}
+
+			function uploadFileSuccess(uploadResult) {
+				var url = CommonHelper.prependURLHTTP(Helper.possiblyAddToken(uploadResult.picUrl));
+				_contentContainer.find('#uploadLogoInput').val(url);
+				_contentContainer.find(".imgLogo").attr("src", url).show();
+				resetFileInput();
+			}
+
+			function uploadFileError(err) {
+				console.warn('uploadFileError', err);
+				setInfoText();
+				resetFileInput();
+			}
+
+			function resetFileInput() {
+				var target = _logoBtn.find('input');
+				if (!target.length) {
+					return;
+				}
+				target[0].value = '';
+			}
+
+			function setInfoText(str) {
+				_contentContainer.find('.info-text').text(str || i18n.commonCore.settingsHeader.logoUploadGenericError);
+				var infoTextRow = _contentContainer.find('.upload-warnings');
+				infoTextRow.removeClass('hidden');
+				setTimeout(function() {
+					infoTextRow.addClass('hidden');
+				}, 6000);
+			}
+
+			function processError(err) {
+				console.warn('processError', err);
+				if (!err || !err.reason) {
+					return;
+				}
+				var errorMessage;
+				if (err.reason === 'gif dimensions') {
+					errorMessage = i18n.commonCore.settingsHeader.logoUploadSizeError.replace('${PIXEL-WIDTH}', err.details);
+				}
+				setInfoText(errorMessage);
+				resetFileInput();
+			}
 
 			function onLogoRadioClick()
 			{
@@ -204,8 +306,9 @@ define(["lib-build/tpl!./ViewHeader",
 
 			function loadCustomLogo()
 			{
-				var logoUrl = $.trim($("#logoInput", _contentContainer).val());
-				_contentContainer.find(".imgLogo").attr("src", CommonHelper.prependURLHTTP(logoUrl)).show();
+				var targetId = $('#linkRadio', _contentContainer).hasClass('active') ? '#logoInput' : '#uploadLogoInput';
+				var logoUrl = $(targetId, _contentContainer).val().trim();
+				_contentContainer.find(".imgLogo").attr("src", CommonHelper.prependURLHTTP(Helper.possiblyAddToken(logoUrl))).show();
 			}
 
 			function onTargetInputEnter(event)
@@ -224,10 +327,17 @@ define(["lib-build/tpl!./ViewHeader",
 
 				_contentContainer.find(".imgLogo").hide();
 
-				if (logoOption == "custom")
-					loadCustomLogo();
-				else if (logoOption == "esri")
+				if (logoOption == "custom") {
+					if (!CommonHelper.getItemId()) {
+						hideUpload();
+					} else {
+						$('#uploadRadio').removeAttr('disabled');
+						toggleCustomLogoButtons();
+						loadCustomLogo();
+					}
+				} else if (logoOption == "esri") {
 					_contentContainer.find(".imgLogo").attr("src", "resources/tpl/viewer/icons/esri-logo.png").show();
+				}
 			}
 
 			this.initLocalization = function()

@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "ส่วนหัว",
-      "logoEsri": "โลโก้ Esri",
-      "logoNone": "ไม่มีโลโก้",
-      "logoCustom": "แก้ไขโลโก้",
-      "logoCustomPlaceholder": "URL (มากสุด 250x50 พิกเซล)",
-      "logoCustomTargetPlaceholder": "คลิกผ่านลิ้ง",
-      "logoSocialExplain": "แก้ไขหัวของลิ้ง",
-      "logoSocialText": "ตัวหนังสือ",
-      "logoSocialLink": "ลิงก์",
+      "logoEsriRadio": "โลโก้ Esri",
+      "logoNoneRadio": "ไม่มีโลโก้",
+      "logoCustomRadio": "โลโก้ของฉัน",
+      "logoCustomLabel": "รูป:",
+      "logoCustomUploadHelp": "โลโก้ที่ดูดีที่สุดถ้าพวกเขามีความกว้าง: อัตราส่วนความสูงระหว่าง 1: 1 และ 5: 1 หากโลโก้เชื่อมโยงดึงช้าบันทึกสำเนาและอัปโหลดได้ที่นี่",
+      "logoCustomUploadTooltip": "ใช้โลโก้ที่อัพโหลด",
+      "logoCustomUploadButton": "อัพโหลดโลโก้",
+      "logoUploadSizeError": "ขนาด GIF มีขนาดใหญ่เกินไป โปรดปรับขนาดไปยัง $ {PIXEL-WIDTH} พิกเซลกว้าง",
+      "logoCustomLinkTooltip": "ลิงค์ไปยังโลโก้",
+      "logoCustomLinkPlaceholder": "URL รูปภาพ",
+      "logoUploadGenericError": "โลโก้สามารถเป็นไฟล์ .bmp, .gif, .jpg, .jpeg, หรือ . png สำหรับ Gifsควรมีจุดภาพน้อยกว่า 250 พิเซลและขนาดเล็กกว่า 10 เมกกะไบต์",
+      "logoCustomTargetPlaceholder": "หน้าเว็บจะเปิดเมื่อมีการคลิกโลโก้",
+      "logoSocialText": "แท็กไลน์:",
+      "logoLink": "ลิงค์:",
       "lblSmallHeader": "ใช้ส่วนบนที่มีขนาดกระทัดรัด (ไม่มีชื่อเรื่อง)"
     },
     "header": {
       "title": "แก้ไขชื่อเรื่องของคุณ %TPL_NAME%",
       "subtitle": "แก้ไขเนื้อหาด้านล่างของคุณ %TPL_NAME%"
+    },
+    "sectionNavigation": {
+      "select": "เลือกเซกชัน",
+      "section": "ส่วน",
+      "thisSection": "เซกชันนี้",
+      "homeSection": "เซกชันเริ่มต้น",
+      "hiddenSection": "เซกชันที่ซ่อนอยู่"
     }
   }
 });

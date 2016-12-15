@@ -7,8 +7,9 @@ define({
       "lblImage": "Pilt",
       "lblVideo": "Video",
       "lblExternal": "Veebileht",
+      "lblUpload": "Laadi üles",
+      "lblLink": "Link",
       "disabled": "See funktsioon on administraatori poolt välja lülitatud",
-      "url": "Pildi veebiaadressi käsitsi sisestamiseks",
       "userLookup": "Laadi albumid",
       "notImplemented": "Pole veel kasutusele võetud.",
       "noData": "Avalikku albumit ei leitud"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Pildid saate laadida sotsiaalmeediast <br /> või otse kindlalt URL-ilt"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "sirvige piltidest",
+      "lblDrop": "Lohistage pilt siia või",
+      "infoUpload": "Pildid salvestatakse teie ArcGIS-i kontole ja need on ligipääsetavad ainult teie loos.",
+      "warningFileTypes": "Pilt võib olla JPG-, PNG-, GIF- või BMP-vormingus",
+      "warningOneFile": "Korraga on lubatud üks fail.",
+      "warningFileSize": "Faili suurus ületab üleslaadimiseks lubatud maksimumsuuruse. Valige muu fail.",
+      "tooltipRemove": "Kustutage see kasutamata pilt oma ArcGIS-i kontolt. <br> (Kui tahate seda hiljem kasutada, peate selle uuesti üles laadima.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Kasutajanimi",
@@ -36,7 +46,7 @@ define({
       "learn": "lisateave"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-post või Picasa ID",
+      "userInputLbl": "Meiliaadress või Google ID",
       "signInMsg2": "Kontot ei leitud",
       "howToFind": "Kuidas leida Picasa ID-d?",
       "howToFind2": "Kopeerige mis tahes Picasa lehe esimese ja teise kaldkriipsu vahel asuvad numbrikohad"
@@ -51,7 +61,7 @@ define({
       "other": "Muu"
     },
     "videoSelectorYoutube": {
-      "url": "Youtube video URL",
+      "url": "YouTube video link",
       "pageInputLbl": "Kasutajanimi",
       "lookupMsgError": "Kasutajat ei leitud",
       "howToFind": "Kuidas leida YouTube’i kasutajanime",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "YouTube’i kontroll nurjus, kontrollige YouTube’i API võtit."
     },
     "videoSelectorVimeo": {
-      "url": "Vimeo video URL"
+      "url": "Vimeo video link"
     },
     "videoSelectorOther": {
-      "explain1": "See lugu ei saa esitada töötlemata videoid (nt AVI-, MPEG-vormingus), kuid saab esitada majutatud videofaile sisseehitatud pleierites (nt YouTube või Vimeo).",
-      "explain2": "Enamik veebis olevaid videomajutusteenuseid pakub seda funktsiooni. Peate leidma video lisamise võimaluse, kopeerima antud koodi ja kasutama veebilehte %WEBPAGE%.",
-      "explain3": "Kui soovite aga videot ise majutada, saate luua HTML-lehe, mis kasutab näiteks videopleierit %EXAMPLE%, selle lehe majutada ning kasutada ka veebilehte %WEBPAGE%.",
-      "webpage": "Veebilehe funktsioon"
+      "explain1": "See kaardilugu ei saa esitada töötlemata videofaile (nt avi-, mpeg-vormingus), kuid saab esitada majutatud videoid sisseehitatud pleierites (nt YouTube või Vimeo).",
+      "explain2": "Enamik videomajutusteenuseid pakuvad seda funktsiooni. Leidke video lisamise võimalus, kopeerige saadud kood ja lisage see oma loole sisusättega %WEBPAGE%.",
+      "explain3": "Kui soovite aga videot ise majutada koos HTML-lehega, mis kasutab näiteks videopleierit %EXAMPLE%, siis lisage selle HTML-lehe URL oma loole järgmiselt: %WEBPAGE%.",
+      "webpage": "Veebileht"
     },
     "webpageSelectorHome": {
-      "lblUrl": "Veebilehe URL",
+      "lblUrl": "Veebilehe link",
       "lblEmbed": "Lisa kood",
       "lblOR": "VÕI",
       "lblError1": "Viga, tühjendage üks kahest sisendväljast.",
@@ -79,11 +89,11 @@ define({
       "configure": "Seadista"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "Pildi URL-i alguses peaks olema http:// ja lõpus laiend .jpg või .png",
+      "lblURL": "Pildi link",
+      "lblURLPH": "Link peaks lõppema laiendiga .jpg, .png, .gif või .bmp",
       "lblURLError": "See pilt paistab olevat vigane. Määrake pildifaili otselink (URL-i lõpus on üldiselt laiend .jpg või .png). Pilti sisaldava veebilehe lingid ei tööta.",
       "lblURLCheck": "Pildi kontrollimine...",
-      "lblLabel": "Pildi alapealkiri",
+      "lblLabel": "Image caption",
       "lblLabel1": "Alapealkiri",
       "lblLabel2": "Hõljuktekst",
       "lblLabel3": "Pole",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Sobita",
       "lblPosition4": "Venita",
       "lblPosition5": "Kohandatud",
+      "lblURLHelp": "Parimate tulemuste saamiseks peaks piltide maht olema alla 400 kB. Kasutage tihendatud JPG-pilte 80% kvaliteediga ja järgmisi soovituslikke pildilaiusi: 2000 pikslit pealava või loo paneel koos maksimeerimisnupuga, 1000 pikslit loo paneel ilma maksimeerimisnuputa.<br><br>Kui lingitud pilti laaditatakse aeglaselt, laadige see parima tulemuse huvides oma loo juurde üles.",
       "tooltipDimension": "Väärtuse ühikuks võib olla px või %",
       "tooltipDimension2": "Väärtuse ühikuks peab olema px",
       "lblPosition2Explain": "(võib kärpida)",
@@ -105,12 +116,17 @@ define({
       "unloadLbl": "Laadi maha, kui lugeja liigub mujale",
       "unloadHelp": "Kui veebileht sisaldab audio- või videosisu, jätke see valik märgituks, et lõpetada selle sisu esitamine, kui lugeja liigub mujale. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks samal ajal, kui lugeja läbi loo liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et kasutaja naasmisel ei laaditaks lugu uuesti.",
       "embedProtocolLabel": "Lehe laadimine turvalise ühenduse (HTTPS) kaudu",
-      "embedProtocolWarning1": "Lugu on konfigureeritud nii, et see laaditakse turvalise ühenduse (https) kaudu, seega peavad ka loos kuvatavad veebilehed kasutama turvalist ühendust. Kui lehte ei laadita, võib põhjus olla selles, et leht pole turvalise ühenduse kaudu saadaval või ei saa seda teie loosse lisada (mõni veebisait seab sellele piiranguid). Võib olla peate looma hüperlingi, et avada leht uuel brauseri vahekaardil.",
-      "embedProtocolWarning2": "Lugu on konfigureeritud nii, et see laaditakse mitteturvalise ühenduse (http) kaudu, seega saate valida, kas see leht laaditakse turvalise (soovitatav) või mitteturvalise ühenduse kaudu. Kui lehte ei laadita, võib põhjus olla selles, et leht ei toeta teie valitud ühendusetüüpi või ei saa seda teie loosse lisada (mõni veebisait seab sellele piiranguid). Võib olla peate looma hüperlingi, et avada leht uuel brauseri vahekaardil."
+      "embedProtocolWarning1": "Kui seda lehte teie loos ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lisateave</a>",
+      "embedProtocolWarning2": "Kui seda lehte teie loos ei laadita, tühjendage see valik ja proovige uuesti. Kui lehte ikkagi ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lisateave</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Märgi aadress või asukoht",
       "mapMarkerExplain": "Kasutajad näevad lingi klõpsamisel kaardil tähist"
+    },
+    "editorActions": {
+      "navigate": "Navigeeri jaotisse",
+      "remove": "Eemalda toiming",
+      "preview": "Toimingu eelvaade"
     },
     "editorActionMedia": {
       "lblTitle": "Põhietapi sisu muutmine"

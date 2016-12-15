@@ -19,6 +19,24 @@
 	top: 0;
 	left: 120px;
 	margin-top: -2px;
+  right: 0;
+}
+
+.settings-header .fa {
+  color: #444;
+}
+
+.settings-header .uploadHelp {
+  margin-left: 10px;
+  font-size: 16px;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #777;
+}
+
+.settings-header .info-text {
+  font-size: 11px;
+  color: #c43d40;
 }
 
 
@@ -31,16 +49,66 @@
 	margin-top: 10px;
 }
 
+.settings-header .optionsLogoCustom .settings-table {
+	width: 400px;
+}
+
 .settings-header .settings-table .td-lbl {
 	display: inline-block;
-	padding: 3px 0;
+	padding: 5px 0;
 	vertical-align: -7px;
 	font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.settings-header .settings-table .td-input,
+.settings-header .settings-table .td-first {
+	padding: 5px 0 0 10px;
 }
 
 .settings-header .settings-table .td-input {
-	width: 100%;
-	padding: 3px 0 0 10px;
+  width: 100%;
+}
+
+/* hide the system's file chooser input */
+.settings-header .btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.settings-header .settings-table .btn {
+  outline: none;
+}
+.settings-header .settings-table .btn-group {
+  width: 72px;
+}
+
+.settings-header .settings-table .btn-group .btn {
+  padding: 4px 10px;
+}
+
+.settings-header .settings-table .btn .fa {
+  font-size: 14px;
+}
+
+.settings-header input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  outline: none;
+  cursor: inherit;
+  display: block;
+}
+
+.settings-header .settings-table .hidden {
+  display: none;
+}
+
+.settings-header .settings-table .btn[disabled] * {
+  color: #999;
 }
 
 /*
@@ -67,7 +135,10 @@
 	margin-left: 0;
 }
 
-.settings-header #logoInput,
+.settings-header #logoInput {
+	width: calc(100% - 30px);
+}
+
 .settings-header #logoTargetInput {
 	width: 100%;
 }
@@ -78,6 +149,8 @@
 
 .settings-header .form2 {
 	margin-top: 20px;
+  position: relative;
+  width: 100%;
 }
 
 /*
@@ -86,12 +159,13 @@
 
 .settings-header .socialConfig {
 	position: absolute;
-	left: 350px;
-	top: 144px;
+	right: 0;
 }
 
 .settings-header .socialConfig .checkbox {
 	margin-left: -20px;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 .settings-header .socialConfig .checkbox.disabled .social-lbl {

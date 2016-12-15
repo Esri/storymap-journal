@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "テキスト、リンク、小さなグラフィックスをここに追加します。",
-      "editorActionsTitle": "メイン ステージ アクション",
-      "editorActionsHelpDescr": "これらのコントロールを使用して、メイン ステージを変更するリンクを作成します。たとえば、ユーザがリンクをクリックしたときに、マップを特定の位置にズームしたり、別の Web マップを表示したり、画像を表示したりします。",
-      "mainStageDisabled": "エディタが最大化されると、メイン ステージ アクションは無効になります。"
+      "editorActionsTitle": "ストーリー アクション",
+      "editorActionsHelpDescr": "注釈に、ストーリーを伝えることができるリンクを作成します。ストーリー アクションは、別のセクションにリンクしたり、メイン ステージを変更することができます。たとえば、マップを別の場所に移動するアクションを構成したり、マップ レイヤーのオン/オフを切り替えたり、メイン ステージのメディアを別の画像、ビデオ、マップ、または Web ページに変更することができます。",
+      "mainStageDisabled": "エディターが最大化されると、ストーリー アクションは無効になります。"
     },
     "organizePopup": {
       "title": "整理",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(ホーム セクションを移動できません)",
       "exportMainStage": "メイン ステージのコンテンツ",
       "exportPanel": "パネル コンテンツ",
-      "exportActions": "メイン ステージ アクション"
+      "exportActions": "ストーリー アクション"
     },
     "exportData": {
       "btn": "コンテンツのエクスポート",

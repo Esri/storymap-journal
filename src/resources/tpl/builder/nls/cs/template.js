@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Sem přidejte text, odkazy a malé obrázky.",
-      "editorActionsTitle": "Akce hlavní úrovně",
-      "editorActionsHelpDescr": "Pomocí těchto ovládacích prvků můžete vytvářet odkazy, které změní hlavní úroveň. Když například čtenář klikne na odkaz, můžete přiblížit mapu na konkrétní umístění, zobrazit jinou webovou mapu nebo obrázek.",
-      "mainStageDisabled": "Když je editor maximalizován, akce hlavní úrovně jsou zakázány."
+      "editorActionsTitle": "Akce příběhu",
+      "editorActionsHelpDescr": "Vytvářejte ve svém příběhu odkazy, které vám pomohou ho vyprávět. Akce příběhu mohou odkazovat na jiné sekce nebo měnit hlavní sekci. Můžete například nakonfigurovat akci, aby přesunula mapu na jiné umístění, zapnula nebo vypnula vrstvy mapy nebo změnila média v hlavní části na jiné obrázky, videa, mapy nebo webové stránky.",
+      "mainStageDisabled": "Akce příběhu jsou vypnuty, pokud je editor maximalizován."
     },
     "organizePopup": {
       "title": "Organizovat",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Domovskou část nelze přemístit)",
       "exportMainStage": "Obsah hlavní úrovně",
       "exportPanel": "Obsah panelu",
-      "exportActions": "Akce hlavní úrovně"
+      "exportActions": "Akce příběhu"
     },
     "exportData": {
       "btn": "Exportovat obsah",

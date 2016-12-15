@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Chạm nhẹ vào để biết chi tiết",
       "clickForDetails": "Tìm hiểu thêm",
       "swipeToExplore": "Vuốt để khám phá",
-      "tapForMap": "Chạm nhẹ để quay lại Bản đồ",
-      "clickForMap": "QUAY LẠI BẢN ĐỒ"
+      "tapForMap": "Chạm để quay lại",
+      "clickForMap": "QUAY LẠI"
     },
     "floatLayout": {
       "scroll": "Cuộn"
@@ -55,7 +55,9 @@ define({
       "scroll": "Cuộn xuống để xem thêm!"
     },
     "mainStage": {
-      "back": "Quay lại"
+      "back": "Quay lại",
+      "errorDeleted": "Liên kết này không hoạt động (phần đã bị xóa)",
+      "errorNotPublished": "Liên kết này không hoạt động (phần chưa được phát hành)"
     },
     "headerFromCommon": {
       "storymapsText": "Story map",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Không thể chia sẻ trang này với người khác, thay vào đó, hãy chia sẻ ${link}",
       "link": "liên kết đến câu chuyện",
       "printOptPageBreak": "Bắt đầu mỗi phần trên trang mới",
+      "makeTextBlack": "Chuyển tất cả văn bản sang màu đen",
       "printWarning": "Đây là phiên bản in của story map. Nội dung động như video và bản đồ tương tác chỉ khả dụng trong phiên bản trực tuyến tại địa chỉ ${link}",
       "printMSWarning": "liên kết chỉ khả dụng trong Story trực tuyến",
       "printVideoWarning": "Video này chỉ xem được trong phiên bản trực tuyến của Story map."

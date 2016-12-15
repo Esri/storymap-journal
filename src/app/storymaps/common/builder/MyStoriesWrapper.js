@@ -152,7 +152,7 @@ define([
 
 		function scanStory()
 		{
-			if ( ! app.mystories )
+			if ( ! app.mystories || ! app.mystories.check )
 				return;
 
 			app.mystories.isChecking = true;

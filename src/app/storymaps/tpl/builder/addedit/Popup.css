@@ -77,6 +77,10 @@ body.layout-side #AddEditTitleEditor * {
 	line-height: 1.2em;
 }
 
+#AddEditTitleEditor.first-title {
+	font-family: 'open_sansregular', sans-serif;
+}
+
 /*
  * Title text editor
  */
@@ -202,7 +206,8 @@ input[type=text]:focus, textarea:focus {
 }
 
 .addEditPopup .navHelp {
-	padding: 8px 0 0 3px;
+	padding: 8px;
+	padding-right: 0; /* so the hover tip will attach to the icon */
 }
 
 .addEditPopup .navHelp:hover {

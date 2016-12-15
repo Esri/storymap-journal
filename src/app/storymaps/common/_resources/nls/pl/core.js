@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Nagłówek",
-      "logoEsri": "Logo firmy Esri",
-      "logoNone": "Brak logo",
-      "logoCustom": "Logo niestandardowe",
-      "logoCustomPlaceholder": "Adres URL (maks. 250x50 pikseli)",
-      "logoCustomTargetPlaceholder": "łącze przekierowujące do innej strony",
-      "logoSocialExplain": "Dostosuj łącze w nagłówku.",
-      "logoSocialText": "Tekst",
-      "logoSocialLink": "Łącze",
+      "logoEsriRadio": "Logo firmy Esri",
+      "logoNoneRadio": "Brak logo",
+      "logoCustomRadio": "Mój logotyp",
+      "logoCustomLabel": "Obraz:",
+      "logoCustomUploadHelp": "Logotypy prezentują się najlepiej, gdy ich współczynnik szerokości do wysokości należy do zakresu od 1:1 do 5:1. Jeśli logotyp powiązany za pomocą łącza jest wyświetlany powoli, należy zapisać jego kopię i przesłać go w tym miejscu.",
+      "logoCustomUploadTooltip": "Użyj przesłanego logotypu",
+      "logoCustomUploadButton": "Prześlij logotyp",
+      "logoUploadSizeError": "Wymiary obrazu w formacie GIF są za duże. Zmień jego wielkość, aby szerokość wynosiła ${PIXEL-WIDTH} pikseli.",
+      "logoCustomLinkTooltip": "Łącze do logotypu",
+      "logoCustomLinkPlaceholder": "Adres URL obrazu",
+      "logoUploadGenericError": "Logotyp może być plikiem w formacie .bmp, .gif, .jpg, .jpeg lub .png. Plik w formacie .gif musi mieć szerokość mniejszą niż 250 pikseli, a wielkość mniejszą niż 10 MB.",
+      "logoCustomTargetPlaceholder": "Strona internetowa otwierana po kliknięciu logotypu",
+      "logoSocialText": "Motto:",
+      "logoLink": "Łącze:",
       "lblSmallHeader": "Użyj nagłówka kompaktowego (bez podtytułu)"
     },
     "header": {
       "title": "Zmień tytuł swojej aplikacji %TPL_NAME%",
       "subtitle": "Zmień podtytuł swojej aplikacji %TPL_NAME%"
+    },
+    "sectionNavigation": {
+      "select": "Wybierz sekcję...",
+      "section": "Sekcja",
+      "thisSection": "Ta sekcja",
+      "homeSection": "Sekcja strony głównej",
+      "hiddenSection": "Sekcja ukryta"
     }
   }
 });

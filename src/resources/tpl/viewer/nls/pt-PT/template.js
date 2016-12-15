@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Toque para aceder a detalhes",
       "clickForDetails": "Obtenha mais informações",
       "swipeToExplore": "Deslize para explorar.",
-      "tapForMap": "Toque para regressar ao mapa",
-      "clickForMap": "VOLTAR AO MAPA"
+      "tapForMap": "Toque para regressar",
+      "clickForMap": "REGRESSAR"
     },
     "floatLayout": {
       "scroll": "Scroll"
@@ -55,7 +55,9 @@ define({
       "scroll": "Faça scroll para ver mais!"
     },
     "mainStage": {
-      "back": "Retroceder"
+      "back": "Retroceder",
+      "errorDeleted": "Esta ligação não se encontra ativa (a secção foi eliminada)",
+      "errorNotPublished": "Esta ligação não se encontra ativa (a secção não se encontra publicada)"
     },
     "headerFromCommon": {
       "storymapsText": "Um mapa de história",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Esta página não pode ser partilhada; ao invés, partilhe a ${link}",
       "link": "ligação à história",
       "printOptPageBreak": "Iniciar cada secção numa nova página",
+      "makeTextBlack": "Colocar todo o texto a negro",
       "printWarning": "Esta é uma versão impressa de um story map. Conteúdo dinâmico, tal como vídeos e mapas interativos, encontra-se apenas disponível na versão online na ${link}",
       "printMSWarning": "ligação disponível apenas na história online",
       "printVideoWarning": "Este vídeo pode ser visualizado na versão online deste story map."

@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Zaglavlje",
-      "logoEsri": "Esri logotip",
-      "logoNone": "Nema logotipa",
-      "logoCustom": "Prilagođeni logotip",
-      "logoCustomPlaceholder": "URL adresa (maks. 250x50 piksela)",
-      "logoCustomTargetPlaceholder": "Link za brojač klikova",
-      "logoSocialExplain": "Prilagodite link zaglavlja.",
-      "logoSocialText": "Tekst",
-      "logoSocialLink": "Link",
+      "logoEsriRadio": "Esri logotip",
+      "logoNoneRadio": "Nema logotipa",
+      "logoCustomRadio": "Moj logotip",
+      "logoCustomLabel": "Snimak:",
+      "logoCustomUploadHelp": "Logotipi najbolje izgledaju ako imaju odnos širina:visina između 1:1 i 5:1. Ako se linkovani logotip sporo iscrtava, sačuvajte kopiju i otpremite je ovde.",
+      "logoCustomUploadTooltip": "Koristi postavljeni logotip",
+      "logoCustomUploadButton": "Postavi logotip",
+      "logoUploadSizeError": "Dimenzije GIF-a su prevelike. smanjite na širinu od ${PIXEL-WIDTH} piksela.",
+      "logoCustomLinkTooltip": "Link ka logotipu",
+      "logoCustomLinkPlaceholder": "URL adresa snimka",
+      "logoUploadGenericError": "Logotip može da bude .bmp, .gif, .jpg, .jpeg ili .png datoteka. Gif-ovi moraju da imaju širinu manju od 250 piksela i veličinu manju od 10 MB.",
+      "logoCustomTargetPlaceholder": "Veb stranica koja se otvara klikom na logotip",
+      "logoSocialText": "Slogan:",
+      "logoLink": "Link:",
       "lblSmallHeader": "Koristite kompaktno zaglavlje (bez podnaslova)"
     },
     "header": {
       "title": "Izmenite naslov %TPL_NAME%",
       "subtitle": "Izmenite podnaslov %TPL_NAME%"
+    },
+    "sectionNavigation": {
+      "select": "Izaberite odeljak...",
+      "section": "Odeljak",
+      "thisSection": "Ovaj odeljak",
+      "homeSection": "Početni odeljak",
+      "hiddenSection": "Skriveni odeljak"
     }
   }
 });

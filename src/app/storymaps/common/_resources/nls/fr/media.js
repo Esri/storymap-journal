@@ -7,8 +7,9 @@ define({
       "lblImage": "Image",
       "lblVideo": "Vidéo",
       "lblExternal": "Page Web",
+      "lblUpload": "Charger",
+      "lblLink": "Lier",
       "disabled": "Cette entité a été désactivée par l'administrateur",
-      "url": "Pour entrer manuellement l'adresse Web d'une image",
       "userLookup": "Charger des albums",
       "notImplemented": "Fonction pas encore implémentée.",
       "noData": "Aucun album public trouvé"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Chargez les images à partir des réseaux sociaux <br /> ou directement à partir d'une URL"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "rechercher une image",
+      "lblDrop": "Déposer une image ici ou",
+      "infoUpload": "Les images seront stockées dans votre compte ArcGIS et accessibles uniquement dans votre narration.",
+      "warningFileTypes": "L'image peut être au format .jpg, .png, .gif ou .bmp",
+      "warningOneFile": "Un seul fichier est accepté à la fois.",
+      "warningFileSize": "Le fichier dépasse la limite de chargement autorisée. Choisissez un autre fichier.",
+      "tooltipRemove": "Supprimez cette image inutilisée de votre compte ArcGIS. <br> (Vous devrez la charger à nouveau si vous décidez de l'utiliser ultérieurement.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nom d'utilisateur",
@@ -36,7 +46,7 @@ define({
       "learn": "en savoir plus"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Adresse électronique ou identifiant Picasa",
+      "userInputLbl": "Adresse électronique ou identifiant Google",
       "signInMsg2": "Compte introuvable",
       "howToFind": "Comment trouver un identifiant Picasa",
       "howToFind2": "Copier les chiffres situés entre le premier et le deuxième '/' d'une page Picasa"
@@ -51,7 +61,7 @@ define({
       "other": "Autre"
     },
     "videoSelectorYoutube": {
-      "url": "URL d'une vidéo Youtube",
+      "url": "Lien vidéo YouTube",
       "pageInputLbl": "Nom d'utilisateur",
       "lookupMsgError": "Utilisateur introuvable",
       "howToFind": "Comment trouver un nom d'utilisateur YouTube",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "La vérification YouTube a échoué, vérifiez votre clé d'API YouTube."
     },
     "videoSelectorVimeo": {
-      "url": "URL d'une vidéo Vimeo"
+      "url": "Lien vidéo Vimeo"
     },
     "videoSelectorOther": {
-      "explain1": "Le récit ne peut pas lire de vidéos brutes (avi, mpeg), mais il peut lire les fichiers vidéo hébergés dans lesquels des lecteurs sont intégrés (YouTube ou Vimeo).",
-      "explain2": "La plupart des services d'hébergement de vidéos en ligne offrent cette fonctionnalité. Vous devez trouver l'option d'incorporation de la vidéo, copier le code donné et utiliser la page %WEBPAGE%.",
-      "explain3": "Si vous souhaitez héberger la vidéo même, vous pouvez également créer une page HTML qui utilise un lecteur vidéo, tel que %EXAMPLE%, héberger cette page et également utiliser la page %WEBPAGE%.",
-      "webpage": "Page Web"
+      "explain1": "Cette carte de narration ne lit pas les fichiers vidéo bruts (AVI, MPEG), mais peut lire les vidéos hébergées avec des lecteurs intégrés (YouTube ou Vimeo).",
+      "explain2": "La plupart des services d'hébergement de vidéos proposent cette fonctionnalité. Trouvez l'option permettant d'incorporer la vidéo, copiez le code fourni, puis ajoutez-le à votre narration à l'aide de l'option de contenu %WEBPAGE%.",
+      "explain3": "L'autre solution consiste à héberger la vidéo dans une page HTML qui utilise un lecteur vidéo tel que %EXAMPLE%. Vous pouvez ensuite ajouter l'URL de cette page HTML dans votre narration en tant que %WEBPAGE%.",
+      "webpage": "Page web"
     },
     "webpageSelectorHome": {
-      "lblUrl": "URL de la page Web",
+      "lblUrl": "Lien de page Web",
       "lblEmbed": "Code incorporé",
       "lblOR": "OU",
       "lblError1": "Erreur. Effacez un des deux champs en entrée.",
@@ -79,11 +89,11 @@ define({
       "configure": "Configurer"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "L'URL d'une image doit commencer par http:// et se terminer par .jpg ou .png",
+      "lblURL": "Lien d'image",
+      "lblURLPH": "Le lien doit se terminer par .jpg, .png, .gif ou .bmp",
       "lblURLError": "Cette image ne semble pas valide. Spécifiez un lien direct vers un fichier image (votre URL se terminera généralement par .jpg ou .png). Les liens vers une page Web contenant une image ne fonctionneront pas.",
       "lblURLCheck": "Vérification de l'image...",
-      "lblLabel": "Légende de l'image",
+      "lblLabel": "Image caption",
       "lblLabel1": "Légende",
       "lblLabel2": "Texte de pointage",
       "lblLabel3": "Aucun",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Ajuster",
       "lblPosition4": "Etirer",
       "lblPosition5": "Personnalisé",
+      "lblURLHelp": "Pour des résultats optimaux, les images ne doivent pas dépasser 400 ko. Utilisez des images JPG compressées à 80 % avec les largeurs recommandées suivantes : 2 000 pixels pour la grande scène ou le panneau de narration avec le bouton Agrandir, 1 000 pixels pour le panneau de narration sans le bouton Agrandir.<br><br>Si une image liée s'affiche lentement, chargez-la dans votre narration pour de meilleurs résultats.",
       "tooltipDimension": "La valeur peut être spécifiée en 'px' ou '%'",
       "tooltipDimension2": "La valeur doit être spécifiée en 'px'",
       "lblPosition2Explain": "(peut être rognée)",
@@ -103,14 +114,19 @@ define({
       "lblPosition3Explain2": "(la largeur s'adapte toujours au volet)",
       "lblPosition4Explain": "(peut être déformée)",
       "unloadLbl": "Décharger lorsque le lecteur quitte cette section",
-      "unloadHelp": "Si la page Web comporte un support audio ou vidéo, cette option doit rester activée pour empêcher la lecture du contenu lorsque le lecteur quitte cette section. Désactivez cette option pour continuer la lecture d'une piste audio pendant que le lecteur avance dans le récit.<br />Si la page Web est une application, désactivez cette option pour que le récit ne se recharge pas si ce lecteur revient à cette section.",
+      "unloadHelp": "Si la page Web comporte un support audio ou vidéo, cette option doit rester activée pour empêcher la lecture du contenu lorsque le lecteur quitte cette section. Désactivez cette option pour continuer la lecture d'une piste audio pendant que le lecteur avance dans le récit.<br />Si la page Web est une application, désactivez cette option pour que le récit ne se recharge pas si le lecteur revient à cette section.",
       "embedProtocolLabel": "Charger la page via une connexion sécurisée (HTTPS)",
-      "embedProtocolWarning1": "Comme votre récit est configuré de façon à se charger via une connexion sécurisée (https), la page Web affichée dans le récit doit également utiliser une connexion sécurisée. Si la page ne se charge pas, c'est peut-être qu'elle n'est pas accessible via une connexion sécurisée ou qu'elle ne peut pas être intégrée dans votre récit (certains sites Web imposent des restrictions). Vous pouvez être amené à créer un hyperlien pour ouvrir la page dans un nouvel onglet du navigateur.",
-      "embedProtocolWarning2": "Comme votre récit est configuré de façon à se charger via une connexion non sécurisée (http), vous pouvez choisir de charger cette page via une connexion sécurisée (procédure recommandée) ou non sécurisée. Si la page ne se charge pas, c'est peut-être qu'elle ne prend pas en charge le type de connexion que vous avez sélectionné ou qu'elle ne peut pas être intégrée dans votre récit (certains sites Web imposent des restrictions). Vous pouvez être amené à créer un hyperlien pour ouvrir la page dans un nouvel onglet du navigateur."
+      "embedProtocolWarning1": "Si cette page ne se charge pas dans votre récit, elle ne peut pas être incorporée pour des raisons de sécurité Web. Vous pouvez également ajouter un lien dans votre narration afin d'ouvrir la page dans un nouvel onglet du navigateur. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>En savoir plus</a>",
+      "embedProtocolWarning2": "Si cette page ne se charge pas dans votre récit, désélectionnez cette option et réessayez. Si la page ne se charge toujours pas, elle ne peut pas être incorporée pour des raisons de sécurité Web. Vous pouvez également ajouter un lien dans votre narration afin d'ouvrir la page dans un nouvel onglet du navigateur. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>En savoir plus</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Localiser une adresse ou un lieu",
       "mapMarkerExplain": "L'utilisateur verra un symbole ponctuel cartographique en cliquant sur le lien"
+    },
+    "editorActions": {
+      "navigate": "Accéder à une section",
+      "remove": "Supprimer l'action",
+      "preview": "Prévisualiser l'action"
     },
     "editorActionMedia": {
       "lblTitle": "Modifier le contenu de la grande scène"

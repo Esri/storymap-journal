@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Başlık",
-      "logoEsri": "Esri logosu",
-      "logoNone": "Logo yok",
-      "logoCustom": "Özel logo",
-      "logoCustomPlaceholder": "URL (maks 250x50 piksel)",
-      "logoCustomTargetPlaceholder": "Tıklanabilir bağlantı",
-      "logoSocialExplain": "Başlık bağlantısını özelleştirin.",
-      "logoSocialText": "Metin",
-      "logoSocialLink": "Bağlantı",
+      "logoEsriRadio": "Esri logosu",
+      "logoNoneRadio": "Logo yok",
+      "logoCustomRadio": "Logom",
+      "logoCustomLabel": "Görüntü:",
+      "logoCustomUploadHelp": "Logolar genişlik:yükseklik oranları 1:1 ve 5:1 arasında olduğunda en iyi biçimde görüntülenir. Bağlantılı bir logo yavaş çiziliyorsa, bir kopyasını kaydederek buraya yükleyin.",
+      "logoCustomUploadTooltip": "Yüklenmiş bir logo kullan",
+      "logoCustomUploadButton": "Logo yükle",
+      "logoUploadSizeError": "GIF boyutları çok büyük. ${PIXEL-WIDTH} piksel genişliğe yeniden boyutlandırın.",
+      "logoCustomLinkTooltip": "Logo bağlantısı",
+      "logoCustomLinkPlaceholder": "Görüntü URL'si",
+      "logoUploadGenericError": "Logo bir .bmp, .gif, .jpg, .jpeg veya .png dosyası olabilir. Gif'ler en fazla 250px genişliğinde olmalı ve 10 MB boyutunu aşmamalıdır.",
+      "logoCustomTargetPlaceholder": "Logoya tıklandığında açılacak web sayfası",
+      "logoSocialText": "Etiket Satırı:",
+      "logoLink": "Bağlantı:",
       "lblSmallHeader": "Kompakt başlık kullanın (alt başlıksız)"
     },
     "header": {
       "title": "%TPL_NAME% adınızın başlığını düzenleyin",
       "subtitle": "%TPL_NAME% adınızın alt başlığını düzenleyin"
+    },
+    "sectionNavigation": {
+      "select": "Bir seçim yapın...",
+      "section": "Bölüm",
+      "thisSection": "Bu bölüm",
+      "homeSection": "Giriş bölümü",
+      "hiddenSection": "Gizli bölüm"
     }
   }
 });

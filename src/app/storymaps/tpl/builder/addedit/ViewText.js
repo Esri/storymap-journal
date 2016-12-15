@@ -1,5 +1,6 @@
 define(["lib-build/tpl!./ViewText",
 		"lib-build/css!./ViewText",
+		"lib-build/tpl!./ViewActionsBtn",
 		"storymaps/common/builder/ckeditor/plugins/storymapsAction/dialog/Media",
 		"storymaps/common/builder/ckeditor/plugins/storymapsAction/dialog/Geocode",
 		"storymaps/common/builder/ckeditor/plugins/storymapsAction/dialog/Navigate",
@@ -13,6 +14,7 @@ define(["lib-build/tpl!./ViewText",
 	function (
 		viewTpl,
 		viewCss,
+		actionsBtnTpl,
 		EditorDialogMedia,
 		EditorDialogGeocode,
 		EditorDialogNavigate,
@@ -36,9 +38,7 @@ define(["lib-build/tpl!./ViewText",
 				_mode = null;
 
 			container.append(viewTpl({
-				editorPlaceholder: i18n.builder.addEditViewText.editorPlaceholder,
-				editorActionsHelpTitle: i18n.builder.addEditViewText.editorActionsTitle,
-				editorActionsHelpDescr: i18n.builder.addEditViewText.editorActionsHelpDescr
+				editorPlaceholder: i18n.builder.addEditViewText.editorPlaceholder
 			}));
 
 			initEvents();
@@ -554,32 +554,18 @@ define(["lib-build/tpl!./ViewText",
 					//
 					// Main Stage actions toolbar
 					//
+
 					container.find(".cke_button__media_icon").parents(".cke_toolgroup")
-						.css({
-							border: "1px solid #428BC9",
-							cursor: "pointer",
-							maxHeight: 26,
-							overflow: "hidden",
-							paddingRight: 3
-						})
-						.prepend('<span class="cke_button" style="cursor:default;float:left;padding: 4px 1px 0px 6px;">'
-								+ ' <span style="font-size:0.8em; margin-top: -4px;display: inline-block;margin-bottom: 0px;height: 18px;font-size: 0.8em;width: 68px;word-wrap: break-word;white-space: normal; color: #428BC9">'
-								+    i18n.builder.addEditViewText.editorActionsTitle
-								+ ' <img src="resources/tpl/builder/icons/builder-help.png" style="vertical-align: -4px; width: 14px; margin-left: 2px; margin-right: 1px">'
-								+ ' </span>'
-								+ '</span>'
-						);
-					container.find(".cke_button__media_icon").parents(".cke_toolgroup").find(".cke_button").eq(0).hover(
-						function(){
-							container.find('.mainstagetooltip').tooltip({
-								html: true,
-								trigger: 'hover'
-							}).tooltip('show');
-						},
-						function(){
-							container.find('.mainstagetooltip').tooltip('hide');
-						}
-					);
+						.addClass('storyActionsGroup')
+						.prepend(actionsBtnTpl(i18n.builder.addEditViewText));
+
+					container.find('.mainstagetooltip').tooltip({
+						html: true,
+						trigger: 'hover',
+						container: container,
+						placement: 'bottom'
+					});
+
 					container.find('.cke_button__media, .cke_button__media .cke_button_icon').css("width", 42);
 					container.find('.cke_button__media .cke_button_icon').css("background-size", 42);
 					container.find(".cke_button__media_icon").parents(".cke_toolgroup").find(".cke_button span")
@@ -759,7 +745,8 @@ define(["lib-build/tpl!./ViewText",
 
 					uiColor: '#FCFCFC',
 					disableAutoInline: true,
-					contentsCss: app.isProduction ? 'resources/lib/ckeditor/editor.css' : 'app/storymaps/common/builder/ckeditor/editor.css'
+					contentsCss: app.isProduction ? 'resources/lib/ckeditor/editor.css' : 'app/storymaps/common/builder/ckeditor/editor.css',
+					fontSize_sizes: '8/8px;9/9px;10/10px;11/11px;12/12px;14/14px;16/16px;18/18px;20/20px;22/22px;24/24px;26/26px;28/28px;36/36px;'
 				});
 			}
 		};

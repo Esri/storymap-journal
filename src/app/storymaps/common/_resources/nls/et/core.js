@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Päis",
-      "logoEsri": "Esri logo",
-      "logoNone": "Logo puudub",
-      "logoCustom": "Valikuline logo",
-      "logoCustomPlaceholder": "URL (max 250x50 pikslit)",
-      "logoCustomTargetPlaceholder": "Kliki läbi lingi",
-      "logoSocialExplain": "Kohandage päiselinki.",
-      "logoSocialText": "Tekst",
-      "logoSocialLink": "Link",
+      "logoEsriRadio": "Esri logo",
+      "logoNoneRadio": "Logo puudub",
+      "logoCustomRadio": "Minu logo",
+      "logoCustomLabel": "Pilt:",
+      "logoCustomUploadHelp": "Logod näevad kõige paremad välja, kui nende laiuse ja kõrguse suhe on 1:1 kuni 5:1. Kui lingitud logo joonistatakse liiga aeglaselt, salvestage koopia ja laadige see siia üles.",
+      "logoCustomUploadTooltip": "Kasuta üleslaaditud logo",
+      "logoCustomUploadButton": "Laadi logo üles",
+      "logoUploadSizeError": "GIF-i mõõtmed on liiga suured. Muutke GIF ${PIXEL-WIDTH} piksli laiuseks.",
+      "logoCustomLinkTooltip": "Lingi logoga",
+      "logoCustomLinkPlaceholder": "Pildi URL",
+      "logoUploadGenericError": "Logo võib olla .bmp, .gif, .jpg, .jpeg või .png laiendiga fail. Gifid peavad olema alla 250 piksli laiused ja kuni 10 Mb suurused.",
+      "logoCustomTargetPlaceholder": "Veebileht, mis avaneb logol klõpsates",
+      "logoSocialText": "Reklaamlause:",
+      "logoLink": "Link:",
       "lblSmallHeader": "Kasuta kompaktset päist (subtiitrita)"
     },
     "header": {
       "title": "Muuda malli %TPL_NAME% nime",
       "subtitle": "Muuda malli %TPL_NAME% subtiitrit"
+    },
+    "sectionNavigation": {
+      "select": "Valige jaotis...",
+      "section": "Jaotis",
+      "thisSection": "See jaotis",
+      "homeSection": "Kodujaotis",
+      "hiddenSection": "Peidetud jaotis"
     }
   }
 });

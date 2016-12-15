@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "页眉",
-      "logoEsri": "Esri 徽标",
-      "logoNone": "无徽标",
-      "logoCustom": "自定义徽标",
-      "logoCustomPlaceholder": "URL（最大 250x50 像素）",
-      "logoCustomTargetPlaceholder": "点击链接",
-      "logoSocialExplain": "自定义标题链接。",
-      "logoSocialText": "文本",
-      "logoSocialLink": "链接",
+      "logoEsriRadio": "Esri 徽标",
+      "logoNoneRadio": "无徽标",
+      "logoCustomRadio": "我的徽标",
+      "logoCustomLabel": "图像：",
+      "logoCustomUploadHelp": "当徽标的宽高比在 1:1 到 5:1 之间时，其显示效果最佳。如果已链接徽标绘制缓慢，请保存其副本并在此处上传。",
+      "logoCustomUploadTooltip": "使用已上传徽标",
+      "logoCustomUploadButton": "上传徽标",
+      "logoUploadSizeError": "GIF 尺寸过大。请将尺寸的宽度重新调整为 ${PIXEL-WIDTH} 像素。",
+      "logoCustomLinkTooltip": "链接到徽标",
+      "logoCustomLinkPlaceholder": "图像 URL",
+      "logoUploadGenericError": "徽标可以是 .bmp、.gif、.jpg、.jpeg 或 .png 文件。Gif 文件的尺寸和大小必须小于 250px 和 10Mb。",
+      "logoCustomTargetPlaceholder": "单击徽标时打开的 web 页面",
+      "logoSocialText": "标语：",
+      "logoLink": "链接：",
       "lblSmallHeader": "使用紧凑型标题(无副标题)"
     },
     "header": {
       "title": "编辑 %TPL_NAME% 的标题",
       "subtitle": "编辑 %TPL_NAME% 的副标题"
+    },
+    "sectionNavigation": {
+      "select": "选择一个分区...",
+      "section": "分区",
+      "thisSection": "此分区",
+      "homeSection": "主页分区",
+      "hiddenSection": "隐藏分区"
     }
   }
 });

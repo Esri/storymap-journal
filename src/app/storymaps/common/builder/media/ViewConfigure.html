@@ -1,7 +1,9 @@
 <div class="mediaSelectorConfigure">
 	<form role="form">
 		<div class="form-group">
-			<label><%= lblURL %></label>
+			<label><%= lblURL %>
+        <span class="configureHelp fa fa-info-circle" data-toggle="tooltip" data-title="<%= lblURLHelp %>"></span>
+      </label>
 			<input type="text" class="form-control mediaURL" placeholder="<%= lblURLPH %>">
 			<p class="mediaURLError"><%= lblURLError %></p>
 		</div>
@@ -16,9 +18,7 @@
 						<label>
 							<input type="checkbox" value="opt-maximize">
 							<%= lblMaximize %>
-							<a href="#" class="maximizeHelp" data-toggle="tooltip" data-placement="right" data-title="<%= lblMaximizeHelp %>">
-								<img src="resources/tpl/builder/icons/builder-help.png"/>
-							</a>
+                <span class="configureHelp fa fa-info-circle" data-toggle="tooltip" data-title="<%= lblMaximizeHelp %>"></span>
 						</label>
 					</div>
 				</div>

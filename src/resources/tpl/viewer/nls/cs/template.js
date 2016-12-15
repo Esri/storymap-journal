@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Klepnutím zobrazíte podrobnosti.",
       "clickForDetails": "Zjistit více",
       "swipeToExplore": "Přejeďte prstem, chcete-li zahájit prohlížení.",
-      "tapForMap": "Klepnutím se vrátíte na mapu.",
-      "clickForMap": "ZPĚT DO MAPY"
+      "tapForMap": "Klepnutím se vrátíte",
+      "clickForMap": "ZPĚT"
     },
     "floatLayout": {
       "scroll": "Posunout"
@@ -55,7 +55,9 @@ define({
       "scroll": "Chcete-li pokračovat, posuňte zobrazení dolů!"
     },
     "mainStage": {
-      "back": "Zpět"
+      "back": "Zpět",
+      "errorDeleted": "Tento odkaz není aktivní (sekce byla smazána)",
+      "errorNotPublished": "Tento odkaz není aktivní (sekce nebyla publikována)"
     },
     "headerFromCommon": {
       "storymapsText": "Mapa s příběhem",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Tuto stránku nelze sdílet s ostatními, sdílejte místo toho ${link}.",
       "link": "odkaz na příběh",
       "printOptPageBreak": "Zahajte každou sekci na nové straně",
+      "makeTextBlack": "Zobrazit veškerý text černě",
       "printWarning": "Toto je tištěná verze mapy s příběhem. Dynamický obsah, jako jsou videa a interaktivní mapy, je k dispozici pouze v online verzi na adrese ${link}.",
       "printMSWarning": "odkaz je k dispozici pouze v online příběhu",
       "printVideoWarning": "Toto video lze zobrazit v online verzi této mapy s příběhem."

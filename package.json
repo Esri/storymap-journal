@@ -1,6 +1,6 @@
 {
   "name": "Storymaps-MapJournal",
-  "version": "1.8.1",
+  "version": "1.9.0",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.4.0",

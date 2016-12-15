@@ -1,5 +1,3 @@
-var i18n = null;
-
 define.amd.jQuery = true;
 
 require([
@@ -9,8 +7,10 @@ require([
 	"dojo/_base/lang",
 	"esri/dijit/Legend",
 	"esri/geometry/Extent",
+	"esri/tasks/query",
+	"esri/tasks/QueryTask",
 	"dojo/has",
-	"dojo/ready"
+	"dojo/domReady!"
 ], function(
 	i18n,
 	arcgisPortal,
@@ -18,6 +18,8 @@ require([
 	lang,
 	LegendDijit,
 	Extent,
+	Query,
+	QueryTask,
 	has
 ) {
 	var sections = app.data.getStorySections(),
@@ -38,7 +40,7 @@ require([
 		storyHTML += i18n.viewer.shareFromCommon.printInstruction1a + '. ';
 	}
 
-	storyHTML += i18n.viewer.shareFromCommon.printInstruction2.replace('${link}', '<a href="' + storyURL + '">' + i18n.viewer.shareFromCommon.link + '</a>');
+	storyHTML += i18n.viewer.shareFromCommon.printInstruction2.replace('${link}', '<a href="' + window.storyURL + '">' + i18n.viewer.shareFromCommon.link + '</a>');
 	storyHTML += '</div>';
 	storyHTML += '<div class="print-btn">';
 	storyHTML += '<span class="glyphicon glyphicon-print" aria-hidden="true"></span>';
@@ -54,7 +56,7 @@ require([
 	storyHTML += '</td><td style="width: 50%">';
 	storyHTML += '<div class="checkbox"><label>';
 	storyHTML += '<input type="checkbox" value="blackText">';
-	storyHTML += 'Make all text black'; // TODO
+	storyHTML += i18n.viewer.shareFromCommon.makeTextBlack || 'Make all text black';
 	storyHTML += '</label></div>';
 	storyHTML += '</td></tr></table>';
 	storyHTML += '</div>';
@@ -64,7 +66,7 @@ require([
 	storyHTML += '<header>';
 	storyHTML += '<div class="story-title">' + title + '</div>';
 
-	storyHTML += '<i class="story-warning">' + i18n.viewer.shareFromCommon.printWarning.replace('${link}', '<a href="' + storyURL + '">' + storyURL + '</a>') + '</i>';
+	storyHTML += '<i class="story-warning">' + i18n.viewer.shareFromCommon.printWarning.replace('${link}', '<a href="' + window.storyURL + '">' + window.storyURL + '</a>') + '</i>';
 	storyHTML += '</header>';
 
 	$.each(sections, function(i, section) {

@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Toque poara detalhes",
       "clickForDetails": "Mais informações",
       "swipeToExplore": "Oscile para explorar",
-      "tapForMap": "Toque para voltar ao Mapa",
-      "clickForMap": "VOLTAR AO MAPA"
+      "tapForMap": "Toque para voltar",
+      "clickForMap": "VOLTAR"
     },
     "floatLayout": {
       "scroll": "Rolar"
@@ -55,7 +55,9 @@ define({
       "scroll": "Role para baixo para mais!"
     },
     "mainStage": {
-      "back": "Voltar"
+      "back": "Voltar",
+      "errorDeleted": "Este link não está ativo (a seção foi excluída)",
+      "errorNotPublished": "Este link não está ativo (a seção não foi publicada)"
     },
     "headerFromCommon": {
       "storymapsText": "Um mapa histórico",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Esta página não pode ser compartilhada com outros, ao contrário, compartilhe o ${link}",
       "link": "link para a história",
       "printOptPageBreak": "Comece cada seção em uma nova página",
+      "makeTextBlack": "Tornar todo o texto preto",
       "printWarning": "Esta é uma versão impressa de um mapa histórico. O conteúdo dinâmico como vídeos e mapas interativos está disponível somente na versão online em ${link}",
       "printMSWarning": "link disponível somente na história online",
       "printVideoWarning": "Este vídeo pode ser visualizado na versão online deste mapa histórico"

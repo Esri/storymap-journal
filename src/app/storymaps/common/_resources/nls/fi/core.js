@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Ylätunniste",
-      "logoEsri": "Esri-logo",
-      "logoNone": "Ei logoa",
-      "logoCustom": "Mukautettu logo",
-      "logoCustomPlaceholder": "URL-osoite (enint. 250x50 pikseliä)",
-      "logoCustomTargetPlaceholder": "Click-through-linkki",
-      "logoSocialExplain": "Mukauta ylätunnisteen linkkiä.",
-      "logoSocialText": "Teksti",
-      "logoSocialLink": "Linkki",
+      "logoEsriRadio": "Esri-logo",
+      "logoNoneRadio": "Ei logoa",
+      "logoCustomRadio": "Oma logo",
+      "logoCustomLabel": "Kuva:",
+      "logoCustomUploadHelp": "Logot näyttävät parhaimmilta, kun niiden leveys:korkeus-suhde on 1:1–5:1. Jos linkitetty logo tulee näkyviin hitaasti, tallenna sen kopio ja lataa se tähän.",
+      "logoCustomUploadTooltip": "Käytä tilille ladattua logoa",
+      "logoCustomUploadButton": "Lataa logo tilille",
+      "logoUploadSizeError": "GIF-kuvan mitat ovat liian suuret. Muuta leveydeksi ${PIXEL-WIDTH}.",
+      "logoCustomLinkTooltip": "Linkitä logo",
+      "logoCustomLinkPlaceholder": "Kuvan URL",
+      "logoUploadGenericError": "Logo voi olla .bmp-, .gif-, .jpg-, .jpeg- tai .png-tiedosto. Gif-tiedostojen leveyden on oltava alle 250 kuvapistettä ja koon enintään 10 Mt.",
+      "logoCustomTargetPlaceholder": "Logoa napsautettaessa avattava verkkosivu",
+      "logoSocialText": "Iskulause:",
+      "logoLink": "Linkki:",
       "lblSmallHeader": "Käytä tiivistä otsikko (ei alaotsikkoa)"
     },
     "header": {
       "title": "Muokkaa tarinan %TPL_NAME% otsikkoa",
       "subtitle": "Muokkaa tarinan %TPL_NAME% alaotsikkoa"
+    },
+    "sectionNavigation": {
+      "select": "Valitse osio...",
+      "section": "Osio",
+      "thisSection": "Tämä osio",
+      "homeSection": "Kotiosio",
+      "hiddenSection": "Piilo-osio"
     }
   }
 });

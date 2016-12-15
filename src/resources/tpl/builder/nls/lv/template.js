@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Šeit pievienojiet tekstu, saites un maza izmēra grafikas.",
-      "editorActionsTitle": "Galvenā posma darbības",
-      "editorActionsHelpDescr": "Izmantojiet šīs vadīklas, lai izveidotu saites, kas tiks mainītas galvenajā posmā. Piemēram, kad lietotājs noklikšķinās uz saites, iespējams, vēlēsieties mērogmainīt karti līdz konkrētam izvietojumam, parādīt citu web karti vai attēlu.",
-      "mainStageDisabled": "Galvenā posma darbības ir atspējotas, ja redaktors ir maksimizēts"
+      "editorActionsTitle": "Stāsta darbības",
+      "editorActionsHelpDescr": "Izveidojiet savā stāstījumā saites, kuras palīdz pastāstīt stāstu. Stāsta darbības var saistīt ar citu sadaļu vai mainīt galveno posmu. Piemēram, jūs varat konfigurēt darbību, lai pārvietotu karti uz citu vietu, ieslēgtu/izslēgtu kartes slāņus vai mainītu galvenā posma mediju uz citu attēlu, video, karti vai tīmekļa lapu.",
+      "mainStageDisabled": "Stāsta darbības ir atspējotas, ja redaktors ir maksimizēts"
     },
     "organizePopup": {
       "title": "Organizē",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Sākuma sadaļu nevar pārvietot)",
       "exportMainStage": "Galvenā posma saturs",
       "exportPanel": "Paneļa saturs",
-      "exportActions": "Galvenā posma darbības"
+      "exportActions": "Stāsta darbības"
     },
     "exportData": {
       "btn": "Eksportēt saturu",

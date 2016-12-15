@@ -443,6 +443,9 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				container.find('.backdrop, .panelEditBtn').css("background-color", colors.panel);
 				container.css("color", colors.text);
 				container.find('.backdrop').css("opacity", colors.panelOpa || '');
+				container.find('.scroll').css({
+					'background': 'linear-gradient(transparent, ' + colors.panel + ')'
+				});
 
 			}
 
@@ -475,12 +478,14 @@ define(["lib-build/tpl!./FloatingPanelSection",
 
 			function updateSwiperWrapperForScrollInvite()
 			{
+				/*
 				var swiperWrapperHeight = container.find('.swiper-container').height();
 
 				container.find('.swiper-wrapper').css({
 					height: container.find('.swiper-slide-active').position().top + swiperWrapperHeight - container.find('.scroll').outerHeight(),
 					overflow: 'hidden'
 				});
+				*/
 			}
 
 			function removeScrollInvite()

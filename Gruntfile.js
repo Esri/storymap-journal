@@ -2,7 +2,7 @@
 	module.exports = function(grunt) {
 		var fs = require('fs'),
 			TPL_NAME = 'tpl';
-		
+
 		/*
 		 * Tasks:
 		 *  - grunt 			Create the production build
@@ -11,16 +11,16 @@
 		 *  - grunt watch		Run JSHint every time a JS file change
 		 *  - grunt jsapioptim	Generate the JS API modules list used by the app in deploy/
 		 */
-		
+
 		require('load-grunt-tasks')(grunt);
-		
+
 		grunt.initConfig({
 			pkg: grunt.file.readJSON('package.json'),
-			
+
 			clean: {
 				deploy: ['deploy/*'],
 				jsapioptim: [
-					'deploy/build-api-viewer.tmp', 
+					'deploy/build-api-viewer.tmp',
 					'deploy/build-api-builder.tmp',
 					'jsapi-optim-modules-viewer.txt',
 					'jsapi-optim-modules-builder.txt'
@@ -32,7 +32,7 @@
 				    'deploy/resources/tpl/viewer/font/README.txt'
 				]
 			},
-			
+
 			mkdir: {
 				all: {
 					options: {
@@ -40,7 +40,7 @@
 					},
 				},
 			},
-			
+
 			requirejs: {
 				options: {
 					baseUrl: 'src/app/',
@@ -52,26 +52,26 @@
 						'dojox': 'empty:',
 						'dgrid': 'empty:', // Used by SelectMapWidget
 						'put-selector': 'empty:', // Used by SelectMapWidget
-						
+
 						/* Libraries */
 						'lib-app': '../lib-app/',
-						
+
 						/* Build chain dependencies */
 						'lib-build': '../lib-build/',
-						
+
 						/* Inlining of .html */
 						'text': '../lib-build/text',
 						'underscore': '../lib-build/lodash',
-						
+
 						/* Localization */
 						'i18n': '../lib-build/i18n',
 					},
 					stubModules: [
-						'text', 
+						'text',
 						'lib-build/tpl'
 					],
 					exclude: [
-						'underscore',
+						// 'underscore',
 						'lib-build/normalize'
 						//'i18n'
 					],
@@ -87,13 +87,13 @@
 						name: 'storymaps/' + TPL_NAME + '/BuildConfigBuilder',
 						out: 'deploy/app/builder-min.js',
 						onModuleBundleComplete: function (data) {
-							var modules = data.included.filter(function (value) { 
+							var modules = data.included.filter(function (value) {
 								return ! value.match(/lib-/);
 							});
-							
+
 							fs.writeFile("deploy/build-api-builder.tmp", modules.join('\n'), function(err) {
 								if(err) console.log(err);
-							}); 
+							});
 						}
 					}
 				},
@@ -102,18 +102,18 @@
 						name: 'storymaps/' + TPL_NAME + '/BuildConfigViewer',
 						out: 'deploy/app/viewer-min.js',
 						onModuleBundleComplete: function (data) {
-							var modules = data.included.filter(function (value) { 
+							var modules = data.included.filter(function (value) {
 								return ! value.match(/lib-/);
 							});
-							
+
 							fs.writeFile("deploy/build-api-viewer.tmp", modules.join('\n'), function(err) {
 								if(err) console.log(err);
-							}); 
+							});
 						}
 					}
 				}
 			},
-			
+
 			concat: {
 				options: {
 					stripBanners: true,
@@ -131,7 +131,7 @@
 					dest: 'deploy/app/builder-min.js',
 				},
 			},
-			
+
 			execute: {
 				viewer: {
 					src: ['src/lib-build/js-api-optimizer.js'],
@@ -148,7 +148,7 @@
 					}
 				}
 			},
-			
+
 			copy: {
 				html: {
 					files: [{
@@ -186,7 +186,7 @@
 					files: [{
 						expand: true,
 						cwd: 'src',
-						src:['app/main-app.js', 'app/main-config.js'],
+						src:['app/main-app.js', 'app/main-config.js','app/custom-scripts.js'],
 						dest: 'deploy/'
 					}]
 				},
@@ -203,15 +203,20 @@
 						cwd: 'src/lib-app/bootstrap/fonts/',
 						src:['**'],
 						dest: 'deploy/resources/lib/bootstrap/fonts/'
+					}, {
+						expand: true,
+						cwd: 'src/lib-app/font-awesome/fonts/',
+						src:['**'],
+						dest: 'deploy/resources/lib/font-awesome/fonts/'
 					},
 					{
 						expand: true,
 						cwd: 'src/lib-app/ckeditor/',
 						src:[
-							'config.js', 
-							'contents.css', 
-							'styles.js', 
-							'lang/**', 
+							'config.js',
+							'contents.css',
+							'styles.js',
+							'lang/**',
 							'skins/**',
 							'plugins/colordialog/**',
 							'plugins/confighelper/**',
@@ -247,7 +252,7 @@
 					}]
 				}
 			},
-			
+
 			'regex-replace': {
 				css: {
 					src: ['deploy/app/*.css'],
@@ -268,6 +273,12 @@
 							name: 'Bootstrap images path',
 							search: '../lib-app/bootstrap/fonts/',
 							replace: '../resources/lib/bootstrap/fonts/',
+							flags: 'g'
+						},
+						{
+							name: 'FontAwesome fonts path',
+							search: '../lib-app/font-awesome/fonts/',
+							replace: '../resources/lib/font-awesome/fonts/',
 							flags: 'g'
 						},
 						{
@@ -321,7 +332,7 @@
 					]
 				}
 			},
-			
+
 			jshint: {
 				common: {
 					options: {
@@ -329,7 +340,7 @@
 					},
 					files: {
 						src: [
-							'src/app/storymaps/common/**/*.js', 
+							'src/app/storymaps/common/**/*.js',
 							// Exclude browse-dialog files
 							'!src/app/storymaps/common/builder/browse-dialog/**/*.js',
 							// Exclude NLS
@@ -364,13 +375,13 @@
 					},
 					files: {
 						src: [
-							'src/app/storymaps/common/_resources/nls/*/*.js', 
+							'src/app/storymaps/common/_resources/nls/*/*.js',
 							'src/resources/**/nls/*/*.js'
 						]
 					}
 				}
 			},
-			
+
 			connect: {
 				server: {
 					options: {
@@ -380,19 +391,19 @@
 					}
 				}
 			},
-			
+
 			watch: {
 				files: ['src/app/**/*.js'],
 				tasks: ['jshint']
 			}
 		});
-		
-		/* 
-		 * Create a web server on port 8080 
-		 * Run 'start grunt server' or 'grunt server &' 
+
+		/*
+		 * Create a web server on port 8080
+		 * Run 'start grunt server' or 'grunt server &'
 		 */
 		grunt.registerTask('server', ['connect']);
-		
+
 		/*
 		 * Build production version of the template
 		 */
@@ -403,49 +414,49 @@
 			'jshint:nls-en',
 			'jshint:nls-all',
 			// Initialize deploy folder
-			'clean', 
+			'clean',
 			'mkdir',
-			
+
 			// Minify and compress JS & CSS
 			'requirejs',
 			'regex-replace:js',
 			'regex-replace:css',
 			'concat',
-			
+
 			// Copy html
 			'copy:html',
-			
+
 			// Copy main
 			'copy:main',
 			'regex-replace:main',
-			
+
 			// Copy resources
 			'copy:config',
 			'copy:resources',
 			'copy:commonResources',
-			
+
 			// Copy libs resources and perform replacement
 			'copy:libsResources',
 			'regex-replace:csslib',
-			
+
 			'copy:readme',
-			'clean:jsapioptim', 
+			'clean:jsapioptim',
 			'clean:fontello'
 		]);
-		
+
 		/*
 		 * Generate jso.arcgis.com input
 		 */
 		grunt.registerTask('jsapioptim', function() {
-			grunt.task.run('clean'); 
-			grunt.task.run('mkdir'); 
-			
-			grunt.task.run('requirejs'); 
-			grunt.task.run('execute'); 
-			
-			grunt.task.run('clean:deploy'); 
-			grunt.task.run('copy:jsapioptim'); 
-			grunt.task.run('clean:jsapioptim'); 
+			grunt.task.run('clean');
+			grunt.task.run('mkdir');
+
+			grunt.task.run('requirejs');
+			grunt.task.run('execute');
+
+			grunt.task.run('clean:deploy');
+			grunt.task.run('copy:jsapioptim');
+			grunt.task.run('clean:jsapioptim');
 		});
 	};
 })();

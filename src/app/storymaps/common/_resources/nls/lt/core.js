@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Antraštė",
-      "logoEsri": "Esri logotipas",
-      "logoNone": "Logotipo nėra",
-      "logoCustom": "Savas logotipas",
-      "logoCustomPlaceholder": "URL (maks. 250 x 50 pikselių)",
-      "logoCustomTargetPlaceholder": "Vieno mygtuko paspaudimo nuoroda",
-      "logoSocialExplain": "Adaptuokite antraštės nuorodą.",
-      "logoSocialText": "Tekstas",
-      "logoSocialLink": "Nuoroda",
+      "logoEsriRadio": "Esri logotipas",
+      "logoNoneRadio": "Logotipo nėra",
+      "logoCustomRadio": "Mano logotipas",
+      "logoCustomLabel": "Paveikslėlis:",
+      "logoCustomUploadHelp": "Logotipai atrodo geriausiai, jei jų pločio ir aukščio santykis yra nuo 1:1 iki 5:1. Jei susietas logotipas atvaizduojamas lėtai, įrašykite kopiją ir įkelkite ją čia.",
+      "logoCustomUploadTooltip": "Naudoti įkeltą logotipą",
+      "logoCustomUploadButton": "Įkelti logotipą",
+      "logoUploadSizeError": "GIF matmenys per dideli. Pakeiskite dydį, kad plotis pikseliais būtų ${PIXEL-WIDTH}.",
+      "logoCustomLinkTooltip": "Nuoroda į logotipą",
+      "logoCustomLinkPlaceholder": "Paveikslėlio URL",
+      "logoUploadGenericError": "Logotipas gali būti .bmp, .gif, .jpg, .jpeg arba .png failas. Gif turi būti ne platesnis nei 250 piks. ir ne didesnis nei 10 Mb.",
+      "logoCustomTargetPlaceholder": "Tinklalapis, atidaromas paspaudus logotipą",
+      "logoSocialText": "Svetainės devizas:",
+      "logoLink": "Nuoroda:",
       "lblSmallHeader": "Naudoti kompaktišką antraštę (be paantraštės)"
     },
     "header": {
       "title": "Redaguokite %TPL_NAME% pavadinimą",
       "subtitle": "Redaguokite %TPL_NAME% paantraštę"
+    },
+    "sectionNavigation": {
+      "select": "Pasirinkite skiltį...",
+      "section": "Skiltis",
+      "thisSection": "Ši skiltis",
+      "homeSection": "Pagrindinė skiltis",
+      "hiddenSection": "Paslėpta skiltis"
     }
   }
 });

@@ -51,29 +51,11 @@
 	padding: 4px;
 }
 
-.mediaSelector .media-type:after {
-	display: inline-block;
-	width: 16px;
-	height: 14px;
-	content: "";
-	margin-left: 1px;
-	background: url(../../_resources/icons/builder-media-types.png);
-	vertical-align: -2px;
-	cursor: pointer;
+.mediaSelector .media-type .icon {
+	margin-left: 2px;
+	margin-right: 6px;
+	color: #666;
 }
-
-.mediaSelector .media-type-wrapper:nth-child(2) .media-type:after {
-	background-position: -16px 0;
-}
-
-.mediaSelector .media-type-wrapper:nth-child(3) .media-type:after {
-	background-position: -34px 0;
-}
-
-.mediaSelector .media-type-wrapper:nth-child(4) .media-type:after {
-	background-position: -51px 0;
-}
-
 
 /*
  * View container

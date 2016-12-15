@@ -53,9 +53,9 @@ define({
 			},
 			addEditViewText: {
 				editorPlaceholder: "Add text, links, and small graphics here.",
-				editorActionsTitle: "Main Stage Actions",
-				editorActionsHelpDescr: "Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image.",
-				mainStageDisabled: "Main Stage Actions are disabled when the editor is maximized"
+				editorActionsTitle: "Story Actions",
+				editorActionsHelpDescr: "Create links in your narrative that help tell your story. A Story Action can link to another section or change the main stage. For example, you can configure an action to move the map to another location, toggle map layers on/off, or change the main stage media to a different image, video, map, or web page.",
+				mainStageDisabled: "Story Actions are disabled when the editor is maximized"
 			},
 			organizePopup: {
 				title: "Organize",
@@ -69,7 +69,7 @@ define({
 				firstSectionExplain: "(The home section cannot be moved)",
 				exportMainStage: "Main Stage content",
 				exportPanel: "Panel content",
-				exportActions: "Main Stage actions"
+				exportActions: "Story actions"
 			},
 			exportData: {
 				btn: "Export content",
@@ -109,6 +109,7 @@ define({
         }
     }),
 	"ar": 1,
+	"bs": 1,
 	"cs": 1,
 	"da": 1,
 	"de": 1,
@@ -118,7 +119,8 @@ define({
 	"fi": 1,
 	"fr": 1,
 	"he": 1,
-	"hr": 1, 
+	"hr": 1,
+	"id": 1,
 	"it": 1,
 	"ja": 1,
 	"ko": 1,

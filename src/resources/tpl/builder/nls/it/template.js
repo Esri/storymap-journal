@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Aggiungere qui testo, collegamenti ed elementi grafici di piccole dimensioni.",
-      "editorActionsTitle": "Azioni visualizzazione principale",
-      "editorActionsHelpDescr": "Utilizzare questi controlli per creare collegamenti che consentono di cambiare la visualizzazione principale. Ad esempio, quando il lettore fa clic su un collegamento, è possibile fare in modo che venga applicato lo zoom a una posizione specifica della mappa oppure che venga visualizzata un'altra mappa Web o un'immagine.",
-      "mainStageDisabled": "Le azioni della Visualizzazione principale sono disabilitate quando l'editor è visualizzato a schermo intero"
+      "editorActionsTitle": "Azioni storia",
+      "editorActionsHelpDescr": "Creare collegamenti all'interno della narrazione per facilitare la descrizione della storia. L'azione storia può essere collegata a un'altra sezione oppure modificare la visualizzazione principale. Ad esempio, è possibile configurare un'azione in modo da spostare la mappa in una posizione diversa, attivare/disattivare i layer mappa oppure modificare il supporto della visualizzazione principale su un'immagine, un video, una mappa o una pagina Web diversi.",
+      "mainStageDisabled": "Le azioni storia sono disabilitate quando l'editor è visualizzato a schermo intero"
     },
     "organizePopup": {
       "title": "Organizza",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(La prima sezione non può essere spostata)",
       "exportMainStage": "Contenuti visualizzazione principale",
       "exportPanel": "Contenuti pannello",
-      "exportActions": "Azioni visualizzazione principale"
+      "exportActions": "Azioni storia"
     },
     "exportData": {
       "btn": "Esporta contenuti",

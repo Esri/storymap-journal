@@ -1,10 +1,11 @@
-define(["dojo/topic", 
+define(["dojo/topic",
         "esri/layers/GraphicsLayer",
 		"esri/graphic",
 		"esri/geometry/Point",
 		"esri/geometry/ScreenPoint",
 		"esri/geometry/Extent",
 		"esri/symbols/PictureMarkerSymbol",
+		"storymaps/tpl/core/Helper",
         "lib-app/colorbox/jquery.colorbox",
         "lib-build/css!lib-app/colorbox/colorbox"
     ],
@@ -15,7 +16,8 @@ define(["dojo/topic",
 		Point,
 		ScreenPoint,
 		Extent,
-		PictureMarkerSymbol
+		PictureMarkerSymbol //,
+		// Helper // TODO: SIZES. probably need tokens.
 	){
 		var _fullScreenMediaIsOpening = false;
 
@@ -123,10 +125,10 @@ define(["dojo/topic",
 					link.addClass(errorClass);
 
 					if (app.userCanEdit) {
-						var label = 'This link is not active (section has been deleted)'; // TODO
+						var label = i18n.viewer.mainStage.errorDeleted;
 
 						if (action.hiddenSection && action.index != -1) {
-							label = 'This link is not active (section is not published)';
+							label = i18n.viewer.mainStage.errorNotPublished;
 						}
 
 						link.tooltip({
@@ -162,10 +164,15 @@ define(["dojo/topic",
 
 			_fullScreenMediaIsOpening = true;
 
+			// this already has a token on it, since it's already being displayed in the side panel
+			var fullscreenHref = imgNode.attr('src');
+
+			// TODO: SIZES
+
 			$.colorbox({
-				href: imgNode.attr('src'),
+				href: fullscreenHref,
 				photo: true,
-				title: imgNode.parents('figure').find('figcaption').html() || imgNode.attr('title'),
+				title: imgNode.closest('figure').find('figcaption').html() || imgNode.attr('title'),
 				scalePhotos: true,
 				maxWidth: '90%',
 				maxHeight: '90%'

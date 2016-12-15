@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Čia pridėkite teksto, nuorodų ir mažų grafinių elementų.",
-      "editorActionsTitle": "Pagrindinės srities veiksmai",
-      "editorActionsHelpDescr": "Naudodami šiuos valdiklius kurkite nuorodas, pakeisiančias pagrindinę sritį. Pvz., galbūt norėsite, kad kai skaitytojas paspaus nuorodą, pasikeistų žemėlapio mastelis ir būtų rodoma konkreti vieta, kitas interneto žemėlapis ar vaizdas.",
-      "mainStageDisabled": "Redaktorių padidinus, pagrindinės srities veiksmai išjungiami"
+      "editorActionsTitle": "Pasakojimo veiksmai",
+      "editorActionsHelpDescr": "Kurkite nuorodas pasakojimo tekste, kad lengviau iliustruotumėte savo pasakojimą. Pasakojimo veiksmas gali nurodyti į kitą skiltį arba pakeisti pagrindinę sritį. Pavyzdžiui, galite konfigūruoti veiksmą, kad perkeltumėte žemėlapį į kitą vietą, įjungti arba išjungti žemėlapio sluoksnius arba pakeisti pagrindinės srities mediją į kitą atvaizdą, vaizdo įrašą, žemėlapį ar tinklalapį.",
+      "mainStageDisabled": "Redaktorių padidinus, pasakojimo veiksmai išjungiami"
     },
     "organizePopup": {
       "title": "Tvarkyti",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Pagrindinės skilties perkelti negalima)",
       "exportMainStage": "Pagrindinės srities turinys",
       "exportPanel": "Skydelio turinys",
-      "exportActions": "Pagrindinės srities veiksmai"
+      "exportActions": "Pasakojimo veiksmai"
     },
     "exportData": {
       "btn": "Eksportuoti turinį",

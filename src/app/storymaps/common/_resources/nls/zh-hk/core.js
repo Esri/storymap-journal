@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "頁眉",
-      "logoEsri": "Esri 標誌",
-      "logoNone": "無標誌",
-      "logoCustom": "自訂標誌",
-      "logoCustomPlaceholder": "URL（最大 250x50 像素）",
-      "logoCustomTargetPlaceholder": "點選連結",
-      "logoSocialExplain": "自訂標題連結。",
-      "logoSocialText": "文字",
-      "logoSocialLink": "連結",
+      "logoEsriRadio": "Esri 標誌",
+      "logoNoneRadio": "無標誌",
+      "logoCustomRadio": "我的標誌",
+      "logoCustomLabel": "圖像：",
+      "logoCustomUploadHelp": "如果標誌的寬度:高度比例介於 1:1 到 5:1 之間，則會有最佳的外觀。如果緩慢地繪製連結的標誌，請儲存副本並在這裡上傳它。",
+      "logoCustomUploadTooltip": "使用上傳的標誌",
+      "logoCustomUploadButton": "上傳標誌",
+      "logoUploadSizeError": "GIF 尺寸過大。請將寬度調整為 ${PIXEL-WIDTH} 像素。",
+      "logoCustomLinkTooltip": "連結至標誌",
+      "logoCustomLinkPlaceholder": "圖像 URL",
+      "logoUploadGenericError": "標誌可為 .bmp、.gif、.jpg、.jpeg 或 .png 檔案。Gif 至少必須少於 250px 寬和 10Mb 大小。",
+      "logoCustomTargetPlaceholder": "按一下標誌時要開啟的網頁",
+      "logoSocialText": "標籤行:",
+      "logoLink": "連結:",
       "lblSmallHeader": "使用壓縮標題(無副標題)"
     },
     "header": {
       "title": "編輯 %TPL_NAME% 的標題",
       "subtitle": "編輯 %TPL_NAME% 的副標題"
+    },
+    "sectionNavigation": {
+      "select": "選擇部分...",
+      "section": "節",
+      "thisSection": "此部分",
+      "homeSection": "首頁部分",
+      "hiddenSection": "隱藏的部分"
     }
   }
 });

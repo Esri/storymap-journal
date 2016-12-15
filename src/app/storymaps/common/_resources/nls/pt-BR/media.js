@@ -7,8 +7,9 @@ define({
       "lblImage": "Imagem",
       "lblVideo": "Vídeo",
       "lblExternal": "Página da web",
+      "lblUpload": "Carregar",
+      "lblLink": "Vincular",
       "disabled": "Este recurso foi desabilitado pelo Administrador",
-      "url": "Para inserir manualmente o endereço da web de uma imagem",
       "userLookup": "Carregar álbuns",
       "notImplemented": "Não implementado ainda.",
       "noData": "Nenhum álbum público localizado"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Carregue imagens da mídia social, <br /> ou diretamente de uma URL"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "procurar por uma imagem",
+      "lblDrop": "Baixar uma imagem aqui ou",
+      "infoUpload": "As imagens serão armazenadas na sua conta do ArcGIS e acessíveis somente dentro da sua história.",
+      "warningFileTypes": "A imagem pode ser .jpg, .png, .gif, ou .bmp",
+      "warningOneFile": "Um arquivo aceito de cada vez.",
+      "warningFileSize": "O arquivo excede o tamanho de transferência máximo permitido. Escolha outro arquivo.",
+      "tooltipRemove": "Exclua esta imagem não utilizada da sua conta do ArcGIS. <br> (Você precisará carregá-la novamente se você decidir utilizá-la posteriormente.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nome de usuário",
@@ -36,7 +46,7 @@ define({
       "learn": "mais informações"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail ou ID do Picasa",
+      "userInputLbl": "E-mail ou ID do Google",
       "signInMsg2": "Conta não encontrada",
       "howToFind": "Como encontrar um ID do Picasa",
       "howToFind2": "Copie dígitos entre a primeira e segunda '/' de qualquer página do Picasa"
@@ -51,7 +61,7 @@ define({
       "other": "Outro"
     },
     "videoSelectorYoutube": {
-      "url": "URL de um vídeo do Youtube",
+      "url": "Link de vídeo do YouTube",
       "pageInputLbl": "Nome de usuário",
       "lookupMsgError": "Usuário não encontrado",
       "howToFind": "Como encontrar um nome de usuário do YouTube",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "Falha ao verificar o YouTube, verifique a chave de API do YouTube."
     },
     "videoSelectorVimeo": {
-      "url": "URL de um vídeo do Vimeo"
+      "url": "Link de vídeo do Vimeo"
     },
     "videoSelectorOther": {
-      "explain1": "A história não pode executar vídeos brutos (por exemplo, avi, mpeg) mas ela pode executar arquivos de vídeo hospedados com tocadores embutidos (por exemplo, YouTube ou Vimeo).",
-      "explain2": "A maioria dos serviços de hospedagem de vídeo online oferecem esste recurso, você tem que encontrar a opção para embutir o vídeo, copiar o código fornecido e utilizar o %WEBPAGE%.",
-      "explain3": "Alternativamente, se desejar você mesmo hospedar o vídeo, é possível criar uma página HTML que utiliza um botão de reprodução de vídeo como %EXAMPLE%, hospedar esta página e também utilizar o %WEBPAGE%.",
-      "webpage": "Recurso da página da web"
+      "explain1": "Este mapa histórico não pode reproduzir arquivos de vídeo brutos (ex: AVI, mpeg), mas pode reproduzir vídeos hospedados com tocadores embutidos (ex: YouTube ou Vimeo).",
+      "explain2": "A maioria dos serviços de hospedagem de vídeo oferece este recurso. Encontre a opção para embutir o vídeo, copie o código fornecido e adicione-o à sua história utilizando a opção de conteúdo % WEBPAGE%.",
+      "explain3": "Alternativamente, você pode hospedar o vídeo com uma página de HTML que utiliza um tocador de vídeo como %EXAMPLE%. Você então adicionará a URL desta página de HTML na sua história como um %WEBPAGE%.",
+      "webpage": "Página da web"
     },
     "webpageSelectorHome": {
-      "lblUrl": "URL de Página da Web",
+      "lblUrl": "Link de página da web",
       "lblEmbed": "Código embutido",
       "lblOR": "OU",
       "lblError1": "Erro, limpe um dos dois campos de entrada.",
@@ -79,11 +89,11 @@ define({
       "configure": "Configurar"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "Uma URL de imagem deve iniciar com http:// e terminar com .jpg ou .png",
+      "lblURL": "Link de imagem",
+      "lblURLPH": "O link pode terminar com .jpg, .png, .gif, ou .bmp",
       "lblURLError": "Esta imagem parece não ser válida. Especifique um link direto para um arquivo de imagem (sua URL geralmente terminará com .jpg ou .png). Links para uma página da web que contêm uma imagem não funcionarão.",
       "lblURLCheck": "Verificando imagem...",
-      "lblLabel": "Legenda da Imagem",
+      "lblLabel": "Image caption",
       "lblLabel1": "Legenda",
       "lblLabel2": "Pairar texto",
       "lblLabel3": "Nenhum",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Ajustar",
       "lblPosition4": "Esticar",
       "lblPosition5": "Personalizar",
+      "lblURLHelp": "Para melhores resultados, as imagens devem ter menos que 400 KB. Utilize imagens JPG compactadas na qualidade de 80% e estas larguras de imagem recomendadas: 2000 pixels para a camada principal ou painel narrativo com botão maximizar, 1000 pixels para painel narrativo sem botão maximizar.<br><br>Se uma imagem vinculada desenhar lentamente, carregue-a na sua história para obter melhores resultados.",
       "tooltipDimension": "O valor pode ser especificado em 'px' ou '%'",
       "tooltipDimension2": "O valor tem que ser especificado em 'px'",
       "lblPosition2Explain": "(pode recortar)",
@@ -103,14 +114,19 @@ define({
       "lblPosition3Explain2": "(a largura sempre se ajustará no painel)",
       "lblPosition4Explain": "(pode distorcer)",
       "unloadLbl": "Descarregar quando o leitor navegar",
-      "unloadHelp": "Se a Página da Web tiver mídia de áudio ou de vídeo, mantenha esta opção marcada para interromper a execução do conteúdo quando o leitor navegar fora da página. Desmarque isto, por exemplo, para manter uma trilha sonora tocando quando o leitor avançar pela história.<br />Se a Página da Web for um aplicativo, desmarque esta opção de forma que a história não recarregue se o leitor retornar a ela.",
+      "unloadHelp": "Se a página da web tiver mídia de áudio ou de vídeo, mantenha esta opção marcada para interromper a execução do conteúdo quando o leitor navegar fora da página. Desmarque isto, por exemplo, para manter uma trilha sonora tocando quando o leitor avançar pela história.<br />Se a página da web for um aplicativo, desmarque esta opção de forma que a história não recarregue se o leitor retornar a ela.",
       "embedProtocolLabel": "Carregar página ao longo de uma conexão segura (HTTPS)",
-      "embedProtocolWarning1": "Sua história está configurada para carregar ao longo de uma conexão segura (https), então a página da web mostrada na história deverá também utilizar uma conexão segura. Se a página não carregá-la, pode ser devido a não estar disponível ao longo de uma conexão segura ou que não pode ser incluída em sua história (alguns sites da web restringem isto). Você pode precisar criar um hiperlink para abrir a página em uma nova guia do navegador.",
-      "embedProtocolWarning2": "Sua história está configurada para carregar ao longo de uma conexão insegura (hTTP), então você pode escolher para carregar esta página ao longo de uma conexão insegura ou segura (recomendado). Se a página não carregar, pode ser devido a não suportar o tipo de conexão que você selecionou ou que não pode ser incluída em sua história (alguns sites da web restringem isto). Você pode precisar criar um hiperlink para abrir a página em uma nova guia do navegador."
+      "embedProtocolWarning1": "Se esta página não for carregada na sua história, ela não poderá ser embutida por razões de segurança da web. Como alternativa, adicione um link na sua narrativa para abrir a página em uma nova guia do navegador. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Mais informações</a>",
+      "embedProtocolWarning2": "Se esta página não for carregada na sua história, desmarque esta opção e tente novamente. Se a página ainda não estiver carregada, ela não poderá ser embutida por razões de segurança da web. Como alternativa, adicione um link na sua narrativa para abrir a página em uma nova guia do navegador. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Mais informações</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Localizar um endereço ou lugar",
       "mapMarkerExplain": "Usuários visualizarão um marcador de mapa ao clicar no link"
+    },
+    "editorActions": {
+      "navigate": "Navegar até uma seção",
+      "remove": "Remover ação",
+      "preview": "Visualizar ação"
     },
     "editorActionMedia": {
       "lblTitle": "Altere o conteúdo do Nível Principal"

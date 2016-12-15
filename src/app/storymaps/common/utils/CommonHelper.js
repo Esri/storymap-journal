@@ -1,4 +1,4 @@
-define(["dojo/cookie", 
+define(["dojo/cookie",
 		"dojo/has",
 		"dojo/Deferred",
 		"dojo/DeferredList",
@@ -262,6 +262,9 @@ define(["dojo/cookie",
 			getItemURL: function(id)
 			{
 				return this.getPortalURL() + '/home/item.html?id=' + id;
+			},
+			getItemId: function() {
+				return app.data && app.data.getWebAppItem && app.data.getWebAppItem().id;
 			},
 			getMyContentURL: function()
 			{

@@ -2,24 +2,15 @@
 	padding-bottom: 10px;
 }
 
-.videoSelectorView .service-logo {
-	display: inline-block;
-	width: 80px;
-	height: 25px;
-	background-repeat: no-repeat;
+.videoSelectorView .icon {
+	font-size: 20px;
 	vertical-align: middle;
 }
 
-.videoSelectorView .service-logo.youtube {
-	background: url(../../../_resources/icons/media/builder-media-youtube.png);
-	background-size: auto 50px;
-	background-position: 0 -13px;
-}
-
-.videoSelectorView .service-logo.vimeo {
-	background: url(../../../_resources/icons/media/builder-media-vimeo.png);
-	background-size: 80px auto;
-	background-position: -3px -14px;
+.videoSelectorView .title {
+	font-size: 18px;
+	vertical-align: middle;
+	margin: 0 3px;
 }
 
 .viewYoutubeContainer .videoSelectorView,

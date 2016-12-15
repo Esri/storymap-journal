@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Tryk for at få oplysninger",
       "clickForDetails": "Find ud af mere",
       "swipeToExplore": "Stryg med fingeren for at udforske",
-      "tapForMap": "Tryk for at vende tilbage til kortet",
-      "clickForMap": "TILBAGE TIL KORT"
+      "tapForMap": "Tryk for at gå tilbage",
+      "clickForMap": "TILBAGE"
     },
     "floatLayout": {
       "scroll": "Rul"
@@ -55,7 +55,9 @@ define({
       "scroll": "Rul ned for at se mere!"
     },
     "mainStage": {
-      "back": "Tilbage"
+      "back": "Tilbage",
+      "errorDeleted": "Dette link er ikke aktivt (sektionen er blevet slettet)",
+      "errorNotPublished": "Dette link er ikke aktivt (sektionen er blevet publiceret)"
     },
     "headerFromCommon": {
       "storymapsText": "Et historiekort",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Denne side kan ikke deles med andre. Del i stedet for ${link}",
       "link": "link til historie",
       "printOptPageBreak": "Start hver sektion på en ny side",
+      "makeTextBlack": "Gør al tekst sort",
       "printWarning": "Dette er en udskrevet version af et historiekort. Dynamisk indhold, såsom videoer og interaktive kort, er kun tilgængelige i onlineversionen på ${link}",
       "printMSWarning": "link er kun tilgængeligt i onlinehistorie",
       "printVideoWarning": "Denne video kan vises i onlineversionen af dette historiekort"

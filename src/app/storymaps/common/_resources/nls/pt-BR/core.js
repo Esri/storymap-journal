@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Cabeçalho",
-      "logoEsri": "Logo da Esri",
-      "logoNone": "Nenhum logo",
-      "logoCustom": "Logo personalizado",
-      "logoCustomPlaceholder": "URL (máx 250x50 pixels)",
-      "logoCustomTargetPlaceholder": "Clicar pelo link",
-      "logoSocialExplain": "Personaliza o link do cabeçalho.",
-      "logoSocialText": "Texto",
-      "logoSocialLink": "Link",
+      "logoEsriRadio": "Logo da Esri",
+      "logoNoneRadio": "Nenhum logo",
+      "logoCustomRadio": "Meu logo",
+      "logoCustomLabel": "Imagem:",
+      "logoCustomUploadHelp": "Logos funcionam melhor se eles tiverem uma relação de largura:altura entre 1:1 e 5:1. Se um logo vinculado desenhar de forma devagar, salve uma cópia e carregue aqui.",
+      "logoCustomUploadTooltip": "Utilizar um logo transferido",
+      "logoCustomUploadButton": "Transferir um logo",
+      "logoUploadSizeError": "Dimensões do GIF muito grandes. Redimensione para ${PIXEL-WIDTH} pixels de largura.",
+      "logoCustomLinkTooltip": "Link para um logo",
+      "logoCustomLinkPlaceholder": "URL da Imagem",
+      "logoUploadGenericError": "O logo pode ser um arquivo .bmp, .gif, .jpg, .jpeg, ou .png. Gifs devem ser menores que 250px de largura e 10Mb em tamanho.",
+      "logoCustomTargetPlaceholder": "Página da web para abrir quando o logo for clicado",
+      "logoSocialText": "Linha da Tag:",
+      "logoLink": "Link:",
       "lblSmallHeader": "Utilizar cabeçalho compacto (sem subtítulo)"
     },
     "header": {
       "title": "Edite o título do seu %TPL_NAME%",
       "subtitle": "Edite o subtítulo do seu %TPL_NAME%"
+    },
+    "sectionNavigation": {
+      "select": "Selecionar uma seção...",
+      "section": "Seção",
+      "thisSection": "Esta seção",
+      "homeSection": "Seção da página inicial",
+      "hiddenSection": "Seção oculta"
     }
   }
 });

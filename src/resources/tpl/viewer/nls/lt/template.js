@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Išsamiai informacijai bakstelėkite",
       "clickForDetails": "Sužinokite daugiau",
       "swipeToExplore": "Perbraukite norėdami naršyti",
-      "tapForMap": "Bakstelėkite norėdami grįžti į žemėlapį",
-      "clickForMap": "GRĮŽTI Į ŽEMĖLAPĮ"
+      "tapForMap": "Bakstelėkite, kad grįžtumėte",
+      "clickForMap": "ATGAL"
     },
     "floatLayout": {
       "scroll": "Slinkti"
@@ -55,7 +55,9 @@ define({
       "scroll": "Slinkite žemyn ir peržiūrėkite daugiau!"
     },
     "mainStage": {
-      "back": "Atgal"
+      "back": "Atgal",
+      "errorDeleted": "Ši nuoroda neaktyvi (skiltis ištrinta)",
+      "errorNotPublished": "Ši nuoroda neaktyvi (skiltis nepublikuota)"
     },
     "headerFromCommon": {
       "storymapsText": "Pristatomasis žemėlapis",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Šio puslapio negalima bendrinti su kitais. Užuot bendrinę puslapį, bendrinkite šią nuorodą ${link}",
       "link": "nuoroda į pasakojimą",
       "printOptPageBreak": "Kiekvieną skyrių pradėkite naujame puslapyje",
+      "makeTextBlack": "Spalvinti visą tekstą juodai",
       "printWarning": "Tai yra žemėlapių pasakojimų spausdinta versija. Dinaminis turinys, pvz., vaizdo įrašai ir interaktyvūs žemėlapiai, prieinami tik internetinėje versijoje ${link}",
       "printMSWarning": "Nuoroda prieinama tik pasakojime internete",
       "printVideoWarning": "Šį vaizdo įrašą galima peržiūrėti internetinėje žemėlapio pasakojimo versijoje"

@@ -1,10 +1,12 @@
 define(["./WebApplicationData",
 		"storymaps/common/utils/CommonHelper",
+		"storymaps/tpl/core/Helper",
 		"dojo/topic",
 		"esri/arcgis/utils"],
 	function(
 		WebApplicationData,
 		CommonHelper,
+		Helper,
 		topic,
 		arcgisUtils
 	){
@@ -166,6 +168,7 @@ define(["./WebApplicationData",
 			{
 				$.each(this.getStorySections(), function(i, section) {
 					this.cleanSectionNarrativeMarkup(section);
+					this.cleanSectionActions(section, i);
 				}.bind(this));
 			};
 
@@ -231,12 +234,30 @@ define(["./WebApplicationData",
 					}
 				}.bind(this));
 
+				cleanMarkup.find('img').each(function(i, imgDiv) {
+					var $imgDiv = $(imgDiv);
+					$imgDiv.attr('src', Helper.possiblyAddToken($imgDiv.attr('src')));
+				});
+
 				return {
 					markup: cleanMarkup.html(),
 					actions: actions
 				};
 			};
 
+			this.cleanSectionActions = function(section/*, i*/) {
+				var actionsInContentStr = section.content.match(/MJ-ACTION-[0-9]{13}/g);
+				if (section.contentActions) {
+					section.contentActions = _.filter(section.contentActions, function(action) {
+						return _.contains(actionsInContentStr, action.id);
+					});
+				}
+				if (section.actions) {
+					section.actions = _.filter(section.actions, function(action) {
+						return _.contains(actionsInContentStr, action.id);
+					});
+				}
+			};
 
 			this.getStoryLength = function()
 			{
@@ -498,6 +519,26 @@ define(["./WebApplicationData",
 				return images;
 			};
 
+			this.getAllImageUrls = function() {
+				return _.map(this.getImages().concat(this.getSidebarImages().concat([WebApplicationData.getLogoURL()])), this.getNonProtocolNonDoubleSlashUrl);
+			};
+
+			this.getSidebarImages = function() {
+				var sections = this.getStorySections();
+				var imgUrls = [];
+				_.each(sections, function(section) {
+					var jqSection = $(section.content);
+					_.each(jqSection.find('img'), function(img) {
+						imgUrls.push(Helper.possiblyRemoveToken(img.src));
+					});
+				});
+				return imgUrls;
+			};
+
+			this.getNonProtocolNonDoubleSlashUrl = function(url) {
+				return url.replace(/http[s]?\:\/\//, '').replace('//', '/');
+			};
+
 			// TODO those three functions should be refactored
 			this.getEmbeds = function()
 			{
@@ -567,6 +608,46 @@ define(["./WebApplicationData",
 					console.log(JSON.stringify(section.contentActions, null, '\t'));
 				});
 			};
+
+			this.checkTokens = function() {
+				var sections = this.getStorySections();
+				_.each(sections, function(section) {
+					duplicateSectionProcessing(section);
+				});
+				var imageUrls = this.getImages().concat([WebApplicationData.getLogoURL()]);
+				_.each(imageUrls, function(url) {
+					checkStr(url);
+				});
+			};
+
+			function duplicateSectionProcessing(section) {
+				var strToCheck = section.content;
+				var jqSection = $(section.content);
+				_.each(jqSection.find('img'), function(img) {
+					var originalUrl = img.src;
+					var untokenizedUrl = Helper.possiblyRemoveToken(img.src);
+					if (originalUrl !== untokenizedUrl) {
+						var splitOriginal = originalUrl.split('?');
+						if (strToCheck.match(splitOriginal[0] + '\\?' + splitOriginal[1])) {
+							strToCheck = strToCheck.replace(splitOriginal[0] + '?' + splitOriginal[1], untokenizedUrl);
+						} else {
+							strToCheck = strToCheck.replace(decodeURI(splitOriginal[0]) + '?' + splitOriginal[1], untokenizedUrl);
+						}
+					}
+					checkStr(strToCheck);
+				});
+
+			}
+
+			function checkStr(str) {
+				var tokenIndex = str.indexOf('token=');
+				if (tokenIndex >= 0) {
+					console.warn('token stored for', str.slice(str.lastIndexOf('/', tokenIndex), tokenIndex - 1));
+					checkStr(str.slice(tokenIndex + 6));
+				}
+
+			}
+
 		};
 	}
 );

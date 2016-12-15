@@ -69,11 +69,15 @@ define(["lib-build/tpl!./InitPopup",
 					return;
 				}
 
-				_layoutChangeEventHandler.remove();
+				if (_layoutChangeEventHandler) {
+					_layoutChangeEventHandler.remove();
+				}
 
-				_initCompleteDeferred.resolve({
-					id: _views.home.getSelectedLayout()
-				});
+				if (_initCompleteDeferred) {
+					_initCompleteDeferred.resolve({
+						id: _views.home.getSelectedLayout()
+					});
+				}
 
 				$("body").unbind("keydown", enterEvent);
 			}

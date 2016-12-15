@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Touchez pour obtenir des détails",
       "clickForDetails": "En savoir plus",
       "swipeToExplore": "Effectuez un mouvement de balayage pour explorer",
-      "tapForMap": "Touchez pour revenir à la carte",
-      "clickForMap": "RETOUR A LA CARTE"
+      "tapForMap": "Toucher pour revenir en arrière",
+      "clickForMap": "BACK"
     },
     "floatLayout": {
       "scroll": "Défilement"
@@ -55,7 +55,9 @@ define({
       "scroll": "Faites défiler pour en savoir plus !"
     },
     "mainStage": {
-      "back": "Retour"
+      "back": "Retour",
+      "errorDeleted": "Ce lien est inactif (section supprimée).",
+      "errorNotPublished": "Ce lien est inactif (section non publiée)."
     },
     "headerFromCommon": {
       "storymapsText": "Une Story Map",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Cette page ne peut pas être partagée avec d'autres utilisateurs. Partagez plutôt le lien ${link}",
       "link": "permettant d'accéder au récit",
       "printOptPageBreak": "Commencer chaque section sur une nouvelle page",
+      "makeTextBlack": "Mettre tout le texte en noir",
       "printWarning": "Il s'agit d'une version imprimée d'une Story Map. Le contenu dynamique, tel que les vidéos et les cartes interactives, est seulement disponible dans la version en ligne, accessible via le lien ${link}",
       "printMSWarning": "dans le récit en ligne uniquement",
       "printVideoWarning": "Cette vidéo peut être consultée dans la version en ligne de cette Story Map"

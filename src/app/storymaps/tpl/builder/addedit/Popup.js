@@ -224,6 +224,8 @@ define(["lib-build/tpl!./Popup",
 
 				// Title editing in Edit
 				if ( _cfg.mode == "edit" ) {
+					var isFirst = app.data.getCurrentSectionIndex() === 0;
+					$('#AddEditTitleEditor').toggleClass('first-title', isFirst);
 					if ( ! CKEDITOR.instances.AddEditTitleEditor ) {
 						CKEDITOR.inline(container.find('.titleContainerEdit')[0], {
 							toolbar: [
@@ -235,7 +237,9 @@ define(["lib-build/tpl!./Popup",
 							floatSpaceDockedOffsetX: $("#AddEditTitleEditor").width() - 194,
 							floatSpaceDockedOffsetY: - 1,
 							removePlugins: 'liststyle,tableresize,tabletools,contextmenu',
-							disableNativeSpellChecker: false
+							disableNativeSpellChecker: false,
+							fontSize_sizes: '18/18px;20/20px;22/22px;24/24px;26/26px;28/28px;36/36px;40/40px;44/44px;48/48px;60/60px;72/72px',
+							fontSize_defaultLabel: isFirst ? '40px' : '26px'
 						});
 					}
 				}
@@ -330,8 +334,8 @@ define(["lib-build/tpl!./Popup",
 					viewTextData = _viewContentPanel.getData();
 
 				if ( _cfg.mode == "add" ) {
-					var fontSize = ! app.data.getStoryLength() ? "36px" : "22px";
-					sectionTitle = '<strong><span style="font-size: ' + fontSize + '">' + container.find('.title').val() + '</span></strong>';
+					var fontSize = app.data.getStoryLength() ? '26px' : '40px';
+					sectionTitle = '<span style="font-size: ' + fontSize + ';">' + container.find('.title').val() + '</span>';
 				}
 				else {
 					CKEDITOR.instances.AddEditTitleEditor.focus();

@@ -89,7 +89,8 @@
 }
 
 .sectionPanel .appTitle * {
-	font-size: 18px !important;
+	font-size: 24px !important;
+	font-weight: normal;
 }
 
 .sectionPanel .appTitle.anchored {
@@ -327,7 +328,7 @@ body[data-theme-major=black] .builder-content-panel .builder-content-panel-group
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 82px;
+	height: 100px;
 	padding: 15px;
 	cursor: pointer;
 }
@@ -348,7 +349,6 @@ body.layout-float-right .floatingPanel .scroll {
 	background: url('../../../../../resources/tpl/viewer/icons/side-scroll.png');
 	background-repeat: no-repeat;
 	background-position: 50%;
-	background-size: 85px 52px;
 
 	-webkit-animation-name: blinker;
 	-webkit-animation-duration: 2.5s;

@@ -7,8 +7,9 @@ define({
       "lblImage": "Billede",
       "lblVideo": "Video",
       "lblExternal": "Webside",
+      "lblUpload": "Overfør",
+      "lblLink": "Link",
       "disabled": "Dette objekt er blevet deaktiveret af administratoren",
-      "url": "Hvis du vil angive webadressen til et billede manuelt",
       "userLookup": "Indlæs albummer",
       "notImplemented": "Ikke implementeret endnu.",
       "noData": "Intet offentligt album fundet"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Indlæs billeder fra sociale medier <br /> eller direkte fra en URL"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "gennemse for at finde et billede",
+      "lblDrop": "Slip et billede her eller",
+      "infoUpload": "Billeder vil blive gemt på din ArcGIS-konto og kun være tilgængelige inde i din historie.",
+      "warningFileTypes": "Billede kan være .jpg, .png, .gif eller .bmp",
+      "warningOneFile": "Én fil accepteres ad gangen.",
+      "warningFileSize": "Filen overskrider den maksimalt tilladte overførselsstørrelse. Vælg en anden fil.",
+      "tooltipRemove": "Slet dette ubrugte billede fra din ArcGIS-konto. <br> (Du skal overføre det igen, hvis du beslutter at bruge det igen senere)."
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Brugernavn",
@@ -36,9 +46,9 @@ define({
       "learn": "lær mere"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-mail eller Picasa-id",
+      "userInputLbl": "E-mail eller Google-ID",
       "signInMsg2": "Kontoen kunne ikke findes",
-      "howToFind": "Sådan finder du et Picasa-id",
+      "howToFind": "Sådan finder du et Picasa-ID",
       "howToFind2": "Kopiér tal mellem første og anden '/' på en vilkårlig Picasa-side"
     },
     "videoSelectorCommon": {
@@ -51,7 +61,7 @@ define({
       "other": "Andet"
     },
     "videoSelectorYoutube": {
-      "url": "URL til en Youtube-video",
+      "url": "Youtube-video-link",
       "pageInputLbl": "Brugernavn",
       "lookupMsgError": "Bruger ikke fundet",
       "howToFind": "Sådan finder du et YouTube-brugernavn",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "YouTube-kontrol mislykkedes, kontrollér YouTube API-nøglen."
     },
     "videoSelectorVimeo": {
-      "url": "URL til en Vimeo-video"
+      "url": "Vimeo-video-link"
     },
     "videoSelectorOther": {
-      "explain1": "Historien kan ikke afspille rå videoer (f.eks. avi, mpeg), men den kan afspille \"hostede\" videofiler, der har indbyggede afspillere (f.eks. YouTube eller Vimeo).",
-      "explain2": "De fleste online-videoværtstjenester tilbyder denne funktion. Du skal finde indstillingen til indlejring af videoen, kopiere den givne kode og bruge %WEBPAGE%.",
-      "explain3": "Hvis du ønsker selv at være vært for videoen, kan du også oprette en HTML-side, der bruger en videoafspiller som %EXAMPLE%, være vært for den pågældende side og også bruge %WEBPAGE%.",
-      "webpage": "Websideobjekt"
+      "explain1": "Dette story map kan ikke afspille rå videoer (f.eks. avi, mpeg), men den kan afspille \"hostede\" videofiler, der har indbyggede afspillere (f.eks. YouTube eller Vimeo).",
+      "explain2": "De fleste video-værtstjenester tilbyder denne funktion. Find funktionen til indlejring af videoen, kopiér den angivne kode, og føj den til din historie ved at bruge %WEBPAGE% indholdsindstillingen.",
+      "explain3": "Du kan også selv \"hoste\" videoen sammen med en HTML-side, der benytter en videoafspiller som %EXAMPLE%. Du skulle så føje URL'en til den pågældende HTML-side til din historie som en %WEBPAGE%.",
+      "webpage": "Webside"
     },
     "webpageSelectorHome": {
-      "lblUrl": "Webside-URL",
+      "lblUrl": "Webside-link",
       "lblEmbed": "Indlejr kode",
       "lblOR": "ELLER",
       "lblError1": "Fejl. Ryd et af de to indtastningsfelter.",
@@ -79,11 +89,11 @@ define({
       "configure": "Konfigurér"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "En billede-URL skal starte med http:// og slutte med .jpg eller .png",
+      "lblURL": "Billede-link",
+      "lblURLPH": "Link skal slutte med .jpg, .png, .gif eller .bmp",
       "lblURLError": "Dette billede er tilsyneladende ikke gyldigt. Angiv et direkte link til en billedfil (din URL skal normalt slutte med .jpg eller .png). Links til en webside, der indeholder et billede, fungerer ikke.",
       "lblURLCheck": "Kontrollerer billedet...",
-      "lblLabel": "Billedtekst",
+      "lblLabel": "Image caption",
       "lblLabel1": "Billedtekst",
       "lblLabel2": "Hold musen over teksten",
       "lblLabel3": "Ingen",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Tilpas",
       "lblPosition4": "Stræk",
       "lblPosition5": "Tilpasset",
+      "lblURLHelp": "For at opnå de bedste resultater skal billeder være mindre end 400 KB. Brug komprimerede JPG-billeder ved 80 % kvalitet og disse anbefalede billedbredder: 2000 pixels for hovedscene eller fortællingspanel med maksimér-knap, 1000 pixels for fortællingspanel uden maksimér-knap.<br><br>Hvis et linket billede indlæses langsomt, kan du overføre det til din historie for at opnå bedre resultater.",
       "tooltipDimension": "Værdien kan angives i 'px' eller '%'",
       "tooltipDimension2": "Værdien skal angives i \"px\"",
       "lblPosition2Explain": "(kan beskæres)",
@@ -105,12 +116,17 @@ define({
       "unloadLbl": "Udlæs, når læseren navigerer væk",
       "unloadHelp": "Bevar markeringen af denne indstilling, hvis websiden har medier med lyd eller video, for at forhindre, at indholdet afspilles, når læseren navigerer til en anden sektion. Fjern markeringen, hvis lydsporet skal afspilles, mens læseren gennemgår historien.<br />Fjern markeringen af denne indstilling, hvis websiden er en applikation, så genindlæses historien ikke, hvis læseren vender tilbage til den.",
       "embedProtocolLabel": "Indlæs side via en sikker forbindelse (HTTPS)",
-      "embedProtocolWarning1": "Din historie er konfigureret til at blive indlæst via en sikker forbindelse (https), så de websider, der vises i historien, skal også indlæses via en sikker forbindelse. Hvis siden ikke indlæses, kan det skyldes, at den ikke er tilgængelig via en sikker forbindelse, eller fordi den ikke kan medtages i din historie (nogle websteder forhindrer dette). Du skal måske oprette et hyperlink for at åbne siden på en ny browserfane.",
-      "embedProtocolWarning2": "Din historie er konfigureret til at blive indlæst via en usikker forbindelse (https), så du kan vælge at indlæse denne side via en sikker (anbefales) eller en usikker forbindelse. Hvis siden ikke indlæses, kan det skyldes, at den ikke understøtter den forbindelsestype, du har valgt, eller at den ikke kan medtages i din historie (nogle websteder forhindrer dette). Du skal måske oprette et hyperlink for at åbne siden på en ny browserfane."
+      "embedProtocolWarning1": "Hvis denne side ikke bliver indlæst i din historie, kan den ikke indlejres på grund af websikkerhedsårsager. Som alternativ kan du tilføje et link i din fortælling for at åbne siden i en ny browserfane. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lær mere</a>",
+      "embedProtocolWarning2": "Hvis denne side ikke bliver indlæst i din historie, skal du fjerne markeringen af denne indstilling og prøve igen. Som alternativ kan du tilføje et link i din fortælling for at åbne siden i en ny browserfane. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lær mere</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Find en adresse eller et sted",
       "mapMarkerExplain": "Brugeren får vist en kortmarkør ved at klikke på linket"
+    },
+    "editorActions": {
+      "navigate": "Navigér til en sektion",
+      "remove": "Fjern handling",
+      "preview": "Eksempelhandling"
     },
     "editorActionMedia": {
       "lblTitle": "Redigér indholdet i hovedområdet"

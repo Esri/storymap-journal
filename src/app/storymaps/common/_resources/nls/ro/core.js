@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Antet",
-      "logoEsri": "Sigla Esri",
-      "logoNone": "Fără siglă",
-      "logoCustom": "Siglă particularizată",
-      "logoCustomPlaceholder": "URL (maxim 250x50 pixeli)",
-      "logoCustomTargetPlaceholder": "Link de accesare cu clic",
-      "logoSocialExplain": "Particularizaţi linkul din antet.",
-      "logoSocialText": "Text",
-      "logoSocialLink": "Link",
+      "logoEsriRadio": "Sigla Esri",
+      "logoNoneRadio": "Fără siglă",
+      "logoCustomRadio": "Sigla mea",
+      "logoCustomLabel": "Imagine:",
+      "logoCustomUploadHelp": "Siglele arată cel mai bine dacă au un raport lăţime/înălţime între 1:1 şi 5:1. Dacă o siglă conectată este trasată lent, salvaţi o copie şi încărcaţi-o aici.",
+      "logoCustomUploadTooltip": "Utilizaţi o siglă încărcată",
+      "logoCustomUploadButton": "Încărcaţi o siglă",
+      "logoUploadSizeError": "Dimensiunea fişierului GIF este prea mare. Redimensionaţi la o lăţime de pixel de ${PIXEL-WIDTH}.",
+      "logoCustomLinkTooltip": "Link către o siglă",
+      "logoCustomLinkPlaceholder": "Adresă URL imagine",
+      "logoUploadGenericError": "Sigla poate fi un fişier .bmp, .gif, .jpg, .jpeg sau .png file. Imaginile gif trebuie să aibă o lăţime sub 250 px şi o dimensiune mai mică de 10 Mb.",
+      "logoCustomTargetPlaceholder": "Pagină web care va fi deschisă atunci când se face clic pe siglă",
+      "logoSocialText": "Slogan:",
+      "logoLink": "Link:",
       "lblSmallHeader": "Utilizare antet compact (fără subtitlu)"
     },
     "header": {
       "title": "Editaţi titlul %TPL_NAME%",
       "subtitle": "Editaţi subtitlul %TPL_NAME%"
+    },
+    "sectionNavigation": {
+      "select": "Selectaţi o secţiune...",
+      "section": "Secţiune",
+      "thisSection": "Această secţiune",
+      "homeSection": "Secţiune principală",
+      "hiddenSection": "Secţiune ascunsă"
     }
   }
 });

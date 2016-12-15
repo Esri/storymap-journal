@@ -45,8 +45,8 @@ define({
       "tapForDetails": "タップして詳細を表示",
       "clickForDetails": "詳細",
       "swipeToExplore": "スワイプして探索",
-      "tapForMap": "タップしてマップに戻る",
-      "clickForMap": "マップに戻る"
+      "tapForMap": "タップして戻る",
+      "clickForMap": "BACK"
     },
     "floatLayout": {
       "scroll": "スクロール"
@@ -55,7 +55,9 @@ define({
       "scroll": "下にスクロールして詳細を表示"
     },
     "mainStage": {
-      "back": "戻る"
+      "back": "戻る",
+      "errorDeleted": "このリンクはアクティブではありません (セクションが削除されています)",
+      "errorNotPublished": "このリンクはアクティブではありません (セクションが公開されていません)"
     },
     "headerFromCommon": {
       "storymapsText": "ストーリー マップ",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "このページは他のユーザーと共有できません。代わりに、ストーリーへの",
       "link": "リンク ${link} を共有してください",
       "printOptPageBreak": "各セクションを新しいページで開始する",
+      "makeTextBlack": "すべてのテキストを黒くする",
       "printWarning": "これは、印刷バージョンのストーリー マップです。ビデオや対話式マップなどの動的なコンテンツは、オンライン バージョン (${link}) でのみ利用できます",
       "printMSWarning": "リンクは、オンライン バージョンでのみ使用できます",
       "printVideoWarning": "このビデオは、このストーリー マップのオンライン バージョンで表示できます。"

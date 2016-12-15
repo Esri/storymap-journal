@@ -107,6 +107,9 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				};
 			}
 
+			if(_urlParams.sharinghost)
+				app.indexCfg.sharingurl = _urlParams.sharinghost;
+
 			// Check the config file
 			if( ! _mainView.checkConfigFileIsOK() ) {
 				initError("invalidConfig");
@@ -276,8 +279,12 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 								portalLogin().then(initStep2);
 						},
 						function() {
-							// Not signed-in, redirecting to OAuth sign-in page
-							IdentityManager.getCredential(info.portalUrl);
+							// Not signed-in, redirecting to OAuth sign-in page if builder
+							if (!builder){
+								initStep2();
+							} else {
+								portalLogin().then(initStep2);
+							}
 						}
 					);
 				}
@@ -311,7 +318,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			}
 
 			// Direct creation and not signed-in
-			if ( app.isDirectCreation && isProd() && ! (CommonHelper.getPortalUser() || app.portal.getPortalUser()) ) {
+			if ( app.isDirectCreation && isProd() && CommonHelper.isArcGISHosted() && ! (CommonHelper.getPortalUser() || app.portal.getPortalUser()) ) {
 				redirectToSignIn();
 				return;
 			}

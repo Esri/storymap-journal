@@ -45,8 +45,8 @@ define({
       "tapForDetails": "الضغط للحصول على التفاصيل",
       "clickForDetails": "تعلم المزيد",
       "swipeToExplore": "السحب للاستكشاف",
-      "tapForMap": "الضغط للرجوع إلى الخريطة",
-      "clickForMap": "الرجوع إلى الخريطة"
+      "tapForMap": "اضغط للرجوع",
+      "clickForMap": "السابق"
     },
     "floatLayout": {
       "scroll": "التمرير"
@@ -55,7 +55,9 @@ define({
       "scroll": "قم بالتمرير لأسفل للمزيد!"
     },
     "mainStage": {
-      "back": "السابق"
+      "back": "السابق",
+      "errorDeleted": "هذا الرابط غير نشط (تم حذف القسم)",
+      "errorNotPublished": "هذا الرابط غير نشط (لم يتم نشر القسم)"
     },
     "headerFromCommon": {
       "storymapsText": "قصة داخل خريطة",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "لا يمكن مشاركة الصفحة مع الآخرين بدلاً من مشاركة ${link}",
       "link": "رابط الحكاية",
       "printOptPageBreak": "بدء كل جزء في الصفحة الجديدة",
+      "makeTextBlack": "جعل كل النص باللون الأسود",
       "printWarning": "ها هو الإصدار المطبوع من خريطة الحكاية. يتوفر المحتوى الديناميكي باعتباره مقاطع فيديو وخرائط تفاعلية فقط في الإصدار المتصل في ${link}",
       "printMSWarning": "رابط متوفر فقط في الحكاية المتصلة",
       "printVideoWarning": "يمكن عرض مقطع الفيديو في الإصدار المتصل لخريطة الحكاية"

@@ -7,8 +7,9 @@ define({
       "lblImage": "Bild",
       "lblVideo": "Video",
       "lblExternal": "Webbsida",
+      "lblUpload": "Överför",
+      "lblLink": "Länk",
       "disabled": "Den här funktionen har inaktiverats av administratören",
-      "url": "Ange webbadressen för en bild manuellt",
       "userLookup": "Läs in album",
       "notImplemented": "Inte infört ännu.",
       "noData": "Inget offentligt album hittades"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Läs in bilder från sociala media <br /> eller direkt från en URL"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "bläddra efter en bild",
+      "lblDrop": "Släpp en bild här eller",
+      "infoUpload": "Bilderna lagras i ditt ArcGIS-konto och är endast tillgängliga i din berättelse.",
+      "warningFileTypes": "Bilden kan vara .jpg, .png, .gif eller .bmp",
+      "warningOneFile": "En fil i taget accepteras.",
+      "warningFileSize": "Filen överstiger maximal tillåten storlek för överföring. Välj en annan fil.",
+      "tooltipRemove": "Ta bort den här bilden som inte används från ditt ArcGIS-konto. <br> (Du behöver kanske överföra den igen om du bestämmer dig för att använda den senare.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Användarnamn",
@@ -36,7 +46,7 @@ define({
       "learn": "läs mer"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-postadress eller ID för Picasa",
+      "userInputLbl": "E-post- eller Google-ID",
       "signInMsg2": "Det gick inte att hitta kontot",
       "howToFind": "Hitta ett Picasa-ID",
       "howToFind2": "Kopiera siffrorna mellan det första och andra \"/\"-tecknet på en Picasa-sida"
@@ -51,7 +61,7 @@ define({
       "other": "Annat"
     },
     "videoSelectorYoutube": {
-      "url": "URL till en Youtube-video",
+      "url": "Länk till YouTube-video",
       "pageInputLbl": "Användarnamn",
       "lookupMsgError": "Det gick inte att hitta användaren",
       "howToFind": "Så här hittar du ett YouTube-användarnamn",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "YouTube-kontrollen har misslyckats, kontrollera din YouTube API-nyckel."
     },
     "videoSelectorVimeo": {
-      "url": "URL till en Vimeo-video"
+      "url": "Länk till Vimeo-video"
     },
     "videoSelectorOther": {
-      "explain1": "Berättelsen kan inte spela upp obearbetade videoklipp (till exempel avi och mpeg), men kan spela driftade videofiler som har inbyggda spelare (till exempel YouTube eller Vimeo).",
-      "explain2": "De flesta tjänster som driftar videoklipp online erbjuder den här funktionen. Du måste hitta alternativet för att bädda in videon, kopiera den angivna koden och använda %WEBPAGE%.",
-      "explain3": "Om du själv vill drifta videon kan du skapa en HTML-sida som använder en videospelare som %EXAMPLE%, drifta sidan och använda %WEBPAGE%.",
-      "webpage": "Webbsidefunktion"
+      "explain1": "Den här berättelsekartan kan inte spela upp obearbetade videofiler (till exempel .avi och .mpeg), men kan spela driftade videor som har inbyggda spelare (till exempel YouTube eller Vimeo).",
+      "explain2": "De flesta tjänster som driftar videoklipp erbjuder den här funktionen. Du måste hitta alternativet för att bädda in videon, kopiera den angivna koden och lägga till den i berättelsen med innehållsalternativet %WEBPAGE%.",
+      "explain3": "Alternativt kan du drifta videon själv tillsammans med en HTML-sida som använder en videospelare som %EXAMPLE%. Därefter kan du lägga till webbadressen för denna HTML-sida i din berättelse som en %WEBPAGE%.",
+      "webpage": "Webbsida"
     },
     "webpageSelectorHome": {
-      "lblUrl": "Webbsidans URL",
+      "lblUrl": "Länk till webbsida",
       "lblEmbed": "Bädda in kod",
       "lblOR": "ELLER",
       "lblError1": "Fel, rensa ett av de båda inmatningsfälten.",
@@ -79,11 +89,11 @@ define({
       "configure": "Konfigurera"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "En bild-URL bör börja med http:// och slutar med .jpg eller .png",
+      "lblURL": "Bildlänk",
+      "lblURLPH": "Länken bör sluta med .jpg, .png, .gif eller .bmp",
       "lblURLError": "Den här bilden verkar inte vara giltig. Ange en direktlänk till en bildfil (din URL slutar vanligtvis med en .jpg eller .png). Länkar till en webbsida som innehåller en bild fungerar inte.",
       "lblURLCheck": "Kontrollerar bild ...",
-      "lblLabel": "Bildtext",
+      "lblLabel": "Image caption",
       "lblLabel1": "Bildtext",
       "lblLabel2": "Hovringstext",
       "lblLabel3": "Inga",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Anpassa",
       "lblPosition4": "Sträck",
       "lblPosition5": "Anpassad",
+      "lblURLHelp": "För bästa resultat bör bilderna vara mindre än 400 kB. Använd komprimerade JPG-bilder vid 80 % kvalitet och följande rekommenderade bildbredder: 2 000 pixlar för huvudscenen och berättelsepaneler med knappen Maximera, eller 1 000 pixlar för berättelsepaneler utan knappen Maximera.<br><br>Om en länkad bild är långsam kan du överföra den till din berättelse för bättre resultat.",
       "tooltipDimension": "Värdet kan anges i \"px\" eller \"%\"",
       "tooltipDimension2": "Värdet måste anges i \"px\"",
       "lblPosition2Explain": "(kan beskäras)",
@@ -105,12 +116,17 @@ define({
       "unloadLbl": "Ta bort när användaren navigerar vidare",
       "unloadHelp": "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att berättelsen inte läses in på nytt om användaren återvänder till den.",
       "embedProtocolLabel": "Läs in sidan via en säker anslutning (HTTPS)",
-      "embedProtocolWarning1": "Berättelsen är konfigurerad att läsas in via en säker anslutning (https), så webbsidesvisningen i berättelsen måste också använda en säker anslutning. Om sidan inte läses in kan det bero på att den inte är tillgänglig via en säker anslutning eller att den inte kan inkluderas i din berättelse (vissa webbplatser begränsar det). Du kan behöva skapa en hyperlänk för att öppna i sidan i en ny webbläsarflik.",
-      "embedProtocolWarning2": "Berättelsen är konfigurerad att läsas in via en osäker anslutning (http), så du kan välja att läsa in sidan via en säker (rekommenderas) eller osäker anslutning. Om sidan inte läses in kan det bero på att den inte stöder den anslutningstyp du valde eller att den inte kan inkluderas i din berättelse (vissa webbplatser begränsar det). Du kan behöva skapa en hyperlänk för att öppna i sidan i en ny webbläsarflik."
+      "embedProtocolWarning1": "Om sidan inte läses in till din berättelse kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Läs mer</a>",
+      "embedProtocolWarning2": "Om sidan inte läses in till din berättelse avmarkerar du alternativet och försöker igen. Om sidan fortfarande inte läses in kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Läs mer</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Hitta en adress eller plats",
       "mapMarkerExplain": "Användare ser en kartmarkör när de klickar på länken"
+    },
+    "editorActions": {
+      "navigate": "Navigera till en sektion",
+      "remove": "Ta bort åtgärd",
+      "preview": "Förhandsgranska åtgärd"
     },
     "editorActionMedia": {
       "lblTitle": "Ändra innehåll för huvudscenen"

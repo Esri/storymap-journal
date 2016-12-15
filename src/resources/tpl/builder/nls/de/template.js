@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Text, Links und kleine Grafiken hier hinzufügen.",
-      "editorActionsTitle": "Aktionen der Hauptanzeige",
-      "editorActionsHelpDescr": "Verwenden Sie diese Steuerelemente, um Links zu erstellen, die die Hauptanzeige ändern. Wenn der Leser beispielsweise auf einen Link klickt, können Sie auf der Karte auf eine bestimmte Position zoomen, eine andere Webkarte oder ein Bild anzeigen.",
-      "mainStageDisabled": "Aktionen der Hauptanzeige sind deaktiviert, wenn der Editor maximiert wird"
+      "editorActionsTitle": "Story-Aktionen",
+      "editorActionsHelpDescr": "Erstellen Sie Links in Ihrer Story, die beim Präsentieren der Informationen hilfreich sind. Eine Story-Aktion kann auf einen anderen Abschnitt verweisen oder den Hauptbereich ändern. Beispielsweise können Sie eine Aktion konfigurieren, um die Karte an einen anderen Platz zu verschieben, Karten-Layer zu aktivieren/deaktivieren oder als Medium für den Hauptbereich ein anderes Bild, Video bzw. eine andere Karte oder Website darzustellen.",
+      "mainStageDisabled": "Story-Aktionen werden deaktiviert, wenn der Editor maximiert wird"
     },
     "organizePopup": {
       "title": "Organisieren",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Der Startseitenabschnitt kann nicht verschoben werden)",
       "exportMainStage": "Inhalt der Hauptanzeige",
       "exportPanel": "Bereichsinhalt",
-      "exportActions": "Aktionen der Hauptanzeige"
+      "exportActions": "Story-Aktionen"
     },
     "exportData": {
       "btn": "Inhalt exportieren",

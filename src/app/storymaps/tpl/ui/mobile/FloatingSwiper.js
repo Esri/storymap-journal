@@ -4,8 +4,8 @@ define(["lib-build/tpl!./FloatingSwiperSection",
 		"storymaps/common/utils/HeaderHelper",
 		"storymaps/common/utils/SocialSharing",
 		"dojo/has",
-		"lib-app/jquery",
 		"lib-app/swiper/idangerous.swiper",
+		"lib-app/jquery",
 		"lib-build/css!lib-app/swiper/idangerous.swiper"],
 	function(
 		viewSectionTpl,
@@ -13,7 +13,8 @@ define(["lib-build/tpl!./FloatingSwiperSection",
 		StoryText,
 		HeaderHelper,
 		SocialSharing,
-		has
+		has,
+		Swiper
 	){
 		return function FloatingSwiper(container, isInBuilder, navigationCallback)
 		{

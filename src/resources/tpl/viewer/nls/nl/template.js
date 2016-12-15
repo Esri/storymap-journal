@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Tik voor details",
       "clickForDetails": "Meer weten",
       "swipeToExplore": "Veeg om te verkennen",
-      "tapForMap": "Tik om terug te gaan naar de kaart",
-      "clickForMap": "TERUG NAAR KAART"
+      "tapForMap": "Tik om terug te gaan",
+      "clickForMap": "TERUG"
     },
     "floatLayout": {
       "scroll": "Scrollen"
@@ -55,7 +55,9 @@ define({
       "scroll": "Scrol naar beneden als u meer wilt zien."
     },
     "mainStage": {
-      "back": "Vorige"
+      "back": "Vorige",
+      "errorDeleted": "Deze koppeling is niet actief (sectie is verwijderd)",
+      "errorNotPublished": "Deze koppeling is niet actief (sectie is niet gepubliceerd)"
     },
     "headerFromCommon": {
       "storymapsText": "Een kaartverhaal",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Deze pagina kan niet met anderen gedeeld worden, deel in plaats daarvan de ${link}",
       "link": "koppeling naar het verhaal",
       "printOptPageBreak": "Begin elke sectie op een nieuwe pagina",
+      "makeTextBlack": "Maak alle tekst zwart",
       "printWarning": "Dit is een afgedrukt versie van een storymap. Dynamische content zoals video's en interactieve kaarten is alleen beschikbaar in de onlineversie op ${link}",
       "printMSWarning": "koppeling beschikbaar in het onlineverhaal",
       "printVideoWarning": "Deze video kan bekeken worden in de onlineversie van deze storymap"

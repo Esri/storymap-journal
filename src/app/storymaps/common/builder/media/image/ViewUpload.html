@@ -1,0 +1,17 @@
+<div class="imageSelectorUpload drag-area drag-default uploader">
+  <div class="header">
+    <div>
+      <span class="drop-label"><%= lblDrop %></span>
+      <!-- this used to be a button, but firefox wouldn't open
+        a file-input nested inside a button -->
+      <div class="btn btn-sm btn-default btn-file">
+        <span class=""><%= lblUploadButton %></span>
+        <input class="file-input" type="file" accept=".png,.jpeg,.jpg,.gif,.bmp"></input>
+      </div>
+      <span class="uploadHelp fa fa-info-circle" data-toggle="tooltip" data-title="<%= infoUpload %>"></span>
+      <span class="uploadWait smallLoader hidden"></span>
+    </div>
+    <div class="info-text warning-text"></div>
+  </div>
+  <div class="resources"></div>
+</div>

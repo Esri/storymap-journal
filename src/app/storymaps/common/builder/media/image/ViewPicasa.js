@@ -28,15 +28,16 @@ define(["lib-build/tpl!./ViewPicasa",
 
 				container.show();
 
+				var picasaContainer = container.find('.imageSelectorPicasa');
+
 				// Resize url field to adjust localization
-				if ( container.find(".imageSelectorPicasa").width() ) {
-					container.find(".userName")
-						.css("width",
-							container.find(".imageSelectorPicasa").width()
-							- 85
-							- 40
-							- container.find('.btn-userLogin').outerWidth()
-						)
+				if ( picasaContainer.width() ) {
+					var userNameInput = picasaContainer.find('.userName');
+					userNameInput.css("width",
+						picasaContainer.width()
+						- (userNameInput.position().left - picasaContainer.position().left)
+						- picasaContainer.find('.btn-userLogin').outerWidth()
+						- 30)
 						.focus();
 				}
 			};

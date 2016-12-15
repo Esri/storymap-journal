@@ -161,7 +161,7 @@ CKEDITOR.plugins.add('storymapsAction', {
 
 		editor.addCommand('navigateCommand', new CKEDITOR.navigateCommand());
 		editor.ui.addButton('Navigate', {
-			label: 'Navigate to a section', // TODO
+			label: i18n.commonMedia.editorActions.navigate,
 			command: 'navigateCommand',
 			toolbar: 'storymaps'
 		});
@@ -189,7 +189,7 @@ CKEDITOR.plugins.add('storymapsAction', {
 
 		editor.addCommand('removeCommand', new CKEDITOR.removeCommand());
 		editor.ui.addButton('RemoveAction', {
-			label: 'Remove action',
+			label: i18n.commonMedia.editorActions.remove,
 			command: 'removeCommand',
 			toolbar: 'storymaps'
 		});
@@ -226,7 +226,7 @@ CKEDITOR.plugins.add('storymapsAction', {
 
 		editor.addCommand('previewCommand', new CKEDITOR.previewCommand());
 			editor.ui.addButton('PreviewAction', {
-			label: 'Preview action',
+			label: i18n.commonMedia.editorActions.preview,
 			command: 'previewCommand',
 			toolbar: 'storymapsAction'
 		});

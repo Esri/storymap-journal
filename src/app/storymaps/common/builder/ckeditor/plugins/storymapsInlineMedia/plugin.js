@@ -28,7 +28,7 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 				elemIsImg = elem.data("cke-display-name") == "image",
 				elemIsFrame = elem.is("div") && elem.hasClass("iframe-container");
 
-			require(["dojo/topic", "dojo/has"], function(topic, has){
+			require(["dojo/topic", "dojo/has", "storymaps/tpl/core/Helper"], function(topic, has, Helper){
 				var media = null;
 
 				if ( elemIsImg ) {
@@ -39,7 +39,7 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 					media = {
 						type: "image",
 						image: {
-							url: mediaImg.attr('src'),
+							url: Helper.possiblyRemoveToken(mediaImg.attr('src')),
 							//titleDisplay: caption && caption.length ? 'caption' : 'hover',
 							title: title,
 							width: mediaImg.attr('width'),
@@ -113,9 +113,17 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 
 						// Media with caption (image only)
 						if ( cfg.title ) {
+							var url = cfg.url;
+							// TODO: SIZES. not currently used.
+							if (cfg.sizes && cfg.sizes.length > 1) {
+								var sorted = _.sortBy(cfg.sizes, 'width').reverse();
+								url = sorted[0].url;
+								cfg.url = url;
+							}
+
 							outputEl = CKEDITOR.dom.element.createFromHtml(captionTpl, editor.document);
 							$(outputEl.getChildren().$).eq(0).children().attr({
-								'src': cfg.url,
+								'src': Helper.possiblyAddToken(cfg.url),
 								'width': media && media.image && media.image.width ? media.image.width : DEFAULT_WIDTH,
 								'height': media && media.image && media.image.height ? media.image.height : null
 							});

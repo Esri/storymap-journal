@@ -45,8 +45,8 @@ define({
       "tapForDetails": "點選查看詳細資訊",
       "clickForDetails": "瞭解詳細資訊",
       "swipeToExplore": "滑動以進行瀏覽",
-      "tapForMap": "點選以返回地圖",
-      "clickForMap": "返回到地圖"
+      "tapForMap": "點選以返回",
+      "clickForMap": "返回"
     },
     "floatLayout": {
       "scroll": "捲動"
@@ -55,7 +55,9 @@ define({
       "scroll": "向下捲動以查看更多資訊！"
     },
     "mainStage": {
-      "back": "上一步"
+      "back": "上一步",
+      "errorDeleted": "此連結停用 (已刪除部分)",
+      "errorNotPublished": "此連結停用 (未發佈部分)"
     },
     "headerFromCommon": {
       "storymapsText": "故事地圖",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "無法與其他人分享此頁面，請改為分享 ${link}",
       "link": "連結至故事",
       "printOptPageBreak": "在一個新頁面上開始每個部分",
+      "makeTextBlack": "將所有文字變成黑色",
       "printWarning": "這是列印版本的故事地圖。只能在 ${link} 的線上版本中取得影片和互動式地圖之類的動態內容",
       "printMSWarning": "只能在線上故事中取得的連結",
       "printVideoWarning": "可在此故事地圖的線上版本中檢視這段影片"

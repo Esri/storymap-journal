@@ -3,7 +3,7 @@ define([
 		"lib-build/css!./ShareURLPanel",
         "../../utils/SocialSharing",
         "dojo/has",
-        "lib-app/ZeroClipboard/ZeroClipboard.min",
+        "lib-app/clipboard/clipboard",
         "lib-build/css!storymaps/common/_resources/font/builder-share/css/share-font.css"
     ],
 	function (
@@ -11,7 +11,7 @@ define([
 		viewCss,
 		SocialSharing,
 		has,
-		ZeroClipboard
+		Clipboard
 	) {
 		return function ShareURLPanel(container)
 		{
@@ -24,6 +24,8 @@ define([
 
 			this.present = function(url, selectUrl)
 			{
+        var canCopy = document.queryCommandSupported('copy');
+
 				_url = SocialSharing.cleanURL(url, true);
 
 				buildShortLink(_url, selectUrl);
@@ -31,7 +33,7 @@ define([
 				container.find('.btn-bitlylink-open').html(i18n.viewer.shareFromCommon.open);
 
 				// Touch device don't likely have flash...
-				container.find('.share-url-container').toggleClass('touch', !! has("touch"));
+				container.find('.share-url-container').toggleClass('touch', !canCopy);
 				container.find('.share-btn').attr('title', i18n.viewer.shareFromCommon.copy);
 				container.find('.share-status').html(i18n.viewer.shareFromCommon.copied);
 			};
@@ -68,13 +70,14 @@ define([
 				//
 				// Copy button
 				//
+				//
+				var bitLyCopy = new Clipboard(container.find(".share-btn").get(0),{
+					text: function() {
+						return container.find(".bitlylink").val();
+					}
+				});
 
-				ZeroClipboard.config( { swfPath: (app.isProduction ? "resources/lib/" : "lib-app") + "/ZeroClipboard/ZeroClipboard.swf"  } );
-				var bitLyCopy = new ZeroClipboard(container.find(".share-btn"));
-
-				bitLyCopy.on("copy", function (event) {
-					var clipboard = event.clipboardData;
-					clipboard.setData("text/plain", container.find(".bitlylink").val());
+				bitLyCopy.on("success", function () {
 					container.find(".share-btn").removeClass('share-clipboard').addClass('share-ok');
 					container.find(".share-status").show();
 					container.find(".bitlylink")[0].selectionStart = container.find(".bitlylink")[0].selectionEnd = -1;

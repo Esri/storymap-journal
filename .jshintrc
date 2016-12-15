@@ -2,13 +2,15 @@
 	"browser": true,
 	"dojo": true,
 	"jquery": true,
-	
+
 	"globals": {
 		"console": false,
 		"alert": false,
 		"prompt": false,
 
 		"esri": false,
+		"_": false,
+		"unescape": false,
 
 		"commonConfig": true,
 		"i18n": false,
@@ -16,13 +18,11 @@
 
 		"FB": false,
 		"History": false,
-		
+
 		"CKEDITOR": false,
-		"CKEDITOR_BASEPATH": true,
-		
-		"Swiper": false
+		"CKEDITOR_BASEPATH": true
 	},
-	
+
 	"expr": true,
 	"laxbreak": true,
 	"eqnull": true,

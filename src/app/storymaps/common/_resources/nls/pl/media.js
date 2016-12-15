@@ -7,8 +7,9 @@ define({
       "lblImage": "Obraz",
       "lblVideo": "Wideo",
       "lblExternal": "Strona internetowa",
+      "lblUpload": "Prześlij",
+      "lblLink": "Połącz",
       "disabled": "Opcja ta została wyłączona przez Administratora",
-      "url": "W celu manualnego wprowadzenia adresu internetowego obrazu",
       "userLookup": "Wczytaj albumy",
       "notImplemented": "Jeszcze nie wprowadzone",
       "noData": "Nie znaleziono żadnych albumów publicznych"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Wczytaj obrazy z portalu społecznościowego <br /> lub bezpośrednio z adresu URL"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "znajdź obraz",
+      "lblDrop": "Upuść obraz tutaj lub",
+      "infoUpload": "Obrazy zostaną zapisane na Twoim koncie na platformie ArcGIS i będą dostępne tylko w narracji.",
+      "warningFileTypes": "Obraz może mieć format .jpg, .png, .gif lub .bmp",
+      "warningOneFile": "Akceptowany jest tylko jeden plik jednocześnie.",
+      "warningFileSize": "Plik przekracza maksymalną dozwoloną wielkość przesyłania. Wybierz inny plik.",
+      "tooltipRemove": "Usuń nieużywany obraz z konta na platformie ArcGIS. <br> (Jeśli zechcesz ponownie go użyć w późniejszym czasie, konieczne będzie ponowne jego przesłanie)."
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nazwa użytkownika",
@@ -36,7 +46,7 @@ define({
       "learn": "więcej informacji"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Adres e-mail lub identyfikator z serwisu Picasa",
+      "userInputLbl": "Adres e-mail lub identyfikator z serwisu Google",
       "signInMsg2": "Nie odnaleziono konta",
       "howToFind": "Jak znaleźć identyfikator Picasa",
       "howToFind2": "Skopiuj cyfry znajdujące się między pierwszym a drugim znakiem „/” dowolnej strony Picasa"
@@ -51,7 +61,7 @@ define({
       "other": "Inne"
     },
     "videoSelectorYoutube": {
-      "url": "Adres URL pliku wideo dostępnego w serwisie YouTube",
+      "url": "Łącze filmu w witrynie YouTube",
       "pageInputLbl": "Nazwa użytkownika",
       "lookupMsgError": "Nie odnaleziono użytkownika",
       "howToFind": "W jaki sposób wyszukać nazwę użytkownika serwisu YouTube",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "Podczas sprawdzania YouTube wystąpił błąd. Sprawdź klucz YouTube API."
     },
     "videoSelectorVimeo": {
-      "url": "Adres URL pliku wideo dostępnego w serwisie Vimeo"
+      "url": "Łącze filmu w witrynie Vimeo"
     },
     "videoSelectorOther": {
-      "explain1": "Narracja nie jest w stanie odtwarzać zwykłych plików wideo (np. w formacie .avi, .mpeg), ale może odtwarzać hostowane pliki wideo, które mają wbudowane odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
-      "explain2": "Funkcja ta jest udostępniana w ramach większości usług hostowania plików wideo w Internecie, konieczne jest znalezienie opcji osadzenia pliku wideo, skopiowanie danego kodu oraz skorzystanie z witryny %WEBPAGE%.",
-      "explain3": "Ewentualnie, jeżeli użytkownik chce samodzielnie hostować plik wideo, może utworzyć stronę HTML, w ramach której wykorzystywany będzie odtwarzacz plików wideo, taki jak %EXAMPLE%, hostować tę stronę, a także skorzystać z witryny %WEBPAGE%.",
-      "webpage": "Obiekt witryny internetowej"
+      "explain1": "Na tej mapie narracyjnej nie można odtwarzać zwykłych plików wideo (np. w formacie avi lub mpeg), ale można na niej odtwarzać hostowane pliki wideo, które mają wbudowane odtwarzacze (np. pliki dostępne w serwisie YouTube lub Vimeo).",
+      "explain2": "Funkcja ta jest dostępna w większości usług hostowania plików wideo. Konieczne jest znalezienie opcji umożliwiającej osadzenie pliku wideo, skopiowanie udostępnionego kodu i dodanie go do narracji za pomocą opcji zasobów %WEBPAGE%.",
+      "explain3": "Alternatywnie można hostować plik wideo samodzielnie wraz ze stroną w języku HTML, która korzysta z odtwarzacza wideo, np. %EXAMPLE%. Następnie należy dodać adres URL tej strony w języku HTML do narracji przy użyciu opcji %WEBPAGE%.",
+      "webpage": "Strona internetowa"
     },
     "webpageSelectorHome": {
-      "lblUrl": "Adres URL witryny internetowej",
+      "lblUrl": "Łącze witryny internetowej",
       "lblEmbed": "Kod do osadzenia",
       "lblOR": "LUB",
       "lblError1": "Błąd, wyczyść jedno z dwóch pól danych wejściowych.",
@@ -79,11 +89,11 @@ define({
       "configure": "Konfiguruj"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "Adres URL obrazu powinien zaczynać się od http:// i kończyć na .jpg lub .png",
+      "lblURL": "Łącze obrazu",
+      "lblURLPH": "Łącze powinno kończyć się rozszerzeniem .jpg, .png, .gif lub .bmp",
       "lblURLError": "Prawdopodobnie ten obraz nie jest prawidłowy. Podaj bezpośredni adres łącza do pliku obrazu (wtedy adres URL zwykle kończy się rozszerzeniem .jpg lub .png). Adresy łączy do witryn internetowych zawierających dany obraz są nieobsługiwane.",
       "lblURLCheck": "Sprawdzanie obrazu...",
-      "lblLabel": "Legenda do obrazu",
+      "lblLabel": "Image caption",
       "lblLabel1": "Podpis",
       "lblLabel2": "Aktywuj tekst",
       "lblLabel3": "Brak",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Dopasuj",
       "lblPosition4": "Rozciągnij",
       "lblPosition5": "Niestandardowy",
+      "lblURLHelp": "Aby uzyskać najlepsze rezultaty, wielkość obrazów powinna być mniejsza niż 400 KB. Należy używać skompresowanych obrazów w formacie JPG przy jakości zachowanej na poziomie 80% i następujących zalecanych szerokości obrazów: 2000 pikseli dla obszaru głównego lub panelu narracji z przyciskiem maksymalizacji, 1000 pikseli dla panelu narracji bez przycisku maksymalizacji.<br><br>Jeśli obraz dostępny za pomocą łącza jest wyświetlany powoli, prześlij go do narracji dla lepszego efektu.",
       "tooltipDimension": "Wartość można podać w „px” lub „%”",
       "tooltipDimension2": "Wartość należy podać w „px”",
       "lblPosition2Explain": "(obraz może zostać przycięty)",
@@ -103,14 +114,19 @@ define({
       "lblPosition3Explain2": "(szerokość będzie zawsze dopasowana do panelu)",
       "lblPosition4Explain": "(obraz może zostać zniekształcony)",
       "unloadLbl": "Usuń, gdy czytelnik przechodzi dalej",
-      "unloadHelp": "Gdy w witrynie internetowej są udostępnione materiały audio lub wideo, ta opcja powinna być zaznaczona, aby po przejściu czytelnika dalej odtwarzanie tych treści było przerywane. Należy wyłączyć zaznaczenie opcji, aby na przykład podczas czytania tekstu przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli witryna internetowa jest aplikacją, tę opcję należy odznaczyć, aby uniknąć ponownego wczytywania tej aplikacji, gdy czytelnik do niej wróci.",
+      "unloadHelp": "Jeśli w witrynie internetowej są udostępniane materiały audio lub wideo, ta opcja powinna być zaznaczona, aby po przejściu czytelnika dalej odtwarzanie tych treści było przerywane. Należy wyłączyć zaznaczenie opcji, aby na przykład podczas czytania tekstu przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli ta witryna internetowa jest aplikacją, tę opcję należy wyłączyć, aby uniknąć ponownego wczytywania tej narracji, gdy czytelnik do niej wróci.",
       "embedProtocolLabel": "Wczytywanie strony przez bezpieczne połączenie (HTTPS)",
-      "embedProtocolWarning1": "Ta narracja jest skonfigurowana do wczytywania przez bezpieczne połączenie (https), dlatego strona internetowa wyświetlana w narracji musi również używać bezpiecznego połączenia. Jeśli strona nie wczytuje się, być może nie jest dostępna przez bezpieczne połączenie albo nie może zostać włączona do narracji (niektóre witryny ograniczają tę możliwość). Może być konieczne utworzenie hiperłącza w celu otwarcia strony w nowej karcie przeglądarki.",
-      "embedProtocolWarning2": "Ta narracja jest skonfigurowana do wczytywania przez połączenie niezabezpieczone (http), dlatego ta strona internetowa może zostać wczytana przez bezpieczne połączenie (zalecane) lub przez połączenie niezabezpieczone. Jeśli strona nie wczytuje się, być może nie obsługuje wybranego typu połączenia albo nie może zostać włączona do narracji (niektóre witryny ograniczają tę możliwość). Może być konieczne utworzenie hiperłącza w celu otwarcia strony w nowej karcie przeglądarki."
+      "embedProtocolWarning1": "Jeśli ta strona nie jest wczytywana w narracji, nie można jej osadzać ze względów bezpieczeństwa internetowego. Alternatywnie można dodać łącze w narracji umożliwiające otwarcie tej strony na nowej karcie przeglądarki. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Dowiedz się więcej</a>",
+      "embedProtocolWarning2": "Jeśli ta strona nie jest wczytywana w narracji, wyłącz zaznaczenie tej opcji i spróbuj ponownie. Jeśli ta strona nadal nie jest wczytywana, nie można jej osadzać ze względów bezpieczeństwa internetowego. Alternatywnie można dodać łącze w narracji umożliwiające otwarcie tej strony na nowej karcie przeglądarki. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Dowiedz się więcej</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Lokalizuj adres lub miejsce",
       "mapMarkerExplain": "Po kliknięciu łącza na mapie wyświetlony zostanie znak"
+    },
+    "editorActions": {
+      "navigate": "Przejdź do sekcji",
+      "remove": "Działanie usunięcia",
+      "preview": "Działanie podglądu"
     },
     "editorActionMedia": {
       "lblTitle": "Zmień zasoby w obszarze głównym"

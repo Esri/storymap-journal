@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "在此添加文本、链接和小图形。",
-      "editorActionsTitle": "主舞台操作",
-      "editorActionsHelpDescr": "使用这些控件来创建将更改主舞台的链接。例如，当读者单击某链接时，您会希望地图缩放至特定位置，显示其他 Web 地图或显示图像。",
-      "mainStageDisabled": "编辑器最大化时将禁用主舞台操作"
+      "editorActionsTitle": "故事操作",
+      "editorActionsHelpDescr": "在叙述中创建链接，帮助您讲述故事。故事操作可链接到另一分区或更改主要部分。例如，您可以配置操作来移动地图到另一位置、切换地图图层的打开/关闭状态，或将主要部分媒体更改为其他图片、视频、地图或 web 页面。",
+      "mainStageDisabled": "最大化编辑器时禁用故事操作"
     },
     "organizePopup": {
       "title": "组织",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "（无法移动主目录节）",
       "exportMainStage": "主舞台内容",
       "exportPanel": "面板内容",
-      "exportActions": "主舞台操作"
+      "exportActions": "故事操作"
     },
     "exportData": {
       "btn": "导出内容",

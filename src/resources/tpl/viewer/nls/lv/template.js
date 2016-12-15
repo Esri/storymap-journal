@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Pieskarieties, lai iegūtu detalizētu informāciju",
       "clickForDetails": "Uzziniet vairāk",
       "swipeToExplore": "Pavelciet, lai izpētītu",
-      "tapForMap": "Pieskarieties, lai atgrieztos atpakaļ kartē",
-      "clickForMap": "ATPAKAĻ UZ KARTI"
+      "tapForMap": "Pieskarties, lai atgrieztos",
+      "clickForMap": "Atpakaļ"
     },
     "floatLayout": {
       "scroll": "Ritināt"
@@ -55,7 +55,9 @@ define({
       "scroll": "Ritiniet uz leju, lai iegūtu vairāk informācijas."
     },
     "mainStage": {
-      "back": "Atpakaļ"
+      "back": "Atpakaļ",
+      "errorDeleted": "Šī saite nav aktīva (sadaļa ir dzēsta)",
+      "errorNotPublished": "Šī saite nav aktīva (sadaļa nav publicēta)"
     },
     "headerFromCommon": {
       "storymapsText": "Stāstu karte",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Šo lapu nav iespējams koplietot ar citiem, tā vietā koplietojiet ${link}",
       "link": "saite uz stāstu",
       "printOptPageBreak": "Sāciet katru sadaļu jaunā lapā",
+      "makeTextBlack": "Iekrāsot visu tekstu melnu",
       "printWarning": "Šī ir stāsta kartes drukas versija. Dinamiskais saturs, piemēram, video un interaktīvās mapes ir pieejami tikai tiešsaistes versijā: ${link}",
       "printMSWarning": "saite uz stāstu, kas pieejams tikai tiešsaistē",
       "printVideoWarning": "Šo video var skatīties šīs stāstu kartes tiešsaistes versijā."

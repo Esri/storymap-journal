@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Peka för information",
       "clickForDetails": "Läs mer",
       "swipeToExplore": "Svep för att utforska",
-      "tapForMap": "Peka för att återgå till kartan",
-      "clickForMap": "TILLBAKA TILL KARTAN"
+      "tapForMap": "Tryck för att gå tillbaka",
+      "clickForMap": "BAKÅT"
     },
     "floatLayout": {
       "scroll": "Bläddra"
@@ -55,7 +55,9 @@ define({
       "scroll": "Bläddra nedåt för att visa mer"
     },
     "mainStage": {
-      "back": "Bakåt"
+      "back": "Bakåt",
+      "errorDeleted": "Den här länken är inte aktiv (sektionen har tagits bort)",
+      "errorNotPublished": "Den här länken är inte aktiv (sektionen är inte publicerad)"
     },
     "headerFromCommon": {
       "storymapsText": "En berättelsekarta",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Det går inte att dela den här sidan med andra, dela i stället ${link}",
       "link": "länken till berättelsen",
       "printOptPageBreak": "Börja varje avsnitt på en ny sida",
+      "makeTextBlack": "Gör all text svart",
       "printWarning": "Det här är en utskriven version av en berättelsekarta. Dynamiskt innehåll som videor och interaktiva kartor är bara tillgängliga i onlineversionen på ${link}",
       "printMSWarning": "länken är endast tillgänglig i onlineberättelsen",
       "printVideoWarning": "Den här videon kan bara visas i onlineversionen av berättelsekartan"

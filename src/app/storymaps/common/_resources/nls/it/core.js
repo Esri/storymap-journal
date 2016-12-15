@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Intestazione",
-      "logoEsri": "Logo Esri",
-      "logoNone": "Nessun logo",
-      "logoCustom": "Logo personalizzato",
-      "logoCustomPlaceholder": "URL (max 250x50 pixel)",
-      "logoCustomTargetPlaceholder": "Collegamento clickthrough",
-      "logoSocialExplain": "Personalizzare il collegamento nell'intestazione.",
-      "logoSocialText": "Testo",
-      "logoSocialLink": "Collegamento",
+      "logoEsriRadio": "Logo Esri",
+      "logoNoneRadio": "Nessun logo",
+      "logoCustomRadio": "Logo personale",
+      "logoCustomLabel": "Immagine:",
+      "logoCustomUploadHelp": "I logo vengono visualizzati in modo ottimale se il relativo rapporto larghezza/altezza è compreso tra 1:1 e 5:1. Se la visualizzazione di un logo collegato è lenta, salvare una copia e copiarla qui.",
+      "logoCustomUploadTooltip": "Usa un logo caricato",
+      "logoCustomUploadButton": "Carica un logo",
+      "logoUploadSizeError": "Dimensioni GIF eccessive. Ridimensionare in base a una larghezza pari a ${PIXEL-WIDTH}.",
+      "logoCustomLinkTooltip": "Collega a logo",
+      "logoCustomLinkPlaceholder": "URL immagine",
+      "logoUploadGenericError": "Il logo può essere un file con estensione .bmp, .gif, .jpg, .jpeg o png. I file con estensione .gif devono avere una larghezza minore di 250 pixel e dimensioni minori di 10 MB.",
+      "logoCustomTargetPlaceholder": "Pagina Web da aprire quando si fa clic sul logo",
+      "logoSocialText": "Slogan:",
+      "logoLink": "Collegamento:",
       "lblSmallHeader": "Usa intestazione compressa (senza sottotitolo)"
     },
     "header": {
       "title": "Modifica il titolo di %TPL_NAME%",
       "subtitle": "Modifica il sottotitolo di %TPL_NAME%"
+    },
+    "sectionNavigation": {
+      "select": "Seleziona una sezione...",
+      "section": "Sezione",
+      "thisSection": "Sezione corrente",
+      "homeSection": "Sezione home",
+      "hiddenSection": "Sezione nascosta"
     }
   }
 });

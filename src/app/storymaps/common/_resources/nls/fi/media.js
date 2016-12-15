@@ -7,8 +7,9 @@ define({
       "lblImage": "Kuva",
       "lblVideo": "Video",
       "lblExternal": "Web-sivu",
+      "lblUpload": "Lähetä",
+      "lblLink": "Linkki",
       "disabled": "Pääkäyttäjä on poistanut tämän toiminnon käytöstä.",
-      "url": "Kuvan verkko-osoitteen manuaalinen syöttäminen",
       "userLookup": "Lataa albumit",
       "notImplemented": "Ei ole vielä toteutettu.",
       "noData": "Julkista albumia ei löytynyt"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Lataa kuvat sosiaalisesta mediasta <br />tai suoraan URL-osoitteesta"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "etsi kuva selaamalla",
+      "lblDrop": "Vedä kuva tähän tai",
+      "infoUpload": "Kuvat tallennetaan ArcGIS-tilillesi. Niitä voi käyttää vain tarinassasi.",
+      "warningFileTypes": "Kuva voi olla jossakin seuraavista muodoista: .jpg, .png, .gif, tai .bmp.",
+      "warningOneFile": "Vain yksi tiedosto kerrallaan voidaan käsitellä.",
+      "warningFileSize": "Tiedoston koko ylittää palvelimelle ladattavien tiedostojen sallitun enimmäiskoon. Valitse toinen tiedosto.",
+      "tooltipRemove": "Poista tämä käyttämätön kuva ArcGIS-tililtäsi. <br> (Sinun on ladattava se tilillesi uudelleen, jos päätät käyttää sitä myöhemmin.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Käyttäjätunnus",
@@ -36,7 +46,7 @@ define({
       "learn": "lisätietoja"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Sähköpostiosoite tai Picasa-tunnus",
+      "userInputLbl": "Sähköpostiosoite tai Google-tunnus",
       "signInMsg2": "Tiliä ei löydy",
       "howToFind": "Picasa-tunnuksen etsiminen",
       "howToFind2": "Kopioi minkä tahansa Picasa-sivun ensimmäisen ja toisen vinoviivan (/) välissä olevat luvut"
@@ -51,7 +61,7 @@ define({
       "other": "Muu"
     },
     "videoSelectorYoutube": {
-      "url": "Youtube-videon URL-osoite",
+      "url": "Youtube-videon linkki",
       "pageInputLbl": "Käyttäjätunnus",
       "lookupMsgError": "Käyttäjää ei löydy",
       "howToFind": "YouTube-käyttäjätunnuksen etsiminen",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "YouTube-tarkistus epäonnistui. Tarkista API -avain."
     },
     "videoSelectorVimeo": {
-      "url": "Vimeo-videon URL-osoite"
+      "url": "Vimeo-videon linkki"
     },
     "videoSelectorOther": {
-      "explain1": "Tarina ei voi toistaa raakavideoita (esim. avi- ja mpeg-muotoisia), mutta sillä voi toistaa isännöityjä videotiedostoja, joissa on sisäänrakennettuja soittimia (esim. YouTube tai Vimeo).",
-      "explain2": "Useimmissa online-videoisännöintipalveluissa voi käyttää kyseistä ominaisuutta, ja sinun on etsittävä videon upotusvalinta, kopioitava annettu koodi ja käytettävä sivustoa %WEBPAGE%.",
-      "explain3": "Jos taas haluat isännöidä itse videota, voit luoda HTML-sivun, joka käyttää videosoitinta (esim. %EXAMPLE%), isännöidä tätä sivua ja käyttää myös sivustoa %WEBPAGE%.",
-      "webpage": "Web-sivukohde"
+      "explain1": "Tarinakartta ei voi toistaa raakamuotoisia (kuten avi- ja mpeg-muotoisia) videoita, mutta sillä voi toistaa isännöityjä videotiedostoja sisäänrakennetuilla toistimilla (kuten YouTube tai Vimeo).",
+      "explain2": "Useimmat videoiden isännöintipalvelut tukevat tätä ominaisuutta. Etsi videon upotusvaihtoehto, kopioi annettu koodi ja lisää se tarinaasi %WEBPAGE%-sisältöasetusta käyttämällä.",
+      "explain3": "Voit myös isännöidä videon itse sijoittamalla sen HTML-sivulle, joka käyttää videotoistinta (esimerkiksi %EXAMPLE%). Voit lisätä tämän HTLM-sivun URL-osoitteen tarinaasi %WEBPAGE%-määritteenä.",
+      "webpage": "Web-sivu"
     },
     "webpageSelectorHome": {
-      "lblUrl": "Web-sivun URL-osoite",
+      "lblUrl": "Web-sivun linkki",
       "lblEmbed": "Upotuskoodi",
       "lblOR": "TAI",
       "lblError1": "Virhe, tyhjennä toinen kahdesta lähtöaineistokentästä.",
@@ -79,11 +89,11 @@ define({
       "configure": "Määritä"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "Kuvan URL-osoitteen on alettava merkkijonolla http:// ja loputtava tarkenteeseen .jpg tai .png",
+      "lblURL": "Kuvan linkki",
+      "lblURLPH": "Linkin lopussa tulee olla jokin seuraavista merkkijonoista: .jpg, .png, .gif, tai .bmp.",
       "lblURLError": "Kuva ei ole kelvollinen. Määritä suora linkki kuvatiedostoon (URL päättyy yleensä jpg- tai png-tunnisteeseen ). Linkki kuvan sisältävään verkkosivuun ei toimi.",
       "lblURLCheck": "Tarkistetaan kuvaa...",
-      "lblLabel": "Kuvan seloste",
+      "lblLabel": "Image caption",
       "lblLabel1": "Seloste",
       "lblLabel2": "Kohoteksti",
       "lblLabel3": "Ei mitään",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Sovita",
       "lblPosition4": "Venytä",
       "lblPosition5": "Mukautettu",
+      "lblURLHelp": "Parhaat tulokset saadaan käyttämällä alle 400 kt:n kokoisia kuvia. Käytä pakattuja JPG-kuvia 80 %:n kuvanlaadulla ja seuraavia kuvien suositusleveyksiä: 2 000 kuvapistettä päävaiheessa tai suurennuspainikkeen sisältävissä tarinapaneeleissa ja 1 000 kuvapistettä suurennuspainikkeettomissa tarinapaneeleissa.<br><br>Jos linkitetty kuva piirtyy hitaasti, voit nopeuttaa se piirtymistä lataamalla sen tarinaasi.",
       "tooltipDimension": "Arvo voidaan määrittää px (pikseli)- tai %-yksiköissä",
       "tooltipDimension2": "Arvo on määritettävä pikseleinä",
       "lblPosition2Explain": "(voi rajautua)",
@@ -105,12 +116,17 @@ define({
       "unloadLbl": "Poista lataus, kun lukija siirtyy",
       "unloadHelp": "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan.",
       "embedProtocolLabel": "Lataa sivu suojatun yhteyden kautta (HTTPS)",
-      "embedProtocolWarning1": "Tarinasi on määritetty latautumaan suojatun yhteyden (https) kautta, joten tarinassa näkyvän verkkosivun on käytettävä myös suojattua yhteyttä. Jos sivu ei lataudu, se ei ole ehkä käytettävissä suojatun yhteyden kautta tai suojattua yhteyttä ei voi lisätä tarinaasi (jotkin verkkosivustot estävät tämän). Sinun on ehkä luotava hyperlinkki, jotta voit avata sivun uudessa välilehdessä selaimessa.",
-      "embedProtocolWarning2": "Tarinasi on määritetty latautumaan suojaamattoman yhteyden (http) kautta, joten voit valita, ladataanko tämä sivu suojatun (suositus) vai suojaamattoman yhteyden kautta. Jos sivu ei lataudu, se ei ehkä tue valitsemaasi yhteystyyppiä tai valittua yhteyttä ei voi lisätä tarinaasi (jotkin verkkosivustot estävät tämän). Sinun on ehkä luotava hyperlinkki, jotta voit avata sivun uudessa välilehdessä selaimessa."
+      "embedProtocolWarning1": "Jos tämä sivu ei lataudu tarinassa, sitä ei voi upottaa suojaussyistä. Voit vaihtoehtoisesti lisätä linkin tarinaan, jolloin sivu avautuu uudella välilehdellä selaimessa. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lisätietoja</a>",
+      "embedProtocolWarning2": "Jos tämä sivu ei lataudu tarinassa, poista tämän valintaruudun valinta ja yritä uudelleen. Jos sivu ei edelleenkään lataudu, sitä ei voi upottaa suojaussyistä. Voit vaihtoehtoisesti lisätä linkin tarinaan, jolloin sivu avautuu uudella välilehdellä selaimessa. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lisätietoja</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Paikanna osoite tai paikka",
       "mapMarkerExplain": "Käyttäjä näkee karttamerkit napsauttaessaan linkkiä"
+    },
+    "editorActions": {
+      "navigate": "Siirry osioon",
+      "remove": "Poista toiminto",
+      "preview": "Esikatsele toiminto"
     },
     "editorActionMedia": {
       "lblTitle": "Muuta päävaiheen sisältöä"

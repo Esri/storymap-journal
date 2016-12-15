@@ -462,7 +462,7 @@ define([
 				container.find('.view-toggle-btn').click(toggleViews);
 
 				container.find('.btn-open').off('click').click(function(){
-					window.open(CommonHelper.getAppViewModeURL(), '_blank');
+					window.open(CommonHelper.getAppViewModeURL() + '&preview', '_blank');
 				});
 
 				container.on('hide.bs.modal', function(){

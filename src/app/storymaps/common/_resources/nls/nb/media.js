@@ -7,8 +7,9 @@ define({
       "lblImage": "Bilde",
       "lblVideo": "Video",
       "lblExternal": "Webside",
+      "lblUpload": "Opplasting",
+      "lblLink": "Kobling",
       "disabled": "Administratoren har deaktivert denne funksjonen",
-      "url": "For å angi webadressen til et bilde manuelt",
       "userLookup": "Last inn albumer",
       "notImplemented": "Ikke implementert ennå.",
       "noData": "Finner ingen offentlige albumer"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Last inn bilder fra sosiale medier <br /> eller direkte fra en URL-adresse"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "bla etter et bilde",
+      "lblDrop": "Slipp et bilde her eller",
+      "infoUpload": "Bildene lagres i ArcGIS-kontoen og er kun tilgjengelige inne i historien.",
+      "warningFileTypes": "Bildet kan være JPG, PNG, GIF eller BMP",
+      "warningOneFile": "Det godtas én fil om gangen.",
+      "warningFileSize": "Filen er større enn største tillatte opplastingsstørrelse. Velg en annen fil.",
+      "tooltipRemove": "Slett dette ubrukte bildet fra ArcGIS-kontoen. <br> (Du må laste det opp på nytt hvis du bestemmer deg for å bruke det senere.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Brukernavn",
@@ -36,7 +46,7 @@ define({
       "learn": "få mer informasjon"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "E-post eller Picasa-ID",
+      "userInputLbl": "E-post eller Google-ID",
       "signInMsg2": "Finner ikke kontoen",
       "howToFind": "Slik finner du en Picasa-ID",
       "howToFind2": "Kopier tallene mellom første og andre / på en tilfeldig side på Picasa"
@@ -51,7 +61,7 @@ define({
       "other": "Annet"
     },
     "videoSelectorYoutube": {
-      "url": "Nettadressen for en Youtube-video",
+      "url": "Kobling til YouTube-video",
       "pageInputLbl": "Brukernavn",
       "lookupMsgError": "Finner ikke bruker",
       "howToFind": "Slik finner du et YouTube-brukernavn",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "YouTube-kontrollen mislyktes. Sjekk YouTube API-nøkkelen."
     },
     "videoSelectorVimeo": {
-      "url": "Nettadressen for en Vimeo-video"
+      "url": "Kobling til Vimeo-video"
     },
     "videoSelectorOther": {
-      "explain1": "Historien kan ikke spille av råvideoer (f.eks. AVI- eller MPEG-filer), men den kan spille av hostede videofiler som har innebygde spillere (f.eks. YouTube eller Vimeo).",
-      "explain2": "De fleste nettbaserte videotjenester har denne funksjonen. Du må finne alternativet for å bygge inn videoen, kopiere den oppgitte koden og bruke %WEBPAGE%.",
-      "explain3": "Du kan eventuelt være lagre og administrere videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
-      "webpage": "Nettsidefunksjon"
+      "explain1": "Historiekartet kan ikke spille av råvideofiler (f.eks. AVI- eller MPEG-filer), men den kan spille av hostede videofiler som har innebygde spillere (f.eks. YouTube eller Vimeo).",
+      "explain2": "De fleste hosttjenestene for video tilbyr denne funksjonen. Finn alternativet for å bygge inn videoen, kopier den aktuelle koden og legg den til i historien ved hjelp av alternativet for %WEBPAGE%-innhold.",
+      "explain3": "Alternativt kan du hoste videoen selv sammen med en HTML-side som bruker en videospiller som %EXAMPLE%. Du legger deretter til URL-en til denne HTML-siden som en %WEBPAGE% i historien.",
+      "webpage": "Webside"
     },
     "webpageSelectorHome": {
-      "lblUrl": "Nettside-URL",
+      "lblUrl": "Kobling til nettside",
       "lblEmbed": "Bygg inn kode",
       "lblOR": "ELLER",
       "lblError1": "Feil, fjern ett av de to inndatafeltene.",
@@ -79,11 +89,11 @@ define({
       "configure": "Konfigurer"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "En bilde-URL bør starte med http:// og slutte med .jpg eller .png",
+      "lblURL": "Kobling til bilde",
+      "lblURLPH": "Koblinger må slutte med  .jpg, .png, .gif, eller .bmp.",
       "lblURLError": "Dette bildet ser ikke ut til å være gyldig. Angi en direkte kobling til en bildefil (URL-adressen skal normalt ende på .jpg eller .png). Koblinger til en webside som inneholder et bilde, kommer ikke til å fungere.",
       "lblURLCheck": "Kontrollerer bilde...",
-      "lblLabel": "Bildetekst",
+      "lblLabel": "Image caption",
       "lblLabel1": "Undertekst",
       "lblLabel2": "Tekst med musepekeren over",
       "lblLabel3": "Ingen",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Tilpass",
       "lblPosition4": "Strekk",
       "lblPosition5": "Tilpasset",
+      "lblURLHelp": "Du får best resultat når bildene er mindre enn 400 KB. Bruk komprimerte JPG-bilder med 80 % kvalitet og følgende anbefalte bildebredder: 200 piksler for hovedområde- og fortellingspanel med maksimeringsknapp, 1000 piksler for fortellingspanel uten maksimeringsknapp.<br><br>Hvis et koblet bilde tegnes sakte, laster du det opp til historien for å få bedre resultat.",
       "tooltipDimension": "Verdien kan angis i 'px' eller '%'",
       "tooltipDimension2": "Verdien må angis i piksler",
       "lblPosition2Explain": "(kan bli beskåret)",
@@ -103,14 +114,19 @@ define({
       "lblPosition3Explain2": "(bredden passer alltid med panelet)",
       "lblPosition4Explain": "(kan bli forvrengt / vises skjevt)",
       "unloadLbl": "Last ut når leseren navigerer bort",
-      "unloadHelp": "Hvis websiden har lyd- eller videomedier, beholder du dette alternativet avmerket for å forhindre at det innholdet spilles av når leseren navigerer bort. Fjern merket for eksempel for å la et lydspor fortsette å spilles av mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at historien ikke lastes inn på nytt hvis leseren går tilbake til den.",
+      "unloadHelp": "Hvis nettsiden har lyd- eller videomedier, beholder du dette alternativet avmerket for å forhindre at det innholdet spilles av når leseren navigerer bort. Fjern merket for eksempel for å la et lydspor fortsette å spilles av mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at historien ikke lastes inn på nytt hvis leseren går tilbake til den.",
       "embedProtocolLabel": "Last inn scenen med en sikker tilkobling (HTTPS)",
-      "embedProtocolWarning1": "Fortellingen din er konfigurert til å lastes inn over en sikker tilkobling (https), så nettsideshowet i fortellingen må også bruke en sikker tilkobling. Hvis siden ikke lastes inn, kan det være fordi den ikke er tilgjengelig via en sikker tilkobling, eller at den ikke kan tas med i fortellingen (noen nettsteder begrenser dette). Du må kanskje opprette en hyperkobling for å åpne siden i en ny fane i nettleseren.",
-      "embedProtocolWarning2": "Fortellingen din er konfigurert til å lastes inn over en usikret tilkobling (http), så du kan velge å laste inn denne siden over en sikker (anbefalt) eller usikret tilkobling. Hvis siden ikke lastes inn, kan det være fordi den ikke støtter tilkoblingstypen du valgte eller at den ikke kan tas med i fortellingen (noen nettsteder begrenser dette). Du må kanskje opprette en hyperkobling for å åpne siden i en ny fane i nettleseren."
+      "embedProtocolWarning1": "Hvis denne siden ikke lastes inn i historien, kan den ikke bygges inn av hensyn til nettsikkerheten. Du kan eventuelt legge til en kobling i fortellingen som åpner siden i en ny nettleserfane. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Mer informasjon</a>",
+      "embedProtocolWarning2": "Hvis denne siden ikke lastes inn i historien, fjerner du merket for dette alternativet og prøver på nytt. Hvis den fremdeles ikke lastes inn,  kan den ikke bygges inn av hensyn til nettsikkerheten. Du kan eventuelt legge til en kobling i fortellingen som åpner siden i en ny nettleserfane. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Mer informasjon</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Finn en adresse eller et sted",
       "mapMarkerExplain": "Brukeren ser en kartmarkør når han/hun klikker på koblingen"
+    },
+    "editorActions": {
+      "navigate": "Naviger til en seksjon",
+      "remove": "Fjern handling",
+      "preview": "Forhåndsvis handling"
     },
     "editorActionMedia": {
       "lblTitle": "Endre innholdet for hovedstadiet"

@@ -2,29 +2,78 @@
 	position: relative;
 }
 
+.cke_inner .cke_button {
+	cursor: pointer;
+}
+
+.cke_inner .cke_button_disabled {
+	cursor: default;
+}
+
+.cke_inner .cke_button_disabled:hover {
+	background: white;
+}
+
+.viewText .fa,
+.cke_maximized .fa {
+	font-family: FontAwesome;
+	cursor: pointer;
+}
+
+.viewText .cke_toolgroup.storyActionsGroup,
+.cke_maximized .cke_toolgroup.storyActionsGroup {
+	border: 1px solid #428BC9;
+	cursor: pointer;
+	max-height: 26px;
+	overflow: hidden;
+	padding-right: 3px
+
+}
+
+.viewText .storyActionsBtn,
+.cke_maximized .storyActionsBtn {
+	cursor: pointer;
+	float: left;
+	text-align: center;
+}
+
+.viewText .storyActionsBtn *,
+.cke_maximized .storyActionsBtn * {
+	text-align: center;
+	cursor: pointer;
+}
+
+.viewText .storyActionsBtn .label,
+.cke_maximized .storyActionsBtn .label {
+	font-size: 0.8em;
+	display: inline-block;
+	height: 100%;
+	word-wrap: break-word; white-space: normal;
+	color: #428BC9;
+	width: 68px;
+	cursor: pointer;
+}
+
 /*
  * Main Stage Actions toolbar
  */
 
-.viewText .tooltip {
-	left: auto !important;
-	right: 115px !important;
-	top: 66px !important;
-	opacity: 1 !important;
+.viewTextContainer .tooltip {
+	opacity: 1;
 }
 
-.viewText .tooltip .tooltip-arrow {
+.viewTextContainer .tooltip .tooltip-arrow {
 	border-bottom-color: #E9E9E9;
 }
 
-.viewText .tooltip .tooltip-inner {
+.viewTextContainer .tooltip .tooltip-inner {
 	text-align: left;
 	color: #000;
 	background-color: #E9E9E9;
 	padding-bottom: 7px;
 }
 
-.viewText .tooltip .title {
+.viewTextContainer .tooltip .title {
 	color: #428BC9;
 	font-size: 1.1em;
 	margin-bottom: 2px;

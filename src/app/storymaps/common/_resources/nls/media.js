@@ -8,8 +8,9 @@ define({
 				lblImage: "Image",
 				lblVideo: "Video",
 				lblExternal: "Web page",
+				lblUpload: "Upload",
+				lblLink: "Link",
 				disabled: "This feature has been disabled by the Administrator",
-				url: "To manually enter the web address of an image",
 				userLookup: "Load albums",
 				notImplemented: "Not implemented yet.",
 				noData: "No public album found"
@@ -21,6 +22,15 @@ define({
 			},
 			imageSelectorHome: {
 				explain: "Load images from social media, <br /> or directly from a URL"
+			},
+			imageSelectorUpload: {
+				lblUploadButton: "browse for an image",
+				lblDrop: "Drop an image here or",
+				infoUpload: "Images will be stored in your ArcGIS account and accessible only inside your story.",
+				warningFileTypes: "Image can be .jpg, .png, .gif, or .bmp",
+				warningOneFile: "One file accepted at a time.",
+				warningFileSize: "File exceeds maximum allowable upload size. Please choose another file.",
+				tooltipRemove: "Delete this unused image from your ArcGIS account. <br> (You'll need to upload it again if you decide to use it later.)"
 			},
 			imageSelectorFlickr: {
 				userInputLbl: "User name",
@@ -37,9 +47,9 @@ define({
 				learn: "learn more"
 			},
 			imageSelectorPicasa: {
-				userInputLbl: "Email or Picasa id",
+				userInputLbl: "Email or Google ID",
 				signInMsg2: "Account not found",
-				howToFind: "How to find a Picasa id",
+				howToFind: "How to find a Picasa ID",
 				howToFind2: "Copy digits between the first and second '/' of any Picasa page"
 			},
 			videoSelectorCommon: {
@@ -52,7 +62,7 @@ define({
 				other: "Other"
 			},
 			videoSelectorYoutube: {
-				url: "URL of a Youtube video",
+				url: "YouTube video link",
 				pageInputLbl: "User name",
 				lookupMsgError: "User not found",
 				howToFind: "How to find a YouTube user name",
@@ -63,16 +73,16 @@ define({
 				checkFailedAPI: "YouTube check has failed, please check YouTube API key."
 			},
 			videoSelectorVimeo: {
-				url: "URL of a Vimeo video"
+				url: "Vimeo video link"
 			},
 			videoSelectorOther: {
-				explain1: "The story cannot play raw videos (e.g., avi, mpeg) but it can play hosted video files that have built-in players (e.g., YouTube or Vimeo).",
-				explain2: "Most online video hosting services offer that feature, you have to find the option to embed the video, copy the given code and use the %WEBPAGE%.",
-				explain3: "Alternatively, if you want host the video yourself, you can create an HTML page that uses a video player like %EXAMPLE%, host that page and also use the %WEBPAGE%.",
-				webpage: "Web page feature"
+				explain1: "This story map cannot play raw video files (e.g., avi, mpeg), but it can play hosted videos with built-in players (e.g., YouTube or Vimeo).",
+				explain2: "Most video hosting services offer this feature. Find the option to embed the video, copy the code provided, and add it to your story using the %WEBPAGE% content option.",
+				explain3: "Alternatively, you can host the video yourself along with an HTML page that uses a video player like %EXAMPLE%. You'd then add the URL of that HTML page to your story as a %WEBPAGE%.",
+				webpage: "Web page"
 			},
 			webpageSelectorHome: {
-				lblUrl: "Webpage URL",
+				lblUrl: "Web page link",
 				lblEmbed: "Embed code",
 				lblOR: "OR",
 				lblError1: "Error, clear one of the two input fields.",
@@ -80,11 +90,11 @@ define({
 				configure: "Configure"
 			},
 			mediaConfigure: {
-				lblURL: "URL",
-				lblURLPH: "An image URL should start with http:// and end with .jpg or .png",
+				lblURL: "Image link",
+				lblURLPH: "Link should end with .jpg, .png, .gif, or .bmp",
 				lblURLError: "This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work.",
 				lblURLCheck: "Checking image...",
-				lblLabel: "Image Caption",
+				lblLabel: "Image caption",
 				lblLabel1: "Caption",
 				lblLabel2: "Hover text",
 				lblLabel3: "None",
@@ -97,6 +107,7 @@ define({
 				lblPosition3: "Fit",
 				lblPosition4: "Stretch",
 				lblPosition5: "Custom",
+				lblURLHelp: "For best results, images should be less than 400 KB. Use compressed JPG images at 80% quality and these recommended image widths: 2000 pixels for main stage or narrative panel with maximize button, 1000 pixels for narrative panel without maximize button.<br><br>If a linked image draws slowly, upload it to your story for better results.",
 				tooltipDimension: "The value can be specified in 'px' or '%'",
 				tooltipDimension2: "The value has to be specified in 'px'",
 				lblPosition2Explain: "(may crop)",
@@ -104,14 +115,19 @@ define({
 				lblPosition3Explain2: "(width will always fit the panel)",
 				lblPosition4Explain: "(may distort)",
 				unloadLbl: "Unload when reader navigates away",
-				unloadHelp: "If the Web Page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the Web Page is an application, uncheck this option so that the story does not reload if the reader returns to it.",
+				unloadHelp: "If the web page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the web page is an application, uncheck this option so that the story does not reload if the reader returns to it.",
 				embedProtocolLabel: "Load page over a secure connection (HTTPS)",
-				embedProtocolWarning1: "Your story is configured to load over a secure connection (https), so web page show in the story must also use a secure connection. If the page does not load it may be because it is not available over a secure connection or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab.",
-				embedProtocolWarning2: "Your story is configured to load over an insecure connection (http), so you can choose to load this page over a secure (recommended) or insecure connection. If the page does not load, it may be because it does not support the connection type you selected or that it cannot be included in your story (some websites restrict this). You may need to create a hyperlink to open the page in a new browser tab."
+				embedProtocolWarning1: "If this page does not load in your story, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Learn more</a>",
+				embedProtocolWarning2: "If this page does not load in your story, uncheck this option and try again. If the page still does not load, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Learn more</a>"
 			},
 			editorActionGeocode: {
 				lblTitle: "Locate an address or place",
 				mapMarkerExplain: "User will see a map marker when clicking the link"
+			},
+			editorActions: {
+				navigate: "Navigate to a section",
+				remove: "Remove action",
+				preview: "Preview action"
 			},
 			editorActionMedia: {
 				lblTitle: "Change the Main Stage content"
@@ -122,6 +138,7 @@ define({
 		}
 	}),
 	"ar": 1,
+	"bs": 1,
 	"cs": 1,
 	"da": 1,
 	"de": 1,
@@ -131,7 +148,8 @@ define({
 	"fi": 1,
 	"fr": 1,
 	"he": 1,
-	"hr": 1, 
+	"hr": 1,
+	"id": 1,
 	"it": 1,
 	"ja": 1,
 	"ko": 1,
@@ -150,6 +168,6 @@ define({
 	"tr": 1,
 	"vi": 1,
 	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 
+	"zh-hk": 1,
+	"zh-tw": 1
 });

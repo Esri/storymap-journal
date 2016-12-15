@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Tilføj tekst, links og små billeder her.",
-      "editorActionsTitle": "Handlinger i hovedområdet",
-      "editorActionsHelpDescr": "Brug disse knapper til at oprette links, der redigerer hovedområdet. Når læseren f.eks. klikker på et link, vil du måske zoome kortet til en bestemt position, vise et andet webkort eller vise et billede.",
-      "mainStageDisabled": "Handlinger for hovedområdet er deaktiveret, når tekstredigeringsprogrammet  er maksimeret"
+      "editorActionsTitle": "Historiehandlinger",
+      "editorActionsHelpDescr": "Opret links i din fortælling, som kan hjælpe dig med at fortælle historien. En historiehandling kan skabe forbindelse til en anden sektion eller ændre hovedscenen. Du kan f.eks. konfigurere en handling, der flytter kortet til en anden position, slår kortlag til/fra eller ændrer hovedscenens medie til et andet billede, en anden video, kort eller webside.",
+      "mainStageDisabled": "Historiehandlinger kan deaktiveres, når editoren er maksimeret"
     },
     "organizePopup": {
       "title": "Organisér",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Startsektionen kan ikke flyttes)",
       "exportMainStage": "Hovedområdets indhold",
       "exportPanel": "Panelindhold",
-      "exportActions": "Handlinger for hovedområdet"
+      "exportActions": "Historiehandlinger"
     },
     "exportData": {
       "btn": "Eksportér indhold",

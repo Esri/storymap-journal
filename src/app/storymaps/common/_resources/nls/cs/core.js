@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Záhlaví",
-      "logoEsri": "Logo Esri",
-      "logoNone": "Bez loga",
-      "logoCustom": "Vlastní logo",
-      "logoCustomPlaceholder": "Adresa URL (max 250×50 pixelů)",
-      "logoCustomTargetPlaceholder": "Odkaz při kliknutí na obrázek",
-      "logoSocialExplain": "Odkaz v záhlaví si můžete přizpůsobit.",
-      "logoSocialText": "Text",
-      "logoSocialLink": "Odkaz",
+      "logoEsriRadio": "Logo Esri",
+      "logoNoneRadio": "Bez loga",
+      "logoCustomRadio": "Moje logo",
+      "logoCustomLabel": "Obrázek:",
+      "logoCustomUploadHelp": "Loga vypadají nejlépe, pokud poměr jejich šířky k výšce je v rozsahu 1:1 až 5:1. Pokud se odkazované logo načítá pomalu, uložte jeho kopii a nahrajte ji zde.",
+      "logoCustomUploadTooltip": "Použít nahrané logo",
+      "logoCustomUploadButton": "Nahrát logo",
+      "logoUploadSizeError": "Rozměry obrázku GIF jsou příliš velké. Změňte velikost obrázku na ${PIXEL-WIDTH}.",
+      "logoCustomLinkTooltip": "Odkaz na logo",
+      "logoCustomLinkPlaceholder": "Adresa URL obrázku",
+      "logoUploadGenericError": "Jako logo můžete použít soubory ve formátech BMP, GIF, JPG, JPEG a PNG. Soubory ve formátu GIF nesmí být širší než 250 px a nesmí přesahovat velikost 10 MB.",
+      "logoCustomTargetPlaceholder": "Webová stránka, která se otevře po kliknutí na logo",
+      "logoSocialText": "Slogan:",
+      "logoLink": "Odkaz:",
       "lblSmallHeader": "Použít kompaktní záhlaví (bez podnázvu)"
     },
     "header": {
       "title": "Změňte název šablony %TPL_NAME%.",
       "subtitle": "Změňte podnázev šablony %TPL_NAME%."
+    },
+    "sectionNavigation": {
+      "select": "Vyberte část.",
+      "section": "Část",
+      "thisSection": "Tato část",
+      "homeSection": "Domovská část",
+      "hiddenSection": "Skrytá část"
     }
   }
 });

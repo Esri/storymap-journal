@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "在此新增文字、連結和小圖形。",
-      "editorActionsTitle": "主舞台操作",
-      "editorActionsHelpDescr": "使用這些控制項來建立將變更主舞台的連結。例如，當讀者按一下某連結時，您會希望地圖縮放至特定位置，顯示其他 Web 地圖或顯示圖像。",
-      "mainStageDisabled": "編輯器最大化時將停用主舞台操作"
+      "editorActionsTitle": "故事動作",
+      "editorActionsHelpDescr": "在敘述中建立連結來協助您述說故事。故事動作可連結至其他部分或變更主舞台。例如，您可以配置動作將地圖移至其他位置、開啟/關閉地圖圖層，或將主舞台媒體變更為不同的圖片、影片、地圖或網頁。",
+      "mainStageDisabled": "編輯器最大化時將停用故事動作"
     },
     "organizePopup": {
       "title": "組織",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(無法移動首頁章節)",
       "exportMainStage": "主舞台內容",
       "exportPanel": "面板內容",
-      "exportActions": "主舞台操作"
+      "exportActions": "故事動作"
     },
     "exportData": {
       "btn": "匯出內容",

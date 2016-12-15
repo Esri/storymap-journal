@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Trykk for å se detaljer",
       "clickForDetails": "Få mer informasjon",
       "swipeToExplore": "Sveip for å utforske",
-      "tapForMap": "Trykk for å gå tilbake til kartet",
-      "clickForMap": "TILBAKE TIL KARTET"
+      "tapForMap": "Trykk for å gå tilbake",
+      "clickForMap": "TILBAKE"
     },
     "floatLayout": {
       "scroll": "Rull"
@@ -55,7 +55,9 @@ define({
       "scroll": "Rull nedover for å se mer!"
     },
     "mainStage": {
-      "back": "Tilbake"
+      "back": "Tilbake",
+      "errorDeleted": "Denne koblingen er ikke aktiv (seksjonen er slettet)",
+      "errorNotPublished": "Denne koblingen er ikke aktiv (seksjonen er ikke publisert)"
     },
     "headerFromCommon": {
       "storymapsText": "En story map",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Denne siden kan ikke deles med andre, del i stedet koblingen ${link}",
       "link": "koble til fortellingen",
       "printOptPageBreak": "Begynn hver del på en ny side",
+      "makeTextBlack": "Gjør all tekst svart",
       "printWarning": "Dette er en trykt versjon av et fortellingskart. Dynamisk innhold som videoer og interaktive kart er bare tilgjengelig i den elektroniske versjonen på ${link}",
       "printMSWarning": "koblingen er bare tilgjengelig i fortellingen på nett",
       "printVideoWarning": "Denne videoen kan sees i den elektroniske versjonen av dette fortellingskartet"

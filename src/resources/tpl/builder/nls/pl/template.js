@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",
-      "editorActionsTitle": "Działania w obszarze głównym",
-      "editorActionsHelpDescr": "Użyj tych kontrolek do utworzenia łączy, które zmienią obszar główny. Na przykład, gdy użytkownik kliknie łącze, może nastąpić powiększenie mapy do określonej lokalizacji, wyświetlenie innej mapy internetowej lub wyświetlenie obrazu.",
-      "mainStageDisabled": "Działania w obszarze głównym są wyłączone, gdy okno edytora jest zmaksymalizowane."
+      "editorActionsTitle": "Działania narracji",
+      "editorActionsHelpDescr": "W narracji twórz łącza, które pomogą przedstawić Twoją opowieść. Działanie narracji może odsyłać do innej sekcji lub zmieniać obszar główny. Możesz na przykład skonfigurować działanie, aby przenieść mapę do innej lokalizacji, włączać/wyłączać warstwy mapy lub zmieniać multimedia obszaru głównego na inny obraz, wideo, mapę lub stronę internetową.",
+      "mainStageDisabled": "Działania narracji są wyłączone, gdy okno edytora jest zmaksymalizowane."
     },
     "organizePopup": {
       "title": "Organizuj",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Sekcji Start nie można przenieść).",
       "exportMainStage": "Zawartość obszaru głównego",
       "exportPanel": "Zawartość panelu",
-      "exportActions": "Działania w obszarze głównym"
+      "exportActions": "Działania narracji"
     },
     "exportData": {
       "btn": "Eksportuj zasoby",

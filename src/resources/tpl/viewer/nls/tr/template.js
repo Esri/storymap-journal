@@ -45,8 +45,8 @@ define({
       "tapForDetails": "Ayrıntılar için dokunun",
       "clickForDetails": "Daha fazla bilgi",
       "swipeToExplore": "Keşfetmek için kaydırın",
-      "tapForMap": "Haritaya geri dönmek için dokun",
-      "clickForMap": "HARİTAYA GERİ DÖN"
+      "tapForMap": "Geri gitmek için dokun",
+      "clickForMap": "GERİ"
     },
     "floatLayout": {
       "scroll": "Kaydır"
@@ -55,7 +55,9 @@ define({
       "scroll": "Daha fazlası için kaydır!"
     },
     "mainStage": {
-      "back": "Geri"
+      "back": "Geri",
+      "errorDeleted": "Bu bağlantı etkin değil (bölüm silinmiş)",
+      "errorNotPublished": "Bu bağlantı etkin değil (bölüm yayınlanmamış)"
     },
     "headerFromCommon": {
       "storymapsText": "Hikaye haritası",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "Bu sayfa başkalarıyla paylaşılamaz, bunun yerine ${link} bağlantısını paylaşın",
       "link": "hikaye bağlantısı",
       "printOptPageBreak": "Her bölümü yeni sayfada başlat",
+      "makeTextBlack": "Metnin tamamını siyah yap",
       "printWarning": "Bu, bir hikaye haritasının yazdırılmış versiyonudur. Video ve etkileşimli harita gibi dinamik içerikler yalnızca çevrimiçi versiyon olan ${link} bağlantısında sunulur",
       "printMSWarning": "bağlantı yalnızca çevrimiçi hikayede kullanılabilir",
       "printVideoWarning": "Bu video bu hikaye haritasının çevrimiçi versiyonunda görüntülenebilir"

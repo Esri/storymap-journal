@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Lägg till texter, länkar och små bilder här.",
-      "editorActionsTitle": "Åtgärder på huvudscenen",
-      "editorActionsHelpDescr": "Använd dessa kontroller för att skapa länkar som förändrar huvudscenen. Om användaren till exempel klickar på en länk kan du låta kartan zoomas in till en viss plats, visa en annan webbkarta eller visa en bild.",
-      "mainStageDisabled": "Åtgärder på huvudscenen är inaktiverade när redigeraren är maximerad"
+      "editorActionsTitle": "Berättelseåtgärder",
+      "editorActionsHelpDescr": "Skapa länkar i berättelsen som hjälper dig framföra din historia. En berättelseåtgärd kan länka till en annan sektion eller ändra huvudscenen. Du kan till exempel konfigurera en åtgärd för att flytta kartan till en annan plats, växla kartlager av/på eller ändra media för huvudscenen till en annan bild, video, karta eller webbsida.",
+      "mainStageDisabled": "Berättelseåtgärder är inaktiverade när redigeraren är maximerad"
     },
     "organizePopup": {
       "title": "Organisera",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Startasvsnittet går inte att flytta)",
       "exportMainStage": "Innehåll på huvudscenen",
       "exportPanel": "Panelinnehåll",
-      "exportActions": "Åtgärder på huvudscenen"
+      "exportActions": "Berättelseåtgärder"
     },
     "exportData": {
       "btn": "Exportera innehåll",

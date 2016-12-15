@@ -1,24 +1,29 @@
 define(["lib-build/tpl!./ViewHome",
 		"lib-build/css!./ViewHome",
+		"storymaps/common/utils/CommonHelper",
 		"dojo/has"],
 	function (
 		viewTpl,
 		viewCss,
+		CommonHelper,
 		has
 	){
 		return function ViewHome(container, showView)
 		{
-			container.append(viewTpl({ }));
+			container.append(viewTpl(i18n.commonMedia.mediaSelector));
 
 			init();
 
 			this.present = function()
 			{
+
+				container.find('.btn-select-upload').toggle(CommonHelper.getItemId() ? true : false);
 				container.show();
 			};
 
 			function init()
 			{
+				container.find('.btn-select-upload').click(function(){ showView('upload'); });
 				container.find('.btn-select-flickr').click(function(){ showView("flickr"); });
 				container.find('.btn-select-picasa').click(function(){ showView("picasa"); });
 				container.find('.btn-select-url').click(function(){
@@ -66,16 +71,6 @@ define(["lib-build/tpl!./ViewHome",
 					});
 				}
 				*/
-
-				if (!has("touch")) {
-					container.find('.btn-select-url').tooltip({
-						trigger: 'hover',
-						placement: 'top',
-						html: true,
-						title: i18n.commonMedia.mediaSelector.url,
-						container: 'body'
-					});
-				}
 
 				container.find('.facebook-warning').html(
 					i18n.commonMedia.imageSelectorFacebook.warning.replace(

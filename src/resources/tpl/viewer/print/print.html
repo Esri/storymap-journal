@@ -10,15 +10,42 @@
 
 		<meta name="description" content="This story map was created with the Story Map Journal application in ArcGIS Online.">
 
+		<style>
+			.error-msg {
+				padding: 40px 10px;
+				text-align: center;
+				font-size: 20px;
+				width: 50%;
+				margin: 0 auto;
+				font-family: 'Georgia', 'Hoefler Text', serif;
+				line-height: 1.5em;
+			}
+
+			.small-loader {
+				width: 50px;
+				height: 50px;
+				background: url(../../../tpl/viewer/icons/loading-light.gif);
+				background-size: 50px 50px;
+				background-repeat: no-repeat;
+				display: inline-block;
+			}
+		</style>
+
 		<script>
 			function loadJS(url, isExternal)
 			{
-				if( isExternal )
+				if( isExternal ) {
 					url = document.location.protocol == 'file:' ? 'http:' + url : url;
-				else
+				}
+				else {
 					url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
+				}
 
-				document.write("<script language='javascript' type='text/javascript' src='" + url + "'><\/script>");
+				var ref = window.document.getElementsByTagName('script')[0];
+				var script = window.document.createElement('script');
+				script.src = url;
+				script.async = false;
+				ref.parentNode.insertBefore(script, ref);
 			}
 
 			function loadCSS(url, isExternal)
@@ -49,12 +76,19 @@
 				}
 				return vars[name];
 			}
-		</script>
 
-		<script>
-			if (window.opener && window.opener.app) {
-				var app = window.opener.app;
-
+			function loadThings() {
+				if (!app) {
+					var appid = getUrlVar('appid');
+					var errorDiv = document.getElementsByClassName('error-msg')[0];
+					if (appid) {
+						errorDiv.innerHTML = 'To access the printable version of this Story Maps: <a href="../../../../index.html?appid=' + appid + '">open the story</a> and use the print button located in the share dialog.';
+					}
+					else {
+						errorDiv.innerHTML = 'Unexpected error accessing this story map.';
+					}
+					return;
+				}
 				loadCSS(app.pathJSAPI + 'esri/css/esri.css', true);
 				loadCSS(app.pathJSAPI + 'dijit/themes/claro/claro.css', true);
 
@@ -73,22 +107,24 @@
 					}
 				}
 
-
 				loadJS('print.js');
 			}
 		</script>
+
+		<script>
+			if (window.opener && window.opener.app) {
+				var app = window.opener.app;
+			}
+			window.onload = function() {
+				loadThings();
+			};
+
+		</script>
 	</head>
 	<body class="claro">
-		<div style="padding: 10px;">
-			<script type="text/javascript">
-				var appid = getUrlVar('appid');
-				if (appid) {
-					document.write('To access the printable version of this Story Maps: <a href="../../../../index.html?appid=' + appid + '">open the story</a> and use the print button located in the share dialog.');
-				}
-				else {
-					document.write('Unexpected error accessing this story map.');
-				}
-			</script>
+
+		<div class="error-msg">
+			<div class="small-loader"></div>
 		</div>
 	</body>
 </html>

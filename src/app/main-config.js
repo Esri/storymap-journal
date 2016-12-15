@@ -5,7 +5,11 @@ function loadJS(url, isExternal)
 	else
 		url += '?v=' + app.version + (!app.isProduction ? '&_=' + new Date().getTime() : '');
 
-	document.write("<script language='javascript' type='text/javascript' src='" + url + "'><\/script>");
+		var ref = window.document.getElementsByTagName('script')[0];
+		var script = window.document.createElement('script');
+		script.src = url;
+		script.async = false;
+		ref.parentNode.insertBefore(script, ref);
 }
 
 function loadCSS(url, isExternal)
@@ -47,6 +51,10 @@ function defineDojoConfig()
 		useDeferredInstrumentation: true,
 		//cacheBust: ! app.isProduction,
 		packages: [
+      {
+				name: 'app',
+				location: path1 + 'app'
+			},
 			{
 				name: 'storymaps',
 				location: path1 + 'app/storymaps'

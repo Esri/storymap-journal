@@ -45,8 +45,8 @@ define({
       "tapForDetails": "למידע נוסף",
       "clickForDetails": "מידע נוסף",
       "swipeToExplore": "החלק כדי לדפדף",
-      "tapForMap": "הקש כדי לחזור למפה",
-      "clickForMap": "חזור למפה"
+      "tapForMap": "הקש כדי חזור",
+      "clickForMap": "חזור"
     },
     "floatLayout": {
       "scroll": "גלול"
@@ -55,7 +55,9 @@ define({
       "scroll": "גלול למטה כדי לצפות בעוד!‏"
     },
     "mainStage": {
-      "back": "חזור"
+      "back": "חזור",
+      "errorDeleted": "קישור זה אינו פעיל (המקטע נמחק)",
+      "errorNotPublished": "קישור זה אינו פעיל (המקטע לא פורסם)"
     },
     "headerFromCommon": {
       "storymapsText": "מפת סיפור",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "אין אפשרות לשתף דף זה עם אחרים, במקום זאת שתף את הקישור ${link}",
       "link": "קישור לסיפור",
       "printOptPageBreak": "התחל כל קטע בדף חדש",
+      "makeTextBlack": "הפוך את כל הטקסט לשחור",
       "printWarning": "זוהי גרסה להדפסה של מפת סיפור. תוכן דינמי כגון סרטוני וידיאו ומפות אינטראקטיביות זמינים רק בגרסה מקוונת ב- ${link}",
       "printMSWarning": "קישור זמין רק בסיפור מקוון",
       "printVideoWarning": "ניתן לצפות בסרטון וידיאו זה בגרסה המקוונת של מפת סיפור זו"

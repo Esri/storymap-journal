@@ -29,7 +29,7 @@ body
 {
 	/* Font */
 	font-family: 'open_sansregular', sans-serif;
-	font-size: 0.8em;
+	font-size: 16px;
 
 	/* Text color */
 	/*color: #333;*/
@@ -42,7 +42,7 @@ body
 }
 
 body.first-section {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 /*
@@ -58,11 +58,6 @@ p {
 strong {
 	font-family: 'open_sanssemibold', sans-serif;
 	font-weight: bold;
-}
-
-.cke_editable
-{
-	font-size: 0.8em;
 }
 
 blockquote

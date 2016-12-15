@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Agrega aquí texto, vínculos y gráficos pequeños.",
-      "editorActionsTitle": "Acciones del escenario principal",
-      "editorActionsHelpDescr": "Usa estos controles para crear vínculos que cambien el escenario principal. Por ejemplo, cuando el lector hace clic en un vínculo, puedes hacer zoom a una ubicación concreta del mapa o mostrar otro mapa web o una imagen.",
-      "mainStageDisabled": "Las acciones del escenario principal se deshabilitan cuando se maximiza el editor"
+      "editorActionsTitle": "Story Actions",
+      "editorActionsHelpDescr": "Cree vínculos en su narración que ayuden a contar su historia. Una Story Action puede vincularse a otra sección o cambiar el escenario principal. Por ejemplo, puede configurar una acción para mover el mapa a otra ubicación, activar o desactivar capas de mapa, o bien cambiar el medio del escenario principal por una imagen, vídeo, mapa o página web diferentes.",
+      "mainStageDisabled": "Story Actions se deshabilitan cuando se maximiza el editor"
     },
     "organizePopup": {
       "title": "Organizar",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(La sección de inicio no se puede mover).",
       "exportMainStage": "Contenido del escenario principal",
       "exportPanel": "Contenido del panel",
-      "exportActions": "Acciones del escenario principal"
+      "exportActions": "Story Actions"
     },
     "exportData": {
       "btn": "Exportar contenido",

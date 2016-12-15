@@ -1,7 +1,8 @@
 <div class="videoSelectorView">
 	<form class="form-inline" role="form" onsubmit="return false;">
 		<div class="form-group">
-			<span class="service-logo <%= serviceId %>"></span>
+			<span class="icon fa fa-<%= faIcon %>"></span>
+			<span class="title"><%= serviceName %></span>
 			<input type="text" class="form-control url" value="" placeholder="<%= fieldUrl %>"/>
 		</div>
 		<button class="btn btn-primary btn-check"><%= btnCheck %></button>

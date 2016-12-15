@@ -578,24 +578,37 @@ define(["lib-build/css!./MainView",
 
 				// Strong tag need special care as the default OpenSansSemiBold use a separate font family and require "font-weight: normal"
 
+				// ALS: took off <strong> tag in title construction since we wanted the first title bigger but not bold
+				// but duplicated <strong> here to target existing apps
+
 				// Section title strong
-				CommonHelper.addCSSRule(
-					".sectionPanel .title strong, .sectionPanel .appTitle strong, #mobileView .title strong, #AddEditTitleEditor strong { "
-					+ (appFonts.sectionTitle.id != "default" ?
-							appFonts.sectionTitle.value + " font-weight: bold;"
-							: "font-family: 'open_sanssemibold', sans-serif; font-weight: bold;")
-					+ "}",
-					"SectionTitleStrongFont"
-				);
-				// Section content strong
-				CommonHelper.addCSSRule(
-					".sectionPanel .content strong, #mobileView .content strong{ "
-					+ (appFonts.sectionContent.id != "default" ?
-							appFonts.sectionContent.value + " font-weight: bold;"
-							: "font-family: 'open_sanssemibold', sans-serif; font-weight: bold;")
-					+ "}",
-					"SectionContentStrongFont"
-				);
+				var titleFontRules = '.sectionPanel .title, #mobileView .title, #AddEditTitleEditor, ' +
+														'.sectionPanel .title strong, #mobileView .title strong, #AddEditTitleEditor strong { ';
+				var firstTitleFontRules = '.sectionPanel .section:first-child .title, ' +
+																	'.sectionPanel .section:first-child .title strong { ';
+				if (appFonts.sectionTitle.id === 'default') {
+					titleFontRules += 'font-family: \'open_sanssemibold\', sans-serif;';
+					firstTitleFontRules += 'font-family: \'open_sansregular\', sans-serif; }';
+				} else {
+					titleFontRules += appFonts.sectionTitle.value;
+					firstTitleFontRules += appFonts.sectionTitle.value + ' }';
+				}
+				titleFontRules += ' font-weight: bold; }';
+
+				CommonHelper.addCSSRule(titleFontRules, 'SectionTitleStrongFont');
+				CommonHelper.addCSSRule(firstTitleFontRules, 'FirstSectionTitleFont');
+
+				// Section title strong
+				var sectionFontRules = '.sectionPanel .content strong, #mobileView .content strong { ';
+				if (appFonts.sectionContent.id === 'default') {
+					sectionFontRules += 'font-family: \'open_sanssemibold\', sans-serif;';
+				} else {
+					sectionFontRules += appFonts.sectionContent.value;
+				}
+				sectionFontRules += ' font-weight: bold; }';
+
+				CommonHelper.addCSSRule(sectionFontRules, 'SectionContentStrongFont');
+
 			};
 
 			function updateDesktopLayout()

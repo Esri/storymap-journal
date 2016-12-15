@@ -7,8 +7,9 @@ define({
       "lblImage": "Imagem",
       "lblVideo": "Vídeo",
       "lblExternal": "Página web",
+      "lblUpload": "Carregar",
+      "lblLink": "Ligação",
       "disabled": "Esta funcionalidade foi desativada pelo Admnistrador",
-      "url": "Para inserir manualmente o endereço web de uma imagem",
       "userLookup": "Carregar álbuns",
       "notImplemented": "Ainda não implementado.",
       "noData": "Não há vídeos públicos encontrados"
@@ -20,6 +21,15 @@ define({
     },
     "imageSelectorHome": {
       "explain": "Carregar imagens de rede social, <br /> ou diretamente de um URL"
+    },
+    "imageSelectorUpload": {
+      "lblUploadButton": "Procurar uma imagem",
+      "lblDrop": "Soltar uma imagem aqui ou",
+      "infoUpload": "As imagens serão armazenadas na sua conta ArcGIS e estarão acessíveis apenas dentro da sua história.",
+      "warningFileTypes": "A imagem pode encontrar-se nos formatos .jpg, .png, .gif, ou .bmp",
+      "warningOneFile": "Um ficheiro aceite de cada vez.",
+      "warningFileSize": "O ficheiro excede o tamanho máximo permitido para carregamento. Por favor, selecione outro ficheiro.",
+      "tooltipRemove": "Elimine esta imagem não-utilizada da sua conta ArcGIS. <br> (Terá de carregá-la novamente caso decida utilizá-la mais tarde.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nome de utilizador",
@@ -36,9 +46,9 @@ define({
       "learn": "saber mais"
     },
     "imageSelectorPicasa": {
-      "userInputLbl": "Email ou id do Picasa",
+      "userInputLbl": "Email ou ID do Google",
       "signInMsg2": "Conta não encontrada",
-      "howToFind": "Como encontrar a id do Picasa",
+      "howToFind": "Como encontrar uma ID do Picasa",
       "howToFind2": "Copiar os dígitos que estão entre a primeira e a segunda  '/'  de qualquer página do Picasa"
     },
     "videoSelectorCommon": {
@@ -51,7 +61,7 @@ define({
       "other": "Outros"
     },
     "videoSelectorYoutube": {
-      "url": "URL de um vídeo do Youtube",
+      "url": "Ligação para vídeo do YouTube",
       "pageInputLbl": "Nome de utilizador",
       "lookupMsgError": "Utilizador não encontrado",
       "howToFind": "Como encontrar um nome de utilizador do YouTube",
@@ -62,16 +72,16 @@ define({
       "checkFailedAPI": "A verificação do YouTube falhou, por favor verifique a chave API do YouTube."
     },
     "videoSelectorVimeo": {
-      "url": "URL de um vídeo do Vimeo"
+      "url": "Ligação para vídeo do Vimeo"
     },
     "videoSelectorOther": {
-      "explain1": "A história não pode reproduzir vídeos em formato raw (ex: avi, mpeg), mas pode reproduzir ficheiro de vídeo alojados que tenham leitores incorporados (ex: YouTube ou Vimeo).",
-      "explain2": "A maior parte dos serviços online de alojamento de video oferecem essa possibilidade, tem de encontrar a opção para incorporar vídeo, copiar o código e utilizar %WEBPAGE%.",
-      "explain3": "Em alternativa, se pretender alojar o vídeo, pode criar uma página HTML que utilize um leitor de vídeo como %EXAMPLE%, alojar essa página e também utilizar o %WEBPAGE%.",
-      "webpage": "Elemento de página web"
+      "explain1": "Este story map não pode reproduzir vídeos em formato raw (ex: avi, mpeg), mas pode reproduzir ficheiro de vídeo alojados com leitores de vídeo incorporados (ex: YouTube ou Vimeo).",
+      "explain2": "A maior parte dos serviços de alojamento de vídeo oferecem esta possibilidade. Encontre a opção para incorporar o vídeo, copie o código fornecido e adicione-o à sua história utilizando a opção de conteúdo %WEBPAGE%.",
+      "explain3": "Como alternativa, pode alojar o ficheiro, juntamente com uma página HTLM que utilize um leitor de vídeo como %EXAMPLE%. Depois poderia adicionar o URL dessa página HTML à sua história como uma %WEBPAGE%.",
+      "webpage": "Página web"
     },
     "webpageSelectorHome": {
-      "lblUrl": "URL de página web",
+      "lblUrl": "Ligação para página web",
       "lblEmbed": "Incorporar código",
       "lblOR": "OU",
       "lblError1": "Erro, limpe um dos dois campos de entrada.",
@@ -79,11 +89,11 @@ define({
       "configure": "Configurar"
     },
     "mediaConfigure": {
-      "lblURL": "URL",
-      "lblURLPH": "Um URL de imagem deve começar com http:// e terminar com .jpg ou .png",
+      "lblURL": "Ligação para imagem",
+      "lblURLPH": "A ligação pode terminar em .jpg, .png, .gif, ou .bmp",
       "lblURLError": "Esta imagem não aparenta ser válida. Por favor especifique uma ligação direta para um ficheiro de imagem (o seu URL geralmente termina em .jpg ou .png). Ligações para uma página web que contenha a imagem não irão funcionar.",
       "lblURLCheck": "A verificar imagem...",
-      "lblLabel": "Legenda de Imagem",
+      "lblLabel": "Image caption",
       "lblLabel1": "Legenda",
       "lblLabel2": "Passe sobre o texto",
       "lblLabel3": "Nenhum",
@@ -96,6 +106,7 @@ define({
       "lblPosition3": "Adaptar",
       "lblPosition4": "Esticar",
       "lblPosition5": "Personalizar",
+      "lblURLHelp": "Para melhores resultados, as imagens devem ser menores do que 400 KB. Utilize imagens JPG comprimidas com 80% de qualidade e estas larguras de imagem recomendadas: 2000 pixeis para o ecrã principal ou painel narrativo com botão maximizar, 1000 pixeis para painel narrativo sem botão maximizar.<br><br>caso as imagens ligadas fiquem lentas, carregue-las para a sua história para obter melhores resultados.",
       "tooltipDimension": "O valor pode ser especificado em pixéis ou percentagem",
       "tooltipDimension2": "O valor tem de ser especificado em px",
       "lblPosition2Explain": "(pode recortar)",
@@ -103,14 +114,19 @@ define({
       "lblPosition3Explain2": "(a largura será sempre ajustada ao painel)",
       "lblPosition4Explain": "(pode distorcer)",
       "unloadLbl": "Descarregue quando o leitor navegar para uma secção diferente",
-      "unloadHelp": "Se a Página Web tiver media em áudio ou em vídeo, mantenha esta opção selecionada para que esse conteúdo pare de ser reproduzido quando navegar para fora do leitor. Desselecione-a, por exemplo, para manter uma banda sonora a tocar enquanto o leitor avança pela história.<br />Caso a página web seja uma aplicação, desselecione esta opção para que a história não seja recarregada se o leitor regressar.",
+      "unloadHelp": "Caso a página possua media em formato vídeo ou áudio, mantenha esta opção selecionada para prevenir que conteúdo seja reproduzido após o utilizador sair da página. Desmarque-a, por exemplo, para continuar a reprodução de música à medida que o utilizador avança na história.<br />Caso a página web seja uma aplicação, desmarque esta opção para que a história não seja novamente descarregada caso o utilizador retome a visualização.",
       "embedProtocolLabel": "Carregar página através de uma ligação segura (HTTPS)",
-      "embedProtocolWarning1": "A sua história está configurada para ser carregada através de uma ligação segura (https), portanto a exibição de página web na história também tem de utilizar uma ligação segura. Caso a página não seja carregada, isso poderá dever-se ao facto de não se encontrar disponível através de uma ligação segura ou não poder ser incluída na sua história (alguns sites web restringem esta ação). Poderá ter de criar uma hiperligação para que a a página seja aberta num novo separador de navegador.",
-      "embedProtocolWarning2": "A sua história está configurada para ser carregada através de uma ligação insegura (http), por isso pode optar por carregar estab página através de uma ligação segura (recomendado) ou insegura. Caso a página não seja carregada, isso poderá dever-se ao facto de a mesma não suportar o tipo de ligação que escolheu ou não poder ser incluída na sua história (alguns sites web restringem esta ação). Poderá ter de criar uma hiperligação para que a a página seja aberta num novo separador de navegador."
+      "embedProtocolWarning1": "Caso a página não seja carregada na sua história, não poderá ser incorporada, por motivos de segurança web. Em alternativa, adicione uma ligação à sua narrativa para abrir a página num novo separador do navegador <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Obter mais informações</a>",
+      "embedProtocolWarning2": "Caso esta página não seja carregada na sua história, desmarque esta opção e tente novamente. Caso a página continue a não ser carregada, não poderá ser incorporada, por motivos de segurança web. Em alternativa, adicione uma ligação à sua narrativa para abrir a página num novo separador do navegador <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Obter mais informações</a>"
     },
     "editorActionGeocode": {
       "lblTitle": "Localizar um endereço ou lugar",
       "mapMarkerExplain": "O utilizador verá um marcador de mapa ao clicar na ligação"
+    },
+    "editorActions": {
+      "navigate": "Navegar para uma secção",
+      "remove": "Remover acção",
+      "preview": "Pré-visualizar acção"
     },
     "editorActionMedia": {
       "lblTitle": "Alterar o conteúdo do Ecrã Principal"

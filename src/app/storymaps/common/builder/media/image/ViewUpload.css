@@ -1,0 +1,149 @@
+.imageSelectorUpload {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: -10px;
+  padding: 10px;
+}
+
+.imageSelectorUpload .header {
+  border-bottom: 1px solid #4f4f4f;
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.imageSelectorUpload .uploadWait {
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
+
+.imageSelectorUpload .info-text {
+  height: 1.2em;
+  font-size: 10px;
+  line-height: 1.2em;
+}
+
+/* change drop area background colors */
+
+.imageSelectorUpload.drag-success {
+  background: #5cb85c;
+}
+
+.imageSelectorUpload.drag-warning {
+  background: #f0ad4e; /* #f0ad4e */
+}
+
+.imageSelectorUpload.drag-error {
+  background: #d9534f;
+}
+
+/* show and color danger and warning texts appropriately... */
+
+.imageSelectorUpload.drag-error .info-text {
+  color: white;
+}
+
+/* hide the system's file chooser input */
+.imageSelectorUpload .btn-file {
+  position: relative;
+  overflow: hidden;
+  margin: 0 5px 5px;
+}
+
+.imageSelectorUpload input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  outline: none;
+  cursor: inherit;
+  display: block;
+}
+
+.imageSelectorUpload .resources {
+  padding: 5px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.imageSelectorUpload .resource-item {
+  cursor: pointer;
+  text-align: center;
+  -webkit-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 8px;
+  width: 32%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.imageSelectorUpload .resource-item:hover {
+  background-color: #DDE2E7;
+}
+
+.imageSelectorUpload .resource-item img {
+  height: 75px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.resource-item.unused img,
+.resource-item.unused .title {
+  opacity: 0.6;
+}
+
+.resource-item.unused img {
+  border: 1px dashed #666;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.resource-item .title {
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  line-height: 1.2em;
+  height: 2.5em;
+  overflow: hidden;
+  margin-top: 2px;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
+}
+
+.resource-item .img-wrapper {
+  position: relative;
+}
+
+.resource-item .remove {
+  display: none;
+  position: absolute;
+  line-height: 1em;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  margin: 1px;
+  height: 24px;
+  width: 24px;
+  background: #c43d40;
+  color: white;
+  border-radius: 5px;
+}
+
+.resource-item .remove .fa {
+  line-height: 23px;
+}
+
+.resource-item:hover .remove {
+  display: block;
+}
+

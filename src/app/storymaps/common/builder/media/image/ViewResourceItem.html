@@ -1,0 +1,11 @@
+<div class="resource-item <%= usedClass %>">
+  <div class="img-wrapper">
+    <img src="<%= tokenizedThumbUrl || picUrl %>" />
+  </div>
+  <div class="title"><%= displayName %></div>
+  <% if (usedClass) { %>
+    <span class="remove floating-btn">
+      <span class="fa fa-trash"></span>
+    </span>
+  <% } %>
+</div>

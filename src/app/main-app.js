@@ -13,6 +13,8 @@ else {
 			"dojo/i18n!./resources/tpl/viewer/nls/template.js?v=" + app.version,
 			"esri/urlUtils",
 			"dojo/dom",
+			"app/custom-scripts",
+			"lib-app/jquery",
 			"dojo/ready"
 		], function(
 			i18nViewer,

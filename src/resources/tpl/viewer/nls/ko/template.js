@@ -45,8 +45,8 @@ define({
       "tapForDetails": "세부정보를 보려면 누릅니다.",
       "clickForDetails": "자세한 정보",
       "swipeToExplore": "탐색하려면 스와이프",
-      "tapForMap": "맵으로 돌아가려면 누릅니다.",
-      "clickForMap": "맵으로 돌아가기"
+      "tapForMap": "뒤로 돌아가려면 누름",
+      "clickForMap": "뒤로"
     },
     "floatLayout": {
       "scroll": "스크롤"
@@ -55,7 +55,9 @@ define({
       "scroll": "더 많은 항목을 보려면 아래로 스크롤합니다."
     },
     "mainStage": {
-      "back": "뒤로"
+      "back": "뒤로",
+      "errorDeleted": "이 링크가 활성화되어 있지 않음(섹션이 삭제됨)",
+      "errorNotPublished": "이 링크가 활성화되어 있지 않음(섹션이 발행되지 않음)"
     },
     "headerFromCommon": {
       "storymapsText": "스토리 맵",
@@ -95,6 +97,7 @@ define({
       "printInstruction2": "이 페이지는 다른 사람과 공유할 수 없으며 대신 ${link}을(를) 공유함",
       "link": "스토리 링크",
       "printOptPageBreak": "새 페이지에서 각 섹션 시작",
+      "makeTextBlack": "모든 텍스트를 검은색으로 설정",
       "printWarning": "이 스토리 맵은 인쇄된 버전의 스토리 맵입니다. 비디오 및 대화형 맵 등의 동적 콘텐츠는 ${link}의 온라인 버전에서만 제공됨",
       "printMSWarning": "온라인 스토리에서만 제공되는 링크",
       "printVideoWarning": "이 비디오는 온라인 버전의 이 스토리 맵에서 볼 수 있음"

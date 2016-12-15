@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "رأس الصفحة",
-      "logoEsri": "شعار Esri",
-      "logoNone": "لا يوجد شعار",
-      "logoCustom": "تخصيص الشعار",
-      "logoCustomPlaceholder": "عنوان URL (بحد أقصى 250x50 بكسل)",
-      "logoCustomTargetPlaceholder": "انقر فوق الرابط",
-      "logoSocialExplain": "تخصيص رابط العنوان.",
-      "logoSocialText": "النص",
-      "logoSocialLink": "رابط",
+      "logoEsriRadio": "شعار Esri",
+      "logoNoneRadio": "لا يوجد شعار",
+      "logoCustomRadio": "الشعار",
+      "logoCustomLabel": "الصورة:",
+      "logoCustomUploadHelp": "تظهر الشعارات بشكل رائع إذا كان معدل العرض:الارتفاع بين 1:1 و5:1. وإذا تم رسم شعار مرتبط ببطء. احفظ نسخة منه وقم بتحميلها هنا.",
+      "logoCustomUploadTooltip": "استخدم شعارًا مُحمّلاً",
+      "logoCustomUploadButton": "تحميل الشعار",
+      "logoUploadSizeError": "أبعاد GIF كبيرة للغاية. يرجى إعادة تحديد الحجم بعرض ${PIXEL-WIDTH} بكسل.",
+      "logoCustomLinkTooltip": "ربط بالشعار",
+      "logoCustomLinkPlaceholder": "عنوان URL للصورة",
+      "logoUploadGenericError": "يمكن أن يكون الشعار ملف .bmp أو .gif أو .jpg أو .jpeg أو .png، ويجب أن تكون Gifs أقل من عرض 250 بكسل وحجم 10 ميجابايت.",
+      "logoCustomTargetPlaceholder": "صفحة ويب للفتح عند النقر على الشعار",
+      "logoSocialText": "سطر العلامة:",
+      "logoLink": "الرابط:",
       "lblSmallHeader": "استخدم عنوان صغير (لا تستخدم عنوان فرعي)"
     },
     "header": {
       "title": "تحرير عنوان %TPL_NAME%",
       "subtitle": "تحرير العنوان الفرعي لـ %TPL_NAME%"
+    },
+    "sectionNavigation": {
+      "select": "حدد قِسمًا...",
+      "section": "قسم",
+      "thisSection": "هذا القسم",
+      "homeSection": "القسم الرئيسي",
+      "hiddenSection": "قسم مخفي"
     }
   }
 });

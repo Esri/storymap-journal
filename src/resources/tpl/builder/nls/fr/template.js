@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Ajoutez du texte, des liens et des graphiques de petite taille ici.",
-      "editorActionsTitle": "Actions de la grande scène",
-      "editorActionsHelpDescr": "Utilisez ces contrôles pour créer des liens qui modifient la grande scène. Par exemple, lorsque le lecteur clique sur un lien, vous pouvez déclencher un zoom sur un lieu spécifique de la carte, l'affichage d'une autre carte Web ou l'affichage d'une image.",
-      "mainStageDisabled": "Les actions de la grande scène sont désactivées lorsque l'éditeur est agrandi"
+      "editorActionsTitle": "Actions de narration",
+      "editorActionsHelpDescr": "Créez des liens dans votre contenu pour faciliter votre narration. Une action de narration permet d'accéder à une autre section ou de modifier la grande scène. Par exemple, vous pouvez configurer une action pour déplacer la carte vers un autre emplacement, activer/désactiver l'affichage des couches ou remplacer la grande scène par une autre image, vidéo, carte ou page web.",
+      "mainStageDisabled": "Les actions de narration sont désactivées lorsque l'éditeur est agrandi."
     },
     "organizePopup": {
       "title": "Organiser",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Impossible de déplacer la section d'accueil)",
       "exportMainStage": "Contenu de la grande scène",
       "exportPanel": "Contenu du volet",
-      "exportActions": "Actions de la grande scène"
+      "exportActions": "Actions de narration"
     },
     "exportData": {
       "btn": "Exporter le contenu",

@@ -47,7 +47,7 @@
 
 .sidePanel .section {
 	position: relative;
-	padding: 20px 10px 10px 10px;
+	padding: 20px 20px 10px;
 	/*border-bottom: 1px solid #dadada;*/
 	opacity: .2;
 	filter: alpha(opacity=20);
@@ -59,6 +59,7 @@
 
 .sidePanel .section:first-child {
 	margin-top: -8px;
+	margin-bottom: 20px;
 }
 
 .sidePanel .section:last-child {
@@ -138,31 +139,25 @@ body.layout-side-right .sidePanel .navDots {
 	/* TODO remove break compat with beta */
 	font-weight: normal;
 	font-size: 1.5em;
+	line-height: 1.5em;
 }
 
 .sidePanel .section:first-child .title {
 	/*display: none;*/
 	font-size: 2.3em;
-	padding: 10px 0 0 0;
-}
-
-.sidePanel .section .title * {
-	line-height: 1.2em;
+	padding: 10px 0 20px;
+	line-height: 1.3em;
+	font-weight: normal;
 }
 
 .sidePanel .content {
 	margin: 20px 0;
-	font-size: 1.0em;
+	font-size: 16px;
+	line-height: 1.5em;
 }
 
 .sidePanel .section:first-child .content {
-	font-size: 18px;
-}
-
-.sidePanel .section:first-child .content {
-	/*display: table-cell;
-	height: 150px;
-	vertical-align: middle;*/
+	font-size: 20px;
 	min-height: 150px;
 }
 

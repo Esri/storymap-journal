@@ -1,6 +1,7 @@
 define(["lib-build/tpl!./Selector",
 		"lib-build/css!./Selector",
 		"./ViewHome",
+		"./ViewUpload",
 		"./ViewFlickr",
 		"./ViewPicasa",
 		"../ViewPicker",
@@ -9,6 +10,7 @@ define(["lib-build/tpl!./Selector",
 		viewTpl,
 		viewCss,
 		ViewHome,
+		ImageSelectorUpload,
 		ImageSelectorFlickr,
 		ImageSelectorPicasa,
 		ViewPicker,
@@ -30,6 +32,10 @@ define(["lib-build/tpl!./Selector",
 				_views = {
 					home: new ViewHome(
 						container.find('.viewHomeContainer'),
+						showView
+					),
+					upload: new ImageSelectorUpload(
+						container.find('.viewUploadContainer'),
 						showView
 					),
 					flickr: new ImageSelectorFlickr(

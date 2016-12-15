@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "כותרת עליונה",
-      "logoEsri": "לוגו של Esri",
-      "logoNone": "אין לוגו",
-      "logoCustom": "לוגו מותאם",
-      "logoCustomPlaceholder": "URL‏ (מקסימום 250x50 פיקסלים)",
-      "logoCustomTargetPlaceholder": "קישור זמין",
-      "logoSocialExplain": "התאמה אישית של קישור הכותרת.",
-      "logoSocialText": "טקסט",
-      "logoSocialLink": "קישור",
+      "logoEsriRadio": "לוגו של Esri",
+      "logoNoneRadio": "ללא לוגו",
+      "logoCustomRadio": "הלוגו שלי",
+      "logoCustomLabel": "תמונה:",
+      "logoCustomUploadHelp": "לוגואים נראים טוב יותר אם יחס בגובה לרוחב שלהם הוא בין 1:1 ל-5:1. אם לוגו מקושר נפתח באיטיות, שמור עותק שלו וטען אותו כאן.",
+      "logoCustomUploadTooltip": "השתמש בלוגו שהוטען",
+      "logoCustomUploadButton": "טען לוגו",
+      "logoUploadSizeError": "מידות קובץ GIF גדולות מדי. שנה את הגודל לרוחב פיקסלים של ${PIXEL-WIDTH}.",
+      "logoCustomLinkTooltip": "קישור ללוגו",
+      "logoCustomLinkPlaceholder": "URL של תמונה",
+      "logoUploadGenericError": "לוגו יכול להיות קובץ bmp, קובץ gif, קובץ jpg, קובץ jpeg או קובץ png. על קובצי gif להיות ברוחב שקטן מ-250 פיקסלים ובנפח נמוך מ-10 מגה-בייט.",
+      "logoCustomTargetPlaceholder": "דף אינטרנט אשר נפתח בעת לחיצה על הלוגו",
+      "logoSocialText": "סלוגן:",
+      "logoLink": "קישור:",
       "lblSmallHeader": "השתמש בכותרת מצומצמת (ללא כותרת משנה)"
     },
     "header": {
       "title": "ערוך את הכותרת של %TPL_NAME%",
       "subtitle": "ערוך את כותרת המשנה של %TPL_NAME%"
+    },
+    "sectionNavigation": {
+      "select": "בחר מקטע...",
+      "section": "קטע",
+      "thisSection": "מקטע זה",
+      "homeSection": "מקטע דף הבית",
+      "hiddenSection": "מקטע נסתר"
     }
   }
 });

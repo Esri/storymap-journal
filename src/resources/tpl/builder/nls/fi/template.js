@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Lisää tähän tekstiä, linkkejä ja pieniä kuvia.",
-      "editorActionsTitle": "Päävaiheen toiminnot",
-      "editorActionsHelpDescr": "Näiden kontrollien avulla voit luoda linkkejä, jotka muuttavat päävaihetta. Kun lukija napsauttaa esimerkiksi linkkiä, haluat ehkä tarkentaa karttaa tiettyyn sijaintiin, tuoda näkyviin toisen Web-kartan tai kuvan.",
-      "mainStageDisabled": "Päävaiheen toiminnot eivät ole käytettävissä, kun muokkaus on maksimoitu"
+      "editorActionsTitle": "Tarinatoiminnot",
+      "editorActionsHelpDescr": "Luo kerrontaan linkkejä, jotka auttavat tarinan kertomisessa. Tarinatoiminnon voi linkittää toiseen osioon tai se voi vaihtaa päävaihetta. Voit esimerkiksi määrittää toiminnon, joka siirtää kartan toiseen paikkaan, ottaa kartan kerroksia käyttöön tai poistaa niitä käytöstä tai muuttaa päävaiheen mediasisällön toiseen kuvaan, videoon, karttaan tai verkkosivuun.",
+      "mainStageDisabled": "Tarinatoiminnot eivät ole käytettävissä, kun muokkaus on maksimoitu"
     },
     "organizePopup": {
       "title": "Järjestä",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(Kotisivuosaa ei voi siirtää)",
       "exportMainStage": "Päävaiheen sisältö",
       "exportPanel": "Ruudun sisältö",
-      "exportActions": "Päävaiheen toiminnot"
+      "exportActions": "Tarinatoiminnot"
     },
     "exportData": {
       "btn": "Vie sisältö",

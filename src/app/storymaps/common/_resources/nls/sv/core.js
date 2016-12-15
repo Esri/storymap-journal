@@ -107,19 +107,32 @@ define({
     },
     "settingsHeader": {
       "title": "Rubrik",
-      "logoEsri": "Esris logotyp",
-      "logoNone": "Ingen logotyp",
-      "logoCustom": "Egen logotyp",
-      "logoCustomPlaceholder": "URL (max 250x50 pixlar)",
-      "logoCustomTargetPlaceholder": "Genomklickningslänkar",
-      "logoSocialExplain": "Anpassa rubriklänken.",
-      "logoSocialText": "Text",
-      "logoSocialLink": "Länk",
+      "logoEsriRadio": "Esris logotyp",
+      "logoNoneRadio": "Ingen logotyp",
+      "logoCustomRadio": "Min logotyp",
+      "logoCustomLabel": "Bild:",
+      "logoCustomUploadHelp": "Logotyper ser bäst ut om de har ett förhållande mellan bredd:höjd på 1:1 till 5:1. Om en länkad logotyp ritas långsamt, kan du spara en kopia och överföra den hit.",
+      "logoCustomUploadTooltip": "Använd en överförd logotyp",
+      "logoCustomUploadButton": "Överför en logotyp",
+      "logoUploadSizeError": "GIF-måtten är för stora. Ändra storleken till en bredd på ${PIXEL-WIDTH} pixlar.",
+      "logoCustomLinkTooltip": "Länka till en logotyp",
+      "logoCustomLinkPlaceholder": "Bild-URL",
+      "logoUploadGenericError": "Logotypen kan ha filtillägget .bmp, .gif, .jpg, .jpeg, eller .png. GIF-bilder måste vara mindre än 250 pixlar breda och ha en storlek på maximalt 10 MB.",
+      "logoCustomTargetPlaceholder": "Den webbsida som ska öppnas när någon klickar på logotypen",
+      "logoSocialText": "Tagline:",
+      "logoLink": "Länk:",
       "lblSmallHeader": "Använd kompakt rubrik (ingen undertitel)"
     },
     "header": {
       "title": "Redigera titel för %TPL_NAME%",
       "subtitle": "Redigera undertitel för %TPL_NAME%"
+    },
+    "sectionNavigation": {
+      "select": "Välj en sektion ...",
+      "section": "Sektion",
+      "thisSection": "Den här sektionen",
+      "homeSection": "Startsektionen",
+      "hiddenSection": "Dold sektion"
     }
   }
 });

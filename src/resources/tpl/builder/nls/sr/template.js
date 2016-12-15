@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Dodajte tekst, linkove i male grafičke prikaze ovde.",
-      "editorActionsTitle": "Radnje na centralnom delu",
-      "editorActionsHelpDescr": "Koristite ove kontrole da biste kreiralie linkove koji će promeniti centralni deo. Na primer, kada čitalac klikne na link, možda ćete hteti da uveliča određenu lokaciju na mapi, da prikaže drugu veb mapu ili da prikaže snimak.",
-      "mainStageDisabled": "Radnje centralnog dela su onemogućene kada je uređivač maksimalno uveličan"
+      "editorActionsTitle": "Radnje priče",
+      "editorActionsHelpDescr": "Kreirajte linkove u narativu koji vam pomažu da ispričate priču. Radnja priče može da upućuje na drugi odeljak ili da promeni centralni deo. Na primer, možete da konfigurišete radnju za premeštanje mape na drugu lokaciju, uključivanje/isključivanje slojeva mape ili promenu medija za centralni deo na drugu sliku, video, mapu ili veb stranicu.",
+      "mainStageDisabled": "Radnje priče su onemogućene kada je uređivač maksimalno uveličan"
     },
     "organizePopup": {
       "title": "Organizujte",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(matični odeljak ne može da bude pomeren)",
       "exportMainStage": "Sadržaj centralnog dela",
       "exportPanel": "Sadržaj panela",
-      "exportActions": "Radnje na centralnom delu"
+      "exportActions": "Radnje priče"
     },
     "exportData": {
       "btn": "Izvezi sadržaj",

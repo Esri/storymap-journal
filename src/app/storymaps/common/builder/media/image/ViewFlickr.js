@@ -28,15 +28,16 @@ define(["lib-build/tpl!./ViewFlickr",
 
 				container.show();
 
+				var flickrContainer = container.find('.imageSelectorFlickr');
+
 				// Resize url field to adjust localization
-				if ( container.find(".imageSelectorFlickr").width() ) {
-					container.find(".userName")
-						.css("width",
-							container.find(".imageSelectorFlickr").width()
-							- 85
-							- 40
-							- container.find('.btn-userLogin').outerWidth()
-						)
+				if ( flickrContainer.width() ) {
+					var userNameInput = flickrContainer.find('.userName');
+					userNameInput.css("width",
+						flickrContainer.width()
+						- (userNameInput.position().left - flickrContainer.position().left)
+						- flickrContainer.find('.btn-userLogin').outerWidth()
+						- 30)
 						.focus();
 				}
 			};

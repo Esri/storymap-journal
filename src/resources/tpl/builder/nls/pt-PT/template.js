@@ -52,9 +52,9 @@ define({
     },
     "addEditViewText": {
       "editorPlaceholder": "Adicione texto, ligações epequenos gráficos aqui.",
-      "editorActionsTitle": "Ações do Ecrã Principal",
-      "editorActionsHelpDescr": "Utilize estes controlos para criar ligações que irão alterar o ecrã principal. Por exemplo, quando o leitor clica numa ligação, poderá querer ampliar o mapa para uma localização específica, exibir outro mapa web ou exibir uma Imagem.",
-      "mainStageDisabled": "As ações da Seção Principal estão desativadas quando o editor está maximizado."
+      "editorActionsTitle": "Story Actions",
+      "editorActionsHelpDescr": "Crie ligações na sua narrativa que ajudam a contar a sua história. Uma Story Action pode ligar a outra secção ou alterar o ecrã principal. Por exemplo, pode configurar uma ação para mover o mapa para outra localização, alternar camadas entre ligado/desligado, ou alterar o recurso de media do ecrã principal para uma imagem, vídeo ou página web diferente.",
+      "mainStageDisabled": "As Story Actions ficam desativadas quando o editor se encontra maximizado"
     },
     "organizePopup": {
       "title": "Organizar",
@@ -68,7 +68,7 @@ define({
       "firstSectionExplain": "(A secção inicial não pode ser movida)",
       "exportMainStage": "Conteúdo da Seção Principal",
       "exportPanel": "Conteúdo do Painel",
-      "exportActions": "Ações da Seção Principal"
+      "exportActions": "Story actions"
     },
     "exportData": {
       "btn": "Exportar Conteúdo",
