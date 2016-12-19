@@ -168,7 +168,6 @@ define(["./WebApplicationData",
 			{
 				$.each(this.getStorySections(), function(i, section) {
 					this.cleanSectionNarrativeMarkup(section);
-					this.cleanSectionActions(section, i);
 				}.bind(this));
 			};
 
@@ -243,20 +242,6 @@ define(["./WebApplicationData",
 					markup: cleanMarkup.html(),
 					actions: actions
 				};
-			};
-
-			this.cleanSectionActions = function(section/*, i*/) {
-				var actionsInContentStr = section.content.match(/MJ-ACTION-[0-9]{13}/g);
-				if (section.contentActions) {
-					section.contentActions = _.filter(section.contentActions, function(action) {
-						return _.contains(actionsInContentStr, action.id);
-					});
-				}
-				if (section.actions) {
-					section.actions = _.filter(section.actions, function(action) {
-						return _.contains(actionsInContentStr, action.id);
-					});
-				}
 			};
 
 			this.getStoryLength = function()
