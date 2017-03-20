@@ -109,6 +109,7 @@ define({
       "title": "Antet",
       "logoEsriRadio": "Sigla Esri",
       "logoNoneRadio": "Fără siglă",
+      "logoOrgRadio": "Siglă organizaţie",
       "logoCustomRadio": "Sigla mea",
       "logoCustomLabel": "Imagine:",
       "logoCustomUploadHelp": "Siglele arată cel mai bine dacă au un raport lăţime/înălţime între 1:1 şi 5:1. Dacă o siglă conectată este trasată lent, salvaţi o copie şi încărcaţi-o aici.",

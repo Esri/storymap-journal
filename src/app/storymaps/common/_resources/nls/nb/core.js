@@ -109,6 +109,7 @@ define({
       "title": "Overskrift",
       "logoEsriRadio": "Esri-logo",
       "logoNoneRadio": "Ingen logo",
+      "logoOrgRadio": "Organisasjonens logo",
       "logoCustomRadio": "Min logo",
       "logoCustomLabel": "Bilde:",
       "logoCustomUploadHelp": "Logoene ser penest ut dersom de har et bredde/høyde-forhold på mellom 1:1 og 5:1. Hvis det tar lang tid laste en koblet logo, lagrer du en kopi og laster den opp her.",

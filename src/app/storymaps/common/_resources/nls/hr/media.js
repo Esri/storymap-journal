@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Poveznica bi trebala završavati si .jpg, .png, .gif ili .bmp",
       "lblURLError": "Čini se da ova slika nije ispravna. Odredite izravnu poveznicu do slikovne datoteke (vaš URL obično završava s .jpg ili .png). Poveznice na web-stranicu koja sadrži slike neće raditi.",
       "lblURLCheck": "Provjera slike...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Natpis slike",
       "lblLabel1": "Natpis",
       "lblLabel2": "Lebdeći tekst",
       "lblLabel3": "Nema",

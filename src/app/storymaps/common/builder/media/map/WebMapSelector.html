@@ -2,7 +2,7 @@
 	<table class="map-cfg">
 		<tr class="map-cfg-webmap">
 			<td class="map-cfg-title">
-				<%= lblWebmap %>
+				<%= lblWebMap %>
 			</td>
 			<td class="map-cfg-btns">
 				<div class="webmaps-list-container">
@@ -114,6 +114,22 @@
 						</a>
 					</label>
 				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="opt-checkbox-geocoder" />
+						<span class="lblGeocoder"><%= lblGeocoder %></span>
+						<a href="#" class="help" data-html="true" data-toggle="tooltip" data-placement="right" title="<%= tooltipGeocoder %>">
+							<img class="helpImg" src="resources/tpl/builder/icons/builder-help.png">
+						</a>
+					</label>
+				</div>
+				<!-- TOOK OUT EXTERNAL SETTINGS LINK -->
+				<!--div class="external-link">
+					<a class="link" href="#" target="_blank"><%= linkGeocoder %><i class="fa fa-external-link"></i></a>
+					<a href="#" class="help" data-toggle="tooltip" data-placement="right" title="<%= tooltipGeocoderLink %>">
+						<img class="helpImg" src="resources/tpl/builder/icons/builder-help.png">
+					</a>
+				</div-->
 			</td>
 		</tr>
 	</table>

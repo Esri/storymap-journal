@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Bölüm başlığı",
       "sectionContentLbl": "Bölüm içeriği"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Kuruluş Teması",
+      "lblModTheme": "Geçerli Tema"
+    },
     "initPopup": {
       "title": "Hoş geldiniz:"
     },

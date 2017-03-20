@@ -109,6 +109,7 @@ define({
       "title": "Cabeçalho",
       "logoEsriRadio": "Logo da Esri",
       "logoNoneRadio": "Nenhum logo",
+      "logoOrgRadio": "Logotipo da organização",
       "logoCustomRadio": "Meu logo",
       "logoCustomLabel": "Imagem:",
       "logoCustomUploadHelp": "Logos funcionam melhor se eles tiverem uma relação de largura:altura entre 1:1 e 5:1. Se um logo vinculado desenhar de forma devagar, salve uma cópia e carregue aqui.",

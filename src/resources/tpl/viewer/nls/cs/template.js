@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Nejste oprávněni používat nástroj pro tvorbu %TPL_NAME%",
       "noBuilderIE": "Nástroj pro tvorbu není podporován v aplikaci Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
       "noViewerIE": "Tento příběh není podporován v prohlížeči Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Pokoušíte se tento příběh prohlížet pomocí staršího, nepodporovaného prohlížeče. Některé funkce nemusí fungovat nebo se mohou vyskytnout jiné nečekané problémy. Doporučujeme přejít na Internet Explorer 11 nebo použít jiný prohlížeč, například Chrome.",
+      "noViewerIE3": "Koncem roku 2017 se tento příběh v tomto prohlížeči již nenačte. K jeho prohlížení bude nutné použít podporovaný prohlížeč.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Prosím, aktualizujte prohlížeč</a>.",
       "mapLoadingFail": "Něco se pokazilo, mapa se nenahrála správně.",
       "signOut": "Odhlásit",
       "print0": "Je nám líto, tento příběh nelze vytisknout.",
       "print1": "Chcete-li tento příběh vytisknout, použijte tlačítko tisku v dialogovém okně sdílení.",
-      "print2": "Omlouváme se. Tisknutelná verze příběhu je zpravidla přístupná přes dialogové okno sdílení, ale autor toto dialogové okno zakázal."
+      "print2": "Omlouváme se. Tisknutelná verze příběhu je zpravidla přístupná přes dialogové okno sdílení, ale autor toto dialogové okno zakázal.",
+      "attention": "Upozornění!"
     },
     "mobileView": {
       "tapForDetails": "Klepnutím zobrazíte podrobnosti.",

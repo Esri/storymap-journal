@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Bağlantı .jpg, .png, .gif veya .bmp ile bitmelidir",
       "lblURLError": "Bu görüntü geçerli gibi görünmüyor. Bir görüntü dosyasına bir doğrudan bağlantı belirtin (URL'niz genelde .jpg ya da .png ile biter). Bir web sayfasının bağlantıları çalışmayan bir görüntü içeriyor.",
       "lblURLCheck": "Görüntü denetleniyor...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Görüntü alt yazısı",
       "lblLabel1": "Altyazı",
       "lblLabel2": "Metnin üzerinde gezin",
       "lblLabel3": "Hiçbiri",

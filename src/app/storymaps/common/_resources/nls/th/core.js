@@ -109,6 +109,7 @@ define({
       "title": "ส่วนหัว",
       "logoEsriRadio": "โลโก้ Esri",
       "logoNoneRadio": "ไม่มีโลโก้",
+      "logoOrgRadio": "โลโก้องค์การ",
       "logoCustomRadio": "โลโก้ของฉัน",
       "logoCustomLabel": "รูป:",
       "logoCustomUploadHelp": "โลโก้ที่ดูดีที่สุดถ้าพวกเขามีความกว้าง: อัตราส่วนความสูงระหว่าง 1: 1 และ 5: 1 หากโลโก้เชื่อมโยงดึงช้าบันทึกสำเนาและอัปโหลดได้ที่นี่",

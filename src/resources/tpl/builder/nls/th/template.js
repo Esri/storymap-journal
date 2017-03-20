@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "ชื่อเซสชั่น",
       "sectionContentLbl": "เนื้อหาในเซสชั่น"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "ธีมองค์การ",
+      "lblModTheme": "ชุดรูปแบบปัจจุบัน"
+    },
     "initPopup": {
       "title": "ยินดีต้อนรับสู่"
     },

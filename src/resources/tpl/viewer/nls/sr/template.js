@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Nemate ovlašćenje da koristite alatku za izradu %TPL_NAME%.",
       "noBuilderIE": "Alatka za izradu nije podržana na pregledaču Internet Explorer pre verzije %VERSION%. %UPGRADE%",
       "noViewerIE": "Priča nije podržana na pregledaču Internet Explorer pre verzije %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Pokušavate da vidite ovu priču korišćenjem starog, nepodržanog pregledača. Možda neka svojstva neće raditi ili će doći do drugih nepredviđenih problema. Predlažemo da nadogradite na Internet Explorer 11 ili da koristite drugi pregledač, kao što je Chrome.",
+      "noViewerIE3": "Krajem 2017. godine, učitavanje ove priče na ovom pregledaču neće biti moguće. Tada ćete morati da koristite podržani pregledač kako biste videli priču.",
       "upgradeBrowser": "<a href=’http://browsehappy.com/’ target=’_blank’>Ažurirajte pregledač</a>.",
       "mapLoadingFail": "Došlo je do greške, mapa se nije učitala pravilno.",
       "signOut": "Odjavite se",
       "print0": "Žao nam je, ovu priču nije moguće štampati.",
       "print1": "Da biste odštampali ovu priču, upotrebite dugme za štampanje koje se nalazi u dijalogu za deljenje.",
-      "print2": "Žao nam je, verzija ove priče koja može da se štampa je uglavnom dostupna putem dijaloga za deljenje, ali je autor onemogućio ovaj dijalog."
+      "print2": "Žao nam je, verzija ove priče koja može da se štampa je uglavnom dostupna putem dijaloga za deljenje, ali je autor onemogućio ovaj dijalog.",
+      "attention": "Napomena!"
     },
     "mobileView": {
       "tapForDetails": "Dodirnite za detalje",

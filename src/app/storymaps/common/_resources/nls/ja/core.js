@@ -109,6 +109,7 @@ define({
       "title": "ヘッダー",
       "logoEsriRadio": "Esri ロゴ",
       "logoNoneRadio": "ロゴなし",
+      "logoOrgRadio": "組織のロゴ",
       "logoCustomRadio": "マイ ロゴ",
       "logoCustomLabel": "イメージ:",
       "logoCustomUploadHelp": "ロゴは、幅:高さの比が 1:1 ～ 5:1 の場合に最適に表示されます。リンク付きロゴの描画が遅い場合は、コピーを保存し、それをここでアップロードしてください。",

@@ -6,12 +6,16 @@ define(["lib-build/tpl!./WebMapSelector",
 		"./MapConfigOverlay",
 		"./MapViewerWrapperUtils",
 		"./ErrorDialog",
+		"storymaps/tpl/core/Helper",
+		"storymaps/common/utils/CommonHelper",
+		"storymaps/common/utils/WebMapHelper",
 		"esri/geometry/Extent",
 		"dojo/Deferred",
 		"dojo/topic",
 		"dijit/registry",
 		"dojo/on",
-		"dojo/has"
+		"dojo/has",
+		"dojo/_base/lang"
 	],
 	function (
 		viewTpl,
@@ -22,12 +26,16 @@ define(["lib-build/tpl!./WebMapSelector",
 		MapConfigOverlay,
 		MapViewerWrapperUtils,
 		ErrorDialog,
+		Helper,
+		CommonHelper,
+		WebMapHelper,
 		Extent,
 		Deferred,
 		topic,
 		registry,
 		on,
-		has
+		has,
+		lang
 	){
 		return function WebMapSelector(container, openConfigureCallback, closeConfigureCallback, onDataChangeCallback)
 		{
@@ -37,24 +45,7 @@ define(["lib-build/tpl!./WebMapSelector",
 				_mapConfig = null,
 				_errorDialog = new ErrorDialog($("#mapErrorDialog"));
 
-			container.append(viewTpl({
-				lblWebmap: i18n.commonWebmap.selector.lblWebMap,
-				lblEdit: i18n.commonCore.common.edit,
-				lblLocation: i18n.commonWebmap.selector.lblLocation,
-				lblContent: i18n.commonWebmap.selector.lblContent,
-				lblPopup: i18n.commonWebmap.selector.lblPopup,
-				lblControls: i18n.commonWebmap.selector.lblControls,
-				lblOverview: i18n.commonWebmap.selector.lblOverview,
-				lblLegend: i18n.commonWebmap.selector.lblLegend,
-				webmapDefault: i18n.commonWebmap.selector.webmapDefault,
-				customCfg: i18n.commonWebmap.selector.customCfg,
-				tooltipLocation: i18n.commonWebmap.selector.tooltipLocation,
-				tooltipContent: i18n.commonWebmap.selector.tooltipContent,
-				tooltipPopup: i18n.commonWebmap.selector.tooltipPopup,
-				tooltipOverview: i18n.commonWebmap.selector.tooltipOverview,
-				tooltipLegend: i18n.commonWebmap.selector.tooltipLegend,
-				mapCfgInvite: i18n.commonWebmap.selector.mapCfgInvite
-			}));
+			container.append(viewTpl(lang.mixin({}, i18n.commonWebmap.selector, {lblEdit: i18n.commonCore.common.edit})));
 
 			initEvents();
 
@@ -71,7 +62,8 @@ define(["lib-build/tpl!./WebMapSelector",
 						layers: cfg.media.webmap.layers,
 						popup:  cfg.media.webmap.popup,
 						legend:  cfg.media.webmap.legend,
-						overview:  cfg.media.webmap.overview
+						overview:  cfg.media.webmap.overview,
+						geocoder: cfg.media.webmap.geocoder
 					};
 
 					// TODO should be able to know if this is the webmap initial extent or not
@@ -87,15 +79,18 @@ define(["lib-build/tpl!./WebMapSelector",
 
 				// Map controls
 				var enableOverview = false,
-					enableLegend = false;
+					enableLegend = false,
+					enableGeocoder = false;
 
 				if ( mediaIsWebmap ) {
 					enableOverview = cfg.media.webmap.overview ? cfg.media.webmap.overview.enable : false;
 					enableLegend   = cfg.media.webmap.legend   ? cfg.media.webmap.legend.enable   : false;
+					enableGeocoder = cfg.media.webmap.geocoder ? cfg.media.webmap.geocoder.enable : false;
 				}
 
 				container.find('.opt-checkbox-overview').prop('checked', enableOverview);
 				container.find('.opt-checkbox-legend').prop('checked', enableLegend);
+				container.find('.opt-checkbox-geocoder').prop('checked', enableGeocoder);
 
 				container.find('.lbl-configure').html(i18n.commonWebmap.selector.btnConfigure);
 
@@ -154,6 +149,9 @@ define(["lib-build/tpl!./WebMapSelector",
 					legend: {
 						enable: container.find('.opt-checkbox-legend').prop('checked'),
 						openByDefault: _mapConfig && _mapConfig.legend ? _mapConfig.legend.openByDefault : false
+					},
+					geocoder: {
+						enable: container.find('.opt-checkbox-geocoder').prop('checked')
 					}
 				};
 			};
@@ -514,8 +512,47 @@ define(["lib-build/tpl!./WebMapSelector",
 				container.find('.map-cfg .map-cfg-popup .btn[data-value="default"]').toggleClass('btn-primary', ! definePopup);
 				container.find('.map-cfg .map-cfg-popup .btn[data-value="custom"]').toggleClass('btn-primary', definePopup);
 
-				if ( getSelectedWebmap() )
+				var webmapId = getSelectedWebmap();
+
+				if ( webmapId ) {
 					container.find('.map-cfg-row').show();
+					// specifically request this with a token to see if the current user has admin/update privileges.
+					var url = CommonHelper.getSpecificPortalURL() + '/sharing/content/items/' + webmapId;
+					// get the webmap's item info to look at privileges
+					WebMapHelper.request(url, null, null, Helper.getToken()).then(function(itemResponse) {
+
+						// var externalLink = container.find('.external-link'); // TOOK OUT EXTERNAL SETTINGS LINK
+
+						// reset strings
+						var geocoderLabel = container.find('.lblGeocoder').text(i18n.commonWebmap.selector.lblGeocoder);
+						var geocoderHelp = container.find('.opt-checkbox-geocoder ~ .help')
+																.attr('data-original-title', i18n.commonWebmap.selector.tooltipGeocoder)
+																.tooltip('fixTitle');
+						// can we edit this?
+						var canEdit = (itemResponse.itemControl === 'admin' || itemResponse.itemControl === 'update');
+						if (!canEdit) {
+
+							// externalLink.hide(); // TOOK OUT EXTERNAL SETTINGS LINK
+
+							// if we're here, we don't have admin/update privileges for this map.
+							// now we need to request the item *data* to see if the map has feature search enabled or not.
+							WebMapHelper.request(url + '/data', null, null, Helper.getToken()).then(function(dataResponse) {
+								var x; // walker
+								(x = dataResponse.applicationProperties) && (x = x.viewing) && (x = x.search) && (x = x.layers) && (x = x.length);
+								if (!x) {
+									geocoderLabel.text(i18n.commonWebmap.selector.lblGeocoderNoFeatures);
+									geocoderHelp.attr('data-original-title', i18n.commonWebmap.selector.tooltipGeocoderNoFeatures)
+										.tooltip('fixTitle');
+								}
+							});
+
+							// TOOK OUT EXTERNAL SETTINGS LINK
+						// } else {
+							// var settingsUrl = CommonHelper.getSpecificPortalURL() + '/home/item.html?id=' + webmapId + '#settings';
+							// externalLink.show().find('a').attr('href', settingsUrl);
+						}
+					});
+				}
 
 				onDataChangeCallback && onDataChangeCallback();
 			}

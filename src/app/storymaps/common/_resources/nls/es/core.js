@@ -109,6 +109,7 @@ define({
       "title": "Encabezado",
       "logoEsriRadio": "Logotipo de Esri",
       "logoNoneRadio": "Sin logotipo",
+      "logoOrgRadio": "Logotipo de la organización",
       "logoCustomRadio": "Mi logotipo",
       "logoCustomLabel": "Imagen:",
       "logoCustomUploadHelp": "Los logotipos se ven mejor si tienen una razón de anchura-altura entre 1:1 y 5:1. Si un logotipo vinculado se dibuja lentamente, guarde una copia y cárguela aquí.",

@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Vous n'êtes pas autorisé à utiliser le générateur %TPL_NAME%.",
       "noBuilderIE": "Le générateur n'est pas pris en charge dans Internet Explorer avant la version %VERSION%. %UPGRADE%",
       "noViewerIE": "Ce récit n'est pas pris en charge dans Internet Explorer avant la version %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Vous tentez d’afficher ce récit dans un navigateur plus ancien, non pris en charge. Certaines fonctionnalités peuvent ne pas fonctionner ou d’autres problèmes peuvent survenir. Nous vous suggérons d'utiliser Internet Explorer 11 ou un autre navigateur, comme Chrome.",
+      "noViewerIE3": "Fin 2017, ce récit ne se chargera plus dans ce navigateur. Vous devrez alors utiliser un navigateur pris en charge pour afficher ce récit.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Mettez votre navigateur à jour</a>.",
       "mapLoadingFail": "Une erreur s'est produite et la carte n'a pas été correctement chargée.",
       "signOut": "Se déconnecter",
       "print0": "Impossible d'imprimer ce récit.",
       "print1": "Pour imprimer ce récit, utilisez le bouton d'impression situé dans la boîte de dialogue de partage.",
-      "print2": "Une version imprimable du récit est généralement accessible via la boîte de dialogue de partage, mais elle a été désactivée par l'auteur."
+      "print2": "Une version imprimable du récit est généralement accessible via la boîte de dialogue de partage, mais elle a été désactivée par l'auteur.",
+      "attention": "Attention !"
     },
     "mobileView": {
       "tapForDetails": "Touchez pour obtenir des détails",

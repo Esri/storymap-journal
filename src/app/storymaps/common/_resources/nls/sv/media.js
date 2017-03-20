@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Länken bör sluta med .jpg, .png, .gif eller .bmp",
       "lblURLError": "Den här bilden verkar inte vara giltig. Ange en direktlänk till en bildfil (din URL slutar vanligtvis med en .jpg eller .png). Länkar till en webbsida som innehåller en bild fungerar inte.",
       "lblURLCheck": "Kontrollerar bild ...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Bildtext",
       "lblLabel1": "Bildtext",
       "lblLabel2": "Hovringstext",
       "lblLabel3": "Inga",

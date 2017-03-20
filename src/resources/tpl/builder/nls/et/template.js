@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Jaotise pealkiri",
       "sectionContentLbl": "Jaotise sisu"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Organisatsiooni teema",
+      "lblModTheme": "Praegune teema"
+    },
     "initPopup": {
       "title": "Tere tulemast"
     },

@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Odkaz by měl končit na .jpg, .png, .gif nebo .bmp.",
       "lblURLError": "Zdá se, že obrázek je neplatný. Zadejte prosím přímý odkaz na obrazový soubor (taková adresa URL obvykle končí příponou .jpg nebo .png). Odkazy na webové stránky obsahující obrázek nebudou fungovat.",
       "lblURLCheck": "Probíhá kontrola obrázku…",
-      "lblLabel": "Image caption",
+      "lblLabel": "Titulek obrázku",
       "lblLabel1": "Popisek",
       "lblLabel2": "Přejeďte ukazatelem myši přes text.",
       "lblLabel3": "Žádné",

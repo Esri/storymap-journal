@@ -5,11 +5,11 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 
 ![App](map-journal-storytelling-template-js.png)
 
-[View it live](http://links.esri.com/storymaps/map_journal_example_side_panel) | 
+[View it live](http://links.esri.com/storymaps/map_journal_example_side_panel) |
 [Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
 [Download](http://links.esri.com/storymaps/map_journal_template_zip)
 
-**Latest release is version 1.8.1**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+**Latest release is version 1.10.2**; if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
 For more infomation about using and customizing Esri's Storytelling Apps follow the [Story Maps Developers' Corner](https://developerscorner.storymaps.arcgis.com).
 
@@ -40,7 +40,7 @@ Once your story is ready, you have to find its ID in ArcGIS Online. The ID is a 
 
 1. [Download the application](http://links.esri.com/storymaps/map_journal_template_zip)
 2. Deploy the application on your webserver. See [FAQ](#how-to-deploy-the-application-on-a-web-server) for details
-3. Edit index.html, find the configuration section on line 38 and paste in your application ID
+3. Edit index.html, find the configuration section on line 39 and paste in your application ID
 4. Navigate to index.html (e.g., `http://127.0.0.1/MapJournal/index.html`)
 
 Enjoy!
@@ -63,12 +63,12 @@ When you contact us, don't hesitate to include a link to your application to mak
 
 ### What should I check before publishing a Journal?
 We recommend that you perform the following checks before sharing your Journal with your audience:
- - Check that all your Journal's content is shared with your audience (webmaps, medias, ...). Typically you can use another computer than the one you have used to build your story to make sure everything is loading properly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session or you can just sign-out from ArcGIS Online and any service that you have used to host your Journal's resources. 
+ - Check that all your Journal's content is shared with your audience (webmaps, medias, ...). Typically you can use another computer than the one you have used to build your story to make sure everything is loading properly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session or you can just sign-out from ArcGIS Online and any service that you have used to host your Journal's resources.
  - Try the application on different browsers, screen resolutions and mobile devices. You can [emulate mobile  devices](http://mobiletest.me/) inside your desktop browser.
 
 ### What are the supported browsers?
-Map Journal is supported on Internet Explorer 9 and above, Chrome, Firefox, Safari and the most recent tablet and smartphone devices.
-Map Journal authoring is supported on Internet Explorer 10 and above, on the most recent tablet but not on smartphone.
+Map Journal is supported on Internet Explorer 11 and above, Chrome, Firefox, Safari and the most recent tablet and smartphone devices.
+Map Journal authoring is supported on the same desktop browsers listed above, and on the most recent tablet but not smartphone devices.
 
 We actively test the application in all major browsers but if you experience difficulties especially with the builder, we recommend that you use [Chrome](https://www.google.com/intl/en_us/chrome/browser/).
 
@@ -87,59 +87,59 @@ require(["dojo/topic"], function(topic) {
 	/*
 	 * Custom Javascript to be executed while the application is initializing goes here
 	 */
-	
+
 	// The application is ready
 	topic.subscribe("tpl-ready", function(){
 		/*
 		 * Custom Javascript to be executed when the application is ready goes here
 		 */
 	});
-	
+
 	/*
 	 * Set up a click handler on the feature of the map to navigate the story
 	 */
-	
+
 	//
 	// *************************************
 	// Configure the webmap id and layer id
 	// *************************************
 	//
 	// First find the webmap id through the URL when you open the map in Map Viewer
-	// To get the layer id, paste the webmap id below and open the application, 
+	// To get the layer id, paste the webmap id below and open the application,
 	//   then open the developer console, all the layers ids will be listed,
 	//   find the correct one and paste it below
 	// After this setup, clicking the 3rd feature of your layer, will navigate to the third entry
 	//
 	var WEBMAP_ID = "0bb11c0469f042b3afaf8b0d76572822",
 		LAYER_ID = "csv_7673_0";
-	
+
 	var clickHandlerIsSetup = false;
-	
+
 	topic.subscribe("story-loaded-map", function(result){
 		if ( result.id == WEBMAP_ID && ! clickHandlerIsSetup ) {
 			var map = app.maps[result.id].response.map,
 				layer = map.getLayer(LAYER_ID);
-			
+
 			console.log(map.graphicsLayerIds);
-			
+
 			if ( layer ) {
 				layer.on("mouse-over", function(e){
 					map.setMapCursor("pointer");
 					map.infoWindow.setContent("<b>"+e.graphic.attributes.name.split(",")[0]+"</b><br/><i>Click to zoom</i>");
 					map.infoWindow.show(e.graphic.geometry);
 				});
-				
+
 				layer.on("mouse-out", function(e){
 					map.setMapCursor("default");
 					map.infoWindow.hide();
 				});
-				
+
 				layer.on("click", function(e){
 					var index = e.graphic.attributes["__OBJECTID"];
 					topic.publish("story-navigate-section", index);
 				});
 			}
-			
+
 			clickHandlerIsSetup = true;
 		}
 	});
@@ -149,19 +149,19 @@ require(["dojo/topic"], function(topic) {
 ### Security
 
 #### Can I keep my Journal private?
-Yes, the regular ArcGIS Online security model applies. 
-By default your Journal is private, you can share it through Map Journal builder or ArcGIS Online. 
+Yes, the regular ArcGIS Online security model applies.
+By default your Journal is private, you can share it through Map Journal builder or ArcGIS Online.
 When you share your Journal, it is your responsibility to make sure that all the resources of your Journal (webmaps, images, videos) are accessible to your audience.
 
 #### Who can edit my Journal?
 A Journal can only be edited by its owner (the named account that initially created the Journal). Organization Administrator (does not apply for public account) can take or give the Journal's ownership to another user. In that case you won't anymore be able to edit the Journal. Changing the ownership is the only way to collaborate on a Journal creation without sharing the owner's credentials.
 
 #### Can I use private web map or layer?
-Yes. 
+Yes.
 
 When the Journal is hosted in ArcGIS Online or Portal for ArcGIS, users that don't have access to the Journal or a webmap used in the Journal will be redirected to the ArcGIS Online sign-in page. It is not possible to display an authentication dialog in the Map Journal when the Journal is hosted in ArcGIS Online.
 
-When the Journal is hosted on your web server, an authentication dialog will appear inside the application. 
+When the Journal is hosted on your web server, an authentication dialog will appear inside the application.
 
 Note that for that authentication to work on some older browser (Internet Explorer 9) you need to install a proxy server on your web server to make sure the login credentials can be passed securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
 
@@ -173,7 +173,7 @@ If you are using secured services but don't want users to have to authenticate, 
 Deploying a Map Journal require to use ArcGIS Online or Portal for ArcGIS. The Journal content have to be created using the Map Journal builder and will live in a Web Application Item.
 
 #### Can I use the template without ArcGIS Online or Portal for ArcGIS?
-This is not a supported use case at that time. Please let us know if you are interested by such a scenario. 
+This is not a supported use case at that time. Please let us know if you are interested by such a scenario.
 Map Journal rely heavily on the Portal for ArcGIS API but it is doable to modify the application to support other scenarios.
 
 #### Where is the data stored?
@@ -187,9 +187,9 @@ Yes, Map Journal is included with Portal for ArcGIS starting at version 10.3.
 If you are using Portal 10.3+ and want to update Map Journal, [download the latest version](http://links.esri.com/storymaps/map_journal_template_zip). If you are using Portal 10.2.1 or 10.2.2, you can't deploy the latest version of Map Journal and have to deploy the following version [Map Journal V1.0.2 - portal](https://github.com/Esri/map-journal-storytelling-template-js/releases/download/V1.0.2/Storytelling-MapJournal-1.0.2-portal.zip).
 
 Then:
- - Find your Portal `apps/MapJournal` folder (depending on your installation and version of Portal, this is either `C:\Program Files\ArcGIS\Portal\apps\MapSeries` or `C:\Program Files\ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`). 
+ - Find your Portal `apps/MapJournal` folder (depending on your installation and version of Portal, this is either `C:\Program Files\ArcGIS\Portal\apps\MapSeries` or `C:\Program Files\ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`).
  - Remove the content of that folder
- - Extract the archive so that `index.html` is located at `MapJournal\index.html` 
+ - Extract the archive so that `index.html` is located at `MapJournal\index.html`
 
 If Map Journal was already included in your Portal you are done (Portal for ArcGIS 10.3+).
 
@@ -205,9 +205,9 @@ _Note that the archive you downloaded is using the ArcGIS API for JavaScript hos
 Also note that the web application gallery preview feature redirects to the StoryMaps website, the target page can be modified in `app/config.js > HELP_URL_PORTAL`.
 
 #### Can the template be used offline?
-Yes, by using Portal for ArcGIS and configuring the template to use the ArcGIS API for Javascript included with the Portal. 
+Yes, by using Portal for ArcGIS and configuring the template to use the ArcGIS API for Javascript included with the Portal.
 
-To edit the ArcGIS API for JavaScript, edit `index.html` and locate `pathJSAPI` around line 64. The URL is `//webadaptor.domain.com/arcgis/jsapi/jsapi` where arcgis is the name of your Web Adaptor.
+To edit the ArcGIS API for JavaScript, edit `index.html` and locate `pathJSAPI` around line 70. The URL is `//webadaptor.domain.com/arcgis/jsapi/jsapi` where arcgis is the name of your Web Adaptor.
 
 When deployed on a Portal for ArcGIS instance, the application doesn't require any external service to function. But by default the template will still include the header social buttons and Journal author are able to import pictures and videos from the some online pictures hosting services. These options can be disabled individually through the configuration file `app/config.js`.
 
@@ -215,8 +215,7 @@ When deployed on a Portal for ArcGIS instance, the application doesn't require a
 Yes, when the template is configured with an application ID, adding the URL parameter 'edit' will open the builder. You will be prompted for user authentication through the Identity Manager.
 
 #### How to deploy the application on a web server?
-If you are not familiar with web servers here is three solutions:
- * Use a free hosting service like [Dropbox](https://www.dropbox.com), you may have to [configure Dropbox to enable webpage hosting](https://www.dropbox.com/enable_public_folder)
+If you are not familiar with web servers here are two solutions:
  * Use the web server that comes with your server Operating System. On Windows this is Internet Information Services (IIS), if you have a `C:\inetpub\wwwroot` folder on your computer, you should be able to access it's content using `http://localhost`
  * On Windows or Mac OS, use a simple web server like [Mongoose](https://code.google.com/p/mongoose/) (not recommended for production)
 
@@ -226,8 +225,8 @@ If you are experiencing some rendering issues like improper symbol appearing ins
  * [Properly serve webfonts](http://blog.symbolset.com/properly-serve-webfonts)
 
 #### Can I use a single deployment of Map Journal for multiple stories?
-Yes. 
-If you have customized the application and deployed it on your server, you don't need to copy it multiple times, edit index.html and paste a different application ID for each story you want to publish. 
+Yes.
+If you have customized the application and deployed it on your server, you don't need to copy it multiple times, edit index.html and paste a different application ID for each story you want to publish.
 
 Instead edit `index.html`, locate the `configOptions` section and fill the `authorizedOwners` property with the ArcGIS Online or Portal for ArcGIS login of the owner(s) of the Journals you want to use. This make possible for the application to display  any of the Journal created by the specified user(s) through an URL parameter.
 
@@ -236,14 +235,15 @@ Example of the same application displaying two stories:
  * http://myserver.com/MapJournal/index.html?appid=c7ad1a55de0247a68454a76f251225a5
 
 ## Configuration
-In addition to the configuration offered by the builder, the file `app/config.js` provide various additional settings. This is for example the place where you can override some settings like the list of Geocoder services to be used (changes override ArcGIS Online or your Organization default settings). See the documentation provided in that file for more details. 
+In addition to the configuration offered by the builder, the file `app/config.js` provide various additional settings. This is for example the place where you can override some settings like the list of Geocoder services to be used (changes override ArcGIS Online or your Organization default settings). See the documentation provided in that file for more details.
 
 ## Customize the look and feel
 
 ### Custom color theme
-As Map Journal doesn't yet offer the ability to create a custom theme through the builder, customizing the various colors of the application require to download and configure them through `app/config.js`.
+As Map Journal doesn't yet offer the ability to create a custom theme through the builder, customizing the various colors of the application requires changing the data of your app. See [our blog post](https://developerscorner.storymaps.arcgis.com/customizing-theme-colors-in-map-journal-and-map-series-6e45b84c277e) about customizing theme colors.
 
-For example if you are using a Side Panel layout and have kept the default theme, open `app/config.js`, locate the `LAYOUT` property and edit the following line with the desired colors.
+
+You could also download and configure colors through `app/config.js`. For example if you are using a Side Panel layout and have kept the default theme, open `app/config.js`, locate the `LAYOUT` property and edit the following line with the desired colors.
 
 ```
 themes: [
@@ -253,7 +253,7 @@ themes: [
 ```
 
 ### Other customization
-Most of the look and feel customization can be done using the [regular Application Download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html overrides directly into `index.html`. 
+Most of the look and feel customization can be done using the [regular Application Download](http://links.esri.com/storymaps/map_journal_template_zip) and including the css/html overrides directly into `index.html`.
 
 As the application Javascript and CSS are minified, **we don't recommend that you directely edit those files** (e.g. `app-viewer-min.css`, `app-viewer-min.js`, ...). In addition to being hard to edit, this will make application update complex for you.
 
@@ -283,7 +283,7 @@ Here is some customization examples that can achieved through the `style` tag al
 ```
 
 ## Developer guide
-This developer guide is intended for developers that wants to modify the behavior or add new functionalities to the Map Journal application. 
+This developer guide is intended for developers that wants to modify the behavior or add new functionalities to the Map Journal application.
 It requires knowledge of HTML, Javascript and CSS languages.
 If you only need to customize look and feel, you should be able to do so using the [customize section above](#customize-the-look-and-feel).
 
@@ -298,31 +298,31 @@ require(["dojo/topic"], function(topic) {
   /*
    * Custom Javascript to be executed while the application is initializing goes here
    */
-   
+
   console.log("Map Journal is initializing");
-  
+
   // The application is ready
   topic.subscribe("tpl-ready", function(){
     /*
      * Custom Javascript to be executed when the application is ready goes here
      */
-     
+
     console.log("Map Journal is ready");
   });
-  
-  // When a section is being loaded (don't wait for the Main Stage media to be loaded) 
+
+  // When a section is being loaded (don't wait for the Main Stage media to be loaded)
   topic.subscribe("story-load-section", function(index){
     console.log("The section", index, "is being loaded");
   });
-  
-  // After a map is loaded (when the map starts to render)	
+
+  // After a map is loaded (when the map starts to render)
   topic.subscribe("story-loaded-map", function(result){
     if ( result.index !== null )
       console.log("The map", result.id, "has been loaded from the section", result.index);
     else
       console.log("The map", result.id, "has been loaded from a Main Stage Action");
   });
-  
+
   // When a main stage action that load a new media or reconfigure the current media is performed
   // Note that this even is not fired for the "Locate and address or a place action"
   topic.subscribe("story-perform-action-media", function(media){
@@ -348,13 +348,13 @@ console.log("Static ayout configuration values", app.data.getCurrentLayoutStatic
 Some events are also available for you to navigate the Journal programmatically:
 
 ```
-require(["dojo/topic"], function(topic) { 
+require(["dojo/topic"], function(topic) {
   // Navigate to a section
   topic.publish("story-navigate-section", 2);
-  
+
   // Reload the content panel
   topic.publish("story-update-sections");
-  
+
   // Update a specific section content panel
   topic.publish("story-update-section", 2);
 });
@@ -378,7 +378,7 @@ This will create a new `node-modules` folder in your project root with all the t
  * Use the URL parameter `appid` to specify the web item to be loaded, e.g.: http://localhost:8080/?appid=ABCD (configuring index.html > configOptions.appid is not supported in development mode)
 
 ### How to build application from the source code
-  * Open a terminal and navigate to the MapJournal folder 
+  * Open a terminal and navigate to the MapJournal folder
   * Run the following command: `grunt`
 
 The deploy folder now contains the built application that you can deploy to your web server.
@@ -466,7 +466,7 @@ Some open-source components of this project are licensed under other License ter
 | History.js			| BSD 		|
 | jQuery UI 			| MIT 		|
 | FastClick 			| MIT 		|
-| Hammer.JS 			| MIT 		| 
+| Hammer.JS 			| MIT 		|
 | jQuery mousewheel 	| MIT 		|
 | jQuery UI Touch Punch | MIT 		|
 

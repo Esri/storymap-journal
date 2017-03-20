@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Osan otsikko",
       "sectionContentLbl": "Osan sisältö"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Organisaation teema",
+      "lblModTheme": "Nykyinen teema"
+    },
     "initPopup": {
       "title": "Tervetuloa"
     },

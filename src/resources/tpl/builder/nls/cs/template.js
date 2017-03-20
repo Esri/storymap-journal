@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Nadpis části",
       "sectionContentLbl": "Obsah části"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Motiv organizace",
+      "lblModTheme": "Aktuální motiv"
+    },
     "initPopup": {
       "title": "Vítejte v"
     },

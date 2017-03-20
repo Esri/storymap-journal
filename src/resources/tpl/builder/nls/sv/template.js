@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Avsnittets rubrik",
       "sectionContentLbl": "Avsnittets innehåll"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Organisationstema",
+      "lblModTheme": "Aktuellt tema"
+    },
     "initPopup": {
       "title": "Välkommen till"
     },

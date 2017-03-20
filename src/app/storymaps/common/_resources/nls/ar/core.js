@@ -109,6 +109,7 @@ define({
       "title": "رأس الصفحة",
       "logoEsriRadio": "شعار Esri",
       "logoNoneRadio": "لا يوجد شعار",
+      "logoOrgRadio": "شعار المؤسسة",
       "logoCustomRadio": "الشعار",
       "logoCustomLabel": "الصورة:",
       "logoCustomUploadHelp": "تظهر الشعارات بشكل رائع إذا كان معدل العرض:الارتفاع بين 1:1 و5:1. وإذا تم رسم شعار مرتبط ببطء. احفظ نسخة منه وقم بتحميلها هنا.",

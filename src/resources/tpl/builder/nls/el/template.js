@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Τίτλος ενότητας",
       "sectionContentLbl": "Περιεχόμενο ενότητας"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Θέμα οργανισμού",
+      "lblModTheme": "Τρέχον θέμα"
+    },
     "initPopup": {
       "title": "Καλώς ορίσατε στο"
     },

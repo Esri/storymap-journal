@@ -54,31 +54,39 @@ define(["lib-build/tpl!./ViewHeader",
 			{
 				var logoURL = settings.logoURL,
 					themeColor = app.data.getWebAppData().getColors();
+				var checkTarget;
 
 				$("#headerSimulator", _contentContainer).css("background-color", themeColor);
 				if (logoURL == app.cfg.HEADER_LOGO_URL || logoURL == null) {
-					$('input[name=optionsLogo]:eq(0)', _contentContainer).attr('checked', 'checked');
+					checkTarget = $('input[value="esri"]', _contentContainer);
 					$("#imgLogo", _contentContainer).show();
 					_logoInput.val("");
 					_logoTargetInput.val("");
 				}
 				else if (logoURL === "NO_LOGO") {
-					$('input[name=optionsLogo]:eq(1)', _contentContainer).attr('checked', 'checked');
+					checkTarget = $('input[value="none"]', _contentContainer);
 					_logoInput.val("");
 					_logoTargetInput.val("");
 				}
 				else {
-					$('input[name=optionsLogo]:eq(2)', _contentContainer).attr('checked', 'checked');
 					$("#imgLogo", _contentContainer).attr("src", logoURL).show();
-					if (Helper.isAppResource(logoURL)) {
-						$("#uploadLogoInput", _contentContainer).val(logoURL);
-						onBtnGroupClick('upload');
-					} else {
-						$("#logoInput", _contentContainer).val(logoURL);
-						onBtnGroupClick('link');
-					}
 					_logoTargetInput.val(settings.logoTarget);
+
+					if (logoURL === app.cfg.HEADER_ORG_LOGO_URL) {
+						checkTarget = $('input[value="org"]', _contentContainer);
+					} else {
+						checkTarget = $('input[value="custom"]', _contentContainer);
+						if (Helper.isAppResource(logoURL)) {
+							$("#uploadLogoInput", _contentContainer).val(logoURL);
+							onBtnGroupClick('upload');
+						} else {
+							$("#logoInput", _contentContainer).val(logoURL);
+							onBtnGroupClick('link');
+						}
+					}
 				}
+
+				checkTarget.attr('checked', 'checked');
 
 				checkLogoOptionAndSetDisabled();
 
@@ -118,6 +126,10 @@ define(["lib-build/tpl!./ViewHeader",
 						.attr("title", i18n.commonCore.common.disabledAdmin);
 				else if ( ! settings.social || settings.social.bitly )
 					$(".enableBitly", _contentContainer).prop('checked', true);
+
+				if (!app.cfg.HEADER_ORG_LOGO_URL) {
+					$('.orgLogo', _contentContainer).hide();
+				}
 
 				updateForm();
 			};
@@ -171,9 +183,16 @@ define(["lib-build/tpl!./ViewHeader",
 			};
 
 			function checkLogoOptionAndSetDisabled() {
-				var customLogoTable = _contentContainer.find('.optionsLogoCustom');
 				var logoOption = $("input[name='optionsLogo']:checked", _contentContainer).val();
-				customLogoTable.toggleClass('hidden', logoOption !== 'custom');
+				var hideRow = logoOption !== 'custom';
+				var hideTable = hideRow && logoOption !== 'org';
+				var colspan = logoOption === 'custom' ? '2' : '1';
+
+				var optionsTable =_contentContainer.find('.optionsLogoCustom')
+					.toggleClass('hidden', hideTable);
+				optionsTable.find('.hide-except-custom')
+						.toggleClass('hidden', hideRow);
+				optionsTable.find('.variable-colspan').attr('colspan', colspan);
 			}
 
 			function onBtnGroupClick(evt) {
@@ -308,6 +327,9 @@ define(["lib-build/tpl!./ViewHeader",
 			{
 				var targetId = $('#linkRadio', _contentContainer).hasClass('active') ? '#logoInput' : '#uploadLogoInput';
 				var logoUrl = $(targetId, _contentContainer).val().trim();
+				if (app.cfg.HEADER_ORG_LOGO_URL && app.cfg.HEADER_ORG_LOGO_URL === logoUrl) {
+					logoUrl = '';
+				}
 				_contentContainer.find(".imgLogo").attr("src", CommonHelper.prependURLHTTP(Helper.possiblyAddToken(logoUrl))).show();
 			}
 
@@ -337,6 +359,8 @@ define(["lib-build/tpl!./ViewHeader",
 					}
 				} else if (logoOption == "esri") {
 					_contentContainer.find(".imgLogo").attr("src", "resources/tpl/viewer/icons/esri-logo.png").show();
+				} else if (logoOption == "org") {
+					_contentContainer.find(".imgLogo").attr("src", app.cfg.HEADER_ORG_LOGO_URL).show();
 				}
 			}
 

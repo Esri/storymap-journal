@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Link bi trebalo da se završava sa .jpg, .png, .gif ili .bmp",
       "lblURLError": "Ovaj snimak nije validan. Odredite direktnu vezu na datoteku snimka (URL adresa se obično završava sa .jpg ili .png). Veze ka veb stranici koja sadrži snimak ne rade.",
       "lblURLCheck": "Proveravanje snimka...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Natpis snimka",
       "lblLabel1": "Natpis",
       "lblLabel2": "Zadrži pokazivač iznad teksta",
       "lblLabel3": "Ništa",

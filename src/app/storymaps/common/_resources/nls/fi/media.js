@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Linkin lopussa tulee olla jokin seuraavista merkkijonoista: .jpg, .png, .gif, tai .bmp.",
       "lblURLError": "Kuva ei ole kelvollinen. Määritä suora linkki kuvatiedostoon (URL päättyy yleensä jpg- tai png-tunnisteeseen ). Linkki kuvan sisältävään verkkosivuun ei toimi.",
       "lblURLCheck": "Tarkistetaan kuvaa...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Kuvan seloste",
       "lblLabel1": "Seloste",
       "lblLabel2": "Kohoteksti",
       "lblLabel3": "Ei mitään",

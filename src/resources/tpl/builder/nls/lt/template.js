@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Skilties pavadinimas",
       "sectionContentLbl": "Skilties turinys"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Organizacijos tema",
+      "lblModTheme": "Dabartinė tema"
+    },
     "initPopup": {
       "title": "Sveiki atvykę"
     },

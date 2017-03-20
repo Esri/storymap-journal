@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Sectietitel",
       "sectionContentLbl": "Sectie-inhoud"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Organisatiethema",
+      "lblModTheme": "Huidig ​​thema"
+    },
     "initPopup": {
       "title": "Welkom bij"
     },

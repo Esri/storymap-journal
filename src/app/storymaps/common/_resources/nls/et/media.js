@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Link peaks lõppema laiendiga .jpg, .png, .gif või .bmp",
       "lblURLError": "See pilt paistab olevat vigane. Määrake pildifaili otselink (URL-i lõpus on üldiselt laiend .jpg või .png). Pilti sisaldava veebilehe lingid ei tööta.",
       "lblURLCheck": "Pildi kontrollimine...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Pildi alapealkiri",
       "lblLabel1": "Alapealkiri",
       "lblLabel2": "Hõljuktekst",
       "lblLabel3": "Pole",

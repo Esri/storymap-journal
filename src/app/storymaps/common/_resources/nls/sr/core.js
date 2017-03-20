@@ -109,6 +109,7 @@ define({
       "title": "Zaglavlje",
       "logoEsriRadio": "Esri logotip",
       "logoNoneRadio": "Nema logotipa",
+      "logoOrgRadio": "Logotip organizacije",
       "logoCustomRadio": "Moj logotip",
       "logoCustomLabel": "Snimak:",
       "logoCustomUploadHelp": "Logotipi najbolje izgledaju ako imaju odnos širina:visina između 1:1 i 5:1. Ako se linkovani logotip sporo iscrtava, sačuvajte kopiju i otpremite je ovde.",

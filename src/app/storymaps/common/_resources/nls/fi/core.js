@@ -109,6 +109,7 @@ define({
       "title": "Ylätunniste",
       "logoEsriRadio": "Esri-logo",
       "logoNoneRadio": "Ei logoa",
+      "logoOrgRadio": "Organisaation logo",
       "logoCustomRadio": "Oma logo",
       "logoCustomLabel": "Kuva:",
       "logoCustomUploadHelp": "Logot näyttävät parhaimmilta, kun niiden leveys:korkeus-suhde on 1:1–5:1. Jos linkitetty logo tulee näkyviin hitaasti, tallenna sen kopio ja lataa se tähän.",

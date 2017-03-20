@@ -109,6 +109,7 @@ define({
       "title": "Kopfzeile",
       "logoEsriRadio": "Esri Logo",
       "logoNoneRadio": "Kein Logo",
+      "logoOrgRadio": "Logo der Organisation",
       "logoCustomRadio": "Eigenes Logo",
       "logoCustomLabel": "Bild:",
       "logoCustomUploadHelp": "Logos wirken am besten, wenn das Verhältnis von Breite zu Höhe zwischen 1:1 und 5:1 liegt. Wenn ein verknüpftes Logo langsam aufgebaut wird, speichern Sie eine Kopie, und laden Sie es hier hoch.",

@@ -109,6 +109,7 @@ define({
       "title": "Koptekst",
       "logoEsriRadio": "Esri-logo",
       "logoNoneRadio": "Geen logo",
+      "logoOrgRadio": "Organisatielogo",
       "logoCustomRadio": "Mijn logo",
       "logoCustomLabel": "Afbeelding:",
       "logoCustomUploadHelp": "Logo's zien er het beste uit als ze een breedte-hoogteverhouding hebben tussen 1:1 en 5:1. Als een gekoppeld logo langzaam wordt getekend, sla dan een kopie op en upload het hier.",

@@ -128,11 +128,9 @@
  */
 
 .settings-header .radio {
-	margin-left: 15px;
-}
-
-.settings-header .radio:nth-child(1) {
-	margin-left: 0;
+	margin-right: 10px;
+  padding-top: 0;
+  font-size: 0.9em;
 }
 
 .settings-header #logoInput {

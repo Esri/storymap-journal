@@ -1,5 +1,7 @@
 define(["dojo/cookie",
 		"dojo/has",
+		"dojo/_base/lang",
+		"dojo/_base/Color",
 		"dojo/Deferred",
 		"dojo/DeferredList",
 		"./SocialSharing",
@@ -12,12 +14,17 @@ define(["dojo/cookie",
 		"esri/geometry/Point",
 		"esri/geometry/Extent",
 		"esri/geometry/Polygon",
+		"esri/layers/FeatureLayer",
 		"esri/layers/ArcGISDynamicMapServiceLayer",
 		"esri/layers/ArcGISTiledMapServiceLayer",
-		"esri/layers/OpenStreetMapLayer"],
+		"esri/layers/OpenStreetMapLayer",
+		"dojo/i18n!commonResources/nls/webmap.js?v=" + app.version
+		],
 	function(
 		cookie,
 		has,
+		lang,
+		Color,
 		Deferred,
 		DeferredList,
 		SocialSharing,
@@ -30,9 +37,11 @@ define(["dojo/cookie",
 		Point,
 		Extent,
 		Polygon,
+		FeatureLayer,
 		ArcGISDynamicMapServiceLayer,
 		ArcGISTiledMapServiceLayer,
-		OpenStreetMapLayer)
+		OpenStreetMapLayer,
+		i18n)
 	{
 		return {
 			isMobile: function()
@@ -211,12 +220,10 @@ define(["dojo/cookie",
 			},
 			getPortalUser: function()
 			{
-				var esriCookie = cookie('esri_auth');
-
-				if( ! esriCookie )
+				var esriCookie = this.getEsriCookie();
+				if (!esriCookie) {
 					return;
-
-				esriCookie = JSON.parse(esriCookie.replace('"ssl":undefined','"ssl":""'));
+				}
 
 				// Cookie has to be set on the same organization
 				if( esriCookie.urlKey
@@ -224,24 +231,32 @@ define(["dojo/cookie",
 						&& (esriCookie.urlKey + '.' + esriCookie.customBaseUrl).toLowerCase() != document.location.hostname.toLowerCase())
 					return;
 
-				return esriCookie ? esriCookie.email : null;
+				// if there's no esriCookie, we've already returned
+				return esriCookie.email;
 			},
 			getPortalRole: function()
 			{
-				var esriCookie = cookie('esri_auth');
-
-				if( ! esriCookie )
+				var esriCookie = this.getEsriCookie();
+				if (!esriCookie) {
 					return;
-
-				esriCookie = JSON.parse(esriCookie.replace('"ssl":undefined','"ssl":""'));
+				}
 
 				// If the cookie is not set on the same organization
-				if( esriCookie.urlKey
+				if (esriCookie.urlKey
 						&& esriCookie.customBaseUrl
 						&& (esriCookie.urlKey + '.' + esriCookie.customBaseUrl).toLowerCase() != document.location.hostname.toLowerCase())
 					return;
 
-				return esriCookie ? esriCookie.role : null;
+				// if there's no esriCookie, we've already returned
+				return esriCookie.role;
+			},
+			getEsriCookie: function() {
+				var esriCookie = cookie('esri_auth');
+
+				if (!esriCookie)
+					return;
+
+				return JSON.parse(esriCookie.replace('"ssl":undefined','"ssl":""'));
 			},
 			getAppViewModeURL: function()
 			{
@@ -258,6 +273,12 @@ define(["dojo/cookie",
 			getPortalURL: function()
 			{
 				return arcgisUtils.arcgisUrl.split('/sharing/')[0];
+			},
+			getSpecificPortalURL: function() {
+				if (app.portal.urlKey && app.portal.customBaseUrl) {
+					return '//' + app.portal.urlKey + '.' + app.portal.customBaseUrl;
+				}
+				return this.getPortalURL();
 			},
 			getItemURL: function(id)
 			{
@@ -402,63 +423,296 @@ define(["dojo/cookie",
 
 				// Query each geocode service to configure the search widget
 				var requests = [];
+				var layerSources = [];
+				var allSources = [];
+				var self = this;
 
-				$.each(app.cfg.HELPER_SERVICES.geocode, function(index, geocoder){
-					var geocodeRequest = esriRequest({
-						url: geocoder.url,
-						content: { f: 'json' },
-						handleAs: 'json',
-						callbackParamName: 'callback'
+				// these are the layer sources
+				if (p.searchOptions && p.searchOptions.layers && p.searchOptions.layers.length && p.searchOptions.enabled) {
+					layerSources = this.getLayerSources(p.searchOptions.layers, p.map, p.searchOptions.hintText);
+				}
+
+				// these are the stored app geocoders
+				var appDataSources = self.processAppDataGeocoders(p.placeHolder);
+
+				// start with layerSources if they exist.
+				if (layerSources.length) {
+					allSources = layerSources;
+				}
+
+				// next, if address search is enabled on the webmap, add appDataSources then app.cfg sources
+				if (!p.searchOptions || (p.searchOptions && !p.searchOptions.disablePlaceFinder)) {
+					allSources = allSources.concat(appDataSources || []);
+					$.each(app.cfg.HELPER_SERVICES.geocode, function(index, geocoder){
+						requests.push(self.getGeocoderRequest(geocoder));
 					});
-					requests.push(geocodeRequest);
-				});
+				}
 
-				var requestList = new DeferredList(requests);
-				requestList.then(
-					function(responses){
-						var sources = [];
-						$.each(responses, function(index, response){
-							if(! response[0]) {
-								return;
+				// if address search is disabled, and there's no layer search, but the storymap author
+				// has asked for a geocoder here, try and find one for them...
+				if (p.searchOptions && p.searchOptions.disablePlaceFinder && !allSources.length) {
+					// first try an app data source (a stored geocoder)
+					if (appDataSources && appDataSources.length) {
+						allSources.push(appDataSources[0]);
+					} else if (app.cfg.HELPER_SERVICES.geocode && app.cfg.HELPER_SERVICES.geocode.length) {
+						// then try finding a legit geocoder in app.cfg
+						var found = false;
+						$.each(app.cfg.HELPER_SERVICES.geocode, function(index, geocoder){
+							if (!found && geocoder.url) {
+								requests.push(self.getGeocoderRequest(geocoder));
+								found = true;
 							}
-
-							if(! response[1] || ! response[1].singleLineAddressField) {
-								return;
-							}
-
-							var newSource = {};
-							newSource.singleLineFieldName = response[1].singleLineAddressField.name;
-
-							var newLocator = new Locator(app.cfg.HELPER_SERVICES.geocode[index].url);
-							newSource.name = app.cfg.HELPER_SERVICES.geocode[index].name ? app.cfg.HELPER_SERVICES.geocode[index].name : response[1].name;
-							newSource.locator = newLocator;
-
-							sources.push(newSource);
 						});
+					} else {
+						// if all else fails, nullify allSources, and the world placefinder will get picked up.
+						allSources = null;
+					}
+				}
 
-						if(sources.length){
-							var search = new Search({
-								map: p.map,
-								sources: [],
-								allPlaceholder: p.placeHolder,
-								enableButtonMode: p.enableButtonMode
-							}, p.domNode);
+				var searchOptions = {
+					map: p.map,
+					allPlaceholder: p.placeHolder,
+					enableButtonMode: p.enableButtonMode
+				};
 
-							var searchSources = search.get("sources");
-							$.each(sources, function(index, source){
-								searchSources.push(source);
-							});
-							search.set("sources", searchSources);
+				if (allSources && allSources.length) {
+					this.checkForSourceNameDuplicates(allSources);
+					searchOptions.sources = allSources;
+				} else {
+					searchOptions.placeholder = p.placeHolder || i18n.commonWebmap.selector.placeholderGenericGeocoder;
+				}
 
-							search.startup();
+				var search = new Search(searchOptions, p.domNode);
 
+				if (requests.length) {
+					var requestList = new DeferredList(requests);
+					requestList.then(function(responses) {
+						var appCfgSources = self.processGeocoderRequestReturn(responses, p.placeHolder);
+
+						var concatSources = search.get('sources').concat(appCfgSources || []);
+						if (concatSources.length) {
+							self.setGeocodeSources(search, concatSources);
 							resultDeferred.resolve(search);
 						}
+					});
+				} else {
+					var searchSources = search.get('sources');
+					if (searchSources.length) {
+						self.setGeocodeSources(search, searchSources);
+						resultDeferred.resolve(search);
 					}
-				);
+				}
 
 				return resultDeferred;
 			},
+
+			getGeocoderRequest: function(geocoder) {
+				var requestOptions = {
+					url: geocoder.url,
+					content: { f: 'json' },
+					handleAs: 'json'
+				};
+				if (!app.isInBuilder && !app.portal.user) {
+					requestOptions.disableIdentityLookup = true;
+				} else {
+					requestOptions.callbackParamName = 'callback';
+				}
+				return esriRequest(requestOptions);
+			},
+
+			getLayerSources: function(layers, map, hintText) {
+				var self = this;
+				return $.map(layers, function(lyrInfo) {
+					var lyr = map.getLayer(lyrInfo.id);
+					var sourceObj = {
+						featureLayer: lyr,
+						searchFields: [lyrInfo.field.name],
+						displayField: lyrInfo.field.name,
+						exactMatch: lyrInfo.field.exactMatch,
+						outFields: ['*'],
+						maxResults: 6,
+						name: self.findGeocoderName(lyr, lyrInfo),
+						placeholder: hintText
+					};
+					if (lyrInfo.subLayer || lyrInfo.subLayer === 0) {
+						var actualSubLayerIndex = lyrInfo.subLayer;
+						var w; // walker
+						if ((w = lyr.dynamicLayerInfos) && (w = w[lyrInfo.subLayer]) && (w = w.source)) {
+							actualSubLayerIndex = w.mapLayerId;
+						}
+						sourceObj.featureLayer = new FeatureLayer(lyr.url + '/' + lyrInfo.subLayer);
+					}
+					return sourceObj;
+				});
+			},
+
+			processGeocoderRequestReturn: function(responses, fallbackPlaceholder) {
+				var sources = [];
+				var self = this;
+				$.each(responses, function(index, response){
+					if (!response[0] || !response[1] || !response[1].singleLineAddressField) {
+						return;
+					}
+					var targetGeocoder = app.cfg.HELPER_SERVICES.geocode[index];
+					var newLocator = new Locator(targetGeocoder.url);
+					var newSource = {
+						singleLineFieldName: response[1].singleLineAddressField.name,
+						name: targetGeocoder.name ? targetGeocoder.name : response[1].name,
+						placeholder: targetGeocoder.placeholder || fallbackPlaceholder || i18n.commonWebmap.selector.placeholderGenericGeocoder,
+						locator: newLocator
+					};
+					newSource.name = newSource.name || self.findGeocoderName({url: newLocator.url});
+					if (self.isEsriGeocoder({url: targetGeocoder.url})) {
+						newSource.placeholder = i18n.commonWebmap.selector.placeholderGenericGeocoder;
+					}
+
+					// if we don't do this, a call goes out to a potentially non-existent /suggest endpoint and returns an invalid url error on
+					// just about every keystroke.
+					if (!response[1].capabilities || response[1].capabilities.toLowerCase().indexOf('suggest') < 0) {
+						newSource.enableSuggestions = false;
+					}
+
+					sources.push(newSource);
+				});
+				return sources;
+			},
+
+			processAppDataGeocoders: function(fallbackPlaceholder) {
+				if (!app.data.getWebAppData().getAppGeocoders) {
+					return;
+				}
+				// copy the array so we're not modifying it.
+				var appGeocoders = app.data.getWebAppData().getAppGeocoders();
+				if (!appGeocoders || !appGeocoders.length) {
+					return;
+				}
+				appGeocoders = appGeocoders.slice();
+				var sources = [];
+				var self = this;
+				$.each(appGeocoders, function(index, geocoder) {
+					if (geocoder.url) {
+						var optionsCopy = lang.mixin({}, geocoder);
+						optionsCopy.locator = new Locator(optionsCopy.url);
+						if (self.isEsriGeocoder({url: optionsCopy.url})) {
+							optionsCopy.placeholder = i18n.commonWebmap.selector.placeholderGenericGeocoder;
+							optionsCopy.name = i18n.commonWebmap.selector.lblEsriGeocoder;
+						} else {
+							optionsCopy.placeholder = optionsCopy.placeholder || fallbackPlaceholder;
+							optionsCopy.name = optionsCopy.name || self.findGeocoderName({url: optionsCopy.url});
+						}
+						sources.push(optionsCopy);
+					}
+				});
+				return sources;
+
+			},
+
+			setGeocodeSources: function(search, sources) {
+				this.checkForSourceNameDuplicates(sources);
+				search.set('sources', sources);
+				search.set('activeSourceIndex', 0);
+				search.startup();
+			},
+
+			checkForSourceNameDuplicates: function(sources) {
+				var existingSourceNames = [];
+				var self = this;
+				$.each(sources, function(index, src) {
+					if (existingSourceNames.indexOf(src.name) >= 0) {
+						src.name = self.getAdjustedSourceName(existingSourceNames, src.name);
+					}
+					existingSourceNames.push(src.name);
+				});
+			},
+
+			getAdjustedSourceName: function(namesList, name) {
+				var num = 2;
+				var newName = name + ' - ' + num;
+				while (namesList.indexOf(newName) >= 0) {
+					num++;
+					newName = name + ' - ' + num;
+				}
+				return newName;
+			},
+
+			isEsriGeocoder: function(lyrOrObj) {
+				if (!lyrOrObj.url) {
+					console.warn('no url on locator', lyrOrObj);
+					return false;
+				}
+				return lyrOrObj.url.match(/geocode(.){0,3}\.arcgis.com\/arcgis\/rest\/services\/World\/GeocodeServer/g);
+			},
+
+			// if this returns undefined, esri nls will label it "Untitled Source".
+			findGeocoderName: function(lyr, lyrInfo) {
+				var geocoderName = lyrInfo ? (lyrInfo.name || lyrInfo.title) : '';
+				if (!geocoderName) {
+					var opLyrs = app.mapItem ? app.mapItem.itemData.operationalLayers : [];
+					opLyrs.some(function(opLyrInfo) {
+						if (opLyrInfo.id === lyr.id) {
+							geocoderName = opLyrInfo.title;
+							return true;
+						}
+						return false;
+					});
+				}
+				geocoderName = geocoderName || lyr.name || lyr.title;
+				if (!geocoderName) {
+					if (this.isEsriGeocoder(lyr)) {
+						geocoderName = i18n.commonWebmap.selector.lblEsriGeocoder;
+					} else {
+						if (typeof lyr.url !== "string" || !lyr.url.split) {
+							return; // go with esri nls "Untitled Source"
+						} else {
+							var parts = lyr.url.split('/');
+							var serviceName = parts[parts.length - 2];
+							if (serviceName) {
+								geocoderName = serviceName;
+							}
+							return; // go with esri nls "Untitled Source"
+						}
+					}
+				}
+				if (lyrInfo && (lyrInfo.subLayer || lyrInfo.subLayer === 0)) {
+					var targetLayerInfos = lyr.dynamicLayerInfos || lyr.layerInfos;
+					var sublayerInfo = targetLayerInfos[lyrInfo.subLayer];
+					if (sublayerInfo && sublayerInfo.name) {
+						geocoderName += ' - ' + sublayerInfo.name;
+					}
+				}
+				return geocoderName.replace(/_/g, ' ');
+			},
+
+			colorsAreSimilar: function(color1, color2, looseMatching) {
+				var lum1 = this.getLuminance(color1);
+				var lum2 = this.getLuminance(color2);
+				var ratio = (lum1 + 0.05) / (lum2 + 0.05);
+
+				if (lum2 > lum1) {
+					ratio = 1 / ratio;
+				}
+
+				if (ratio >= 2.85 || (looseMatching && ratio >= 2.2)) {
+					return false;
+				}
+				return true;
+
+			},
+
+			// https://github.com/LeaVerou/contrast-ratio
+			getLuminance: function(color) {
+				var djColor = new Color(color);
+				var mapped = djColor.toRgb().map(function(num) {
+					num /= 255;
+					if (num < 0.03928) {
+						return num / 12.92;
+					}
+					return Math.pow((num + 0.055) / 1.055, 2.4);
+				});
+				return 0.2126 * mapped[0] + 0.7152 * mapped[1] + 0.0722 * mapped[2];
+			},
+
+
 			// Returns a function, that, as long as it continues to be invoked, will not
 			// be triggered. The function will be called after it stops being called for
 			// N milliseconds. If `immediate` is passed, trigger the function on the

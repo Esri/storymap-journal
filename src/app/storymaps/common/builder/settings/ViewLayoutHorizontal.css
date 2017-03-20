@@ -26,6 +26,7 @@
 	cursor: pointer;
 	opacity: 0.9;
 	margin-left: 4px;
+	max-width: 232px;
 	transition: opacity .25s ease-in-out;
    -moz-transition: opacity .25s ease-in-out;
    -webkit-transition: opacity .25s ease-in-out;

@@ -11,6 +11,7 @@ define(["lib-build/css!./Builder",
 		"storymaps/tpl/core/Helper",
 		"dojo/_base/lang",
 		"dojo/_base/array",
+		"dojo/_base/Color",
 		"dojo/has",
 		"esri/arcgis/utils",
 		"esri/IdentityManager",
@@ -31,6 +32,7 @@ define(["lib-build/css!./Builder",
 		Helper,
 		lang,
 		array,
+		Color,
 		has,
 		arcgisUtils,
 		IdentityManager,
@@ -117,8 +119,290 @@ define(["lib-build/css!./Builder",
 				app.builder.titleMatchOnLoad = true;
 			}
 
+			configureAppGeocoders();
+
+			/* themes */
+			var x; // walker
+			if ((x = app.portal) && (x = x.portalProperties) && (x = x.sharedTheme)) {
+				addOrgThemeToConfig(x);
+				addOrgLogoToConfig(x);
+			}
+			addModifiedThemeToConfig();
+
+			var y; // walker
+			if ((y = app.data.getWebAppData().getTheme()) && (y = y.colors)) {
+				if (y.name && y.name.match(/-org$|-modified$/)) {
+
+					var removeClasses = [
+						'media-blues-contrast',
+						'media-dark-contrast',
+						'media-grays-contrast',
+						'media-dark-bg',
+						'panel-blues-contrast',
+						'panel-dark-contrast',
+						'panel-dark-bg'
+					];
+					var addClasses = ['builder-shadows'];
+
+					if (CommonHelper.colorsAreSimilar(y.media, '#67AAE5', true) || CommonHelper.colorsAreSimilar(y.media, '#418abb', true)) {
+						addClasses.push('media-blues-contrast');
+					}
+
+					if (CommonHelper.colorsAreSimilar(y.media, '#404040')) {
+						addClasses.push('media-dark-contrast');
+					}
+
+					if (CommonHelper.colorsAreSimilar(y.media, '#939393')) {
+						addClasses.push('media-grays-contrast');
+					}
+
+					if (getWhiteOrBlackText(y.media) === 'white') {
+						addClasses.push('media-dark-bg');
+					}
+
+					if (getWhiteOrBlackText(y.panel) === 'white') {
+						addClasses.push('panel-dark-bg');
+					}
+
+					if (CommonHelper.colorsAreSimilar(y.panel, '#418abb')) {
+						addClasses.push('panel-blues-contrast');
+					}
+
+					if (CommonHelper.colorsAreSimilar(y.panel, '#333')) {
+						addClasses.push('panel-dark-contrast');
+					}
+
+					$('body').removeClass(removeClasses.join(' ')).addClass(addClasses.join(' '));
+				}
+			}
+
 			_builderPanel.updateSharingStatus();
 			_builderView.appInitComplete();
+		}
+
+		function configureAppGeocoders() {
+			if (!app.data.getWebAppData().getAppGeocoders()) {
+				addAppGeocoders();
+			}
+		}
+
+		function addAppGeocoders() {
+			if (app.portal.helperServices.geocode && app.portal.helperServices.geocode.length) {
+				var ajaxArr = [];
+				var originalSources = [];
+				$.each(app.portal.helperServices.geocode, function (index, geocoder) {
+					if (geocoder.url) {
+						ajaxArr.push($.getJSON(geocoder.url + '?f=json'));
+						originalSources.push(geocoder);
+					}
+				});
+				$.when.apply($, ajaxArr).done(function() {
+					var geocoderResponses = (ajaxArr.length > 1) ? arguments : [arguments];
+					var sources = [];
+					$.each(geocoderResponses, function(index, xhrResponse) {
+						var responseJson = xhrResponse[0];
+						var textStatus = xhrResponse[1];
+						if (!responseJson || responseJson.error || !responseJson.singleLineAddressField || !textStatus || textStatus !== 'success') {
+							return;
+						}
+						var sourceInfo = originalSources[index];
+						sources.push({
+							singleLineFieldName: responseJson.singleLineAddressField.name,
+							name: responseJson.name || sourceInfo.name,
+							placeholder: sourceInfo.placeholder,
+							url: sourceInfo.url
+						});
+					});
+					app.data.getWebAppData().setAppGeocoders(sources);
+					// save this setting now (since this is happening on startup)
+					if (app.data.getWebAppItem().id) {
+						saveApp(false, function() {});
+					}
+				});
+			}
+		}
+
+		function addOrgThemeToConfig(sharedTheme) {
+			var themeWithFallbacks = {
+				header: {
+					text: colorExists(sharedTheme.header.text) || '#fff',
+					background: colorExists(sharedTheme.header.background) || '#333'
+				},
+				body: {
+					text: colorExists(sharedTheme.body.text) || '#333',
+					background: colorExists(sharedTheme.body.background) || '#fff',
+					link: colorExists(sharedTheme.body.link || sharedTheme.body.text) || '#666'
+				},
+				button: {
+					text: colorExists(sharedTheme.button.text) || '#ccc',
+					background: colorExists(sharedTheme.button.background) || '#999'
+				}
+			};
+			var translatedTheme = {
+				dotNav: themeWithFallbacks.header.background,
+				panel: themeWithFallbacks.body.background,
+				media: getMediaBackground(themeWithFallbacks),
+				text: themeWithFallbacks.body.text,
+				textLink: themeWithFallbacks.body.link || themeWithFallbacks.body.text,
+				softText: themeWithFallbacks.header.text,
+				softBtn: themeWithFallbacks.header.text,
+				themeMajor: getWhiteOrBlackText(themeWithFallbacks.header.background),
+				esriLogo: getWhiteOrBlackText(themeWithFallbacks.body.background)
+			};
+			app.cfg.LAYOUTS.forEach(function(layout) {
+				var alreadyHasOrgTheme = layout.themes.some(function(theme) {
+					if (theme.name.match(/-org$/)) {
+						return true;
+					}
+					return false;
+				});
+				if (!alreadyHasOrgTheme) {
+					var moreOptions = {
+						name: layout.id + '-org'
+					};
+					if (layout.id === 'float') {
+						lang.mixin(moreOptions, {
+							panelOpa: getOpacity(translatedTheme.panel),
+							dotNavActive: findLinkColor(themeWithFallbacks.body.background, themeWithFallbacks.header)
+						});
+					}
+					layout.themes.push(lang.mixin(moreOptions, translatedTheme));
+				}
+			});
+			// set to org colors if no other colors set (which means the app hasn't
+			// yet been saved, doesn't have an official theme yet)
+			if ((app.isGalleryCreation || app.isDirectCreationFirstSave) && !app.data.getWebAppData().getTheme().colors) {
+				var layout0themes = app.cfg.LAYOUTS[0].themes;
+				app.data.getWebAppData().setTheme({
+					colors: layout0themes[layout0themes.length - 1]
+				});
+				topic.publish('CORE_UPDATE_UI');
+			}
+
+		}
+
+		function colorExists(color) {
+			if (!color || color === 'no-color') {
+				return false;
+			}
+			return color;
+		}
+
+		function addOrgLogoToConfig(sharedTheme) {
+			if (sharedTheme.logo && sharedTheme.logo.small) {
+				app.cfg.HEADER_ORG_LOGO_URL = sharedTheme.logo.small;
+				if ((app.isGalleryCreation || app.isDirectCreationFirstSave) && !app.data.getWebAppData().getHeader().logoURL) {
+					var newHeaderConfig = _core.getHeaderUserCfg();
+					lang.mixin(newHeaderConfig, {
+						logoURL: sharedTheme.logo.small,
+						logoTarget: ''
+					});
+					app.data.getWebAppData().setHeader(newHeaderConfig);
+				}
+			}
+		}
+
+		function addModifiedThemeToConfig() {
+			var currentTheme = app.data.getWebAppData().getTheme();
+			var currentColors = currentTheme.colors;
+			if (!currentColors) {
+				return;
+			}
+			var propsWeCareAbout = ['dotNav', 'panel', 'media', 'text', 'textLink', 'softText', 'softBtn'];
+			var nameArr = currentColors.name.split('-');
+			var currentLayout = nameArr[0];
+
+			var found = app.cfg.LAYOUTS.some(function(layout) {
+				if (currentLayout !== layout.id) {
+					return false;
+				}
+				return layout.themes.some(function(colors) {
+					return propsWeCareAbout.every(function(prop) {
+						return currentColors[prop] === colors[prop];
+					});
+				});
+			});
+
+			if (found) {
+				return;
+			}
+
+			app.cfg.LAYOUTS.forEach(function(layout) {
+				var newName = layout.id + '-' + nameArr.slice(1).join('-');
+				if (!newName.match(/-modified$/)) {
+					newName += '-modified';
+				}
+
+				if (layout.id === 'float') {
+					var fallbackDotNavActive = findLinkColor(currentColors.panel, {
+						background: currentColors.dotNav,
+						text: currentColors.softText
+					});
+					currentColors = lang.mixin({
+						panelOpa: getOpacity(currentColors.panel),
+						dotNavActive: fallbackDotNavActive
+					}, currentColors);
+				}
+
+				currentColors.name = newName;
+
+				if (currentLayout === layout.id) {
+					// get new name to stick in current config
+					app.data.getWebAppData().setTheme({
+						colors: currentColors,
+						fonts: currentTheme.fonts
+					});
+					// otherwise, the app uses the old name of the theme to
+					// set the colors.
+					topic.publish('CORE_UPDATE_UI');
+				}
+
+				layout.themes.push(currentColors);
+
+			});
+		}
+
+		function getWhiteOrBlackText(bgColor) {
+      var yiq = getYIQ(bgColor);
+      return (yiq >= 128) ? 'black' : 'white';
+		}
+
+		function getMediaBackground(/* sharedTheme */) {
+			// TODO: in case we want to vary the media background color in the future
+			// var yiq = getYIQ(sharedTheme.body.background);
+			// return (yiq >= 128) ? '#888' : '#eee';
+			return '#eee';
+		}
+
+		function findLinkColor(bgColor, contrast) {
+			var bgYIQ = getYIQ(bgColor);
+			var bgDiff = Math.abs(bgYIQ - getYIQ(contrast.background));
+			var txtDiff = Math.abs(bgYIQ - getYIQ(contrast.text));
+
+			if (bgDiff > txtDiff) {
+				return contrast.background;
+			}
+			return contrast.text;
+		}
+
+		function getOpacity(bgColor) {
+			var bgYIQ = getYIQ(bgColor);
+			if (bgYIQ >= 192) {
+				return 0.95;
+			}
+			if (bgYIQ >= 128) {
+				return 0.9;
+			}
+			if (bgYIQ >= 64) {
+				return 0.85;
+			}
+			return 0.8;
+		}
+
+		function getYIQ(thisColor) {
+			var djColor = new Color(thisColor);
+			var rgbArr = djColor.toRgb();
+			return (rgbArr[0] * 299 + rgbArr[1] * 587 + rgbArr[2] * 114) / 1000;
 		}
 
 		function resize(cfg)
@@ -511,7 +795,7 @@ define(["lib-build/css!./Builder",
 				logoURL = stripTokensFromUrls(logoURL, logoURL);
 				data.values.settings.header.logoURL = logoURL;
 			}
-			var currentUploadedLogo = $('#uploadLogoInput').val();
+			var currentUploadedLogo = Helper.isAppResource(logoURL) ? logoURL : $('#uploadLogoInput').val();
 			if (currentUploadedLogo) {
 				currentUploadedLogo = Helper.possiblyRemoveToken(currentUploadedLogo);
 			}

@@ -109,6 +109,7 @@ define({
       "title": "Nagłówek",
       "logoEsriRadio": "Logo firmy Esri",
       "logoNoneRadio": "Brak logo",
+      "logoOrgRadio": "Logotyp instytucji",
       "logoCustomRadio": "Mój logotyp",
       "logoCustomLabel": "Obraz:",
       "logoCustomUploadHelp": "Logotypy prezentują się najlepiej, gdy ich współczynnik szerokości do wysokości należy do zakresu od 1:1 do 5:1. Jeśli logotyp powiązany za pomocą łącza jest wyświetlany powoli, należy zapisać jego kopię i przesłać go w tym miejscu.",

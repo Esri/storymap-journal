@@ -93,7 +93,7 @@ define({
       "lblURLPH": "連結應以 .jpg、.png、.gif 或 .bmp 結尾",
       "lblURLError": "此圖像可能無效。請指定圖像文件的直接連結(URL 通常以 .jpg 或 .png 結尾)。包含圖像的網頁連結無法使用。",
       "lblURLCheck": "正在檢查圖像...",
-      "lblLabel": "Image caption",
+      "lblLabel": "圖片標號",
       "lblLabel1": "說明文字",
       "lblLabel2": "懸停文字",
       "lblLabel3": "無",

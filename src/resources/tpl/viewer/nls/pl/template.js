@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Nie masz uprawnień do korzystania z kreatora %TPL_NAME%.",
       "noBuilderIE": "Kreator nie jest obsługiwany przez przeglądarkę Internet Explorer w wersji starszej niż %VERSION%. %UPGRADE%",
       "noViewerIE": "Ta narracja nie jest obsługiwana przez przeglądarkę Internet Explorer w wersji starszej niż %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Próbujesz wyświetlić tę narrację za pomocą starszej, nieobsługiwanej przeglądarki. Niektóre funkcje mogą nie działać lub mogą wystąpić inne nieoczekiwane problemy. Zalecamy zaktualizowanie przeglądarki do programu Internet Explorer 11 lub użycie innej przeglądarki, na przykład Chrome.",
+      "noViewerIE3": "Pod koniec 2017 roku ta narracja nie będzie się już wczytywała w tej przeglądarce. Do jej wyświetlenia konieczne będzie użycie obsługiwanej przeglądarki.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Zaktualizuj przeglądarkę</a>.",
       "mapLoadingFail": "Wystąpił pewien problem, nie wczytano mapy prawidłowo.",
       "signOut": "Wyloguj się",
       "print0": "Niestety, tej narracji nie można wydrukować.",
       "print1": "Aby wydrukować tę narrację, użyj przycisku drukowania znajdującego się w oknie dialogowym udostępniania.",
-      "print2": "Niestety, wersja narracji przeznaczona do druku jest zwykle dostępna za pośrednictwem okna dialogowego udostępniania, ale to okno zostało zablokowane przez autora."
+      "print2": "Niestety, wersja narracji przeznaczona do druku jest zwykle dostępna za pośrednictwem okna dialogowego udostępniania, ale to okno zostało zablokowane przez autora.",
+      "attention": "Uwaga!"
     },
     "mobileView": {
       "tapForDetails": "Wskaż, aby uzyskać szczegółowe informacje",

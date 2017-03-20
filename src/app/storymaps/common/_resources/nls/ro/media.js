@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Linkul trebuie să se termine cu .jpg, .png, .gif sau .bmp",
       "lblURLError": "Această imagine nu pare validă. Specificaţi un link direct către un fişier imagine (adresa URL se va termina de regulă cu .jpg sau .png). Linkurile către o pagină web care conţine o imagine nu vor funcţiona.",
       "lblURLCheck": "Se verifică imaginea...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Comentariu imagine",
       "lblLabel1": "Subtitlu",
       "lblLabel2": "Text informativ",
       "lblLabel3": "Niciunul",

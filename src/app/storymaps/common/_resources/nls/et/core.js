@@ -109,6 +109,7 @@ define({
       "title": "Päis",
       "logoEsriRadio": "Esri logo",
       "logoNoneRadio": "Logo puudub",
+      "logoOrgRadio": "Organisatsiooni logo",
       "logoCustomRadio": "Minu logo",
       "logoCustomLabel": "Pilt:",
       "logoCustomUploadHelp": "Logod näevad kõige paremad välja, kui nende laiuse ja kõrguse suhe on 1:1 kuni 5:1. Kui lingitud logo joonistatakse liiga aeglaselt, salvestage koopia ja laadige see siia üles.",

@@ -93,7 +93,7 @@ define({
       "lblURLPH": "リンクの末尾は、*.jpg、*.png、*.gif、*.bmp のいずれかである必要があります。",
       "lblURLError": "この画像は有効ではありません。画像ファイルへの直接のリンクを指定してください (URL の末尾は通常 *.jpg または *.png となります)。画像を含む Web ページへのリンクは機能しません。",
       "lblURLCheck": "画像をチェックしています...",
-      "lblLabel": "Image caption",
+      "lblLabel": "画像のキャプション",
       "lblLabel1": "キャプション",
       "lblLabel2": "ホバー テキスト",
       "lblLabel3": "なし",

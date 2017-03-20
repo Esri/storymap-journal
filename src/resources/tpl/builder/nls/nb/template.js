@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Seksjonstittel",
       "sectionContentLbl": "Seksjonsinnhold"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Tema for organisasjon",
+      "lblModTheme": "Gjeldende tema"
+    },
     "initPopup": {
       "title": "Velkommen til"
     },

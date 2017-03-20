@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Nesate autorizuoti naudoti %TPL_NAME% kūrimo priemonę.",
       "noBuilderIE": "Kūrimo priemonė neveikia „Internet Explorer“ versijose ankstesnėse nei %VERSION%. %UPGRADE%",
       "noViewerIE": "Pasakojimas neveikia Internet Explorer, jei jo versija senesnė nei %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Jūs bandote peržiūrėti šį pasakojimą naudodami senesnę, nepalaikomą naršyklę. Kai kurie elementai gali neveikti ar įvykti kitokių nenumatytų problemų. Siūlome atnaujinti naršyklės versiją į Internet Explorer 11 arba naudoti kitą naršyklę, pavyzdžiui, Chrome.",
+      "noViewerIE3": "2017 m. pabaigoje šio pasakojimo nebebus galima įkelti naudojant šią naršyklę. Tuo metu, norėdami peržiūrėti šį pasakojimą, turėsite naudoti palaikomą naršyklę.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Atnaujinkite naršyklę</a>.",
       "mapLoadingFail": "Įvyko klaida ir žemėlapio nepavyko tinkamai įkelti.",
       "signOut": "Atsijungti",
       "print0": "Deja, šio pasakojimo išspausdinti nepavyko.",
       "print1": "Norėdami išspausdinti šį pasakojimą, naudokite spausdinimo mygtuką, esantį bendrinimo dialogo lange.",
-      "print2": "Šio pasakojimo spaudos versija paprastai pasiekiama bendrinimo dialogo lange. Deja, autorius šį dialogo langą yra išjungęs."
+      "print2": "Šio pasakojimo spaudos versija paprastai pasiekiama bendrinimo dialogo lange. Deja, autorius šį dialogo langą yra išjungęs.",
+      "attention": "Dėmesio!"
     },
     "mobileView": {
       "tapForDetails": "Išsamiai informacijai bakstelėkite",

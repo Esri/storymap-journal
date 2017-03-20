@@ -109,6 +109,7 @@ define({
       "title": "헤더",
       "logoEsriRadio": "Esri 로고",
       "logoNoneRadio": "로고 없음",
+      "logoOrgRadio": "기관 로고",
       "logoCustomRadio": "내 로고",
       "logoCustomLabel": "이미지:",
       "logoCustomUploadHelp": "로고는 1:1 및 5:1 사이의 너비:높이 비율이 있을 때 가장 잘 보입니다. 연결된 로고가 느리게 그려지면 복사본을 저장하고 여기에 업로드하세요.",

@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Il collegamento deve terminare con .jpg, .png, .gif o .bmp.",
       "lblURLError": "Questa immagine non sembra valida. Specificare un collegamento diretto a un file immagine (l'URL in genere termina con .jpg o .png). I collegamenti a una pagina Web che contiene un'immagine non funzioneranno.",
       "lblURLCheck": "Verifica immagine in corso...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Didascalia immagine",
       "lblLabel1": "Didascalia",
       "lblLabel2": "Testo al passaggio del mouse",
       "lblLabel3": "Nessuno",

@@ -109,6 +109,7 @@ define({
       "title": "Cabeçalho",
       "logoEsriRadio": "Logótipo Esri",
       "logoNoneRadio": "Sem logótipo",
+      "logoOrgRadio": "Logótipo da organização",
       "logoCustomRadio": "O meu logótipo",
       "logoCustomLabel": "Imagem:",
       "logoCustomUploadHelp": "Os logótipos têm melhor aspeto se tiverem um rácio largura:altura entre 1:1 e 5:1. Caso um logótipo com ligação demore a ser representado, guarde uma cópia e carregue-o aqui.",

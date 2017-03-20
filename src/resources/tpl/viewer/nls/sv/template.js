@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Du har inte behörighet att använda byggverktyget %TPL_NAME%.",
       "noBuilderIE": "Byggverktyget kan inte användas med Internet Explorer tidigare än version %VERSION%. %UPGRADE%",
       "noViewerIE": "Den här berättelsen kan inte användas med Internet Explorer tidigare än version %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Du försöker visa denna berättelse med en äldre webbläsare som inte stöds. Det kan röra sig om funktioner som inte fungerar eller andra oväntade problem. Vi rekommenderar dig att uppgradera till Internet Explorer 11 eller använda en annan webbläsare, till exempel Chrome.",
+      "noViewerIE3": "I slutet av 2017 kommer denna berättelse inte längre att kunna läsas in av denna webbläsare. Då måste du använda en webbläsare som stöds om du vill kunna visa den här berättelsen.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Uppdatera din webbläsare</a>.",
       "mapLoadingFail": "Något gick fel, kartan lästes inte in på rätt sätt.",
       "signOut": "Logga ut",
       "print0": "Det går tyvärr inte att skriva ut berättelsen.",
       "print1": "Om du vill skriva ut berättelsen använder du utskriftsknappen i dialogrutan Dela.",
-      "print2": "Det finns vanligtvis en utskrivbar version av berättelsen tillgänglig i dialogrutan Dela, men den dialogrutan har inaktiverats av författaren."
+      "print2": "Det finns vanligtvis en utskrivbar version av berättelsen tillgänglig i dialogrutan Dela, men den dialogrutan har inaktiverats av författaren.",
+      "attention": "Obs!"
     },
     "mobileView": {
       "tapForDetails": "Peka för information",

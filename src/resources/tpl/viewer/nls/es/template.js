@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "No estás autorizado para utilizar el builder de %TPL_NAME%.",
       "noBuilderIE": "El builder no es compatible con versiones de Internet Explorer anteriores a la %VERSION%. %UPGRADE%",
       "noViewerIE": "Esta historia no es compatible con versiones de Internet Explorer anteriores a la %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Está intentando ver esta historia con un navegador antiguo no compatible. Es posible que algunas características no funcionen o que se produzcan otros problemas inesperados. Es recomendable actualizar a Internet Explorer 11 o usar otro navegador como Chrome.",
+      "noViewerIE3": "A finales de 2017, esta historia no se podrá cargar en este navegador. Cuando eso ocurra, deberá usar un navegador compatible para ver la historia.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Actualiza tu navegador</a>.",
       "mapLoadingFail": "Se ha producido un error, el mapa no se cargó correctamente.",
       "signOut": "Cerrar sesión",
       "print0": "Esta historia no se puede imprimir.",
       "print1": "Para imprimir esta historia, utilice el botón de impresión situado en el cuadro de diálogo para compartir.",
-      "print2": "Normalmente se puede acceder a una versión imprimible de la historia a través del cuadro de diálogo para compartir, pero el autor ha deshabilitado este cuadro de diálogo."
+      "print2": "Normalmente se puede acceder a una versión imprimible de la historia a través del cuadro de diálogo para compartir, pero el autor ha deshabilitado este cuadro de diálogo.",
+      "attention": "Atención"
     },
     "mobileView": {
       "tapForDetails": "Tocar para ver detalles",

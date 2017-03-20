@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Łącze powinno kończyć się rozszerzeniem .jpg, .png, .gif lub .bmp",
       "lblURLError": "Prawdopodobnie ten obraz nie jest prawidłowy. Podaj bezpośredni adres łącza do pliku obrazu (wtedy adres URL zwykle kończy się rozszerzeniem .jpg lub .png). Adresy łączy do witryn internetowych zawierających dany obraz są nieobsługiwane.",
       "lblURLCheck": "Sprawdzanie obrazu...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Legenda do obrazu",
       "lblLabel1": "Podpis",
       "lblLabel2": "Aktywuj tekst",
       "lblLabel3": "Brak",

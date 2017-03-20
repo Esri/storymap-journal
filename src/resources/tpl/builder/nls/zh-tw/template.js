@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "章節標題",
       "sectionContentLbl": "章節內容"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "組織主題",
+      "lblModTheme": "目前主題"
+    },
     "initPopup": {
       "title": "歡迎使用"
     },

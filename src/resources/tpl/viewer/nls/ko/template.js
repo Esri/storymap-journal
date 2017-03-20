@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "%TPL_NAME% 빌더를 사용할 수 있는 권한이 없습니다.",
       "noBuilderIE": "이 빌더는 %VERSION%. %UPGRADE% 이전 버전의 Internet Explorer에서 지원되지 않습니다.",
       "noViewerIE": "이 스토리는 %VERSION% 이전 버전의 Internet Explorer에서 지원되지 않습니다. %UPGRADE%",
+      "noViewerIE2": "지원되지 않는 이전 브라우저를 사용하여 이 스토리를 보려고 합니다. 작동되지 않는 기능이 있거나 예기치 않은 문제가 발생할 수 있습니다. Internet Explorer 11로 업그레이드하거나 Chrome 등의 다른 브라우저를 사용하세요.",
+      "noViewerIE3": "2017년 후반부터는 이 스토리를 이 브라우저에서 불러올 수 없으므로 이 스토리를 보려면 지원되는 브라우저를 사용해야 합니다.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>브라우저를 업데이트하세요</a>.",
       "mapLoadingFail": "오류가 발생했습니다. 맵을 올바르게 불러오지 않았습니다.",
       "signOut": "로그아웃",
       "print0": "죄송합니다. 이 스토리는 인쇄할 수 없습니다.",
       "print1": "이 스토리를 인쇄하려면 공유 대화 상자에 있는 인쇄 버튼을 사용하세요.",
-      "print2": "죄송합니다. 인쇄 가능한 스토리 버전은 일반적으로 공유 대화 상자를 통해 접근할 수 있지만 작성자가 이 대화 상자를 비활성화했습니다."
+      "print2": "죄송합니다. 인쇄 가능한 스토리 버전은 일반적으로 공유 대화 상자를 통해 접근할 수 있지만 작성자가 이 대화 상자를 비활성화했습니다.",
+      "attention": "주의!"
     },
     "mobileView": {
       "tapForDetails": "세부정보를 보려면 누릅니다.",

@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Nu sunteţi autorizat să utilizaţi aplicație de creare pentru %TPL_NAME%.",
       "noBuilderIE": "Instrumentul de creare nu este acceptat în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
       "noViewerIE": "Această poveste nu este suportată în versiunile Internet Explorer anterioare versiunii %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Încercaţi să vizualizaţi această poveste cu un browser vechi, care nu mai este suportat. Pot exista funcţiuni care să nu funcţioneze sau pot apărea probleme neaşteptate. Vă sugerăm să upgradaţi la Internet Explorer 11 sau să utilizaţi alt browser cum ar fi Chrome.",
+      "noViewerIE3": "Spre sfârşitul lui 2017, această poveste nu se va mai încărca pe acest browser. În acel moment, trebuie să utilizaţi un browser suportat pentru a vizualiza această poveste.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Efectuaţi un upgrade al browserului</a>.",
       "mapLoadingFail": "Ceva nu a mers bine şi harta nu a fost încărcată corect.",
       "signOut": "Ieşire",
       "print0": "Ne pare rău, acest scenariu nu poate fi imprimat.",
       "print1": "Pentru a imprima acest scenariu, folosiţi butonul de imprimare din caseta de dialog pentru partajare.",
-      "print2": "Ne pare rău, de obicei, o versiune printabilă a scenariului poate fi accesată din caseta de dialog pentru partajare, dar această casetă de dialog a fost dezactivată de autor."
+      "print2": "Ne pare rău, de obicei, o versiune printabilă a scenariului poate fi accesată din caseta de dialog pentru partajare, dar această casetă de dialog a fost dezactivată de autor.",
+      "attention": "Atenţie!"
     },
     "mobileView": {
       "tapForDetails": "Atingeţi pentru detalii",

@@ -109,6 +109,7 @@ define({
       "title": "Header",
       "logoEsriRadio": "Logo Esri",
       "logoNoneRadio": "Tanpa logo",
+      "logoOrgRadio": "Logo organisasi",
       "logoCustomRadio": "Logo saya",
       "logoCustomLabel": "Gambar:",
       "logoCustomUploadHelp": "Logo terlihat paling baik jika memiliki rasio lebar:tinggi antara 1:1 dan 5:1. Jika sebuah logo tertaut digambarkan dengan lambat, salin logo tersebut dan unggah di sini.",

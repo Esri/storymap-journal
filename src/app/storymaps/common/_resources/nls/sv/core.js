@@ -109,6 +109,7 @@ define({
       "title": "Rubrik",
       "logoEsriRadio": "Esris logotyp",
       "logoNoneRadio": "Ingen logotyp",
+      "logoOrgRadio": "Organisationens logotyp",
       "logoCustomRadio": "Min logotyp",
       "logoCustomLabel": "Bild:",
       "logoCustomUploadHelp": "Logotyper ser bäst ut om de har ett förhållande mellan bredd:höjd på 1:1 till 5:1. Om en länkad logotyp ritas långsamt, kan du spara en kopia och överföra den hit.",

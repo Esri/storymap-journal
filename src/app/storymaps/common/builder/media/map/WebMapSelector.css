@@ -160,3 +160,12 @@
 	width: 100px;
 	margin-right: -5px;
 }
+
+.webmapSelector .external-link {
+	margin-left: 20px;
+}
+
+.webmapSelector .external-link .fa,
+.webmapSelector .external-link .help {
+	margin-left: 4px;
+}

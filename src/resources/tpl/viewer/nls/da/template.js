@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Du har ikke autorisation til at bruge %TPL_NAME%-builder-programmet.",
       "noBuilderIE": "Builder-programmet understøttes ikke i Internet Explorer før version %VERSION%. %UPGRADE%",
       "noViewerIE": "Denne historie understøttes ikke i Internet Explorer før version %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Du forsøger at få vist denne historie ved hjælp af en ældre, ikke-understøttet browser. Der kan være funktioner, der ikke fungerer, eller andre uventede problemer. Vi foreslår, at du opgraderer til Internet Explorer 11 eller benytter en anden browser, f.eks. Chrome.",
+      "noViewerIE3": "I slutningen af 2017 vil denne historie ikke længere kunne vises i denne browser. På det tidspunkt skal du benytte en understøttet browser til at vise denne historie.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Opdatér din browser</a>.",
       "mapLoadingFail": "Noget gik galt, kortet blev ikke indlæst korrekt.",
       "signOut": "Log ud",
       "print0": "Beklager, denne historie kan ikke udskrives.",
       "print1": "Hvis du vil udskrive denne historie, skal du bruge udskrivningsknappen i delingsdialogboksen.",
-      "print2": "Beklager, en udskrivningsparat version af historien er typisk tilgængelig via delingsdialogboksen, men denne dialogboks er blevet deaktiveret af forfatteren."
+      "print2": "Beklager, en udskrivningsparat version af historien er typisk tilgængelig via delingsdialogboksen, men denne dialogboks er blevet deaktiveret af forfatteren.",
+      "attention": "Bemærk!"
     },
     "mobileView": {
       "tapForDetails": "Tryk for at få oplysninger",

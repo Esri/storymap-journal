@@ -109,6 +109,7 @@ define({
       "title": "頁眉",
       "logoEsriRadio": "Esri 標誌",
       "logoNoneRadio": "無標誌",
+      "logoOrgRadio": "組織標誌",
       "logoCustomRadio": "我的標誌",
       "logoCustomLabel": "圖像：",
       "logoCustomUploadHelp": "如果標誌的寬度:高度比例介於 1:1 到 5:1 之間，則會有最佳的外觀。如果緩慢地繪製連結的標誌，請儲存副本並在這裡上傳它。",

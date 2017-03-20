@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "عنوان المقطع",
       "sectionContentLbl": "محتوى المقطع"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "نُسُق المؤسسة",
+      "lblModTheme": "النُّسُق الحالي"
+    },
     "initPopup": {
       "title": "مرحباً بك في"
     },

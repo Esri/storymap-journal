@@ -44,6 +44,12 @@ define(["lib-build/tpl!./Legend",
 					color: appColors.text
 				});
 
+				var toggleFullLegend = false;
+				if (appColors.name && appColors.name.match(/-org$|-modified$/)) {
+					toggleFullLegend = true;
+				}
+				container.find('.legendContainer .content').toggleClass('full-bg', toggleFullLegend);
+
 				container.find(".titleBtn").css("color", appColors.softText);
 				container.find(".settingsGear, .collapseBtn").css("color", appColors.softBtn);
 			};

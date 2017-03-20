@@ -111,3 +111,40 @@ body.builder-mask .builder-mask {
 	display: block;
 	z-index: 3;
 }
+
+
+/* SHADOWS FOR UNEXPECTED THEME COLORS */
+
+/* outline for buttons buttons */
+.builder-shadows.media-blues-contrast .landing-btn:not(.disabled),
+.builder-shadows.media-grays-contrast .landing-btn.disabled,
+.builder-shadows.panel-blues-contrast .builder-content-panel .builder-btn,
+.builder-shadows.media-blues-contrast .layout-thumbnail .number-step1.number-1,
+.builder-shadows.panel-blues-contrast .layout-thumbnail .number-step2.number-2 {
+	border-radius: 50%;
+	box-shadow: 0 0 2px 1px white;
+}
+
+/* dark text shadow */
+.builder-shadows.media-blues-contrast.media-dark-bg #mainStagePanel .firstAddExplain .biggerText,
+.builder-shadows.panel-blues-contrast.panel-dark-bg .sectionPanel .firstAddExplain .biggerText,
+.builder-shadows.media-blues-contrast.media-dark-bg .builderLanding .landing-tour-container .landing-lbl {
+	text-shadow: 0 0 10px #333;
+}
+
+/* light text shadow */
+.builder-shadows.media-blues-contrast #mainStagePanel .firstAddExplain .biggerText,
+.builder-shadows.panel-blues-contrast .sectionPanel .firstAddExplain .biggerText,
+.builder-shadows.media-blues-contrast .builderLanding .landing-tour-container .landing-lbl,
+.builder-shadows.media-dark-contrast .landing-add-container .landing-lbl,
+.builder-shadows.media-dark-contrast #builderQuotes,
+.builder-shadows.media-dark-contrast .builderLanding .btnSeparator,
+.builder-shadows.media-dark-contrast #mainStagePanel .firstAddExplain,
+.builder-shadows.panel-dark-contrast .sectionPanel .firstAddExplain {
+	text-shadow: 0 0 10px #fff;
+}
+
+.builder-shadows.panel-dark-bg .builder-content-panel .builder-content-panel-group.active .builder-lbl,
+.builder-shadows.media-dark-contrast .builderLanding .landing-tour-container:hover .landing-lbl {
+	color: #fff;
+}

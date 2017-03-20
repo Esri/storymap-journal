@@ -109,6 +109,7 @@ define({
       "title": "Antraštė",
       "logoEsriRadio": "Esri logotipas",
       "logoNoneRadio": "Logotipo nėra",
+      "logoOrgRadio": "Organizacijos logotipas",
       "logoCustomRadio": "Mano logotipas",
       "logoCustomLabel": "Paveikslėlis:",
       "logoCustomUploadHelp": "Logotipai atrodo geriausiai, jei jų pločio ir aukščio santykis yra nuo 1:1 iki 5:1. Jei susietas logotipas atvaizduojamas lėtai, įrašykite kopiją ir įkelkite ją čia.",

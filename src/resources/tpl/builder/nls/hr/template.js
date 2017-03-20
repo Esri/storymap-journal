@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Naslov odjeljka",
       "sectionContentLbl": "Sadržaj odjeljka"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Tema organizacije",
+      "lblModTheme": "Trenutna tema"
+    },
     "initPopup": {
       "title": "Dobro došli u"
     },

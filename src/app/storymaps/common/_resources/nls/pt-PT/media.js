@@ -93,7 +93,7 @@ define({
       "lblURLPH": "A ligação pode terminar em .jpg, .png, .gif, ou .bmp",
       "lblURLError": "Esta imagem não aparenta ser válida. Por favor especifique uma ligação direta para um ficheiro de imagem (o seu URL geralmente termina em .jpg ou .png). Ligações para uma página web que contenha a imagem não irão funcionar.",
       "lblURLCheck": "A verificar imagem...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Legenda de imagem",
       "lblLabel1": "Legenda",
       "lblLabel2": "Passe sobre o texto",
       "lblLabel3": "Nenhum",

@@ -93,7 +93,7 @@ define({
       "lblURLPH": "링크는.jpg, .png, .gif 또는 .bmp 형식이어야 함",
       "lblURLError": "이 이미지는 올바른 것 같지 않습니다. 이미지 파일(URL이 대개 .jpg 또는 .png로 끝남)에 대한 직접 링크를 지정하세요. 이미지를 포함하는 웹 페이지 링크는 작동하지 않습니다.",
       "lblURLCheck": "이미지 확인 중...",
-      "lblLabel": "Image caption",
+      "lblLabel": "이미지 캡션",
       "lblLabel1": "캡션",
       "lblLabel2": "텍스트 가리키기",
       "lblLabel3": "없음",

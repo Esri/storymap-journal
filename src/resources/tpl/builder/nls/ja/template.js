@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "セクション タイトル",
       "sectionContentLbl": "セクション コンテンツ"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "組織のテーマ",
+      "lblModTheme": "現在のテーマ"
+    },
     "initPopup": {
       "title": "ようこそ"
     },

@@ -339,6 +339,17 @@ define(["dojo/_base/lang", 'storymaps/tpl/core/Helper'],
 			},
 
 			/*
+			 * organizational geocoders
+			 */
+			getAppGeocoders: function() {
+				return this.getSettings().appGeocoders;
+			},
+			setAppGeocoders: function(geocoders) {
+				_data.values.settings = _data.values.settings || {};
+				_data.values.settings.appGeocoders = geocoders;
+			},
+
+			/*
 			 * Map Journal
 			 */
 			getStory: function()

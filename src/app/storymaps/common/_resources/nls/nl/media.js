@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Koppeling moet eindigen met .jpg, .png, .gif of .bmp",
       "lblURLError": "Deze afbeelding is blijkbaar niet geldig. Geef een directe koppeling naar een afbeeldingsbestand op (uw URL eindigt doorgaans op .jpg of .png). Koppelingen naar een webpagina die een afbeelding bevat, functioneren niet.",
       "lblURLCheck": "Afbeelding bekijken...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Bijschrift afbeelding",
       "lblLabel1": "Bijschrift",
       "lblLabel2": "Over tekst bewegen",
       "lblLabel3": "Geen",

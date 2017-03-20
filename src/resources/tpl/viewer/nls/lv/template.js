@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Jums nav autorizācijas izmantot %TPL_NAME% veidotāju.",
       "noBuilderIE": "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
       "noViewerIE": "Šis stāsts netiek atbalstīts Internet Explorer versijās, kas ir vecākas par %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Jūs mēģināt skatīt šo stāstu, izmantojot vecāku, neatbalstītu pārlūku. Var gadīties, ka nedarbojas kāds elements vai rodas citas neparedzētas problēmas. Iesakām jaunināt uz Internet Explorer 11 vai izmantot citu pārlūku, piemēram, Chrome.",
+      "noViewerIE3": "No 2017. gada beigām šo stāstu vairs nevarēs ielādēt šajā pārlūkā. Pēc tam šī stāsta skatīšanai ir jāizmanto atbalstīts pārlūks.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
       "mapLoadingFail": "Ir atgadījusies kļūme — karte netika ielādēta pareizi.",
       "signOut": "Izrakstīties",
       "print0": "Diemžēl šo stāstu nav iespējams drukāt.",
       "print1": "Lai drukātu šo stāstu, izmantojiet drukas pogu, kas atrodas koplietošanas dialogā.",
-      "print2": "Atvainojiet, stāsta drukas versija parasti ir pieejama koplietošanas dialogā, bet autors šo dialogu ir atspējojis."
+      "print2": "Atvainojiet, stāsta drukas versija parasti ir pieejama koplietošanas dialogā, bet autors šo dialogu ir atspējojis.",
+      "attention": "Uzmanību!"
     },
     "mobileView": {
       "tapForDetails": "Pieskarieties, lai iegūtu detalizētu informāciju",

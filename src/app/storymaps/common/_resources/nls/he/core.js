@@ -109,6 +109,7 @@ define({
       "title": "כותרת עליונה",
       "logoEsriRadio": "לוגו של Esri",
       "logoNoneRadio": "ללא לוגו",
+      "logoOrgRadio": "הלוגו של הארגון",
       "logoCustomRadio": "הלוגו שלי",
       "logoCustomLabel": "תמונה:",
       "logoCustomUploadHelp": "לוגואים נראים טוב יותר אם יחס בגובה לרוחב שלהם הוא בין 1:1 ל-5:1. אם לוגו מקושר נפתח באיטיות, שמור עותק שלו וטען אותו כאן.",

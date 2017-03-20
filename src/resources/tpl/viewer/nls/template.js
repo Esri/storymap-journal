@@ -35,12 +35,15 @@ define({
 				notAuthorizedBuilder: "You are not authorized to use %TPL_NAME% builder.",
 				noBuilderIE: "The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%",
 				noViewerIE: "This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%",
+				noViewerIE2: "You are attempting to view this story using an older, unsupported browser. There may be features that do not work or other unexpected issues. We suggest you upgrade to Internet Explorer 11 or use another browser, such as Chrome.",
+				noViewerIE3: "In late 2017, this story will no longer load on this browser. At that time, you must use a supported browser to view this story.",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>.",
 				mapLoadingFail: "Something went wrong, the map did not load correctly.",
 				signOut: "Sign Out",
 				print0: "Sorry, this story cannot be printed.",
 				print1: "To print this story, please use the print button located in the share dialog.",
-				print2: "Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author."
+				print2: "Sorry, a printable version of the story is typically accessible through the share dialog, but this dialog has been disabled by the author.",
+				attention: "Attention!"
 			},
 			mobileView: {
 				tapForDetails: "Tap for details",
@@ -116,6 +119,7 @@ define({
 	"fi": 1,
 	"fr": 1,
 	"he": 1,
+	"hi": 1,
 	"hr": 1,
 	"id": 1,
 	"it": 1,
@@ -136,6 +140,6 @@ define({
 	"tr": 1,
 	"vi": 1,
 	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 
+	"zh-hk": 1,
+	"zh-tw": 1
 });

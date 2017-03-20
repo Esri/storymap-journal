@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Teil pole õigust koosturit %TPL_NAME% kasutada.",
       "noBuilderIE": "Internet Exploreri versioonist %VERSION% varasemad versioonid ei toeta koostajat. %UPGRADE%",
       "noViewerIE": "Seda lugu ei toetata Internet Exploreri varasemas versioonis %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Püüate seda lugu vaadata vanemas brauseris, mida ei toetata. Mõned funktsioonid ei pruugi töötada ning ilmneda võib ootamatuid probleeme. Soovitame kasutada brauserit Internet Explorer 11 või mõnda muud brauserit (nt Chrome’i).",
+      "noViewerIE3": "2017. aasta lõpus seda lugu selles brauseris enam ei laadita. Siis peate selle loo vaatamiseks kasutama toetatud brauserit.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Värskendage oma brauserit</a>.",
       "mapLoadingFail": "Midagi läks valesti ning kaarti ei laaditud õigesti.",
       "signOut": "Logi välja",
       "print0": "Kahjuks ei saa seda lugu printida.",
       "print1": "Loo printimiseks kasutage jagamise dialoogis olevat printimisnuppu.",
-      "print2": "Üldjuhul pääseb loo prinditava versiooni juurde jagamisdialoogi kaudu, kuid kahjuks on autor selle dialoogi keelanud."
+      "print2": "Üldjuhul pääseb loo prinditava versiooni juurde jagamisdialoogi kaudu, kuid kahjuks on autor selle dialoogi keelanud.",
+      "attention": "Tähelepanu!"
     },
     "mobileView": {
       "tapForDetails": "Üksikasjade kuvamiseks puudutage",

@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "섹션 제목",
       "sectionContentLbl": "섹션 콘텐츠"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "기관 테마",
+      "lblModTheme": "현재 테마"
+    },
     "initPopup": {
       "title": "시작"
     },

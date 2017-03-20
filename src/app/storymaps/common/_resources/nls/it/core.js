@@ -109,6 +109,7 @@ define({
       "title": "Intestazione",
       "logoEsriRadio": "Logo Esri",
       "logoNoneRadio": "Nessun logo",
+      "logoOrgRadio": "Logo organizzazione",
       "logoCustomRadio": "Logo personale",
       "logoCustomLabel": "Immagine:",
       "logoCustomUploadHelp": "I logo vengono visualizzati in modo ottimale se il relativo rapporto larghezza/altezza è compreso tra 1:1 e 5:1. Se la visualizzazione di un logo collegato è lenta, salvare una copia e copiarla qui.",

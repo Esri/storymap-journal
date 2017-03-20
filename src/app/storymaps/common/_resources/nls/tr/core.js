@@ -109,6 +109,7 @@ define({
       "title": "Başlık",
       "logoEsriRadio": "Esri logosu",
       "logoNoneRadio": "Logo yok",
+      "logoOrgRadio": "Kuruluş logosu",
       "logoCustomRadio": "Logom",
       "logoCustomLabel": "Görüntü:",
       "logoCustomUploadHelp": "Logolar genişlik:yükseklik oranları 1:1 ve 5:1 arasında olduğunda en iyi biçimde görüntülenir. Bağlantılı bir logo yavaş çiziliyorsa, bir kopyasını kaydederek buraya yükleyin.",

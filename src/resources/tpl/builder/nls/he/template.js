@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "כותרת מקטע",
       "sectionContentLbl": "תוכן מקטע"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "ערכת נושא של ארגון",
+      "lblModTheme": "ערכת נושא נוכחית"
+    },
     "initPopup": {
       "title": "ברוכים הבאים אל"
     },

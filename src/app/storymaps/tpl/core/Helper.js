@@ -13,21 +13,29 @@ define([
       // might as well refresh the token...?
       url = this.removeToken(url);
 
-      var token = '';
+      var token = this.getToken();
 
-      if (app.portal && app.portal.getPortalUser()) {
-        token = app.portal.getPortalUser().credential.token;
+      if (!token) {
+        console.warn('no token found even though token needed');
+        return url;
       }
-      else if (IdentityManager.findCredential(document.location.origin)) {
-        token = IdentityManager.findCredential(document.location.origin).token;
-      }
-      else if (IdentityManager.findCredential(app.portal.url)) {
-        token = IdentityManager.findCredential(app.portal.url).token;
-      }
-      else {
-        token = this.getCookieToken();
-      }
+
       return url + '?token=' + token;
+    },
+
+    getToken: function() {
+      if (app.portal && app.portal.getPortalUser()) {
+        return app.portal.getPortalUser().credential.token;
+      }
+      var originCredential = IdentityManager.findCredential(document.location.origin);
+      if (originCredential) {
+        return originCredential.token;
+      }
+      var urlCredential = IdentityManager.findCredential(app.portal.url);
+      if (urlCredential) {
+        return IdentityManager.findCredential(app.portal.url).token;
+      }
+      return this.getCookieToken();
     },
 
     isAppResource: function(url, appItem) {

@@ -69,13 +69,21 @@ body.layout-float-left .floatingPanel .navDots {
 	right: inherit;
 }
 
+body.layout-float-left .floatingPanel .appTitle.anchored {
+	padding-left: calc(34px + 2%);
+}
+
+body.layout-float-right .floatingPanel .appTitle.anchored {
+	padding-left: 9%;
+}
+
 /*
  * Section block
  */
 
 .floatingPanel .section {
 	position: relative;
-	padding: 0 2% 0 5%;
+	padding: 0 2% 0 10%;
 	width: 100%;
 	overflow: hidden;
 }

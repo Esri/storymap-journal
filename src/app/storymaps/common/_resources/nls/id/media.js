@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Tautan harus diakhiri dengan .jpg, .png, .gif, atau .bmp",
       "lblURLError": "Gambar ini tampak tidak valid. Tentukan tautan langsung ke file gambar (URL biasanya akan berakhir dengan .jpg or .png). Menautkan ke halaman web yang berisikan gambar tidak akan bekerja.",
       "lblURLCheck": "Memeriksa gambar...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Keterangan gambar",
       "lblLabel1": "Keterangan",
       "lblLabel2": "Teks mengambang",
       "lblLabel3": "Tidak ada",

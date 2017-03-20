@@ -218,31 +218,31 @@
 	margin-left: 20px;
 }
 
-.builderHelp .layout-thumbnail span.rotate {
+.builderHelp .layout-thumbnail .rotate {
 	margin-top: -3px;
 }
 
-.builderHelp .layout-thumbnail.layout-float.size-medium span.rotate {
+.builderHelp .layout-thumbnail.layout-float.size-medium .rotate {
 	margin-left: 2px;
 }
 
-.builderHelp .layout-thumbnail.layout-float.size-small span.rotate {
+.builderHelp .layout-thumbnail.layout-float.size-small .rotate {
 	margin-left: -4px;
 }
 
-.builderHelp .layout-thumbnail.layout-float.size-large span.rotate {
+.builderHelp .layout-thumbnail.layout-float.size-large .rotate {
 	margin-left: 10px;
 }
 
-.builderHelp .layout-thumbnail.layout-side.size-medium span.rotate {
+.builderHelp .layout-thumbnail.layout-side.size-medium .rotate {
 	margin-left: 3px;
 }
 
-.builderHelp .layout-thumbnail.layout-side.size-small span.rotate {
+.builderHelp .layout-thumbnail.layout-side.size-small .rotate {
 	margin-left: -2px;
 }
 
-.builderHelp .layout-thumbnail.layout-side.size-large span.rotate {
+.builderHelp .layout-thumbnail.layout-side.size-large .rotate {
 	margin-left: 14px;
 }
 

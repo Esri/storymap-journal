@@ -109,6 +109,7 @@ define({
       "title": "Logo",
       "logoEsriRadio": "Esri-logo",
       "logoNoneRadio": "Intet logo",
+      "logoOrgRadio": "Organisationslogo",
       "logoCustomRadio": "Mit logo",
       "logoCustomLabel": "Billede:",
       "logoCustomUploadHelp": "Logoer ser bedst ud, hvis de har et bredde:højdeforhold mellem 1:1 og 5:1. Hvis et linket logo tegnes langsomt, kan du gemme en kopi og overføre den hertil.",

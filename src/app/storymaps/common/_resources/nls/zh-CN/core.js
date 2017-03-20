@@ -109,6 +109,7 @@ define({
       "title": "页眉",
       "logoEsriRadio": "Esri 徽标",
       "logoNoneRadio": "无徽标",
+      "logoOrgRadio": "组织徽标",
       "logoCustomRadio": "我的徽标",
       "logoCustomLabel": "图像：",
       "logoCustomUploadHelp": "当徽标的宽高比在 1:1 到 5:1 之间时，其显示效果最佳。如果已链接徽标绘制缓慢，请保存其副本并在此处上传。",

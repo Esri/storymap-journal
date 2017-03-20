@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Liên kết phải kết thúc bằng .jpg, .png, .gif, hoặc .bmp",
       "lblURLError": "Hình ảnh này dường như không hợp lệ. Vui lòng chỉ định một liên kết trực tiếp đến tệp hình ảnh (URL của bạn thường sẽ kết thúc bằng .jpg hoặc .png). Các liên kết đến trang web chứa một hình ảnh sẽ không hoạt động.",
       "lblURLCheck": "Đang kiểm tra hình ảnh...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Chú thích hình ảnh",
       "lblLabel1": "Chú thích",
       "lblLabel2": "Di chuột qua văn bản",
       "lblLabel3": "Không có",

@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Название раздела",
       "sectionContentLbl": "Содержание раздела"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Тема организации",
+      "lblModTheme": "Текущая тема"
+    },
     "initPopup": {
       "title": "Добро пожаловать"
     },

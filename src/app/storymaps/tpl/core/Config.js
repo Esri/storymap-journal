@@ -1,4 +1,4 @@
-define([], 
+define([],
 	function(){
 		// Header default configuration
 		var HEADER_LOGO_URL = "resources/tpl/viewer/icons/esri-logo.png",
@@ -46,11 +46,13 @@ define([],
 			thumbHTML += '<div class="layout-selected"></div>';
 
 			if ( layout == "side" ) {
-				blockTpl = '<div class="layout-block" style="float: left; margin-left: 3%; width: $size$%; background-color:$color$; $styleOpt$"><span class="thumb-content $contentClass$" style="$contentStyle$">$content$</span></div>';
+				blockTpl = '<div class="layout-block" style="float: left; margin-left: 3%; width: $size$%; background-color:$color$; $styleOpt$"><div class="thumb-content $contentClass$" style="$contentStyle$">$content$</div></div>';
 
 				//
 				// Size
 				//
+
+				// sizes of color blocks, in percentages. = 87%.
 				var sizeDiv1 = 8,
 					sizeDiv2 = 20,
 					sizeDiv3 = 59;
@@ -143,7 +145,7 @@ define([],
 				if ( options.size == "small" )
 					sizePanel = 18;
 
-				blockTpl = '<div class="layout-block layout-float $layout-left$" style="$basestyle$ width: $size$%; background-color:$color$; $styleOpt$"><span class="thumb-content $contentClass$" style="$contentStyle$">$content$</span></div>';
+				blockTpl = '<div class="layout-block layout-float $layout-left$" style="$basestyle$ width: $size$%; background-color:$color$; $styleOpt$"><div class="thumb-content $contentClass$" style="$contentStyle$">$content$</div></div>';
 				blockTpl = blockTpl.replace('$layout-left$', panelLeft ? 'layout-left' : '');
 
 				block1HTML = blockTpl
@@ -203,6 +205,19 @@ define([],
 			block2HTML = block2HTML.replace('$contentStyle$', '');
 
 			thumbHTML += block1HTML + block2HTML;
+			if (!contentStep && !contentSize && !contentLabel) {
+				if (theme && theme.name && theme.name.match) {
+					var themeLabel;
+					if (theme.name.match(/-org$|-modified$/)) {
+						if (theme.name.match(/-modified$/)) {
+							themeLabel = i18n.builder.settingsThemeOptions.lblModTheme;
+						} else {
+							themeLabel = i18n.builder.settingsThemeOptions.lblOrgTheme;
+						}
+						thumbHTML += '<div class="theme-label">' + themeLabel + '</div>';
+					}
+				}
+			}
 			thumbHTML += '</div>';
 
 			return thumbHTML;

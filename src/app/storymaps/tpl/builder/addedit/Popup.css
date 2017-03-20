@@ -169,39 +169,39 @@ input[type=text]:focus, textarea:focus {
 	height: 99px;
 }
 
-.addEditPopup .navHelpContainer .layout-thumbnail span.rotate {
+.addEditPopup .navHelpContainer .layout-thumbnail .rotate {
 	margin-top: -7px;
 }
 
-.addEditPopup .navHelpContainer .layout-thumbnail.layout-float.size-medium span.rotate {
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-float.size-medium .rotate {
 	margin-left: 2px;
 }
 
-.addEditPopup .navHelpContainer .layout-thumbnail.layout-float.size-small span.rotate {
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-float.size-small .rotate {
 	margin-left: -2px;
 }
 
-.addEditPopup .navHelpContainer .layout-thumbnail.layout-float.size-large span.rotate {
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-float.size-large .rotate {
 	margin-left: 10px;
 }
 
-.layout-thumbnail.layout-float.pos-left.size-large .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+.layout-thumbnail.layout-float.pos-left.size-large .layout-block.layout-float:nth-child(2) div:not(.rotate) {
 	margin-left: 8px;
 }
 
-.layout-thumbnail.layout-right.pos-right.size-large .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+.layout-thumbnail.layout-right.pos-right.size-large .layout-block.layout-float:nth-child(2) div:not(.rotate) {
 	margin-left: -45px;
 }
 
-.addEditPopup .navHelpContainer .layout-thumbnail.layout-side.size-medium span.rotate {
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-side.size-medium .rotate {
 	margin-left: 3px;
 }
 
-.addEditPopup .navHelpContainer .layout-thumbnail.layout-side.size-small span.rotate {
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-side.size-small .rotate {
 	margin-left: -2px;
 }
 
-.addEditPopup .navHelpContainer .layout-thumbnail.layout-side.size-large span.rotate {
+.addEditPopup .navHelpContainer .layout-thumbnail.layout-side.size-large .rotate {
 	margin-left: 14px;
 }
 

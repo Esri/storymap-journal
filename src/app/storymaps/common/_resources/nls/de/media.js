@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Link sollte mit .jpg, .png, .gif oder .bmp enden",
       "lblURLError": "Dieses Bild ist scheinbar nicht gültig. Geben Sie einen direkten Link zu einer Bilddatei an (die URL endet in der Regel mit .jpg oder .png). Links zu einer Webseite, die Bilder enthält, funktionieren nicht.",
       "lblURLCheck": "Bild wird überprüft...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Bildüberschrift",
       "lblLabel1": "Beschriftung",
       "lblLabel2": "Hovertext",
       "lblLabel3": "Keine",

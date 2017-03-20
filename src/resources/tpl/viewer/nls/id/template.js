@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Anda tidak diizinkan menggunakan penyusun %TPL_NAME%.",
       "noBuilderIE": "Penyusun tidak mendukung Internet Explorer sebelum versi %VERSION%. %UPGRADE%",
       "noViewerIE": "Cerita ini tidak didukung di Internet Explorer sebelum versi %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Anda mencoba melihat cerita ini menggunakan browser yang lama dan tidak didukung. Mungkin ada fitur yang tidak berfungsi atau masalah yang tidak terduga lainnya. Sebaiknya Anda memperbaruinya ke Internet Explorer 11 atau gunakan browser lain, seperti Chrome.",
+      "noViewerIE3": "Di akhir 2017, cerita ini tidak akan dimuat lagi di browser ini. Pada saat itu, Anda harus menggunakan browser yang didukung untuk melihat cerita ini.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Perbarui browser Anda</a>.",
       "mapLoadingFail": "Terjadi kesalahan, peta tidak dimuat dengan benar.",
       "signOut": "Keluar",
       "print0": "Maaf, cerita ini tidak dapat dicetak.",
       "print1": "Untuk mencetak cerita ini, gunakan tombol cetak yang terletak di dialog 'berbagi'.",
-      "print2": "Maaf, versi cerita yang dapat dicetak biasanya dapat diakses melalui dialog 'berbagi', tetapi dialog ini telah dinonaktifkan oleh penulis."
+      "print2": "Maaf, versi cerita yang dapat dicetak biasanya dapat diakses melalui dialog 'berbagi', tetapi dialog ini telah dinonaktifkan oleh penulis.",
+      "attention": "Perhatian!"
     },
     "mobileView": {
       "tapForDetails": "Ketuk untuk melihat detailnya",

@@ -173,18 +173,24 @@ define(["lib-build/tpl!./FloatingPanelSection",
 
 			this.toggleSwitchBuilderButton = function(state)
 			{
-				container.find('.switchBuilder')
+				var switchBuilderBtn = container.find('.switchBuilder')
 					.html('<span class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
 					.off('click')
 					.click(CommonHelper.switchToBuilder)
 					.toggle(state);
 
+				var switchBg = switchBuilderBtn.css('background-color');
+				var colors = app.data.getWebAppData().getTheme().colors;
+				if (switchBg && colors && colors.panel && CommonHelper.colorsAreSimilar(switchBg, colors.panel)) {
+					switchBuilderBtn.css('box-shadow', '0 0 2px 1px white');
+				}
+
 				if ( has("ff") || has("ie") || has("trident") == 7) {
-					container.find('.switch-builder-close').hide();
+					switchBuilderBtn.find('.switch-builder-close').hide();
 				}
 				else {
-					container.find('.switch-builder-close').click(function(){
-						container.find('.switchBuilder').hide();
+					switchBuilderBtn.find('.switch-builder-close').click(function(){
+						switchBuilderBtn.hide();
 						$(window).resize();
 						return false;
 					});
@@ -720,10 +726,17 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				// Sharing
 				//
 
-				container.find(".share-story")
+				var shareBtn = container.find(".share-story")
 					.html(i18n.viewer.headerFromCommon.notshared)
 					.append(closeBtn2)
 					.toggle(app.data.getWebAppItem().access == "private" || app.data.getWebAppItem().access == "shared");
+
+				var shareBg = shareBtn.css('background-color');
+				var colors = app.data.getWebAppData().getTheme().colors;
+				if (shareBg && colors && colors.panel && CommonHelper.colorsAreSimilar(shareBg, colors.panel)) {
+					shareBtn.css('box-shadow', '0 0 2px 1px white');
+				}
+
 			}
 
 

@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Tiêu đề phần",
       "sectionContentLbl": "Nội dung phần"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Chủ đề Tổ chức",
+      "lblModTheme": "Chủ đề Hiện tại"
+    },
     "initPopup": {
       "title": "Chào mừng đến với"
     },

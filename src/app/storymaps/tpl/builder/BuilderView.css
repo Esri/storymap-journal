@@ -102,7 +102,7 @@ body.layout-float-right .mapConfigOverlay.toc {
 	display: inline-block;
 	position: relative;
 	width: 150px;
-	height: 115px;
+	height: 80px;
 	margin-right: 0;
 	margin-top: 0;
 	border-radius: 8px;
@@ -212,19 +212,19 @@ body.layout-float-right .mapConfigOverlay.toc {
  * Layout/size/position text rotation adjustement
  */
 
-.layout-thumbnail span.rotate {
+.layout-thumbnail .rotate {
 	margin-top: 15px;
 }
 
-.layout-thumbnail.layout-float.size-medium span.rotate {
+.layout-thumbnail.layout-float.size-medium .rotate {
 	margin-left: 10px;
 }
 
-.layout-thumbnail.layout-float.size-small span.rotate {
+.layout-thumbnail.layout-float.size-small .rotate {
 	margin-left: 2px;
 }
 
-.layout-thumbnail.layout-float.size-large span.rotate {
+.layout-thumbnail.layout-float.size-large .rotate {
 	margin-left: 20px;
 }
 
@@ -232,27 +232,31 @@ body.layout-float-right .mapConfigOverlay.toc {
  * Label
  */
 
-.layout-thumbnail.layout-float.pos-right.size-medium .layout-block.layout-float:nth-child(2) span:not(.rotate) {
-	margin-left: -48px;
-}
+ /* sidebar on the right */
 
-.layout-thumbnail.layout-float.pos-right.size-small .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+.layout-thumbnail.layout-float.pos-right.size-small .layout-block.layout-float:nth-child(2) div:not(.rotate) {
 	margin-left: -38px;
 }
 
-.layout-thumbnail.layout-float.pos-right.size-large .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+.layout-thumbnail.layout-float.pos-right.size-medium .layout-block.layout-float:nth-child(2) div:not(.rotate) {
+	margin-left: -48px;
+}
+
+.layout-thumbnail.layout-float.pos-right.size-large .layout-block.layout-float:nth-child(2) div:not(.rotate) {
 	margin-left: -55px;
 }
 
-.layout-thumbnail.layout-float.pos-left.size-medium .layout-block.layout-float:nth-child(2) span:not(.rotate) {
-	margin-left: 14px;
-}
+ /* sidebar on the left */
 
-.layout-thumbnail.layout-float.pos-left.size-small .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+.layout-thumbnail.layout-float.pos-left.size-small .layout-block.layout-float:nth-child(2) div:not(.rotate) {
 	margin-left: 6px;
 }
 
-.layout-thumbnail.layout-float.pos-left.size-large .layout-block.layout-float:nth-child(2) span:not(.rotate) {
+.layout-thumbnail.layout-float.pos-left.size-medium .layout-block.layout-float:nth-child(2) div:not(.rotate) {
+	margin-left: 14px;
+}
+
+.layout-thumbnail.layout-float.pos-left.size-large .layout-block.layout-float:nth-child(2) div:not(.rotate) {
 	margin-left: 22px;
 }
 
@@ -260,38 +264,48 @@ body.layout-float-right .mapConfigOverlay.toc {
  * Step Number
  */
 
-.layout-thumbnail.layout-float.pos-right.size-medium .layout-block.layout-float:nth-child(2) .number {
-	margin-left: -34px !important;
-}
-
 .layout-thumbnail.layout-float.pos-right.size-small .layout-block.layout-float:nth-child(2) .number {
 	margin-left: -32px !important;
+}
+
+.layout-thumbnail.layout-float.pos-right.size-medium .layout-block.layout-float:nth-child(2) .number {
+	margin-left: -34px !important;
 }
 
 .layout-thumbnail.layout-float.pos-right.size-large .layout-block.layout-float:nth-child(2) .number {
 	margin-left: -40px !important;
 }
 
-.layout-thumbnail.layout-float.pos-left.size-medium .layout-block.layout-float:nth-child(2) .number {
-	margin-left: 0px !important;
-}
-
 .layout-thumbnail.layout-float.pos-left.size-small .layout-block.layout-float:nth-child(2) .number {
 	margin-left: 4px !important;
+}
+
+.layout-thumbnail.layout-float.pos-left.size-medium .layout-block.layout-float:nth-child(2) .number {
+	margin-left: 0px !important;
 }
 
 .layout-thumbnail.layout-float.pos-left.size-large .layout-block.layout-float:nth-child(2) .number {
 	margin-left: 8px !important;
 }
 
-.layout-thumbnail.layout-side.size-medium span.rotate {
-	margin-left: 10px;
-}
-
-.layout-thumbnail.layout-side.size-small span.rotate {
+.layout-thumbnail.layout-side.size-small .rotate {
 	margin-left: 3px;
 }
 
-.layout-thumbnail.layout-side.size-large span.rotate {
+.layout-thumbnail.layout-side.size-medium .rotate {
+	margin-left: 10px;
+}
+
+.layout-thumbnail.layout-side.size-large .rotate {
 	margin-left: 24px;
+}
+
+/* theme label */
+
+.layout-thumbnail .theme-label {
+	font-size: 10px;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	text-align: center;
 }

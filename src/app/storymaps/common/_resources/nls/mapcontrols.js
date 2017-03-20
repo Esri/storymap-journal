@@ -23,6 +23,7 @@ define({
 	"fi": 1,
 	"fr": 1,
 	"he": 1,
+	"hi": 1,
 	"hr": 1,
 	"id": 1,
 	"it": 1,
@@ -43,6 +44,6 @@ define({
 	"tr": 1,
 	"vi": 1,
 	"zh-cn": 1,
-	"zh-hk": 1, 
-	"zh-tw": 1 
+	"zh-hk": 1,
+	"zh-tw": 1
 });

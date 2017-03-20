@@ -1,0 +1,27 @@
+.geocoderBtn {
+	position: absolute;
+	top: 125px;
+	border: none !important;
+	left: 20px;
+}
+
+.geocoderBtn .searchGroup {
+  font-family: 'opensans_regular', sans-serif;
+}
+
+.mapContainer.has-locator .geocoderBtn {
+	top: 170px;
+}
+
+.mapContainer .searchGroup.hasButtonMode .searchBtn {
+  padding: 6px;
+}
+
+.mapContainer .searchGroup.hasButtonMode.searchCollapsed .searchBtn {
+  padding: 5px;
+}
+
+.arcgisSearch .hasButtonMode.searchExpanded.hasMultipleSources .searchExpandContainer,
+.arcgisSearch .hasButtonMode.hasMultipleSources .searchAnimate {
+  width: 270px;
+}

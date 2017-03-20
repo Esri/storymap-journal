@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "U bent niet gemachtigd om %TPL_NAME% builder te gebruiken.",
       "noBuilderIE": "De builder wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
       "noViewerIE": "Dit verhaal wordt niet ondersteund op eerdere versies van Internet Explorer dan versie %VERSION%. %UPGRADE%",
+      "noViewerIE2": "U probeert dit verhaal te bekijken met behulp van een oudere, niet-ondersteunde browser. Er kunnen functies niet werken of er kunnen andere onverwachte problemen ontstaan. Wij raden u aan te upgraden naar Internet Explorer 11 of een andere browser te gebruiken, zoals Chrome.",
+      "noViewerIE3": "In het najaar van 2017 zal dit verhaal niet meer laden op deze browser. Vanaf dat moment moet u een ondersteunde browser gebruiken om dit verhaal te bekijken.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Werk uw browser bij</a>.",
       "mapLoadingFail": "Er is een probleem opgetreden. De kaart is niet correct geladen.",
       "signOut": "Afmelden",
       "print0": "Onze excuses, dit verhaal kan niet worden afgedrukt.",
       "print1": "Om dit verhaal af te drukken, gebruik de knop Afdrukken in het dialoogvenster Delen.",
-      "print2": "Onze excuses, een afdrukbare versie van het verhaal is gewoonlijk beschikbaar via het dialoogvenster Delen, maar dit dialoogvenster is door de auteur uitgeschakeld."
+      "print2": "Onze excuses, een afdrukbare versie van het verhaal is gewoonlijk beschikbaar via het dialoogvenster Delen, maar dit dialoogvenster is door de auteur uitgeschakeld.",
+      "attention": "Let op!"
     },
     "mobileView": {
       "tapForDetails": "Tik voor details",

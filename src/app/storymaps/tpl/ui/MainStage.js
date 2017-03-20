@@ -614,7 +614,8 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					//
 
 					var overviewSettings = media.webmap.overview || {},
-						legendSettings = media.webmap.legend || {};
+						legendSettings = media.webmap.legend || {},
+						geocoderSettings = media.webmap.geocoder || {};
 
 					// If it's a Main Stage Action, look to use the section Main Stage media
 					//  configuration IF it's a webmap
@@ -633,6 +634,10 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						app.maps[media.webmap.id].legend.toggle(legendSettings.enable);
 						app.maps[media.webmap.id].legend.toggleExpanded(legendSettings.openByDefault);
 						app.maps[media.webmap.id].legend.setSettings(legendSettings);
+					}
+
+					if ( geocoderSettings.enable !== undefined ) {
+						app.maps[media.webmap.id].geocoder.toggle(geocoderSettings.enable);
 					}
 					/*	*/
 					//
@@ -671,6 +676,10 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						var layerIdx = popupCfg.layerId.split('_').slice(-1).join('_'),
 							layerUrl = layer2.url + '/' + layerIdx;
 
+						var w; // walker
+						if ((w = layer2) && (w = w.infoTemplates) && (w = w[layerIdx]) && (w = w.layerUrl)) {
+							layerUrl = w;
+						}
 						applyPopupConfigurationStep2Alt(popupCfg, index, serviceId, layerIdx, layerUrl);
 					}
 					// On FS the layer will be null until loaded...

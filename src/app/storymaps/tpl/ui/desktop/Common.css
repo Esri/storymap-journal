@@ -31,7 +31,7 @@
 .sectionPanel .linkSocialContainer {
 	position:absolute;
 	top: 19px;
-	left: 25px;
+	left: 35px;
 	z-index: 2;
 	font-size: 15px;
 }
@@ -82,7 +82,7 @@
 	max-height: 0;
 	text-align: left;
 	margin-top: -6px;
-	padding: 0 25px 4px 25px;
+	padding: 0 35px 4px 35px;
 	transition: max-height .3s;
 	overflow: hidden;
 	visibility: hidden;
@@ -394,3 +394,4 @@ body.layout-float-right .floatingPanel .scroll {
     bottom: 10px;
     z-index: 31;
 }
+

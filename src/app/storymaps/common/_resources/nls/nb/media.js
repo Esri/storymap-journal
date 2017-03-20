@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Koblinger må slutte med  .jpg, .png, .gif, eller .bmp.",
       "lblURLError": "Dette bildet ser ikke ut til å være gyldig. Angi en direkte kobling til en bildefil (URL-adressen skal normalt ende på .jpg eller .png). Koblinger til en webside som inneholder et bilde, kommer ikke til å fungere.",
       "lblURLCheck": "Kontrollerer bilde...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Bildetekst",
       "lblLabel1": "Undertekst",
       "lblLabel2": "Tekst med musepekeren over",
       "lblLabel3": "Ingen",

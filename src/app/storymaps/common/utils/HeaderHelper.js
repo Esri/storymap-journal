@@ -12,16 +12,29 @@ define([
 
 		function resizeLinkContainer(container)
 		{
-			if ( container.find(".linkContainer").parent().length ) {
-				container.find(".linkContainer").css(
-						"width",
-						// TODO remove that ugly hack (186 is the width of the responsive view header container)
-						(container.find(".logoContainer").position()||{ left: 186 }).left
-						- container.find(".linkContainer").parent().position().left
+
+			var linkContainer = container.find('.linkContainer');
+			var parentContainer = linkContainer.parent();
+
+			if ( parentContainer.length) {
+				var parentLeftPosition;
+				if ($('body').hasClass('layout-float-right')) {
+					parentLeftPosition = container.width() * 0.09;
+				} else if ($('body').hasClass('layout-float-left')) {
+					parentLeftPosition = 34 + container.width() * 0.02;
+				} else {
+					parentLeftPosition = 35;
+				}
+				parentContainer.css('left', Math.round(parentLeftPosition));
+
+				linkContainer.css({
+					// TODO remove that ugly hack (186 is the width of the responsive view header container)
+					width: (container.find(".logoContainer").position()||{ left: 186 }).left
+						- parentLeftPosition
 						- container.find(".shareBtns").outerWidth()
 						// need a margin if there is a logo
 						- ($(".logoContainer").width() > 1 ? 14 : 4)
-					);
+				});
 			}
 		}
 

@@ -37,6 +37,10 @@ body:not(.mobile-view).layout-float-left .esriSimpleSlider {
 	left: auto;
 	right: 20px
 }
+body:not(.mobile-view).layout-float-left .geocoderBtn {
+	left: auto;
+	right: 20px;
+}
 
 body.layout-float .overviewContainer,
 body.layout-float .legendContainer {

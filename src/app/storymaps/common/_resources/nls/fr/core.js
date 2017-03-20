@@ -109,6 +109,7 @@ define({
       "title": "En-tête",
       "logoEsriRadio": "Logo Esri",
       "logoNoneRadio": "Aucun logo",
+      "logoOrgRadio": "Logo de l’organisation",
       "logoCustomRadio": "Mon logo",
       "logoCustomLabel": "Image :",
       "logoCustomUploadHelp": "Les logos ont un meilleur rendu lorsque leur rapport largeur/hauteur est compris entre 1:1 et 5:1. Si un logo accessible par un lien s'affiche lentement, enregistrez-en une copie et chargez-la ici.",

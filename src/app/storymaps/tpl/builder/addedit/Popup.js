@@ -111,16 +111,18 @@ define(["lib-build/tpl!./Popup",
 				});
 
 				// Navigation bar tooltip
-				container.find('.navHelp').tooltip('destroy').tooltip({
-					title: app.appCfg.getLayoutThumnail({
+				container.find('.navHelp')
+					.attr('data-original-title', app.appCfg.getLayoutThumnail({
 						layout: WebApplicationData.getLayoutId(),
 						options: WebApplicationData.getLayoutOptions().layoutCfg,
 						theme: WebApplicationData.getTheme().colors,
 						contentLabel: true
-					}),
-					html: true,
-					trigger: 'hover'
-				});
+					}))
+					.tooltip({
+						html: true,
+						trigger: 'hover'
+					})
+					.tooltip('fixTitle');
 
 				_viewMainStage.present(
 					{

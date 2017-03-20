@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Saites beigās ir jābūt .jpg, .png, .gif vai .bmp",
       "lblURLError": "Šķiet, ka šis attēls nav derīgs. Lūdzu, norādiet tiešu saiti uz attēla failu (parasti URL beidzas ar .jpg vai .png). Saites uz web lapu, kurā atrodas attēls, nedarbosies.",
       "lblURLCheck": "Notiek attēla pārbaude...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Attēla paraksts",
       "lblLabel1": "Uzraksts",
       "lblLabel2": "Novietot virs teksta",
       "lblLabel3": "Neviens",

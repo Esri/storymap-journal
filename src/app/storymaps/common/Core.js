@@ -969,12 +969,18 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				return;
 
 			// Use geocode service from the portal if none declared in config
-			if (! app.cfg.HELPER_SERVICES.geocode.length && app.portal.helperServices) {
-				if (app.portal.helperServices.geocode && app.portal.helperServices.geocode.length && app.portal.helperServices.geocode[0].url) {
-					$.each(app.portal.helperServices.geocode, function (index, geocoder){
-						app.cfg.HELPER_SERVICES.geocode.push(geocoder);
-					});
-				}
+			var existingGeocoders = app.data.getWebAppData().getAppGeocoders();
+			var existingGeocoderUrls = existingGeocoders ? existingGeocoders.map(function(g) {
+				return g.url;
+			}) : [];
+			var additionalGeocoders = [];
+			if (app.cfg.HELPER_SERVICES.geocode && app.cfg.HELPER_SERVICES.geocode.length) {
+				$.each(app.portal.helperServices.geocode, function (index, geocoder) {
+					if (geocoder.url && existingGeocoderUrls.indexOf(geocoder.url) < 0) {
+						additionalGeocoders.push(geocoder);
+					}
+				});
+				app.cfg.HELPER_SERVICES.geocode = additionalGeocoders;
 			}
 
 			// Use geometry service from the portal if none declared in config

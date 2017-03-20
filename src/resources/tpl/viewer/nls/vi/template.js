@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "Bạn không có quyền sử dụng bộ thiết lập %TPL_NAME%.",
       "noBuilderIE": "Bộ thiết lập không được hỗ trợ trên Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
       "noViewerIE": "Câu chuyện này không được hỗ trợ trong Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
+      "noViewerIE2": "Bạn đang cố gắng xem câu chuyện này bằng một trình duyệt cũ, không được hỗ trợ. Có thể có các tính năng không hoạt động hoặc các vấn đề không mong đợi khác. Chúng tôi đề nghị bạn nâng cấp lên Internet Explorer 11 hoặc sử dụng một trình duyệt khác, chẳng hạn như Chrome.",
+      "noViewerIE3": "Vào cuối năm 2017, câu chuyện này sẽ không còn được tải trên trình duyệt này. Lúc đó, bạn phải sử dụng một trình duyệt được hỗ trợ để xem câu chuyện này.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Vui lòng cập nhật trình duyệt của bạn</a>.",
       "mapLoadingFail": "Đã xảy ra lỗi, bản đồ không tải đúng.",
       "signOut": "Đăng xuất",
       "print0": "Rất tiếc, không thể in câu chuyện này.",
       "print1": "Để in câu chuyện này, vui lòng sử dụng nút in nằm trong hộp thoại chia sẻ.",
-      "print2": "Rất tiếc, thông thường phiên bản có chức năng in của câu chuyện sẽ được truy cập thông qua hộp thoại chia sẻ. Tuy nhiên, hộp thoại này đã bị tác giả vô hiệu hóa."
+      "print2": "Rất tiếc, thông thường phiên bản có chức năng in của câu chuyện sẽ được truy cập thông qua hộp thoại chia sẻ. Tuy nhiên, hộp thoại này đã bị tác giả vô hiệu hóa.",
+      "attention": "Chú ý!"
     },
     "mobileView": {
       "tapForDetails": "Chạm nhẹ vào để biết chi tiết",

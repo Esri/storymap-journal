@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Sadaļas virsraksts",
       "sectionContentLbl": "Sadaļas saturs"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Organizācijas tēma",
+      "lblModTheme": "Pašreizējā tēma"
+    },
     "initPopup": {
       "title": "Laipni lūdzam"
     },

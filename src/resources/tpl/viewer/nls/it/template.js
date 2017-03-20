@@ -34,12 +34,15 @@ define({
       "notAuthorizedBuilder": "L'utente non è autorizzato ad utilizzare il generatore %TPL_NAME%.",
       "noBuilderIE": "Il generatore non è supportato nelle versioni di Internet Explorer precedenti alla versione %VERSION%. %UPGRADE%.",
       "noViewerIE": "Questa storia non è supportata nelle versioni di Internet Explorer precedenti a %VERSION%. %UPGRADE%.",
+      "noViewerIE2": "Si sta tentando di visualizzare la storia utilizzando un browser meno recente e non più supportato. Alcune funzioni potrebbero non funzionare o potrebbero verificarsi errori inattesi. Si consiglia di effettuare l'aggiornamento a Internet Explorer 11 o di utilizzare un altro browser, come Chrome.",
+      "noViewerIE3": "Verso la fine del 2017, questa storia non sarà più caricata su questo browser e sarà quindi necessario utilizzare un browser supportato per visualizzarla.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Aggiornare il browser</a>.",
       "mapLoadingFail": "Si è verificato un errore. La mappa non è stata caricata correttamente.",
       "signOut": "Disconnetti",
       "print0": "Spiacenti, impossibile stampare questa storia.",
       "print1": "Per stampare questa storia, utilizzare il pulsante di stampa che si trova nella finestra di dialogo di condivisione.",
-      "print2": "Spiacenti, una versione stampabile della storia è tipicamente accessibile tramite la finestra di dialogo di condivisione, questa finestra di dialogo è stata disabilita dall'autore."
+      "print2": "Spiacenti, una versione stampabile della storia è tipicamente accessibile tramite la finestra di dialogo di condivisione, questa finestra di dialogo è stata disabilita dall'autore.",
+      "attention": "Attenzione."
     },
     "mobileView": {
       "tapForDetails": "Toccare per i dettagli",

@@ -93,7 +93,7 @@ define({
       "lblURLPH": "Nuoroda gali būti .jpg, .png, .gif arba .bmp",
       "lblURLError": "Atrodo, kad šis paveikslėlis netinkamas. Pateikite tiesioginę nuorodą į paveikslėlio failą (URL paprastai turi baigtis .jpg arba .png). Nuorodos į tinklalapį, kuriame yra paveikslėlis, neveiks.",
       "lblURLCheck": "Tikrinamas paveikslėlis...",
-      "lblLabel": "Image caption",
+      "lblLabel": "Paveikslėlio antraštė",
       "lblLabel1": "Antraštė",
       "lblLabel2": "Tekstas, rodomas užvedus",
       "lblLabel3": "Nėra",

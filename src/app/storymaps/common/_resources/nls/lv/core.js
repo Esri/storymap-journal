@@ -109,6 +109,7 @@ define({
       "title": "Galvene",
       "logoEsriRadio": "Esri logotips",
       "logoNoneRadio": "Nav logotipa",
+      "logoOrgRadio": "Organizācijas logotips",
       "logoCustomRadio": "Mans logotips",
       "logoCustomLabel": "Attēls:",
       "logoCustomUploadHelp": "Logotipi vislabāk izskatās ar platuma:augstuma attiecību no 1:1 līdz 5:1. Ja saistītais logotips tiek zīmēts lēni, saglabājiet kopiju un augšupielādējiet to šeit.",

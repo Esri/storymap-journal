@@ -109,6 +109,7 @@ define({
       "title": "Đầu trang",
       "logoEsriRadio": "Logo Esri",
       "logoNoneRadio": "Không có logo",
+      "logoOrgRadio": "Logo của tổ chức",
       "logoCustomRadio": "Logo của tôi",
       "logoCustomLabel": "Ảnh:",
       "logoCustomUploadHelp": "Logo sẽ hiển thị đẹp nhất nếu có tỷ lệ chiều rộng:chiều cao là 1:1 và 5:1. Nếu logo theo dạng liên kết hiển thị chậm, hãy lưu bản sao và tải lên tại đây.",

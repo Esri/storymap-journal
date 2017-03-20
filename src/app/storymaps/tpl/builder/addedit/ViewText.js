@@ -85,8 +85,17 @@ define(["lib-build/tpl!./ViewText",
 				CKEDITOR.instances.addEditRTE.resize();
 
 				// Set RTE style
-				CKEDITOR.instances.addEditRTE.editable().setStyle("background-color", _appColors.panel);
-				CKEDITOR.instances.addEditRTE.editable().setStyle("color", _appColors.text);
+				var editable = CKEDITOR.instances.addEditRTE.editable();
+				editable.setStyle("background-color", _appColors.panel);
+				editable.setStyle("color", _appColors.text);
+				var editableHead = $(editable.$).siblings('head');
+				editableHead.find('#link-style, #caption-style').remove();
+				if (_appColors.textLink) {
+					editableHead.append('<style id="link-style"> a { color: ' + _appColors.textLink + '; } </style>');
+				}
+				//if (_appColors.name && _appColors.name.match(/-org$|-modified$/) && _appColors.media) {
+				//	editableHead.append('<style id="caption-style"> figure figcaption { color: ' + _appColors.media + '; } </style>');
+				//}
 				$(CKEDITOR.instances.addEditRTE.editable().$).toggleClass(
 					'first-section',
 					(app.data.getCurrentSectionIndex() === 0 && _mode == "edit")

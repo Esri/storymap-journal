@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Judul bagian",
       "sectionContentLbl": "Konten bagian"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Tema Organisasi",
+      "lblModTheme": "Tema Saat Ini"
+    },
     "initPopup": {
       "title": "Selamat datang di"
     },

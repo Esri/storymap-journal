@@ -13,6 +13,7 @@ define(["lib-build/css!./MainView",
 		"storymaps/common/mapcontrols/command/MapCommand",
 		"storymaps/common/mapcontrols/legend/Legend",
 		"storymaps/common/mapcontrols/overview/Overview",
+		"storymaps/common/mapcontrols/geocoder/Geocoder",
 		// Autoplay
 		"storymaps/common/ui/autoplay/Autoplay",
 
@@ -44,6 +45,7 @@ define(["lib-build/css!./MainView",
 		MapCommand,
 		Legend,
 		Overview,
+		Geocoder,
 		Autoplay,
 		socialSharingIconCss,
 		socialSharingCss,
@@ -335,9 +337,34 @@ define(["lib-build/css!./MainView",
 						response.map,
 						mapContainer.siblings('.overview'),
 						app.isInBuilder
+					),
+					geocoder: new Geocoder(
+						response.map,
+						app.isInBuilder,
+						populateSearchLayerTitles(response)
 					)
 				};
 			};
+
+			function populateSearchLayerTitles(response) {
+				var itemData = response.itemInfo.itemData;
+				var appProps = itemData.applicationProperties;
+				var searchOptions = appProps && appProps.viewing && appProps.viewing.search;
+				var opLyrs = itemData.operationalLayers || [];
+				if (!searchOptions) {
+					return;
+				}
+				searchOptions.layers.forEach(function(searchLyrInfo) {
+					_.find(opLyrs, function(opLyrInfo) {
+						if (opLyrInfo.id === searchLyrInfo.id) {
+							searchLyrInfo.name = opLyrInfo.name;
+							searchLyrInfo.title = opLyrInfo.title;
+							return true;
+						}
+					});
+				});
+				return searchOptions;
+			}
 
 			function storyDataReady()
 			{
@@ -626,7 +653,20 @@ define(["lib-build/css!./MainView",
 			function setCommonLayoutColor()
 			{
 				var colors = WebApplicationData.getColors();
-				CommonHelper.addCSSRule(".section a { color: " + colors.textLink + "; }");
+				CommonHelper.addCSSRule(".section a, .builder-content-panel .builder-lbl { color: " + colors.textLink + "; }");
+				CommonHelper.addCSSRule('.builder-content-panel .builder-content-panel-group:not(.disabled):hover .builder-lbl { color: ' + colors.text + ' !important; }');
+				if (colors.name && colors.name.match(/-modified$|-org$/)) {
+					CommonHelper.addCSSRule('.header .link, .shareIcon, .shareIcon:hover { color: ' + colors.textLink + '; }');
+					CommonHelper.addCSSRule('.shareIcon { opacity: 0.75; }');
+					CommonHelper.addCSSRule('.shareIcon:hover { opacity: 1.0; }');
+					CommonHelper.addCSSRule('.sectionPanel .separator { border-bottom-color: ' + colors.text + '; }');
+					// CommonHelper.addCSSRule('figure figcaption { color: ' + colors.media + '; }');
+				} else {
+					CommonHelper.addCSSRule('.header .link, .shareIcon, .shareIcon:hover { color: #ddd; }');
+					CommonHelper.addCSSRule('.shareIcon { opacity: 1; }');
+					CommonHelper.addCSSRule('.sectionPanel .separator { border-bottom-color: #ccc; }');
+					// CommonHelper.addCSSRule('figure figcaption { color: #adadad; }');
+				}
 			}
 
 			this.resize = function(cfg)

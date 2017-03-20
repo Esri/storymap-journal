@@ -30,6 +30,10 @@ define({
       "sectionTitleLbl": "Titlu secţiune",
       "sectionContentLbl": "Conţinut secţiune"
     },
+    "settingsThemeOptions": {
+      "lblOrgTheme": "Temă organizaţie",
+      "lblModTheme": "Temă actuală"
+    },
     "initPopup": {
       "title": "Bine aţi venit la"
     },
