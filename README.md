@@ -469,6 +469,3 @@ Some open-source components of this project are licensed under other License ter
 | Hammer.JS 			| MIT 		|
 | jQuery mousewheel 	| MIT 		|
 | jQuery UI Touch Punch | MIT 		|
-
-[](Esri Tags: Storytelling MapJournal ArcGIS-Online Template Map Journal)
-[](Esri Language: JavaScript)
