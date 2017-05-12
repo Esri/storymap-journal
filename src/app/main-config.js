@@ -75,7 +75,8 @@ function defineDojoConfig()
 		aliases: [
 			['text', 'lib-build/text'],
 			['underscore', 'lib-build/lodash']
-		]
+		],
+        paths: { maptiks: '//cdn.maptiks.com/esri3' }
 	};
 
 	if (location.search.match(/locale=([\w\-]+)/)) {

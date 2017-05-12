@@ -1,0 +1,10 @@
+.settings-fonts {
+	margin-top: 10px;
+}
+
+.settings-fonts .fonts-row {
+	vertical-align: middle;
+	height: 45px;
+	font-weight: bold;
+	padding-right: 25px;
+}
