@@ -43,25 +43,6 @@ define(["lib-build/tpl!./ViewMaptiks",
                     maptiksId: _contentContainer.find("#maptiks-id").prop("value")
 				};
 			};
-//            this.save = function()
-//			{
-//				return {
-//					fonts: {
-//						sectionTitle: removeFontLbl(
-//							findFontById(
-//								app.cfg.FONTS.sectionTitle,
-//								_contentContainer.find('.font-title-btn-inner').data('font-id')
-//							)
-//						),
-//						sectionContent: removeFontLbl(
-//							findFontById(
-//								app.cfg.FONTS.sectionContent,
-//								_contentContainer.find('.font-content-btn-inner').data('font-id')
-//							)
-//						)
-//					}
-//				};
-//			};
           
 			this.initLocalization = function()
 			{
