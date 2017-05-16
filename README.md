@@ -18,6 +18,7 @@ For more infomation about using and customizing Esri's Storytelling Apps follow 
  * [Introduction](#introduction)
  * [Instructions](#instructions)
  * [Feedback / support](#feedback--support)
+ * [Maptiks integration](#maptiks-integration)
  * [FAQ](#faq)
  * [Configuration](#configuration)
  * [Customize the look and feel](#customize-the-look-and-feel)
@@ -48,6 +49,26 @@ You can continue to use the builder in ArcGIS Online to modify your story.
 See [customize the look and feel section](#customize-the-look-and-feel) or [developer guide](#developer-guide) if you want to modify the app.
 
 *If you are using Portal for ArcGIS, please follow the instructions at the end of `app/config.js` to configure the application. Optionally you can also [configure the application](#can-the-template-be-used-offline) to use the ArcGIS API for JavaScript included on your Portal.*
+
+## Maptiks integration
+
+Map Series applications provide events, called "topics", that we can subscribe to in order to monitor the application life cycle. One such topic is "story-loaded-map", which fires when the application loads, and when the user navigates between tabs. By listening to this event, we can ensure that Maptiks monitors the current map, and switches to the correct map when the user switches maps.
+
+Map series applications also provide helper functions, within the "app" global variable, which stores information about the app, including settings specified by the author within the application builder. Below, we use app variable to determine the current map div and extent, as well as Maptiks parameters entered by the author in the application builder.
+
+See the [Developer guide](#developer-guide) for more information about topics and helper functions.
+
+```
+topic.subscribe("story-loaded-map", function(result){
+  var container = $(app.map.container); // the current map div
+  var maptiksMapOptions = {
+    extent: app.map.extent,
+    maptiks_trackcode: app.data.getWebAppData().getMaptiks().maptiksTrackcode, // from Builder map options
+    maptiks_id: app.data.getWebAppData().getMaptiks().maptiksId + ":" + app.data.getCurrentSectionIndex() // from Builder map options, ID:tabIndex
+  };
+  mapWrapper(container, maptiksMapOptions, app.map);
+});
+```
 
 ## Feedback / support
 We would love to hear from you!
