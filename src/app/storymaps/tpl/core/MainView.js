@@ -78,11 +78,11 @@ define(["maptiks/mapWrapper",
 
                 // After a map is loaded (when the map starts to render)
                 topic.subscribe("story-loaded-map", function(result){
-                  var container = $(app.maps[result.id].response.map.container); // the current map div
+                  var container = app.map.container; // the current map div
                   var maptiksMapOptions = {
                     extent: app.map.extent,
-                    maptiks_trackcode: WebApplicationData.getSettings().maptiks.maptiksTrackcode, // from Builder map options
-                    maptiks_id: WebApplicationData.getSettings().maptiks.maptiksId + ":" + app.data.getCurrentSectionIndex() // from Builder map options, ID:sectionIndex
+                    maptiks_trackcode: app.data.getWebAppData().getMaptiks().maptiksTrackcode, // from Builder map options
+                    maptiks_id: app.data.getWebAppData().getMaptiks().maptiksId + ":" + app.data.getCurrentSectionIndex() // from Builder map options, ID:sectionIndex
                   };
                   mapWrapper(container, maptiksMapOptions, app.map);
                 });
