@@ -68,7 +68,7 @@ See [customize the look and feel section](#customize-the-look-and-feel) or [deve
         function(mapWrapper,
         // ...
     ```
-3. Story map applications provide [dojo/topics](https://dojotoolkit.org/reference-guide/1.9/dojo/topic.html) (global events), that we can subscribe to in order to monitor the application life cycle. One such topic is "story-loaded-map", which fires when the application loads, and when the user navigates between sections. By listening to this event, we can ensure that Maptiks monitors the current map, and switches to the correct map when the user switches maps.
+3. Story map applications provide [dojo/topics](https://dojotoolkit.org/reference-guide/1.9/dojo/topic.html) (global events), that we can subscribe to in order to monitor the application life cycle. One such topic is "story-loaded-map", which fires when the application loads, and when the user navigates between sections. By listening to this event within `MainView.js`, we ensure that Maptiks monitors the current map, and switches to the correct map when the user switches maps.
 
     Story map applications also provide helper functions, within the "app" global variable, which stores information about the app, including settings specified by the author within the application builder. Below, we use app variable to determine the current map div and extent, as well as Maptiks parameters entered by the author in the application builder. If the builder UI is unnecessary, these values may be hard-coded in development.
 
