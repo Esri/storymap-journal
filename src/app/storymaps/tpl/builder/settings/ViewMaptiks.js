@@ -24,11 +24,9 @@ define(["lib-build/tpl!./ViewMaptiks",
             this.present = function(settings) 
 			{	
 				settings = settings || {};
-                console.log(settings);
                 _contentContainer.find("#maptiks-trackcode").prop("value", settings.maptiksTrackcode);
                 _contentContainer.find("#maptiks-id").prop("value", settings.maptiksId);
 				_settings = settings;
-                console.log(settings);
 			};
 			
 			this.show = function()

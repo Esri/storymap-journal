@@ -390,7 +390,7 @@ define(["dojo/_base/lang", 'storymaps/tpl/core/Helper'],
             {
                 _data.values.settings = _data.values.settings || {};
 				_data.values.settings.maptiks = data;
-            },
+            }
 		};
 	}
 );
