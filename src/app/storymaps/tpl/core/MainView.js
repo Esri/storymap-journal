@@ -1,4 +1,5 @@
-define(["lib-build/css!./MainView",
+define([
+        "lib-build/css!./MainView",
 		"../ui/MainStage",
 		"./Config",
 		"./Data",
@@ -33,7 +34,7 @@ define(["lib-build/css!./MainView",
 		"lib-build/css!../ui/Responsive"
 	],
 	function (
-		viewCss,
+        viewCss,
 		MainStage,
 		Config,
 		Data,
@@ -69,7 +70,29 @@ define(["lib-build/css!./MainView",
 			this.init = function(core)
 			{
 				_core = core;
+                
+                // *******************************************
+                // **** Maptiks Changes below
+                // *******************************************
 
+                // After a map is loaded (when the map starts to render)
+                topic.subscribe("story-loaded-map", function(){
+                  require(['maptiks'], function (mapWrapper) {  
+                    var container = app.map.container; // the current map div
+                    var maptiksMapOptions = {
+                      extent: app.map.extent,
+                      maptiks_trackcode: app.data.getWebAppData().getMaptiks().maptiksTrackcode, // from Builder map options
+                      maptiks_id: app.data.getWebAppData().getMaptiks().maptiksId + ":" + app.data.getCurrentSectionIndex() // from Builder map options, ID:sectionIndex
+                    };
+                    mapWrapper(container, maptiksMapOptions, app.map);
+                  });
+                });
+
+                
+                // *******************************************
+                // **** Maptiks Changes done
+                // *******************************************
+              
 				//----------------------------------------------
 				// Development - TODO to be removed for release
 				//----------------------------------------------
