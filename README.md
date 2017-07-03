@@ -33,8 +33,8 @@ This repository provides the application source code for developers who want to 
 For more information about Map Journal, including a gallery of examples and a step-by-step tutorial, please see the [Map Journal](http://storymaps.arcgis.com/en/app-list/map-journal/) page on the [Esri Story Maps website](http://storymaps.arcgis.com/).
 
 ## Instructions
-First create your Map Journal in ArcGIS Online using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-journal/tutorial/).
-Once your story is ready, you have to find its ID in ArcGIS Online. The ID is a 32 character string that you will find in your web browser's address bar when you are viewing your journal.
+First create your Map Journal in ArcGIS using the [step-by-step tutorial](http://storymaps.arcgis.com/en/app-list/map-journal/tutorial/).
+Once your story is ready, you have to find its ID in ArcGIS. The ID is a 32 character string that you will find in your web browser's address bar when you are viewing your journal.
 
 ![App ID](map-journal-help-application-id.png)
 
@@ -43,8 +43,8 @@ Once your story is ready, you have to find its ID in ArcGIS Online. The ID is a 
 3. Edit index.html, find the configuration section on line 38 and paste in your application ID
 4. Navigate to index.html (e.g., `http://127.0.0.1/MapJournal/index.html`)
 
-Enjoy!
-You can continue to use the builder in ArcGIS Online to modify your story.
+You can continue to use the builder in ArcGIS to modify your story.
+
 See [customize the look and feel section](#customize-the-look-and-feel) or [developer guide](#developer-guide) if you want to modify the app.
 
 *If you are using ArcGIS Enterprise, please follow the instructions at the end of `app/config.js` to configure the application. Optionally you can also [configure the application](#can-the-template-be-used-offline) to use the ArcGIS API for JavaScript included in your Enterprise portal.*
@@ -63,12 +63,12 @@ When you contact us, don't hesitate to include a link to your application to mak
 
 ### What should I check before publishing a Journal?
 We recommend that you perform the following checks before sharing your Journal with your audience:
- - Check that all your Journal's content is shared with your audience (web maps, medias, ...). Typically you can use another computer than the one you have used to build your story to make sure everything is loading properly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session or you can just sign-out from ArcGIS Online and any service that you have used to host your Journal's resources.
+ - Check that all your Journal's content is shared with your audience (web maps, medias, ...). Typically you can use another computer than the one you have used to build your story to make sure everything is loading properly. Alternatively [this article](http://browsers.about.com/od/faq/tp/Incognito-Browsing.htm) will show you how to configure your browser for an incognito session or you can just sign-out from ArcGIS and any service that you have used to host your Journal's resources.
  - Try the application on different browsers, screen resolutions and mobile devices. You can [emulate mobile  devices](http://mobiletest.me/) inside your desktop browser.
 
 ### What are the supported browsers?
-Map Journal is supported on Internet Explorer 11 and above, Chrome, Firefox, Safari and the most recent tablet and smartphone devices.
-Map Journal authoring is supported on the same desktop browsers listed above, and on the most recent tablet but not smartphone devices.
+Map Journal is supported on Internet Explorer 11 and above, Chrome, Firefox, Safari, and the most recent tablet and smartphone devices.
+Map Journal authoring is supported on the same desktop browsers listed above and on the most recent tablet but not smartphone devices.
 
 We actively test the application in all major browsers but if you experience difficulties especially with the builder, we recommend that you use [Chrome](https://www.google.com/intl/en_us/chrome/browser/).
 
@@ -149,8 +149,8 @@ define(["dojo/topic"], function(topic) {
 ### Security
 
 #### Can I keep my Journal private?
-Yes, the regular ArcGIS Online security model applies.
-By default your Journal is private, you can share it through Map Journal builder or ArcGIS Online.
+Yes, the regular ArcGIS security model applies.
+By default your Journal is private, you can share it through Map Journal builder or ArcGIS.
 When you share your Journal, it is your responsibility to make sure that all the resources of your Journal (web maps, images, videos) are accessible to your audience.
 
 #### Who can edit my Journal?
@@ -159,7 +159,7 @@ A Journal can be edited by its owner (the named account that initially created t
 #### Can I use private web maps or layers?
 Yes.
 
-When the Journal is hosted in ArcGIS Online or ArcGIS Enterprise, users who don't have access to the Journal or a web map used in the Journal will be redirected to the ArcGIS Online sign-in page. It is not possible to display an authentication dialog in the Map Journal when the Journal is hosted in ArcGIS Online.
+When the Journal is hosted in ArcGIS Online or ArcGIS Enterprise, users who don't have access to the Journal or a web map used in the Journal will be redirected to the ArcGIS sign-in page. It is not possible to display an authentication dialog in the Map Journal when the Journal is hosted in ArcGIS.
 
 When the Journal is hosted on your web server, an authentication dialog will appear inside the application.
 
@@ -178,21 +178,21 @@ This is not a supported use case at this time. Please let us know if you are int
 #### Where is the data stored?
 The Journal's data are stored in a Web Application Item in ArcGIS Online or an ArcGIS Enterprise portal. This includes the narrative content, reference to any media used (web maps, pictures, videos, web pages), and app-wide settings.
 
-The images and videos that you include in your Journal using the builder are not copied into ArcGIS Online unless you upload them through the "Upload" option. You have to make sure that any external media and web maps you are using are, and will remain, accessible to your audience.
+The images and videos that you include in your Journal using the builder are not copied into ArcGIS unless you upload them through the "Upload" option. You have to make sure that any external media and web maps you are using are, and will remain, accessible to your audience.
 
 #### Can I deploy Map Journal using ArcGIS Enterprise?
-Yes, Map Journal is included with Portal for ArcGIS starting at version 10.3.
+Yes, Map Journal is included with Portal for ArcGIS 10.3 up to the current version of ArcGIS Enterprise.
 
-If you are using Enterprise portal 10.3+ and want to update Map Journal, [download the latest version](http://links.esri.com/storymaps/map_journal_template_zip). If you are using Portal 10.2.1 or 10.2.2, you can't deploy the latest version of Map Journal and have to deploy the following version [Map Journal V1.0.2 - portal](https://github.com/Esri/map-journal-storytelling-template-js/releases/download/V1.0.2/Storytelling-MapJournal-1.0.2-portal.zip).
+If you are using Portal for ArcGIS 10.3 or later and want to update Map Journal, [download the latest version](http://links.esri.com/storymaps/map_journal_template_zip). If you are using Portal 10.2.1 or 10.2.2, you can't deploy the latest version of Map Journal and have to deploy the following version [Map Journal V1.0.2 - portal](https://github.com/Esri/map-journal-storytelling-template-js/releases/download/V1.0.2/Storytelling-MapJournal-1.0.2-portal.zip).
 
 Then:
  - Find your Portal `apps/MapJournal` folder (depending on your installation and version of Portal, this is either `C:\Program Files\ArcGIS\Portal\apps\MapSeries` or `C:\Program Files\ArcGIS\Portal\webapps\arcgis#home\webmap\templates\MapJournal`).
  - Remove the content of that folder
  - Extract the archive so that `index.html` is located at `MapJournal\index.html`
 
-If Map Journal was already included in your Portal, you are done (Portal for ArcGIS 10.3+).
+If Map Journal was already included in your portal, you are done (Portal for ArcGIS 10.3+).
 
-If Map Journal was not available in your Portal:
+If Map Journal was not available in your portal:
  - Log into Portal for ArcGIS and open My Content > Add Item > Application > Web Mapping Application > Configurable. Configure the URL to `https://portal.domain.com/arcgis/apps/MapJournal`. More details in the following documentation [publishing a new web application item](http://resources.arcgis.com/en/help/main/10.2/index.html#/Adding_applications/019300000031000000/).
  - Create a new group that will reference the template available in your Portal
  - Share the newly created item with that group
@@ -210,7 +210,7 @@ To edit the ArcGIS API for JavaScript, edit `index.html` and locate `pathJSAPI` 
 
 When deployed on an ArcGIS Enterprise portal, the application doesn't require any external services to function. But, by default, the template will still include the header social buttons (Twitter, Facebook), and Journal authors are able to import pictures and videos from online hosting services. These options can be disabled individually through the configuration file `app/config.js`.
 
-#### Can I use the builder with the downloadable?
+#### Can I use the builder if I host the app on my own web server?
 Yes, when the template is configured with an application ID, adding the URL parameter 'edit' will open the builder. You will be prompted for user authentication through the Identity Manager.
 
 #### How do I deploy the application on a web server?
@@ -240,7 +240,6 @@ In addition to the configuration offered by the builder, the file `app/config.js
 
 ### Custom color theme
 As Map Journal doesn't yet offer the ability to create a custom theme through the builder, customizing the various colors of the application requires changing the data of your app. See [our blog post](https://developerscorner.storymaps.arcgis.com/customizing-theme-colors-in-map-journal-and-map-series-6e45b84c277e) about customizing theme colors.
-
 
 You could also download and configure colors through `app/config.js`. For example if you are using a Side Panel layout and have kept the default theme, open `app/config.js`, locate the `LAYOUT` property and edit the following line with the desired colors.
 
