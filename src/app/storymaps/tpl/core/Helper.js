@@ -6,12 +6,16 @@ define([
 
     possiblyAddToken: function(url) {
 
-      if (!this.needsToken(url)) {
+      if (!this.isAppResource(url)) {
         return url;
       }
 
       // might as well refresh the token...?
       url = this.removeToken(url);
+
+      if (!this.needsTokenAdded(url)) {
+        return url;
+      }
 
       var token = this.getToken();
 
@@ -51,7 +55,7 @@ define([
         && url.match(new RegExp('\/sharing\/rest\/content\/items\/' + appItem.id + '\/resources\/'));
     },
 
-    needsToken: function(url) {
+    needsTokenAdded: function(url) {
       var appItem = app.data && app.data.getWebAppItem && app.data.getWebAppItem();
       if (!appItem) {
         return false;
@@ -78,7 +82,9 @@ define([
     },
 
     possiblyRemoveToken: function(url) {
-      if (!this.needsToken(url)) {
+      // don't use needsTokenAdded() here because that returns false if an author
+      // was building the story in private but then makes it public from within builder
+      if (!this.isAppResource(url)) {
         return url;
       }
       return this.removeToken(url);

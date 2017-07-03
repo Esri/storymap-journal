@@ -28,7 +28,7 @@ define({
       "title": "Lettertypen",
       "defaultLbl": "Standaard",
       "sectionTitleLbl": "Sectietitel",
-      "sectionContentLbl": "Sectie-inhoud"
+      "sectionContentLbl": "Sectie-content"
     },
     "settingsThemeOptions": {
       "lblOrgTheme": "Organisatiethema",
@@ -43,11 +43,11 @@ define({
       "titleAddHome": "Home-sectie toevoegen",
       "titleEdit": "Sectie bewerken",
       "step": "Stap",
-      "stepMainStageExplain": "Inhoud van het hoofdvenster",
+      "stepMainStageExplain": "Content van het hoofdvenster",
       "stepPanelExplain": "Content",
-      "stepMainStageNextTooltip": "Voer de sectietitel in en selecteer de inhoud van het hoofdvenster",
-      "stepMainStageNextTooltip2": "De inhoud van het hoofdvenster selecteren",
-      "step2NextTooltip": "Voer de sectietitel en inhoud van %LAYOUT-TYPE% in",
+      "stepMainStageNextTooltip": "Voer de sectietitel in en selecteer de content van het hoofdvenster",
+      "stepMainStageNextTooltip2": "De content van het hoofdvenster selecteren",
+      "step2NextTooltip": "Voer de sectietitel en content van %LAYOUT-TYPE% in",
       "stepNextTooltipNext": "om naar de volgende stap te gaan",
       "stepNextTooltipAdd": "om de sectie toe te voegen",
       "firstAddExplain": "De eerste sectie is uw Home-sectie. Zie dit als de coverpagina van uw verhaal. De zojuist door u gedefinieerde titel wordt in een groot lettertype weergegeven.",
@@ -70,19 +70,19 @@ define({
       "btnApplyWarning": "Verwijderen van %NB% secties bevestigen",
       "deleteTooltip": "Verwijderen",
       "firstSectionExplain": "(De sectie Home kan niet worden verplaatst)",
-      "exportMainStage": "Inhoud van het hoofdvenster",
-      "exportPanel": "Inhoud van het deelvenster",
+      "exportMainStage": "Content van het hoofdvenster",
+      "exportPanel": "Content van het deelvenster",
       "exportActions": "Verhaalacties"
     },
     "exportData": {
-      "btn": "Inhoud exporteren",
-      "tooltip": "Door uw inhoud te exporteren kunt u een back-up van uw inhoud maken als u deze per ongeluk verwijdert. Kopieer en plak de inhoud van de pagina simpelweg in een tekstverwerker."
+      "btn": "Content exporteren",
+      "tooltip": "Door uw content te exporteren kunt u een back-up van uw content maken als u deze per ongeluk verwijdert. Kopieer en plak de content van de pagina simpelweg in een tekstverwerker."
     },
     "help": {
       "lblHelp": "Help",
       "lblAdd": "Sectie toevoegen",
       "lblSettings": "Instellingen",
-      "lblOrga": "Inhoud ordenen",
+      "lblOrga": "Content ordenen",
       "lblEdit": "Bewerkingen",
       "lblPublish": "Delen",
       "lblTips": "Tips",
@@ -92,8 +92,8 @@ define({
       "content1Div2": "Door secties toe te voegen, kunt u de manier waarop u uw verhaal vertelt echt aanpassen. Wanneer lezers door uw %LAYOUT_TITLE%-tekst bladeren, kan een kaart op het hoofdvenster pannen of zoomen naar belangrijke punten of kunnen nieuwe kaarten en afbeeldingen automatisch worden in- en uitgeschakeld om uw boodschap te ondersteunen.",
       "content2Div1": "In het dialoogvenster Instellingen kunt u het uiterlijk van %TPL_NAME% wijzigen. U kunt de lay-out veranderen, een ander kleurschema kiezen, het lettertype wijzigen, etc.",
       "content2Div2": "U kunt ook het logo van Esri vervangen door uw eigen logo om uw merk te promoten. U kunt ook de website opgeven die wordt geopend als de lezers op uw logo klikken zodat ze meer informatie kunnen krijgen.",
-      "content3Div1": "Uw inhoud wordt geordend in secties. U kunt zoveel secties hebben als u maar wilt (beschouw deze als kleine hoofdstukken). De volgorde van deze hoofdstukken is belangrijk; binnen Rangschikken kunt u de secties opnieuw ordenen of verwijderen zoals u dat wilt.",
-      "content4Div1": "Hebt u een fout gevonden of wilt u uw materiaal wijzigen? Geen probleem. Zoek naar het bewerkingspictogram dat overal in de app beschikbaar is om wijzigingen in uw inhoud door te voeren. U zult de bewerkingsfuncties vaak gebruiken wanneer u uw %TPL_NAME% ontwikkelt.",
+      "content3Div1": "Uw content wordt geordend in secties. U kunt zoveel secties hebben als u maar wilt (beschouw deze als kleine hoofdstukken). De volgorde van deze hoofdstukken is belangrijk; binnen Rangschikken kunt u de secties opnieuw ordenen of verwijderen zoals u dat wilt.",
+      "content4Div1": "Hebt u een fout gevonden of wilt u uw materiaal wijzigen? Geen probleem. Zoek naar het bewerkingspictogram dat overal in de app beschikbaar is om wijzigingen in uw content door te voeren. U zult de bewerkingsfuncties vaak gebruiken wanneer u uw %TPL_NAME% ontwikkelt.",
       "content5Div1": "Als u uw %TPL_NAME% opslaat is dit in eerste instantie privé. Gebruik de knop Delen om het met anderen te delen. U kunt uw %TPL_NAME% publiekelijk delen zodat het toegankelijk is.",
       "content5Div2": "Afhankelijk van uw account heeft u wellicht ook de optie om uw %TPL_NAME% te delen met mensen binnen uw organisatie, zodat anderen er geen toegang tot hebben.",
       "content6Div1": "De titel van uw Home-sectie is tevens de titel van uw journaal. Beschouw uw Home-sectie als de 'voorpagina' van uw verhaal. De titel van de Home-sectie blijft zichtbaar als uw lezers door het Journaal bladeren.",

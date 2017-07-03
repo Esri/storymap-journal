@@ -3,7 +3,7 @@ define({
     "selector": {
       "lblWebMap": "Kaart",
       "lblLocation": "Locatie",
-      "lblContent": "Inhoud",
+      "lblContent": "Content",
       "lblPopup": "Pop-upvenster",
       "lblControls": "Extra's",
       "lblOverview": "Overzichtskaart",
@@ -46,10 +46,10 @@ define({
     "configure": {
       "btnReset": "Opnieuw instellen",
       "btnCancel": "Annuleren",
-      "tocTitle": "Kaartinhoud",
+      "tocTitle": "Kaartcontent",
       "tocExplain": "Selecteer welke kaartlagen zullen worden weergegeven.",
       "tocNoData": "Er kan geen kaartlaag worden geconfigureerd.",
-      "tocSave": "Kaartinhoud opslaan",
+      "tocSave": "Kaartcontent opslaan",
       "extentTitle": "Kaartlocatie",
       "extentExplain": "Pan en zoom op de kaart om te definiëren hoe deze eruit zal zien voor uw lezers.",
       "extentSave": "Kaartlocatie opslaan",

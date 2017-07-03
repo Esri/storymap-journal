@@ -9,6 +9,8 @@ require([
 	"esri/geometry/Extent",
 	"esri/tasks/query",
 	"esri/tasks/QueryTask",
+	"esri/IdentityManager",
+	"dojo/aspect",
 	"dojo/has",
 	"dojo/domReady!"
 ], function(
@@ -20,6 +22,8 @@ require([
 	Extent,
 	Query,
 	QueryTask,
+	IdentityManager,
+	aspect,
 	has
 ) {
 	var sections = app.data.getStorySections(),
@@ -182,10 +186,37 @@ require([
 					layerInfos: arcgisUtils.getLegendLayers(response)
 				}, $(response.map.container).next()[0]);
 
+				window.maps = window.maps || [];
+				window.maps.push(response.map);
+
+				aspect.after(legend, 'startup', afterLegendRefresh);
+				aspect.after(legend, 'refresh', afterLegendRefresh);
+
 				legend.startup();
 			}
 		});
 	});
+
+	function afterLegendRefresh() {
+		var toRemove = 'legend-single legend-double legend-triple';
+		var layerLength = $(this.domNode).find('.esriLegendService').length;
+		var toAdd;
+		if (layerLength === 1) {
+			toAdd = 'legend-single';
+		} else if (layerLength === 2) {
+			toAdd = 'legend-double';
+		} else if (layerLength > 2) {
+			toAdd = 'legend-triple';
+		}
+
+		$(this.domNode).removeClass(toRemove).addClass(toAdd);
+
+
+		window.maps.forEach(function(map) {
+			map.reposition();
+		});
+
+	}
 
 	function loadWebmap(webmapIdOrJSON, container, extent)
 	{
@@ -265,7 +296,8 @@ require([
 
 				break;
 			case "image":
-				outHTML += '<div class="media media-image"><img src="' + checkURLProtocol(media.image.url) + '" /></div>';
+				var tokenizedUrl = possiblyAddToken(media.image.url);
+				outHTML += '<div class="media media-image"><img src="' + checkURLProtocol(tokenizedUrl) + '" /></div>';
 				break;
 			case "video":
 				var videoIDYouTube = getYoutubeId(media.video.url);
@@ -438,4 +470,54 @@ require([
 
 		}
 	}
+
+	function possiblyAddToken(url) {
+    var appItem = app.data && app.data.getWebAppItem && app.data.getWebAppItem();
+
+    if (!appItem) {
+    	return url;
+    }
+
+		if (!isAppResource(url, appItem)) {
+			return url;
+		}
+
+		if (appItem.access === 'public') {
+			return url;
+		}
+
+		// if we're here, we have an app resource and the app isn't public
+		// so we need a token
+		var token = getToken();
+		if (!token) {
+			console.warn('no token found even though token needed');
+			return url;
+		}
+
+		var tokenJoin = (url.indexOf('?') > 0) ? '&' : '?';
+
+		return url + tokenJoin + 'token=' + token;
+
+	}
+
+	function isAppResource(url, appItem) {
+    return appItem && appItem.id && url
+      && url.match(new RegExp('\/sharing\/rest\/content\/items\/' + appItem.id + '\/resources\/'));
+	}
+
+  function getToken() {
+    if (app.portal && app.portal.getPortalUser()) {
+      return app.portal.getPortalUser().credential.token;
+    }
+    var originCredential = IdentityManager.findCredential(document.location.origin);
+    if (originCredential) {
+      return originCredential.token;
+    }
+    var urlCredential = IdentityManager.findCredential(app.portal.url);
+    if (urlCredential) {
+      return IdentityManager.findCredential(app.portal.url).token;
+    }
+    return this.getCookieToken();
+  }
+
 });

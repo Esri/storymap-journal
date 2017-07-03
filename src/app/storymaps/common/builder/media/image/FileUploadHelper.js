@@ -131,7 +131,7 @@ define([
     },
 
     getUploadBaseName: function(file, offset) {
-      var name = this.getNameWithoutExtension(file.name);
+      var name = this.getNameWithoutExtension(file.name).replace(/[<>"'()*%!?&]/g, '');
       var ext = this.getExt(file.name, file.type);
       var baseName = name + '__' + (new Date().getTime() + (offset || 0));
       return baseName + '.' + ext;
@@ -218,7 +218,7 @@ define([
     getSizesObj: function(fileName) {
       return {
         name: fileName,
-        url: this.getResourcesUrl() + '/' + encodeURI(fileName),
+        url: this.getResourcesUrl() + '/' + encodeURIComponent(fileName),
         width: this.getResourceWidth(fileName)
       };
     },
@@ -422,7 +422,7 @@ define([
           lookup[fileId] = {
             fileId: fileId,
             sizes: [],
-            displayName: strippedName + '.' + ext,
+            displayName: decodeURIComponent(strippedName) + '.' + ext,
             modified: dateNum ? new Date(dateNum) : '',
             thumbFile: '',
             resourcesUrl: resourcesUrl
@@ -434,7 +434,7 @@ define([
         } else {
           lookup[fileId].sizes.push({
             name: r,
-            url: resourcesUrl + '/' + r,
+            url: resourcesUrl + '/' + encodeURIComponent(r),
             width: self.getResourceWidth(r) || 0
           });
         }

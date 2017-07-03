@@ -288,11 +288,23 @@ iframe {
  * Map Legend
  */
 
-.media-map-legend {
-	page-break-inside: avoid;
+.legend-double.media-map-legend {
+  columns: 2;
 }
 
-.esriLegendService {
-	display: inline-block !important;
+.legend-triple.media-map-legend {
+  columns: 3;
+}
+
+.legend-double .esriLegendService,
+.legend-triple .esriLegendService {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  display: block;
 	margin-right: 20px;
+}
+
+.media-map-legend {
+	page-break-inside: avoid;
 }

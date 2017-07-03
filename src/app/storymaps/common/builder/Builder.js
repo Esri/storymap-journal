@@ -123,7 +123,7 @@ define(["lib-build/css!./Builder",
 
 			/* themes */
 			var x; // walker
-			if ((x = app.portal) && (x = x.portalProperties) && (x = x.sharedTheme)) {
+			if ((x = app.portal) && (x = x.portalProperties) && (x = x.sharedTheme) && hasOrgTheme(x)) {
 				addOrgThemeToConfig(x);
 				addOrgLogoToConfig(x);
 			}
@@ -178,6 +178,21 @@ define(["lib-build/css!./Builder",
 
 			_builderPanel.updateSharingStatus();
 			_builderView.appInitComplete();
+		}
+
+		function hasOrgTheme(sharedTheme) {
+
+			var hasValues = false;
+			if (sharedTheme.header) {
+				hasValues = colorExists(sharedTheme.header.text) || colorExists(sharedTheme.header.background);
+			}
+			if (!hasValues && sharedTheme.body) {
+				hasValues = colorExists(sharedTheme.body.text) || colorExists(sharedTheme.body.background) || colorExists(sharedTheme.body.link);
+			}
+			if (!hasValues && sharedTheme.button) {
+				hasValues = colorExists(sharedTheme.button.text) || colorExists(sharedTheme.button.background);
+			}
+			return hasValues;
 		}
 
 		function configureAppGeocoders() {
@@ -293,9 +308,10 @@ define(["lib-build/css!./Builder",
 				app.cfg.HEADER_ORG_LOGO_URL = sharedTheme.logo.small;
 				if ((app.isGalleryCreation || app.isDirectCreationFirstSave) && !app.data.getWebAppData().getHeader().logoURL) {
 					var newHeaderConfig = _core.getHeaderUserCfg();
+					var clickthroughLink = sharedTheme.logo.link ? sharedTheme.logo.link.trim() : '';
 					lang.mixin(newHeaderConfig, {
 						logoURL: sharedTheme.logo.small,
-						logoTarget: ''
+						logoTarget: clickthroughLink
 					});
 					app.data.getWebAppData().setHeader(newHeaderConfig);
 				}

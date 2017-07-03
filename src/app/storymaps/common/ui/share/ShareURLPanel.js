@@ -60,7 +60,7 @@ define([
 				_linkField.val(url);
 				container.find(".btn-bitlylink-open").attr("href", url);
 
-				SocialSharing.requestBitly(url).then(function(shortURL){
+				SocialSharing.requestShortUrl(url).then(function(shortURL){
 					_linkField.val(shortURL);
 					if ( selectUrl === undefined || selectUrl === true ) {
 						_linkField.select();

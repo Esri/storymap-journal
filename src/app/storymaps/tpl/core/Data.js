@@ -412,9 +412,12 @@ define(["./WebApplicationData",
 
 				// Also add the eventual webmap the application have been published with
 				//  when starting from a webmap in AGOL Map Viewer
-				var sourceWebmap = WebApplicationData.getSourceWebmap();
-				if ( sourceWebmap && ! webmapsInfoHash[sourceWebmap] ) {
-					webmapsInfoHash[sourceWebmap] = {};
+				// (but only if we're in builder! otherwise, a private webmap could ruin a public app. -als)
+				if (app.isInBuilder) {
+					var sourceWebmap = WebApplicationData.getSourceWebmap();
+					if ( sourceWebmap && ! webmapsInfoHash[sourceWebmap] ) {
+						webmapsInfoHash[sourceWebmap] = {};
+					}
 				}
 
 				$.each(Object.keys(webmapsInfoHash), function(i, webmap){

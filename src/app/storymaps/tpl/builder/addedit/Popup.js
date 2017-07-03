@@ -231,7 +231,7 @@ define(["lib-build/tpl!./Popup",
 					if ( ! CKEDITOR.instances.AddEditTitleEditor ) {
 						CKEDITOR.inline(container.find('.titleContainerEdit')[0], {
 							toolbar: [
-								{ name: 'basicstyles', groups: ['basicstyles'], items: ['Bold', 'Italic'] },
+								{ name: 'basicstyles', groups: ['basicstyles'], items: ['Italic'] },
 								{ name: 'styles', items: ['FontSize'] },
 								{ name: 'colors', items: ['TextColor'] }
 							],

@@ -3,7 +3,6 @@
 	<head>
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
 		<meta name="fragment" content="!">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -66,10 +65,16 @@
 
 		<script type="text/javascript">
 			var app = {
-				version: '1.10.2',
-				pathJSAPI: '//js.arcgis.com/3.20/'
+				version: '1.11.0',
+				pathJSAPI: 'https://js.arcgis.com/3.21/'
 			};
 		</script>
+		<noscript>
+			<div style="position: fixed; top: 0px; left: 0px; z-index: 3000;
+								height: 100%; width: 100%; background-color: #FFFFFF">
+				<p style="margin: 50px">This story map requires JavaScript, but running JavaScript is not currently allowed by your web browser. If you wish to view this story, please enable JavaScript in this browser or try a different browser.</p>
+			</div>
+		</noscript>
 	</head>
 	<body class="claro">
 		<style>
@@ -142,13 +147,13 @@
 						</div>
 					</td>
 					<!-- Map -->
-					<td id="mainStagePanel">
+					<td id="mainStagePanel" tabindex="1">
 						<div id="mainStagePanelInner">
 							<div class="medias">
 								<!-- Maps and media injected here -->
 							</div>
-							<div id="mainStageLoadingIndicator" class="loadingIndicator">
-								<img src="resources/tpl/viewer/icons/loading-light.gif" />
+							<div id="mainStageLoadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
+							  <img src="resources/tpl/viewer/icons/loading-light.gif" alt="This content is loading."/>
 							</div>
 							<!-- Back button -->
 							<div class="mediaBackContainer">
@@ -309,8 +314,8 @@
 		</style>
 
 		<div id="loadingOverlay"></div>
-		<div id="loadingIndicator" class="loadingIndicator">
-			<img src="resources/tpl/viewer/icons/loading-light.gif" />
+		<div id="loadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
+			<img src="resources/tpl/viewer/icons/loading-light.gif" alt="This story map is loading."/>
 		</div>
 		<div id="loadingMessage"></div>
 
