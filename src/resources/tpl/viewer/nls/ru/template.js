@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Закрыть"
+      "close": "Закрыть",
+      "focusMainstage": "Отправить фокус ввода с клавиатуры в медиа"
     },
     "loading": {
       "step1": "Загрузка истории",

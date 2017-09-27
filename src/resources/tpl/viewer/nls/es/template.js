@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Cerrar"
+      "close": "Cerrar",
+      "focusMainstage": "Activar el teclado para el contenido multimedia"
     },
     "loading": {
       "step1": "Cargando historia",

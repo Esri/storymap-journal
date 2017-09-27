@@ -78,7 +78,10 @@ define(["lib-build/tpl!./FloatingPanelSection",
 						container.find('.sections').css(layoutOptions.layoutCfg.position == "left" ? "padding-left" : "padding-right", "3%");
 					}
 
-					if ( app.userCanEdit && has("ie") != 9 && ! CommonHelper.getUrlParams().preview ) {
+					var urlParams = CommonHelper.getUrlParams();
+					var isPreview = (urlParams.preview === 'true' || urlParams.preview === '');
+					var isAutoplay = (urlParams.autoplay === 'true' || urlParams.autoplay === '');
+					if ( app.userCanEdit && has("ie") != 9 && !isPreview && !isAutoplay ) {
 						container.find('.error-status').addClass('enabled');
 						topic.subscribe("MYSTORIES_SCAN", updateErrorStatus);
 						updateErrorStatus("start");
@@ -128,6 +131,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					_navDots.setActive(index);
 					_swipePane.swipeTo(index);
 					_sectionIndex = index;
+					this.focusSection(index);
 
 					// Scroll up
 					if ( container.find('.swiper-slide-visible').length )
@@ -142,6 +146,13 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				}
 
 				updateAppTitle();
+			};
+
+			this.focusSection = function(index) {
+				var sectionTitle = container.find('.section').eq(index).find('.title').eq(0);
+				setTimeout(function() {
+					sectionTitle.focus();
+				}, 200);
 			};
 
 			this.getSectionNumber = function()
@@ -209,14 +220,52 @@ define(["lib-build/tpl!./FloatingPanelSection",
 
 			this.enableSwiperKeybordEvent = function()
 			{
-				_swipePane.enableKeyboardControl();
-				$(document).keyup(onKeyboardEvent);
+				if (_swipePane && !_swipePane.params.keyboardControl) {
+					_swipePane.enableKeyboardControl();
+					$(document).keyup(onKeyboardEvent);
+				}
 			};
 
 			this.disableSwiperKeybordEvent = function()
 			{
-				_swipePane.disableKeyboardControl();
-				$(document).unbind('keyup', onKeyboardEvent);
+				if (_swipePane && _swipePane.params.keyboardControl) {
+					_swipePane.disableKeyboardControl();
+					$(document).unbind('keyup', onKeyboardEvent);
+				}
+			};
+
+			this.attachTabEvents = function() {
+				var titles = container.find('.title');
+
+				titles.each(function(i, title) {
+					var $title = $(title),
+						sectionLastContent = $title,
+						tabableContent = $title.parent().find("[tabindex=0]:not(.title),button,a");
+
+					if ( tabableContent.length ) {
+						sectionLastContent = tabableContent.last();
+					}
+
+					sectionLastContent.on('keydown', function(e) {
+						if( e.keyCode === 9 && ! e.shiftKey ) {
+							// Focus out when embedded
+							if (window != window.top) {
+								return true;
+							}
+
+							if ( i < titles.length - 1 ) {
+								onDotNavigation(i + 1);
+								setTimeout(function(){
+									titles.eq(i + 1).focus();
+								}, 200);
+							}
+							else {
+								focusHeader();
+							}
+							return false;
+						}
+					});
+				});
 			};
 
 			/*
@@ -279,32 +328,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					});
 
 				titles.each(function(i, title){
-					var $title = $(title),
-						sectionLastContent = $title,
-						tabableContent = sectionLastContent.siblings(".content").find("[tabindex=0]");
-
-					if ( tabableContent.length )
-						sectionLastContent = tabableContent.last();
-
-					sectionLastContent.on('keydown', function(e) {
-						if( e.keyCode === 9 && ! e.shiftKey ) {
-							// Focus out when embedded
-							if (window != window.top) {
-								return true;
-							}
-
-							if ( i < titles.length - 1 ) {
-								onDotNavigation(i + 1);
-								setTimeout(function(){
-									titles.eq(i + 1).focus();
-								}, 200);
-							}
-							else {
-								focusHeader();
-							}
-							return false;
-						}
-					});
+					var $title = $(title);
 
 					$title.on('keydown', function(e) {
 						if( e.keyCode === 9 ) {
@@ -363,7 +387,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					content: StoryText.prepareEditorContent(content, true),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					shareURL: shareURL,
-					scroll: i18n.viewer.floatLayout.scroll
+					scroll: i18n.viewer.floatLayout.scroll,
+					lblMainstageBtn: i18n.viewer.common.focusMainstage
 				});
 			}
 
@@ -632,14 +657,17 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				if ( ! _swipePane )
 					return;
 
-				if ( e.keyCode == 34 )
+				if ( e.keyCode == 34 ) {
 					_swipePane.swipeNext();
-				else if ( e.keyCode == 33 )
+				} else if ( e.keyCode == 33 ) {
 					_swipePane.swipePrev();
-				else if ( e.keyCode == 36 )
+				} else if ( e.keyCode == 36 ) {
 					_swipePane.swipeTo(0);
-				else if ( e.keyCode == 35 )
+				} else if ( e.keyCode == 35 ) {
 					_swipePane.swipeTo(container.find('.swiper-slide').length - 1);
+				} else if (e.keyCode === 9) {
+					$('body').addClass('user-is-tabbing');
+				}
 			}
 
 			/*
@@ -806,6 +834,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				// Disable map keybopard navigation
 				// To fix conflict with the Swiper component
 				// That guy listen to even on document and I haven't find the proper way to not mess them up
+				// ALS 9/2017 -- note we're gonna enable keyboard nav on mainstage focus then disable on exit
 				app.map && app.map.disableKeyboardNavigation();
 
 				if ( isInBuilder )

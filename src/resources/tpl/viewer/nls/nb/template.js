@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Lukk"
+      "close": "Lukk",
+      "focusMainstage": "Send tastaturfokus til media"
     },
     "loading": {
       "step1": "Laster inn historien",

@@ -19,7 +19,7 @@ define(["dojo/Deferred", "esri/urlUtils"],
 				var options = 'text=' + encodeURIComponent(title)
 								+ '&url=' + this.cleanURL(url || document.location.href)
 								+ '&related=EsriStoryMaps'
-								+ '&hashtags=storymap';
+								+ '&hashtags=StoryMaps';
 
 				window.open(
 					'https://twitter.com/intent/tweet?' + options,

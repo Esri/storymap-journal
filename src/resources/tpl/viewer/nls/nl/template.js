@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Sluiten"
+      "close": "Sluiten",
+      "focusMainstage": "Stuur toetsenbordfocus naar media"
     },
     "loading": {
       "step1": "Verhaal wordt geladen",

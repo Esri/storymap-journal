@@ -9,7 +9,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 [Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
 [Download](http://links.esri.com/storymaps/map_journal_template_zip)
 
-**Latest release is version 1.11.0**; if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+**Latest release is version 1.12.2**; if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
 For more infomation about using and customizing Esri's Storytelling Apps follow the [Story Maps Developers' Corner](https://developerscorner.storymaps.arcgis.com).
 
@@ -39,7 +39,7 @@ Once your story is ready, you have to find its ID in ArcGIS. The ID is a 32 char
 ![App ID](map-journal-help-application-id.png)
 
 1. [Download the application](http://links.esri.com/storymaps/map_journal_template_zip)
-2. Deploy the application on your webserver. See [FAQ](#how-to-deploy-the-application-on-a-web-server) for details
+2. Deploy the application on your webserver. See [FAQ](#how-do-i-deploy-the-application-on-a-web-server) for details
 3. Edit index.html, find the configuration section on line 38 and paste in your application ID
 4. Navigate to index.html (e.g., `http://127.0.0.1/MapJournal/index.html`)
 
@@ -165,7 +165,7 @@ When the Journal is hosted on your web server, an authentication dialog will app
 
 Note that for that authentication to work on some older browser (Internet Explorer 9) you need to install a proxy server on your web server to make sure the login credentials can be passed securely to ArcGIS Online. For more information, see the [Using the proxy](https://developers.arcgis.com/javascript/jshelp/ags_proxy.html) in the ArcGIS API for JavaScript documentation.
 
-Because of that limitation, we recommend that you configure the application to use OAuth. OAuth 2.0 based authentication is available for ArcGIS Online users with developer or organizational accounts and ArcGIS Enterprise users. Follow the procedure to [add an application](http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#ESRI_SECTION1_55703F1EE9C845C3B07BBD85221FB074) and [register an application](http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#ESRI_SECTION2_20AF85308FD548B5ADBAE28836F66D3F) to get an OAuth application ID. Once you have that application, open `index.html`, locate the `configOptions` section and fill the `oAuthAppId` property.
+Because of that limitation, we recommend that you configure the application to use OAuth. OAuth 2.0 based authentication is available for ArcGIS Online users with developer or organizational accounts and ArcGIS Enterprise users. Follow the procedure to [add an application](http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#ESRI_SECTION1_0D1B620254F745AE84F394289F8AF44B) and [register an application](http://doc.arcgis.com/en/arcgis-online/share-maps/add-items.htm#REG_APP) to get an OAuth application ID. Once you have that application, open `index.html`, locate the `configOptions` section and fill the `oAuthAppId` property.
 
 If you are using secured services but don't want users to have to authenticate, you can use a proxy to store the username/password to be used. See [Working with Proxy Services](https://developers.arcgis.com/authentication/working-with-proxies/#selfhosted-proxy-service), and add proxy rules to specify what services need to use the proxy by editing `PROXY_RULES` in `app/config.js`.
 
@@ -385,7 +385,7 @@ The deploy folder now contains the built application that you can [deploy to you
 The build script performs code validation through [JSHint](http://www.jshint.com/). You can disable those validations by editing `Gruntfile.js` -- look for the following comments `/* Comment out to disable code linting */`.
 
 ### Design
-Map Journal relies on AMD and Dojo loader [AMD](http://help.arcgis.com/en/webapi/javascript/arcgis/jshelp/#inside_dojo_amd) for application structure.
+Map Journal relies on AMD and Dojo loader [AMD](https://developers.arcgis.com/javascript/3/jshelp/inside_dojo_amd.html) for application structure.
 
 The application is structured as follows:
 
@@ -412,7 +412,7 @@ The application is structured as follows:
 
 The main dependencies are:
  * [jQuery](http://jquery.com/)
- * [Bootstrap](http://twitter.github.com/bootstrap/)
+ * [Bootstrap](https://getbootstrap.com/docs/3.3/)
  * [CKEditor](http://ckeditor.com/)
  * [iDangero.us Swiper](http://www.idangero.us/sliders/swiper/)
 
@@ -434,7 +434,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing).
 
 ## Licensing
-Copyright 2017 Esri
+Copyright 2014-2017 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

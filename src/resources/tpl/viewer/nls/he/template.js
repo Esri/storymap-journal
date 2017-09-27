@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "סגור"
+      "close": "סגור",
+      "focusMainstage": "שלח פוקוס של המקלדת למדיה"
     },
     "loading": {
       "step1": "טוען סיפור",

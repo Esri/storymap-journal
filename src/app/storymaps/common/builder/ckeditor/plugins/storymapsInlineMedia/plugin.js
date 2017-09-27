@@ -32,7 +32,7 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 				var media = null;
 
 				if ( elemIsImg ) {
-					var mediaImg = elem.children('img').eq(0),
+					var mediaImg = elem.find('img').eq(0),
 						caption = mediaImg.parents('figure').children('figcaption'),
 						title = caption && caption.length ? caption.html() : mediaImg.attr('title');
 
@@ -44,7 +44,7 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							title: title,
 							width: mediaImg.attr('width'),
 							height: mediaImg.attr('height'),
-							activateFullScreen: mediaImg.parents(".image-container").hasClass("activate-fullscreen")
+							activateFullScreen: mediaImg.parentsUntil('figure').filter('.activate-fullscreen').length > 0
 						}
 					};
 				}

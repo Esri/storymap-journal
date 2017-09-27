@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Tutup"
+      "close": "Tutup",
+      "focusMainstage": "Kirim fokus keyboard ke media"
     },
     "loading": {
       "step1": "Memuat cerita",

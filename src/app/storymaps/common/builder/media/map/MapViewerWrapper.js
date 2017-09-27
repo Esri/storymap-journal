@@ -171,7 +171,11 @@ define([
 					return;
 				}
 
-				var json = JSON.parse(event.data);
+				var json = _.isString(event.data) ? JSON.parse(event.data) : event.data;
+				if (!json || !json.type) {
+					console.log('MV ignored event without data or without data type', event.data);
+					return;
+				}
 				console.log("MV received", json);
 
 				switch (json.type) {

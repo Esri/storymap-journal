@@ -24,7 +24,7 @@ define([
         return url;
       }
 
-      return url + '?token=' + token;
+      return this.forceHttps(url) + '?token=' + token;
     },
 
     getToken: function() {
@@ -40,6 +40,11 @@ define([
         return IdentityManager.findCredential(app.portal.url).token;
       }
       return this.getCookieToken();
+    },
+
+    forceHttps: function(url) {
+      var urlWithoutProtocol = url.replace(/^.*?\/\//, '');
+      return 'https://' + urlWithoutProtocol;
     },
 
     isAppResource: function(url, appItem) {

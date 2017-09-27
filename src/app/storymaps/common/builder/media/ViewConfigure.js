@@ -87,6 +87,7 @@ define(["lib-build/css!./ViewConfigure",
 						width:  params.fromService ? null : media[media.type].width,
 						height: params.fromService ? null : media[media.type].height
 					};
+					media.image.activateFullScreen = params.media.activateFullScreen;
 				}
 
 				_mediaType = media ? media.type : 'image';

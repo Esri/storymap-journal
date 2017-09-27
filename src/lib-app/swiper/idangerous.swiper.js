@@ -15,6 +15,7 @@
 
 /*
  * Modified by Esri 08/21/14 (setClickedSlide)
+ * and August 2017 (handleKeyboardKeys for spacebar a11y scrolling)
  */
 
 var Swiper = function (selector, params) {
@@ -583,7 +584,7 @@ var Swiper = function (selector, params) {
         var _width = _this.h.getWidth(_this.container, false, params.roundLengths);
         var _height = _this.h.getHeight(_this.container, false, params.roundLengths);
         if (_width === _this.width && _height === _this.height && !force) return;
-        
+
         _this.width = _width;
         _this.height = _height;
 
@@ -690,7 +691,7 @@ var Swiper = function (selector, params) {
                                 _this.snapGrid.push(slideLeft);
                             }
                         }
-                            
+
                     }
                     else {
                         _this.snapGrid.push(slideLeft);
@@ -1089,6 +1090,16 @@ var Swiper = function (selector, params) {
     ============================================*/
     function handleKeyboardKeys(e) {
         var kc = e.keyCode || e.charCode;
+        if (kc === 32) {
+            if (!_this || !_this.activeSlide()) {
+                return;
+            }
+            if (e.shiftKey) {
+                _this.activeSlide().scrollTop -= 50;
+            } else {
+                _this.activeSlide().scrollTop += 50;
+            }
+        }
         if (e.shiftKey || e.altKey || e.ctrlKey || e.metaKey) return;
         if (kc === 37 || kc === 39 || kc === 38 || kc === 40) {
             var inView = false;
@@ -1275,7 +1286,7 @@ var Swiper = function (selector, params) {
         else {
             _this.clickedSlide = event.currentTarget;
         }
-        
+
         _this.clickedTarget = event.target; // Esri
         _this.clickedSlideIndex     = _this.slides.indexOf(_this.clickedSlide);
         _this.clickedSlideLoopIndex = _this.clickedSlideIndex - (_this.loopedSlides || 0);
@@ -1890,7 +1901,7 @@ var Swiper = function (selector, params) {
                     else {
                         _this.fireCallback(params.onSlideChangeEnd, _this);
                     }
-                    
+
                 }
                 _this.setWrapperTranslate(newPosition);
                 _this._DOMAnimating = false;

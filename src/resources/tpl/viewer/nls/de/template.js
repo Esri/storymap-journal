@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Schließen"
+      "close": "Schließen",
+      "focusMainstage": "Tastaturfokus an Medien senden"
     },
     "loading": {
       "step1": "Story wird geladen",

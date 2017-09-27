@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Zatvori"
+      "close": "Zatvori",
+      "focusMainstage": "Prebaci fokus tastature na medije"
     },
     "loading": {
       "step1": "Učitavanje priče",

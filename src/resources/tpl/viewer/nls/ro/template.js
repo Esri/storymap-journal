@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Închidere"
+      "close": "Închidere",
+      "focusMainstage": "Transmitere focalizare tastatură către material media"
     },
     "loading": {
       "step1": "Se încarcă povestea",

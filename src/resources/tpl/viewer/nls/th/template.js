@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "ปิด"
+      "close": "ปิด",
+      "focusMainstage": "ส่งโฟกัสของแป้นพิมพ์ไปยังสื่อ"
     },
     "loading": {
       "step1": "กำลังโหลดเรื่องราว",

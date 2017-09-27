@@ -92,7 +92,7 @@ figure figcaption {
 }
 
 .btn-fullscreen {
-	display: inline-block;
+	display: none;
 	position: absolute;
 	right: 10px;
 	width: 26px;
@@ -100,11 +100,42 @@ figure figcaption {
 	background: url('../../../../resources/tpl/viewer/icons/media-fullscreen.png') 0 0;
 	opacity: 0.6;
 	margin-top: 10px;
+	border: none; /* since we changed to an actual <button> */
 }
 
-.btn-fullscreen:hover {
+/* focus styling matches hover styling */
+.btn-fullscreen:hover,
+.btn-fullscreen:focus {
 	opacity: 1.0;
+}
+
+/* focus mainstage button: hidden until focused with keyboard navigation */
+
+.centering {
+	width: 100%;
+	text-align: center;
+}
+
+/* make this not visible until it has focus.
+  requires two levels of selector because bootstrap is imported after our custom css :\ */
+.section .visible-on-focus {
+	opacity: 0;
+	pointer-events: none;
+	cursor: default;
+}
+
+.section .visible-on-focus:focus {
+	opacity: 1;
+	pointer-events: auto;
 	cursor: pointer;
+}
+
+.section button.visible-on-focus {
+	margin: 0 auto;
+	background: none;
+	padding: 0;
+	border: none;
+	border-bottom: 1px dashed #aaa;
 }
 
 .image-container.has-width img {
@@ -129,17 +160,11 @@ p.has-width.float-right img {
 	text-align: right !important;
 }
 
-.image-container:not(.activate-fullscreen) .btn-fullscreen {
-	display: none;
+.activate-fullscreen .btn-fullscreen {
+	display: inline-block;
 }
 
-p:not(.activate-fullscreen) > .image-wrapper > .btn-fullscreen {
-	display: none;
-}
-
-.image-container.activate-fullscreen > .image-wrapper,
-.image-container.activate-fullscreen > span > .image-wrapper,
-.image-container.activate-fullscreen > p > .image-wrapper,
+.image-container.activate-fullscreen .image-wrapper,
 /* that should not happen */
 figure > .image-wrapper {
 	cursor: pointer;
@@ -165,6 +190,7 @@ p[tabindex='0'] > .image-wrapper {
 	pointer-events: none;
 }
 
+/* if an image is a link, don't show fullscreen btn */
 .image-container > a > .image-wrapper .btn-fullscreen {
 	display: none;
 }
@@ -234,6 +260,8 @@ p[tabindex='0'] > .image-wrapper {
 	top: 0px;
 	text-align:center;
 	z-index: 30;
+	border: none;
+	padding: 0;
 }
 
 .backButton {

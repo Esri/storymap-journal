@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Fechar"
+      "close": "Fechar",
+      "focusMainstage": "Enviar foco de teclado para media"
     },
     "loading": {
       "step1": "A carregar a história",

@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Zavřít"
+      "close": "Zavřít",
+      "focusMainstage": "Poslat fokus klávesnice na média"
     },
     "loading": {
       "step1": "Načítání příběhu",

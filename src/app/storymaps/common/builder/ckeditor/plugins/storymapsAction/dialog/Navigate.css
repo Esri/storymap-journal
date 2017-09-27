@@ -28,3 +28,21 @@
 	white-space: normal;
 	min-width: 290px;
 }
+
+.editorDialogNavigate .dropdown-toggle {
+  padding-bottom: 0;
+}
+
+.editorDialogNavigate .sections-list-btn {
+  max-width: 246px;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-right: 4px;
+}
+
+.editorDialogNavigate .caret {
+  display: inline-block;
+  padding-bottom: 10px;
+}

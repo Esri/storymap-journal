@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Užverti"
+      "close": "Užverti",
+      "focusMainstage": "Siųsti klaviatūros fokusavimą į mediją"
     },
     "loading": {
       "step1": "Įkeliamas pasakojimas",

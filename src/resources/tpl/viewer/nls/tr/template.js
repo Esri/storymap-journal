@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Kapat"
+      "close": "Kapat",
+      "focusMainstage": "Medyaya klavye odağı gönder"
     },
     "loading": {
       "step1": "Hikaye yükleniyor",

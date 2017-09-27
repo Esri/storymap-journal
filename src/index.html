@@ -65,8 +65,8 @@
 
 		<script type="text/javascript">
 			var app = {
-				version: '1.11.0',
-				pathJSAPI: 'https://js.arcgis.com/3.21/'
+				version: '1.12.2',
+				pathJSAPI: 'https://js.arcgis.com/3.22/'
 			};
 		</script>
 		<noscript>
@@ -98,22 +98,26 @@
 								<div class="linkSocialContainer">
 									<span class="linkContainer"></span>
 									<span class="shareBtns">
-										<i class="shareIcon blackHover share_facebook icon-facebook-squared" tabindex="-1"></i>
-										<i class="shareIcon blackHover share_twitter icon-twitter" tabindex="-1"></i>
-										<i class="shareIcon blackHover share_bitly icon-link" tabindex="-1"></i>
-										<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
+										<i class="shareIcon blackHover share_facebook icon-facebook-squared" tabindex="0"></i>
+										<i class="shareIcon blackHover share_twitter icon-twitter" tabindex="0"></i>
+										<i class="shareIcon blackHover share_bitly icon-link" tabindex="0"></i>
+										<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 									</span>
 								</div>
 								<table class="logoContainer">
 									<tr>
 										<td class="logoWrapper">
-											<a class="logoLink" target="_blank" tabindex="-1">
+											<a class="logoLink" target="_blank">
 												<img class="logoImg"/>
 											</a>
 										</td>
 									</tr>
 								</table>
 							</div>
+							<!-- <div class="resizer"></div> -->
+							<button class="scroll" tabindex="-1">
+								<div class="scrollInner" data-toggle="tooltip"></div>
+							</button>
 							<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
 							<span class="error-status">
 								<button class="btn btn-xs btn-warning check-story"></button>
@@ -138,16 +142,12 @@
 									<div class="builder-lbl"></div>
 								</div>
 							</div>
-							<!-- <div class="resizer"></div> -->
-							<div class="scroll">
-								<div class="scrollInner" data-toggle="tooltip"></div>
-							</div>
 							<div class="builder-mask"></div>
 							<div class="firstAddExplain"></div>
 						</div>
 					</td>
 					<!-- Map -->
-					<td id="mainStagePanel" tabindex="1">
+					<td id="mainStagePanel">
 						<div id="mainStagePanelInner">
 							<div class="medias">
 								<!-- Maps and media injected here -->
@@ -157,10 +157,10 @@
 							</div>
 							<!-- Back button -->
 							<div class="mediaBackContainer">
-								<div class="backButton">
+								<button class="backButton">
 									<div class="backArrow"></div>
 									<span class="backLbl"></span>
-								</div>
+								</button>
 							</div>
 							<!-- Builder -->
 							<div id="builderQuotes" class="centerAlignOnFloat"></div>
@@ -182,16 +182,16 @@
 				<div class="linkSocialContainer">
 					<span class="linkContainer"></span>
 					<span class="shareBtns">
-						<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="-1"></i>
-						<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
-						<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="-1"></i>
-						<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
+						<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="0"></i>
+						<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="0"></i>
+						<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="0"></i>
+						<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 					</span>
 				</div>
 				<table class="logoContainer">
 					<tr>
 						<td class="logoWrapper">
-							<a class="logoLink" target="_blank" tabindex="-1">
+							<a class="logoLink" target="_blank">
 								<img class="logoImg"/>
 							</a>
 						</td>
@@ -227,9 +227,9 @@
 			<div class="navDots vertical">
 				<!-- navigation dots -->
 			</div>
-			<div class="scroll">
+			<button class="scroll" tabindex="-1">
 				<div class="scrollInner" data-toggle="tooltip"></div>
-			</div>
+			</button>
 			<div class="builder-mask"></div>
 			<div class="firstAddExplain"></div>
 		</div>

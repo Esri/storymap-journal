@@ -25,3 +25,12 @@
 .arcgisSearch .hasButtonMode.hasMultipleSources .searchAnimate {
   width: 270px;
 }
+
+/* touch layout makes zoom buttons larger, so geocoder needs to move down */
+.esriSimpleSlider.touch ~ .geocoderBtn {
+  top: 140px;
+}
+
+.esriSimpleSlider.touch ~ .geocoderBtn .searchGroup.hasButtonMode.searchCollapsed .searchBtn {
+  padding: 7px;
+}

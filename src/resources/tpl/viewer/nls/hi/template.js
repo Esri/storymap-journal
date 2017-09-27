@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "बंद करें"
+      "close": "बंद करें",
+      "focusMainstage": "कीबोर्ड का फ़ोकस मीडिया पर भेजें"
     },
     "loading": {
       "step1": "कहानी लोड हो रही है",

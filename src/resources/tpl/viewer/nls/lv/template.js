@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Aizvērt"
+      "close": "Aizvērt",
+      "focusMainstage": "Sūtīt klaviatūras fokusu uz saturu"
     },
     "loading": {
       "step1": "Ielādē stāstu",

@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "关闭"
+      "close": "关闭",
+      "focusMainstage": "向介质发送键盘焦点"
     },
     "loading": {
       "step1": "正在加载故事",

@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Chiudi"
+      "close": "Chiudi",
+      "focusMainstage": "Invia focus tastiera al file multimediale"
     },
     "loading": {
       "step1": "Caricamento storia",

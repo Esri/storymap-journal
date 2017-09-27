@@ -712,6 +712,11 @@ define(["dojo/cookie",
 				return 0.2126 * mapped[0] + 0.7152 * mapped[1] + 0.0722 * mapped[2];
 			},
 
+			getRgba: function(color, a) {
+				var djColor = new Color(color);
+				var rgb = djColor.toRgb();
+				return 'rgba(' + rgb.join(', ') + ', ' + a + ')';
+			},
 
 			// Returns a function, that, as long as it continues to be invoked, will not
 			// be triggered. The function will be called after it stops being called for

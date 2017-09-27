@@ -41,6 +41,10 @@
 	overflow: hidden;
 }
 
+.floatingPanel .focus-mainstage {
+	margin: 0 auto;
+}
+
 /*
  * Navigation dots
  */
@@ -111,12 +115,20 @@ body.layout-float-left .floatingPanel .section {
 	/*font-family: 'open_sanssemibold', sans-serif;*/
 	font-weight: normal;
 	font-size: 1.85em;
-	margin-bottom: 10%;
+	margin-bottom: calc(10% - 30px);
+}
+
+.floatingPanel .title:focus {
+	outline-width: thin;
+}
+
+body:not(.user-is-tabbing) .floatingPanel .title:focus {
+	outline: none;
 }
 
 .floatingPanel .section:first-child .title {
 	margin-top: 25%;
-	margin-bottom: 10%;
+	margin-bottom: calc(10% - 30px);
 	font-size: 2.3em;
 	line-height: 1.3em;
 }
@@ -127,7 +139,7 @@ body.layout-float-left .floatingPanel .section {
 
 .floatingPanel .content {
 	opacity: 0.8;
-	margin-top: 10%;
+	margin-top: calc(10% - 30px);
 	/*margin-bottom: 15%;*/
 	font-size: 16px;
 	line-height: 1.5em;

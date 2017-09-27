@@ -2,7 +2,8 @@ define({
 	root: ({
 		viewer: {
 			common: {
-				close: "Close"
+				close: "Close",
+				focusMainstage: "Send keyboard focus to media"
 			},
 			loading: {
 				step1: "Loading story",

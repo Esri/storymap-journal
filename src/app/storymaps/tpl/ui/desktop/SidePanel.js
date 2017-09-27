@@ -85,7 +85,10 @@ define(["lib-build/tpl!./SidePanelSection",
 					}, 0);
 				}, 0);
 
-				if ( ! app.isInBuilder && app.userCanEdit && has("ie") != 9 && ! CommonHelper.getUrlParams().preview ) {
+				var urlParams = CommonHelper.getUrlParams();
+				var isPreview = (urlParams.preview === 'true' || urlParams.preview === '');
+				var isAutoplay = (urlParams.autoplay === 'true' || urlParams.autoplay === '');
+				if ( ! app.isInBuilder && app.userCanEdit && has("ie") != 9 && !isPreview && !isAutoplay) {
 					container.find('.error-status').addClass('enabled');
 					topic.subscribe("MYSTORIES_SCAN", updateErrorStatus);
 					updateErrorStatus("start");
@@ -193,6 +196,10 @@ define(["lib-build/tpl!./SidePanelSection",
 				}
 			};
 
+			this.focusSection = function(index) {
+				container.find('.section').eq(index).find('.focus-mainstage').focus();
+			};
+
 			this.getSectionNumber = function()
 			{
 				return _activeSectionIndex;
@@ -237,6 +244,17 @@ define(["lib-build/tpl!./SidePanelSection",
 			this.toggleSocialBtnAppSharing = function(disable)
 			{
 				HeaderHelper.toggleSocialBtnAppSharing(container, disable);
+			};
+
+			this.attachTabEvents = function() {
+				container.find('button,a')
+					.on('focus', function() {
+						var parentSection = $(this).parents('.section');
+						if (!parentSection.length) {
+							return;
+						}
+						onTabToSection(parentSection[0], this);
+					});
 			};
 
 			function setLayout(layoutOptions)
@@ -351,6 +369,7 @@ define(["lib-build/tpl!./SidePanelSection",
 					title: StoryText.prepareEditorContent(title),
 					content: StoryText.prepareEditorContent(content, true),
 					lblShare: i18n.viewer.headerFromCommon.share,
+					lblMainstageBtn: i18n.viewer.common.focusMainstage,
 					shareURL: shareURL
 				});
 			}
@@ -376,7 +395,7 @@ define(["lib-build/tpl!./SidePanelSection",
 					.click(function(){
 						container.find(".scroll .tooltip").remove();
 						removeScrollInvite();
-						container.find('.sections').scrollTop(400);
+						container.find('.sections').animate({scrollTop: '300px'});
 					})
 					.on('mousewheel', function(){
 						container.find(".scroll .tooltip").remove();
@@ -404,6 +423,17 @@ define(["lib-build/tpl!./SidePanelSection",
 				navigationCallback(index);
 			}
 
+			function onTabToSection(section) {
+				var index = $(section).index();
+
+				if (index >= _activeSectionIndex) {
+					onClickSection.bind(section)();
+				} else {
+					_this.showSectionNumber(index, false, true);
+					navigationCallback(index);
+				}
+			}
+
 			function onScroll()
 			{
 				if(! _selectReady)
@@ -419,29 +449,34 @@ define(["lib-build/tpl!./SidePanelSection",
 				// Shouldn't be displayed?
 				removeScrollInvite();
 
-				if(scrollingContainerTop === 0)
+				if (scrollingContainerTop === 0) {
 					newSectionIndex = 0;
-				else {
+				} else {
 					// TODO!
 					var firstMatchingSectionIndex = -1,
 						lastSectionTopPosition = -1;
 
 					container.find(".section").each(function(){
 						var sectionPos = $(this).position().top;
-						if ( sectionPos < scrollingContainerHeight / 2.5 )
+						if ( sectionPos < scrollingContainerHeight / 2.5 ) {
 							firstMatchingSectionIndex = $(this).index();
+						}
 
 						lastSectionTopPosition = sectionPos;
 					});
 
-					if ( Math.round(lastSectionTopPosition + container.find(".section").last().outerHeight()) == scrollingContainerHeight )
+					if ( Math.round(lastSectionTopPosition + container.find(".section").last().outerHeight()) == scrollingContainerHeight ) {
 						newSectionIndex = container.find(".section").length - 1;
-					else if ( firstMatchingSectionIndex == -1 && lastSectionTopPosition > 0 )
+					}
+					else if ( firstMatchingSectionIndex == -1 && lastSectionTopPosition > 0 ) {
 						newSectionIndex = 0;
-					else if ( firstMatchingSectionIndex == -1 )
+					}
+					else if ( firstMatchingSectionIndex == -1 ) {
 						newSectionIndex = container.find(".section").length - 1;
-					else
+					}
+					else {
 						newSectionIndex = firstMatchingSectionIndex;
+					}
 				}
 
 				if ( newSectionIndex != _activeSectionIndex ){
@@ -543,8 +578,9 @@ define(["lib-build/tpl!./SidePanelSection",
 					tooltipFontColor: colors.panel
 				});
 				container.css("background-color", colors.panel);
+				var transparentPanel = CommonHelper.getRgba(colors.panel, 0.001);
 				container.find('.scroll').css({
-					'background': 'linear-gradient(transparent, ' + colors.panel + ')'
+					'background': 'linear-gradient(' + transparentPanel + ', ' + colors.panel + ')'
 				});
 				container.find('.sections').css("color", colors.text);
 				container.find('.panelEditBtn').css("background-color", colors.panel);
@@ -591,6 +627,13 @@ define(["lib-build/tpl!./SidePanelSection",
 			function initEvents()
 			{
 				container.find('.sections').scroll(onScroll);
+				$('body').on('keydown', function(evt) {
+					$('body').off('keydown');
+					if ((evt.keyCode === 40 || evt.keyCode === 34) && $('.scroll').is(':visible')) {
+						$('.section .title').eq(0).focus();
+						container.find('.scroll').trigger('click');
+					}
+				});
 
 				if ( isInBuilder )
 					container.find('.panelEditBtn').off('click').click(onClickEdit);

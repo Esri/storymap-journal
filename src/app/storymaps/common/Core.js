@@ -260,6 +260,12 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 				definePortalConfig();
 
+				// Pass cookie onto API to avoid infinite redirects
+				// use .portalUrl instead of just .url -- otherwise Portal federated services
+				// look in the wrong place for generateToken. Check esri.id.serverInfos if
+				// you run into this problem.
+				IdentityManager.checkSignInStatus(app.portal.portalUrl);
+
 				// If app is configured to use OAuth
 				if ( app.indexCfg.oAuthAppId ) {
 					var info = new ArcGISOAuthInfo({
@@ -382,19 +388,19 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 					app.userCanEdit = app.data.userIsAppOwner();
 
-					// Prevent app from accessing the cookie in viewer when user is not the owner
-					if ( ! app.isInBuilder && ! app.userCanEdit ) {
-						if( ! document.__defineGetter__ ) {
-							Object.defineProperty(document, 'cookie', {
-								get: function(){ return ''; },
-								set: function(){ return true; }
-							});
-						}
-						else {
-							document.__defineGetter__("cookie", function() { return ''; });
-							document.__defineSetter__("cookie", function() {} );
-						}
-					}
+					//Prevent app from accessing the cookie in viewer when user is not the owner
+					//if ( ! app.isInBuilder && ! app.userCanEdit ) {
+					//	if( ! document.__defineGetter__ ) {
+					//		Object.defineProperty(document, 'cookie', {
+					//			get: function(){ return ''; },
+					//			set: function(){ return true; }
+					//		});
+					//	}
+					//	else {
+					//		document.__defineGetter__("cookie", function() { return ''; });
+					//		document.__defineSetter__("cookie", function() {} );
+					//	}
+					//}
 
 					if( app.indexCfg.authorizedOwners && app.indexCfg.authorizedOwners.length > 0 && app.indexCfg.authorizedOwners[0] ) {
 						var owner = itemRq.owner,
@@ -592,7 +598,10 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			app.builder && app.builder.appInitComplete();
 
 			// Load My Stories in builder or viewer if user is owning the story
-			if ( (app.isInBuilder || app.userCanEdit) && has("ie") != 9 && ! _urlParams.preview ) {
+
+			var isPreview = (_urlParams.preview === 'true' || _urlParams.preview === '');
+			var isAutoplay = (_urlParams.autoplay === 'true' || _urlParams.autoplay === '');
+			if ( (app.isInBuilder || app.userCanEdit) && has("ie") != 9 && !isPreview && !isAutoplay ) {
 				if ( has("ff") ) {
 					$(".builderShare #my-stories-frame").remove();
 				}
@@ -833,6 +842,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			return ! app.isInBuilder && (
 				(! isProd() && !! CommonHelper.getAppID(isProd()))
 				|| isProd() && app.userCanEdit)
+				&& (_urlParams.autoplay === undefined || _urlParams.autoplay == 'false')
 				&& (_urlParams.preview === undefined || _urlParams.preview == 'false');
 		}
 

@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "關閉"
+      "close": "關閉",
+      "focusMainstage": "將鍵盤焦點傳至媒體"
     },
     "loading": {
       "step1": "正在載入故事",

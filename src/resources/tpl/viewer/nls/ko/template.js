@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "닫기"
+      "close": "닫기",
+      "focusMainstage": "키보드 포커스를 미디어에 보냄"
     },
     "loading": {
       "step1": "스토리 불러오는 중",

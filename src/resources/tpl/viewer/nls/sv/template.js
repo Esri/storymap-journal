@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Stäng"
+      "close": "Stäng",
+      "focusMainstage": "Skicka tangentbordsfokus till media"
     },
     "loading": {
       "step1": "Läser in berättelsen",

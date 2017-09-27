@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Đóng"
+      "close": "Đóng",
+      "focusMainstage": "Gửi trung tâm bàn phím vào phương tiện"
     },
     "loading": {
       "step1": "Đang tải câu chuyện",

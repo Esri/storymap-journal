@@ -118,7 +118,7 @@ define({
       "logoUploadSizeError": "Слишком большие размеры GIF. Замените размер на ${PIXEL-WIDTH} пикселов по ширине",
       "logoCustomLinkTooltip": "Ссылка на логотип",
       "logoCustomLinkPlaceholder": "URL изображения",
-      "logoUploadGenericError": "Логотипом может быть файл формата .bmp, .gif, .jpg, .jpeg, или .png. Gif должен быть меньше 250 пикс в ширину и 10Мб по размеру.",
+      "logoUploadGenericError": "Логотипом может быть файл формата .bmp, .gif, .jpg, .jpeg, или .png. Gif должен быть меньше 250 пикс. в ширину и 10 МБ по размеру.",
       "logoCustomTargetPlaceholder": "Веб-страница, которая будет открываться при нажатии на логотип",
       "logoSocialText": "Строка тегов:",
       "logoLink": "Ссылка:",

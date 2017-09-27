@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "閉じる"
+      "close": "閉じる",
+      "focusMainstage": "キーボード フォーカスをメディアに送信"
     },
     "loading": {
       "step1": "ストーリーの読み込み",

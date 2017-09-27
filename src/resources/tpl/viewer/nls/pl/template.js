@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Zamknij"
+      "close": "Zamknij",
+      "focusMainstage": "Prześlij fokus klawiatury do elementu multimedialnego"
     },
     "loading": {
       "step1": "Trwa wczytywanie narracji",

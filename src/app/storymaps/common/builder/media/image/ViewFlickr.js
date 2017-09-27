@@ -89,7 +89,7 @@ define(["lib-build/tpl!./ViewFlickr",
 				_flickr.getPicturesInSet(
 					$(evt.target).data('id') || $(evt.target).parents('.set').data('id'),
 					{
-						per_page: 100 // TODO
+						per_page: 500 // TODO: Flickr limit is 500 per request. Add paging to display all photos in albums with more than 500 images.
 					}
 				).then(
 					function(data) {

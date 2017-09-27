@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Fermer"
+      "close": "Fermer",
+      "focusMainstage": "Placer le focus clavier sur le média"
     },
     "loading": {
       "step1": "Chargement du récit",

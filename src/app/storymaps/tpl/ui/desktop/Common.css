@@ -60,10 +60,6 @@
 }
 */
 
-.sectionPanel .logoLink {
-	outline: none;
-}
-
 .sectionPanel .logoImg {
 	max-width: 250px;
 	max-height: 50px;
@@ -331,6 +327,14 @@ body[data-theme-major=black] .builder-content-panel .builder-content-panel-group
 	height: 100px;
 	padding: 15px;
 	cursor: pointer;
+}
+
+/* since we moved the scroll button and made it a <button>, fix the styling */
+.sidePanel .scroll,
+.floatingPanel .scroll {
+	z-index: 1;
+	width: 100%;
+	border-style: none;
 }
 
 body.layout-side-left .sidePanel .scroll,

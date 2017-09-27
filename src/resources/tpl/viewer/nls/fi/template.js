@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Sulje"
+      "close": "Sulje",
+      "focusMainstage": "Lähetä näppäimistön kohdistus mediaan"
     },
     "loading": {
       "step1": "Ladataan tarinaa",

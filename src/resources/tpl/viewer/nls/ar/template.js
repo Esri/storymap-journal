@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "إغلاق"
+      "close": "إغلاق",
+      "focusMainstage": "إرسال تركيز لوحة المفاتيح إلى الوسائط"
     },
     "loading": {
       "step1": "تحميل القصة",

@@ -349,7 +349,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 
 					// Reset centering that may have been done if user has changed layouts
 					$(".centerAlignOnFloat").css({ paddingRight: 0, paddingLeft: 0 });
-					$(".mediaBackContainer").css({ left: '50%', right: 'inherit' });
+					$('.mediaBackContainer').css({left: '50%', right: 'inherit'});
 					$(".mainMediaContainer .imgContainer.center").css({ left: 0, right: 0 });
 					$(".mainMediaContainer .embedContainer.center").css({ left: 0, right: 0 });
 					$(".mainMediaContainer .embedContainer.custom").css({ left: 0, right: 0 });
@@ -510,17 +510,48 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				}
 			}
 
+			function onMapMainstageFocus() {
+				if( WebApplicationData.getLayoutId() == "float" ) {
+					app.ui.floatingPanel.disableSwiperKeybordEvent();
+				}
+				var thisMap = app.map;
+				thisMap.enableKeyboardNavigation();
+				var mouseEvents = lang.getObject('navigationManager.mouseEvents', false, thisMap);
+				if (mouseEvents) {
+					mouseEvents._onMouseEnterHandler(new window.Event('mouseenter'));
+				}
+				// it's possible there will be a lot of these stacked on different mainstages,
+				// but there shouldn't be a harm in multiple calls here. worse is no calls, given
+				// the order of the mainstage-exit broadcast.
+				var handle = topic.subscribe('mainstage-exit', function() {
+					handle.remove();
+					if( WebApplicationData.getLayoutId() == "float" ) {
+						app.ui.floatingPanel.enableSwiperKeybordEvent();
+					}
+					thisMap.disableKeyboardNavigation();
+					if (mouseEvents) {
+						mouseEvents._onMouseLeaveHandler(new window.Event('mouseleave'));
+					}
+				});
+			}
+
 			function updateMainMediaMapsStep2(mapContainer, section, oldExtent, index, media, notFirstLoad)
 			{
 				_this.updateMainStageWithLayoutSettings();
 				setMapControlsColor();
+				var mainStage = mapContainer.parent();
+				if (mainStage[0] === document.activeElement) {
+					onMapMainstageFocus();
+				} else {
+					mainStage.off('focus').on('focus', onMapMainstageFocus);
+				}
 
 				//app.data.debug();
 
-				if( WebApplicationData.getLayoutId() == "float" )
-					app.map.disableKeyboardNavigation();
-				else
-					app.map.enableKeyboardNavigation();
+				// if( WebApplicationData.getLayoutId() == "float" )
+				//	app.map.disableKeyboardNavigation();
+				// else
+				//	app.map.enableKeyboardNavigation();
 
 				try {
 					app.map.resize();
@@ -589,7 +620,11 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						extent = app.map._params.extent;
 					}
 
-					if ( extent )
+					if ( extent ) {
+						var currentMap = app.maps[media.webmap.id];
+						if (currentMap && currentMap.mapCommand) {
+							currentMap.mapCommand.currentHomeExtent = extent;
+						}
 						app.map.setExtent(extent/*, true*/).then(function(){
 							applyPopupConfiguration(media.webmap.popup, index);
 							topic.publish("story-loaded-map", {
@@ -597,6 +632,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 								index: index
 							});
 						}); // TODO has at least to use _core.setExtent
+					}
 					else
 						topic.publish("story-loaded-map", {
 							id: media.webmap.id,
@@ -669,8 +705,16 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 
 					app.map.infoWindow.clearFeatures();
 
-					if ( layer )
-						applyPopupConfigurationStep2(popupCfg, index);
+					if ( layer ) {
+						if (layer.updating) {
+							var eventListener = layer.on('update-end', function() {
+								eventListener.remove();
+								applyPopupConfigurationStep2(popupCfg, index);
+							});
+						} else {
+							applyPopupConfigurationStep2(popupCfg, index);
+						}
+					}
 					// TODO
 					else if ( layer2 ) {
 						var layerIdx = popupCfg.layerId.split('_').slice(-1).join('_'),

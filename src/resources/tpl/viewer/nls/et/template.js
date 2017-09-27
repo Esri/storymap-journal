@@ -1,7 +1,8 @@
 define({
   "viewer": {
     "common": {
-      "close": "Sulge"
+      "close": "Sulge",
+      "focusMainstage": "Saada klaviatuurisisestus meediumisisusse"
     },
     "loading": {
       "step1": "Loo laadimine",

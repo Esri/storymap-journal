@@ -1,11 +1,14 @@
 <div class="section swiper-slide <%= optHtmlClass %>">
 	<div class="section-inner">
 		<h1 class="title" tabindex="0"><%= title %></h1>
-		<div class="content"><%= content %></div>
-		<div class="social">
-			<span class="shareIcon share_facebook icon-facebook-squared" data-url="<%= shareURL %>"> Facebook</span>
-			<span class="shareIcon share_twitter icon-twitter" data-url="<%= shareURL %>"> Twitter</span>
-			<span class="shareIcon share_bitly icon-link" data-url="<%= shareURL %>"> <%= lblShare %></span>
-		</div>
+    <div class="centering">
+      <button class="link visible-on-focus focus-mainstage"><%= lblMainstageBtn %></button>
+    </div>
+    <div class="content"><%= content %></div>
+    <div class="social">
+      <span class="shareIcon share_facebook icon-facebook-squared" data-url="<%= shareURL %>"> Facebook</span>
+      <span class="shareIcon share_twitter icon-twitter" data-url="<%= shareURL %>"> Twitter</span>
+      <span class="shareIcon share_bitly icon-link" data-url="<%= shareURL %>"> <%= lblShare %></span>
+    </div>
 	</div>
 </div>
