@@ -179,6 +179,25 @@ define(["dojo/topic",
 			var fullscreenHref = imgNode.attr('src');
 
 			// TODO: SIZES
+			// if you can get the side panel images (with sizes) into the data model,
+			// decide here which size to use.
+
+			// var imgSizes = [{}]; // somehow find the image's sizes here...
+			// var sorted = _.sortBy(imgSizes, 'width');
+			// fullscreenHref = imgSizes[0];
+
+			//	if (sorted.length && sorted.length > 1) {
+			//		var compareWidth = $('body').width();
+			//		//	go through and find the smallest image size that isn't
+			//		_.some(sorted, function(fileObj) {
+			//			if (fileObj.width && fileObj.width < compareWidth) {
+			//				return true;
+			//			}
+			//			fullscreenHref = fileObj.url;
+			//			return false;
+			//		});
+			//	fullscreenHref.possiblyAddToken(fullscreenHref);
+			//	}
 
 			$.colorbox({
 				href: fullscreenHref,
@@ -226,7 +245,7 @@ define(["dojo/topic",
 				if (($(node).parents('#mobileView').length)) {
 					$(node).parents('.image-container').removeClass('activate-fullscreen');
 				} else {
-					$(node).after($('<button class="btn-fullscreen"></button>').click(mediaFullScreen))
+					$(node).after($('<button class="btn-fullscreen" title="' + i18n.viewer.common.expandImage + '"></button>').click(mediaFullScreen))
 					.click(mediaFullScreen);
 				}
 			});
@@ -253,76 +272,8 @@ define(["dojo/topic",
 				if (index !== app.data.getCurrentSectionIndex()) {
 					app.ui.mainStage.updateMainMediaWithStoryMainMedia(index);
 				}
-				var thisMainstage = $('.mainMediaContainer.active');
-				thisMainstage.focus();
-				onMainstageFocus(thisMainstage, evt.target);
+				app.ui.mainStage.focusActiveMainstage(evt.target);
 			});
-		}
-
-		function onMainstageFocus(mainstage, originator, fromAction) {
-			var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
-			var focusableEls = mainstage.find(focusableElementsString).filter(':visible');
-			var firstTab = focusableEls.eq(0);
-			var lastTab = focusableEls.eq(focusableEls.length - 1);
-			var backBtn;
-			if (fromAction) {
-				backBtn = $('.backButton').attr('tabindex', '0');
-				backBtn.off('keydown').on('keydown', function(e) {
-					if (e.keyCode === 9) {
-						e.preventDefault();
-						if (e.shiftKey) {
-							lastTab.focus();
-						} else {
-							firstTab.focus();
-						}
-					} else if (e.keyCode === 27) {
-						backBtn.trigger('click');
-						backBtn.off('keydown');
-					}
-				});
-			}
-			mainstage.on('keydown', function(e) {
-				mainstageKeydown.bind(this)(e, focusableEls, firstTab, lastTab, originator, backBtn);
-			});
-
-		}
-
-		function mainstageKeydown(e, focusableEls, firstTab, lastTab, originator, backBtn) {
-			// on tab, cycle through focusable elements
-			if (e.keyCode === 9) {
-				if (!lastTab.length || !focusableEls.length) {
-					e.preventDefault();
-					if (backBtn) {
-						backBtn.focus();
-					}
-					return;
-				}
-				if (e.target === lastTab[0] && !e.shiftKey) {
-					e.preventDefault();
-					(backBtn || firstTab).focus();
-					return;
-				}
-				if (e.target === firstTab[0] && e.shiftKey) {
-					e.preventDefault();
-					(backBtn || lastTab).focus();
-					return;
-				}
-			}
-			// on esc, exit mainstage
-			if (e.keyCode === 27) {
-				if (backBtn) {
-					backBtn.trigger('click');
-				} else {
-					exitMainstage($(this), originator);
-				}
-			}
-		}
-
-		function exitMainstage(mainstage, triggerFromContent) {
-			topic.publish('mainstage-exit');
-			mainstage.off('keydown');
-			$(triggerFromContent).focus();
-			$('.backButton').attr('tabindex', '-1');
 		}
 
 		/*
@@ -359,8 +310,6 @@ define(["dojo/topic",
 					actionChangePopup = !! (actionIsWebmap && action.media.webmap.popup);
 
 				topic.publish("story-perform-action-media", action.media);
-				var mainstage = $('.mainMediaContainer.active');
-				mainstage.focus();
 				var currentWebmap = actionIsWebmap ? app.maps[action.media.webmap.id] : null;
 				if (actionIsWebmap && !currentWebmap) {
 					var handle = topic.subscribe('story-loaded-map', function() {
@@ -371,14 +320,14 @@ define(["dojo/topic",
 						}
 
 						setTimeout(function() {
-							onMainstageFocus(mainstage, link, true);
+							app.ui.mainStage.focusActiveMainstage(link, true);
 						}, 500);
 					});
 				} else {
 					if (actionChangeExtent && currentWebmap.mapCommand) {
 						app.maps[action.media.webmap.id].mapCommand.currentHomeExtent = new Extent(action.media.webmap.extent);
 					}
-					onMainstageFocus(mainstage, link, true);
+					app.ui.mainStage.focusActiveMainstage(link, true);
 				}
 
 				// If the action is only changing extent on the same map, the next Map Move discard the back button
@@ -448,7 +397,7 @@ define(["dojo/topic",
 						topic.publish("story-perform-action-media", app.data.getCurrentSection().media);
 
 					$('.mediaBackContainer').hide();
-					exitMainstage(mainstage, link);
+					app.ui.mainStage.exitMainstage(null, link);
 				});
 
 				var isRealExtentChange = false;

@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Kapat",
-      "focusMainstage": "Medyaya klavye odağı gönder"
+      "focusMainstage": "Medyaya klavye odağı gönder",
+      "expandImage": "Görüntüyü genişlet"
+    },
+    "a11y": {
+      "skipToContent": "Anlatıya geç",
+      "headerAria": "Hikaye başlığı",
+      "panelAria": "Hikaye anlatısı",
+      "mainStageAria": "Mevcut hikaye bölümü medya",
+      "logoLinkAria": "Logo bağlantısı",
+      "toTop": "Anlatının başına git",
+      "focusContent": "Anlatıya dön",
+      "navAria": "Hikaye bölümleri",
+      "navPreviousAria": "Önceki bölüm",
+      "navNextAria": "Sonraki bölüm",
+      "toSectionAria": "%SECTION_NUMBER% bölümüne git: %SECTION_TITLE%",
+      "toNextGroupAria": "Sonraki bölüm grubu (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Önceki bölüm grubu (%SECTION_RANGE%)",
+      "loadingAria": "Hikaye içeriği yükleniyor"
     },
     "loading": {
       "step1": "Hikaye yükleniyor",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Bu özellik otomatik oynatma modunda kullanılamaz",
       "notshared": "Hikaye paylaşılmıyor"
     },
-    "overviewFromCommon": {
-      "title": "Genel Bakış Haritası"
-    },
-    "legendFromCommon": {
-      "title": "Gösterim"
+    "mapFromCommon": {
+      "overview": "Genel Bakış Haritası",
+      "legend": "Gösterim",
+      "home": "Evi Yakınlaştır"
     },
     "shareFromCommon": {
       "copy": "Kopyala",

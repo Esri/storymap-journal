@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Udlæs, når læseren navigerer væk",
       "unloadHelp": "Bevar markeringen af denne indstilling, hvis websiden har medier med lyd eller video, for at forhindre, at indholdet afspilles, når læseren navigerer til en anden sektion. Fjern markeringen, hvis lydsporet skal afspilles, mens læseren gennemgår historien.<br />Fjern markeringen af denne indstilling, hvis websiden er en applikation, så genindlæses historien ikke, hvis læseren vender tilbage til den.",
       "embedProtocolLabel": "Indlæs side via en sikker forbindelse (HTTPS)",
-      "embedProtocolWarning1": "Hvis denne side ikke bliver indlæst i din historie, kan den ikke indlejres på grund af websikkerhedsårsager. Som alternativ kan du tilføje et link i din fortælling for at åbne siden i en ny browserfane. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lær mere</a>",
-      "embedProtocolWarning2": "Hvis denne side ikke bliver indlæst i din historie, skal du fjerne markeringen af denne indstilling og prøve igen. Som alternativ kan du tilføje et link i din fortælling for at åbne siden i en ny browserfane. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lær mere</a>"
+      "embedProtocolWarning1": "Hvis denne side ikke bliver indlæst i din historie, kan den ikke indlejres på grund af websikkerhedsårsager. Som alternativ kan du tilføje et link i din fortælling for at åbne siden i en ny browserfane.",
+      "embedProtocolWarning2": "Hvis denne side ikke bliver indlæst i din historie, skal du fjerne markeringen af denne indstilling og prøve igen. Hvis siden fortsat ikke indlæses, kan den ikke indlejres på grund af websikkerhedsårsager. Som alternativ kan du tilføje et link i din fortælling for at åbne siden i en ny browserfane.",
+      "learn": "Lær mere",
+      "lblAltText": "Alternativ tekst",
+      "placeholderAltText": "Indtast en beskrivelse af dette medie til synshæmmede læsere...",
+      "tooltipAltText": "Indtast en beskrivelse af dette medie, der kan benyttes i teknologiske hjælpemiddelprogrammer, såsom skærmlæsersoftware. Det er valgfrit at anvende en beskrivelse, men det anbefales med henblik på at opfylde retningslinjerne for tilgængelighed, såsom WCAG og Section 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Find en adresse eller et sted",

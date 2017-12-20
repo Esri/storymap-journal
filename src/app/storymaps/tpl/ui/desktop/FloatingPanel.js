@@ -149,6 +149,9 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			};
 
 			this.focusSection = function(index) {
+				if (!index && index !== 0) {
+					index = _swipePane ? _swipePane.activeIndex : 0;
+				}
 				var sectionTitle = container.find('.section').eq(index).find('.title').eq(0);
 				setTimeout(function() {
 					sectionTitle.focus();
@@ -185,7 +188,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			this.toggleSwitchBuilderButton = function(state)
 			{
 				var switchBuilderBtn = container.find('.switchBuilder')
-					.html('<span class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
+					.html('<span aria-hidden="true" class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
 					.off('click')
 					.click(CommonHelper.switchToBuilder)
 					.toggle(state);
@@ -235,37 +238,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			};
 
 			this.attachTabEvents = function() {
-				var titles = container.find('.title');
 
-				titles.each(function(i, title) {
-					var $title = $(title),
-						sectionLastContent = $title,
-						tabableContent = $title.parent().find("[tabindex=0]:not(.title),button,a");
-
-					if ( tabableContent.length ) {
-						sectionLastContent = tabableContent.last();
-					}
-
-					sectionLastContent.on('keydown', function(e) {
-						if( e.keyCode === 9 && ! e.shiftKey ) {
-							// Focus out when embedded
-							if (window != window.top) {
-								return true;
-							}
-
-							if ( i < titles.length - 1 ) {
-								onDotNavigation(i + 1);
-								setTimeout(function(){
-									titles.eq(i + 1).focus();
-								}, 200);
-							}
-							else {
-								focusHeader();
-							}
-							return false;
-						}
-					});
-				});
 			};
 
 			/*
@@ -388,7 +361,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					lblShare: i18n.viewer.headerFromCommon.share,
 					shareURL: shareURL,
 					scroll: i18n.viewer.floatLayout.scroll,
-					lblMainstageBtn: i18n.viewer.common.focusMainstage
+					lblMainstageBtn: i18n.viewer.common.focusMainstage,
+					titleTag: index === 0 ? 'h1' : 'h2'
 				});
 			}
 
@@ -779,6 +753,19 @@ define(["lib-build/tpl!./FloatingPanelSection",
 
 				// Desktop scroll
 				container.on('mousewheel', onMouseWheel);
+
+				// loop to top
+				container.find('.loop-to-top').on('click keydown', function(evt) {
+					if (evt.type === 'keydown') {
+						if (evt.keyCode === 9 && !evt.shiftKey) {
+							evt.preventDefault();
+						} else {
+							return;
+						}
+					}
+					_this.showSectionNumber(0);
+					_this.focusSection(0);
+				});
 
 				//
 				// Touch scroll

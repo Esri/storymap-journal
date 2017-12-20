@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Laden ongedaan maken als de lezer weggaat",
       "unloadHelp": "Houd deze optie aangevinkt als de webpagina audio- of videomedia heeft om te voorkomen dat de content wordt afgespeeld als de lezer weggaat. Haal het vinkje weg om een soundtrack te laten doorspelen als de lezer verdergaat door het verhaal.<br />Als de webpagina een applicatie is, haal het vinkje dan weg zodat de applicatie het niet opnieuw laadt als de lezer terugkeert.",
       "embedProtocolLabel": "Pagina laden d.m.v. een beveiligde verbinding (HTTPS)",
-      "embedProtocolWarning1": "Als deze pagina niet in uw verhaal geladen wordt, dan kan het niet geïnbed worden omwille van webbeveiligingsredenen. Voeg als alternatief een koppeling toe aan uw verhaal om de pagina te openen in een nieuw browsertabblad. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Meer informatie</a>",
-      "embedProtocolWarning2": "Als deze pagina niet in uw verhaal geladen wordt, vink deze optie dan uit en probeer nogmaals. Als de pagina nog steeds niet geladen kan worden, dan kan het niet geïnbed worden omwille van webbeveiligingsredenen. Voeg als alternatief een koppeling toe aan uw verhaal om de pagina te openen in een nieuw browsertabblad. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Meer informatie</a>"
+      "embedProtocolWarning1": "Als deze pagina niet in uw verhaal geladen wordt, dan kan het niet geïnbed worden vanwege webbeveiligingsredenen. Voeg als alternatief een koppeling toe aan uw verhaal om de pagina te openen in een nieuw browsertabblad.",
+      "embedProtocolWarning2": "Als deze pagina niet in uw verhaal geladen wordt, vink deze optie dan uit en probeer nogmaals. Als de pagina nog steeds niet geladen kan worden, dan kan het niet ingebed worden vanwege webbeveiligingsredenen. Voeg als alternatief een koppeling toe aan uw verhaal om de pagina te openen in een nieuw browsertabblad.",
+      "learn": "Meer weten",
+      "lblAltText": "Alternatieve tekst",
+      "placeholderAltText": "Voeg voor slechtzienden een beschrijving van deze media toe...",
+      "tooltipAltText": "Geef een beschrijving van deze media-inhoud, die wordt gebruikt door ondersteuningstechnologie zoals schermleessoftware. Een beschrijving is optioneel maar wordt aanbevolen om te voldoen aan de webtoegangsrichtlijnen zoals WCAG en Sectie 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Een adres of plaats zoeken",

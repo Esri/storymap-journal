@@ -4,6 +4,7 @@
 
 .webmapSelector .map-cfg {
 	width: 100%;
+	margin-bottom: 5px;
 }
 
 
@@ -27,7 +28,7 @@
 
 .webmapSelector .webmaps-list-btn .caret {
 	position: absolute;
-	bottom: 14px;
+	bottom: 45%;
 	right: 12px;
 }
 
@@ -111,16 +112,23 @@
 
 .webmapSelector .map-cfg-title,
 .webmapSelector .map-cfg-btns {
-	padding: 5px 5px 20px 5px;
+	padding: 5px 5px 10px 5px;
 }
+
+.mediaSelector.smallSize .webmapSelector .map-cfg-title {
+	padding: 5px 5px 10px 0;
+	max-width: 130px;
+}
+
+.mediaSelector.smallSize .webmapSelector .map-cfg-btns {
+	padding: 5px 0 10px;
+}
+
 
 .webmapSelector .map-cfg-title {
-	font-size: 1.15em;
+	font-size: 1.1em;
 	vertical-align: top;
-}
-
-.webmapSelector .map-cfg-btns {
-	padding-left: 22px;
+	max-width: 155px; /* locale=el (greek) */
 }
 
 .webmapSelector .map-cfg-controls div.checkbox {
@@ -168,4 +176,16 @@
 .webmapSelector .external-link .fa,
 .webmapSelector .external-link .help {
 	margin-left: 4px;
+}
+
+/* alt text */
+
+.webmapSelector textarea.alt-text {
+	display: inline-block;
+	width: 92%;
+}
+
+.webmapSelector textarea.alt-text ~ .help {
+	display: inline-block;
+	vertical-align: top;
 }

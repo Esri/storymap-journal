@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Lukk",
-      "focusMainstage": "Send tastaturfokus til media"
+      "focusMainstage": "Send tastaturfokus til media",
+      "expandImage": "Utvid bilde"
+    },
+    "a11y": {
+      "skipToContent": "Gå til fortelling",
+      "headerAria": "Historieoverskrift",
+      "panelAria": "Historiefortelling",
+      "mainStageAria": "Gjeldende historieavsnittmedier",
+      "logoLinkAria": "Logokobling",
+      "toTop": "Gå til begynnelsen av fortellingen",
+      "focusContent": "Gå tilbake til fortelling",
+      "navAria": "Historieavsnitt",
+      "navPreviousAria": "Forrige avsnitt",
+      "navNextAria": "Neste avsnitt",
+      "toSectionAria": "Gå til avsnittet %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Neste avsnittsgruppe (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Forrige avsnittsgruppe (%SECTION_RANGE%)",
+      "loadingAria": "Historieinnholdet lastes inn"
     },
     "loading": {
       "step1": "Laster inn historien",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Dette er ikke tilgjengelig i automatisk avspillingsmodus",
       "notshared": "Historien er ikke delt"
     },
-    "overviewFromCommon": {
-      "title": "Oversiktskart"
-    },
-    "legendFromCommon": {
-      "title": "Tegnforklaring"
+    "mapFromCommon": {
+      "overview": "Oversiktskart",
+      "legend": "Tegnforklaring",
+      "home": "Zoom hjem"
     },
     "shareFromCommon": {
       "copy": "Kopier",

@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "닫기",
-      "focusMainstage": "키보드 포커스를 미디어에 보냄"
+      "focusMainstage": "키보드 포커스를 미디어에 보냄",
+      "expandImage": "이미지 확장"
+    },
+    "a11y": {
+      "skipToContent": "이야기로 건너뛰기",
+      "headerAria": "스토리 헤더",
+      "panelAria": "스토리 이야기",
+      "mainStageAria": "현재 스토리 섹션 미디어",
+      "logoLinkAria": "로고 링크",
+      "toTop": "이야기 시작으로 이동",
+      "focusContent": "이야기로 돌아가기",
+      "navAria": "스토리 섹션",
+      "navPreviousAria": "이전 섹션",
+      "navNextAria": "다음 섹션",
+      "toSectionAria": "%SECTION_NUMBER%: %SECTION_TITLE% 섹션으로 이동",
+      "toNextGroupAria": "다음 섹션 그룹(%SECTION_RANGE%)",
+      "toPrevGroupAria": "이전 섹션 그룹(%SECTION_RANGE%)",
+      "loadingAria": "스토리 콘텐츠를 불러오는 중"
     },
     "loading": {
       "step1": "스토리 불러오는 중",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "자동 재생 모드에서는 사용할 수 없습니다.",
       "notshared": "스토리가 공유되지 않음"
     },
-    "overviewFromCommon": {
-      "title": "개요 맵"
-    },
-    "legendFromCommon": {
-      "title": "범례"
+    "mapFromCommon": {
+      "overview": "오버뷰 맵",
+      "legend": "범례",
+      "home": "홈 확대/축소"
     },
     "shareFromCommon": {
       "copy": "복사",

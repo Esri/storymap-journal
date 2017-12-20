@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Se revocă încărcarea când cititorul trece în altă secţiune",
       "unloadHelp": "Dacă pagina web conţine materiale audio sau video, păstraţi această opţiune bifată pentru a opri redarea în momentul în care cititorul trece în altă secţiune. Debifaţi-o, de exemplu, pentru a continua redarea unei melodii când cititorul avansează în jurnal.<br />Dacă pagina web este o aplicaţie, debifaţi această opţiune pentru ca povestea să nu fie nevoită să se încarce din nou când cititorul revine în secţiunea respectivă.",
       "embedProtocolLabel": "Încărcaţi pagina printr-o conexiune securizată (HTTPS)",
-      "embedProtocolWarning1": "Dacă pagina nu se încarcă în povestea dvs., nu poate fi încorporată din motive de securitate web. Ca alternativă, adăugaţi un link la naraţiunea dvs. pentru a deschide pagina într-o filă de browser nouă. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Aflaţi mai multe</a>",
-      "embedProtocolWarning2": "Dacă pagina nu se încarcă în povestea dvs., debifaţi această opţiune şi încercaţi din nou. Dacă pagina tot nu se încarcă, nu poate fi încorporată din motive de securitate web. Ca alternative, adăugaţi un link la naraţiunea dvs. pentru a deschide pagina într-o filă de browser nouă. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Aflaţi mai multe</a>"
+      "embedProtocolWarning1": "Dacă pagina nu se încarcă în povestea dvs., nu poate fi încorporată din motive de securitate web. Ca alternativă, adăugaţi un link la naraţiunea dvs. pentru a deschide pagina într-o filă de browser nouă.",
+      "embedProtocolWarning2": "Dacă pagina nu se încarcă în povestea dvs., debifaţi această opţiune şi încercaţi din nou. Dacă pagina tot nu se încarcă, nu poate fi încorporată din motive de securitate web. Alternativ, adăugaţi un link la naraţiunea dvs. pentru a deschide pagina într-o filă de browser nouă.",
+      "learn": "Aflaţi mai multe",
+      "lblAltText": "Text alternativ",
+      "placeholderAltText": "Introduceţi o descriere a mediilor pentru cititorii cu probleme de vedere...",
+      "tooltipAltText": "Oferiţi o descriere a conţinutului mediilor care va fi folosită de tehnologiile de asistenţă, cum ar fi programul de citire a ecranului. Descrierea este opţională, dar recomandată pentru a respecta liniile directoare privind accesibilitatea, cum ar fi WCAG şi Secţiunea 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizaţi o adresă sau un loc",

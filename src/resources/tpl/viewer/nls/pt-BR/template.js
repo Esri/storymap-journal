@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Fechar",
-      "focusMainstage": "Enviar foco do teclado para mídia"
+      "focusMainstage": "Enviar foco do teclado para mídia",
+      "expandImage": "Expandir imagem"
+    },
+    "a11y": {
+      "skipToContent": "Pular para narrativa",
+      "headerAria": "Cabeçalho da história",
+      "panelAria": "Narrativa da história",
+      "mainStageAria": "Mídia da seção de história atual",
+      "logoLinkAria": "Link do logotipo",
+      "toTop": "Ir para início da narrativa",
+      "focusContent": "Retornar para narrativa",
+      "navAria": "Seções da história",
+      "navPreviousAria": "Seção anterior",
+      "navNextAria": "Próxima seção",
+      "toSectionAria": "Ir para seção %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Próximo grupo de seções (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Grupo anterior de seções (%SECTION_RANGE%)",
+      "loadingAria": "O conteúdo da história está carregando"
     },
     "loading": {
       "step1": "Carregando história",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Isto não está disponível no modo de reprodução automática",
       "notshared": "História não compartilhada"
     },
-    "overviewFromCommon": {
-      "title": "Mapa de Visão Geral"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Mapa de Visão Geral",
+      "legend": "Legenda",
+      "home": "Ampliar Página Inicial"
     },
     "shareFromCommon": {
       "copy": "Copiar",

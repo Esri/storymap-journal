@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Закрыть",
-      "focusMainstage": "Отправить фокус ввода с клавиатуры в медиа"
+      "focusMainstage": "Отправить фокус ввода с клавиатуры в медиа",
+      "expandImage": "Развернуть изображение"
+    },
+    "a11y": {
+      "skipToContent": "Перейти к повествованию",
+      "headerAria": "Заголовок истории",
+      "panelAria": "Рассказ истории",
+      "mainStageAria": "Медиа-раздел текущей истории",
+      "logoLinkAria": "Ссылка на логотип",
+      "toTop": "Перейти к началу повествования",
+      "focusContent": "Вернуться к повествованию",
+      "navAria": "Разделы истории",
+      "navPreviousAria": "Предыдущий раздел",
+      "navNextAria": "Следующий раздел",
+      "toSectionAria": "Перейти к разделу %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Следующая группа разделов (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Предыдущая группа разделов (%SECTION_RANGE%)",
+      "loadingAria": "Содержание истории загружено"
     },
     "loading": {
       "step1": "Загрузка истории",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Недоступно в режиме автовоспроизведения",
       "notshared": "История не в общем доступе"
     },
-    "overviewFromCommon": {
-      "title": "Обзорная карта"
-    },
-    "legendFromCommon": {
-      "title": "Легенда"
+    "mapFromCommon": {
+      "overview": "Обзорная карта",
+      "legend": "Легенда",
+      "home": "Приблизиться к главной"
     },
     "shareFromCommon": {
       "copy": "Копировать",

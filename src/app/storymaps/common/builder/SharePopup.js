@@ -132,11 +132,12 @@ define([
 
 				// Toggle the share buttons
 				var isOrg = app.portal.isOrganization !== false,
+					appAccess = app.data.getWebAppItem().access,
 					enableOrg = isOrg && $.inArray("portal:user:shareToOrg", app.portal.getPortalUser().privileges) > -1,
 					enablePub = ! isOrg ||  $.inArray("portal:user:shareToPublic", app.portal.getPortalUser().privileges) > -1,
 					itemControl = app.data.getWebAppItem().itemControl,
-					storyIsPrivate = app.data.getWebAppItem().access == "private" || app.data.getWebAppItem().access == "shared",
-					storyIsOrg = app.data.getWebAppItem().access == "account",
+					storyIsPrivate = appAccess == "private" || appAccess == "shared",
+					storyIsOrg = appAccess == "account" || appAccess == "org",
 					userIsOwner = app.data.getWebAppItem().owner == app.portal.getPortalUser().username;
 
 				// TODO: to review with 4.2
@@ -291,7 +292,7 @@ define([
 				if ( result.targetAccess == 'private')
 					app.data.getWebAppItem().access = 'private';
 				else if ( result.targetAccess == 'organization')
-					app.data.getWebAppItem().access = 'account';
+					app.data.getWebAppItem().access = 'org';
 				else if ( result.targetAccess == 'public')
 					app.data.getWebAppItem().access = 'public';
 
@@ -313,8 +314,9 @@ define([
 
 			function refreshMyStories(params)
 			{
-				var isPrivate = app.data.getWebAppItem().access == "private" || app.data.getWebAppItem().access == "shared",
-					isOrg = app.data.getWebAppItem().access == "account",
+				var appAccess = app.data.getWebAppItem().access,
+					isPrivate = appAccess == "private" || appAccess == "shared",
+					isOrg = appAccess == "account" || appAccess == "org",
 					isFromScratch = app.isDirectCreationFirstSave || app.isGalleryCreation,
 					sharingLevelIndex = isPrivate ? 0 : (isOrg ? 1 : 2),
 					status = "";
@@ -432,8 +434,23 @@ define([
 				 * Preview / view live
 				 */
 
-				container.find('.btn-open').toggle(! isFromScratch);
-				container.find('.btn-open').html(isPrivate ? i18n.commonCore.share.preview : i18n.commonCore.share.viewlive);
+				var openBtn = container.find('.btn-open');
+				openBtn.toggle(!isFromScratch)
+					.html(isPrivate ? i18n.commonCore.share.preview : i18n.commonCore.share.viewlive);
+
+				if (!isFromScratch) {
+					var sharingContainer = container.find('.app-sharing-container');
+					var modalContent = container.find('.modal-content');
+					if (openBtn.length && sharingContainer.length && modalContent.length) {
+						var openBtnRect = openBtn[0].getBoundingClientRect();
+						var modalRect = modalContent[0].getBoundingClientRect();
+						if (openBtnRect.right && modalRect.right && openBtnRect.right > modalRect.right) {
+							sharingContainer.addClass('too-wide');
+						}
+					}
+				}
+
+
 
 				/*
 				 * View toggle

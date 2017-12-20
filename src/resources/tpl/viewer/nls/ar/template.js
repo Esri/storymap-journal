@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "إغلاق",
-      "focusMainstage": "إرسال تركيز لوحة المفاتيح إلى الوسائط"
+      "focusMainstage": "إرسال تركيز لوحة المفاتيح إلى الوسائط",
+      "expandImage": "توسيع الصورة"
+    },
+    "a11y": {
+      "skipToContent": "انتقل إلى السرد",
+      "headerAria": "عنوان القصة",
+      "panelAria": "سرد القصة",
+      "mainStageAria": "وسائط جزء القصة الحالي",
+      "logoLinkAria": "رابط الشعار",
+      "toTop": "انتقل إلى بداية السرد",
+      "focusContent": "العودة إلى السرد",
+      "navAria": "أجزاء القصة",
+      "navPreviousAria": "الجزء السابق",
+      "navNextAria": "الجزء التالي",
+      "toSectionAria": "انتقل إلى الجزء %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "مجموعة الأجزاء التالية (%SECTION_RANGE%)",
+      "toPrevGroupAria": "مجموعة الأجزاء السابقة (%SECTION_RANGE%)",
+      "loadingAria": "جارِ تحميل محتوى القصة"
     },
     "loading": {
       "step1": "تحميل القصة",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "وهو غير متوفر في عرض التشغيل التلقائي",
       "notshared": "لم يتم مشاركة القصة"
     },
-    "overviewFromCommon": {
-      "title": "خريطة النظرة العامة"
-    },
-    "legendFromCommon": {
-      "title": "مفتاح الخريطة"
+    "mapFromCommon": {
+      "overview": "خريطة النظرة العامة",
+      "legend": "وسيلة الإيضاح",
+      "home": "الصفحة الرئيسية للتكبير/التصغير"
     },
     "shareFromCommon": {
       "copy": "نسخ",

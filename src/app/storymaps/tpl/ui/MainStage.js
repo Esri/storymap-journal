@@ -53,13 +53,20 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 
 			function addTemporaryMainMediaContainer(webmap)
 			{
-				$("#mainStagePanel .medias").append(mainMediaContainerMapTpl({ webmapid: webmap, isTemporary: true }));
+				$("#mainStagePanel .medias").append(
+					mainMediaContainerMapTpl({
+						webmapid: webmap,
+						isTemporary: true,
+						altText: '',
+						focusToPanel: i18n.viewer.a11y.focusContent
+					})
+				);
 			}
 
 			this.updateMainMediaContainers = function()
 			{
-				var webmaps = app.data.getWebmaps(),
-					images = app.data.getImages(),
+				var webmaps = app.data.getWebmapObjects(),
+					images = app.data.getImageObjects(),
 					embeds = app.data.getEmbeds();
 
 				//
@@ -68,15 +75,27 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 
 				// Add new container
 				$.each(webmaps, function(i, webmap){
-					var mapContainer = $('.mapContainer[data-webmapid="' + webmap + '"]');
+					var mapContainer = $('.mapContainer[data-webmapid="' + webmap.id + '"]');
 					if ( ! mapContainer.length )
-						$("#mainStagePanel .medias").append( mainMediaContainerMapTpl({ webmapid: webmap, isTemporary: false }) );
+						$("#mainStagePanel .medias").append(
+							mainMediaContainerMapTpl({
+								webmapid: webmap.id,
+								altText: webmap.altText || '',
+								isTemporary: false,
+								focusToPanel: i18n.viewer.a11y.focusContent
+							})
+						);
 				});
 
 				// Remove unused container
-				$('.mapContainer').each(function(){
-					if ( $.inArray($(this).data('webmapid'), webmaps) == -1 )
+				$('.mapContainer').each(function() {
+					var id = $(this).data('webmapid');
+					var found = _.some(webmaps, function(wm) {
+						return id === wm.id;
+					});
+					if (!found) {
 						$(this).parent().remove();
+					}
 				});
 
 				//
@@ -84,16 +103,27 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				//
 
 				// Add new container
-				$.each(images, function(i, imageUrl){
-					var imageContainer = $('.imgContainer[data-src="' + imageUrl + '"]');
+				$.each(images, function(i, img){
+					var imageContainer = $('.imgContainer[data-src="' + img.url + '"]');
 					if ( ! imageContainer.length )
-						$("#mainStagePanel .medias").append( mainMediaContainerImageTpl({ url: imageUrl }) );
+						$("#mainStagePanel .medias").append(
+							mainMediaContainerImageTpl({
+								url: img.url,
+								altText: img.altText,
+								focusToPanel: i18n.viewer.a11y.focusContent
+							})
+						);
 				});
 
 				// Remove unused containers
 				$('.imgContainer').each(function(){
-					if ( $.inArray($(this).data('src'), images) == -1 )
+					var src = $(this).data('src');
+					var found = _.some(images, function(img) {
+						return src === img.url;
+					});
+					if (!found) {
 						$(this).parent().remove();
+					}
 				});
 
 				//
@@ -124,12 +154,16 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						//  multiple iframe but these makes it difficult to center the frame(s)
 						//
 
-						$("#mainStagePanel .medias").append(mainMediaContainerEmbedTpl({
-							url: embedUrl,
-							frameTag: embedInfo.frameTag,
-							// Introduced in V1.1
-							unload: !!(embedInfo.unload === undefined || embedInfo.unload)
-						}));
+						$("#mainStagePanel .medias").append(
+							mainMediaContainerEmbedTpl({
+								url: embedUrl,
+								frameTag: embedInfo.frameTag,
+								altText: embedInfo.altText,
+								// Introduced in V1.1
+								unload: !!(embedInfo.unload === undefined || embedInfo.unload),
+								focusToPanel: i18n.viewer.a11y.focusContent
+							})
+						);
 
 						// If it's a frame tag
 						if ( !! embedInfo.frameTag ) {
@@ -159,10 +193,18 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						return embedSRC == embedUrl || embedSRC == embed.ts;
 					}).length > 0;
 
-					if ( ! embedInUse )
+					if ( ! embedInUse ) {
 						$(this).parent().remove();
+					}
 				});
 
+				container.find('.mainMediaContainer').on('focus.generic', function() {
+					onMainstageFocus();
+				});
+
+				container.find('.return-to-content').on('click', function() {
+					somehowLeaveMainstage();
+				});
 
 				setMapControlsColor();
 			};
@@ -510,31 +552,6 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				}
 			}
 
-			function onMapMainstageFocus() {
-				if( WebApplicationData.getLayoutId() == "float" ) {
-					app.ui.floatingPanel.disableSwiperKeybordEvent();
-				}
-				var thisMap = app.map;
-				thisMap.enableKeyboardNavigation();
-				var mouseEvents = lang.getObject('navigationManager.mouseEvents', false, thisMap);
-				if (mouseEvents) {
-					mouseEvents._onMouseEnterHandler(new window.Event('mouseenter'));
-				}
-				// it's possible there will be a lot of these stacked on different mainstages,
-				// but there shouldn't be a harm in multiple calls here. worse is no calls, given
-				// the order of the mainstage-exit broadcast.
-				var handle = topic.subscribe('mainstage-exit', function() {
-					handle.remove();
-					if( WebApplicationData.getLayoutId() == "float" ) {
-						app.ui.floatingPanel.enableSwiperKeybordEvent();
-					}
-					thisMap.disableKeyboardNavigation();
-					if (mouseEvents) {
-						mouseEvents._onMouseLeaveHandler(new window.Event('mouseleave'));
-					}
-				});
-			}
-
 			function updateMainMediaMapsStep2(mapContainer, section, oldExtent, index, media, notFirstLoad)
 			{
 				_this.updateMainStageWithLayoutSettings();
@@ -543,7 +560,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				if (mainStage[0] === document.activeElement) {
 					onMapMainstageFocus();
 				} else {
-					mainStage.off('focus').on('focus', onMapMainstageFocus);
+					mainStage.off('focus.map').on('focus.map', onMapMainstageFocus);
 				}
 
 				//app.data.debug();
@@ -680,13 +697,23 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					// Popup
 					//
 
-					if ( ! extent )
+					if ( ! extent ) {
 						applyPopupConfiguration(media.webmap.popup, index);
-					// Otherwise called through extent change callback
+						// Otherwise called through extent change callback
+					}
+
+					/* alt text
+					 * needs to change dynamically because we reuse map containers
+					 */
+					var altText = media && media.webmap ? media.webmap.altText : null;
+					if (altText && mainStage) {
+						mainStage.attr('aria-label', altText);
+					}
 
 				}
-				else
+				else {
 					topic.publish("ADDEDIT_WEBMAP_DONE");
+				}
 			}
 
 			function applyPopupConfiguration(popupCfg, index)
@@ -859,10 +886,14 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						delete app.maps[webmapId];
 					}
 
-					$("#mainStagePanel .medias").append(mainMediaContainerMapTpl({
-						webmapid: webmapId,
-						isTemporary: false
-					}));
+					$("#mainStagePanel .medias").append(
+						mainMediaContainerMapTpl({
+							webmapid: webmapId,
+							isTemporary: false,
+							altText: currentSection.media.webmap.altText || '',
+							focusToPanel: i18n.viewer.a11y.focusContent
+						})
+					);
 
 					topic.publish("story-navigate-section", app.data.getCurrentSectionIndex());
 				}
@@ -906,9 +937,11 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 							});
 						}
 					}
+					pictureContainer.parent().addClass('active')
+						.attr('aria-label', image.altText);
+
 					var tokenizedUrl = Helper.possiblyAddToken(sizedUrl);
 
-					pictureContainer.parent().addClass('active');
 
 					// Load a hidden image in JS
 					var tmpImg = new Image();
@@ -975,6 +1008,17 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						embedContainer.off('load').load(stopMainStageLoadingIndicator);
 						startMainStageLoadingIndicator();
 
+						// vimeo changed their player in fall 2017 to make it more... compact? idk.
+						// in any case, it screws up expected styling for "fill" layout on mainstage
+						// so we're adding a url param transparent=0 to revert to the old styling
+						if (url.match('//player.vimeo.com/video') && !url.match('transparent=0')) {
+							if (url.match(/\?/)) {
+								url = url + '&transparent=0';
+							} else {
+								url = url + '?transparent=0';
+							}
+						}
+
 						// TODO youtube recommand an origin param "&origin=" + encodeURIComponent(document.location.origin)
 						// https://developers.google.com/youtube/iframe_api_reference#Loading_a_Video_Player
 						embedContainer.attr('src', url);
@@ -1000,7 +1044,8 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						embedContainer.attr('height', height);
 					}
 
-					embedContainer.parent().addClass('active');
+					embedContainer.parent().addClass('active')
+						.attr('aria-label', cfg.altText);
 					_this.updateMainStageWithLayoutSettings();
 				}
 			}
@@ -1012,6 +1057,151 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					$("#mainStagePanel").width() * 9 / 16
 				);
 			}
+
+			/* mainstage focus management */
+			this.focusActiveMainstage = function(originator, fromAction) {
+				this.returnTo = originator;
+				var activeMainstage = container.find('.mainMediaContainer.active');
+				activeMainstage.off('focus.generic');
+				setTimeout(function() {
+					activeMainstage.focus(); // detach focus listener so it doesn't get triggered twice
+					onMainstageFocus(activeMainstage, fromAction);
+				}, 300);
+			};
+
+			function onMainstageFocus(mainstage, fromAction) {
+				mainstage = mainstage || container.find('.mainMediaContainer.active');
+				var escButton = mainstage.find('.return-to-content');
+				var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]):not(.return-to-content), iframe, object, embed, [tabindex="0"], [contenteditable]';
+				var focusableJqs = mainstage.find(focusableElementsString).filter(':visible');
+				var focusableEls = mainstage.get().concat(focusableJqs.get()).concat(escButton.get());
+				if (fromAction) {
+					$('.mediaBackContainer .backButton').off('keydown')
+						.on('keydown', function(e) {
+							backBtnKeydown(e, focusableEls);
+						});
+				}
+				mainstage.off('keydown').on('keydown', function(e) {
+					mainstageKeydown.bind(this)(e, focusableEls);
+				});
+
+			}
+
+			function mainstageKeydown(e, focusableEls) {
+				// on tab, cycle through focusable elements.
+				// at this point, focusableEls should, at minimum,
+				// include the mainstage and esc buttons.
+				if (e.keyCode === 9) {
+					var lastTab = focusableEls[focusableEls.length - 1];
+					var firstTab = focusableEls[0];
+					var backBtn = $('.mediaBackContainer .backButton:visible')[0];
+					var nextTarget;
+					if (e.target === lastTab && !e.shiftKey) {
+						// on last tabbable element, tab forward to either back btn or first tabbable.
+						nextTarget = backBtn || firstTab;
+					} else if (e.target === firstTab && e.shiftKey) {
+						// on first tabbable element, tab backwards to either back btn or last tabbable.
+						nextTarget = backBtn || lastTab;
+					}
+					if (nextTarget) {
+						e.preventDefault();
+						$(nextTarget).focus();
+					}
+					return;
+				}
+
+				// on esc, exit mainstage
+				if (e.keyCode === 27) {
+					somehowLeaveMainstage($(this));
+				}
+			}
+
+			function somehowLeaveMainstage(mainstage) {
+				mainstage = mainstage || container.find('.mainMediaContainer.active');
+				var backBtn = $('.mediaBackContainer .backButton');
+				if (backBtn && backBtn.length && backBtn.is(':visible')) {
+					triggerBackBtn(backBtn);
+				} else {
+					_this.exitMainstage(mainstage);
+				}
+
+			}
+
+			this.exitMainstage = function(mainstage, triggerFromContent) {
+				triggerFromContent = triggerFromContent || this.returnTo;
+				onMapMainstageBlur();
+				attachGenericFocus(mainstage || container.find('.mainMediaContainer.active'));
+				if (triggerFromContent) {
+					$(triggerFromContent).focus();
+				} else {
+					app.ui.sidePanel.focusSection();
+					app.ui.floatingPanel.focusSection();
+				}
+				this.returnTo = null;
+			};
+
+			function attachGenericFocus(mainstage) {
+				mainstage.off('focus.generic')
+					.on('focus.generic', function() {
+						onMainstageFocus(mainstage);
+					});
+			}
+
+			function triggerBackBtn(backBtn) {
+				attachGenericFocus(container.find('.mainMediaContainer.active'));
+				this.returnTo = null;
+				backBtn.trigger('click');
+				backBtn.off('keydown');
+			}
+
+			function backBtnKeydown(e) {
+				// don't need to deal with <enter> or <space> here.
+				// that's taken care of automatically. just need to handle <esc> and tabbing.
+				if (e.keyCode === 9) {
+					e.preventDefault();
+					if (e.shiftKey) {
+						container.find('.return-to-content').focus();
+					} else {
+						container.find('.mainMediaContainer.active').focus();
+					}
+				} else if (e.keyCode === 27) {
+					triggerBackBtn($(e.target));
+				}
+			}
+
+
+			function onMapMainstageFocus() {
+				if( WebApplicationData.getLayoutId() == "float" ) {
+					app.ui.floatingPanel.disableSwiperKeybordEvent();
+				}
+				var thisMap = app.map;
+				thisMap.enableKeyboardNavigation();
+				var mouseEvents = lang.getObject('navigationManager.mouseEvents', false, thisMap);
+				if (mouseEvents) {
+					mouseEvents._onMouseEnterHandler(new window.Event('mouseenter'));
+				}
+			}
+
+			// it's possible there will be a lot of these stacked on different mainstages,
+			// but there shouldn't be a harm in multiple calls here. worse is no calls, given
+			// the order of the mainstage-exit broadcast.
+			function onMapMainstageBlur() {
+				if( WebApplicationData.getLayoutId() == "float" ) {
+					app.ui.floatingPanel.enableSwiperKeybordEvent();
+				}
+
+				var thisMap = app.map;
+				if (!thisMap) {
+					return;
+				}
+				var mouseEvents = lang.getObject('navigationManager.mouseEvents', false, thisMap);
+
+				thisMap.disableKeyboardNavigation();
+				if (mouseEvents) {
+					mouseEvents._onMouseLeaveHandler(new window.Event('mouseleave'));
+				}
+			}
+
 		};
 	}
 );

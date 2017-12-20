@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "סגור",
-      "focusMainstage": "שלח פוקוס של המקלדת למדיה"
+      "focusMainstage": "שלח פוקוס של המקלדת למדיה",
+      "expandImage": "הרחב תמונה"
+    },
+    "a11y": {
+      "skipToContent": "דלג לנרטיב",
+      "headerAria": "כותרת של הסיפור",
+      "panelAria": "נרטיב של הסיפור",
+      "mainStageAria": "מדיה של הסיפור הנוכחי",
+      "logoLinkAria": "קישור ללוגו",
+      "toTop": "עבור לתחילת הנרטיב",
+      "focusContent": "חזור לנרטיב",
+      "navAria": "חלקי הסיפור",
+      "navPreviousAria": "החלק הקודם",
+      "navNextAria": "החלק הבא",
+      "toSectionAria": "עבור לחלק %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "קבוצת החלקים הבאה (%SECTION_RANGE%)",
+      "toPrevGroupAria": "קבוצת החלקים הקודמת (%SECTION_RANGE%)",
+      "loadingAria": "תוכן הסיפור נמצא בטעינה"
     },
     "loading": {
       "step1": "טוען סיפור",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "זה לא זמין במצב ניגון אוטומטי",
       "notshared": "הסיפור לא משותף"
     },
-    "overviewFromCommon": {
-      "title": "מפת התמצאות"
-    },
-    "legendFromCommon": {
-      "title": "מקרא"
+    "mapFromCommon": {
+      "overview": "מפת התמצאות",
+      "legend": "מקרא",
+      "home": "התמקד לדף הבית"
     },
     "shareFromCommon": {
       "copy": "העתק",

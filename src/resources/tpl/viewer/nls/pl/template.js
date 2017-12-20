@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Zamknij",
-      "focusMainstage": "Prześlij fokus klawiatury do elementu multimedialnego"
+      "focusMainstage": "Prześlij fokus klawiatury do elementu multimedialnego",
+      "expandImage": "Rozwiń obraz"
+    },
+    "a11y": {
+      "skipToContent": "Przejdź do narracji",
+      "headerAria": "Nagłówek narracji",
+      "panelAria": "Opowiadanie narracyjne",
+      "mainStageAria": "Multimedia bieżącej sekcji narracji",
+      "logoLinkAria": "Łącze do logotypu",
+      "toTop": "Przejdź do początku narracji",
+      "focusContent": "Wróć do narracji",
+      "navAria": "Sekcje narracji",
+      "navPreviousAria": "Poprzednia sekcja",
+      "navNextAria": "Następna sekcja",
+      "toSectionAria": "Przejdź do sekcji %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Następna grupa sekcji (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Poprzednia grupa sekcji (%SECTION_RANGE%)",
+      "loadingAria": "Treść narracji jest wczytywana"
     },
     "loading": {
       "step1": "Trwa wczytywanie narracji",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "To nie jest dostępne w trybie automatycznego odtwarzania",
       "notshared": "Narracja nieudostępniona"
     },
-    "overviewFromCommon": {
-      "title": "Mapa przeglądowa"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Mapa przeglądowa",
+      "legend": "Legenda",
+      "home": "Powiększ: Strona główna"
     },
     "shareFromCommon": {
       "copy": "Kopiuj",

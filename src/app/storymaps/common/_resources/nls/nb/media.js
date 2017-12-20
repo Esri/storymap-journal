@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Last ut når leseren navigerer bort",
       "unloadHelp": "Hvis nettsiden har lyd- eller videomedier, beholder du dette alternativet avmerket for å forhindre at det innholdet spilles av når leseren navigerer bort. Fjern merket for eksempel for å la et lydspor fortsette å spilles av mens leseren går gjennom historien.<br />Hvis websiden er et program, fjerner du avmerkingen for dette alternativet, slik at historien ikke lastes inn på nytt hvis leseren går tilbake til den.",
       "embedProtocolLabel": "Last inn scenen med en sikker tilkobling (HTTPS)",
-      "embedProtocolWarning1": "Hvis denne siden ikke lastes inn i historien, kan den ikke bygges inn av hensyn til nettsikkerheten. Du kan eventuelt legge til en kobling i fortellingen som åpner siden i en ny nettleserfane. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Mer informasjon</a>",
-      "embedProtocolWarning2": "Hvis denne siden ikke lastes inn i historien, fjerner du merket for dette alternativet og prøver på nytt. Hvis den fremdeles ikke lastes inn,  kan den ikke bygges inn av hensyn til nettsikkerheten. Du kan eventuelt legge til en kobling i fortellingen som åpner siden i en ny nettleserfane. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Mer informasjon</a>"
+      "embedProtocolWarning1": "Hvis denne siden ikke lastes inn i historien, kan den ikke bygges inn av hensyn til nettsikkerheten. Du kan eventuelt legge til en kobling i fortellingen som åpner siden i en ny fane i nettleseren.",
+      "embedProtocolWarning2": "Hvis denne siden ikke lastes inn i historien, fjerner du merket for dette alternativet og prøver på nytt. Hvis den fremdeles ikke lastes inn, kan den ikke bygges inn av hensyn til nettsikkerheten. Du kan eventuelt legge til en kobling i fortellingen som åpner siden i en ny fane i nettleseren.",
+      "learn": "Mer informasjon",
+      "lblAltText": "Alternativ tekst",
+      "placeholderAltText": "Angi en beskrivelse av dette mediet for brukere med nedsatt syn...",
+      "tooltipAltText": "Angi en beskrivelse av dette medieinnholdet som brukes av hjelpeteknologi som skjermleserprogramvare. Beskrivelsen er valgfri, men anbefales for å oppfylle retningslinjene for tilgjengelig nettinnhold, som WCAG og Section 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Finn en adresse eller et sted",

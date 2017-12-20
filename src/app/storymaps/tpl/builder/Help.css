@@ -252,18 +252,19 @@
 
 .builderHelp .helpFooter {
 	position: absolute;
-	left: 10px;
+	left: 14px;
 	right: 10px;
 	bottom: 10px;
-	height: 34px;
+	height: 38px;
 	color: #CECECE;
 	font-style: italic;
 }
 
 .builderHelp .helpFooter .btn-external-help {
-	padding-left: 2px;
+	padding-left: 0px;
 	font-style: italic;
-	vertical-align: 0px;
+	display: block;
+	margin-top: -5px;
 }
 
 .builderHelp .helpFooter .footerBtn {

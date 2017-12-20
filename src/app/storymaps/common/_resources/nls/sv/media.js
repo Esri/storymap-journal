@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Ta bort när användaren navigerar vidare",
       "unloadHelp": "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att berättelsen inte läses in på nytt om användaren återvänder till den.",
       "embedProtocolLabel": "Läs in sidan via en säker anslutning (HTTPS)",
-      "embedProtocolWarning1": "Om sidan inte läses in till din berättelse kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Läs mer</a>",
-      "embedProtocolWarning2": "Om sidan inte läses in till din berättelse avmarkerar du alternativet och försöker igen. Om sidan fortfarande inte läses in kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Läs mer</a>"
+      "embedProtocolWarning1": "Om sidan inte läses in till din berättelse kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik.",
+      "embedProtocolWarning2": "Om sidan inte läses in till din berättelse avmarkerar du alternativet och försöker igen. Om sidan fortfarande inte läses in kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik.",
+      "learn": "Läs mer",
+      "lblAltText": "Alternativ text",
+      "placeholderAltText": "Ange en beskrivning av mediematerialet för personer med nedsatt syn…",
+      "tooltipAltText": "Ange en beskrivning av det här medieinnehållet som ska användas av hjälpteknik som skärmläsarprogramvara. Beskrivningen är valfri men rekommenderas för följande av riktlinjer för tillgänglighet på webben som WCAG och Section 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Hitta en adress eller plats",

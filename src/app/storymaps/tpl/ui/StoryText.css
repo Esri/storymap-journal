@@ -50,6 +50,16 @@ a[data-storymaps].navigate-error-silent {
 	font-weight: normal;
 }
 
+/* title */
+
+.section .title:focus {
+	outline-width: thin;
+}
+
+body:not(.user-is-tabbing) .title:focus {
+	outline: none;
+}
+
 /*
  * Inline media
  */
@@ -114,28 +124,6 @@ figure figcaption {
 .centering {
 	width: 100%;
 	text-align: center;
-}
-
-/* make this not visible until it has focus.
-  requires two levels of selector because bootstrap is imported after our custom css :\ */
-.section .visible-on-focus {
-	opacity: 0;
-	pointer-events: none;
-	cursor: default;
-}
-
-.section .visible-on-focus:focus {
-	opacity: 1;
-	pointer-events: auto;
-	cursor: pointer;
-}
-
-.section button.visible-on-focus {
-	margin: 0 auto;
-	background: none;
-	padding: 0;
-	border: none;
-	border-bottom: 1px dashed #aaa;
 }
 
 .image-container.has-width img {
@@ -291,3 +279,4 @@ p[tabindex='0'] > .image-wrapper {
 	font-family: 'open_sanssemibold', sans-serif;
 	text-transform: uppercase;
 }
+

@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Sulje",
-      "focusMainstage": "Lähetä näppäimistön kohdistus mediaan"
+      "focusMainstage": "Lähetä näppäimistön kohdistus mediaan",
+      "expandImage": "Laajenna kuva"
+    },
+    "a11y": {
+      "skipToContent": "Siirry kerrontaan",
+      "headerAria": "Tarinan otsikko",
+      "panelAria": "Tarinan kerronta",
+      "mainStageAria": "Nykyisen tarinaosion media",
+      "logoLinkAria": "Logolinkki",
+      "toTop": "Siirry kerronnan alkuun",
+      "focusContent": "Palaa kerrontaan",
+      "navAria": "Tarinaosiot",
+      "navPreviousAria": "Edellinen osio",
+      "navNextAria": "Seuraava osio",
+      "toSectionAria": "Siirry osioon %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Seuraava osioryhmä (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Edellinen osioryhmä (%SECTION_RANGE%)",
+      "loadingAria": "Tarinan sisältö latautuu"
     },
     "loading": {
       "step1": "Ladataan tarinaa",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Tämä toiminto ei ole käytettävissä automaattisen toiston tilassa",
       "notshared": "Tarinaa ei ole jaettu"
     },
-    "overviewFromCommon": {
-      "title": "Yleiskatsauskartta"
-    },
-    "legendFromCommon": {
-      "title": "Selite"
+    "mapFromCommon": {
+      "overview": "Yleiskatsauskartta",
+      "legend": "Selite",
+      "home": "Lähennä aloitussivuun"
     },
     "shareFromCommon": {
       "copy": "Kopioi",

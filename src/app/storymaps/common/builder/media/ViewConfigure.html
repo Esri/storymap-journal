@@ -104,7 +104,7 @@
 				</div>
 			</div>
 			<div class="form-group position-video">
-				<label style="display: block; margin-bottom: 15px; margin-left: 7px;"><%= lblPosition %></label>
+				<label style="display: block; margin-bottom: 15px;"><%= lblPosition %></label>
 				<div style="text-align: center">
 					<div class="media-configure-position" data-val="stretch">
 						<div class="position-selected"></div>
@@ -163,9 +163,18 @@
 					<input type="checkbox" class="embedProtocolSecure" />
 					<%= embedProtocolLabel %>
 				</label>
-				<div class="embedProtocolHelp">
-					<%= embedProtocolInfo %>
-				</div>
+				<!-- note: if there's any space between an img link and its closing </a>, an underline will appear on hover -->
+				<a href="#" class="protocolHelp" data-toggle="tooltip" data-title="<%= embedProtocolInfo %>"><img src="resources/tpl/builder/icons/builder-help.png"/></a>
+				<a href="http://links.esri.com/storymaps/blogs_mixed_content/" target="_blank"><%= learn %></a>
+			</div>
+		</div>
+		<div class="alt-text-wrapper">
+			<div class="form-group">
+				<label><%= lblAltText %></label>
+				<a href="#" class="altTextHelp" data-toggle="tooltip" data-title="<%= tooltipAltText %>">
+					<img src="resources/tpl/builder/icons/builder-help.png"/>
+				</a>
+				<textarea class="form-control alt-text" spellcheck="true" placeholder="<%= placeholderAltText %>"></textarea>
 			</div>
 		</div>
 	</form>

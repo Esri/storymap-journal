@@ -92,6 +92,11 @@ body.layout-float-right .floatingPanel .appTitle.anchored {
 	overflow: hidden;
 }
 
+.floatingPanel .section:last-child {
+	padding-bottom: 40px; /* room for loop-to-top button */
+}
+
+
 body.layout-float-left .floatingPanel .section {
 	padding: 0 5% 0 2%;
 }
@@ -116,14 +121,6 @@ body.layout-float-left .floatingPanel .section {
 	font-weight: normal;
 	font-size: 1.85em;
 	margin-bottom: calc(10% - 30px);
-}
-
-.floatingPanel .title:focus {
-	outline-width: thin;
-}
-
-body:not(.user-is-tabbing) .floatingPanel .title:focus {
-	outline: none;
 }
 
 .floatingPanel .section:first-child .title {

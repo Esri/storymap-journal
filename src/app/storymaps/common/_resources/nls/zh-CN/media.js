@@ -116,8 +116,12 @@ define({
       "unloadLbl": "读者定位到其他部分时进行卸载",
       "unloadHelp": "如果网页中包含音频或视频介质，请将该选项选中以在读者定位到其他部分时停止内容播放。取消选中该选项可使读者在浏览故事的同时持续播放音轨。<br />如果网页是应用程序，请取消选中该选项，这样应用程序不必在读者返回此部分时重新加载。",
       "embedProtocolLabel": "通过安全连接(HTTPS)加载页面",
-      "embedProtocolWarning1": "如果您的故事未加载此页面，则出于 web 安全性的因素，无法嵌入该页面。但是可在叙述中添加链接以在新浏览器选项卡中打开页面。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>了解详细信息</a>",
-      "embedProtocolWarning2": "如果您的故事未加载此页面，请取消选中该选项并重试。如果仍未加载该页面，则出于 web 安全性的因素，无法嵌入该页面。但是可在叙述中添加链接以在新浏览器选项卡中打开页面。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>了解详细信息</a>"
+      "embedProtocolWarning1": "如果您的故事未加载此页面，则出于 web 安全性的因素，无法嵌入该页面。但是可在叙述中添加链接以在新浏览器选项卡中打开页面。",
+      "embedProtocolWarning2": "如果您的故事未加载此页面，请取消选中该选项并重试。如果仍未加载该页面，则出于 web 安全性的因素，无法嵌入该页面。但是可在叙述中添加链接以在新浏览器选项卡中打开页面。",
+      "learn": "了解详细信息",
+      "lblAltText": "备选文本",
+      "placeholderAltText": "针对视觉障碍的读者，输入该媒体的描述...",
+      "tooltipAltText": "请提供辅助性技术(例如屏幕阅读软件)将使用的该媒体内容的描述。描述为可选内容，但是建议符合 web 可及性原则，例如 WCAG 和 Section 508。"
     },
     "editorActionGeocode": {
       "lblTitle": "定位地址或地点",

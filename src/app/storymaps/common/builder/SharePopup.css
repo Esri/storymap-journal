@@ -86,6 +86,12 @@
 	padding: 1px 6px 1px;
 }
 
+
+.builderShare .app-sharing-container.too-wide .preview-container {
+	right: 0;
+	top: 1.5em;
+}
+
 .builderShare .app-sharing-icon.active {
     background: #396e8b;
     color: white;

@@ -117,8 +117,12 @@ define({
 				unloadLbl: "Unload when reader navigates away",
 				unloadHelp: "If the web page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the web page is an application, uncheck this option so that the story does not reload if the reader returns to it.",
 				embedProtocolLabel: "Load page over a secure connection (HTTPS)",
-				embedProtocolWarning1: "If this page does not load in your story, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Learn more</a>",
-				embedProtocolWarning2: "If this page does not load in your story, uncheck this option and try again. If the page still does not load, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Learn more</a>"
+				embedProtocolWarning1: "If this page does not load in your story, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab.",
+				embedProtocolWarning2: "If this page does not load in your story, uncheck this option and try again. If the page still does not load, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab.",
+				learn: "Learn more",
+				lblAltText: "Alternative Text",
+				placeholderAltText: "Enter a description of this media for visually impaired readers...",
+				tooltipAltText: "Provide a description of this media content that will be used by assistive technologies such as screen reader software. A description is optional but recommended to meet web accessibility guidelines such as WCAG and Section 508."
 			},
 			editorActionGeocode: {
 				lblTitle: "Locate an address or place",
@@ -163,6 +167,7 @@ define({
 	"pt-pt": 1,
 	"ro": 1,
 	"ru": 1,
+	"sl": 1,
 	"sr": 1,
 	"sv": 1,
 	"th": 1,

@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Descarregar quando o leitor navegar",
       "unloadHelp": "Se a página da web tiver mídia de áudio ou de vídeo, mantenha esta opção marcada para interromper a execução do conteúdo quando o leitor navegar fora da página. Desmarque isto, por exemplo, para manter uma trilha sonora tocando quando o leitor avançar pela história.<br />Se a página da web for um aplicativo, desmarque esta opção de forma que a história não recarregue se o leitor retornar a ela.",
       "embedProtocolLabel": "Carregar página ao longo de uma conexão segura (HTTPS)",
-      "embedProtocolWarning1": "Se esta página não for carregada na sua história, ela não poderá ser embutida por razões de segurança da web. Como alternativa, adicione um link na sua narrativa para abrir a página em uma nova guia do navegador. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Mais informações</a>",
-      "embedProtocolWarning2": "Se esta página não for carregada na sua história, desmarque esta opção e tente novamente. Se a página ainda não estiver carregada, ela não poderá ser embutida por razões de segurança da web. Como alternativa, adicione um link na sua narrativa para abrir a página em uma nova guia do navegador. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Mais informações</a>"
+      "embedProtocolWarning1": "Se esta página não for carregada na sua história, ela não poderá ser incorporada por motivos de segurança da web. Como alternativa, adicione um link na sua narrativa para abrir a página em uma nova guia do navegador.",
+      "embedProtocolWarning2": "Se esta página não for carregada na sua história, desmarque esta opção e tente novamente. Se a página ainda não carregar, ela não poderá ser incorporada por motivos de segurança da web. Como alternativa, adicione um link na sua narrativa para abrir a página em uma nova guia do navegador.",
+      "learn": "Mais informações",
+      "lblAltText": "Texto Alternativo",
+      "placeholderAltText": "Insira uma descrição desta mídia para leitores com deficiência visual ...",
+      "tooltipAltText": "Forneça uma descrição deste conteúdo de mídia que será utilizado por tecnologias de assistência, como software de leitor de tela. Uma descrição é opcional, mas recomendada para atender às diretrizes de acessibilidade da web, como WCAG e a Seção 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Localizar um endereço ou lugar",

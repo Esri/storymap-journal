@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Κλείσιμο",
-      "focusMainstage": "Αποστολή εστίασης πληκτρολογίου σε πολυμέσα"
+      "focusMainstage": "Αποστολή εστίασης πληκτρολογίου σε πολυμέσα",
+      "expandImage": "Ανάπτυξη εικόνας"
+    },
+    "a11y": {
+      "skipToContent": "Παράλειψη για αφήγηση",
+      "headerAria": "Κεφαλίδα ιστορίας",
+      "panelAria": "Αφήγηση ιστορίας",
+      "mainStageAria": "Πολυμέσα τρέχουσας ενότητας ιστορίας",
+      "logoLinkAria": "Σύνδεσμος λογότυπου",
+      "toTop": "Μετάβαση στην έναρξη αφήγησης",
+      "focusContent": "Επιστροφή στην αφήγηση",
+      "navAria": "Ενότητες ιστορίας",
+      "navPreviousAria": "Προηγούμενη ενότητα",
+      "navNextAria": "Επόμενη ενότητα",
+      "toSectionAria": "Μετάβαση στην ενότητα %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Επόμενη ομάδα ενοτήτων (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Προηγούμενη ομάδα ενοτήτων (%SECTION_RANGE%)",
+      "loadingAria": "Γίνεται φόρτωση του περιεχομένου ιστορίας"
     },
     "loading": {
       "step1": "Φόρτωση αφήγησης",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Αυτή η επιλογή δεν είναι διαθέσιμη στη λειτουργία αυτόματης αναπαραγωγής",
       "notshared": "Η αφήγηση δεν κοινοποιείται"
     },
-    "overviewFromCommon": {
-      "title": "Χάρτης αναφοράς"
-    },
-    "legendFromCommon": {
-      "title": "Υπόμνημα"
+    "mapFromCommon": {
+      "overview": "Χάρτης επισκόπησης",
+      "legend": "Υπόμνημα",
+      "home": "Μεγέθυνση αρχικής σελίδας"
     },
     "shareFromCommon": {
       "copy": "Αντιγραφή",

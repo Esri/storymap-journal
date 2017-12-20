@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Zrušit spouštění, když čtenář opustí stránku",
       "unloadHelp": "Pokud webová stránka obsahuje audio nebo video média, nechte tuto možnost zaškrtnutou, aby se přehrávání tohoto obsahu ukončilo, pokud čtenář stránku opustí. Zrušte její zaškrtnutí, pokud například chcete, aby hudební podkres hrál po celou dobu prohlížení příběhu.<br />Pokud je webová stránka aplikací, zrušte zaškrtnutí této možnosti, aby se příběh nespouštěl znovu, když se k němu čtenář vrátí.",
       "embedProtocolLabel": "Nahrát stránku přes zabezpečené připojení (HTTPS)",
-      "embedProtocolWarning1": "Pokud se tato webová stránka ve vašem příběhu nenačítá, nelze ji z důvodů zabezpečení webu vložit. Máte však možnost přidat do příběhu odkaz, který otevře stránku na nové kartě prohlížeče. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Další informace</a>",
-      "embedProtocolWarning2": "Pokud se tato webová stránka ve vašem příběhu nenačítá, zrušte označení této možnosti a zkuste to znovu. Pokud se stránka stále nenačítá, nelze ji z důvodů zabezpečení webu vložit. Máte však možnost přidat do příběhu odkaz, který otevře stránku na nové kartě prohlížeče. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Další informace</a>"
+      "embedProtocolWarning1": "Pokud se tato webová stránka ve vašem příběhu nenačítá, nelze ji z důvodů zabezpečení webu vložit. Máte však možnost přidat do příběhu odkaz, který otevře stránku na nové kartě prohlížeče.",
+      "embedProtocolWarning2": "Pokud se tato webová stránka ve vašem příběhu nenačítá, zrušte zaškrtnutí této možnosti a zkuste to znovu. Pokud se stránka stále nenačítá, nelze ji z důvodů zabezpečení webu vložit. Máte však možnost přidat do příběhu odkaz, který otevře stránku na nové kartě prohlížeče.",
+      "learn": "Více informací",
+      "lblAltText": "Alternativní text",
+      "placeholderAltText": "Vložte popis tohoto média pro zrakově postižené čtenáře...",
+      "tooltipAltText": "Uveďte popis obsahu tohoto média, který bude použitý pomocnými technologiemi, jako například software na čtení obrazovky. Popis je volitelný, nicméně se doporučuje, aby splňoval směrnice upravující dostupnost webu, jako například WCAG a článek 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Najít adresu nebo místo",

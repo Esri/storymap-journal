@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Sluiten",
-      "focusMainstage": "Stuur toetsenbordfocus naar media"
+      "focusMainstage": "Stuur toetsenbordfocus naar media",
+      "expandImage": "Beeld vergroten"
+    },
+    "a11y": {
+      "skipToContent": "Overslaan en naar verhaal",
+      "headerAria": "Koptekst verhaal",
+      "panelAria": "Narratief van verhaal",
+      "mainStageAria": "Huidige verhaalsectie media",
+      "logoLinkAria": "Logolink",
+      "toTop": "Ga naar het begin van het verhaal",
+      "focusContent": "Terug naar verhaal",
+      "navAria": "Verhaalhoofdstukken",
+      "navPreviousAria": "Vorige hoofdstuk",
+      "navNextAria": "Volgende hoofdstuk",
+      "toSectionAria": "Ga naar hoofdstuk %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Volgende groep van hoofdstukken (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Vorige groep van hoofdstukken (%SECTION_RANGE%)",
+      "loadingAria": "Verhaalinhoud wordt geladen"
     },
     "loading": {
       "step1": "Verhaal wordt geladen",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Dit is niet beschikbaar in autoplaymodus.",
       "notshared": "Verhaal niet gedeeld"
     },
-    "overviewFromCommon": {
-      "title": "Overzichtskaart"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Overzichtskaart",
+      "legend": "Legenda",
+      "home": "Zoom Home"
     },
     "shareFromCommon": {
       "copy": "Kopiëren",

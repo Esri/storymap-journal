@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Décharger lorsque le lecteur quitte cette section",
       "unloadHelp": "Si la page Web comporte un support audio ou vidéo, cette option doit rester activée pour empêcher la lecture du contenu lorsque le lecteur quitte cette section. Désactivez cette option pour continuer la lecture d'une piste audio pendant que le lecteur avance dans le récit.<br />Si la page Web est une application, désactivez cette option pour que le récit ne se recharge pas si le lecteur revient à cette section.",
       "embedProtocolLabel": "Charger la page via une connexion sécurisée (HTTPS)",
-      "embedProtocolWarning1": "Si cette page ne se charge pas dans votre récit, elle ne peut pas être incorporée pour des raisons de sécurité Web. Vous pouvez également ajouter un lien dans votre narration afin d'ouvrir la page dans un nouvel onglet du navigateur. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>En savoir plus</a>",
-      "embedProtocolWarning2": "Si cette page ne se charge pas dans votre récit, désélectionnez cette option et réessayez. Si la page ne se charge toujours pas, elle ne peut pas être incorporée pour des raisons de sécurité Web. Vous pouvez également ajouter un lien dans votre narration afin d'ouvrir la page dans un nouvel onglet du navigateur. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>En savoir plus</a>"
+      "embedProtocolWarning1": "Si cette page ne se charge pas dans votre récit, elle ne peut pas être incorporée pour des raisons de sécurité Web. Vous pouvez également ajouter un lien dans votre narration afin d’ouvrir la page dans un nouvel onglet du navigateur.",
+      "embedProtocolWarning2": "Si cette page ne se charge pas dans votre récit, désélectionnez cette option et réessayez. Si la page ne se charge toujours pas, elle ne peut pas être incorporée pour des raisons de sécurité Web. Vous pouvez également ajouter un lien dans votre narration afin d’ouvrir la page dans un nouvel onglet du navigateur.",
+      "learn": "En savoir plus",
+      "lblAltText": "Texte de remplacement",
+      "placeholderAltText": "Entrez une description de ce support pour les lecteurs malvoyants...",
+      "tooltipAltText": "Indiquez une description du contenu de ce support qui sera utilisée par les technologies d’assistance, telles que les logiciels de lecteur d’écran. Cette description est facultative mais conseillée à des fins de compatibilité avec les directives en matière d’accessibilité Web, telles que WCAG et Section 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Localiser une adresse ou un lieu",

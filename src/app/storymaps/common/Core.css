@@ -214,6 +214,35 @@ input[type="checkbox"] {
 	box-sizing: initial;
 }
 
+/* make this not visible until it has focus.
+  requires two levels of selector because bootstrap is imported after our custom css :\ */
+button.visible-on-focus {
+	opacity: 0;
+	pointer-events: none;
+	cursor: default;
+	margin: 0 auto;
+	border: none;
+	border-radius: 0;
+}
+
+button.visible-on-focus:not(.link) {
+	background: white;
+	color: #333;
+	padding: 10px 20px;
+}
+
+button.visible-on-focus:focus {
+	opacity: 1;
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+button.visible-on-focus.link {
+	background: none;
+	padding: 0;
+	border-bottom: 1px dashed #aaa;
+}
+
 /*
  * Print instruction
  */

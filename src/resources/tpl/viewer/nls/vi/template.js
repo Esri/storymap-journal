@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Đóng",
-      "focusMainstage": "Gửi trung tâm bàn phím vào phương tiện"
+      "focusMainstage": "Gửi trung tâm bàn phím vào phương tiện",
+      "expandImage": "Mở rộng hình ảnh"
+    },
+    "a11y": {
+      "skipToContent": "Bỏ qua đến câu chuyện",
+      "headerAria": "Tiêu đề câu chuyện",
+      "panelAria": "Tường thuật câu chuyện",
+      "mainStageAria": "Phương tiện phần câu chuyện hiện tại",
+      "logoLinkAria": "Liên kết logo",
+      "toTop": "Đi đến đầu câu chuyện",
+      "focusContent": "Quay lại câu chuyện",
+      "navAria": "Các phần câu chuyện",
+      "navPreviousAria": "Phần trước",
+      "navNextAria": "Phần tiếp",
+      "toSectionAria": "Đi đến phần %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Nhóm phần tiếp theo (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Nhóm phần trước (%SECTION_RANGE%)",
+      "loadingAria": "Đang tải nội dung câu chuyện"
     },
     "loading": {
       "step1": "Đang tải câu chuyện",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Tính năng này không khả dụng trong chế độ phát tự động",
       "notshared": "Câu chuyện không được chia sẻ"
     },
-    "overviewFromCommon": {
-      "title": "Bản đồ Toàn cảnh"
-    },
-    "legendFromCommon": {
-      "title": "Chú giải"
+    "mapFromCommon": {
+      "overview": "Bản đồ Toàn cảnh",
+      "legend": "Chú giải",
+      "home": "Thu phóng Trang chủ"
     },
     "shareFromCommon": {
       "copy": "Sao chép",

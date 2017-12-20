@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Zavřít",
-      "focusMainstage": "Poslat fokus klávesnice na média"
+      "focusMainstage": "Poslat fokus klávesnice na média",
+      "expandImage": "Rozbalit obraz"
+    },
+    "a11y": {
+      "skipToContent": "Přeskočit na vyprávění",
+      "headerAria": "Záhlaví příběhu",
+      "panelAria": "Vyprávění příběhu",
+      "mainStageAria": "Aktuální média části příběhu",
+      "logoLinkAria": "Odkaz na logo",
+      "toTop": "Přejít na začátek vyprávění",
+      "focusContent": "Vrátit se na vyprávění",
+      "navAria": "Části příběhu",
+      "navPreviousAria": "Předchozí část",
+      "navNextAria": "Další část",
+      "toSectionAria": "Přejít na část %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Další skupina částí (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Předchozí skupina částí (%SECTION_RANGE%)",
+      "loadingAria": "Načítá se obsah příběhu"
     },
     "loading": {
       "step1": "Načítání příběhu",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Není k dispozici v režimu automatického přehrávání.",
       "notshared": "Příběh není sdílen"
     },
-    "overviewFromCommon": {
-      "title": "Mapa přehledu"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Přehledová mapa",
+      "legend": "Legenda",
+      "home": "Výchozí přiblížení"
     },
     "shareFromCommon": {
       "copy": "Kopírovat",

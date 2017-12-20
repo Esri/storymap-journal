@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "बंद करें",
-      "focusMainstage": "कीबोर्ड का फ़ोकस मीडिया पर भेजें"
+      "focusMainstage": "कीबोर्ड का फ़ोकस मीडिया पर भेजें",
+      "expandImage": "छवि का विस्तार करें"
+    },
+    "a11y": {
+      "skipToContent": "विवरण छोड़ें",
+      "headerAria": "कहानी का शीर्षक",
+      "panelAria": "कहानी का विवरण",
+      "mainStageAria": "मौजूदा कहानी अनुभाग मीडिया",
+      "logoLinkAria": "लोगो लिंक",
+      "toTop": "विवरण के प्रारंभ पर जाएँ",
+      "focusContent": "विवरण पर लौटें",
+      "navAria": "कहानी के अनुभाग",
+      "navPreviousAria": "पिछला अनुभाग",
+      "navNextAria": "अगला अनुभाग",
+      "toSectionAria": "%SECTION_NUMBER%: %SECTION_TITLE% अनुभाग पर जाएँ",
+      "toNextGroupAria": "अनुभाग का अगला समूह (%SECTION_RANGE%)",
+      "toPrevGroupAria": "अनुभागों का पिछला समूह (%SECTION_RANGE%)",
+      "loadingAria": "कहानी की विषय वस्तु लोड हो रही है"
     },
     "loading": {
       "step1": "कहानी लोड हो रही है",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "यह ऑटोप्ले मोड में उपलब्ध नहीं है",
       "notshared": "कहानी साझा नहीं की गई है"
     },
-    "overviewFromCommon": {
-      "title": "संक्षिप्त मानचित्र"
-    },
-    "legendFromCommon": {
-      "title": "लीजेंड"
+    "mapFromCommon": {
+      "overview": "संक्षिप्त मानचित्र",
+      "legend": "लिजेंड",
+      "home": "होम ज़ूम करें"
     },
     "shareFromCommon": {
       "copy": "प्रतिलिपि",

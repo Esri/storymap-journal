@@ -1,4 +1,4 @@
-define(["dojo/Deferred"], 
+define(["dojo/Deferred"],
 	function(Deferred)
 	{
 		return function Vimeo()
@@ -65,7 +65,7 @@ define(["dojo/Deferred"],
 
 			function getVimeoEmbed(videoId)
 			{
-				return "//player.vimeo.com/video/" + videoId;
+				return "//player.vimeo.com/video/" + videoId + "?transparent=0";
 			}
 		};
 	}

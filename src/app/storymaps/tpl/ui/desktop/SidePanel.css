@@ -64,6 +64,7 @@
 
 .sidePanel .section:last-child {
 	border-bottom: none;
+	padding-bottom: 40px; /* room for loop-to-top button */
 }
 
 .sidePanel .section:not(.active) {

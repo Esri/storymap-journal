@@ -780,7 +780,7 @@ define(["lib-build/css!./Builder",
 				text: processForSave()
 			});
 
-			var url = portalUrl + "/sharing/content/users/" + uid + (appItem.ownerFolder ? ("/" + appItem.ownerFolder) : "");
+			var url = portalUrl + "/sharing/rest/content/users/" + uid + (appItem.ownerFolder ? ("/" + appItem.ownerFolder) : "");
 
 			// Updating
 			if ( appItem.id )
@@ -870,17 +870,18 @@ define(["lib-build/css!./Builder",
 		// Sharing
 		//
 
+		// TODO: is this used anywhere... ?
 		function shareAppAndWebmap(sharingMode, callback)
 		{
 			// Can only be used to add more privilege
 			// Looks like sharing to private imply a unshareItems request first
 			// => don't use it that code to share private without more test
-			if ( sharingMode != "public" && sharingMode != "account" )
+			if ( sharingMode != "public" && sharingMode != "account" && sharingMode !== "org")
 				sharingMode = "public";
 
 			// Find items to share - only if they aren't already shared to the proper level
 			var targetItems = [];
-			if( sharingMode == "account" ) {
+			if( sharingMode == "account" || sharingMode === "org") {
 				if( app.data.getWebMap() && app.data.getWebMap().item.access == "private" && app.data.getWebMap().item.owner == app.portal.getPortalUser().username )
 					targetItems.push(app.data.getWebMap().item.id);
 				if ( app.data.getWebAppItem().access == "private" )
@@ -926,17 +927,17 @@ define(["lib-build/css!./Builder",
 				items: items,
 				groups: '',
 				everyone: '',
-				account: ''
+				org: ''
 			};
 
 			if ( sharing == "public" )
 				params.everyone = true;
-			if ( sharing == "account" )
-				params.account = true;
+			if ( sharing == "org" || sharing == "account" )
+				params.org = true;
 
 			return esriRequest(
 				{
-					url: portalUrl + "/sharing/content/users/" + uid + "/shareItems",
+					url: portalUrl + "/sharing/rest/content/users/" + uid + "/shareItems",
 					handleAs: 'json',
 					content: params
 				},
@@ -1023,7 +1024,7 @@ define(["lib-build/css!./Builder",
 
 					var saveRq = esriRequest(
 						{
-							url: portalUrl + "/sharing/content/users/" + uid + (appItem.ownerFolder ? ("/" + appItem.ownerFolder) : "") + "/addItem",
+							url: portalUrl + "/sharing/rest/content/users/" + uid + (appItem.ownerFolder ? ("/" + appItem.ownerFolder) : "") + "/addItem",
 							handleAs: 'json',
 							content: appItem
 						},

@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Usuń, gdy czytelnik przechodzi dalej",
       "unloadHelp": "Jeśli w witrynie internetowej są udostępniane materiały audio lub wideo, ta opcja powinna być zaznaczona, aby po przejściu czytelnika dalej odtwarzanie tych treści było przerywane. Należy wyłączyć zaznaczenie opcji, aby na przykład podczas czytania tekstu przez czytelnika odtwarzane były utwory muzyczne.<br />Jeżeli ta witryna internetowa jest aplikacją, tę opcję należy wyłączyć, aby uniknąć ponownego wczytywania tej narracji, gdy czytelnik do niej wróci.",
       "embedProtocolLabel": "Wczytywanie strony przez bezpieczne połączenie (HTTPS)",
-      "embedProtocolWarning1": "Jeśli ta strona nie jest wczytywana w narracji, nie można jej osadzać ze względów bezpieczeństwa internetowego. Alternatywnie można dodać łącze w narracji umożliwiające otwarcie tej strony na nowej karcie przeglądarki. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Dowiedz się więcej</a>",
-      "embedProtocolWarning2": "Jeśli ta strona nie jest wczytywana w narracji, wyłącz zaznaczenie tej opcji i spróbuj ponownie. Jeśli ta strona nadal nie jest wczytywana, nie można jej osadzać ze względów bezpieczeństwa internetowego. Alternatywnie można dodać łącze w narracji umożliwiające otwarcie tej strony na nowej karcie przeglądarki. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Dowiedz się więcej</a>"
+      "embedProtocolWarning1": "Jeśli ta strona nie jest wczytywana w narracji, nie można jej osadzać ze względów bezpieczeństwa internetowego. Alternatywnie można dodać łącze w narracji umożliwiające otwarcie tej strony na nowej karcie przeglądarki.",
+      "embedProtocolWarning2": "Jeśli ta strona nie jest wczytywana w narracji, wyłącz zaznaczenie tej opcji i spróbuj ponownie. Jeśli ta strona nadal nie jest wczytywana, nie można jej osadzać ze względów bezpieczeństwa internetowego. Alternatywnie można dodać łącze w narracji umożliwiające otwarcie tej strony na nowej karcie przeglądarki.",
+      "learn": "Dowiedz się więcej",
+      "lblAltText": "Tekst alternatywny",
+      "placeholderAltText": "Wprowadź opis tego medium dla odbiorców niedowidzących...",
+      "tooltipAltText": "Podaj opis zawartości tego medium, który będzie używany przez technologie wspomagające, takie jak oprogramowanie do czytania tekstu z ekranu. Opis jest opcjonalny, ale zalecany w celu spełnienia wytycznych dotyczących dostępności zawartości internetowej, takich jak WCAG oraz artykuł 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Lokalizuj adres lub miejsce",

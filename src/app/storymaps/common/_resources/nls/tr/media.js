@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Okuyucu başka yere gittiğinde yüklemeyi kaldır",
       "unloadHelp": "Web sayfasında ses veya video ortamı varsa, okuyucu başka bir yere gittiğinde içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu metin boyunca ilerlerken örneğin bir arka plan müziğini oynatmaya devam etmek için işareti kaldırın.<br />Web sayfası bir uygulamaysa, bu seçeneğin işaretini kaldırarak, okuyucu geri döndüğünde hikayenin yeniden yüklenmesini önleyebilirsiniz.",
       "embedProtocolLabel": "Sayfayı bir güvenli bağlantı üzerinden yükle (HTTPS)",
-      "embedProtocolWarning1": "Bu sayfa hikayenizde yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Daha fazla bilgi</a>",
-      "embedProtocolWarning2": "Bu sayfa hikayenizde yüklenmiyorsa, bu seçeneğin işaretini kaldırın ve yeniden deneyin. Sayfa yine de yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Daha fazla bilgi</a>"
+      "embedProtocolWarning1": "Bu sayfa hikayenizde yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz.",
+      "embedProtocolWarning2": "Bu sayfa hikayenizde yüklenmiyorsa, bu seçeneğin işaretini kaldırın ve yeniden deneyin. Sayfa yine de yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz.",
+      "learn": "Daha fazla bilgi",
+      "lblAltText": "Alternatif Metin",
+      "placeholderAltText": "Görme engelli okuyucular için bu medyanın bir açıklamasını girin...",
+      "tooltipAltText": "Ekran okuyucu yazılımı gibi yardımcı teknolojilerin kullanacağı bu medya içeriğinin bir açıklaması yapın. Açıklama isteğe bağlıdır ancak WCAG ve Bölüm 508 gibi web erişilebilirlik kurallarını karşılamak için önerilir."
     },
     "editorActionGeocode": {
       "lblTitle": "Adres veya yer bul",

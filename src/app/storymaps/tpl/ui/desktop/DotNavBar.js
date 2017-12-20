@@ -1,7 +1,7 @@
 define([
-        "lib-build/css!./DotNavBar",
-        "storymaps/common/utils/CommonHelper"
-    ],
+				"lib-build/css!./DotNavBar",
+				"storymaps/common/utils/CommonHelper"
+		],
 	function(
 		viewCss,
 		CommonHelper
@@ -11,6 +11,7 @@ define([
 			var _this = this,
 				_groupSize = app.cfg.DOTNAV_GROUPSIZE || 15,
 				_params = null,
+				_firstGroupSize = null,
 				_nbSections = null;
 
 			this.init = function(params)
@@ -20,6 +21,9 @@ define([
 				_params.tooltipPosition = _params.tooltipPosition || "right";
 
 				_nbSections = params.sections.length;
+				if (_groupSize === 15 && _nbSections > 15) {
+					_firstGroupSize = 14;
+				}
 
 				render(params.sectionIndex || 0);
 				setColor();
@@ -83,47 +87,70 @@ define([
 
 			function render(sectionIndex)
 			{
+
 				var dotsHTML = "",
 					prevGroupsHTML = "",
 					nextGroupsHTML = "",
 					groupStart = parseInt(sectionIndex / _groupSize, 10),
 					startIndex = groupStart * _groupSize;
+				if (_firstGroupSize) {
+					if (sectionIndex === _firstGroupSize || (sectionIndex + 1) % _groupSize === 0) {
+						groupStart++;
+					}
+					if (groupStart !== 0) {
+						startIndex = _firstGroupSize + (groupStart - 1) * _groupSize;
+					}
+				}
 
-				for(var i=startIndex; i < _nbSections && i < startIndex + _groupSize; i++){
+
+				var numDots = (startIndex === 0 && _firstGroupSize) ? _firstGroupSize : _groupSize;
+
+				for (var i = startIndex; i < _nbSections && i < startIndex + numDots; i++) {
 					var title = $("<div>" + _params.sections[i].title + "</div>").text();
 					title = title.replace(/"/g, '&quot;');
+					var ariaLabel = i18n.viewer.a11y.toSectionAria.replace('%SECTION_NUMBER%', i+1).replace('%SECTION_TITLE%', title);
 
 					if ( i === 0 )
-						dotsHTML += '<div class="dot glyphicon glyphicon-home" title="' + title + '" data-index="0"></div>';
+						dotsHTML += '<div role="button" aria-label="' + ariaLabel + '" tabindex="0" class="dot glyphicon glyphicon-home" title="' + title + '" data-index="0"></div>';
 					else
-						dotsHTML += '<div class="dot" title="' + title + '" data-index="' + i + '">&#9679;</div>';
+						dotsHTML += '<div role="button" aria-label="' + ariaLabel + '" tabindex="0" class="dot" title="' + title + '" data-index="' + i + '">&#9679;</div>';
 				}
 
 				if ( _nbSections > _groupSize ) {
-					if ( groupStart > 0 ) {
-						for(var j=0; j <= startIndex - _groupSize; j += _groupSize) {
-							prevGroupsHTML += '<div class="navGroup" data-index="' + (j+_groupSize-1) + '">' + (j+1) + '-' + (j+_groupSize) + '</div>';
+					var firstGroupSize = _firstGroupSize || _groupSize;
+					// there are groups before the dots
+					if (groupStart > 0) {
+						var thisGroupSize = firstGroupSize;
+						for (var j = 0, m = 0; j <= startIndex - thisGroupSize; j = firstGroupSize + m * _groupSize, m++) {
+							var prevGroupStart = j + 1,
+									prevGroupEnd = j + thisGroupSize,
+									prevGroupRange = prevGroupStart + '-' + prevGroupEnd,
+									prevGroupAria = i18n.viewer.a11y.toPrevGroupAria.replace('%SECTION_RANGE%', prevGroupRange);
+							thisGroupSize = _groupSize;
+							prevGroupsHTML += '<div class="navGroup navGroupDown" role="button" title="' + prevGroupAria + '" aria-label="' + prevGroupAria + '" tabindex="0" data-index="' + (j+_groupSize-1) + '">' + prevGroupStart + '</div>';
 						}
 					}
 
-					if ( groupStart + _groupSize < _nbSections ) {
-						for(var k=startIndex + _groupSize; k < _nbSections; k += _groupSize){
-							var groupStartLbl = k+1,
-								groupEndLbl = Math.min(k+_groupSize, _nbSections),
-								label = groupStartLbl != groupEndLbl ? groupStartLbl + '-' + groupEndLbl : groupStartLbl,
-								styleOpt = "";
+					if (groupStart + _groupSize < _nbSections ) {
+						var firstNextStart = startIndex + numDots;
+						for (var k = firstNextStart, n = 1; k < _nbSections; k = firstNextStart + (n * _groupSize), n++) {
+							var nextGroupStart = k + 1,
+									nextGroupEnd = Math.min(k + _groupSize, _nbSections),
+									nextGroupRange = nextGroupStart === nextGroupEnd ? nextGroupStart : nextGroupStart + '-' + nextGroupEnd,
+									nextGroupAria = i18n.viewer.a11y.toNextGroupAria.replace('%SECTION_RANGE%', nextGroupRange),
+									styleOpt = '';
 
-							if ( groupStartLbl >= 100 && groupEndLbl > 100 )
+							if ( nextGroupStart >= 100 && nextGroupEnd > 100 ) {
 								styleOpt = "font-size: 8px;";
-
-							nextGroupsHTML += '<div class="navGroup" data-index="' + k + '" style="' + styleOpt + '">' + label + '</div>';
+							}
+							nextGroupsHTML += '<div class="navGroup navGroupUp" role="button" title="' + nextGroupAria + '" aria-label="' + nextGroupAria + '" tabindex="0" data-index="' + k + '" style="' + styleOpt + '">' + nextGroupStart + '</div>';
 						}
 					}
 				}
 
 				container.html(
-					'<div class="navDotsInner">'
-					+ ' <div class="navDotsNav navDotsUp"></div>'
+					'<div class="navDotsInner" role="navigation" aria-label="' + i18n.viewer.a11y.navAria + '">'
+					+ ' <div class="navDotsNav navDotsUp" role="button" tabindex="0" aria-label="' + i18n.viewer.a11y.navPreviousAria + '"></div>'
 					+ ' <div class="navGroups navGroupUp' + (!prevGroupsHTML ? ' disabled' : '') + '">'
 					+    prevGroupsHTML
 					+ ' </div>'
@@ -133,7 +160,7 @@ define([
 					+ ' <div class="navGroups navGroupDown' + (!nextGroupsHTML ? ' disabled' : '') + '">'
 					+    nextGroupsHTML
 					+ ' </div>'
-					+ ' <div class="navDotsNav navDotsDown"></div>'
+					+ ' <div class="navDotsNav navDotsDown" role="button" tabindex="0" aria-label="' + i18n.viewer.a11y.navNextAria + '"></div>'
 					+ '</div>'
 				);
 
@@ -173,7 +200,7 @@ define([
 
 			function initEvents()
 			{
-				container.off('click').click(function(e){
+				container.off('click keypress').on('click keypress', function(e){
 					var target = $(e.target);
 
 					if (target.hasClass('dot'))
@@ -185,8 +212,11 @@ define([
 					if (target.hasClass('navDotsDown') && ! target.hasClass('disabled'))
 						navigationCallback(container.find('.dot.active').data('index') + 1);
 
-					if (target.hasClass('navGroup'))
+					if (target.hasClass('navGroupUp'))
 						navigationCallback(target.data('index'));
+
+					if (target.hasClass('navGroupDown'))
+						navigationCallback(target.data('index') - 14);
 				});
 			}
 		};

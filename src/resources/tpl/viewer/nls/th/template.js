@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "ปิด",
-      "focusMainstage": "ส่งโฟกัสของแป้นพิมพ์ไปยังสื่อ"
+      "focusMainstage": "ส่งโฟกัสของแป้นพิมพ์ไปยังสื่อ",
+      "expandImage": "ขยายภาพ"
+    },
+    "a11y": {
+      "skipToContent": "ข้ามไปยังคำบรรยาย",
+      "headerAria": "ส่วนหัวของเรื่องราว",
+      "panelAria": "คำบรรยายเรื่องราว",
+      "mainStageAria": "สื่อของส่วนเรื่องราวปัจจุบัน",
+      "logoLinkAria": "โลโก้ที่เชื่องโยงไปยัง",
+      "toTop": "ไปที่จุดเริ่มต้นของคำบรรยาย",
+      "focusContent": "กลับไปที่คำบรรยาย",
+      "navAria": "ส่วนของเรื่องราว",
+      "navPreviousAria": "ส่วนก่อนหน้า",
+      "navNextAria": "ส่วนถัดไป",
+      "toSectionAria": "ไปที่ส่วน %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "กลุ่มของส่วนถัดไป (%SECTION_RANGE%)",
+      "toPrevGroupAria": "กลุ่มของส่วนก่อนหน้า (%SECTION_RANGE%)",
+      "loadingAria": "กำลังโหลดเนื้อหาเรื่องราว"
     },
     "loading": {
       "step1": "กำลังโหลดเรื่องราว",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "สิ่งนี้ไม่สามารถใช้ได้ในโหมดเล่นอัตโนมัติ",
       "notshared": "ไม่ได้แชร์สตอรี่"
     },
-    "overviewFromCommon": {
-      "title": "ภาพรวมของแผนที่"
-    },
-    "legendFromCommon": {
-      "title": "สัญลักษณ์"
+    "mapFromCommon": {
+      "overview": "ภาพรวมของแผนที่",
+      "legend": "คำอธิบายสัญลักษณ์",
+      "home": "ซูมบ้าน"
     },
     "shareFromCommon": {
       "copy": "คัดลอก",

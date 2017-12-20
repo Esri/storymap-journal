@@ -28,10 +28,14 @@
 
 #builderPanel .buttons {
 	position: absolute;
-	top: 21px;
+	top: 18px;
 	left: 315px;
 	color: #BEDFF0;
 	z-index: 3;
+}
+
+#builderPanel.more-conflicting-text .buttons {
+	left: 240px;
 }
 
 #builderPanel .builder-cmd {
@@ -40,6 +44,17 @@
 	font-size: 1em;
 	cursor: pointer;
 	opacity: 0.8;
+	background: none;
+	border: none;
+}
+
+/* adjust button spacing if status text is too long */
+#builderPanel.more-conflicting-text .builder-cmd:first-child {
+	margin-left: 5px;
+}
+
+#builderPanel.more-conflicting-text .builder-cmd:not(:first-child) {
+	margin-left: 0;
 }
 
 #builderPanel .builder-cmd:hover {
@@ -74,6 +89,12 @@
 	background-position: -57px 0;
 	vertical-align: -4px;
 }
+
+/* hide labels for buttons if fix message is too long */
+#builderPanel.conflicting-text .builder-cmd-hidden-label {
+	display: none;
+}
+
 
 /*
  * Right panel

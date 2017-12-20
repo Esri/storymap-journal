@@ -66,3 +66,18 @@ body.layout-float-left:not(.mobile-view) .esriControlsBR .logo-med {
 	float: left;
 	margin-top: -14px;
 }
+
+.skip-to-content {
+	position: absolute;
+	z-index: 3; /* over side panel */
+}
+
+body.layout-float-left .mainMediaContainer .return-to-content {
+	left: auto;
+	right: 20%;
+}
+
+body.layout-float-right .mainMediaContainer .return-to-content {
+	right: auto;
+	left: 20%;
+}

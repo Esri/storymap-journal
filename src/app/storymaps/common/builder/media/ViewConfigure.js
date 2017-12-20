@@ -20,33 +20,12 @@ define(["lib-build/css!./ViewConfigure",
 				_mediaType = null,
 				_params = null;
 
-			container.append(viewTpl({
+			container.append(viewTpl(lang.mixin({
 				mode: cfg.mode,
-				lblURL: i18n.commonMedia.mediaConfigure.lblURL,
-				lblURLPH: i18n.commonMedia.mediaConfigure.lblURLPH,
-				lblURLError: i18n.commonMedia.mediaConfigure.lblURLError,
-				lblLabel: i18n.commonMedia.mediaConfigure.lblLabel,
-				lblLabelPH: i18n.commonMedia.mediaConfigure.lblLabelPH,
-				lblMaximize: i18n.commonMedia.mediaConfigure.lblMaximize,
-				lblMaximizeHelp: i18n.commonMedia.mediaConfigure.lblMaximizeHelp,
-				lblPosition: i18n.commonMedia.mediaConfigure.lblPosition,
-				lblPosition1: i18n.commonMedia.mediaConfigure.lblPosition1,
-				lblPosition2: i18n.commonMedia.mediaConfigure.lblPosition2,
-				lblPosition3: i18n.commonMedia.mediaConfigure.lblPosition3,
-				lblPosition4: i18n.commonMedia.mediaConfigure.lblPosition4,
-				lblPosition5: i18n.commonMedia.mediaConfigure.lblPosition5,
 				phWidth: i18n.commonCore.common.width,
 				phHeight: i18n.commonCore.common.height,
-				lblPosition2Explain: i18n.commonMedia.mediaConfigure.lblPosition2Explain,
-				lblPosition3Explain: i18n.commonMedia.mediaConfigure.lblPosition3Explain,
-				lblPosition3Explain2: i18n.commonMedia.mediaConfigure.lblPosition3Explain2,
-				lblPosition4Explain: i18n.commonMedia.mediaConfigure.lblPosition4Explain,
-				lblURLHelp: i18n.commonMedia.mediaConfigure.lblURLHelp,
-				unloadLbl: i18n.commonMedia.mediaConfigure.unloadLbl,
-				unloadHelp: i18n.commonMedia.mediaConfigure.unloadHelp,
-				embedProtocolLabel: i18n.commonMedia.mediaConfigure.embedProtocolLabel,
 				embedProtocolInfo: location.protocol == 'https:' ? i18n.commonMedia.mediaConfigure.embedProtocolWarning1 : i18n.commonMedia.mediaConfigure.embedProtocolWarning2
-			}));
+			}, i18n.commonMedia.mediaConfigure)));
 
 			initEvents();
 
@@ -163,6 +142,7 @@ define(["lib-build/css!./ViewConfigure",
 				container.find('.mediaTitle').val(media ? media[media.type].title : '');
 				container.find('[value="opt-maximize"]').prop('checked', media ? media[media.type].activateFullScreen : false);
 
+				container.find('textarea.alt-text').val(media ? media[media.type].altText : '');
 
 				// Image information (inline)
 				/*
@@ -232,7 +212,8 @@ define(["lib-build/css!./ViewConfigure",
 				var display = container.find('.media-configure-position.selected').data('val'),
 					data = {
 						url: container.find('.mediaURL').val().trim(),
-						type: _mediaType
+						type: _mediaType,
+						altText: container.find('textarea.alt-text').val().replace(/[<>"]/g, '')
 					};
 
 					if (this.imageSizes) {
@@ -385,6 +366,11 @@ define(["lib-build/css!./ViewConfigure",
 				});
 				*/
 
+				container.find('.help').tooltip({
+					trigger: 'hover',
+					container: container.parents('.modal')[0]
+				});
+
 				container.find(".imageDetailsLbl").click(function(){
 					container.find(".imageDetailsContainer").toggleClass('expanded');
 				});
@@ -402,18 +388,21 @@ define(["lib-build/css!./ViewConfigure",
 				container.find('.dimHelp').tooltip('destroy').tooltip({
 					title: i18n.commonMedia.mediaConfigure.tooltipDimension,
 					html: true,
-					trigger: 'hover'
+					trigger: 'hover',
+					container: container
 				});
 
 				container.find('.dimHelp2').tooltip('destroy').tooltip({
 					title: i18n.commonMedia.mediaConfigure.tooltipDimension2,
 					html: true,
-					trigger: 'hover'
+					trigger: 'hover',
+					container: container
 				});
 
-				container.find('.maximizeHelp, .unloadHelp, .configureHelp').tooltip({
+				container.find('.maximizeHelp, .unloadHelp, .configureHelp, .protocolHelp, .altTextHelp').tooltip({
 					html: true,
-					trigger: 'hover'
+					trigger: 'hover',
+					container: container
 				});
 			}
 

@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Wird angehalten, wenn Leser zu einem anderen Ort navigiert",
       "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt.",
       "embedProtocolLabel": "Seite über eine sichere Verbindung (HTTPS) laden",
-      "embedProtocolWarning1": "Wenn diese Seite nicht in Ihre Story geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Weitere Informationen</a>",
-      "embedProtocolWarning2": "Wenn diese Seite nicht in Ihre Story geladen werden kann, deaktivieren Sie diese Option, und versuchen Sie es erneut. Wenn die Seite trotzdem nicht geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Weitere Informationen</a>"
+      "embedProtocolWarning1": "Wenn diese Seite nicht in Ihre Story geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen.",
+      "embedProtocolWarning2": "Wenn diese Seite nicht in Ihre Story geladen werden kann, deaktivieren Sie diese Option, und versuchen Sie es erneut. Wenn die Seite trotzdem nicht geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen.",
+      "learn": "Weitere Informationen",
+      "lblAltText": "Alternativer Text",
+      "placeholderAltText": "Geben Sie für sehbehinderte Leser eine Beschreibung dieser Medien ein...",
+      "tooltipAltText": "Stellen Sie eine Beschreibung dieses Medieninhalts bereit, der von Hilfstechnologien wie Sprachausgabe-Software verwendet wird. Eine Beschreibung ist optional, wird jedoch empfohlen, um den Richtlinien für barrierefreie Webinhalte gemäß WCAG und Abschnitt 508 zu entsprechen."
     },
     "editorActionGeocode": {
       "lblTitle": "Adresse oder Ort suchen",

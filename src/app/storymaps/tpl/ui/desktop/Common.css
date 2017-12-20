@@ -337,6 +337,11 @@ body[data-theme-major=black] .builder-content-panel .builder-content-panel-group
 	border-style: none;
 }
 
+.loop-wrapper {
+	position: absolute;
+	bottom: 10px;
+}
+
 body.layout-side-left .sidePanel .scroll,
 body.layout-float-left .floatingPanel .scroll {
 	padding-left: 34px;

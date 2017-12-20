@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Không tải khi người đọc điều hướng ra ngoài",
       "unloadHelp": "Nếu trang web có âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi người đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu trang web là một ứng dụng, bỏ chọn tùy chọn này để câu chuyện không tải lại nếu người đọc quay trở lại.",
       "embedProtocolLabel": "Tải trang qua kết nối bảo mật (HTTPS)",
-      "embedProtocolWarning1": "Nếu trang này không tải bên trong câu chuyện của bạn, bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang web trong một tab trình duyệt mới. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Tìm hiểu thêm</a>",
-      "embedProtocolWarning2": "Nếu trang này không tải trong câu chuyện của bạn, hãy bỏ chọn tùy chọn này và thử lại. Nếu trang vẫn không tải, thì bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang web ở một tab trình duyệt mới. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Tìm hiểu thêm</a>"
+      "embedProtocolWarning1": "Nếu trang này không tải ra trong câu chuyện của bạn, bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang trong một tab trình duyệt mới.",
+      "embedProtocolWarning2": "Nếu trang này không tải ra trong câu chuyện của bạn, hãy bỏ chọn tùy chọn này và thử lại. Nếu trang vẫn không tải, thì bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang trong một tab trình duyệt mới.",
+      "learn": "Tìm hiểu thêm",
+      "lblAltText": "Văn bản Thay thế",
+      "placeholderAltText": "Nhập mô tả phương tiện này cho các độc giả khiếm thị...",
+      "tooltipAltText": "Cung cấp mô tả về nội dung của phương tiện này để các công nghệ trợ giúp, ví dụ như phần mềm đọc màn hình, sử dụng. Mô tả này là tùy chọn, nhưng chúng tôi khuyến nghị nhập mô tả để đáp ứng hướng dẫn về khả năng truy cập web, như WCAG và Phần 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Định vị một địa chỉ hoặc địa điểm",

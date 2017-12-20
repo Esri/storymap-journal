@@ -45,7 +45,13 @@ define(["lib-build/tpl!./WebMapSelector",
 				_mapConfig = null,
 				_errorDialog = new ErrorDialog($("#mapErrorDialog"));
 
-			container.append(viewTpl(lang.mixin({}, i18n.commonWebmap.selector, {lblEdit: i18n.commonCore.common.edit})));
+			container.append(viewTpl(lang.mixin({
+				learn: i18n.commonMedia.mediaConfigure.learn,
+				lblEdit: i18n.commonCore.common.edit,
+				lblAltText: i18n.commonMedia.mediaConfigure.lblAltText,
+				placeholderAltText: i18n.commonMedia.mediaConfigure.placeholderAltText,
+				tooltipAltText: i18n.commonMedia.mediaConfigure.tooltipAltText
+			}, i18n.commonWebmap.selector)));
 
 			initEvents();
 
@@ -63,7 +69,8 @@ define(["lib-build/tpl!./WebMapSelector",
 						popup:  cfg.media.webmap.popup,
 						legend:  cfg.media.webmap.legend,
 						overview:  cfg.media.webmap.overview,
-						geocoder: cfg.media.webmap.geocoder
+						geocoder: cfg.media.webmap.geocoder,
+						altText: cfg.media.webmap.altText
 					};
 
 					// TODO should be able to know if this is the webmap initial extent or not
@@ -132,7 +139,8 @@ define(["lib-build/tpl!./WebMapSelector",
 				var webmapId = getSelectedWebmap(),
 					isExtentCustom = container.find('.map-cfg .map-cfg-location .btn[data-value="custom"]').hasClass('btn-primary'),
 					isLayersCustom = container.find('.map-cfg .map-cfg-content .btn[data-value="custom"]').hasClass('btn-primary'),
-					isPopupCustom  = container.find('.map-cfg .map-cfg-popup .btn[data-value="custom"]').hasClass('btn-primary');
+					isPopupCustom  = container.find('.map-cfg .map-cfg-popup .btn[data-value="custom"]').hasClass('btn-primary'),
+					altText = container.find('textarea.alt-text').val().replace(/[<>"]/g, '');
 
 				if ( ! isSelectedWebmapValid() )
 					return null;
@@ -152,7 +160,8 @@ define(["lib-build/tpl!./WebMapSelector",
 					},
 					geocoder: {
 						enable: container.find('.opt-checkbox-geocoder').prop('checked')
-					}
+					},
+					altText: altText
 				};
 			};
 
@@ -167,11 +176,11 @@ define(["lib-build/tpl!./WebMapSelector",
 					return;
 				}
 
-				// Optional but allow the list to be slightly wider
-				container.find('.selected-map-edit-container').css(
-					'width',
-					container.find('.selected-map-edit').width()
-				);
+				//Optional but allow the list to be slightly wider
+				//container.find('.selected-map-edit-container').css(
+				//	'width',
+				//	container.find('.selected-map-edit').width()
+				//);
 			};
 
 			function buildWebmapList(currentMap, webmaps)
@@ -320,7 +329,8 @@ define(["lib-build/tpl!./WebMapSelector",
 			function initEvents()
 			{
 				container.find('.help').tooltip({
-					trigger: 'hover'
+					trigger: 'hover',
+					container: container.parents('.modal')[0]
 				});
 
 				// TODO shouldn't subscribe to that topic globally
@@ -512,12 +522,14 @@ define(["lib-build/tpl!./WebMapSelector",
 				container.find('.map-cfg .map-cfg-popup .btn[data-value="default"]').toggleClass('btn-primary', ! definePopup);
 				container.find('.map-cfg .map-cfg-popup .btn[data-value="custom"]').toggleClass('btn-primary', definePopup);
 
+				container.find('textarea.alt-text').val(_mapConfig.altText || '');
+
 				var webmapId = getSelectedWebmap();
 
 				if ( webmapId ) {
 					container.find('.map-cfg-row').show();
 					// specifically request this with a token to see if the current user has admin/update privileges.
-					var url = CommonHelper.getSpecificPortalURL() + '/sharing/content/items/' + webmapId;
+					var url = CommonHelper.getSpecificPortalURL() + '/sharing/rest/content/items/' + webmapId;
 					// get the webmap's item info to look at privileges
 					WebMapHelper.request(url, null, null, Helper.getToken()).then(function(itemResponse) {
 

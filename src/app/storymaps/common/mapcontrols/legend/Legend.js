@@ -12,7 +12,7 @@ define(["lib-build/tpl!./Legend",
 
 			var tplStrings = {
 				isInBuilder: isInBuilder,
-				title: i18n.viewer.legendFromCommon.title
+				title: i18n.viewer.mapFromCommon ? i18n.viewer.mapFromCommon.legend : i18n.viewer.legendFromCommon.title
 			};
 
 			if ( isInBuilder ) {

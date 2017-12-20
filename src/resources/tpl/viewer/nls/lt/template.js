@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Užverti",
-      "focusMainstage": "Siųsti klaviatūros fokusavimą į mediją"
+      "focusMainstage": "Siųsti klaviatūros fokusavimą į mediją",
+      "expandImage": "Išplėsti atvaizdą"
+    },
+    "a11y": {
+      "skipToContent": "Praleisti istoriją",
+      "headerAria": "Pasakojimo antraštė",
+      "panelAria": "Pasakojimo istorija",
+      "mainStageAria": "Dabartinio pasakojimo skilties medija",
+      "logoLinkAria": "Logotipo nuoroda",
+      "toTop": "Eiti į istorijos pradžią",
+      "focusContent": "Grįžti į istoriją",
+      "navAria": "Pasakojimo skiltys",
+      "navPreviousAria": "Ankstesnė skiltis",
+      "navNextAria": "Kita skiltis",
+      "toSectionAria": "Eiti į skiltį %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Kita skilčių grupė (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Ankstesnė skilčių grupė (%SECTION_RANGE%)",
+      "loadingAria": "Įkeliamas pasakojimo turinys"
     },
     "loading": {
       "step1": "Įkeliamas pasakojimas",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Automatinio paleidimo režimu nepasiekiamas",
       "notshared": "Pasakojimas nebendrinamas"
     },
-    "overviewFromCommon": {
-      "title": "Apžvalga"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Apžvalga",
+      "legend": "Legenda",
+      "home": "Keisti mastelį į pradinį"
     },
     "shareFromCommon": {
       "copy": "Kopijuoti",

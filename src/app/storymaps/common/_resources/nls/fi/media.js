@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Poista lataus, kun lukija siirtyy",
       "unloadHelp": "Jos Web-sivulla on ääni- tai videomediaa, pidä tämä asetus valittuna, jotta sisällön toisto pysähtyy, kun lukija siirtyy pois. Poista valinta, jos haluat toistaa ääniraitaa lukijan edetessä tarinassa.<br />Jos Web-sivu on sovellus, poista valinta, jotta tarina ei lataudu uudelleen, kun lukija palaa tarinaan.",
       "embedProtocolLabel": "Lataa sivu suojatun yhteyden kautta (HTTPS)",
-      "embedProtocolWarning1": "Jos tämä sivu ei lataudu tarinassa, sitä ei voi upottaa suojaussyistä. Voit vaihtoehtoisesti lisätä linkin tarinaan, jolloin sivu avautuu uudella välilehdellä selaimessa. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lisätietoja</a>",
-      "embedProtocolWarning2": "Jos tämä sivu ei lataudu tarinassa, poista tämän valintaruudun valinta ja yritä uudelleen. Jos sivu ei edelleenkään lataudu, sitä ei voi upottaa suojaussyistä. Voit vaihtoehtoisesti lisätä linkin tarinaan, jolloin sivu avautuu uudella välilehdellä selaimessa. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lisätietoja</a>"
+      "embedProtocolWarning1": "Jos tämä sivu ei lataudu tarinassa, sitä ei voi upottaa suojaussyistä. Voit vaihtoehtoisesti lisätä linkin tarinaan, jolloin sivu avautuu uudella välilehdellä selaimessa.",
+      "embedProtocolWarning2": "Jos tämä sivu ei lataudu tarinassa, poista tämän valintaruudun valinta ja yritä uudelleen. Jos sivu ei edelleenkään lataudu, sitä ei voi upottaa suojaussyistä. Voit vaihtoehtoisesti lisätä linkin tarinaan, jolloin sivu avautuu uudella välilehdellä selaimessa.",
+      "learn": "Lisätietoja",
+      "lblAltText": "Vaihtoehtoinen teksti",
+      "placeholderAltText": "Lisää tämän median kuvaus näkövammaisia lukijoita varten...",
+      "tooltipAltText": "Määritä tämän mediasisällön kuvaus, jota käytetään helppokäyttötekniikoissa, kuten näytönlukuohjelmistoissa. Kuvaus on valinnainen, mutta sen käyttöä suositellaan verkon helppokäyttöisyysohjeiden (esim. WCAG ja Section 508) mukaisesti."
     },
     "editorActionGeocode": {
       "lblTitle": "Paikanna osoite tai paikka",

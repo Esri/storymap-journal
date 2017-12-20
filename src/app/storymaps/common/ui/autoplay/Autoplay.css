@@ -40,6 +40,7 @@ body.mobile-view .autoplay {
 	cursor: pointer;
 	vertical-align: middle;
 	color: #FFF;
+	text-shadow: 0 0 5px black;
 }
 
 .autoplay .slider-container {

@@ -116,8 +116,12 @@ define({
       "unloadLbl": "讀者定位到其他部分時進行卸載",
       "unloadHelp": "如果網頁中包含音頻或影片介質，請將該選項選中以在讀者定位到其他部分時停止內容播放。取消勾選該選項可使讀者在瀏覽故事的同時持續播放音軌。<br />如果網頁是應用程式，請取消勾選該選項，這樣故事不必在讀者返回此部分時重新載入。",
       "embedProtocolLabel": "透過安全連線 (HTTPS) 載入頁面",
-      "embedProtocolWarning1": "若您的故事未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>瞭解詳細資訊</a>",
-      "embedProtocolWarning2": "若您的故事未載入此網頁，請取消勾選此選項並再試一次。若仍未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>瞭解詳細資訊</a>"
+      "embedProtocolWarning1": "若您的故事未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。",
+      "embedProtocolWarning2": "若您的故事未載入此網頁，請取消勾選此選項並再試一次。若仍未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。",
+      "learn": "瞭解詳細資訊",
+      "lblAltText": "替代文字",
+      "placeholderAltText": "為視障讀者輸入此媒體的說明。",
+      "tooltipAltText": "提供此媒體內容的說明，供輔助技術 (如螢幕助讀程式軟體) 使用。描述是選用的，但建議您符合 WCAG 和第 508 節之類的 Web 協助工具指導方針。"
     },
     "editorActionGeocode": {
       "lblTitle": "定位地址或地點",

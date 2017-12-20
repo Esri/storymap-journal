@@ -15,7 +15,7 @@
 	font-size: 1.25em;
 	font-family: 'open_sanssemibold', sans-serif;
 	text-align: center;
-	padding: 6px 0 0 0;
+	padding: 5px;
 	text-transform: uppercase;
 }
 
@@ -23,16 +23,17 @@
 	color: #a5a5a5;
 	text-align: center;
 	font-size: 0.9em;
-	margin-bottom: 10px;
+	padding: 5px;
 }
 
 .mapConfigOverlay .btns {
-	padding: 10px 0;
+	margin: 10px;
 	text-align: center;
 }
 
 .mapConfigOverlay .btn {
 	text-transform: uppercase;
+	white-space: normal;
 }
 
 .mapConfigOverlay .btn-naked {
@@ -127,38 +128,29 @@ body.layout-float .mapConfigOverlay.toc {
 }
 
 /*
- * MAP LOCATION
+ * MAP LOCATION AND POPUP
  */
 
-.mapConfigOverlay.position {
+.mapConfigOverlay.position,
+.mapConfigOverlay.popup {
 	bottom: 0;
 	left: 50%;
-	width: 300px;
-	margin-left: -150px;
-	padding: 1.1em 1.0em 0.5em 1.0em;
+	width: 500px;
+	margin-left: -250px;
 	border-bottom: none;
 }
 
-.mapConfigOverlay.position .explain {
-	margin-top: 15px;
+@media screen and (max-width: 1280px) {
+	.mapConfigOverlay.position,
+	.mapConfigOverlay.popup {
+		width: 400px;
+		margin-left: -200px;
+	}
 }
 
 /*
  * MAP Popup
  */
-
-.mapConfigOverlay.popup {
-	bottom: 0;
-	left: 50%;
-	width: 300px;
-	margin-left: -150px;
-	padding: 1.1em 1.0em 0.5em 1.0em;
-	border-bottom: none;
-}
-
-.mapConfigOverlay.popup .explain {
-	margin-top: 15px;
-}
 
 /*
  * Geocoder

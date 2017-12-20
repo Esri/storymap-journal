@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "关闭",
-      "focusMainstage": "向介质发送键盘焦点"
+      "focusMainstage": "向介质发送键盘焦点",
+      "expandImage": "展开图像"
+    },
+    "a11y": {
+      "skipToContent": "跳至叙述",
+      "headerAria": "故事标题",
+      "panelAria": "故事叙述",
+      "mainStageAria": "当前故事章节媒体",
+      "logoLinkAria": "徽标链接",
+      "toTop": "转至叙述开头",
+      "focusContent": "返回到叙述",
+      "navAria": "故事章节",
+      "navPreviousAria": "上一章节",
+      "navNextAria": "下一章节",
+      "toSectionAria": "转至章节 %SECTION_NUMBER%：%SECTION_TITLE%",
+      "toNextGroupAria": "下一组章节(%SECTION_RANGE%)",
+      "toPrevGroupAria": "上一组章节(%SECTION_RANGE%)",
+      "loadingAria": "故事内容正在加载中"
     },
     "loading": {
       "step1": "正在加载故事",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "这不适用于自动播放模式",
       "notshared": "故事未共享"
     },
-    "overviewFromCommon": {
-      "title": "总览图"
-    },
-    "legendFromCommon": {
-      "title": "图例"
+    "mapFromCommon": {
+      "overview": "鹰眼图",
+      "legend": "图例",
+      "home": "缩放主页"
     },
     "shareFromCommon": {
       "copy": "复制",

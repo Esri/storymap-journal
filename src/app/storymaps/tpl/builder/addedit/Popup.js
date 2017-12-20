@@ -241,7 +241,8 @@ define(["lib-build/tpl!./Popup",
 							removePlugins: 'liststyle,tableresize,tabletools,contextmenu',
 							disableNativeSpellChecker: false,
 							fontSize_sizes: '18/18px;20/20px;22/22px;24/24px;26/26px;28/28px;36/36px;40/40px;44/44px;48/48px;60/60px;72/72px',
-							fontSize_defaultLabel: isFirst ? '40px' : '26px'
+							fontSize_defaultLabel: isFirst ? '40px' : '26px',
+							autoParagraph: false
 						});
 					}
 				}

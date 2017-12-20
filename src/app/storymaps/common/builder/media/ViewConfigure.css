@@ -42,7 +42,7 @@
 */
 
 .mediaSelectorConfigure .form-group {
-	margin-top: 15px;
+	margin-top: 5px;
 }
 
 /* URL and video groups */
@@ -70,12 +70,13 @@
 .mediaSelectorConfigure .media-configure-position {
 	position: relative;
 	display: inline-block;
-	width: 127px;
+	width: 124px;
 	text-align: center;
 	color: #4d4d4d;
 	opacity: 0.8;
 	cursor: pointer;
 	vertical-align: top;
+	max-width: 24%;
 }
 
 .mediaSelectorConfigure .media-configure-position:nth-child(1) {
@@ -112,7 +113,17 @@
 }
 
 .mediaSelectorConfigure .media-configure-position .position-params {
-	margin-top: 4px;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+
+.mediaSelector.smallSize .media-configure-position .input-sm {
+	height: 29px;
+}
+
+.mediaSelector.smallSize .media-configure-position .position-params {
+	left: 16px;
 }
 
 .mediaSelectorConfigure .media-configure-position .position-params.disabled {
@@ -124,8 +135,8 @@
 	margin-bottom: 15px !important;
 }
 
-.mediaSelectorConfigure .tooltip-arrow {
-	display: none;
+.mediaSelectorConfigure ~ .tooltip.top {
+	padding: 5px;
 }
 
 .mediaSelectorConfigure .embedProtocol {

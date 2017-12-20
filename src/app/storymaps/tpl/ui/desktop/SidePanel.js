@@ -197,7 +197,10 @@ define(["lib-build/tpl!./SidePanelSection",
 			};
 
 			this.focusSection = function(index) {
-				container.find('.section').eq(index).find('.focus-mainstage').focus();
+				if (!index && index !== 0) {
+					index = _activeSectionIndex;
+				}
+				container.find('.section').eq(index).find('.title').focus();
 			};
 
 			this.getSectionNumber = function()
@@ -213,7 +216,7 @@ define(["lib-build/tpl!./SidePanelSection",
 			this.toggleSwitchBuilderButton = function(state)
 			{
 				var switchBuilderBtn = container.find('.switchBuilder')
-					.html('<span class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
+					.html('<span aria-hidden="true" class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
 					.off('click')
 					.click(CommonHelper.switchToBuilder)
 					.toggle(state);
@@ -317,38 +320,6 @@ define(["lib-build/tpl!./SidePanelSection",
 						$(this).removeData("mouseDown");
 					});
 
-				// Find the last entry header or "element" of it's description
-				var lastTabElement = titles.last();
-				if( lastTabElement.siblings(".content").find("[tabindex=0]").length )
-					lastTabElement = lastTabElement.siblings(".content").find("[tabindex=0]").last();
-
-				// Tab on the last element has to navigate to the header
-				lastTabElement.on('keydown', function(e) {
-					if( e.keyCode === 9 && ! e.shiftKey ) {
-						// Focus out when embedded
-						if (window != window.top) {
-							return true;
-						}
-
-						container.find(".header").removeAttr("aria-hidden");
-
-						if ( ! container.find(".header .linkContainer a").length )
-							container.find(".header .linkContainer").attr("tabindex", "0");
-						else
-							container.find(".header .linkContainer a").attr("tabindex", "0");
-
-						container.find(".header .shareIcon").attr("tabindex", "0");
-
-						if ( container.find(".header .linkContainer a").length )
-							container.find(".header .linkContainer a")[0].focus();
-						else if ( container.find(".header .linkContainer").length )
-							container.find(".header .linkContainer")[0].focus();
-						else if ( container.find(".header .shareIcon:visible").length )
-							container.find(".header .shareIcon")[0].focus();
-
-						return false;
-					}
-				});
 			}
 
 			function createSectionBlock(/*editEl,*/ index, status, content, title)
@@ -370,7 +341,8 @@ define(["lib-build/tpl!./SidePanelSection",
 					content: StoryText.prepareEditorContent(content, true),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					lblMainstageBtn: i18n.viewer.common.focusMainstage,
-					shareURL: shareURL
+					shareURL: shareURL,
+					titleTag: index === 0 ? 'h1' : 'h2'
 				});
 			}
 
@@ -410,6 +382,12 @@ define(["lib-build/tpl!./SidePanelSection",
 
 				_this.showSectionNumber(index, true, false);
 				navigationCallback(index);
+				// TODO: was wrapped in a timeout for last patch Dec 2017. internal bug 1086.
+				// find a better way to do this that doesn't involve a timeout.
+				// floatingpanel seems to not have this problem.
+				setTimeout(function() {
+					_this.focusSection(index);
+				}, 200);
 			}
 
 			function onClickSection()
@@ -633,6 +611,24 @@ define(["lib-build/tpl!./SidePanelSection",
 						$('.section .title').eq(0).focus();
 						container.find('.scroll').trigger('click');
 					}
+					$('body').on('keydown', function(e) {
+						if (e.keyCode === 9) {
+							$('body').addClass('user-is-tabbing');
+						}
+					});
+				});
+
+				// loop to top
+				container.find('.loop-to-top').on('click keydown', function(evt) {
+					if (evt.type === 'keydown') {
+						if (evt.keyCode === 9 && !evt.shiftKey) {
+							evt.preventDefault();
+						} else {
+							return;
+						}
+					}
+					_this.showSectionNumber(0);
+					_this.focusSection(0);
 				});
 
 				if ( isInBuilder )

@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "閉じる",
-      "focusMainstage": "キーボード フォーカスをメディアに送信"
+      "focusMainstage": "キーボード フォーカスをメディアに送信",
+      "expandImage": "画像の拡大"
+    },
+    "a11y": {
+      "skipToContent": "注釈に移動",
+      "headerAria": "ストーリーのヘッダー",
+      "panelAria": "ストーリーの注釈",
+      "mainStageAria": "現在のストーリー セクション メディア",
+      "logoLinkAria": "ロゴのリンク",
+      "toTop": "注釈の最初に移動",
+      "focusContent": "注釈に戻る",
+      "navAria": "ストーリーのセクション",
+      "navPreviousAria": "前のセクション",
+      "navNextAria": "次のセクション",
+      "toSectionAria": "セクション %SECTION_NUMBER%: %SECTION_TITLE% に移動",
+      "toNextGroupAria": "セクションの次のグループ (%SECTION_RANGE%)",
+      "toPrevGroupAria": "セクションの前のグループ (%SECTION_RANGE%)",
+      "loadingAria": "ストーリーのコンテンツを読み込んでいます"
     },
     "loading": {
       "step1": "ストーリーの読み込み",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "これは、自動再生モードでは使用できません",
       "notshared": "ストーリーが共有されていません"
     },
-    "overviewFromCommon": {
-      "title": "概観図"
-    },
-    "legendFromCommon": {
-      "title": "凡例"
+    "mapFromCommon": {
+      "overview": "概観図",
+      "legend": "凡例",
+      "home": "ホームへズーム"
     },
     "shareFromCommon": {
       "copy": "コピー",

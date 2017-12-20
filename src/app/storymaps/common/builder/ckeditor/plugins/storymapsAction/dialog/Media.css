@@ -11,3 +11,11 @@
 .editorDialogMedia .textInputContainer.has-feedback .form-control-feedback {
 	display: block;
 }
+
+.editorDialogMedia .webmapSelector .map-cfg-title {
+  font-size: 1em;
+}
+
+.editorDialogMedia .smallSize .media-type {
+  font-size: 0.9em;
+}

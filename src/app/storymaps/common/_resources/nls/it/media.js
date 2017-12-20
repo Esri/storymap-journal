@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Scarica quando il lettore passa a un altro elemento",
       "unloadHelp": "Se la pagina Web dispone di supporti audio o video, mantenere l'opzione selezionata per arrestare la riproduzione del contenuto quando il lettore passa a un elemento diverso. Deselezionarla, per esempio, per mantenere la riproduzione di una colonna sonora mentre il lettore continua a leggere la storia.<br />Se la pagina Web è un'applicazione, deselezionare l'opzione in modo che la storia non venga ricaricata se il lettore torna alla pagina.",
       "embedProtocolLabel": "Caricare una pagina su una connessione protetta (HTTPS)",
-      "embedProtocolWarning1": "Se questa pagina non viene caricata nella storia, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Ulteriori informazioni</a>",
-      "embedProtocolWarning2": "Se questa pagina non viene caricata nella storia, deselezionare questa opzione e riprovare. Se il problema persiste, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Ulteriori informazioni</a>"
+      "embedProtocolWarning1": "Se questa pagina non viene caricata nella storia, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser.",
+      "embedProtocolWarning2": "Se questa pagina non viene caricata nella storia, deselezionare questa opzione e riprovare. Se il problema persiste, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser.",
+      "learn": "Ulteriori informazioni",
+      "lblAltText": "Testo alternativo",
+      "placeholderAltText": "Inserire una descrizione di questo contenuto multimediale per i lettori con disabilità visive...",
+      "tooltipAltText": "Inserire una descrizione di questo contenuto multimediale che verrà utilizzato da tecnologie assistive quali il software di lettura dello schermo. La descrizione è facoltativa ma è consigliata per adempiere alle linee guida di accessibilità del web come la WCAG e la Sezione 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Trova un indirizzo o un luogo",

@@ -140,3 +140,8 @@
 .organizePopup .modal-footer .tooltip-inner {
 	max-width: 324px;
 }
+
+.entryTitle {
+	max-width: 100px;
+	word-wrap: break-word;
+}

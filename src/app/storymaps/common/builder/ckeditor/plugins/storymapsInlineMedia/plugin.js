@@ -30,11 +30,13 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 
 			require(["dojo/topic", "dojo/has", "storymaps/tpl/core/Helper"], function(topic, has, Helper){
 				var media = null;
+				var altText;
 
 				if ( elemIsImg ) {
 					var mediaImg = elem.find('img').eq(0),
 						caption = mediaImg.parents('figure').children('figcaption'),
 						title = caption && caption.length ? caption.html() : mediaImg.attr('title');
+						altText = elem.find('img').attr('alt');
 
 					media = {
 						type: "image",
@@ -44,7 +46,8 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							title: title,
 							width: mediaImg.attr('width'),
 							height: mediaImg.attr('height'),
-							activateFullScreen: mediaImg.parentsUntil('figure').filter('.activate-fullscreen').length > 0
+							activateFullScreen: mediaImg.parentsUntil('figure').filter('.activate-fullscreen').length > 0,
+							altText: altText
 						}
 					};
 				}
@@ -53,6 +56,7 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 						mediaIframe = mediaContainer.find("iframe").eq(0),
 						isVideo = mediaContainer.hasClass("mj-video-by-url"),
 						isFrameByUrl = mediaContainer.hasClass("mj-frame-by-url");
+						altText = mediaContainer.attr('aria-label');
 						//frameStr = decodeURIComponent(mediaIframe.data('ckeRealelement'));
 
 					if ( isVideo ) {
@@ -73,7 +77,8 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 						frameTag: isVideo || isFrameByUrl ? null : mediaIframe.prop('outerHTML'),
 						display: mediaContainer.hasClass("custom") ? "custom" : "fit",
 						width: mediaIframe.attr('width'),
-						height: mediaIframe.attr('height')
+						height: mediaIframe.attr('height'),
+						altText: altText
 					};
 
 					if ( media.type == "webpage" )
@@ -86,11 +91,12 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 						var DEFAULT_WIDTH = '100%',
 							outputEl = "",
 							mediaTpl = "",
-							captionTpl = "";
+							captionTpl = "",
+							altText = cfg.altText || '';
 
 						if ( cfg.type == "image" ) {
 							var fullScreenOpt = cfg.activateFullScreen ? ' activate-fullscreen' : '';
-							mediaTpl = '<div class="image-container' + fullScreenOpt + '"><img src="" /></div>';
+							mediaTpl = '<div class="image-container' + fullScreenOpt + '"><img src="" alt="' + altText + '" /></div>';
 							captionTpl = '<figure class="caption">' + mediaTpl + '<figcaption></figcaption>' + '</figure>';
 						}
 						else {
@@ -104,20 +110,24 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							// Fit or custom
 							editTag += " " + (! cfg.width && ! cfg.height ? " fit" : " custom");
 
-							mediaTpl = '<div class="iframe-container' + editTag + '"><iframe src="" frameborder="0" allowfullscreen="1"/></iframe></div>';
+							mediaTpl = '<div class="iframe-container' + editTag + '" aria-label="' + altText + '" ><iframe src="" frameborder="0" allowfullscreen="1"/></iframe></div>';
 
 							if ( cfg.type == "webpage" && cfg.frameTag ) {
-								mediaTpl = '<div class="iframe-container' + editTag + '">' + cfg.frameTag + '</div>';
+								mediaTpl = '<div class="iframe-container' + editTag + '" aria-label="' + altText + '" >' + cfg.frameTag + '</div>';
 							}
 						}
 
 						// Media with caption (image only)
 						if ( cfg.title ) {
 							var url = cfg.url;
-							// TODO: SIZES. not currently used.
+							// TODO: SIZES. can't really store this stuff in the html because
+							// it gets stripped out either in the editor or in agol.
+							// agol also limits tags, so can't use srcset.
 							if (cfg.sizes && cfg.sizes.length > 1) {
 								var sorted = _.sortBy(cfg.sizes, 'width').reverse();
 								url = sorted[0].url;
+								// somehow storing the images with sizes in the data model
+								// would be the only way to go here.
 								cfg.url = url;
 							}
 

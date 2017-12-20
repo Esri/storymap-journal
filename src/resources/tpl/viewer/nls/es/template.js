@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Cerrar",
-      "focusMainstage": "Activar el teclado para el contenido multimedia"
+      "focusMainstage": "Activar el teclado para el contenido multimedia",
+      "expandImage": "Expandir imagen"
+    },
+    "a11y": {
+      "skipToContent": "Saltar a narración",
+      "headerAria": "Encabezado de la historia",
+      "panelAria": "Narración de la historia",
+      "mainStageAria": "Contenido multimedia de la sección actual de la historia",
+      "logoLinkAria": "Vínculo del logotipo",
+      "toTop": "Ir al comienzo de la narración",
+      "focusContent": "Volver a narración",
+      "navAria": "Secciones de la historia",
+      "navPreviousAria": "Sección anterior",
+      "navNextAria": "Sección siguiente",
+      "toSectionAria": "Ir a la sección %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Siguiente grupo de secciones (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Anterior grupo de secciones (%SECTION_RANGE%)",
+      "loadingAria": "El contenido de la historia se está cargando"
     },
     "loading": {
       "step1": "Cargando historia",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Esto no está disponible en el modo de reproducción automática",
       "notshared": "No se ha compartido la historia"
     },
-    "overviewFromCommon": {
-      "title": "Mapa de vista general"
-    },
-    "legendFromCommon": {
-      "title": "Leyenda"
+    "mapFromCommon": {
+      "overview": "Mapa de vista general",
+      "legend": "Leyenda",
+      "home": "Zoom Inicio"
     },
     "shareFromCommon": {
       "copy": "Copiar",

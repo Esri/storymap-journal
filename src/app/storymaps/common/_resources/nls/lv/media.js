@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Izlādēt, ja lasītājs pārvietojas uz citurieni",
       "unloadHelp": "Ja web lapā ir audio vai video multivide, atzīmējiet šo iespēju, lai tā netiktu atskaņota brīdī, kad lasītājs naviģē tālāk. Noņemiet atzīmi, ja vēlaties, lai, piemēram, tiktu turpināta skaņu celiņa atskaņošana, kamēr lasītājs virzās uz priekšu stāstā.<br />Ja web lapa ir lietotne, noņemiet atzīmi pie šīs iespējas, lai stāsts netiktu ielādēts atkārtoti, kad lasītājs atgriežas šajā sadaļā.",
       "embedProtocolLabel": "Ielādēt lapu, izmantojot drošu savienojumu (HTTPS)",
-      "embedProtocolWarning1": "Ja šī lapa jūsu stāstā neielādējas, to nevar iegult web drošības iemeslu dēļ. Alternatīva iespēja — stāstījumā ievietojiet saiti, lai lapu atvērtu jaunā pārlūka cilnē. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Uzzināt vairāk</a>",
-      "embedProtocolWarning2": "Ja šī lapa jūsu stāstā neielādējas, noņemiet atzīmi no šīs iespējas un mēģiniet vēlreiz. Ja lapa joprojām neielādējas, to nevar iegult web drošības iemeslu dēļ. Alternatīva iespēja — stāstījumā ievietojiet saiti, lai lapu atvērtu jaunā pārlūka cilnē. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Uzzināt vairāk</a>"
+      "embedProtocolWarning1": "Ja šī lapa jūsu stāstā neielādējas, to nevar iegult tīmekļa drošības iemeslu dēļ. Alternatīva iespēja — stāstījumā ievietojiet saiti, lai lapu atvērtu jaunā pārlūka cilnē.",
+      "embedProtocolWarning2": "Ja šī lapa jūsu stāstā neielādējas, noņemiet atzīmi no šīs opcijas un mēģiniet vēlreiz. Ja lapa joprojām neielādējas, to nevar iegult tīmekļa drošības iemeslu dēļ. Alternatīva iespēja — stāstījumā ievietojiet saiti, lai lapu atvērtu jaunā pārlūka cilnē.",
+      "learn": "Papildinformācija",
+      "lblAltText": "Alternatīvais teksts",
+      "placeholderAltText": "Ievadiet šīs multivides aprakstu lasītājiem ar redzes traucējumiem…",
+      "tooltipAltText": "Norādiet šī multivides satura aprakstu, ko izmantos palīgtehnoloģijas, piemēram, ekrāna lasīšanas programma. Apraksta pievienošana nav obligāta, tomēr ieteicama, lai ievērotu tīmekļa pieejamības vadlīnijas, piemēram, Tīmekļa satura pieejamības vadlīnijas un 508. pantu."
     },
     "editorActionGeocode": {
       "lblTitle": "Adreses vai vietas noteikšana",

@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Tutup",
-      "focusMainstage": "Kirim fokus keyboard ke media"
+      "focusMainstage": "Kirim fokus keyboard ke media",
+      "expandImage": "Perbesar gambar"
+    },
+    "a11y": {
+      "skipToContent": "Lewati ke naratif",
+      "headerAria": "Judul cerita",
+      "panelAria": "Narasi cerita",
+      "mainStageAria": "Media bagian cerita saat ini",
+      "logoLinkAria": "Tautan logo",
+      "toTop": "Buka awal narasi",
+      "focusContent": "Kembali ke narasi",
+      "navAria": "Bagian cerita",
+      "navPreviousAria": "Bagian sebelumnya",
+      "navNextAria": "Bagian selanjutnya",
+      "toSectionAria": "Buka bagian %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Grup bagian berikutnya (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Grup bagian sebelumnya (%SECTION_RANGE%)",
+      "loadingAria": "Konten cerita sedang dimuat"
     },
     "loading": {
       "step1": "Memuat cerita",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Tidak tersedia pada mode pemutaran otomatis",
       "notshared": "Cerita tidak dibagikan"
     },
-    "overviewFromCommon": {
-      "title": "Inset Peta"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Inset Peta",
+      "legend": "Legenda",
+      "home": "Zoom Beranda"
     },
     "shareFromCommon": {
       "copy": "Salin",

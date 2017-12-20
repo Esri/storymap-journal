@@ -3,7 +3,24 @@ define({
 		viewer: {
 			common: {
 				close: "Close",
-				focusMainstage: "Send keyboard focus to media"
+				focusMainstage: "Send keyboard focus to media",
+				expandImage: "Expand image"
+			},
+			a11y: {
+				skipToContent: "Skip to narrative",
+				headerAria: "Story header",
+				panelAria: "Story narrative",
+				mainStageAria: "Current story section media",
+				logoLinkAria: "Logo link",
+				toTop: "Go to beginning of narrative",
+				focusContent: "Return to narrative",
+				navAria: "Story sections",
+				navPreviousAria: "Previous section",
+				navNextAria: "Next section",
+				toSectionAria: "Go to section %SECTION_NUMBER%: %SECTION_TITLE%",
+				toNextGroupAria: "Next group of sections (%SECTION_RANGE%)",
+				toPrevGroupAria: "Previous group of sections (%SECTION_RANGE%)",
+				loadingAria: "Story content is loading"
 			},
 			loading: {
 				step1: "Loading story",
@@ -79,11 +96,10 @@ define({
 				tooltipAutoplayDisabled: "This isn't available in autoplay mode",
 				notshared: "Story not shared"
 			},
-			overviewFromCommon: {
-				title: "Overview Map"
-			},
-			legendFromCommon: {
-				title: "Legend"
+			mapFromCommon: {
+				overview: "Overview Map",
+				legend: "Legend",
+				home: "Zoom Home"
 			},
 			shareFromCommon: {
 				copy: "Copy",
@@ -106,9 +122,10 @@ define({
 				printWarning: "This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}",
 				printMSWarning: "link available only in online story",
 				printVideoWarning: "This video can be viewed in the online version of this story map"
+
 			}
-        }
-    }),
+    }
+  }),
 	"ar": 1,
 	"bs": 1,
 	"cs": 1,
@@ -135,6 +152,7 @@ define({
 	"pt-pt": 1,
 	"ro": 1,
 	"ru": 1,
+	"sl": 1,
 	"sr": 1,
 	"sv": 1,
 	"th": 1,

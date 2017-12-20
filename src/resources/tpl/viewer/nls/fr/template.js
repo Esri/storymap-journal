@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Fermer",
-      "focusMainstage": "Placer le focus clavier sur le média"
+      "focusMainstage": "Placer le focus clavier sur le média",
+      "expandImage": "Développer l’image"
+    },
+    "a11y": {
+      "skipToContent": "Passer directement à la narration",
+      "headerAria": "En-tête du récit",
+      "panelAria": "Narration du récit",
+      "mainStageAria": "Support de la section narrative actuelle",
+      "logoLinkAria": "Lien vers le logo",
+      "toTop": "Accéder au début de la narration",
+      "focusContent": "Revenir à la narration",
+      "navAria": "Sections narratives",
+      "navPreviousAria": "Section précédente",
+      "navNextAria": "Section suivante",
+      "toSectionAria": "Accéder à la section %SECTION_NUMBER% : %SECTION_TITLE%",
+      "toNextGroupAria": "Groupe de sections suivant (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Groupe de sections précédent (%SECTION_RANGE%)",
+      "loadingAria": "Le contenu du récit est en cours de chargement"
     },
     "loading": {
       "step1": "Chargement du récit",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Ceci n'est pas disponible en mode de lecture automatique",
       "notshared": "Récit non partagé"
     },
-    "overviewFromCommon": {
-      "title": "Vue générale"
-    },
-    "legendFromCommon": {
-      "title": "Légende"
+    "mapFromCommon": {
+      "overview": "Vue générale",
+      "legend": "Légende",
+      "home": "Zoomer sur l’accueil"
     },
     "shareFromCommon": {
       "copy": "Copier",

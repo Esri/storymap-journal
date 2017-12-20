@@ -1,9 +1,9 @@
 #mainStagePanel {
      position: relative;
     background-size: 100% 100%;
-	-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+	/*-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
 	-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
-	box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+	box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);*/
 }
 
 #mainStagePanelInner {
@@ -233,4 +233,23 @@ html.dj_ie9 .mainMediaContainer.has-error .mainStageErrorContainer {
 .embedContainer.stretch {
 	width: 100%;
 	height: 100%;
+}
+
+/* invisible buttons */
+.mainMediaContainer .return-to-content {
+  position: absolute;
+  z-index: 31; /* over the overview map and legend */
+  left: 38%;
+}
+
+.return-to-content.bottom {
+  bottom: 10px;
+}
+
+.return-to-content.top {
+  top: 10px;
+}
+
+.mainMediaContainer .visible-on-focus {
+  display: inline-block;
 }

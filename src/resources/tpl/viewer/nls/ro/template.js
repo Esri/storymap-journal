@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Închidere",
-      "focusMainstage": "Transmitere focalizare tastatură către material media"
+      "focusMainstage": "Transmitere focalizare tastatură către material media",
+      "expandImage": "Extindere imagine"
+    },
+    "a11y": {
+      "skipToContent": "Sari la naraţiune",
+      "headerAria": "Antet poveste",
+      "panelAria": "Naraţiune poveste",
+      "mainStageAria": "Medii secţiune poveste curentă",
+      "logoLinkAria": "Legătură siglă",
+      "toTop": "Mergi la începutul naraţiunii",
+      "focusContent": "Înapoi la naraţiune",
+      "navAria": "Secţiuni poveste",
+      "navPreviousAria": "Secţiunea anterioară",
+      "navNextAria": "Secţiunea următoare",
+      "toSectionAria": "Mergi la secţiunea %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Următorul grup de secţiuni (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Grup anterior de secţiuni (%SECTION_RANGE%)",
+      "loadingAria": "Încărcare conţinut poveste"
     },
     "loading": {
       "step1": "Se încarcă povestea",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Aceasta nu este disponibilă în modul de redare automată",
       "notshared": "Scenariul nu este partajat"
     },
-    "overviewFromCommon": {
-      "title": "Hartă de prezentare generală"
-    },
-    "legendFromCommon": {
-      "title": "Legendă"
+    "mapFromCommon": {
+      "overview": "Hartă de prezentare generală",
+      "legend": "Legendă",
+      "home": "Zoom Pagină principală"
     },
     "shareFromCommon": {
       "copy": "Copiere",

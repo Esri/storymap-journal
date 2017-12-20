@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Keluarkan saat pembaca beralih",
       "unloadHelp": "Jika halaman web memiliki media audio atau video, centang opsi ini untuk menghentikan konten tersebut agar tidak diputar saat pembaca beralih. Hapus centang misalnya untuk tetap memutar musik latar selagi pembaca membaca cerita.<br />Jika halaman web merupakan aplikasi, hapus centang pada opsi ini sehingga cerita tidak dimuat ulang saat pembaca kembali membacanya.",
       "embedProtocolLabel": "Muat halaman melalui koneksi aman (HTTPS)",
-      "embedProtocolWarning1": "Jika halaman ini tidak dimuat dalam cerita Anda, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Pelajari selengkapnya</a>",
-      "embedProtocolWarning2": "Jika halaman ini tidak dimuat dalam cerita Anda, batalkan centang opsi ini dan coba lagi. Jika halaman tetap tidak dimuat, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Pelajari selengkapnya</a>"
+      "embedProtocolWarning1": "Jika halaman ini tidak dimuat dalam cerita Anda, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru.",
+      "embedProtocolWarning2": "Jika halaman ini tidak dimuat dalam cerita Anda, batalkan centang opsi ini dan coba lagi. Jika halaman tetap tidak dimuat, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru.",
+      "learn": "Pelajari selengkapnya",
+      "lblAltText": "Teks Alternatif",
+      "placeholderAltText": "Masukkan deskripsi media ini untuk pembaca tunanetra...",
+      "tooltipAltText": "Berikan deskripsi tentang konten media ini yang akan digunakan oleh teknologi pembantu seperti perangkat lunak pembaca layar. Penjelasan bersifat opsional, namun direkomendasikan untuk memenuhi pedoman aksesibilitas web seperti WCAG dan Bagian 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Temukan alamat atau tempat",

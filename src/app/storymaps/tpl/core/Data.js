@@ -357,6 +357,40 @@ define(["./WebApplicationData",
 				return webmaps;
 			};
 
+
+			/*
+			 * Get an array of webmap objects used in the journal (sections media and actions)
+			 */
+			this.getWebmapObjects = function()
+			{
+				// Story Main Stage webmaps
+				var webmaps = $.map(this.getStorySections(), function(section){
+					return section.media && section.media.type == "webmap" && section.media.webmap ? section.media.webmap : null;
+				});
+
+				// Story actions webmaps
+				$.each(this.getStorySections(), function(i, section){
+					if ( section.contentActions ) {
+						$.each(section.contentActions, function(j, action){
+							if ( action.type == "media" && action.media.webmap )
+								webmaps.push(action.media.webmap);
+						});
+					}
+				});
+
+				// Make the array unique
+				webmaps = $.grep(webmaps, function(webmap) {
+					var found = _.some(webmaps, function(wm) {
+						return webmap.id === wm.id && webmap.altText === wm.altText;
+					});
+					return found;
+				});
+
+				return webmaps;
+
+			};
+
+
 			/*
 			 * Get extented infos about webmaps used in the journal
 			 *  [
@@ -505,6 +539,34 @@ define(["./WebApplicationData",
 				});
 
 				return images;
+			};
+
+			this.getImageObjects = function() {
+				// Story Main Stage images
+				var images = $.map(this.getStorySections(), function(section){
+					return section.media && section.media.type == "image" && section.media.image ? section.media.image : null;
+				});
+
+				// Story actions images
+				$.each(this.getStorySections(), function(i, section){
+					if ( section.contentActions ) {
+						$.each(section.contentActions, function(j, action){
+							if ( action.type == "media" && action.media.image )
+								images.push(action.media.image);
+						});
+					}
+				});
+
+				// Make the array unique
+				images = $.grep(images, function(image) {
+					var found = _.some(images, function(img) {
+						return image.url === img.url && image.altText === img.altText;
+					});
+					return found;
+				});
+
+				return images;
+
 			};
 
 			this.getAllImageUrls = function() {

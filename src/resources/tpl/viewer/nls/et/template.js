@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Sulge",
-      "focusMainstage": "Saada klaviatuurisisestus meediumisisusse"
+      "focusMainstage": "Saada klaviatuurisisestus meediumisisusse",
+      "expandImage": "Laienda kujutist"
+    },
+    "a11y": {
+      "skipToContent": "Jäta narratiivi",
+      "headerAria": "Loo päis",
+      "panelAria": "Loo narratiiv",
+      "mainStageAria": "Praegu loo jaotise meediumisisu",
+      "logoLinkAria": "Logo link",
+      "toTop": "Mine narratiivi algusesse",
+      "focusContent": "Naase narratiivi juurde",
+      "navAria": "Loo jaotised",
+      "navPreviousAria": "Eelmine jaotis",
+      "navNextAria": "Järgmine jaotis",
+      "toSectionAria": "Ava jaotis %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Jaotiste järgmine grupp (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Jaotiste eelmine grupp (%SECTION_RANGE%)",
+      "loadingAria": "Loo sisu laaditakse"
     },
     "loading": {
       "step1": "Loo laadimine",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "See pole automaatesituse režiimis saadaval",
       "notshared": "Lugu pole jagatud"
     },
-    "overviewFromCommon": {
-      "title": "Ülevaatekaart"
-    },
-    "legendFromCommon": {
-      "title": "Legend"
+    "mapFromCommon": {
+      "overview": "Ülevaatekaart",
+      "legend": "Legend",
+      "home": "Suumi avalehele"
     },
     "shareFromCommon": {
       "copy": "Kopeeri",

@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Luk",
-      "focusMainstage": "Send tastaturfokus til medier"
+      "focusMainstage": "Send tastaturfokus til medier",
+      "expandImage": "Udvid billede"
+    },
+    "a11y": {
+      "skipToContent": "Udelad fortælling",
+      "headerAria": "Historieoverskrift",
+      "panelAria": "Historiefortælling",
+      "mainStageAria": "Aktuelle historiesektionsmedier",
+      "logoLinkAria": "Logo-link",
+      "toTop": "Gå til fortællingens begyndelse",
+      "focusContent": "Vend tilbage til fortælling",
+      "navAria": "Historiesektioner",
+      "navPreviousAria": "Forrige sektion",
+      "navNextAria": "Næste sektion",
+      "toSectionAria": "Gå til sektion %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Næste gruppe af sektioner (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Forrige gruppe af sektioner (%SECTION_RANGE%)",
+      "loadingAria": "Historieindhold indlæses"
     },
     "loading": {
       "step1": "Indlæser historie",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Dette er ikke tilgængeligt i autoplay-tilstand.",
       "notshared": "Historien deles ikke"
     },
-    "overviewFromCommon": {
-      "title": "Oversigtskort"
-    },
-    "legendFromCommon": {
-      "title": "Signaturforklaring"
+    "mapFromCommon": {
+      "overview": "Oversigtskort",
+      "legend": "Signaturforklaring",
+      "home": "Zoom hjem"
     },
     "shareFromCommon": {
       "copy": "Kopiér",

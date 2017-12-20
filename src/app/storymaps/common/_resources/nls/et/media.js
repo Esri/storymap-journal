@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Laadi maha, kui lugeja liigub mujale",
       "unloadHelp": "Kui veebileht sisaldab audio- või videosisu, jätke see valik märgituks, et lõpetada selle sisu esitamine, kui lugeja liigub mujale. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks samal ajal, kui lugeja läbi loo liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et kasutaja naasmisel ei laaditaks lugu uuesti.",
       "embedProtocolLabel": "Lehe laadimine turvalise ühenduse (HTTPS) kaudu",
-      "embedProtocolWarning1": "Kui seda lehte teie loos ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lisateave</a>",
-      "embedProtocolWarning2": "Kui seda lehte teie loos ei laadita, tühjendage see valik ja proovige uuesti. Kui lehte ikkagi ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Lisateave</a>"
+      "embedProtocolWarning1": "Kui seda lehte teie loos ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas.",
+      "embedProtocolWarning2": "Kui seda lehte teie loos ei laadita, tühjendage see valik ja proovige uuesti. Kui lehte ikkagi ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas.",
+      "learn": "Lisateave",
+      "lblAltText": "Alternatiivne tekst",
+      "placeholderAltText": "Sisestage selle meediasisu kirjeldus nägemispuudega lugejate jaoks...",
+      "tooltipAltText": "Esitage selle meediasisu kirjeldus, mida kasutavad hõlbustustehnoloogiad (nt ekraanilugejatarkvara). Kirjeldus on valikuline, kuid soovitatav veebi hõlbustusfunktsioonide suuniste (nt WCAG ja paragrahv 508)."
     },
     "editorActionGeocode": {
       "lblTitle": "Märgi aadress või asukoht",

@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Zatvori",
-      "focusMainstage": "Pošalji fokus tipkovnice mediju"
+      "focusMainstage": "Pošalji fokus tipkovnice mediju",
+      "expandImage": "Proširi sliku"
+    },
+    "a11y": {
+      "skipToContent": "Preskoči do priče",
+      "headerAria": "Zaglavlje priče",
+      "panelAria": "Sadržaj priče",
+      "mainStageAria": "Mediji trenutnog dijela priče",
+      "logoLinkAria": "Poveznica logotipa",
+      "toTop": "Idi na početak priče",
+      "focusContent": "Povratak na priču",
+      "navAria": "Dijelovi priče",
+      "navPreviousAria": "Prethodni dio",
+      "navNextAria": "Sljedeći dio",
+      "toSectionAria": "Idi na dio %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Sljedeća grupa dijelova (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Prethodna grupa dijelova (%SECTION_RANGE%)",
+      "loadingAria": "Učitava se sadržaj priče"
     },
     "loading": {
       "step1": "Učitavanje priče",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Ovo nije dostupno u načinu automatske reprodukcije",
       "notshared": "Priča nije podijeljena"
     },
-    "overviewFromCommon": {
-      "title": "Pregledna karta"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Pregledna karta",
+      "legend": "Legenda",
+      "home": "Uvećaj početni zaslon"
     },
     "shareFromCommon": {
       "copy": "Kopiraj",

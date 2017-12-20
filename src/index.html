@@ -19,7 +19,7 @@
 		-->
 		<meta name="description" content="This story map was created with the Story Map Journal application in ArcGIS Online.">
 
-		<!-- Facebook sharing -->
+		<!-- Social sharing -->
 		<meta property="og:type" content="article"/>
 		<meta property="og:title" content="Story Map Journal"/>
 		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
@@ -65,8 +65,8 @@
 
 		<script type="text/javascript">
 			var app = {
-				version: '1.12.2',
-				pathJSAPI: 'https://js.arcgis.com/3.22/'
+				version: '1.13.1',
+				pathJSAPI: 'https://js.arcgis.com/3.23/'
 			};
 		</script>
 		<noscript>
@@ -83,6 +83,7 @@
 
 		<!-- Builder top panel is injected here -->
 		<div id="builderPanel" class="hide mainViewAboveMap"></div>
+		<button class="skip-to-content visible-on-focus"></button>
 
 		<!-- Content -->
 		<div id="contentPanel" class="mobileView">
@@ -94,13 +95,13 @@
 							<div class="navDots vertical">
 								<!-- navigation dots -->
 							</div>
-							<div class="header" aria-hidden="true">
+							<div class="header" role="banner">
 								<div class="linkSocialContainer">
 									<span class="linkContainer"></span>
 									<span class="shareBtns">
-										<i class="shareIcon blackHover share_facebook icon-facebook-squared" tabindex="0"></i>
-										<i class="shareIcon blackHover share_twitter icon-twitter" tabindex="0"></i>
-										<i class="shareIcon blackHover share_bitly icon-link" tabindex="0"></i>
+										<button class="shareIcon blackHover share_facebook icon-facebook-squared"></button>
+										<button class="shareIcon blackHover share_twitter icon-twitter"></button>
+										<button class="shareIcon blackHover share_bitly icon-link"></button>
 										<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 									</span>
 								</div>
@@ -108,7 +109,7 @@
 									<tr>
 										<td class="logoWrapper">
 											<a class="logoLink" target="_blank">
-												<img class="logoImg"/>
+												<img class="logoImg" />
 											</a>
 										</td>
 									</tr>
@@ -128,8 +129,11 @@
 								<div class="panelEditBtn">
 									<div class="panelEditBtnInner"></div>
 								</div>
-								<div class="sections">
+								<div class="sections" role="main">
 									<!-- sections injected here -->
+								</div>
+								<div class="centering loop-wrapper">
+									<button class="visible-on-focus loop-to-top"></button>
 								</div>
 							</div>
 							<div class="builder builder-content-panel">
@@ -147,13 +151,13 @@
 						</div>
 					</td>
 					<!-- Map -->
-					<td id="mainStagePanel">
+					<td id="mainStagePanel" class="mainStagePanel" role="complementary">
 						<div id="mainStagePanelInner">
 							<div class="medias">
 								<!-- Maps and media injected here -->
 							</div>
 							<div id="mainStageLoadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
-							  <img src="resources/tpl/viewer/icons/loading-light.gif" alt="This content is loading."/>
+							  <img class="loadingGif" src="resources/tpl/viewer/icons/loading-light.gif"/>
 							</div>
 							<!-- Back button -->
 							<div class="mediaBackContainer">
@@ -178,13 +182,13 @@
 
 		<div id="floatingPanel" class="floatingPanel sectionPanel">
 			<div class="backdrop"></div>
-			<div class="header" aria-hidden="true">
+			<div class="header" role="banner">
 				<div class="linkSocialContainer">
 					<span class="linkContainer"></span>
 					<span class="shareBtns">
-						<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="0"></i>
-						<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="0"></i>
-						<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="0"></i>
+						<button class="shareIcon blackHover share_facebook icon-facebook-squared"></button>
+						<button class="shareIcon blackHover share_twitter icon-twitter"></button>
+						<button class="shareIcon blackHover share_bitly icon-link"></button>
 						<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 					</span>
 				</div>
@@ -209,8 +213,11 @@
 			</div>
 			<div class="sections">
 				<div class="swiper-container">
-					<div class="swiper-wrapper">
+					<div class="swiper-wrapper" role="main">
 						<!-- sections injected here -->
+					</div>
+					<div class="centering loop-wrapper">
+						<button class="visible-on-focus loop-to-top"></button>
 					</div>
 				</div>
 			</div>
@@ -315,7 +322,7 @@
 
 		<div id="loadingOverlay"></div>
 		<div id="loadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
-			<img src="resources/tpl/viewer/icons/loading-light.gif" alt="This story map is loading."/>
+			<img class="loadingGif" src="resources/tpl/viewer/icons/loading-light.gif"/>
 		</div>
 		<div id="loadingMessage"></div>
 

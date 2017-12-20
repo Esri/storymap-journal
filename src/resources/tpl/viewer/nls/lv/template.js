@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Aizvērt",
-      "focusMainstage": "Sūtīt klaviatūras fokusu uz saturu"
+      "focusMainstage": "Sūtīt klaviatūras fokusu uz saturu",
+      "expandImage": "Izvērst attēlu"
+    },
+    "a11y": {
+      "skipToContent": "Turpināt ar aprakstu",
+      "headerAria": "Stāsta galvene",
+      "panelAria": "Stāstījums",
+      "mainStageAria": "Pašreizējā stāsta sadaļas multivide",
+      "logoLinkAria": "Logotipa saite",
+      "toTop": "Atvērt stāstījuma sākumu",
+      "focusContent": "Atgriezties pie stāstījuma",
+      "navAria": "Stāsta sadaļas",
+      "navPreviousAria": "Iepriekšējā sadaļa",
+      "navNextAria": "Nākamā sadaļa",
+      "toSectionAria": "Atvērt sadaļu %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Nākamā sadaļu grupa (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Iepriekšējā sadaļu grupa (%SECTION_RANGE%)",
+      "loadingAria": "Notiek stāsta satura ielāde"
     },
     "loading": {
       "step1": "Ielādē stāstu",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Tas nav pieejams automātiskās demonstrēšanas režīmā",
       "notshared": "Stāsts nav koplietots"
     },
-    "overviewFromCommon": {
-      "title": "Pārskata karte"
-    },
-    "legendFromCommon": {
-      "title": "Apzīmējumi"
+    "mapFromCommon": {
+      "overview": "Pārskata karte",
+      "legend": "Apzīmējumi",
+      "home": "Mērogmaiņas sākumlapa"
     },
     "shareFromCommon": {
       "copy": "Kopēt",

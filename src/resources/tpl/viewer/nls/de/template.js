@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Schließen",
-      "focusMainstage": "Tastaturfokus an Medien senden"
+      "focusMainstage": "Tastaturfokus an Medien senden",
+      "expandImage": "Bild einblenden"
+    },
+    "a11y": {
+      "skipToContent": "Mit \"Zusammenfassung\" fortfahren",
+      "headerAria": "Kopfzeile der Story",
+      "panelAria": "Zusammenfassung der Story",
+      "mainStageAria": "Medien des aktuellen Story-Abschnitts",
+      "logoLinkAria": "Logolink",
+      "toTop": "Zum Anfang der Zusammenfassung wechseln",
+      "focusContent": "Zu \"Zusammenfassung\" zurückkehren",
+      "navAria": "Story-Abschnitte",
+      "navPreviousAria": "Vorheriger Abschnitt",
+      "navNextAria": "Nächster Abschnitt",
+      "toSectionAria": "Zum Abschnitt %SECTION_NUMBER%: %SECTION_TITLE% wechseln",
+      "toNextGroupAria": "Nächste Abschnittsgruppe (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Vorherige Abschnittsgruppe (%SECTION_RANGE%)",
+      "loadingAria": "Story-Inhalt wird geladen"
     },
     "loading": {
       "step1": "Story wird geladen",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Dies ist im Modus für automatische Wiedergabe nicht verfügbar",
       "notshared": "Story wurde nicht freigegeben"
     },
-    "overviewFromCommon": {
-      "title": "Übersichtskarte"
-    },
-    "legendFromCommon": {
-      "title": "Legende"
+    "mapFromCommon": {
+      "overview": "Übersichtskarte",
+      "legend": "Legende",
+      "home": "Auf Standardausdehnung zoomen"
     },
     "shareFromCommon": {
       "copy": "Kopieren",

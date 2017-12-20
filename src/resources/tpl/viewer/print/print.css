@@ -89,6 +89,9 @@ strong {
 	.print-warning {
 		display: none;
 	}
+	.esriSimpleSlider {
+		display: none;
+	}
 }
 
 .share-warning {

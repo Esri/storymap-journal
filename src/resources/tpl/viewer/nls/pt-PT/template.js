@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Fechar",
-      "focusMainstage": "Enviar foco de teclado para media"
+      "focusMainstage": "Enviar foco de teclado para media",
+      "expandImage": "Expandir imagem"
+    },
+    "a11y": {
+      "skipToContent": "Avançar para a narrativa",
+      "headerAria": "Cabeçalho da história",
+      "panelAria": "Narrativa da história",
+      "mainStageAria": "Media da atual secção da história",
+      "logoLinkAria": "Ligação ao logótipo",
+      "toTop": "Ir para o início da narrativa",
+      "focusContent": "Regressar à narrativa",
+      "navAria": "Secções da história",
+      "navPreviousAria": "Secção anterior",
+      "navNextAria": "Próxima secção",
+      "toSectionAria": "Ir para secção %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Próximo grupo de secções (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Grupo de secções anterior (%SECTION_RANGE%)",
+      "loadingAria": "O conteúdo da história está a carregar"
     },
     "loading": {
       "step1": "A carregar a história",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Isto não está disponível no modo de reprodução automática",
       "notshared": "História não partilhada"
     },
-    "overviewFromCommon": {
-      "title": "Vista Geral do Mapa"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Vista Geral do Mapa",
+      "legend": "Legenda",
+      "home": "Aplicar Zoom a Página Inicial"
     },
     "shareFromCommon": {
       "copy": "Copiar",

@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "關閉",
-      "focusMainstage": "將鍵盤焦點傳至媒體"
+      "focusMainstage": "將鍵盤焦點傳至媒體",
+      "expandImage": "展開圖片"
+    },
+    "a11y": {
+      "skipToContent": "跳至敘述",
+      "headerAria": "故事標頭",
+      "panelAria": "故事敘述",
+      "mainStageAria": "目前故事章節媒體",
+      "logoLinkAria": "標誌連結",
+      "toTop": "移至敘述的開頭",
+      "focusContent": "返回敘述",
+      "navAria": "故事章節",
+      "navPreviousAria": "上一節",
+      "navNextAria": "下一節",
+      "toSectionAria": "移至第 %SECTION_NUMBER% 節: %SECTION_TITLE%",
+      "toNextGroupAria": "下一個章節群組 (%SECTION_RANGE%)",
+      "toPrevGroupAria": "上一個章節群組 (%SECTION_RANGE%)",
+      "loadingAria": "正在載入故事內容"
     },
     "loading": {
       "step1": "正在載入故事",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "這不適用於自動播放模式",
       "notshared": "未分享故事"
     },
-    "overviewFromCommon": {
-      "title": "總覽圖"
-    },
-    "legendFromCommon": {
-      "title": "圖例"
+    "mapFromCommon": {
+      "overview": "總覽圖",
+      "legend": "圖例",
+      "home": "縮放首頁"
     },
     "shareFromCommon": {
       "copy": "複製",

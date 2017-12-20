@@ -116,8 +116,12 @@ define({
       "unloadLbl": "Uklonite kada se čitatelj udalji",
       "unloadHelp": "Ako web-stranica ima audiomedije ili videomedije, ostavite ovu opciju označenom kako biste zaustavili reprodukciju sadržaja kada čitatelj napusti stranicu. Odznačite opciju, primjerice, kako bi glazbena podloga nastavila reprodukciju kako čitatelj prolazi kroz priču.<br />Ako je web-stranica aplikacija, odznačite tu opciju kako se priča ne bi ponovno učitala ako se čitatelj vrati na nju.",
       "embedProtocolLabel": "Učitajte stranicu preko sigurne veze (HTTPS)",
-      "embedProtocolWarning1": "Ako se ova stranica ne učita u vašoj priči, ne može se umetnuti iz sigurnosnih razloga. Umjesto toga, dodajte poveznicu u priču za otvaranje stranice u novoj kartici preglednika. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Saznajte više</a>",
-      "embedProtocolWarning2": "Ako se ova stranica ne učita u vašoj priči, odznačite ovu opciju i pokušajte ponovno. Ako se stranica i dalje ne želi učitati, ne može se umetnuti iz sigurnosnih razloga. Umjesto toga, dodajte poveznicu u priču za otvaranje stranice u novoj kartici preglednika. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Saznajte više</a>"
+      "embedProtocolWarning1": "Ako se ova stranica ne učita u vašoj priči, ne može se umetnuti iz sigurnosnih razloga. Umjesto toga, dodajte poveznicu u priču za otvaranje stranice u novoj kartici preglednika.",
+      "embedProtocolWarning2": "Ako se ova stranica ne učita u vašoj priči, odznačite ovu opciju i pokušajte ponovno. Ako se stranica i dalje ne želi učitati, ne može se umetnuti iz sigurnosnih razloga. Umjesto toga, dodajte poveznicu u priču za otvaranje stranice u novoj kartici preglednika.",
+      "learn": "Saznajte više",
+      "lblAltText": "Zamjenski tekst",
+      "placeholderAltText": "Unesite opis ovog medija za slabovidne čitatelje...",
+      "tooltipAltText": "Unesite opis sadržaja ovog medija kojim će se koristiti pomoćne tehnologije za osobe s posebnim potrebama, kao što su softver za čitanje sa zaslona. Opis nije obvezan, ali preporučuje se radi zadovoljavanja smjernica za internetsku pristupačnost kao što su WCAG i odjeljak 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Pronađite adresu ili mjesto",

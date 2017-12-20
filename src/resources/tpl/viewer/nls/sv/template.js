@@ -2,7 +2,24 @@ define({
   "viewer": {
     "common": {
       "close": "Stäng",
-      "focusMainstage": "Skicka tangentbordsfokus till media"
+      "focusMainstage": "Skicka tangentbordsfokus till media",
+      "expandImage": "Expandera bild"
+    },
+    "a11y": {
+      "skipToContent": "Gå till berättelse",
+      "headerAria": "Berättelserubrik",
+      "panelAria": "Berättelse",
+      "mainStageAria": "Media för aktuellt berättelseavsnitt",
+      "logoLinkAria": "Logotyplänk",
+      "toTop": "Gå till början av berättelsen",
+      "focusContent": "Återgå till berättelsen",
+      "navAria": "Berättelseavsnitt",
+      "navPreviousAria": "Föregående avsnitt",
+      "navNextAria": "Nästa avsnitt",
+      "toSectionAria": "Gå till avsnittet %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Nästa grupp med avsnitt (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Föregående grupp med avsnitt (%SECTION_RANGE%)",
+      "loadingAria": "Berättelsens innehåll läses in"
     },
     "loading": {
       "step1": "Läser in berättelsen",
@@ -78,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Funktionen finns inte tillgänglig i autouppspelningsläge",
       "notshared": "Berättelsen delas inte"
     },
-    "overviewFromCommon": {
-      "title": "Översiktskarta"
-    },
-    "legendFromCommon": {
-      "title": "Teckenförklaring"
+    "mapFromCommon": {
+      "overview": "Översiktskarta",
+      "legend": "Teckenförklaring",
+      "home": "Zooma hem"
     },
     "shareFromCommon": {
       "copy": "Kopiera",

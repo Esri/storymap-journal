@@ -25,7 +25,7 @@ define(["lib-build/css!./MapCommand",
 			// Home/wait button
 			//
 			var tsUpdateStart = 0;
-			var homeButton = $('<div class="esriSimpleSliderIncrementButton"><div class="mapCommandHomeBtn" role="button" tabindex="0"></div></div>');
+			var homeButton = $('<div class="esriSimpleSliderIncrementButton"><div class="mapCommandHomeBtn" title="' + (i18n.viewer.mapFromCommon ? i18n.viewer.mapFromCommon.home : 'Zoom Home') + '" role="button" tabindex="0"></div></div>');
 			var locateSymbol = new PictureMarkerSymbol('app/storymaps/common/_resources/icons/mapcommand-location-marker.png', 21, 21);
 			var locateLayer = new GraphicsLayer({id: 'locateLayer'});
 

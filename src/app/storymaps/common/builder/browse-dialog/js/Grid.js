@@ -34,7 +34,7 @@ define([
           "<div class='itemGrid'>" +
             "<img alt='' src='${thumbnailUrl:_formatThumbnail}'>" +
             "<div class='itemTitle'>${title:_formatTitle}</div>" +
-            "<span class='itemOwner'>${owner}</span>" +
+            "<div class='itemOwner'>${owner}</div>" +
             "<p class='itemText snippet' style='display:none;'>${snippet}</p>" +
           "</div>";
 

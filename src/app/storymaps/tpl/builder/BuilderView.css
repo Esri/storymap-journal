@@ -17,6 +17,15 @@
 	background: url(../../../../resources/tpl/builder/icons/builder-logo.png);
 }
 
+#builderPanel.more-conflicting-text .appTitle {
+	width: 240px;
+	height: 26px;
+	top: 17px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	left: 5px;
+}
+
 #builderPanel .builder-save {
 	background-color: #428BC9;
 	border-color: #428BC9;
