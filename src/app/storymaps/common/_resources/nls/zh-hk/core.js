@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "組織標誌",
       "logoCustomRadio": "我的標誌",
       "logoCustomLabel": "圖像：",
-      "logoCustomUploadHelp": "如果標誌的寬度:高度比例介於 1:1 到 5:1 之間，則會有最佳的外觀。如果緩慢地繪製連結的標誌，請儲存副本並在這裡上傳它。",
+      "logoCustomUploadHelp": "標誌圖片連結必須以 HTTPS 開頭。如果標誌的寬度:高度比例介於 1:1 到 5:1 之間，則會有最佳的外觀。如果緩慢地繪製連結的標誌，請儲存副本並在這裡上傳它。",
       "logoCustomUploadTooltip": "使用上傳的標誌",
       "logoCustomUploadButton": "上傳標誌",
       "logoUploadSizeError": "GIF 尺寸過大。請將寬度調整為 ${PIXEL-WIDTH} 像素。",
+      "logoCustomLinkHTTPSError": "連結必須以 HTTPS 開頭",
       "logoCustomLinkTooltip": "連結至標誌",
       "logoCustomLinkPlaceholder": "圖像 URL",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "標誌可為 .bmp、.gif、.jpg、.jpeg 或 .png 檔案。Gif 至少必須少於 250px 寬和 10Mb 大小。",
       "logoCustomTargetPlaceholder": "按一下標誌時要開啟的網頁",
       "logoSocialText": "標籤行:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "此部分",
       "homeSection": "首頁部分",
       "hiddenSection": "隱藏的部分"
+    },
+    "bannerNotification": {
+      "learnMore": "瞭解詳細資訊",
+      "close": "關閉",
+      "dontShowAgain": "請勿再次顯示此訊息"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Web 安全性和 Story Maps 的相關重要資訊",
+      "s1h1": "Esri 正在加強 Story Maps 的安全性",
+      "s1p1": "您的 Story Maps 在 Web 上運作，且 Web 社群一直致力於建立和實施更好的安全機制。為透過網際網路傳輸的內容提供安全連線的 HTTPS，正在成為存取 Web 內容的通行方式。若是使用 HTTP 而非 HTTPS，現今大多數的瀏覽器都會顯示警告訊息。基於此新興的標準，從 ArcGIS Online 的 2018 年 6 月更新開始，Story Maps 將需要使用 HTTPS。",
+      "s1p2": "從實務而言，這表示故事地圖及其所有內容 (包含圖片、圖層、內嵌的應用程式和網站) 都必須使用以 HTTPS (而非 HTTP) 開頭的連結存取。如此可確保為您的讀者提供最佳的體驗，因為大多數的 Web 瀏覽器都會指出您的故事是安全的。",
+      "s2h1": "我需要執行哪些工作?",
+      "s2p1": "Esri 正在努力使故事地圖的作者和讀者都能輕鬆進行此轉移。故事地圖建立器和我的故事現在提供了工具，可協助您在故事中尋找不安全的內容 (HTTP)，並提供如何解決問題的建議。請檢查您的故事是否有不安全的內容，並在 2018 年 6 月之前更新為 HTTPS。",
+      "action1": "關閉",
+      "action2": "立即檢查我的故事",
+      "action3": "瞭解詳細資訊"
     }
   }
 });

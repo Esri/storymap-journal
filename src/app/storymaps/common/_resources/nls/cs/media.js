@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Odkaz na webovou stránku",
       "lblEmbed": "Kód vložení",
+      "lblMustUseHTTPS": "Odkazy na webový obsah musí začínat řetězcem HTTPS",
       "lblOR": "NEBO",
       "lblError1": "Chyba, vymažte jedno ze dvou vstupních polí.",
       "lblError2": "Vložený kód může obsahovat pouze jeden prvek %IFRAMETAG%.",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Odkaz na obrázek",
       "lblURLPH": "Odkaz by měl končit na .jpg, .png, .gif nebo .bmp.",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Zdá se, že obrázek je neplatný. Zadejte prosím přímý odkaz na obrazový soubor (taková adresa URL obvykle končí příponou .jpg nebo .png). Odkazy na webové stránky obsahující obrázek nebudou fungovat.",
+      "lblURLErrorHTTPS": "Neplatný odkaz na obrázek. Adresa URL musí začínat řetězcem HTTPS a končit podporovanou příponou obrazového souboru (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Probíhá kontrola obrázku…",
       "lblLabel": "Titulek obrázku",
       "lblLabel1": "Popisek",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Přizpůsobit",
       "lblPosition4": "Roztáhnout",
       "lblPosition5": "Vlastní",
-      "lblURLHelp": "Pro dosažení nejlepších výsledků by obrázky měly být menší než 400 kB. Doporučujeme používat komprimované obrázky JPG s 80% kvalitou a následujícími rozměry: šířka 2000 pixelů pro hlavní úroveň nebo pro panel vyprávění s tlačítkem maximalizace, 1000 pixelů pro panel vyprávění bez tlačítka maximalizace.<br><br>Pokud se odkazovaný obrázek načítá pomalu, dosáhnete lepších výsledků, když jej nahrajete do příběhu.",
+      "lblURLHelp": "Odkaz na obrázek musí začínat řetězcem HTTPS.<br><br>Pro dosažení nejlepších výsledků by obrázky měly být menší než 400 KB. Doporučujeme používat komprimované obrázky JPG s 80% kvalitou a následujícími rozměry: šířka 2 000 pixelů pro hlavní úroveň nebo pro panel příběhu s tlačítkem maximalizace, 1 000 pixelů pro panel příběhu bez tlačítka maximalizace.<br><br>Pokud se odkazovaný obrázek načítá pomalu, dosáhnete lepších výsledků, když jej nahrajete do příběhu.",
       "tooltipDimension": "Hodnotu lze uvést v 'px' nebo '%'",
       "tooltipDimension2": "Hodnota musí být uvedena v 'px'.",
       "lblPosition2Explain": "(může dojít k ořezu)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Uživatel při kliknutí na odkaz uvidí mapovou značku."
     },
     "editorActions": {
-      "navigate": "Přejít na část",
+      "navigate": "Přejít na jinou část",
       "remove": "Odebrat akci",
       "preview": "Náhled akce"
     },

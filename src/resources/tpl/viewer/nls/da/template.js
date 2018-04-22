@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Dette link er ikke aktivt (sektionen er blevet publiceret)"
     },
     "headerFromCommon": {
-      "storymapsText": "Et historiekort",
+      "storymapsText": "Et Story Map",
       "builderButton": "Redigér",
       "facebookTooltip": "Del på Facebook",
       "twitterTooltip": "Del på Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Når denne tilstand er aktiv, er der knapper til at afspille din historie eller sætte den på pause og til at justere navigationshastigheden.",
       "linksupdated": "Links opdateret!",
       "print": "Udskriv",
-      "printInstruction1": "Vent, indtil alt indhold er blevet indlæst, før du udskriver denne side",
-      "printInstruction1a": "Noget indhold bliver muligvis ikke udskrevet, medmindre du aktiverer \"Udskriv baggrundsfarver og billeder\" i opsætningsdialogboksen Udskriv side",
+      "printInstruction1": "Vent, til hele historien er blevet indlæst, før du udskriver",
+      "printInstruction1a": "Hvis denne side indlæses langsomt, eller nogle medier ikke vises, kan du prøve at udskrive færre afsnit",
+      "printInstruction1b": "For at opnå de bedste resultater skal du muligvis aktivere udskrivning af baggrundselementer i din browserens udskriftsindstillinger",
       "printInstruction2": "Denne side kan ikke deles med andre. Del i stedet for ${link}",
       "link": "link til historie",
+      "optionsHeader": "Indstillinger",
       "printOptPageBreak": "Start hver sektion på en ny side",
       "makeTextBlack": "Gør al tekst sort",
-      "printWarning": "Dette er en udskrevet version af et historiekort. Dynamisk indhold, såsom videoer og interaktive kort, er kun tilgængelige i onlineversionen på ${link}",
+      "showLinks": "Vis link-URL’er",
+      "madeWith": "Denne historie er lavet med ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esri's Historiekortjournal",
+      "readItOnline": "Læs den interaktive version på nettet her ${link}.",
       "printMSWarning": "link er kun tilgængeligt i onlinehistorie",
-      "printVideoWarning": "Denne video kan vises i onlineversionen af dette historiekort"
+      "printVideoWarning": "Denne video kan vises i onlineversionen af dette historiekort",
+      "printRangeHeader": "Udskriv en del af denne historie",
+      "sectionLabel": "Afsnit:",
+      "apply": "Anvend",
+      "resetRange": "Nulstil til hele historien"
     }
   }
 });

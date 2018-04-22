@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Web-sivun linkki",
       "lblEmbed": "Upotuskoodi",
+      "lblMustUseHTTPS": "Web-sisällön linkkien on alettava merkkijonolla HTTPS",
       "lblOR": "TAI",
       "lblError1": "Virhe, tyhjennä toinen kahdesta lähtöaineistokentästä.",
       "lblError2": "Upotuskoodi voi sisältää vain yhden merkkijonon %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Kuvan linkki",
       "lblURLPH": "Linkin lopussa tulee olla jokin seuraavista merkkijonoista: .jpg, .png, .gif, tai .bmp.",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Kuva ei ole kelvollinen. Määritä suora linkki kuvatiedostoon (URL päättyy yleensä jpg- tai png-tunnisteeseen ). Linkki kuvan sisältävään verkkosivuun ei toimi.",
+      "lblURLErrorHTTPS": "Tämä kuvalinkki ei kelpaa. URL-osoitteen on alettava merkkijonolla HTTPS ja päätyttävä tuettuun kuvatiedoston tunnisteeseen (.jpg, .png, .gif tai .bmp).",
       "lblURLCheck": "Tarkistetaan kuvaa...",
       "lblLabel": "Kuvan seloste",
       "lblLabel1": "Seloste",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Sovita",
       "lblPosition4": "Venytä",
       "lblPosition5": "Mukautettu",
-      "lblURLHelp": "Parhaat tulokset saadaan käyttämällä alle 400 kt:n kokoisia kuvia. Käytä pakattuja JPG-kuvia 80 %:n kuvanlaadulla ja seuraavia kuvien suositusleveyksiä: 2 000 kuvapistettä päävaiheessa tai suurennuspainikkeen sisältävissä tarinapaneeleissa ja 1 000 kuvapistettä suurennuspainikkeettomissa tarinapaneeleissa.<br><br>Jos linkitetty kuva piirtyy hitaasti, voit nopeuttaa se piirtymistä lataamalla sen tarinaasi.",
+      "lblURLHelp": "Kuvalinkin on alettava merkkijonolla HTTPS.<br><br>Parhaat tulokset saadaan käyttämällä alle 400 kt:n kokoisia kuvia. Käytä pakattuja JPG-kuvia 80 %:n kuvanlaadulla ja seuraavia kuvien suositusleveyksiä: 2 000 kuvapistettä päävaiheessa tai suurennuspainikkeen sisältävissä tarinapaneeleissa ja 1 000 kuvapistettä suurennuspainikkeettomissa tarinapaneeleissa.<br><br>Jos linkitetty kuva piirtyy hitaasti, voit nopeuttaa se piirtymistä lataamalla sen tarinaasi.",
       "tooltipDimension": "Arvo voidaan määrittää px (pikseli)- tai %-yksiköissä",
       "tooltipDimension2": "Arvo on määritettävä pikseleinä",
       "lblPosition2Explain": "(voi rajautua)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Käyttäjä näkee karttamerkit napsauttaessaan linkkiä"
     },
     "editorActions": {
-      "navigate": "Siirry osioon",
+      "navigate": "Siirry toiseen osaan",
       "remove": "Poista toiminto",
       "preview": "Esikatsele toiminto"
     },

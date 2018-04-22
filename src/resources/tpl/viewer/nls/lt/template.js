@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Ši nuoroda neaktyvi (skiltis nepublikuota)"
     },
     "headerFromCommon": {
-      "storymapsText": "Pristatomasis žemėlapis",
+      "storymapsText": "Žemėlapio pasakojimas",
       "builderButton": "Redaguoti",
       "facebookTooltip": "Dalintis Facebook",
       "twitterTooltip": "Dalintis Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Kai šis režimas aktyvus, yra valdikliai, kuriais galima leisti / pristabdyti pasakojimą ir reguliuoti naršymo greitį.",
       "linksupdated": "Nuorodos atnaujintos!",
       "print": "Spausdinti",
-      "printInstruction1": "Prieš spausdindami šį puslapį, palaukite, kol bus įkeltas visas turinys",
-      "printInstruction1a": "Dalies turinio gali nepavykti išspausdinti, jei nuostatų dialogo lange Spausdinti puslapį neįjungsite „Spausdinti fono spalvas ir atvaizdus“",
+      "printInstruction1": "Prieš spausdindami palaukite, kol bus įkeltas visas pasakojimas",
+      "printInstruction1a": "Jei šis puslapis įkeliamas lėtai arba medija nerodoma, bandykite spausdinti mažesniu skilčių intervalu.",
+      "printInstruction1b": "Siekdami geriausių rezultatų, naršyklės parametruose gali tekti įgalinti fono elementų spausdinimą.",
       "printInstruction2": "Šio puslapio negalima bendrinti su kitais. Užuot bendrinę puslapį, bendrinkite šią nuorodą ${link}",
       "link": "nuoroda į pasakojimą",
+      "optionsHeader": "Parinktys",
       "printOptPageBreak": "Kiekvieną skyrių pradėkite naujame puslapyje",
       "makeTextBlack": "Spalvinti visą tekstą juodai",
-      "printWarning": "Tai yra žemėlapių pasakojimų spausdinta versija. Dinaminis turinys, pvz., vaizdo įrašai ir interaktyvūs žemėlapiai, prieinami tik internetinėje versijoje ${link}",
+      "showLinks": "Rodyti nuorodos URL",
+      "madeWith": "Šis pasakojimas sukurtas naudojant ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esri Žemėlapių žurnalas",
+      "readItOnline": "Peržiūrėkite interaktyvią versiją žiniatinklyje ${link}.",
       "printMSWarning": "Nuoroda prieinama tik pasakojime internete",
-      "printVideoWarning": "Šį vaizdo įrašą galima peržiūrėti internetinėje žemėlapio pasakojimo versijoje"
+      "printVideoWarning": "Šį vaizdo įrašą galima peržiūrėti internetinėje žemėlapio pasakojimo versijoje",
+      "printRangeHeader": "Spausdinkite pasakojimo dalį",
+      "sectionLabel": "Skiltys:",
+      "apply": "Taikyti",
+      "resetRange": "Viso pasakojimo nustatymas iš naujo"
     }
   }
 });

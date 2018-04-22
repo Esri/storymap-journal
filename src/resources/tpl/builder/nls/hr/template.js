@@ -103,7 +103,21 @@ define({
       "lblAdd": "Kako želite nazvati svoj Map Journal?",
       "phAdd": "Unesite naslov...",
       "lblOR": "ili",
-      "lblHelp": "Krenite na obilazak"
+      "lblHelp": "Krenite na obilazak",
+      "quote0": "Uvijek ima mjesta za priču koja može odvesti ljude na drugo mjesto.",
+      "quote1": "Danas je pripovijedanje najbolji način kako svijetu predstaviti ideje.",
+      "quote2": "Priče koje pričamo doslovno čine svijet. Ako želite promijeniti svijet, trebate promijeniti svoju priču. Ta se istina odnosi i na pojedince i na institucije.",
+      "quote3": "Najkraći put između čovjeka i istine jest priča.",
+      "quote4": "Ljudi ne žele još informacija. Zasipani su informacijama sa svih strana. Žele imati povjerenja u vas, vaše ciljeve, vaš uspjeh i priču koju pričate.",
+      "quote5": "Uistinu vjerujem da ljudi traže priče koje zaista nešto znače, priče koje su iskupljujuće, koje nadahnjuju i koje su veće od pojedinca.",
+      "quote6": "Ako želite utjecati na pojedinca ili grupu da prihvate određenu vrijednost u svojim svakodnevnim životima, ispričajte im zanimljivu priču.",
+      "quote7": "Ako mi ispričate, radi se o eseju. Ako mi pokažete, radi se o priči.",
+      "quote8": "Ako niste upoznati s drvećem, možda ćete se izgubiti u šumi, no ako niste upoznati s pričama, možda ćete se izgubiti u životu.",
+      "quote9": "Priče su kreativna preobrazba samog života u snažnije, jasnije i značajnije iskustvo. One su valuta ljudskog kontakta.",
+      "quote10": "Nema veće boli od neispričane priče u vama.",
+      "quote11": "Možda su priče samo podaci s dušom.",
+      "quote12": "Priče su najmoćnije oružje u arsenalu vođe.",
+      "quote13": "Priroda je priča da izostave puno više nego što uključe."
     },
     "firstAddSplash": {
       "thisis": "Ovo je",

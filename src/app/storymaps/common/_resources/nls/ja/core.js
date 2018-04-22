@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "組織のロゴ",
       "logoCustomRadio": "マイ ロゴ",
       "logoCustomLabel": "イメージ:",
-      "logoCustomUploadHelp": "ロゴは、幅:高さの比が 1:1 ～ 5:1 の場合に最適に表示されます。リンク付きロゴの描画が遅い場合は、コピーを保存し、それをここでアップロードしてください。",
+      "logoCustomUploadHelp": "ロゴ画像リンクは、HTTPS で始まる必要があります。ロゴは、幅:高さの比が 1:1 ～ 5:1 の場合に最適に表示されます。リンク付きロゴの描画が遅い場合は、コピーを保存し、それをここでアップロードしてください。",
       "logoCustomUploadTooltip": "アップロードされたロゴを使用",
       "logoCustomUploadButton": "ロゴのアップロード",
       "logoUploadSizeError": "GIF の寸法が大きすぎます。サイズを ${PIXEL-WIDTH} ピクセルの幅に変更してください。",
+      "logoCustomLinkHTTPSError": "リンクは、HTTPS で始まる必要があります",
       "logoCustomLinkTooltip": "ロゴへのリンク",
       "logoCustomLinkPlaceholder": "画像 URL",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "ロゴは、*.bmp、*.gif、*.jpg、*.jpeg、または *.png ファイルにすることができます。GIF は、幅が 250 ピクセル未満、サイズが 10 MB 未満である必要があります。",
       "logoCustomTargetPlaceholder": "ロゴがクリックされたときに開かれる Web ページ",
       "logoSocialText": "タグライン:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "このセクション",
       "homeSection": "ホーム セクション",
       "hiddenSection": "非表示のセクション"
+    },
+    "bannerNotification": {
+      "learnMore": "詳細",
+      "close": "閉じる",
+      "dontShowAgain": "今後このメッセージを表示しない"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Web セキュリティとストーリー マップに関する重要なメッセージ",
+      "s1h1": "Esri はストーリー マップのセキュリティ向上に努めています",
+      "s1p1": "Web および Web コミュニティ上のライブのストーリー マップは、常にセキュリティを向上するよう機能しています。HTTPS はインターネット経由で送信されるコンテンツを安全に接続するため、現在、Web コンテンツにアクセスする際に使用すべき手段となっています。最新のブラウザーでは、HTTPS ではなく HTTP が使用されると、警告メッセージが表示されます。これが標準となったことから、ArcGIS Online の 2018 年 6 月の更新版以降は、HTTPS を使用する必要があります。",
+      "s1p2": "事実上、ストーリー マップとそのすべてのコンテンツ (画像、レイヤー、埋め込みアプリ、Web サイトなど) にアクセスするには、HTTP ではなく HTTPS で始まるリンクを使用する必要があります。これにより、ほとんどの Web ブラウザーでストーリーの安全性が示されるため、ユーザーの安全性が最大限に確保されます。",
+      "s2h1": "必要な操作",
+      "s2p1": "Esri では、ストーリー マップの作成者とユーザーの移行操作を容易にするよう努めています。ストーリー マップ ビルダーおよびマイ ストーリー内のツールを使用すると、ストーリー内の安全でないコンテンツ (HTTP) を見つけやすくなり、その場合の対処方法も提示してくれます。2018 年 6 月までに、ストーリー内に安全でないコンテンツがないかを確認し、ある場合は HTTPS に更新してください。",
+      "action1": "閉じる",
+      "action2": "ストーリーを今すぐ確認する",
+      "action3": "詳細"
     }
   }
 });

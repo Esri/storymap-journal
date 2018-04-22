@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "激活此模式时，可使用控件播放/暂停故事和调整导航速度。",
       "linksupdated": "链接已更新!",
       "print": "打印",
-      "printInstruction1": "在打印此页面之前，请等待所有内容加载完毕",
-      "printInstruction1a": "除非在打印页面设置对话框中启用了“打印背景颜色和图像”，否则某些内容可能无法打印",
+      "printInstruction1": "请待整个故事加载完毕再进行打印",
+      "printInstruction1a": "如果此页面加载速度缓慢或某些媒体未显示，请尝试打印较小范围的部分。",
+      "printInstruction1b": "为获得最佳效果，您可能需要在浏览器的打印设置中启用背景元素的打印。",
       "printInstruction2": "无法将此页面与他人共享，而是将 ${link} 进行共享",
       "link": "故事的链接",
+      "optionsHeader": "选项",
       "printOptPageBreak": "在新页面上开始每个章节",
       "makeTextBlack": "将所有文本设置为黑色",
-      "printWarning": "这是故事地图的打印版本。视频和互动式地图等动态内容仅适用于 ${link} 的在线版本",
+      "showLinks": "显示链接 URL",
+      "madeWith": "此故事由 ${JOURNAL_LINK_TEXT} 完成。",
+      "journalLinkText": "Esri 的 Story Map Journal",
+      "readItOnline": "请访问 ${link} 阅读 web 上的互动版本。",
       "printMSWarning": "链接仅适用于在线故事",
-      "printVideoWarning": "此视频可在此故事地图的在线版本中查看"
+      "printVideoWarning": "此视频可在此故事地图的在线版本中查看",
+      "printRangeHeader": "打印此故事的一部分",
+      "sectionLabel": "章节：",
+      "apply": "应用",
+      "resetRange": "重置为整个故事"
     }
   }
 });

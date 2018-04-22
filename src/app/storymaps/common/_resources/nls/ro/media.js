@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Link pagină web",
       "lblEmbed": "Încorporare cod",
+      "lblMustUseHTTPS": "Link-urile către conţinut web trebuie să înceapă cu HTTPS",
       "lblOR": "SAU",
       "lblError1": "Eroare, eliminaţi unul sau două câmpuri de intrare.",
       "lblError2": "Codul încorporat poate conţine numai un %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Link imagine",
       "lblURLPH": "Linkul trebuie să se termine cu .jpg, .png, .gif sau .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Această imagine nu pare validă. Specificaţi un link direct către un fişier imagine (adresa URL se va termina de regulă cu .jpg sau .png). Linkurile către o pagină web care conţine o imagine nu vor funcţiona.",
+      "lblURLErrorHTTPS": "Acest link de imagine nu este valid. Adresa URL trebuie să înceapă cu HTTPS şi să se termine cu o extensie de fişier imagine acceptată (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Se verifică imaginea...",
       "lblLabel": "Comentariu imagine",
       "lblLabel1": "Subtitlu",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Potrivire",
       "lblPosition4": "Întindere",
       "lblPosition5": "Particularizat",
-      "lblURLHelp": "Pentru cele mai bune rezultate, imaginile trebuie să aibă mai puţin de 400 KB. Utilizaţi imagini JPG comprimate la calitate de 80 % şi următoarele lăţimi de imagini recomandate: 2.000 de pixeli pentru scena principală sau panoul narativ cu buton de maximizare, 1.000 de pixeli pentru panoul narativ fără buton de maximizare.<br><br>Dacă o imagine conectată este trasată lent, încărcaţi-o în povestea dvs. pentru rezultate mai bune.",
+      "lblURLHelp": "Link-ul imaginii trebuie să înceapă cu HTTPS.<br><br>Pentru cele mai bune rezultate, imaginile trebuie să aibă mai puţin de 400 KB. Utilizaţi imagini JPG comprimate la calitate de 80 % şi următoarele lăţimi de imagini recomandate: 2.000 de pixeli pentru scena principală sau panoul narativ cu buton de maximizare, 1.000 de pixeli pentru panoul narativ fără buton de maximizare.<br><br>Dacă o imagine conectată este trasată lent, încărcaţi-o în povestea dvs. pentru rezultate mai bune.",
       "tooltipDimension": "Valoarea poate fi specificată în „px” sau „%”",
       "tooltipDimension2": "Valoarea trebuie să fie specificată în „px”",
       "lblPosition2Explain": "(poate fi decupat)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Utilizatorul va vedea un marcaj pe hartă când va face clic pe link"
     },
     "editorActions": {
-      "navigate": "Navigarea la o secţiune",
+      "navigate": "Navigare la o altă secţiune",
       "remove": "Eliminare acţiune",
       "preview": "Previzualizare acţiune"
     },

@@ -82,7 +82,7 @@ define({
 				errorNotPublished: "This link is not active (section is not published)"
 			},
 			headerFromCommon: {
-				storymapsText: "A story map",
+				storymapsText: "A Story Map",
 				builderButton: "Edit",
 				facebookTooltip: "Share on Facebook",
 				twitterTooltip: "Share on Twitter",
@@ -113,15 +113,25 @@ define({
 				autoplayExplain2: "When this mode is active there are controls to play/pause the story and adjust the navigation speed.",
 				linksupdated: "Links updated!",
 				print: "Print",
-				printInstruction1: "Please wait for all the content to load before printing this page",
-				printInstruction1a: "Some content may not print unless you enable \"Print Background Colors and Images\" in the Print Page setup dialog",
+				printInstruction1: "Please wait for the entire story to load before printing",
+				printInstruction1a: "If this page loads slowly or some media doesn't appear, try printing a smaller range of sections.",
+				printInstruction1b: "For best results, you may need to enable printing of background elements in your browser's print settings.",
 				printInstruction2: "This page cannot be shared with others, instead share the ${link}",
 				link: "link to the story",
+				optionsHeader: "Options",
 				printOptPageBreak: "Begin each section on a new page",
 				makeTextBlack: "Make all text black",
-				printWarning: "This is a printed version of a story map. Dynamic content such as videos and interactive maps is only available in the online version at ${link}",
+				showLinks: "Show link URLs",
+				madeWith: "This story was made with ${JOURNAL_LINK_TEXT}.",
+				journalLinkText: "Esri's Story Map Journal",
+				readItOnline: "Read the interactive version on the web at ${link}.",
 				printMSWarning: "link available only in online story",
-				printVideoWarning: "This video can be viewed in the online version of this story map"
+				printVideoWarning: "This video can be viewed in the online version of this story map",
+				printRangeHeader: "Print part of this story",
+				sectionLabel: "Sections:",
+				apply: "Apply",
+				resetRange: "Reset to whole story"
+
 
 			}
     }

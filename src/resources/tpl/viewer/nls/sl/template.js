@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Ko je ta način dejaven, so prikazani ukazi za predvajanje/začasno ustavitev zgodbe in prilagoditev hitrosti navigacije.",
       "linksupdated": "Povezave so posodobljene!",
       "print": "Tiskanje",
-      "printInstruction1": "Pred tiskanjem te strani počakajte, da se naloži vsa vsebina",
-      "printInstruction1a": "Določena vsebina se morda ne bo natisnila, če v nastavitvah tiskanja ne omogočite možnosti »Natisni barve in slike ozadja«",
+      "printInstruction1": "Pred tiskanjem počakajte, da se naloži celotna zgodba",
+      "printInstruction1a": "Če se ta stran počasi nalaga ali pa se kak medij ne prikaže, poskusite natisniti manjši razpon odsekov.",
+      "printInstruction1b": "Za najboljše rezultate boste morda morali omogočiti tiskanje elementov v ozadju v nastavitvah tiskanja vašega tiskalnika.",
       "printInstruction2": "Te strani ni mogoče deliti z drugimi, namesto tega delite ${link}",
       "link": "povezava do zgodbe",
+      "optionsHeader": "Možnosti",
       "printOptPageBreak": "Začnite vsak razdelek na novi strani",
       "makeTextBlack": "Počrnite vso besedilo",
-      "printWarning": "To je tiskana različica karte z zgodbo. Dinamična vsebina, kot so videoposnetki in interaktivne karte je na voljo samo v spletni različici na ${link}",
+      "showLinks": "Prikaži URL povezave",
+      "madeWith": "Ta zgodba je bila narejena z ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Časopisna karta z zgodbo podjetja Esri",
+      "readItOnline": "Preberite interaktivno različico na spletu na ${link}.",
       "printMSWarning": "povezava je na voljo samo v spletni zgodbi",
-      "printVideoWarning": "Ta videoposnetek si je mogoče ogledati v spletni različici te karte z zgodbo"
+      "printVideoWarning": "Ta video si je mogoče ogledati v spletni različici te karte z zgodbo",
+      "printRangeHeader": "Natisni del te zgodbe",
+      "sectionLabel": "Razdelki:",
+      "apply": "Uporabi",
+      "resetRange": "Ponastavi na celotno zgodbo"
     }
   }
 });

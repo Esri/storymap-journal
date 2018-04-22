@@ -5,46 +5,70 @@ define(["lib-build/tpl!./Landing",
 	){
 		return function Landing(container, addFirstSectionCallback, helpCallback)
 		{
+			/* NOTE: the quotes probably shouldn't be in here, as `container` is
+			 * JUST the #builderLanding, which is the title input and "take a tour" button.
+			 * The #builderQuotes container is a sibling of #builderLanding.
+			 * But this is so old that I hesitate to move the quotes elsewhere or
+			 * change the Landing container to also include the quotes div. Thus the
+			 * quotes stay, and their styling is in Landing.css.  -als 2/2018
+			 */
+
 			var QUOTES = [
 				[
-					"&ldquo;There's always room for a story that can transport people to another place.&rdquo;",
-					"--J.K. Rowling"
+					i18n.builder.landing.quote0,
+					"—–J.K. Rowling"
 				],
 				[
-					"&ldquo;Storytelling is the most powerful way to put ideas into the world today.&rdquo;",
-					"--Robert McKee"
+					i18n.builder.landing.quote1,
+					"––Robert McKee"
 				],
 				[
-					"&ldquo;The stories we tell literally make the world. If you want to change the world, you need to change your story. This truth applies both to individuals and institutions.&rdquo;",
-					"--Michael Margolis"
+					i18n.builder.landing.quote2,
+					"––Michael Margolis"
 				],
 				[
-					"&ldquo;The shortest distance between a human being and the truth is a story.&rdquo;",
-					"--Anthony de Mello"
+					i18n.builder.landing.quote3,
+					"––Anthony de Mello"
 				],
 				[
-					"&ldquo;People don’t want more information. They are up to their eyeballs in information. They want faith–faith in you, your goals, your success, in the story you tell.&rdquo;",
-					"--Annette Simmons"
+					i18n.builder.landing.quote4,
+					"––Annette Simmons"
 				],
 				[
-					"&ldquo;I truly believe that people are looking for stories that really mean something–stories that are redemptive, inspiring, and bigger than an individual.&rdquo;",
-					"--Scott Harrison"
+					i18n.builder.landing.quote5,
+					"––Scott Harrison"
 				],
 				[
-					"&ldquo;If you wish to influence an individual or a group to embrace a particular value in their daily lives, tell them a compelling story.&rdquo;",
-					"--Annette Simmons"
+					i18n.builder.landing.quote6,
+					"––Annette Simmons"
 				],
 				[
-					"&ldquo;If you tell me, it’s an essay. If you show me, it’s a story.&rdquo;",
-					"--Barbara Greene"
+					i18n.builder.landing.quote7,
+					"––Barbara Greene"
 				],
 				[
-					"&ldquo;If you don’t know the trees you may be lost in the forest, but if you don’t know the stories you may be lost in life.&rdquo;",
-					"--Siberian Elder"
+					i18n.builder.landing.quote8,
+					"––Siberian Elder"
 				],
 				[
-					"&ldquo;Stories are the creative conversion of life itself into a more powerful, clearer, more meaningful experience. They are the currency of human contact.&rdquo;",
-					"--Robert McKee"
+					i18n.builder.landing.quote9,
+					"––Robert McKee"
+				],
+				[
+					i18n.builder.landing.quote10,
+					"––Maya Angelou"
+				],
+				[
+					i18n.builder.landing.quote11,
+					"––Brené Brown"
+				],
+				[
+					i18n.builder.landing.quote12,
+					"––Howard Gardner"
+				],
+				[
+					i18n.builder.landing.quote13,
+					"––Marion Dane Bauer"
 				]
 			];
 
@@ -136,11 +160,10 @@ define(["lib-build/tpl!./Landing",
 				container.find(".landing-add-container .landing-btn").click(onClickAdd);
 				container.find(".landing-tour-container").click(helpCallback);
 
-				$("#builderQuotes").html(
-					'<div style="padding: 0 18%">'
-					+ QUOTES[Math.floor(Math.random() * QUOTES.length)].join("<br />")
-					+ "</div>"
-				);
+				var quoteStr = QUOTES[Math.floor(Math.random() * QUOTES.length)].join("<br />");
+
+				$("#builderQuotes").html('<div>' + quoteStr + '</div>');
+
 			}
 		};
 	}

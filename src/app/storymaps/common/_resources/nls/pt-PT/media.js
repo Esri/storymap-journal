@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Ligação para página web",
       "lblEmbed": "Incorporar código",
+      "lblMustUseHTTPS": "Ligações para conteúdo web têm de começar com HTTPS",
       "lblOR": "OU",
       "lblError1": "Erro, limpe um dos dois campos de entrada.",
       "lblError2": "O código de incorporação pode conter apenas um %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Ligação para imagem",
       "lblURLPH": "A ligação pode terminar em .jpg, .png, .gif, ou .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Esta imagem não aparenta ser válida. Por favor especifique uma ligação direta para um ficheiro de imagem (o seu URL geralmente termina em .jpg ou .png). Ligações para uma página web que contenha a imagem não irão funcionar.",
+      "lblURLErrorHTTPS": "Esta ligação a uma imagem não é válida. O URL tem de começar com HTTPS e terminar com uma extensão de imagem suportada (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "A verificar imagem...",
       "lblLabel": "Legenda de imagem",
       "lblLabel1": "Legenda",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Adaptar",
       "lblPosition4": "Esticar",
       "lblPosition5": "Personalizar",
-      "lblURLHelp": "Para melhores resultados, as imagens devem ser menores do que 400 KB. Utilize imagens JPG comprimidas com 80% de qualidade e estas larguras de imagem recomendadas: 2000 pixeis para o ecrã principal ou painel narrativo com botão maximizar, 1000 pixeis para painel narrativo sem botão maximizar.<br><br>caso as imagens ligadas fiquem lentas, carregue-las para a sua história para obter melhores resultados.",
+      "lblURLHelp": "As ligações a imagens têm de começar com HTTPS.<br><br>Para obter melhores resultados, as imagens devem ser menores do que 400 KB. Utilize imagens JPG comprimidas com 80% de qualidade e estas larguras de imagem recomendadas: 2000 pixeis para o ecrã principal ou painel narrativo com botão maximizar, 1000 pixeis para painel narrativo sem botão maximizar.<br><br>Caso uma imagem ligada fique lenta, carregue-a para a sua história para obter melhores resultados.",
       "tooltipDimension": "O valor pode ser especificado em pixéis ou percentagem",
       "tooltipDimension2": "O valor tem de ser especificado em px",
       "lblPosition2Explain": "(pode recortar)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "O utilizador verá um marcador de mapa ao clicar na ligação"
     },
     "editorActions": {
-      "navigate": "Navegar para uma secção",
+      "navigate": "Navegar para outra secção",
       "remove": "Remover acção",
       "preview": "Pré-visualizar acção"
     },

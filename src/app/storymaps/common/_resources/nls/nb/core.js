@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Organisasjonens logo",
       "logoCustomRadio": "Min logo",
       "logoCustomLabel": "Bilde:",
-      "logoCustomUploadHelp": "Logoene ser penest ut dersom de har et bredde/høyde-forhold på mellom 1:1 og 5:1. Hvis det tar lang tid laste en koblet logo, lagrer du en kopi og laster den opp her.",
+      "logoCustomUploadHelp": "Koblingen til logobildet må begynne med HTTPS. Logoer ser penest ut dersom de har et bredde-/høydeforhold på mellom 1:1 og 5:1. Hvis det tar lang tid laste en koblet logo, lagrer du en kopi og laster den opp her.",
       "logoCustomUploadTooltip": "Bruk en opplastet logo",
       "logoCustomUploadButton": "Last opp logo",
       "logoUploadSizeError": "GIF-målene er for store. Endre størrelsen til ${PIXEL-WIDTH}-pikslers bredde.",
+      "logoCustomLinkHTTPSError": "Koblingen må begynne med HTTPS",
       "logoCustomLinkTooltip": "Opprett kobling til logo",
       "logoCustomLinkPlaceholder": "Bilde-URL",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logoen kan være en BMP-, GIF-, JPG-, JPEG- eller PNG-fil. GIF-filer må være mindre enn 250 piksler brede og under 10 MB.",
       "logoCustomTargetPlaceholder": "Nettside som skal åpnes når logoen klikkes",
       "logoSocialText": "Slagord:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Denne seksjonen",
       "homeSection": "Startseksjonen",
       "hiddenSection": "Skjult seksjon"
+    },
+    "bannerNotification": {
+      "learnMore": "Få mer informasjon",
+      "close": "Lukk",
+      "dontShowAgain": "Ikke vis denne meldingen igjen"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Viktig informasjon om websikkerhet og fortellingskart",
+      "s1h1": "Esri forbedrer sikkerheten for fortellingskart",
+      "s1p1": "Fortellingskartene lever på nettet, og Internett-fellesskapet jobber hele tiden med å forbedre sikkerheten. HTTPS som gir en sikker forbindelse til innhold som sendes over Internett, blir den vanligste måten å få tilgang til Internett-innhold på. De fleste moderne nettlesere viser en advarsel når det brukes HTTP i stedet for HTTPS. Som en følge av denne nye standarden vil fortellingskartene bruke HTTPS fra og med oppdateringen av ArcGIS Online som kommer i juni 2018.",
+      "s1p2": "Det betyr at du får tilgang til et fortellingskart og alt innholdet i det (inkludert bilder, lag, innebygde apper og nettsteder) ved hjelp av koblinger som begynner med HTTPS i stedet for HTTP. Dette gir leserne dine den beste opplevelsen siden de fleste nettleserne viser at fortellingene dine er sikre.",
+      "s2h1": "Hva må jeg gjøre?",
+      "s2p1": "Esri arbeider for at det skal bli en enkel overgang for alle som lager og bruker fortellingskart. Byggeverktøyene for Story Map og Mine fortellinger inneholder nå verktøy som hjelper deg med å finne usikkert innhold (HTTP) i fortellingene dine og gir råd om hvordan du ordner dette. Kontroller om fortellingene dine har usikkert innhold og oppdater til HTTPS før juni 2018.",
+      "action1": "Lukk",
+      "action2": "Kontroller mine fortellinger nå",
+      "action3": "Mer informasjon"
     }
   }
 });

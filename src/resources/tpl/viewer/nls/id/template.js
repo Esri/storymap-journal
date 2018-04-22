@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Tautan ini tidak aktif (bagian tidak diterbitkan)"
     },
     "headerFromCommon": {
-      "storymapsText": "Peta cerita",
+      "storymapsText": "Story Map",
       "builderButton": "Edit",
       "facebookTooltip": "Bagikan ke Facebook",
       "twitterTooltip": "Bagikan ke Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Saat mode ini aktif, ada beberapa kontrol untuk memutar/menjeda cerita dan mengatur kecepatan navigasi.",
       "linksupdated": "Tautan diperbarui!",
       "print": "Cetak",
-      "printInstruction1": "Harap tunggu hingga semua konten dimuat sebelum mencetak halaman ini",
-      "printInstruction1a": "Sebagian konten mungkin tidak tercetak kecuali jika Anda mengaktifkan \"Print Background Colors and Images\" (Cetak Warna Latar dan Gambar) dalam dialog pengaturan Print Page (Halaman Cetak)",
+      "printInstruction1": "Harap tunggu sampai seluruh cerita dimuat sebelum mencetak",
+      "printInstruction1a": "Jika halaman ini lambat dimuat atau sebagian media tidak muncul, coba cetak rentang bagian yang lebih kecil.",
+      "printInstruction1b": "Untuk hasil terbaik, Anda mungkin perlu mengaktifkan pencetakan elemen latar belakang di pengaturan cetak browser Anda.",
       "printInstruction2": "Halaman ini tidak dapat dibagikan ke orang lain, yang dapat dibagikan adalah ${link}",
       "link": "tautkan ke cerita",
+      "optionsHeader": "Opsi",
       "printOptPageBreak": "Mulai setiap bagian di halaman baru",
       "makeTextBlack": "Jadikan semua teks berwarna hitam",
-      "printWarning": "Ini adalah versi cetak peta cerita. Konten dinamis seperti video dan peta interaktif hanya tersedia dalam versi online di tautan ${link}",
+      "showLinks": "Perlihatkan URL tautan",
+      "madeWith": "Cerita ini dibuat dengan ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Jurnal Story Map Esri",
+      "readItOnline": "Bacalah versi interaktif di web di ${link}.",
       "printMSWarning": "tautan hanya tersedia dalam cerita online",
-      "printVideoWarning": "Video ini dapat ditayangkan dalam peta cerita versi online"
+      "printVideoWarning": "Video ini dapat ditayangkan dalam peta cerita versi online",
+      "printRangeHeader": "Cetak bagian dari cerita ini",
+      "sectionLabel": "Bagian:",
+      "apply": "Terapkan",
+      "resetRange": "Atur ulang ke seluruh cerita"
     }
   }
 });

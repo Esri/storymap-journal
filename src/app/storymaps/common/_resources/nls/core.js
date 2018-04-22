@@ -113,12 +113,14 @@ define({
 				logoOrgRadio: "Organization logo",
 				logoCustomRadio: "My logo",
 				logoCustomLabel: "Image:",
-				logoCustomUploadHelp: "Logos look best if they have a width:height ratio between 1:1 and 5:1. If a linked logo draws slowly, save a copy and upload it here.",
+				logoCustomUploadHelp: "Logo image link must begin with HTTPS. Logos look best if they have a width:height ratio between 1:1 and 5:1. If a linked logo draws slowly, save a copy and upload it here.",
 				logoCustomUploadTooltip: "Use an uploaded logo",
 				logoCustomUploadButton: "Upload a logo",
 				logoUploadSizeError: "GIF dimensions too large. Please resize to ${PIXEL-WIDTH} pixels wide.",
+				logoCustomLinkHTTPSError: "Link must begin with HTTPS",
 				logoCustomLinkTooltip: "Link to a logo",
 				logoCustomLinkPlaceholder: "Image URL",
+				logoCustomLinkPlaceholderHTTPS: "https://example.com/logo.jpg",
 				logoUploadGenericError: "Logo can be a .bmp, .gif, .jpg, .jpeg, or .png file. Gifs must be less than 250px wide and 10Mb in size.",
 				logoCustomTargetPlaceholder: "Web page to open when logo is clicked",
 				logoSocialText: "Tagline:",
@@ -135,6 +137,22 @@ define({
 				thisSection: "This section",
 				homeSection: "Home section",
 				hiddenSection: "Hidden section"
+			},
+			bannerNotification: {
+				learnMore: "Learn More",
+				close: "Close",
+				dontShowAgain: "Don't show this message again"
+			},
+			httpsTransitionMessage: {
+				bannerMsg: "Important Message about Web Security and Story Maps",
+				s1h1: "Esri is enhancing the security of Story Maps",
+				s1p1: "Your Story Maps live on the web, and the web community is always working to establish and implement better security. HTTPS, which provides a secure connection for content transmitted over the internet, is emerging as the expected way to access web content. Most modern browsers now show warning messages when HTTP instead of HTTPS is used. Because of this emerging standard, beginning with the June 2018 update to ArcGIS Online, your Story Maps will need to use HTTPS.",
+				s1p2: "Practically speaking, this means a Story Map and all its content (including images, layers, embedded apps and websites) must be accessed using links that start with HTTPS rather than HTTP. This ensures the best experience for your readers because most web browsers will indicate that your stories are secure.",
+				s2h1: "What do I need to do?",
+				s2p1: "Esri is working to make this an easy transition for Story Map authors and readers. Tools are available now in Story Map builders and My Stories that help you find insecure content (HTTP) in your stories and provide recommendations for how to address it. Please check your stories for insecure content and update to HTTPS before June 2018.",
+				action1: "Close",
+				action2: "Check my stories now",
+				action3: "Learn more"
 			}
 		}
 	}),

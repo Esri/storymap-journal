@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Link de página da web",
       "lblEmbed": "Código embutido",
+      "lblMustUseHTTPS": "Os links para conteúdo da web devem iniciar com HTTPS",
       "lblOR": "OU",
       "lblError1": "Erro, limpe um dos dois campos de entrada.",
       "lblError2": "O código embutido pode conter somente um %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Link de imagem",
       "lblURLPH": "O link pode terminar com .jpg, .png, .gif, ou .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Esta imagem parece não ser válida. Especifique um link direto para um arquivo de imagem (sua URL geralmente terminará com .jpg ou .png). Links para uma página da web que contêm uma imagem não funcionarão.",
+      "lblURLErrorHTTPS": "Este link de imagem não é válido. A URL deve iniciar com HTTPS e finalizar com uma extensão de arquivo de imagem suportada (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Verificando imagem...",
       "lblLabel": "Legenda da imagem",
       "lblLabel1": "Legenda",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Ajustar",
       "lblPosition4": "Esticar",
       "lblPosition5": "Personalizar",
-      "lblURLHelp": "Para melhores resultados, as imagens devem ter menos que 400 KB. Utilize imagens JPG compactadas na qualidade de 80% e estas larguras de imagem recomendadas: 2000 pixels para a camada principal ou painel narrativo com botão maximizar, 1000 pixels para painel narrativo sem botão maximizar.<br><br>Se uma imagem vinculada desenhar lentamente, carregue-a na sua história para obter melhores resultados.",
+      "lblURLHelp": "O link de imagem deve iniciar com HTTPS.<br><br>Para melhores resultados, as imagens devem ter menos que 400 KB. Utilize imagens JPG compactadas na qualidade de 80% e estas larguras de imagem recomendadas: 2000 pixels para a camada principal ou painel narrativo com botão maximizar, 1000 pixels para painel narrativo sem botão maximizar.<br><br>Se uma imagem vinculada desenhar lentamente, carregue-a na sua história para obter melhores resultados.",
       "tooltipDimension": "O valor pode ser especificado em 'px' ou '%'",
       "tooltipDimension2": "O valor tem que ser especificado em 'px'",
       "lblPosition2Explain": "(pode recortar)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Usuários visualizarão um marcador de mapa ao clicar no link"
     },
     "editorActions": {
-      "navigate": "Navegar até uma seção",
+      "navigate": "Navegar por outra seção",
       "remove": "Remover ação",
       "preview": "Visualizar ação"
     },

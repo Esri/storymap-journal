@@ -103,7 +103,21 @@ define({
       "lblAdd": "Hva vil du kalle historiekartet?",
       "phAdd": "Skriv inn tittelen...",
       "lblOR": "Eller",
-      "lblHelp": "Få en omvisning"
+      "lblHelp": "Få en omvisning",
+      "quote0": "Det er alltid plass til en fortelling som kan forflytte mennesker til et annet sted.",
+      "quote1": "Det å fortelle historier er den mest effektive måten å dele ideer med verden på i dag.",
+      "quote2": "Fortellingene våre kan bokstavelig talt skape verden. Om du vil forandre verden, må du forandre fortellingen din. Dette gjelder både for enkeltpersoner og institusjoner.",
+      "quote3": "Den korteste veien mellom et menneske og sannheten er en fortelling.",
+      "quote4": "Folk vil ikke ha mer informasjon. De holder på å drukne i informasjon. De vil kunne føle tiltro til deg, målene dine, suksessen din og fortellingen din.",
+      "quote5": "Jeg er overbevist om at folk leter etter fortellinger som virkelig betyr noe – fortellinger som er forsonende, inspirerende og større enn individet.",
+      "quote6": "Om du vil påvirke en person eller en gruppe slik at de tar til seg en bestemt verdi i dagliglivet, forteller du en overbevisende historie.",
+      "quote7": "Hvis du forteller meg noe, blir det bare ord. Hvis du viser meg, blir det en fortelling.",
+      "quote8": "Om du ikke kjenner trærne, kan du gå deg vill i skogen, men om du ikke kjenner historiene, kan du gå deg vill i selve livet.",
+      "quote9": "Historier er den kreative omskrivningen av selve livet til en mektigere, tydeligere og mer meningsfylt opplevelse. De er essensen av menneskelig kontakt.",
+      "quote10": "Det er ikke noe som er verre enn å brenne inne med en historie.",
+      "quote11": "Kanskje er fortellinger informasjon med sjel.",
+      "quote12": "Fortellinger er det mest effektive våpenet i en leders arsenal.",
+      "quote13": "Det ligger i historienes natur at de utelater langt mer enn de tar med."
     },
     "firstAddSplash": {
       "thisis": "Dette er",

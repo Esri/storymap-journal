@@ -103,7 +103,21 @@ define({
       "lblAdd": "Jak chcesz nazwać Dziennik mapy?",
       "phAdd": "Wpisz tytuł...",
       "lblOR": "Lub",
-      "lblHelp": "Dowiedz się więcej"
+      "lblHelp": "Dowiedz się więcej",
+      "quote0": "Zawsze mamy możliwość opowiedzenia historii, która może przenieść odbiorców w nieznane miejsca.",
+      "quote1": "Tworzenie ciekawych narracji to najbardziej efektywny sposób przekazywania swoich pomysłów w dzisiejszym świecie.",
+      "quote2": "Historie przez nas opowiadane dosłownie mają wpływ na świat. Chcąc zmieniać otaczający nas świat, powinniśmy dostosować sposoby przekazywania narracji. Dotyczy to zarówno osób, jak i instytucji.",
+      "quote3": "Narracja — najbardziej efektywny sposób przekazywania informacji.",
+      "quote4": "Ludzie nie chcą więcej informacji. Mają powyżej uszu informacji. Chcą wiary, wiary w Ciebie, Twoje cele, Twój sukces i w opowiadaną przez Ciebie historię.",
+      "quote5": "Naprawdę wierzę, że ludzie poszukują historii, które rzeczywiście coś znaczą — inspirują, dają się uogólnić i pokazują rozwiązania problemów.",
+      "quote6": "Jeśli chcesz wpłynąć na osobę lub grupę i wnieść jakąś wartość w ich życie codzienne, opowiedz im ciekawą historię.",
+      "quote7": "Kiedy mi opowiadasz — to esej, kiedy pokazujesz — to coś więcej - to opowieść.",
+      "quote8": "Jeśli nie rozpoznajesz drzew, możesz zgubić drogę w lesie, ale jeśli nie poznajesz opowieści i doświadczeń innych ludzi, możesz zagubić się w życiu.",
+      "quote9": "Narracje to kreatywne pokazanie samego życia poprzez przekazanie własnych doświadczeń w formie prostych opowieści, jasnych i bardziej zrozumiałych dla odbiorców. Stają się one wartościową walutą w kontaktach międzyludzkich.",
+      "quote10": "Brak możliwości efektywnego przekazywania informacji i wiedzy jest jednym z większych problemów jakich doświadczamy współcześnie.",
+      "quote11": "Być może narracje są po prostu danymi, które mają duszę.",
+      "quote12": "Narracje należy traktować jako ważne narzędzie w przekazywaniu istotnych informacji także w zarządzaniu.",
+      "quote13": "Istotą narracji jest to, że poza przekazywaną treścią skłania do refleksji."
     },
     "firstAddSplash": {
       "thisis": "To jest",

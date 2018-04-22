@@ -103,7 +103,21 @@ define({
       "lblAdd": "Jak chcete svůj Mapový deník nazvat?",
       "phAdd": "Zadejte nadpis...",
       "lblOR": "Nebo",
-      "lblHelp": "Prohlídka"
+      "lblHelp": "Prohlídka",
+      "quote0": "Vždy se najde místo pro příběh, který dokáže lidem rozšířit obzory.",
+      "quote1": "Příběhy jsou nejmocnějším způsobem, jakým lze v dnešní době vypustit do světa nápady.",
+      "quote2": "Příběhy, které vyprávíme, dávají světu jeho podobu. Pokud chcete změnit svět, musíte změnit svůj příběh. To platí jak pro jednotlivce, tak instituce.",
+      "quote3": "Nejkratší spojnicí mezi lidskou bytostí a pravdou je příběh.",
+      "quote4": "Lidé nechtějí vědět víc, už tak se topí v přemíře informací. Lidé vám chtějí věřit: vašim cílům, vašemu úspěchu a příběhu, který vyprávíte.",
+      "quote5": "Upřímně mám za to, že lidé vyhledávají příběhy, které jsou něčím důležité: příběhy o vykoupení, příběhy podněcující inspiraci a příběhy, které mají hlubší dopad.",
+      "quote6": "Chcete-li ovlivnit jednotlivce nebo skupinu lidí, aby přijali určitou hodnotu a žili podle ní každý den, povězte jim příběh.",
+      "quote7": "Komunikujete-li slovy, stává se z vyprávění esej. Když dáte lidem možnost vnímat děj očima, vytváříte skutečný příběh.",
+      "quote8": "Když neznáte stromy, můžete se snadno ztratit v lese, ale když neznáte příběhy, můžete se ztratit v životě.",
+      "quote9": "Příběhy jsou kreativním převodem samotného života do silnějších, jasnějších a smysluplnějších zážitků. Jsou oběživem kontaktu s ostatními lidmi.",
+      "quote10": "Není většího utrpení pro člověka, než když si v sobě nese nevyprávěný příběh.",
+      "quote11": "Možná že příběhy jsou jen data obdařená duší.",
+      "quote12": "Příběhy jsou tou nejmocnější zbraní v arzenálu každé vůdčí osobnosti.",
+      "quote13": "Příběhy ze své povahy zamlčují víc, než se snaží sdělit."
     },
     "firstAddSplash": {
       "thisis": "Toto je",

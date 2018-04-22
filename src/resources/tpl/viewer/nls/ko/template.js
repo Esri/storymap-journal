@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "이 링크가 활성화되어 있지 않음(섹션이 발행되지 않음)"
     },
     "headerFromCommon": {
-      "storymapsText": "스토리 맵",
+      "storymapsText": "스토리맵",
       "builderButton": "편집",
       "facebookTooltip": "Facebook에 공유",
       "twitterTooltip": "Twitter에 공유",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "이 모드가 활성화되면 스토리를 재생/일시정지하고 탐색 속도를 조정하는 컨트롤이 나타납니다.",
       "linksupdated": "링크가 업데이트되었습니다!",
       "print": "인쇄",
-      "printInstruction1": "이 페이지를 인쇄하기 전에 모든 콘텐츠를 불러오는 동안 기다려 주세요.",
-      "printInstruction1a": "일부 콘텐츠는 페이지 인쇄 설정 대화 상자의 ‘배경 색상 및 이미지 인쇄’를 활성화하지 않으면 인쇄할 수 없음",
+      "printInstruction1": "인쇄하기 전에 전체 스토리를 불러올 때까지 잠시 기다려 주세요.",
+      "printInstruction1a": "이 페이지를 불러오는 데 시간이 오래 걸리거나 일부 미디어가 표시되지 않으면 작은 범위의 섹션을 인쇄해 보세요.",
+      "printInstruction1b": "최상의 결과를 위해 브라우저의 인쇄 설정에서 배경 요소 인쇄를 활성화해야 할 수도 있습니다.",
       "printInstruction2": "이 페이지는 다른 사람과 공유할 수 없으며 대신 ${link}을(를) 공유함",
       "link": "스토리 링크",
+      "optionsHeader": "옵션",
       "printOptPageBreak": "새 페이지에서 각 섹션 시작",
       "makeTextBlack": "모든 텍스트를 검은색으로 설정",
-      "printWarning": "이 스토리 맵은 인쇄된 버전의 스토리 맵입니다. 비디오 및 대화형 맵 등의 동적 콘텐츠는 ${link}의 온라인 버전에서만 제공됨",
+      "showLinks": "링크 URL 표시",
+      "madeWith": "이 스토리는 ${JOURNAL_LINK_TEXT}로 이루어져 있습니다.",
+      "journalLinkText": "Esri 스토리맵 저널",
+      "readItOnline": "웹(${link})에서 대화형 버전을 읽어보세요.",
       "printMSWarning": "온라인 스토리에서만 제공되는 링크",
-      "printVideoWarning": "이 비디오는 온라인 버전의 이 스토리 맵에서 볼 수 있음"
+      "printVideoWarning": "이 비디오는 온라인 버전의 이 스토리 맵에서 볼 수 있음",
+      "printRangeHeader": "일부 스토리 인쇄",
+      "sectionLabel": "섹션:",
+      "apply": "적용",
+      "resetRange": "전체 스토리로 초기화"
     }
   }
 });

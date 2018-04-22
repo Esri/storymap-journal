@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Bu bağlantı etkin değil (bölüm yayınlanmamış)"
     },
     "headerFromCommon": {
-      "storymapsText": "Hikaye haritası",
+      "storymapsText": "Bir Story Map",
       "builderButton": "Düzenle",
       "facebookTooltip": "Facebook'ta Paylaş",
       "twitterTooltip": "Twitter'da Paylaş",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Bu etkin durumdayken hikayeyi oynatacak/duraklatacak ve gezinme hızını ayarlayacak kontroller vardır.",
       "linksupdated": "Bağlantılar güncellendi!",
       "print": "Yazdır",
-      "printInstruction1": "Bu sayfayı yazdırmadan önce tüm içeriğin yüklenmesini bekleyin",
-      "printInstruction1a": "Bazı içerik Sayfayı Yazdır ayarı iletişim kutusundaki \"Arka Plan Renklerini ve Resimlerini Yazdır\" seçeneği etkinleştirilmeden yazdırılamaz",
+      "printInstruction1": "Lütfen yazdırmadan önce tüm hikayenin yüklenmesini bekleyin",
+      "printInstruction1a": "Bu sayfa yavaş yükleniyorsa ya da bazı ortamlar görünmüyorsa, daha küçük bir bölüm aralığını yazdırmayı deneyin.",
+      "printInstruction1b": "En iyi sonuçlar için tarayıcınızın yazdırma ayarlarından arka plan öğelerinin yazdırılmasını etkinleştirmeniz gerekiyor olabilir.",
       "printInstruction2": "Bu sayfa başkalarıyla paylaşılamaz, bunun yerine ${link} bağlantısını paylaşın",
       "link": "hikaye bağlantısı",
+      "optionsHeader": "Seçenekler",
       "printOptPageBreak": "Her bölümü yeni sayfada başlat",
       "makeTextBlack": "Metnin tamamını siyah yap",
-      "printWarning": "Bu, bir hikaye haritasının yazdırılmış versiyonudur. Video ve etkileşimli harita gibi dinamik içerikler yalnızca çevrimiçi versiyon olan ${link} bağlantısında sunulur",
+      "showLinks": "Bağlantı URL'lerini göster",
+      "madeWith": "Bu hikaye ${JOURNAL_LINK_TEXT} ile yapıldı.",
+      "journalLinkText": "Esri Story Map Journal",
+      "readItOnline": "Etkileşimli sürümü web'de ${link} bağlantısından okuyun.",
       "printMSWarning": "bağlantı yalnızca çevrimiçi hikayede kullanılabilir",
-      "printVideoWarning": "Bu video bu hikaye haritasının çevrimiçi versiyonunda görüntülenebilir"
+      "printVideoWarning": "Bu video bu hikaye haritasının çevrimiçi versiyonunda görüntülenebilir",
+      "printRangeHeader": "Bu hikayenin bir kısmını yazdır",
+      "sectionLabel": "Bölümler:",
+      "apply": "Uygula",
+      "resetRange": "Tüm hikayeyi sıfırla"
     }
   }
 });

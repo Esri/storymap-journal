@@ -103,7 +103,21 @@ define({
       "lblAdd": "Apa nama Jurnal Peta Anda?",
       "phAdd": "Masukkan judul...",
       "lblOR": "Atau",
-      "lblHelp": "Ikut Tur"
+      "lblHelp": "Ikut Tur",
+      "quote0": "Selalu ada ruang untuk cerita yang dapat mengangkut orang ke tempat lain.",
+      "quote1": "Berbagi cerita merupakan cara yang paling ampuh untuk menyampaikan ide kepada dunia saat ini.",
+      "quote2": "Cerita yang kita sampaikan secara literal menciptakan dunia. Jika Anda ingin mengubah dunia itu, Anda perlu mengubah cerita Anda. Kebenaran ini berlaku untuk individu dan lembaga.",
+      "quote3": "Jarak terdekat antara manusia dan kebenaran ini adalah cerita.",
+      "quote4": "Orang tidak ingin informasi lebih banyak. Mereka sudah bosan dengan informasi. Mereka ingin percaya pada Anda, sasaran Anda, keberhasilan Anda, dan cerita yang Anda sampaikan.",
+      "quote5": "Saya benar-benar yakin bahwa orang mencari cerita yang benar-benar punya arti penting yang sangat membantu, menginspirasi, dan lebih dari sekadar bersifat pribadi.",
+      "quote6": "Jika Anda ingin memengaruhi seseorang atau sekelompok orang untuk memegang erat nilai tertentu dalam kehidupan sehari-hari mereka, sampaikan kepada mereka cerita yang meyakinkan.",
+      "quote7": "Jika Anda ucapkan, ia menjadi sebuah esai, tetapi jika Anda perlihatkan, ia menjadi sebuah cerita.",
+      "quote8": "Jika Anda tidak mengetahui pohon, Anda mungkin tersesat di hutan, tetapi jika Anda tidak mengetahui cerita, Anda mungkin tersesat dalam kehidupan.",
+      "quote9": "Cerita adalah konversi kreatif kehidupan itu sendiri yang lebih kuat, lebih jelas, pengalaman yang lebih berarti. Cerita itu adalah pedoman dalam hubungan manusia.",
+      "quote10": "Tidak ada kesengsaraan yang lebih besar daripada menahan cerita yang tak terungkapkan dalam diri Anda.",
+      "quote11": "Mungkin cerita hanyalah data yang memiliki jiwa.",
+      "quote12": "Cerita adalah satu-satunya senjata paling ampuh dalam gudang senjata seorang pemimpin.",
+      "quote13": "Sudah menjadi sifat cerita untuk meninggalkan lebih banyak hal daripada yang disajikannya."
     },
     "firstAddSplash": {
       "thisis": "Ini adalah",

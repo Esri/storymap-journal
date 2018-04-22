@@ -345,8 +345,8 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						val += $("#floatingPanel").width();
 
 					// Help, builder landing&quotes
-					$(".centerAlignOnFloat")
-						.css({ paddingRight: 0, paddingLeft: 0 })
+					$(".centerAlignOnFloat").addClass('is-floating')
+						.css({ paddingRight: '', paddingLeft: '' })
 						.css(paddingDir, val);
 
 					// Back button
@@ -390,7 +390,7 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 					$(".mapConfigOverlay.position, .mapConfigOverlay.popup, #mainStageLoadingIndicator, .mainStageErrorContainer").css("left", "50%");
 
 					// Reset centering that may have been done if user has changed layouts
-					$(".centerAlignOnFloat").css({ paddingRight: 0, paddingLeft: 0 });
+					$(".centerAlignOnFloat").removeClass('is-floating').css({ paddingRight: '', paddingLeft: '' });
 					$('.mediaBackContainer').css({left: '50%', right: 'inherit'});
 					$(".mainMediaContainer .imgContainer.center").css({ left: 0, right: 0 });
 					$(".mainMediaContainer .embedContainer.center").css({ left: 0, right: 0 });

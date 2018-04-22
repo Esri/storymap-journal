@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Lien de page Web",
       "lblEmbed": "Code incorporé",
+      "lblMustUseHTTPS": "Les liens vers le contenu web doivent commencer par HTTPS",
       "lblOR": "OU",
       "lblError1": "Erreur. Effacez un des deux champs en entrée.",
       "lblError2": "Le code incorporé ne peut contenir qu'un %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Lien d'image",
       "lblURLPH": "Le lien doit se terminer par .jpg, .png, .gif ou .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Cette image ne semble pas valide. Spécifiez un lien direct vers un fichier image (votre URL se terminera généralement par .jpg ou .png). Les liens vers une page Web contenant une image ne fonctionneront pas.",
+      "lblURLErrorHTTPS": "Le lien de cette image n’est pas valide. L’URL doit commencer par HTTPS et se terminer par une extension de fichier image prise en charge (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Vérification de l'image...",
       "lblLabel": "Légende de l'image",
       "lblLabel1": "Légende",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Ajuster",
       "lblPosition4": "Etirer",
       "lblPosition5": "Personnalisé",
-      "lblURLHelp": "Pour des résultats optimaux, les images ne doivent pas dépasser 400 ko. Utilisez des images JPG compressées à 80 % avec les largeurs recommandées suivantes : 2 000 pixels pour la grande scène ou le panneau de narration avec le bouton Agrandir, 1 000 pixels pour le panneau de narration sans le bouton Agrandir.<br><br>Si une image liée s'affiche lentement, chargez-la dans votre narration pour de meilleurs résultats.",
+      "lblURLHelp": "Le lien de l’image doit commencer par HTTPS.<br><br>Pour des résultats optimaux, les images ne doivent pas dépasser 400 ko. Utilisez des images JPG compressées à 80 % avec les largeurs recommandées suivantes : 2 000 pixels pour la grande scène ou le panneau de narration avec le bouton Agrandir, 1 000 pixels pour le panneau de narration sans le bouton Agrandir.<br><br>Si une image liée s’affiche lentement, chargez-la dans votre récit pour de meilleurs résultats.",
       "tooltipDimension": "La valeur peut être spécifiée en 'px' ou '%'",
       "tooltipDimension2": "La valeur doit être spécifiée en 'px'",
       "lblPosition2Explain": "(peut être rognée)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "L'utilisateur verra un symbole ponctuel cartographique en cliquant sur le lien"
     },
     "editorActions": {
-      "navigate": "Accéder à une section",
+      "navigate": "Accéder à une autre section",
       "remove": "Supprimer l'action",
       "preview": "Prévisualiser l'action"
     },

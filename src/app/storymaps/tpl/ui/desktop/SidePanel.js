@@ -390,12 +390,21 @@ define(["lib-build/tpl!./SidePanelSection",
 				}, 200);
 			}
 
-			function onClickSection()
+			function onClickSection(evt)
 			{
+
 				var index = $(this).index();
 
-				if ( _activeSectionIndex == index )
+				if (_activeSectionIndex == index) {
 					return;
+				}
+
+				// we got here from a triggered focus event.
+				// which means the showSectionNumber and navigationCallback
+				// would be duplicates. so skip them.
+				if (evt && evt.isTrigger) {
+					return;
+				}
 
 				_this.showSectionNumber(index);
 				navigationCallback(index);

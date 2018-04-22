@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Questo collegamento non è attivo (sezione non pubblicata)"
     },
     "headerFromCommon": {
-      "storymapsText": "Mappa collegata a una storia",
+      "storymapsText": "Story Map",
       "builderButton": "Modifica",
       "facebookTooltip": "Condividi su Facebook",
       "twitterTooltip": "Condividi su Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Quando questa modalità è attiva, sono disponibili controlli per riprodurre/sospendere la storia e regolare la velocità di navigazione.",
       "linksupdated": "Collegamenti aggiornati",
       "print": "Stampa",
-      "printInstruction1": "Attendere il caricamento di tutto il contenuto prima di stampare questa pagina",
-      "printInstruction1a": "Parte del contenuto potrebbe non essere stampato a meno che non si abiliti \"Stampa colori e immagini di sfondo\" nella finestra di dialogo Impostazione pagina di stampa",
+      "printInstruction1": "Attendere che il caricamento della storia sia completato prima di stampare",
+      "printInstruction1a": "Se la pagina si carica lentamente o se alcuni file multimediali non vengono visualizzati, provare a stampare una selezione minore di sezioni.",
+      "printInstruction1b": "Per risultati ottimali, potrebbe essere necessario abilitare la stampa degli elementi di sfondo nelle impostazioni di stampa del browser.",
       "printInstruction2": "Questa pagina non può essere condivisa con altri, condividere invece il collegamento ${link}",
       "link": "alla storia",
+      "optionsHeader": "Opzioni",
       "printOptPageBreak": "Iniziare ogni sezione su una nuova pagina",
       "makeTextBlack": "Tutto il testo in nero",
-      "printWarning": "Questa è una versione stampata di una Story Map. I contenuti dinamici come video e mappe interattive sono disponibili solo nella versione online dal collegamento ${link}",
+      "showLinks": "Mostra URL dei link",
+      "madeWith": "Questa storia è stata creata con ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Story Map Journal di Esri",
+      "readItOnline": "Leggi la versione interattiva sul Web su ${link}.",
       "printMSWarning": "disponibile solo nella storia online",
-      "printVideoWarning": "Questo video può essere visualizzato nella versione online di questa Story Map"
+      "printVideoWarning": "Questo video può essere visualizzato nella versione online di questa Story Map",
+      "printRangeHeader": "Stampa una parte della storia",
+      "sectionLabel": "Sezioni:",
+      "apply": "Applica",
+      "resetRange": "Ripristina tutta la storia"
     }
   }
 });

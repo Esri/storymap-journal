@@ -7,7 +7,6 @@
 	height: 100%;
 	/*min-width: 350px;*/
 	/*box-shadow: 4px 3px 6px 0px #333;*/
-	border-right: 1px solid black;
 	padding-left: 34px;
 }
 
@@ -100,7 +99,6 @@
 	bottom: 0;
 	left: 0;
 	height: 100%;
-	border-right: 1px solid black;
 	/* to be over scrollbar when placed on the right */
 	z-index: 2;
 }

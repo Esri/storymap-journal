@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Webpaginakoppeling",
       "lblEmbed": "Code voor inbedden",
+      "lblMustUseHTTPS": "Koppelingen naar webcontent moeten beginnen met HTTPS",
       "lblOR": "OF",
       "lblError1": "Fout: maak een van de twee velden leeg.",
       "lblError2": "Invoegcode kan maar één %IFRAMETAG% bevatten",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Afbeeldingskoppeling",
       "lblURLPH": "Koppeling moet eindigen met .jpg, .png, .gif of .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Deze afbeelding is blijkbaar niet geldig. Geef een directe koppeling naar een afbeeldingsbestand op (uw URL eindigt doorgaans op .jpg of .png). Koppelingen naar een webpagina die een afbeelding bevat, functioneren niet.",
+      "lblURLErrorHTTPS": "Deze afbeeldingskoppeling is niet geldig. De URL moet beginnen met HTTPS en eindigen met een ondersteunde afbeeldingsbestandsextensie (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Afbeelding bekijken...",
       "lblLabel": "Bijschrift afbeelding",
       "lblLabel1": "Bijschrift",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Passend maken",
       "lblPosition4": "Uitrekken",
       "lblPosition5": "Aangepast",
-      "lblURLHelp": "Voor het beste resultaat moeten de afbeeldingen kleiner zijn dan 400 KB. Gebruik gecomprimeerde JPG-afbeeldingen op 80% kwaliteit en deze aanbevolen afbeeldingsbreedte: 2000 pixels voor het hoofdvenster of verhalende paneel met de knop maximaliseren, 1000 pixels voor verhalend paneel zonder knop maximaliseren.<br><br>Als gekoppelde afbeeldingen langzaam zijn, zullen ze sneller geladen worden als u ze uploadt naar uw verhaal.",
+      "lblURLHelp": "Afbeeldingskoppeling moet beginnen met HTTPS. <br><br>Voor het beste resultaat moeten de afbeeldingen kleiner zijn dan 400 KB. Gebruik gecomprimeerde JPG-afbeeldingen op 80% kwaliteit en deze aanbevolen afbeeldingsbreedte: 2000 pixels voor het hoofdvenster of verhalende paneel met de knop maximaliseren, 1000 pixels voor verhalend paneel zonder knop maximaliseren.<br><br>Als gekoppelde afbeeldingen langzaam zijn, zullen ze sneller geladen worden als u ze uploadt naar uw verhaal.",
       "tooltipDimension": "De waarde kan in 'px' of '%' worden gespecificeerd",
       "tooltipDimension2": "De waarde moet worden opgegeven in 'px'",
       "lblPosition2Explain": "(kan worden bijgesneden)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "De gebruiker ziet een kaartmarkering wanneer hij/zij op de koppeling klikt"
     },
     "editorActions": {
-      "navigate": "Ga naar een sectie",
+      "navigate": "Navigeren naar een andere sectie",
       "remove": "Actie verwijderen",
       "preview": "Voorbeeld actie"
     },

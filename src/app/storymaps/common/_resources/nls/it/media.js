@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Collegamento a pagina Web",
       "lblEmbed": "Incorpora codice",
+      "lblMustUseHTTPS": "I link ai contenuti Web devono iniziare con HTTPS",
       "lblOR": "OPPURE",
       "lblError1": "Errore, cancellare uno dei due campi di input.",
       "lblError2": "Il codice incorporato può contenere un solo %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Collegamento a immagine",
       "lblURLPH": "Il collegamento deve terminare con .jpg, .png, .gif o .bmp.",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Questa immagine non sembra valida. Specificare un collegamento diretto a un file immagine (l'URL in genere termina con .jpg o .png). I collegamenti a una pagina Web che contiene un'immagine non funzioneranno.",
+      "lblURLErrorHTTPS": "Link dell’immagine non valido. L’URL deve iniziare con HTTPS e terminare con un’estensione supportata per i file immagine (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Verifica immagine in corso...",
       "lblLabel": "Didascalia immagine",
       "lblLabel1": "Didascalia",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Adatta",
       "lblPosition4": "Estendi",
       "lblPosition5": "Personalizza",
-      "lblURLHelp": "Per ottimizzare i risultati, le immagini devono avere dimensioni minori di 400 KB. Utilizzare immagini JPG compresse con una qualità all'80%, nonché le seguenti larghezze consigliate: 2000 pixel per i pannelli di visualizzazione principale o narrazione, 1000 pixel per i pannelli di narrazione senza il pulsante di ingrandimento.<br><br>Se la visualizzazione di un'immagine collegata risulta rallentata, caricare l'immagine nella storia per ottimizzare il risultato.",
+      "lblURLHelp": "I link delle immagini devono iniziare con HTTPS.<br><br>Per ottimizzare i risultati, le immagini devono avere dimensioni inferiori a 400 KB. Utilizzare immagini JPG compresse con qualità all'80%e le seguenti larghezze consigliate: 2000 pixel per i pannelli di visualizzazione principale o narrazione, 1000 pixel per i pannelli di narrazione senza il pulsante di ingrandimento.<br><br>Se la visualizzazione di un'immagine collegata a un link risulta lenta, caricare l'immagine nella storia per ottimizzare il risultato.",
       "tooltipDimension": "Il valore può essere specificato come 'px' o '%'",
       "tooltipDimension2": "Il valore deve essere specificato in 'px'",
       "lblPosition2Explain": "(possibile ritaglio)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Quando l'utente fa clic sul collegamento, verrà visualizzato un marcatore di mappa"
     },
     "editorActions": {
-      "navigate": "Passa a una sezione",
+      "navigate": "Passa a un’altra sezione",
       "remove": "Rimuovi azione",
       "preview": "Anteprima azione"
     },

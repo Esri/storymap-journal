@@ -9,11 +9,13 @@ define(["lib-build/tpl!./ViewHome",
 	){
 		return function ViewHome(container, showView)
 		{
+			var _prevWebpage = null;
 			container.append(viewTpl({
 				lblUrl: i18n.commonMedia.webpageSelectorHome.lblUrl,
 				lblEmbed: i18n.commonMedia.webpageSelectorHome.lblEmbed,
-				phURL: "http://www.esri.com",
-				phEmbed: "<iframe width=&quot;100%&quot; height=&quot;600px&quot; src=&quot;http://...&quot;></iframe>",
+				lblMustUseHTTPS: i18n.commonMedia.webpageSelectorHome.lblMustUseHTTPS,
+				phURL: "https://www.example.com",
+				phEmbed: "<iframe width=&quot;100%&quot; height=&quot;600px&quot; src=&quot;https://www.example.com&quot;></iframe>",
 				lblOR: i18n.commonMedia.webpageSelectorHome.lblOR,
 				btnConfigure: i18n.commonMedia.webpageSelectorHome.configure
 			}));
@@ -27,10 +29,12 @@ define(["lib-build/tpl!./ViewHome",
 				if ( cfg && cfg.mode == "edit" && cfg.media && cfg.media.type == "webpage" ) {
 					container.find('.url').val(cfg.media.webpage.url || '');
 					container.find('.textarea').val(cfg.media.webpage.frameTag || '');
+					_prevWebpage = cfg.media.webpage;
 				}
 				else {
 					container.find('.url').val('');
 					container.find('.textarea').val('');
+					_prevWebpage = null;
 				}
 
 				onDataUpdate();
@@ -95,6 +99,12 @@ define(["lib-build/tpl!./ViewHome",
 
 					node.attr('src', CommonHelper.convertURLHTTPS(node.attr('src')));
 					frameTag = node.prop('outerHTML').replace(/ xmlns="[^"]*"/, '');
+				}
+
+				if (_prevWebpage) {
+					_prevWebpage.url = url;
+					_prevWebpage.frameTag = frameTag;
+					return _prevWebpage;
 				}
 
 				return {

@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Siglă organizaţie",
       "logoCustomRadio": "Sigla mea",
       "logoCustomLabel": "Imagine:",
-      "logoCustomUploadHelp": "Siglele arată cel mai bine dacă au un raport lăţime/înălţime între 1:1 şi 5:1. Dacă o siglă conectată este trasată lent, salvaţi o copie şi încărcaţi-o aici.",
+      "logoCustomUploadHelp": "Link-ul imaginii siglei trebuie să înceapă cu HTTPS. Siglele arată cel mai bine dacă au un raport lăţime/înălţime între 1:1 şi 5:1. Dacă o siglă conectată este trasată lent, salvaţi o copie şi încărcaţi-o aici.",
       "logoCustomUploadTooltip": "Utilizaţi o siglă încărcată",
       "logoCustomUploadButton": "Încărcaţi o siglă",
       "logoUploadSizeError": "Dimensiunea fişierului GIF este prea mare. Redimensionaţi la o lăţime de pixel de ${PIXEL-WIDTH}.",
+      "logoCustomLinkHTTPSError": "Link-ul trebuie să înceapă cu HTTPS",
       "logoCustomLinkTooltip": "Link către o siglă",
       "logoCustomLinkPlaceholder": "Adresă URL imagine",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Sigla poate fi un fişier .bmp, .gif, .jpg, .jpeg sau .png file. Imaginile gif trebuie să aibă o lăţime sub 250 px şi o dimensiune mai mică de 10 Mb.",
       "logoCustomTargetPlaceholder": "Pagină web care va fi deschisă atunci când se face clic pe siglă",
       "logoSocialText": "Slogan:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Această secţiune",
       "homeSection": "Secţiune principală",
       "hiddenSection": "Secţiune ascunsă"
+    },
+    "bannerNotification": {
+      "learnMore": "Aflaţi mai multe",
+      "close": "Închidere",
+      "dontShowAgain": "Nu afişa acest mesaj din nou"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Mesaj important referitor la Securitatea web şi Story Maps",
+      "s1h1": "Esri îmbunătăţeşte securitatea Story Maps",
+      "s1p1": "Story Maps sunt operaționale pe internet, iar comunitatea web depune toate eforturile pentru a stabili şi implementa o mai bună securitate. HTTPS, care furnizează o conexiune securizată pentru conţinutul transmis prin internet, este recunoscut din ce în ce mai des ca modalitatea agreată pentru a accesa conţinut web. Majoritatea browserelor moderne emit acum mesaje de avertizare atunci când HTTP este utilizat în loc de HTTPS. Datorită acestui standard din ce în ce mai des folosit, începând cu actualizarea din iunie 2018 a ArcGIS Online, Story Maps dvs. vor trebui să folosească HTTPS.",
+      "s1p2": "În mod concret, acest lucru înseamnă că o Story Map şi întregul său conţinut (inclusiv imagini, straturi tematice, aplicaţii încorporate şi site-uri web) trebuie să fie accesate folosind mai degrabă link-uri care încep cu HTTPS decât HTTP. Acest lucru asigură cititorilor dvs. o experienţă optimă, deoarece cele mai multe browsere web vor indica faptul că relatările dvs. sunt sigure.",
+      "s2h1": "Ce trebuie să fac?",
+      "s2p1": "Esri depune toate eforturile pentru a face această tranziţie să fie una uşoară pentru autorii Story Map şi pentru cititori. Sunt disponibile acum instrumentele în aplicaţiile de creare Story Map şi în Relatările mele care vă ajută să găsiţi conţinut nesigur (HTTP) în relatările dvs. şi vă oferă recomandări pentru modul în care puteţi să-l gestionați. Verificaţi-vă relatările pentru a vedea dacă includ conţinut nesigur și actualizați la HTTPS înainte de iunie 2018.",
+      "action1": "Închidere",
+      "action2": "Verificaţi-mi acum relatările",
+      "action3": "Aflaţi mai multe"
     }
   }
 });

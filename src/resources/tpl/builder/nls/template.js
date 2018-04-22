@@ -104,7 +104,21 @@ define({
 				lblAdd: "What do you want to call your Map Journal?",
 				phAdd: "Enter your title...",
 				lblOR: "Or",
-				lblHelp: "Take a Tour"
+				lblHelp: "Take a Tour",
+				quote0: "There's always room for a story that can transport people to another place.",
+				quote1: "Storytelling is the most powerful way to put ideas into the world today.",
+				quote2: "The stories we tell literally make the world. If you want to change the world, you need to change your story. This truth applies both to individuals and institutions.",
+				quote3: "The shortest distance between a human being and the truth is a story.",
+				quote4: "People don’t want more information. They are up to their eyeballs in information. They want faith–faith in you, your goals, your success, in the story you tell.",
+				quote5: "I truly believe that people are looking for stories that really mean something–stories that are redemptive, inspiring, and bigger than an individual.",
+				quote6: "If you wish to influence an individual or a group to embrace a particular value in their daily lives, tell them a compelling story.",
+				quote7: "If you tell me, it’s an essay. If you show me, it’s a story.",
+				quote8: "If you don’t know the trees you may be lost in the forest, but if you don’t know the stories you may be lost in life.",
+				quote9: "Stories are the creative conversion of life itself into a more powerful, clearer, more meaningful experience. They are the currency of human contact.",
+				quote10: "There is no greater agony than bearing an untold story inside you.",
+				quote11: "Maybe stories are just data with a soul.",
+				quote12: "Stories are the single most powerful weapon in a leader’s arsenal.",
+				quote13: "It is the nature of stories to leave out far more than they include."
 			},
 			firstAddSplash: {
 				thisis: "This is the",

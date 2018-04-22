@@ -17,6 +17,7 @@ define(["lib-build/css!./Builder",
 		"esri/IdentityManager",
 		"esri/request",
 		"dojo/topic",
+		"storymaps/common/ui/bannerNotification/BannerNotification",
 		"lib-app/history.min"],
 	function(
 		viewCss,
@@ -37,7 +38,8 @@ define(["lib-build/css!./Builder",
 		arcgisUtils,
 		IdentityManager,
 		esriRequest,
-		topic)
+		topic,
+		BannerNotification)
 	{
 		var _core = null,
 			_builderView = null,
@@ -98,6 +100,47 @@ define(["lib-build/css!./Builder",
 			};
 
 			app.builder.cleanApp = cleanApp;
+
+			// Show https-transition notification when app loads
+			if (!app.data.isOrga()) {
+				topic.subscribe('tpl-ready', function() {
+					var strings = i18n.commonCore.httpsTransitionMessage;
+					new BannerNotification({
+						id: "httpsTransitionMessage",
+						bannerMsg: strings.bannerMsg,
+						mainMsgHtml: '\
+							<h2>' + strings.s1h1 + '</h2>\
+							<p>' + strings.s1p1 + '</p>\
+							<p>' + strings.s1p2 + '</p>\
+							<h2>' + strings.s2h1 + '</h2>\
+							<p>' + strings.s2p1 + '</p>\
+						',
+						actions: [
+							{
+								primary: true,
+								string: strings.action1,
+								closeOnAction: true
+							},
+							{
+								string: strings.action2,
+								action: function() {
+									window.open('https://storymaps.arcgis.com/en/my-stories/');
+								}
+							},
+							{
+								string: strings.action3,
+								action: function() {
+									window.open('https://links.esri.com/storymaps/web_security_faq');
+								}
+							}
+						],
+						cookie: {
+							domain: window.location.hostname,
+							maxAge: 60 * 60 * 24 * 365
+						}
+					});
+				});
+			}
 		}
 
 		function appInitComplete()

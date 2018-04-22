@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Šī saite nav aktīva (sadaļa nav publicēta)"
     },
     "headerFromCommon": {
-      "storymapsText": "Stāstu karte",
+      "storymapsText": "Kartes stāsts",
       "builderButton": "Rediģēt",
       "facebookTooltip": "Koplietot Facebook",
       "twitterTooltip": "Koplietot Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Pēc šī režīma aktivizēšanas ir pieejamas vadīklas stāsta demonstrēšanai/apturēšanai un navigācijas ātruma regulēšanai.",
       "linksupdated": "Saites ir atjauninātas.",
       "print": "Drukāt",
-      "printInstruction1": "Pirms lapas drukāšanas pagaidiet, līdz tiek ielādēts viss saturs.",
-      "printInstruction1a": "Daļu satura var nebūt iespējams izdrukāt, ja nebūsiet Drukas lapas iestatījumu dialogā iespējojis opciju \"Drukāt fona krāsas un attēlus\".",
+      "printInstruction1": "Pirms drukāšanas uzgaidiet, līdz tiks ielādēts viss stāsts",
+      "printInstruction1a": "Ja šīs lapas ielāde ir lēna vai dažas multivides vienības netiek parādītas, mēģiniet drukāt mazāku sadaļu diapazonu.",
+      "printInstruction1b": "Lai iegūtu labākos rezultātus, iespējams, sava pārlūka drukāšanas iestatījumos ir jāaktivizē fona elementu drukāšana.",
       "printInstruction2": "Šo lapu nav iespējams koplietot ar citiem, tā vietā koplietojiet ${link}",
       "link": "saite uz stāstu",
+      "optionsHeader": "Varianti",
       "printOptPageBreak": "Sāciet katru sadaļu jaunā lapā",
       "makeTextBlack": "Iekrāsot visu tekstu melnu",
-      "printWarning": "Šī ir stāsta kartes drukas versija. Dinamiskais saturs, piemēram, video un interaktīvās mapes ir pieejami tikai tiešsaistes versijā: ${link}",
+      "showLinks": "Rādīt saišu vietrāžus URL",
+      "madeWith": "Šis stāsts tika izveidots, izmantojot ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esri Kartes stāsta žurnāls",
+      "readItOnline": "Izlasiet interaktīvo versiju tīmekļa vietnē ${link}.",
       "printMSWarning": "saite uz stāstu, kas pieejams tikai tiešsaistē",
-      "printVideoWarning": "Šo video var skatīties šīs stāstu kartes tiešsaistes versijā."
+      "printVideoWarning": "Šo video var skatīties šīs stāstu kartes tiešsaistes versijā.",
+      "printRangeHeader": "Izdrukāt šī stāsta daļu",
+      "sectionLabel": "Sadaļas:",
+      "apply": "Lietot",
+      "resetRange": "Atiestatīt uz pilno stāstu"
     }
   }
 });

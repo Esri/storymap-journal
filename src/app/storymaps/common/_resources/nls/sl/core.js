@@ -71,7 +71,7 @@ define({
       "btnPrivate": "Zasebno",
       "btnPrivateTooltip": "Zgodbo lahko vidite samo vi",
       "btnOrg": "Organizacija",
-      "btnOrgTooltip": "Zgodbo lahko vidijo samo člani vaše organizacije",
+      "btnOrgTooltip": "Zgodbo lahko vidijo samo uporabniki vaše organizacije",
       "btnPublic": "Javno",
       "btnPublicTooltip": "Vsi lahko vidijo zgodbo",
       "loadingMessage": "Preverjanje težav v vaši zgodbi",
@@ -88,8 +88,8 @@ define({
       "notavailable4": "Moje zgodbe",
       "notavailable5": "stran z elementi",
       "notavailable6": "Oprostite, ta funkcionalnost ni v celoti podprta v razvijalskem načinu. Odvisno od vašega namestitvenega scenarija bo ta funkcionalnost podprta po namestitvi.",
-      "notavailable7": "Obvezno obiščite %MYCONTENT%, da se prepričate, da so karte in sloji, uporabljeni v vaši zgodbi, prav tako deljeni.",
-      "notavailable8": "Moje vsebine",
+      "notavailable7": "Obvezno obiščite %MYCONTENT%, da se prepričate, da so karte in sloji, uporabljeni v vaši zgodbi, prav tudi deljeni.",
+      "notavailable8": "Moja vsebina",
       "mystoriesinvite2": "Za izboljšanje videza vaše zgodbe na družbenih omrežjih uporabite ${MYSTORIES}, da dodate povzetek in sličico."
     },
     "settings": {
@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Logotip organizacije",
       "logoCustomRadio": "Moj logotip",
       "logoCustomLabel": "Slika:",
-      "logoCustomUploadHelp": "Logotipi so videti najboljše, ko imajo razmerje širine in višine med 1 : 1 in 5 : 1. Če se povezani logotip počasi izrisuje, shranite kopijo in jo naložite tukaj.",
+      "logoCustomUploadHelp": "Povezava slike logotipa se mora začeti s HTTPS. Logotipi so videti najboljše, ko imajo razmerje širine in višine med 1 : 1 in 5 : 1. Če se povezani logotip počasi izrisuje, shranite kopijo in jo naložite tukaj.",
       "logoCustomUploadTooltip": "Uporabite naložen logotip",
       "logoCustomUploadButton": "Naloži logotip",
       "logoUploadSizeError": "Dimenzije GIF-a so prevelike. Spremenite velikost na ${PIXEL-WIDTH} pikslov širine.",
+      "logoCustomLinkHTTPSError": "Povezava se mora začeti s HTTPS",
       "logoCustomLinkTooltip": "Povezava do logotipa",
       "logoCustomLinkPlaceholder": "URL slike",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logotip je lahko datoteka .bmp, .gif, .jpg, .jpeg, ali .png. Datoteke GIF morajo biti široke manj kot 250 px in manjše od 10 MB.",
       "logoCustomTargetPlaceholder": "Spletna stran se odpre, ko kliknete na logotip",
       "logoSocialText": "Označeno besedilo:",
@@ -129,11 +131,27 @@ define({
       "subtitle": "Uredite podnaslov elementa za %TPL_NAME%"
     },
     "sectionNavigation": {
-      "select": "Izberite odsek...",
-      "section": "Odsek",
-      "thisSection": "Ta odsek",
-      "homeSection": "Začetni odsek",
-      "hiddenSection": "Skriti odsek"
+      "select": "Izberite razdelek ...",
+      "section": "Razdelek",
+      "thisSection": "Ta razdelek",
+      "homeSection": "Začetni razdelek",
+      "hiddenSection": "Skriti razdelek"
+    },
+    "bannerNotification": {
+      "learnMore": "Izvedi več",
+      "close": "Zapri",
+      "dontShowAgain": "Tega sporočila ne kaži več"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Pomembno sporočilo o spletni varnosti in kartah z zgodbo",
+      "s1h1": "Esri izboljšuje varnost kart z zgodbo",
+      "s1p1": "Vaše karte z zgodbo živijo na spletu in spletna skupnost si nenehno prizadeva za vzpostavitev in izvajanje boljše varnosti. HTTPS, ki zagotavlja varno povezavo za vsebino, preneseno prek interneta, se pojavlja kot pričakovani način za dostop do spletnih vsebin. Večina sodobnih brskalnikov sedaj prikazuje opozorilna sporočila, ko je namesto HTTPS uporabljen HTTP. Zaradi tega nastajajočega standarda, ki bo stopil v veljavo junija 2018 s posodobitvijo ArcGIS Online, bodo vaše karte z zgodbo morale uporabljati HTTPS.",
+      "s1p2": "Praktično gledano to pomeni, da bo do karte z zgodbo in vseh njenih vsebin (vključno s slikami, sloji, vdelanimi aplikacijami in spletnimi stranmi) treba dostopati s pomočjo povezav, ki se začnejo s HTTPS in ne s HTTP. To zagotavlja najboljšo izkušnjo vašim bralcem, saj bo večina brskalnikov označevala, da so vaše zgodbe varne.",
+      "s2h1": "Kaj moram storiti?",
+      "s2p1": "Podjetje Esri si prizadeva, da bo to enostaven prehod za avtorje in bralce kart z zgodbo. Sedaj so na voljo orodja v graditeljih kart z zgodbo in mojih zgodbah, ki vam pomagajo najti negotovo vsebino (HTTP) v vaših zgodbah in zagotavljajo priporočila, kako jih obravnavati. Preverite vaše zgodbe za negotovo vsebino in posodobite na HTTPS pred junijem 2018.",
+      "action1": "Trenutna drsnica",
+      "action2": "Preveri moje zgodbe zdaj",
+      "action3": "Izvedi več"
     }
   }
 });

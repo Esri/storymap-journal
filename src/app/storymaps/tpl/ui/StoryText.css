@@ -214,7 +214,10 @@ p[tabindex='0'] > .image-wrapper {
 }
 
 #cboxClose {
-	top: 0px;
+	/* give focus ring a bit of space */
+	top: 3px;
+	right: 3px !important;
+	outline-width: medium;
 	bottom: initial !important;
 	width: 39px !important;
 	height: 39px;

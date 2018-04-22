@@ -84,6 +84,7 @@ define({
 			webpageSelectorHome: {
 				lblUrl: "Web page link",
 				lblEmbed: "Embed code",
+				lblMustUseHTTPS: "Links to web content must begin with HTTPS",
 				lblOR: "OR",
 				lblError1: "Error, clear one of the two input fields.",
 				lblError2: "Embed code can only contain one %IFRAMETAG%",
@@ -92,7 +93,9 @@ define({
 			mediaConfigure: {
 				lblURL: "Image link",
 				lblURLPH: "Link should end with .jpg, .png, .gif, or .bmp",
+				lblURLPHHTTPS: "https://www.example.com/image.jpg",
 				lblURLError: "This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work.",
+				lblURLErrorHTTPS: "This image link is not valid. The URL must begin with HTTPS and end with a supported image file extension (.jpg, .png, .gif, .bmp).",
 				lblURLCheck: "Checking image...",
 				lblLabel: "Image caption",
 				lblLabel1: "Caption",
@@ -107,7 +110,7 @@ define({
 				lblPosition3: "Fit",
 				lblPosition4: "Stretch",
 				lblPosition5: "Custom",
-				lblURLHelp: "For best results, images should be less than 400 KB. Use compressed JPG images at 80% quality and these recommended image widths: 2000 pixels for main stage or narrative panel with maximize button, 1000 pixels for narrative panel without maximize button.<br><br>If a linked image draws slowly, upload it to your story for better results.",
+				lblURLHelp: "Image link must begin with HTTPS.<br><br>For best results, images should be less than 400 KB. Use compressed JPG images at 80% quality and these recommended image widths: 2000 pixels for main stage or narrative panel with maximize button, 1000 pixels for narrative panel without maximize button.<br><br>If a linked image draws slowly, upload it to your story for better results.",
 				tooltipDimension: "The value can be specified in 'px' or '%'",
 				tooltipDimension2: "The value has to be specified in 'px'",
 				lblPosition2Explain: "(may crop)",
@@ -129,7 +132,7 @@ define({
 				mapMarkerExplain: "User will see a map marker when clicking the link"
 			},
 			editorActions: {
-				navigate: "Navigate to a section",
+				navigate: "Navigate to another section",
 				remove: "Remove action",
 				preview: "Preview action"
 			},

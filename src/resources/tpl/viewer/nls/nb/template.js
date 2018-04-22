@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Denne koblingen er ikke aktiv (seksjonen er ikke publisert)"
     },
     "headerFromCommon": {
-      "storymapsText": "En story map",
+      "storymapsText": "Et fortellingskart",
       "builderButton": "Rediger",
       "facebookTooltip": "Del på Facebook",
       "twitterTooltip": "Del på Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Når denne modusen er aktivert, vises det kontroller for å spille av/pause historien og justere navigeringshastigheten.",
       "linksupdated": "Koblingene ble oppdatert",
       "print": "Skriv ut",
-      "printInstruction1": "Vent til alt innholdet er lastet inn før du skriver ut denne siden",
-      "printInstruction1a": "Noe innhold kan ikke skrives ut hvis du aktiverer «Skriv ut bakgrunnsfarger og bilder» i dialogboksen Skriv ut.",
+      "printInstruction1": "Vent til hele fortellingen er lastet før du skriver ut",
+      "printInstruction1a": "Hvis det tar lang tid å laste inn denne siden eller visse medier ikke vises, prøver du å skrive ut et mindre antall avsnitt.",
+      "printInstruction1b": "For å får best resultat kan det hende du må aktivere utskrift av bakgrunnselementer i utskriftsalternativene i nettleseren.",
       "printInstruction2": "Denne siden kan ikke deles med andre, del i stedet koblingen ${link}",
       "link": "koble til fortellingen",
+      "optionsHeader": "Alternativer",
       "printOptPageBreak": "Begynn hver del på en ny side",
       "makeTextBlack": "Gjør all tekst svart",
-      "printWarning": "Dette er en trykt versjon av et fortellingskart. Dynamisk innhold som videoer og interaktive kart er bare tilgjengelig i den elektroniske versjonen på ${link}",
+      "showLinks": "Vis koblings-URL-er",
+      "madeWith": "Denne fortellingen er laget med ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esris Story Map Journal",
+      "readItOnline": "Les den interaktive versjonen på nettet på ${link}.",
       "printMSWarning": "koblingen er bare tilgjengelig i fortellingen på nett",
-      "printVideoWarning": "Denne videoen kan sees i den elektroniske versjonen av dette fortellingskartet"
+      "printVideoWarning": "Denne videoen kan sees i den elektroniske versjonen av dette fortellingskartet",
+      "printRangeHeader": "Skriv ut en del av denne fortellingen",
+      "sectionLabel": "Avsnitt:",
+      "apply": "Bruk",
+      "resetRange": "Tilbakestill hele fortellingen"
     }
   }
 });

@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Kui see režiim on aktiveeritud, saate kasutada loo esitamise või peatamise ja liikumiskiiruse reguleerimise juhtelemente.",
       "linksupdated": "Lingid on värskendatud!",
       "print": "Prindi",
-      "printInstruction1": "Enne lehe printimist oodake, kuni kogu sisu on laaditud",
-      "printInstruction1a": "Osa sisu ei pruugita printida, kui te ei luba lehe printimise häälestusdialoogis seadet „Prindi taustavärvid ja -pildid”",
+      "printInstruction1": "Enne printimist oodake, kuni laaditud on kogu lugu",
+      "printInstruction1a": "Kui lehe laadimine on aeglane või osa meediumist ei kuvata, proovige printida korraga vähem jaotisi.",
+      "printInstruction1b": "Parima tulemuse saavutamiseks peate võib-olla lubama brauseri printimissätetes taustaelementide printimise.",
       "printInstruction2": "Seda lehte ei saa teistega jagada, selle asemel jagage linki: ${link}",
       "link": "lehe link",
+      "optionsHeader": "Valikud",
       "printOptPageBreak": "Alusta iga jaotist uuelt lehelt",
       "makeTextBlack": "Muuda kogu tekst mustaks",
-      "printWarning": "See on kaardiloo prinditud versioon. Dünaamiline sisu (nt videod ja interaktiivsed kaardid) on saadaval ainult veebiversioonis aadressil ${link}",
+      "showLinks": "Kuva linkide URL-id",
+      "madeWith": "Selle loo koostamisel kasutati: ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esri kaardiajakiri",
+      "readItOnline": "Lugege veebis interaktiivset versiooni: ${link}.",
       "printMSWarning": "link on saadaval üksnes loo veebiversioonis",
-      "printVideoWarning": "Seda videot saab vaadata kaardiloo veebiversioonis"
+      "printVideoWarning": "Seda videot saab vaadata kaardiloo veebiversioonis",
+      "printRangeHeader": "Prindi osa sellest loost",
+      "sectionLabel": "Jaotised:",
+      "apply": "Rakenda",
+      "resetRange": "Lähtesta täismahus loole"
     }
   }
 });

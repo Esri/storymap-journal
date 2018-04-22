@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Web lapas saite",
       "lblEmbed": "Iedarināt kodu",
+      "lblMustUseHTTPS": "Saitēm uz tīmekļa saturu ir jāsākas ar HTTPS",
       "lblOR": "VAI",
       "lblError1": "Kļūda, notīriet vienu no diviem ievades laukiem.",
       "lblError2": "Iegultais kods var saturēt tikai vienu %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Attēla saite",
       "lblURLPH": "Saites beigās ir jābūt .jpg, .png, .gif vai .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Šķiet, ka šis attēls nav derīgs. Lūdzu, norādiet tiešu saiti uz attēla failu (parasti URL beidzas ar .jpg vai .png). Saites uz web lapu, kurā atrodas attēls, nedarbosies.",
+      "lblURLErrorHTTPS": "Šī attēla saite nav derīga. Vietrādim URL ir jāsākas ar HTTPS un jābeidzas ar atbalstītu attēla faila paplašinājumu (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Notiek attēla pārbaude...",
       "lblLabel": "Attēla paraksts",
       "lblLabel1": "Uzraksts",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Ietilpināt",
       "lblPosition4": "Izstiept",
       "lblPosition5": "Pielāgots",
-      "lblURLHelp": "Lai iegūtu vislabāko rezultātu, attēliem ir jābūt mazākiem par 400 KB. Izmantojiet saspiestus JPG attēlus ar 80% kvalitāti un šiem ieteiktajiem attēla platumiem: 2000 pikseļi galvenajam posmam vai stāstījuma panelim ar maksimizēšanas pogu, 1000 pikseļi stāstījuma panelim bez maksimizēšanas pogas.<br><br>Ja saistītais attēls atveras lēni, tad augšupielādējiet to stāstā, lai ielāde notiktu ātrāk.",
+      "lblURLHelp": "Attēla saitei ir jāsākas ar HTTPS.<br><br>Lai iegūtu labākos rezultātus, attēliem ir jābūt mazākiem par 400 KB. Izmantojiet saspiestus JPG attēlus ar 80% kvalitāti un šiem ieteiktajiem attēla platumiem: 2000 pikseļu galvenajam posmam vai stāstījuma panelim ar maksimizēšanas pogu, 1000 pikseļu stāstījuma panelim bez maksimizēšanas pogas.<br><br>Ja saistītais attēls atveras lēni, tad augšupielādējiet to stāstā, lai ielāde notiktu ātrāk.",
       "tooltipDimension": "Vērtību var norādīt 'px' vai '%'",
       "tooltipDimension2": "Vērtība ir jānorāda pikseļos",
       "lblPosition2Explain": "(var apgriezt)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Noklikšķinot uz saites, lietotājam tiks rādīts kartes punkts"
     },
     "editorActions": {
-      "navigate": "Naviģēt uz sadaļu",
+      "navigate": "Navigēt uz citu sadaļu",
       "remove": "Noņemt darbību",
       "preview": "Darbības priekšskatījums"
     },

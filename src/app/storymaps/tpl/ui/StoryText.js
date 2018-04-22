@@ -296,9 +296,10 @@ define(["dojo/topic",
 
 			if ( action.type == "navigate" ) {
 				if (action.index !== undefined) {
-					topic.publish('story-navigate-section', action.index);
+					var adjustedIndex = app.data.getAdjustedIndex(action.index);
+					topic.publish('story-navigate-section', adjustedIndex);
 					if (fromKeyboard) {
-						topic.publish('story-focus-section', action.index);
+						topic.publish('story-focus-section', adjustedIndex);
 					}
 				}
 			}

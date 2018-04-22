@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Liên kết này không hoạt động (phần chưa được phát hành)"
     },
     "headerFromCommon": {
-      "storymapsText": "Story map",
+      "storymapsText": "Story Map",
       "builderButton": "Chỉnh sửa",
       "facebookTooltip": "Chia sẻ trên Facebook",
       "twitterTooltip": "Chia sẻ trên Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Khi chế độ này được kích hoạt, có các nút điều khiển để phát/tạm dừng câu chuyện và điều chỉnh tốc độ điều hướng.",
       "linksupdated": "Liên kết đã được cập nhật!",
       "print": "In",
-      "printInstruction1": "Vui lòng chờ toàn bộ nội dung được tải xong rồi mới in trang này",
-      "printInstruction1a": "Có thể không in được một số nội dung trừ khi kích hoạt \"In màu và hình nền\" trong hộp thoại thiết lập In Trang",
+      "printInstruction1": "Vui lòng đợi tải toàn bộ câu chuyện trước khi in",
+      "printInstruction1a": "Nếu trang này tải chậm hoặc một số phương tiện không xuất hiện, hãy thử in một phạm vi nhỏ hơn.",
+      "printInstruction1b": "Để có kết quả tốt hơn, bạn có thể cần bật lên chế độ in các thành phần nền ở phần thiết lập chức năng in ấn bên trong trình duyệt của bạn.",
       "printInstruction2": "Không thể chia sẻ trang này với người khác, thay vào đó, hãy chia sẻ ${link}",
       "link": "liên kết đến câu chuyện",
+      "optionsHeader": "Tùy chọn",
       "printOptPageBreak": "Bắt đầu mỗi phần trên trang mới",
       "makeTextBlack": "Chuyển tất cả văn bản sang màu đen",
-      "printWarning": "Đây là phiên bản in của story map. Nội dung động như video và bản đồ tương tác chỉ khả dụng trong phiên bản trực tuyến tại địa chỉ ${link}",
+      "showLinks": "Hiển thị URL liên kết",
+      "madeWith": "Câu chuyện này được thực hiện với ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Story Map Journal của Esri",
+      "readItOnline": "Đọc phiên bản tương tác trên trang web tại ${link}.",
       "printMSWarning": "liên kết chỉ khả dụng trong Story trực tuyến",
-      "printVideoWarning": "Video này chỉ xem được trong phiên bản trực tuyến của Story map."
+      "printVideoWarning": "Video này chỉ xem được trong phiên bản trực tuyến của Story map.",
+      "printRangeHeader": "In một phần của câu chuyện này",
+      "sectionLabel": "Các phần:",
+      "apply": "Áp dụng",
+      "resetRange": "Thiết lập lại toàn bộ câu chuyện"
     }
   }
 });

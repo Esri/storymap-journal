@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Webseiten-Link",
       "lblEmbed": "Eingebundener Code",
+      "lblMustUseHTTPS": "Links zu Webinhalten müssen mit HTTPS beginnen",
       "lblOR": "ODER",
       "lblError1": "Fehler. Löschen Sie den Inhalt eines der beiden Eingabefelder.",
       "lblError2": "Der eingebettete Code darf nur ein %IFRAMETAG% enthalten",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Bild-Link",
       "lblURLPH": "Link sollte mit .jpg, .png, .gif oder .bmp enden",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Dieses Bild ist scheinbar nicht gültig. Geben Sie einen direkten Link zu einer Bilddatei an (die URL endet in der Regel mit .jpg oder .png). Links zu einer Webseite, die Bilder enthält, funktionieren nicht.",
+      "lblURLErrorHTTPS": "Dieser Bildlink ist nicht gültig. Die URL muss mit HTTPS beginnen und mit einer unterstützten Erweiterung für Bilddateien (.jpg, .png, .gif, .bmp) enden.",
       "lblURLCheck": "Bild wird überprüft...",
       "lblLabel": "Bildüberschrift",
       "lblLabel1": "Beschriftung",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Einpassen",
       "lblPosition4": "Strecken",
       "lblPosition5": "Benutzerdefiniert",
-      "lblURLHelp": "Für optimale Ergebnisse sollten Bilder kleiner als 400 KB sein. Verwenden Sie komprimierte JPG-Bilder mit einer Qualität von 80 % sowie diese empfohlenen Bildbreiten: 2000 Pixel für den Haupt- oder Präsentationsbereich mit Vergrößerungsschaltfläche, 1000 Pixel für den Präsentationsbereich ohne Vergrößerungsschaltfläche.<br><br>Wenn ein verknüpftes Bild langsam aufgebaut wird, können Sie es in Ihre Story hochladen, um bessere Ergebnisse zu erzielen.",
+      "lblURLHelp": "Bild-Link muss mit HTTPS beginnen.<br><br>Für optimale Ergebnisse sollten Bilder kleiner als 400 KB sein. Verwenden Sie komprimierte JPG-Bilder mit einer Qualität von 80 % sowie folgenden empfohlenen Bildbreiten: 2000 Pixel für den Haupt- oder Präsentationsbereich mit Vergrößerungsschaltfläche, 1000 Pixel für den Präsentationsbereich ohne Vergrößerungsschaltfläche.<br><br>Wenn ein verknüpftes Bild langsam aufgebaut wird, können Sie es in Ihre Story hochladen, um bessere Ergebnisse zu erzielen.",
       "tooltipDimension": "Der Wert kann in \"Px\" oder \"%\" angegeben werden",
       "tooltipDimension2": "Der Wert muss in \"Px\" angegeben werden",
       "lblPosition2Explain": "(Zuschneiden möglich)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Beim Klicken auf den Link wird ein Karten-Marker angezeigt"
     },
     "editorActions": {
-      "navigate": "Zu einem Abschnitt navigieren",
+      "navigate": "Zu einem anderen Abschnitt navigieren",
       "remove": "Aktion entfernen",
       "preview": "Vorschau der Aktion anzeigen"
     },

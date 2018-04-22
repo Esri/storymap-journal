@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Organisatsiooni logo",
       "logoCustomRadio": "Minu logo",
       "logoCustomLabel": "Pilt:",
-      "logoCustomUploadHelp": "Logod näevad kõige paremad välja, kui nende laiuse ja kõrguse suhe on 1:1 kuni 5:1. Kui lingitud logo joonistatakse liiga aeglaselt, salvestage koopia ja laadige see siia üles.",
+      "logoCustomUploadHelp": "Logo pildi lingi alguses peab olema HTTPS. Logod näevad kõige paremad välja, kui nende laiuse ja kõrguse suhe on 1:1 kuni 5:1. Kui lingitud logo joonistatakse liiga aeglaselt, salvestage koopia ja laadige see siia üles.",
       "logoCustomUploadTooltip": "Kasuta üleslaaditud logo",
       "logoCustomUploadButton": "Laadi logo üles",
       "logoUploadSizeError": "GIF-i mõõtmed on liiga suured. Muutke GIF ${PIXEL-WIDTH} piksli laiuseks.",
+      "logoCustomLinkHTTPSError": "Lingi alguses peab olema HTTPS",
       "logoCustomLinkTooltip": "Lingi logoga",
       "logoCustomLinkPlaceholder": "Pildi URL",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logo võib olla .bmp, .gif, .jpg, .jpeg või .png laiendiga fail. Gifid peavad olema alla 250 piksli laiused ja kuni 10 Mb suurused.",
       "logoCustomTargetPlaceholder": "Veebileht, mis avaneb logol klõpsates",
       "logoSocialText": "Reklaamlause:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "See jaotis",
       "homeSection": "Kodujaotis",
       "hiddenSection": "Peidetud jaotis"
+    },
+    "bannerNotification": {
+      "learnMore": "Lisateave",
+      "close": "Sule",
+      "dontShowAgain": "Ära kuva enam seda teadet"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Oluline teade veebiturvalisuse ja kaardilugude kohta",
+      "s1h1": "Esri tegeleb kaardilugude turvalisuse tõstmisega",
+      "s1p1": "Teie kaardilood on veebis reaalajas ja veebikogukond töötab pidevalt selle nimel, et turvalisust parendada ja tõhustada. Interneti kaudu sisu turvalist edastamist võimaldav HTTPS on kujunemas veebisisule juurdepääsu eelistatud viisiks. Enamik moodsaid brausereid kuvavad hoiatusteate, kui HTTPS-i asemel kasutatakse HTTP-d. Selle uue standardi kujunemise tõttu on alates ArcGIS Online’i 2018. aasta juunikuu värskendusest teie kaardilugudel HTTPS-i kasutamine kohustuslik.",
+      "s1p2": "See tähendab, et juurdepääs kaardiloole ja kogu selle sisule (sh piltidele, kihtidele, manusrakendustele ja veebilehtedele) peab toimuma linkidega, mille alguses on HTTPS ja mitte HTTP. Nii tagatakse teie lugejatele parim kasutuskogemus, kuna enamik veebibrausereid näitab, et teie lugude avamine on turvaline.",
+      "s2h1": "Mida ma pean tegema?",
+      "s2p1": "Esri töötab selle nimel, et kaardilugude autoritele ja lugejatele kulgeks üleminek võimalikult lihtsalt. Juba praegu on kaardiloo koosturites ja jaotises Minu lood saadaval tööriistad, mis aitavad leida lugudes ebaturvalist sisu (HTTP) ja annavad soovitusi, mida sellega ette võtta. Palun kontrollige enne 2018. aasta juunit oma lugude sisu üle ja värskendage kogu ebaturvaline sisu uuele standardile HTTPS.",
+      "action1": "Sule",
+      "action2": "Kontrolli minu lugusid kohe",
+      "action3": "Lisateave"
     }
   }
 });

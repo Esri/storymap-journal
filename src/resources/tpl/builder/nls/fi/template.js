@@ -103,7 +103,21 @@ define({
       "lblAdd": "Millä nimellä haluat kutsua karttapäiväkirjaasi?",
       "phAdd": "Anna otsikko...",
       "lblOR": "Tai",
-      "lblHelp": "Käy kierroksella"
+      "lblHelp": "Käy kierroksella",
+      "quote0": "Aina on aikaa tarinalle, joka vie ihmiset toiseen paikkaan.",
+      "quote1": "Tarinankerronta on tehokkain tapa kertoa ideoista maailmalle nykyaikaisin keinoin.",
+      "quote2": "Tarinat, joita kerromme, luovat maailman kirjaimellisesti. Jos haluat muuttaa maailmaa, sinun on muutettava tarinaasi. Tämä totuus pätee sekä yksilöihin että instituutioihin.",
+      "quote3": "Lyhin etäisyys ihmisen ja totuuden välillä on tarina.",
+      "quote4": "Ihmiset eivät halua lisää tietoa. He ovat korviaan myöten täynnä tietoa. He haluavat uskoa sinuun, tavoitteisiisi ja onnistumiseesi tarinassa, jota kerrot.",
+      "quote5": "Uskon vakaasti, että ihmiset etsivät tarinoita, joilla on merkitystä, tarinoita, jotka kertovat pelastumisesta ja jotka ovat innostavia ja yksilöä suurempia.",
+      "quote6": "Jos haluat vaikuttaa yksittäiseen ihmiseen tai ryhmään siten, että he omaksuvat tietyn arvon jokapäiväisessä elämässään, kerro heille mukaansatempaava tarina.",
+      "quote7": "Jos kerrot minulle, kyse on kirjoitelmasta. Jos näytät sen minulle, kyse on tarinasta.",
+      "quote8": "Joskus et näe metsää puilta, mutta jos et tunne tarinoita, saatat eksyä elämässäsi.",
+      "quote9": "Tarinat ovat luova tapa muuntaa itse elämä tehokkaammaksi, selkeämmäksi ja merkityksellisemmäksi kokemukseksi. Tarinat ovat ihmiskontaktien valuutta.",
+      "quote10": "Ei ole suurempaa tuskaa kuin kantaa sisällään kertomatonta tarinaa.",
+      "quote11": "Tarinat ovat ehkä vain aineistoa ilman sielua.",
+      "quote12": "Tarinat ovat tehokkain yksittäinen ase johtajan arsenaalissa.",
+      "quote13": "Tarinoille on luonnollista jättää pois enemmän kuin ne sisältävät."
     },
     "firstAddSplash": {
       "thisis": "Tämä on",

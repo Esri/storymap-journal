@@ -103,7 +103,21 @@ define({
       "lblAdd": "Mis nime soovite kaardiajakirjale panna?",
       "phAdd": "Sisestage pealkiri...",
       "lblOR": "Või",
-      "lblHelp": "Tutvu võimalustega"
+      "lblHelp": "Tutvu võimalustega",
+      "quote0": "Alati leidub ruumi veel ühele loole, mis viib inimesed rändama.",
+      "quote1": "Jutustamine on tõhusaim viis tänapäeval ideede maailma toomiseks.",
+      "quote2": "Meie jutustatud lood kujundavad meie maailma. Kui soovite maailma muuta, peate muutma oma lugu. See tõsiasi kehtib nii inimeste kui organisatsioonide jaoks.",
+      "quote3": "Lugu on lühim tee inimese ja tõe vahel.",
+      "quote4": "Inimesed ei vaja uut informatsiooni. Nad on infoga üle küllastatud. Nad vajavad usku – usku teisse, teie eesmärkidesse, teie edusse ja loosse, mida te jutustate.",
+      "quote5": "Ma olen veendunud, et inimesed otsivad lugusid, millel on tähendus; lugusid, mis pakuvad lunastust, on inspireerivad ja üksikisikust suuremad.",
+      "quote6": "Kui soovite saavutada seda, et mõni inimene või inimrühm võtaks oma igapäevaelus omaks teatud väärtuse, jutustage neile üks haarav lugu.",
+      "quote7": "Kui sa seda räägid, on see visand. Kui sa seda näitad, on see lugu.",
+      "quote8": "Puid tundmata võib metsa eksida, kuid lugusid teadmata võib elus ära eksida.",
+      "quote9": "Lood on elu enese loominguline muundamine veelgi võimsamaks, selgemaks ja tähendusrikkamaks elamuseks. Lood on inimliku kontakti valuuta.",
+      "quote10": "Suurimat kripeldust võib tekitada jutustamata lugu.",
+      "quote11": "Ehk on lood tegelikult andmed, millel on hing?",
+      "quote12": "Lugu on kõige võimsam relv juhi arsenalis.",
+      "quote13": "Loo olemuse osaks on see, et välja jääb palju rohkem kui sisse mahub."
     },
     "firstAddSplash": {
       "thisis": "See on",

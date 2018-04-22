@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Logo der Organisation",
       "logoCustomRadio": "Eigenes Logo",
       "logoCustomLabel": "Bild:",
-      "logoCustomUploadHelp": "Logos wirken am besten, wenn das Verhältnis von Breite zu Höhe zwischen 1:1 und 5:1 liegt. Wenn ein verknüpftes Logo langsam aufgebaut wird, speichern Sie eine Kopie, und laden Sie es hier hoch.",
+      "logoCustomUploadHelp": "Der Bild-Link des Logos muss mit HTTPS beginnen. Bei Logos erzielen Sie die beste Wirkung, wenn das Verhältnis von Breite zu Höhe zwischen 1:1 und 5:1 liegt. Wenn ein verknüpftes Logo langsam aufgebaut wird, speichern Sie eine Kopie, und laden Sie es hier hoch.",
       "logoCustomUploadTooltip": "Ein hochgeladenes Logo verwenden",
       "logoCustomUploadButton": "Ein Logo hochladen",
       "logoUploadSizeError": "Die GIF-Datei ist zu groß. Ändern Sie die Größe zu einer Breite von ${PIXEL-WIDTH} Pixeln.",
+      "logoCustomLinkHTTPSError": "Link muss mit HTTPS beginnen",
       "logoCustomLinkTooltip": "Link zu einem Logo",
       "logoCustomLinkPlaceholder": "Bild-URL",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Das Logo kann eine BMP-, GIF-, JPG-, JPEG- oder PNG-Datei sein. GIF-Dateien müssen schmaler als 250 Pixel und kleiner als 10 MB sein.",
       "logoCustomTargetPlaceholder": "Website, die beim Klicken auf das Logo geöffnet wird",
       "logoSocialText": "Tag-Zeile:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Dieser Abschnitt",
       "homeSection": "Startabschnitt",
       "hiddenSection": "Ausgeblendeter Abschnitt"
+    },
+    "bannerNotification": {
+      "learnMore": "Mehr erfahren",
+      "close": "Schließen",
+      "dontShowAgain": "Diese Meldung nicht mehr anzeigen"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Wichtige Informationen zur Websicherheit von Story-Maps",
+      "s1h1": "Esri verbessert die Sicherheit von Story-Maps",
+      "s1p1": "Das Internet bildet den Rahmen für Ihre Story-Maps, und daher arbeitet die Web-Community stets daran, bessere Sicherheitsvorkehrungen zu entwickeln und umzusetzen. HTTPS, womit eine sichere Verbindung für im Internet übermittelte Inhalte hergestellt wird, setzt sich zunehmend als die Standardmethode für den Zugriff auf Webinhalte durch. Der Großteil der modernen Browser zeigt nun eine Warnmeldung an, wenn HTTP anstelle von HTTPS verwendet wird. Aufgrund des neuen Standards ist ab der ArcGIS Online-Aktualisierung im Juni 2018 die Verwendung von HTTPS in Ihren Story-Maps verpflichtend.",
+      "s1p2": "Kurz gesagt: Dies bedeutet, dass auf eine Story-Map und alle zugehörigen Inhalte (Bilder, Layer, eingebettete Apps und Websites) über HTTPS-Links anstelle von HTTP-Links zugegriffen werden muss. Auf diese Weise wird eine gute Benutzererfahrung für Ihre Leser sichergestellt, da die meisten Webbrowser anzeigen, dass Ihre Storys sicher sind.",
+      "s2h1": "Was muss ich tun?",
+      "s2p1": "Esri arbeitet daran, einen einfachen Übergang für Autoren und Leser von Story-Maps sicherzustellen. In den Story Map Buildern und in \"Eigene Storys\" stehen nun Werkzeuge zur Verfügung, mit denen Sie unsichere Inhalte (HTTP) in Ihren Storys finden können. Es werden ebenfalls Empfehlungen für die Problembehebung gegeben. Überprüfen Sie Ihre Storys auf unsichere Inhalte, und wechseln Sie vor der Aktualisierung im Juni 2018 zu HTTPS.",
+      "action1": "Schließen",
+      "action2": "Eigene Storys jetzt überprüfen",
+      "action3": "Weitere Informationen"
     }
   }
 });

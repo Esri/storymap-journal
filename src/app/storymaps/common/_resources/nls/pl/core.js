@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Logotyp instytucji",
       "logoCustomRadio": "Mój logotyp",
       "logoCustomLabel": "Obraz:",
-      "logoCustomUploadHelp": "Logotypy prezentują się najlepiej, gdy ich współczynnik szerokości do wysokości należy do zakresu od 1:1 do 5:1. Jeśli logotyp powiązany za pomocą łącza jest wyświetlany powoli, należy zapisać jego kopię i przesłać go w tym miejscu.",
+      "logoCustomUploadHelp": "Łącze do obrazu logotypu musi rozpoczynać się od ciągu HTTPS. Logotypy prezentują się najlepiej, gdy ich współczynnik szerokości do wysokości należy do zakresu od 1:1 do 5:1. Jeśli logotyp powiązany za pomocą łącza jest wyświetlany powoli, należy zapisać jego kopię i przesłać go w tym miejscu.",
       "logoCustomUploadTooltip": "Użyj przesłanego logotypu",
       "logoCustomUploadButton": "Prześlij logotyp",
       "logoUploadSizeError": "Wymiary obrazu w formacie GIF są za duże. Zmień jego wielkość, aby szerokość wynosiła ${PIXEL-WIDTH} pikseli.",
+      "logoCustomLinkHTTPSError": "Łącze musi rozpoczynać się od HTTPS",
       "logoCustomLinkTooltip": "Łącze do logotypu",
       "logoCustomLinkPlaceholder": "Adres URL obrazu",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logotyp może być plikiem w formacie .bmp, .gif, .jpg, .jpeg lub .png. Plik w formacie .gif musi mieć szerokość mniejszą niż 250 pikseli, a wielkość mniejszą niż 10 MB.",
       "logoCustomTargetPlaceholder": "Strona internetowa otwierana po kliknięciu logotypu",
       "logoSocialText": "Motto:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Ta sekcja",
       "homeSection": "Sekcja strony głównej",
       "hiddenSection": "Sekcja ukryta"
+    },
+    "bannerNotification": {
+      "learnMore": "Dowiedz się więcej",
+      "close": "Zamknij",
+      "dontShowAgain": "Nie pokazuj tej wiadomości ponownie"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Istotny komunikat dotyczący bezpieczeństwa internetowego i aplikacji Story Maps (Mapy narracyjne)",
+      "s1h1": "Firma Esri rozbudowuje zabezpieczenia map narracyjnych (Story Maps)",
+      "s1p1": "Mapy narracyjne funkcjonują w Internecie i społeczność internetowa stale pracuje nad opracowaniem i zaimplementowaniem lepszych zabezpieczeń. Protokół HTTPS, który udostępnia bezpieczne połączenie dla zasobów przesyłanych przez Internet, przedstawia się jako oczekiwany sposób dostępu do zasobów internetowych. Większość nowoczesnych przeglądarek obecnie wyświetla komunikaty ostrzegawcze, gdy jest używany protokół HTTP, a nie HTTPS. Z uwagi na ten nowoczesny standard, począwszy od aktualizacji usługi ArcGIS Online w czerwcu 2018 roku, mapy narracyjne będą wymagać użycia protokołu HTTPS.",
+      "s1p2": "W praktyce oznacza to, że dostęp do mapy narracyjnej i jej zasobów (w tym obrazów, warstw, osadzonych aplikacji i witryn internetowych) musi być uzyskiwany za pomocą łączy rozpoczynających się od HTTPS, a nie od HTTP. Jest to najlepsze rozwiązanie dla czytelników, ponieważ większość przeglądarek internetowych wskaże, że narracje są bezpieczne.",
+      "s2h1": "Co mam zrobić?",
+      "s2p1": "Firma Esri pracuje nad tym, aby niniejsza zmiana w jak najmniejszym stopniu wpływała na pracę autorów i użytkowników map narracyjnych. Obecnie w kreatorach map narracyjnych i w elemencie Moje narracje są dostępne narzędzia pomagające znaleźć niezabezpieczone zasoby (HTTP) w narracjach i przedstawiające zalecenia dotyczące ich zmiany. Należy sprawdzić narracje pod kątem niezabezpieczonych zasobów i zaktualizować je do protokołu HTTPS przed upływem czerwca 2018 roku.",
+      "action1": "Zamknij",
+      "action2": "Sprawdź teraz moje narracje",
+      "action3": "Dowiedz się więcej"
     }
   }
 });

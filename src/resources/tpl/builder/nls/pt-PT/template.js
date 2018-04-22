@@ -103,7 +103,21 @@ define({
       "lblAdd": "Que nome pretende dar ao seu Jornal de Mapa?",
       "phAdd": "Introduza o título...",
       "lblOR": "Ou",
-      "lblHelp": "Fazer uma visita guiada"
+      "lblHelp": "Fazer uma visita guiada",
+      "quote0": "Existe sempre espaço para uma história que pode transportar-nos para outro lugar.",
+      "quote1": "Contar histórias é a forma mais poderosa de colocar ideias no mundo nos dias que correm.",
+      "quote2": "As histórias que contamos constroem, literalmente, o mundo. Se quer mudar o mundo, necessita de mudar a sua história. Esta verdade aplica-se tanto a indivíduos como a instituições.",
+      "quote3": "A menor distância entre um ser humano e a verdade é uma história.",
+      "quote4": "As pessoas não pretendem mais informação. Estão fartas de informação. Querem confiar em si, nos seus objetivos, no seu sucesso, na história que conta.",
+      "quote5": "Acredito realmente que as pessoas procuram histórias que tenham significado real, histórias redentoras, inspiradoras e maiores do que um indivíduo.",
+      "quote6": "Se pretende influenciar um indivíduo ou grupo para que adote um valor específico na sua vida, conte-lhe uma história envolvente.",
+      "quote7": "Se me contar, é um ensaio. Se me mostrar, é uma história.",
+      "quote8": "Se não conhecer as árvores, pode perder-se na floresta, mas se não conhecer as histórias, pode perder-se na vida.",
+      "quote9": "As histórias representam a conversão criativa da própria vida numa experiência mais poderosa, mais clara, com mais significado. São a divisa do contacto humano.",
+      "quote10": "Não existe maior desespero do que trazer uma história por contar dentro de si.",
+      "quote11": "Talvez as histórias sejam apenas dados com alma.",
+      "quote12": "As histórias são a mais poderosa das armas do arsenal de um líder.",
+      "quote13": "Faz parte da natureza das histórias deixar de fora muito mais do que aquilo que incluem."
     },
     "firstAddSplash": {
       "thisis": "Isto é o",

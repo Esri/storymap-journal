@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "网页链接",
       "lblEmbed": "嵌入代码",
+      "lblMustUseHTTPS": "web 内容的链接必须以 HTTPS 开头",
       "lblOR": "或",
       "lblError1": "错误，请清除其中一个输入字段。",
       "lblError2": "嵌入代码仅可包含一个 %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "图像链接",
       "lblURLPH": "链接应以 .jpg、.png、.gif 或 .bmp 结尾",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "此图像可能无效。请指定图像文件的直接链接(URL 通常以 .jpg 或 .png 结尾)。包含图像的网页链接无法使用。",
+      "lblURLErrorHTTPS": "此图片链接无效。URL 必须以 HTTPS 开头，并以受支持的图像文件扩展名(.jpg、.png、.gif、.bmp)结尾。",
       "lblURLCheck": "正在检查图像...",
       "lblLabel": "图像标题",
       "lblLabel1": "说明文字",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "适应",
       "lblPosition4": "拉伸",
       "lblPosition5": "自定义",
-      "lblURLHelp": "为获得最佳效果，图像大小应小于 400 KB。请使用经过压缩的 JPG 图像(质量为 80%)，建议对具有最大化按钮的主要部分或叙述性面板采取 2000 像素的图像宽度，对不具有最大化按钮的叙述性面板采取 1000 像素的宽度。<br><br>如果已链接图像的加载速度缓慢，可以将这些图像上传到您的故事，这将缩短加载时间。",
+      "lblURLHelp": "徽标图像链接必须以 HTTPS 开头。<br><br>为获得最佳效果，图像大小应小于 400 KB。请使用经过压缩的 JPG 图像(质量为 80%)，建议对具有最大化按钮的主要部分或叙述性面板采取 2000 像素的图像宽度，对不具有最大化按钮的叙述性面板采取 1000 像素的宽度。<br><br>如果已链接图像的加载速度缓慢，可以将这些图像上传到您的故事，以获得更好的加载效果。",
       "tooltipDimension": "可使用 'px' 或 '%' 指定值",
       "tooltipDimension2": "值必须在 'px'中指定",
       "lblPosition2Explain": "（可裁切）",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "用户在单击链接时会看到地图标记"
     },
     "editorActions": {
-      "navigate": "导航到某一分区",
+      "navigate": "导航到另一部分",
       "remove": "移除操作",
       "preview": "预览操作"
     },

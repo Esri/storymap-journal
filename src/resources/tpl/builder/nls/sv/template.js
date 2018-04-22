@@ -103,7 +103,21 @@ define({
       "lblAdd": "Vad vill du kalla kartjournalen?",
       "phAdd": "Ange en titel ...",
       "lblOR": "Or",
-      "lblHelp": "Ta en rundtur"
+      "lblHelp": "Ta en rundtur",
+      "quote0": "Det finns alltid ett behov av berättelser som kan ta oss med till en annan plats.",
+      "quote1": "Berättelser är ett av de mest kraftfulla sätten att presentera idéer för världen idag.",
+      "quote2": "Våra berättelser skapar bokstavligt talat världen. Om du vill förändra världen behöver du också tänka på hur din berättelse ser ut. Det gäller både individer och institutioner.",
+      "quote3": "Sanningen om en människa ryms oftast i en berättelse.",
+      "quote4": "Människor vill inte ha mer information. De drunknar redan i den. De vill kunna känna tilltro – till dig, dina mål, dina framgångar och din berättelse.",
+      "quote5": "Jag är övertygad om att många längtar efter berättelser som verkligen betyder något och vars budskap är försonande, inspirerande och större än individen.",
+      "quote6": "Om du vill nå enskilda människor eller en grupp och påverka deras värderingar är det viktigt att din berättelse är övertygande.",
+      "quote7": "Om du redovisar något för mig är det en uppsats. Om du visar mig något är det en berättelse.",
+      "quote8": "Om du inte hittar i skogen kan du gå vilse, men utan berättelser kan du gå vilse i livet.",
+      "quote9": "Berättelser är som livet själv men kraftfullare och mer koncentrerade. De är medel för mänsklig kontakt.",
+      "quote10": "Det kan vara plågsamt att hålla inne med sin berättelse.",
+      "quote11": "Berättelser kan kanske beskrivas som information med själ.",
+      "quote12": "Berättelser kan vara ett värdefullt verktyg för att påverka.",
+      "quote13": "Det ligger i berättelsens natur att inte avslöja allt."
     },
     "firstAddSplash": {
       "thisis": "Det här är",

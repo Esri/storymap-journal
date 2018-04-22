@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Logo organisasi",
       "logoCustomRadio": "Logo saya",
       "logoCustomLabel": "Gambar:",
-      "logoCustomUploadHelp": "Logo terlihat paling baik jika memiliki rasio lebar:tinggi antara 1:1 dan 5:1. Jika sebuah logo tertaut digambarkan dengan lambat, salin logo tersebut dan unggah di sini.",
+      "logoCustomUploadHelp": "Tautan gambar logo harus diawali dengan HTTPS. Logo terlihat paling baik jika memiliki rasio lebar:tinggi antara 1:1 dan 5:1. Jika sebuah logo tertaut digambarkan dengan lambat, salin logo tersebut dan unggah di sini.",
       "logoCustomUploadTooltip": "Gunakan logo yang sudah diunggah",
       "logoCustomUploadButton": "Unggah logo",
       "logoUploadSizeError": "Dimensi GIF terlalu besar. Harap ubah ukuran menjadi lebar ${PIXEL-WIDTH} piksel.",
+      "logoCustomLinkHTTPSError": "Tautan harus diawali dengan HTTPS",
       "logoCustomLinkTooltip": "Tautkan ke logo",
       "logoCustomLinkPlaceholder": "URL gambar",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logo bisa berupa file .bmp, .gif, .jpg, .jpeg, atau .png. Gif harus memiliki lebar kurang dari 250px dan ukuran kurang dari 10Mb.",
       "logoCustomTargetPlaceholder": "Halaman web yang akan dibuka ketika logo diklik",
       "logoSocialText": "Tagline:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Bagian ini",
       "homeSection": "Bagian beranda",
       "hiddenSection": "Bagian tersembunyi"
+    },
+    "bannerNotification": {
+      "learnMore": "Pelajari Lebih Lanjut",
+      "close": "Tutup",
+      "dontShowAgain": "Jangan tampilkan pesan ini lagi"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Pesan Penting mengenai Keamanan Web dan Story Map",
+      "s1h1": "Esri sedang meningkatkan keamanan Story Map",
+      "s1p1": "Story Map Anda berada di web, dan komunitas web selalu berupaya membangun dan mengimplementasikan keamanan yang lebih baik. HTTPS, yang menyediakan koneksi aman untuk konten yang ditransmisikan melalui internet, berkembang sebagai cara yang harapkan untuk mengakses konten web. Sebagian besar browser modern sekarang memperlihatkan pesan peringatan jika yang digunakan adalah HTTP, bukan HTTPS. Karena standar yang berkembang ini, mulai dari pembaruan Juni 2018 untuk ArcGIS Online, Story Map Anda harus menggunakan HTTPS.",
+      "s1p2": "Praktisnya, ini berarti Story Map dan semua kontennya (termasuk gambar, layer, aplikasi yang disematkan, dan situs web) harus diakses menggunakan tautan yang diawali dengan HTTPS, bukan HTTP. Ini memastikan pengalaman terbaik bagi pembaca Anda karena sebagai besar browser web akan menunjukkan bahwa cerita Anda aman.",
+      "s2h1": "Apa yang harus saya lakukan?",
+      "s2p1": "Esri sedang berupaya membuat ini menjadi transisi yang mudah bagi penulis dan pembaca Story Map. Alat sekarang tersedia di builder Story Map dan Cerita Saya yang membantu Anda menemukan konten tidak aman (HTTP) dalam cerita Anda dan memberi rekomendasi cara menanganinya. Harap periksa cerita Anda untuk mengetahui konten tidak aman dan perbarui ke HTTPS sebelum Juni 2018.",
+      "action1": "Tutup",
+      "action2": "Periksa cerita saya sekarang",
+      "action3": "Pelajari lebih lanjut"
     }
   }
 });

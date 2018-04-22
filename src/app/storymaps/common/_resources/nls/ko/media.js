@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "웹 페이지 링크",
       "lblEmbed": "코드 포함",
+      "lblMustUseHTTPS": "웹 콘텐츠에 대한 링크는 HTTPS로 시작해야 함",
       "lblOR": "또는",
       "lblError1": "오류가 발생했습니다. 두 개의 입력 필드 중 하나를 지우세요.",
       "lblError2": "코드 포함에는 %IFRAMETAG% 하나만 포함 가능",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "이미지 링크",
       "lblURLPH": "링크는.jpg, .png, .gif 또는 .bmp 형식이어야 함",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "이 이미지는 올바른 것 같지 않습니다. 이미지 파일(URL이 대개 .jpg 또는 .png로 끝남)에 대한 직접 링크를 지정하세요. 이미지를 포함하는 웹 페이지 링크는 작동하지 않습니다.",
+      "lblURLErrorHTTPS": "이 이미지 링크는 올바르지 않습니다. URL은 HTTPS로 시작해야 하며 지원되는 이미지 파일 확장자(.jpg, .png, .gif, .bmp)로 끝나야 합니다.",
       "lblURLCheck": "이미지 확인 중...",
       "lblLabel": "이미지 캡션",
       "lblLabel1": "캡션",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "맞춤",
       "lblPosition4": "늘이기",
       "lblPosition5": "사용자 지정",
-      "lblURLHelp": "최상의 결과를 위해 이미지 크기는 400KB 미만이어야 합니다. 80% 품질의 압축된 JPG 이미지와 권장 이미지 너비(주요 단계 또는 최대화 버튼이 있는 설명 패널의 경우 2000픽셀, 최대화 버튼이 없는 설명 패널의 경우 1000픽셀)를 사용하세요.<br><br>연결된 이미지가 느린 경우 스토리에 업로드하면 더욱 빠르게 불러옵니다.",
+      "lblURLHelp": "이미지 링크는 HTTPS로 시작해야 합니다.<br><br>최상의 결과를 위해 이미지 크기는 400KB 미만이어야 합니다. 80% 품질의 압축된 JPG 이미지와 권장 이미지 너비(주요 단계 또는 최대화 버튼이 있는 설명 패널의 경우 2000픽셀, 최대화 버튼이 없는 설명 패널의 경우 1000픽셀)를 사용하세요.<br><br>연결된 이미지가 느린 경우 스토리에 업로드하면 더욱 빠르게 불러옵니다.",
       "tooltipDimension": "값은 'px' 또는 '%'로 지정할 수 있음",
       "tooltipDimension2": "'px' 단위로 값을 지정해야 함",
       "lblPosition2Explain": "(잘릴 수 있음)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "링크를 클릭하면 맵 표식이 표시됩니다."
     },
     "editorActions": {
-      "navigate": "섹션으로 이동",
+      "navigate": "다른 섹션으로 이동",
       "remove": "작업 제거",
       "preview": "작업 미리 보기"
     },

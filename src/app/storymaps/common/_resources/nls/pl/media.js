@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Łącze witryny internetowej",
       "lblEmbed": "Kod do osadzenia",
+      "lblMustUseHTTPS": "Łącza do zasobów internetowych muszą rozpoczynać się od HTTPS",
       "lblOR": "LUB",
       "lblError1": "Błąd, wyczyść jedno z dwóch pól danych wejściowych.",
       "lblError2": "Kod do osadzenia może zawierać tylko jedną ramkę %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Łącze obrazu",
       "lblURLPH": "Łącze powinno kończyć się rozszerzeniem .jpg, .png, .gif lub .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Prawdopodobnie ten obraz nie jest prawidłowy. Podaj bezpośredni adres łącza do pliku obrazu (wtedy adres URL zwykle kończy się rozszerzeniem .jpg lub .png). Adresy łączy do witryn internetowych zawierających dany obraz są nieobsługiwane.",
+      "lblURLErrorHTTPS": "To łącze do obrazu nie jest prawidłowe. Adres URL musi rozpoczynać się od HTTPS i kończyć obsługiwanym rozszerzeniem nazwy pliku obrazu (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Sprawdzanie obrazu...",
       "lblLabel": "Legenda do obrazu",
       "lblLabel1": "Podpis",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Dopasuj",
       "lblPosition4": "Rozciągnij",
       "lblPosition5": "Niestandardowy",
-      "lblURLHelp": "Aby uzyskać najlepsze rezultaty, wielkość obrazów powinna być mniejsza niż 400 KB. Należy używać skompresowanych obrazów w formacie JPG przy jakości zachowanej na poziomie 80% i następujących zalecanych szerokości obrazów: 2000 pikseli dla obszaru głównego lub panelu narracji z przyciskiem maksymalizacji, 1000 pikseli dla panelu narracji bez przycisku maksymalizacji.<br><br>Jeśli obraz dostępny za pomocą łącza jest wyświetlany powoli, prześlij go do narracji dla lepszego efektu.",
+      "lblURLHelp": "Łącze do obrazu musi rozpoczynać się od HTTPS.<br><br>Aby uzyskać najlepsze rezultaty, wielkość obrazów powinna być mniejsza niż 400 KB. Należy używać skompresowanych obrazów w formacie JPG przy jakości zachowanej na poziomie 80% i następujących zalecanych szerokości obrazów: 2000 pikseli dla obszaru głównego lub panelu narracji z przyciskiem maksymalizacji, 1000 pikseli dla panelu narracji bez przycisku maksymalizacji.<br><br>Jeśli obraz dostępny za pomocą łącza jest wyświetlany powoli, prześlij go do narracji dla lepszego efektu.",
       "tooltipDimension": "Wartość można podać w „px” lub „%”",
       "tooltipDimension2": "Wartość należy podać w „px”",
       "lblPosition2Explain": "(obraz może zostać przycięty)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Po kliknięciu łącza na mapie wyświetlony zostanie znak"
     },
     "editorActions": {
-      "navigate": "Przejdź do sekcji",
+      "navigate": "Przejdź do innej sekcji",
       "remove": "Działanie usunięcia",
       "preview": "Działanie podglądu"
     },

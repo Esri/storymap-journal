@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "To łącze jest nieaktywne (sekcja nie została opublikowana)"
     },
     "headerFromCommon": {
-      "storymapsText": "Mapa narracji (Story Map)",
+      "storymapsText": "Mapa narracyjna",
       "builderButton": "Edytuj",
       "facebookTooltip": "Udostępnij na Facebooku",
       "twitterTooltip": "Udostępnij na Twitterze",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Po włączeniu tego trybu udostępniane są elementy sterujące do włączania odtwarzania/wstrzymywania narracji oraz do regulacji szybkości nawigacji.",
       "linksupdated": "Zaktualizowano łącza!",
       "print": "Drukuj",
-      "printInstruction1": "Poczekaj na wczytanie całej zawartości przed drukowaniem tej strony",
-      "printInstruction1a": "Niektóre zasoby mogą nie być drukowane, dopóki nie zostanie włączona opcja „Drukuj kolory i obrazy w tle” w oknie dialogowym ustawień drukowania",
+      "printInstruction1": "Zaczekaj na wczytanie całej narracji przed wydrukowaniem",
+      "printInstruction1a": "Jeśli ta strona wczytuje się powoli lub jakieś dane multimedialne nie są wyświetlane, spróbuj wydrukować węższy zakres sekcji.",
+      "printInstruction1b": "Aby uzyskać najlepsze efekty, można włączyć drukowanie elementów tła w ustawieniach wydruku przeglądarki.",
       "printInstruction2": "Tej strony nie można udostępnić innym użytkownikom, zamiast niej można udostępnić łącze ${link}",
       "link": "łącze do narracji",
+      "optionsHeader": "Opcje",
       "printOptPageBreak": "Zacznij każdą sekcję na nowej stronie",
       "makeTextBlack": "Ustaw cały tekst jako czarny",
-      "printWarning": "To jest drukowana wersja mapy narracyjnej. Zasoby dynamiczne, takie jak wideo i mapy interaktywne są dostępne wyłącznie w wersji online na stronie ${link}",
+      "showLinks": "Pokaż adresy URL łączy",
+      "madeWith": "Ta narracja została utworzona za pomocą ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Story Map Journal (Mapa narracyjna — Dziennik) firmy Esri",
+      "readItOnline": "Czytaj wersję interaktywną w Internecie pod adresem ${link}.",
       "printMSWarning": "łącze dostępne tylko w narracji online",
-      "printVideoWarning": "To wideo można obejrzeć w wersji online tej mapy narracyjnej"
+      "printVideoWarning": "To wideo można obejrzeć w wersji online tej mapy narracyjnej",
+      "printRangeHeader": "Drukuj część tej narracji",
+      "sectionLabel": "Sekcje:",
+      "apply": "Zastosuj",
+      "resetRange": "Przywróć całą narrację"
     }
   }
 });

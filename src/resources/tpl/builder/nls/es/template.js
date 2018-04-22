@@ -103,7 +103,21 @@ define({
       "lblAdd": "¿Cómo quieres llamar al diario de mapa?",
       "phAdd": "Introduce el título...",
       "lblOR": "O",
-      "lblHelp": "Visita introductoria"
+      "lblHelp": "Visita introductoria",
+      "quote0": "Siempre se puede incluir una historia que pueda transportar a las personas a otro lugar.",
+      "quote1": "Hoy en día, la narración de historias es la forma más eficaz de aportar ideas al mundo.",
+      "quote2": "Las historias que contamos forman el mundo, literalmente. Si desea cambiar el mundo, debe cambiar su historia. Esta realidad vale tanto para individuos como para instituciones.",
+      "quote3": "La distancia más corta entre una persona y la verdad es una historia.",
+      "quote4": "La gente no quiere información; ya está hasta el cuello de información. Lo que quieren es fe: fe en usted, en sus objetivos, en su éxito, en la historia que usted cuenta.",
+      "quote5": "Creo sinceramente que la gente busca historias que cuenten algo real; historias reveladoras, inspiradoras y que vayan más allá de la propia naturaleza del individuo.",
+      "quote6": "Si desea influir en una persona o un grupo para que adopten un valor concreto en su vida diaria, cuénteles una historia atractiva.",
+      "quote7": "Si me lo cuenta, es un ensayo; si me lo muestra, es una historia.",
+      "quote8": "Si no conoce los árboles, puede perderse en el bosque; pero si no conoce las historias, puede perderse en la vida misma.",
+      "quote9": "Las historias son la conversión creativa de la vida misma en una experiencia más potente, más clara y más significativa. Son la moneda del contacto humano.",
+      "quote10": "No existe mayor agonía que la de cargar con una historia acallada.",
+      "quote11": "Quizá las historias sean simplemente datos con alma.",
+      "quote12": "Las historias son el arma más potente del arsenal de un líder.",
+      "quote13": "Por su naturaleza, las historias dejan fuera más de lo que cuentan."
     },
     "firstAddSplash": {
       "thisis": "Este es el",

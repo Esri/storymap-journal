@@ -97,13 +97,7 @@
 				loadJS('jquery.js');
 
 				if (! app.isProduction ) {
-					try {
-						if (! window.storyURL) {
-							window.storyURL = 'http://localhost';
-						}
-					} catch (e) {
-						window.storyURL = 'http://localhost';
-					}
+					window.storyURL = window.storyURL || app.data.storyURL || window.opener.location.href || 'http://localhost';
 				}
 
 				loadJS('print.js');

@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Tautan halaman web",
       "lblEmbed": "Kode tanam",
+      "lblMustUseHTTPS": "Tautan ke konten web harus diawali dengan HTTPS",
       "lblOR": "ATAU",
       "lblError1": "Kesalahan, hapus salah satu bidang masukan.",
       "lblError2": "Kode tanam hanya dapat berisi satu %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Tautan gambar",
       "lblURLPH": "Tautan harus diakhiri dengan .jpg, .png, .gif, atau .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Gambar ini tampak tidak valid. Tentukan tautan langsung ke file gambar (URL biasanya akan berakhir dengan .jpg or .png). Menautkan ke halaman web yang berisikan gambar tidak akan bekerja.",
+      "lblURLErrorHTTPS": "Tautan gambar ini tidak valid. URL harus dimulai dengan HTTPS dan diakhiri dengan ekstensi file gambar yang didukung (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Memeriksa gambar...",
       "lblLabel": "Keterangan gambar",
       "lblLabel1": "Keterangan",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Sesuai",
       "lblPosition4": "Rentang",
       "lblPosition5": "Kustom",
-      "lblURLHelp": "Untuk hasil terbaik, gambar harus kurang dari 400 KB. Gunakan gambar JPG terkompresi pada kualitas 80% dan lebar gambar yang disarankan: 2000 piksel untuk halaman utama atau panel narasi dengan tombol perbesar, 1000 piksel untuk panel narasi tanpa tombol perbesar.<br><br>Jika gambar yang ditautkan lambat, unggahlah ke cerita Anda untuk mendapatkan hasil yang lebih baik.",
+      "lblURLHelp": "Tautan harus diawali dengan HTTPS.<br><br>Untuk hasil terbaik, gambar harus kurang dari 400 KB. Gunakan gambar JPG terkompresi pada kualitas 80% dan lebar gambar yang disarankan: 2000 piksel untuk halaman utama atau panel narasi dengan tombol perbesar, 1000 piksel untuk panel narasi tanpa tombol perbesar.<br><br>Jika gambar yang ditautkan lambat, unggahlah ke cerita Anda untuk mendapatkan hasil yang lebih baik.",
       "tooltipDimension": "Nilai dapat ditentukan di 'px' atau '%'",
       "tooltipDimension2": "Nilai harus ditentukan di 'px'",
       "lblPosition2Explain": "(dapat dipangkas)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Pengguna akan melihat penanda peta saat mengeklik tautan"
     },
     "editorActions": {
-      "navigate": "Navigasi ke sebuah bagian",
+      "navigate": "Bernavigasilah ke bagian lain",
       "remove": "Buang tindakan",
       "preview": "Pratinjau tindakan"
     },

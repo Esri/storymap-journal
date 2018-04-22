@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Webside-link",
       "lblEmbed": "Indlejr kode",
+      "lblMustUseHTTPS": "Links til internettet skal begynde med HTTPS",
       "lblOR": "ELLER",
       "lblError1": "Fejl. Ryd et af de to indtastningsfelter.",
       "lblError2": "Indlejret kode kan kun indeholde én %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Billede-link",
       "lblURLPH": "Link skal slutte med .jpg, .png, .gif eller .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Dette billede er tilsyneladende ikke gyldigt. Angiv et direkte link til en billedfil (din URL skal normalt slutte med .jpg eller .png). Links til en webside, der indeholder et billede, fungerer ikke.",
+      "lblURLErrorHTTPS": "Dette billedlink er ikke gyldigt. URL’en skal begynde med HTTPS og slutte med et filtypenavnet på en understøttet billedfil (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Kontrollerer billedet...",
       "lblLabel": "Billedtekst",
       "lblLabel1": "Billedtekst",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Tilpas",
       "lblPosition4": "Stræk",
       "lblPosition5": "Tilpasset",
-      "lblURLHelp": "For at opnå de bedste resultater skal billeder være mindre end 400 KB. Brug komprimerede JPG-billeder ved 80 % kvalitet og disse anbefalede billedbredder: 2000 pixels for hovedscene eller fortællingspanel med maksimér-knap, 1000 pixels for fortællingspanel uden maksimér-knap.<br><br>Hvis et linket billede indlæses langsomt, kan du overføre det til din historie for at opnå bedre resultater.",
+      "lblURLHelp": "Billedlink skal begynde med HTTPS.<br><br>For at opnå de bedste resultater skal billeder være mindre end 400 KB. Brug komprimerede JPG-billeder ved 80 % kvalitet og disse anbefalede billedbredder: 2000 pixels for hovedscene eller fortællingspanel med maksimér-knap, 1000 pixels for fortællingspanel uden maksimér-knap.<br><br>Hvis et linket billede indlæses langsomt, kan du overføre det til din historie for at opnå bedre resultater.",
       "tooltipDimension": "Værdien kan angives i 'px' eller '%'",
       "tooltipDimension2": "Værdien skal angives i \"px\"",
       "lblPosition2Explain": "(kan beskæres)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Brugeren får vist en kortmarkør ved at klikke på linket"
     },
     "editorActions": {
-      "navigate": "Navigér til en sektion",
+      "navigate": "Navigér til et andet afsnit",
       "remove": "Fjern handling",
       "preview": "Eksempelhandling"
     },

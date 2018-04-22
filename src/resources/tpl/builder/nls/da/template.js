@@ -103,7 +103,21 @@ define({
       "lblAdd": "Hvad vil du kalde din kortjournal?",
       "phAdd": "Indtast din titel...",
       "lblOR": "Eller",
-      "lblHelp": "Tag en tur"
+      "lblHelp": "Tag en tur",
+      "quote0": "Der er altid plads til en historie, der kan føre mennesker til et andet sted.",
+      "quote1": "Historiefortælling er den stærkeste måde at formidle idéer til verden på i dag.",
+      "quote2": "De historier, vi fortæller, skaber bogstaveligt talt verden. Hvis du vil ændre verden, skal du ændre din historie. Denne sandhed gælder både enkeltpersoner og institutioner.",
+      "quote3": "Den korteste afstand mellem et menneske og sandheden er en historie.",
+      "quote4": "Folk vil ikke have mere more information. De bliver stopfodret med information. De vil have tillid til dig, dine mål, din succes og den historie, du fortæller.",
+      "quote5": "Jeg er overbevist om, at folk søger historier, der virkelig betyder noget, historier, der er forløsende, inspirerende og større end den enkelte.",
+      "quote6": "Hvis man ønsker at påvirke en person eller en gruppe til at tage en bestemt værdi til sig i deres hverdag, skal man fortælle dem en historie, der er overbevisende.",
+      "quote7": "Du siger, det er et essay. Hvis du viser mig det, er det en historie.",
+      "quote8": "Hvis du ikke kan finde vej mellem træerne, kan du fare vild i skoven, men hvis du ikke kan finde vej i historierne, kan du fare vild i tilværelsen.",
+      "quote9": "Historier er den kreative omdannelse af selve livet til en stærkere, klarere og mere meningsfyldt oplevelse. De er essensen af menneskelig kontakt.",
+      "quote10": "Der er ingen større kvaler end at gå rundt med en ufortalt historie indeni.",
+      "quote11": "Måske er historier bare data med sjæl.",
+      "quote12": "Historier er det kraftigste våben i en leders arsenal.",
+      "quote13": "Det ligger i historiens natur, at den udelader langt mere end den medtager."
     },
     "firstAddSplash": {
       "thisis": "Dette er",

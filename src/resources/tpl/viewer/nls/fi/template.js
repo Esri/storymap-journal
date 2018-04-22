@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Kun tämä tila on käytössä, tarinan voi toistaa tai keskeyttää tai sen nopeutta voi säätää ohjausobjekteilla.",
       "linksupdated": "Linkit on päivitetty.",
       "print": "Tulosta",
-      "printInstruction1": "Odota, että koko sisältö on latautunut, ennen kuin tulostat tämän sivun",
-      "printInstruction1a": "Kaikkea sisältöä ei ehkä tulosteta, ellet ota Tulosta taustavärit ja kuvat -asetusta käyttöön Tulostussivun asetukset -valintaikkunassa",
+      "printInstruction1": "Odota, että koko tarina on latautunut, ennen tulostusta",
+      "printInstruction1a": "Jos tämä sivu latautuu hitaasti tai jotkin mediatyypit eivät näy, yritä tulostaa pienempiä osa-alueita.",
+      "printInstruction1b": "Parhaan tuloksen saamiseksi joudut ehkä ottamaan taustaelementtien tulostuksen käyttöön selaimesi tulostusasetuksissa.",
       "printInstruction2": "Tätä sivua ei voi jakaa muiden kanssa. Jaa sen sijaan ${link}",
       "link": "linkki tarinaan",
+      "optionsHeader": "Asetukset",
       "printOptPageBreak": "Aloita jokainen osa uudelta sivulta",
       "makeTextBlack": "Määritä kaikki teksti mustaksi",
-      "printWarning": "Tämä on tarinakartan tulostettu versio. Dynaaminen sisältö, kuten videot ja vuorovaikutteiset kartat, ovat käytettävissä vain online-versiossa osoitteessa ${link}",
+      "showLinks": "Näytä linkkien URL-osoitteet",
+      "madeWith": "Tämä tarina on luotu kohteella ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esrin tarinakarttapäiväkirja",
+      "readItOnline": "Lue vuorovaikutteinen versio verkossa osoitteessa ${link}.",
       "printMSWarning": "linkki käytettävissä vain online-tarinassa",
-      "printVideoWarning": "Tämän videon voi katsoa tarinakartan online-versiossa"
+      "printVideoWarning": "Tämän videon voi katsoa tarinakartan online-versiossa",
+      "printRangeHeader": "Tulosta osa tästä tarinasta",
+      "sectionLabel": "Osat:",
+      "apply": "Käytä",
+      "resetRange": "Palauta koko tarinaksi"
     }
   }
 });

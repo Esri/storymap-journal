@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Kada je ovaj režim aktiviran, postoje kontrole da se priča reprodukuje/pauzira i da se prilagodi brzina navigacije.",
       "linksupdated": "Linkovi su ažurirani!",
       "print": "Odštampaj",
-      "printInstruction1": "Pre štampanja ove stranice sačekajte da se učita sav sadržaj",
-      "printInstruction1a": "Neki sadržaj možda neće moći da se odštampa dok ne omogućite opciju „Odštampaj boje i slike u pozadini” u dijalogu za podešavanje stranice za štampanje",
+      "printInstruction1": "Sačekajte da se čitava priča učita pre štampe",
+      "printInstruction1a": "Ako se ova stranica sporo učitava ili se neki mediji ne prikažu, odštampajte manji opseg odeljaka.",
+      "printInstruction1b": "Za bolje rezultate, možda treba da omogućite štampanje pozadinskih elemenata u postavkama štampanja pregledača.",
       "printInstruction2": "Ovu stranicu nije moguće podeliti sa drugima, umesto toga podelite ${link}",
       "link": "link za priču",
+      "optionsHeader": "Opcije",
       "printOptPageBreak": "Svaki odeljak počnite na novoj stranici",
       "makeTextBlack": "Učini sav tekst crnim",
-      "printWarning": "Ovo je odštampana verzija story mape. Dinamički sadržaj kao što su video snimci i interaktivne mape je dostupan samo u verziji na mreži na ${link}",
+      "showLinks": "Prikaži linkove URL adresa",
+      "madeWith": "Ova priča je napravljena pomoću ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Story Map Journal kompanije Esri",
+      "readItOnline": "Pročitajte interaktivnu verziju na vebu ${link}.",
       "printMSWarning": "link je dostupan samo u priči na mreži",
-      "printVideoWarning": "Ovaj video snimak može da se prikaže samo u verziji na mreži ove story mape"
+      "printVideoWarning": "Ovaj video snimak može da se prikaže samo u verziji na mreži ove story mape",
+      "printRangeHeader": "Odštampaj deo ove priče",
+      "sectionLabel": "Odeljci:",
+      "apply": "Primeni",
+      "resetRange": "Resetuj na celu priču"
     }
   }
 });

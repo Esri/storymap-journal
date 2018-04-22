@@ -171,6 +171,8 @@ define(["lib-build/tpl!./BuilderView",
 				var storyLength = forceStoryLength || app.data.getStoryLength();
 				$(".builder-add, .builder-organize").removeClass("active");
 
+				$('#mainStagePanel').toggleClass('show-landing', !storyLength);
+
 				_landingUI.toggle(! storyLength);
 				$(".builder-content-panel").toggle(!! storyLength);
 				$("#sidePanel .builder, #floatingPanel .builder").toggleClass("large", ! app.data.getStoryLength());

@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Kuruluş logosu",
       "logoCustomRadio": "Logom",
       "logoCustomLabel": "Görüntü:",
-      "logoCustomUploadHelp": "Logolar genişlik:yükseklik oranları 1:1 ve 5:1 arasında olduğunda en iyi biçimde görüntülenir. Bağlantılı bir logo yavaş çiziliyorsa, bir kopyasını kaydederek buraya yükleyin.",
+      "logoCustomUploadHelp": "Logo görüntü bağlantısı HTTPS ile başlamalıdır. Logolar genişlik:yükseklik oranları 1:1 ve 5:1 arasında olduğunda en iyi biçimde görüntülenir. Bağlantılı bir logo yavaş çiziliyorsa, bir kopyasını kaydederek buraya yükleyin.",
       "logoCustomUploadTooltip": "Yüklenmiş bir logo kullan",
       "logoCustomUploadButton": "Logo yükle",
       "logoUploadSizeError": "GIF boyutları çok büyük. ${PIXEL-WIDTH} piksel genişliğe yeniden boyutlandırın.",
+      "logoCustomLinkHTTPSError": "Bağlantı HTTPS ile başlamalıdır",
       "logoCustomLinkTooltip": "Logo bağlantısı",
       "logoCustomLinkPlaceholder": "Görüntü URL'si",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logo bir .bmp, .gif, .jpg, .jpeg veya .png dosyası olabilir. Gif'ler en fazla 250px genişliğinde olmalı ve 10 MB boyutunu aşmamalıdır.",
       "logoCustomTargetPlaceholder": "Logoya tıklandığında açılacak web sayfası",
       "logoSocialText": "Etiket Satırı:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Bu bölüm",
       "homeSection": "Giriş bölümü",
       "hiddenSection": "Gizli bölüm"
+    },
+    "bannerNotification": {
+      "learnMore": "Daha Fazla Bilgi",
+      "close": "Kapat",
+      "dontShowAgain": "Bu iletiyi tekrar gösterme"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Web Güvenliği ve Story Maps hakkında Önemli İleti",
+      "s1h1": "Esri, Story Maps'in güvenliğini geliştiriyor",
+      "s1p1": "Story Maps'iniz web'de yayınlanır ve web topluluğu her zaman daha iyi güvenlik sağlamak ve uygulamak için çalışmaktadır. İnternet üzerinden iletilen içerik için güvenli bir bağlantı sağlayan HTTPS, web içeriğine erişmenin birincil yolu olarak kullanılmaktadır. Çoğu modern tarayıcı artık, HTTPS yerine HTTP kullanıldığında uyarı mesajları göstermektedir. Bu yeni geliştirilen standart nedeniyle Haziran 2018 ArcGIS Online güncellemesinden itibaren Story Maps'te HTTPS kullanılması gerekecektir.",
+      "s1p2": "Pratik olarak bu, bir Story Map demektir ve tüm içeriğine (görüntüler, katmanlar, gömülü uygulamalar ve web siteleri dahil) HTTP yerine HTTPS ile başlayan bağlantılar kullanılarak erişim sağlanmalıdır. Bu, okuyucularınız için en iyi deneyimi sağlar; çünkü çoğu web tarayıcısında bu, hikayelerinizin güvenli olduğu anlamına gelir.",
+      "s2h1": "Ne yapmam gerekiyor?",
+      "s2p1": "Esri, Story Map yazarları ve okuyucuları için bu geçişi kolaylaştırmaya çalışmaktadır. Artık Story Map oluşturucuları ve Hikayelerim'de, hikayelerinizdeki güvensiz içeriği (HTTP) bulmanıza yardımcı olacak ve bunları nasıl ele alacağınıza dair tavsiyelerde bulunacak araçlar mevcuttur. Lütfen hikayenizi güvenli olmayan içeriklere karşı kontrol edin ve Haziran 2018'den önce HTTPS'ye güncelleyin.",
+      "action1": "Kapat",
+      "action2": "Hikayelerimi şimdi kontrol et",
+      "action3": "Daha fazla bilgi"
     }
   }
 });

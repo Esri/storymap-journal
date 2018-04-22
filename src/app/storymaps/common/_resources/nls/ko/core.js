@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "기관 로고",
       "logoCustomRadio": "내 로고",
       "logoCustomLabel": "이미지:",
-      "logoCustomUploadHelp": "로고는 1:1 및 5:1 사이의 너비:높이 비율이 있을 때 가장 잘 보입니다. 연결된 로고가 느리게 그려지면 복사본을 저장하고 여기에 업로드하세요.",
+      "logoCustomUploadHelp": "로고 이미지 링크는 HTTPS로 시작해야 합니다. 로고는 1:1 및 5:1 사이의 너비:높이 비율이 있을 때 가장 잘 보입니다. 연결된 로고가 느리게 그려지면 복사본을 저장하고 여기에 업로드하세요.",
       "logoCustomUploadTooltip": "업로드한 로고 사용",
       "logoCustomUploadButton": "로고 업로드",
       "logoUploadSizeError": "GIF 크기가 너무 큽니다. ${PIXEL-WIDTH} 픽셀 너비로 크기를 조정하세요.",
+      "logoCustomLinkHTTPSError": "링크는 HTTPS로 시작해야 합니다.",
       "logoCustomLinkTooltip": "로고 링크",
       "logoCustomLinkPlaceholder": "이미지 URL",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "로고는 .bmp, .gif, .jpg, .jpeg, .png 파일 형식이 될 수 있습니다. Gif는 250px 너비 및 10Mb 크기 미만이어야 합니다.",
       "logoCustomTargetPlaceholder": "로고를 클릭할 때 열리는 웹 페이지",
       "logoSocialText": "설명:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "이 섹션",
       "homeSection": "홈 섹션",
       "hiddenSection": "숨겨진 섹션"
+    },
+    "bannerNotification": {
+      "learnMore": "자세한 정보",
+      "close": "닫기",
+      "dontShowAgain": "이 메시지를 다시 표시 안 함"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "웹 보안 및 스토리맵에 대한 중요 메시지",
+      "s1h1": "Esri는 스토리맵의 보안을 지속적으로 강화하고 있습니다.",
+      "s1p1": "스토리맵은 웹에서 실행되며 웹 커뮤니티는 더 강화된 보안을 설정하고 구현하기 위해 항상 노력하고 있습니다. 인터넷을 통해 전송되는 콘텐츠의 보안 연결을 제공하는 HTTPS는 웹 콘텐츠에 접근하는 필수 방법으로 부각되고 있습니다. 현재 대부분의 최신 브라우저에서는 HTTPS가 아닌 HTTP를 사용하는 경우 경고 메시지가 표시됩니다. 이 새로운 표준을 따라 ArcGIS Online 2018년 6월 업데이트부터는 스토리맵에서 HTTPS를 사용해야 합니다.",
+      "s1p2": "이는 스토리맵의 모든 콘텐츠가 HTTP가 아닌 HTTPS로 시작하는 링크를 사용하여 접근해야 함을 의미합니다(이미지, 레이어, 임베드된 앱, 웹 사이트). HTTPS를 사용하면 대부분의 웹 브라우저에서 내 스토리가 안전한 것으로 나타나므로 독자에게 최상의 환경이 제공됩니다.",
+      "s2h1": "해야 할 일",
+      "s2p1": "Esri는 스토리맵 작성자와 독자가 쉽게 HTTPS로 전환할 수 있도록 노력하고 있습니다. 이제, 스토리맵 빌더 및 내 스토리에서 안전하지 않은 콘텐츠(HTTP)를 찾고 이를 해결하기 위한 권장 사항을 제시하는 도구를 제공합니다. 내 스토리에서 안전하지 않은 콘텐츠를 확인하고 2018년 6월 전에 HTTPS로 업데이트하세요.",
+      "action1": "닫기",
+      "action2": "내 스토리 지금 확인",
+      "action3": "자세한 정보"
     }
   }
 });

@@ -4,6 +4,7 @@ require([
 	"dojo/i18n!../nls/template.js?v=" + app.version,
 	"esri/arcgis/Portal",
 	"esri/arcgis/utils",
+	"esri/urlUtils",
 	"dojo/_base/lang",
 	"esri/dijit/Legend",
 	"esri/geometry/Extent",
@@ -17,6 +18,7 @@ require([
 	i18n,
 	arcgisPortal,
 	arcgisUtils,
+	urlUtils,
 	lang,
 	LegendDijit,
 	Extent,
@@ -29,39 +31,66 @@ require([
 	var sections = app.data.getStorySections(),
 		title = sections[0].title,
 		storyHTML = '';
+	var strings = i18n.viewer.shareFromCommon;
+	app.data.storyURL = window.storyURL || app.data.storyURL || window.opener.location.href;
+
+	var urlParams = urlUtils.urlToObject(window.location.href).query;
+	var sectionStart = urlParams.sectionStart ? parseInt(urlParams.sectionStart, 10) : 1;
+	var sectionEnd = urlParams.sectionEnd ? parseInt(urlParams.sectionEnd, 10) : sections.length;
 
 	esri.arcgis.utils.arcgisUrl = window.opener.esri.arcgis.utils.arcgisUrl;
 	esri.id.initialize(window.opener.esri.id);
 
 	document.title = $('<div>' + title + '</div>').text();
 
-	storyHTML += '<div class="print-warning">';
-	storyHTML += i18n.viewer.shareFromCommon.printInstruction1;
+	storyHTML += '<div class="print-settings">';
+	storyHTML += '<div class="print-warning">' + strings.printInstruction1 + '</div>';
 
-	storyHTML += '<div class="share-warning">';
+	storyHTML += '<div class="instructions">';
+	storyHTML += strings.printInstruction1a + '<br>';
 
 	if (! has('chrome') || ! has('safari')) {
-		storyHTML += i18n.viewer.shareFromCommon.printInstruction1a + '. ';
+		storyHTML += strings.printInstruction1b + '<br>';
 	}
 
-	storyHTML += i18n.viewer.shareFromCommon.printInstruction2.replace('${link}', '<a href="' + window.storyURL + '">' + i18n.viewer.shareFromCommon.link + '</a>');
+	var linkHTML = app.data.storyURL ? '<a href="' + app.data.storyURL + '">' + strings.link + '</a>' : strings.link;
+	storyHTML += strings.printInstruction2.replace('${link}', linkHTML);
 	storyHTML += '</div>';
-	storyHTML += '<div class="print-btn">';
+	storyHTML += '<div class="btn btn-primary print-btn">';
 	storyHTML += '<span class="glyphicon glyphicon-print" aria-hidden="true"></span>';
-	storyHTML += i18n.viewer.shareFromCommon.print;
+	storyHTML += strings.print;
 	storyHTML += '</div>';
 
+	storyHTML += '<div>';
+	storyHTML += '<table><tr><td>';
+
 	storyHTML += '<div class="print-options">';
-	storyHTML += '<table style="width: 100%"><tr><td style="width: 50%">';
-	storyHTML += '<div class="checkbox"><label>';
-	storyHTML += '<input type="checkbox" value="pageBreak">';
-	storyHTML += i18n.viewer.shareFromCommon.printOptPageBreak;
-	storyHTML += '</label></div>';
-	storyHTML += '</td><td style="width: 50%">';
+	storyHTML += '<div class="heading">' + strings.optionsHeader + '</div>';
 	storyHTML += '<div class="checkbox"><label>';
 	storyHTML += '<input type="checkbox" value="blackText">';
-	storyHTML += i18n.viewer.shareFromCommon.makeTextBlack || 'Make all text black';
+	storyHTML += strings.makeTextBlack || 'Make all text black';
 	storyHTML += '</label></div>';
+	storyHTML += '<div class="checkbox"><label>';
+	storyHTML += '<input type="checkbox" value="linksInline">';
+	storyHTML += strings.showLinks || 'Show link URLs';
+	storyHTML += '</label></div>';
+	storyHTML += '<div class="checkbox"><label>';
+	storyHTML += '<input type="checkbox" value="pageBreak">';
+	storyHTML += strings.printOptPageBreak;
+	storyHTML += '</label></div></div>';
+
+	storyHTML += '</td><td>';
+
+	storyHTML += '<div class="section-numbers">';
+	storyHTML += '<div class="heading">' + strings.printRangeHeader + '</div>';
+	storyHTML += '<div class="section-range">';
+	storyHTML += '<label>' + strings.sectionLabel + '&nbsp;<input type="textbox" id="section-start" name="sectionStart" value="' + sectionStart + '"></label>';
+	storyHTML += '<label>–<input type="textbox" id="section-end" name="sectionEnd" value="' + sectionEnd + '"></label>';
+	storyHTML += '<button class="btn-apply btn btn-sm btn-primary">' + strings.apply + '</button>';
+	storyHTML += '<button class="btn-reset btn btn-link">' + strings.resetRange + '</button>';
+	storyHTML += '</div>';
+	storyHTML += '</div>';
+
 	storyHTML += '</td></tr></table>';
 	storyHTML += '</div>';
 
@@ -70,11 +99,20 @@ require([
 	storyHTML += '<header>';
 	storyHTML += '<div class="story-title">' + title + '</div>';
 
-	storyHTML += '<i class="story-warning">' + i18n.viewer.shareFromCommon.printWarning.replace('${link}', '<a href="' + window.storyURL + '">' + window.storyURL + '</a>') + '</i>';
+	storyHTML += '<div class="story-warning">';
+	storyHTML += '<div>' + strings.madeWith.replace('${JOURNAL_LINK_TEXT}', '<a target="_blank" href="' + app.cfg.HELP_URL + '">' + strings.journalLinkText + '</a>') + '</div>';
+	storyHTML += '<div>' + strings.readItOnline.replace('${link}', '<a target="_blank" href="' + app.data.storyURL + '">' + app.data.storyURL + '</a>') + '</div>';
+	storyHTML += '</div>';
 	storyHTML += '</header>';
 
 	$.each(sections, function(i, section) {
+		var countingSection = i + 1;
+		if (countingSection < sectionStart || countingSection > sectionEnd) {
+			return;
+		}
 		storyHTML += '<section>';
+
+		storyHTML += '<div class="section-number">Section ' + countingSection + '</div>';
 
 		storyHTML += '<div class="title-media-block">';
 		if (i !== 0) {
@@ -95,12 +133,32 @@ require([
 		window.print();
 	});
 
+	$('.btn-apply').click(function() {
+		urlParams.sectionStart = $('#section-start').val() || 1;
+		urlParams.sectionEnd = $('#section-end').val() || sections.length;
+		refreshUrlParams();
+	});
+
+	$('.btn-reset').click(function() {
+		if (urlParams.sectionStart) {
+			delete urlParams.sectionStart;
+		}
+		if (urlParams.sectionEnd) {
+			delete urlParams.sectionEnd;
+		}
+		refreshUrlParams();
+	});
+
 	$('input[value=pageBreak]').change(function() {
 		$('section').toggleClass('page-break', $(this).prop('checked'));
 	});
 
 	$('input[value=blackText]').change(function() {
 		$('section').toggleClass('blackText', $(this).prop('checked'));
+	});
+
+	$('input[value=linksInline]').change(function() {
+		$('section').toggleClass('links-inline', $(this).prop('checked'));
 	});
 
 	// Load webmap now that DOM is ready
@@ -196,6 +254,14 @@ require([
 		});
 	});
 
+	function refreshUrlParams() {
+		var searchArr = [];
+		for (var key in urlParams) {
+			searchArr.push(key + '=' + encodeURIComponent(urlParams[key]));
+		}
+    window.location.search = '?' + searchArr.join('&');
+	}
+
 	function afterLegendRefresh() {
 		var toRemove = 'legend-single legend-double legend-triple';
 		var layerLength = $(this.domNode).find('.esriLegendService').length;
@@ -264,7 +330,7 @@ require([
 
 		// Add inline warning for Main Stage actions
 		content.find('a[data-storymaps]').each(function() {
-			$(this).attr('data-warning', '(' + i18n.viewer.shareFromCommon.printMSWarning + ')');
+			$(this).attr('data-warning', '(' + strings.printMSWarning + ')');
 		});
 
 		// Replace YouTube with image
@@ -274,12 +340,12 @@ require([
 
 			var videoIDYouTube = getYoutubeId(node.attr('src'));
 			if (videoIDYouTube) {
-				node.replaceWith('<div class="media media-image"><img src="http://img.youtube.com/vi/' + videoIDYouTube + '/0.jpg" /></div><i class="media-video-warning">' + i18n.viewer.shareFromCommon.printVideoWarning + '</i>');
+				node.replaceWith('<div class="media media-image"><img src="http://img.youtube.com/vi/' + videoIDYouTube + '/0.jpg" /></div><i class="media-video-warning">' + strings.printVideoWarning + '</i>');
 			}
 
 			var videoIDVimeo = getVimeoId(node.attr('src'));
 			if (videoIDVimeo) {
-				node.after('<i class="media-video-warning">' + i18n.viewer.shareFromCommon.printVideoWarning + '</i>');
+				node.after('<i class="media-video-warning">' + strings.printVideoWarning + '</i>');
 			}
 		});
 
@@ -318,7 +384,7 @@ require([
 					outHTML += '<div class="media media-video"><iframe src="' + checkURLProtocol(media.video.url) + '"></iframe></div>';
 				}
 
-				outHTML += '<i class="media-video-warning">' + i18n.viewer.shareFromCommon.printVideoWarning + '</i>';
+				outHTML += '<i class="media-video-warning">' + strings.printVideoWarning + '</i>';
 				break;
 			case "webpage":
 				if (media.webpage.url) {

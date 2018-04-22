@@ -103,7 +103,21 @@ define({
       "lblAdd": "Bạn muốn gọi Map Journal của bạn là gì?",
       "phAdd": "Nhập tiêu đề của bạn...",
       "lblOR": "Hoặc",
-      "lblHelp": "Tham quan một Hành trình"
+      "lblHelp": "Tham quan một Hành trình",
+      "quote0": "Luôn luôn có không gian dành cho câu chuyện để có thể đưa con người đến một địa điểm khác.",
+      "quote1": "Ngày nay, kể chuyện là cách hiệu quả nhất để đưa ý tưởng ra thế giới.",
+      "quote2": "Những câu chuyện chúng ta kể tạo ra thế giới theo đúng nghĩa đen. Nếu bạn muốn thay đổi thế giới, bạn cần thay đổi câu chuyện của mình. Điều này áp dụng với cả cá nhân và tổ chức.",
+      "quote3": "Khoảng cách ngắn nhất từ con người đến sự thật là một câu chuyện.",
+      "quote4": "Mọi người không muốn nhận thêm thông tin. Họ đã chán ngấy thông tin rồi. Họ muốn tin tưởng vào bạn, mục tiêu của bạn, thành công của bạn và tin vào câu chuyện bạn kể.",
+      "quote5": "Tôi thực sự tin rằng con người đang tìm kiếm những câu chuyện thực sự có ý nghĩa, những câu chuyện về sự cứu vãn, truyền cảm hứng và không chỉ là về một cá nhân.",
+      "quote6": "Nếu bạn muốn có tầm ảnh hưởng trước một người hoặc một nhóm để thao túng một giá trị cụ thể trong đời sống thường ngày của họ thì hãy kể cho họ nghe một câu chuyện hấp dẫn.",
+      "quote7": "Nếu bạn nói với tôi, thì đó là một bài luận. Còn nếu bạn chỉ cho tôi thì đó là một câu chuyện.",
+      "quote8": "Nếu bạn không biết về các loài cây, bạn có thể bị lạc trong rừng, nhưng nếu bạn không biết những câu chuyện, bạn sẽ bị lạc trong cuộc đời.",
+      "quote9": "Những câu chuyện bản thân nó là sự chuyển đổi sáng tạo của cuộc sống thành trải nghiệm mạnh mẽ, rõ ràng và ý nghĩa hơn. Chúng chính là sự truyền bá giữa các mối liên hệ của con người.",
+      "quote10": "Không có điều gì đau hơn là mang một câu chuyện chưa được kể trong con người bạn.",
+      "quote11": "Có lẽ những câu chuyện chỉ là dữ liệu có linh hồn.",
+      "quote12": "Câu chuyện là thứ vũ khí quyền lực duy nhất trong kho vũ khí của một người lãnh đạo.",
+      "quote13": "Bản chất thực của câu chuyện là bỏ quên hơn cả những gì chúng bao hàm."
     },
     "firstAddSplash": {
       "thisis": "Đây là",

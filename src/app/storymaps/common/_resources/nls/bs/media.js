@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Poveznica na web-stranicu",
       "lblEmbed": "Ugradi kod",
+      "lblMustUseHTTPS": "Poveznice na web sadržaj moraju početi s HTTPS-om",
       "lblOR": "ILI",
       "lblError1": "Pogreška, očistite jedno od dvaju polja za unos.",
       "lblError2": "Ugrađeni kod može sadržavati samo jednu %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Poveznica na sliku",
       "lblURLPH": "Poveznica bi trebala završavati si .jpg, .png, .gif ili .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Čini se da ova slika nije ispravna. Odredite izravnu poveznicu do slikovne datoteke (vaš URL obično završava s .jpg ili .png). Poveznice na web-stranicu koja sadrži slike neće raditi.",
+      "lblURLErrorHTTPS": "Ova poveznica slike nije važeća. URL mora početi s HTTPS-om i završiti s podržanim proširenjem slikovne datoteke (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Provjera slike...",
       "lblLabel": "Natpis slike",
       "lblLabel1": "Natpis",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Prilagodi",
       "lblPosition4": "Rastegni",
       "lblPosition5": "Prilagođeno",
-      "lblURLHelp": "Za najbolje rezultate slike bi trebale biti manje od 400 KB. Upotrijebite komprimirane JPG slike kvalitete od 80 % i ovim preporučenim širinama slike: 2000 piksela za glavni prozor ili stranu priče s gumbom za povećavanje, 1000 piksela za stranu priče bez gumba za povećavanje.<br><br>Ako se povezana slika sporo iscrtavaja, učitajte ju u priču za bolje rezultate.",
+      "lblURLHelp": "Poveznica slike mora početi s HTTPS-om.<br><br>Za najbolje rezultate slike bi trebale biti manje od 400 KB. Upotrijebite komprimirane JPG slike kvalitete od 80 % i ovim preporučenim širinama slike: 2000 piksela za glavni prozor ili stranu priče s gumbom za povećavanje, 1000 piksela za stranu priče bez gumba za povećavanje.<br><br>Ako se povezana slika sporo iscrtavaja, učitajte je u priču za bolje rezultate.",
       "tooltipDimension": "Vrijednost se može odrediti u „px” ili „%”",
       "tooltipDimension2": "Vrijednost se može odrediti u „px”",
       "lblPosition2Explain": "(može se obrezati)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Korisnik će vidjeti oznaku na karti kada klikne na poveznicu"
     },
     "editorActions": {
-      "navigate": "Navigiraj do odjeljka",
+      "navigate": "Navigirajte do drugog odjeljka",
       "remove": "Ukloni radnju",
       "preview": "Pretpregledaj radnju"
     },

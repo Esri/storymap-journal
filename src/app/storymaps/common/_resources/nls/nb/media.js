@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Kobling til nettside",
       "lblEmbed": "Bygg inn kode",
+      "lblMustUseHTTPS": "Koblinger til webinnhold må begynne med HTTPS",
       "lblOR": "ELLER",
       "lblError1": "Feil, fjern ett av de to inndatafeltene.",
       "lblError2": "Innbygging av kode kan inneholde bare én %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Kobling til bilde",
       "lblURLPH": "Koblinger må slutte med  .jpg, .png, .gif, eller .bmp.",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Dette bildet ser ikke ut til å være gyldig. Angi en direkte kobling til en bildefil (URL-adressen skal normalt ende på .jpg eller .png). Koblinger til en webside som inneholder et bilde, kommer ikke til å fungere.",
+      "lblURLErrorHTTPS": "Denne bildekoblingen er ikke gyldig. URL-en må begynne med HTTPS og slutte med en støttet filtype (JPG, PNG, GIF eller BMP).",
       "lblURLCheck": "Kontrollerer bilde...",
       "lblLabel": "Bildetekst",
       "lblLabel1": "Undertekst",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Tilpass",
       "lblPosition4": "Strekk",
       "lblPosition5": "Tilpasset",
-      "lblURLHelp": "Du får best resultat når bildene er mindre enn 400 KB. Bruk komprimerte JPG-bilder med 80 % kvalitet og følgende anbefalte bildebredder: 200 piksler for hovedområde- og fortellingspanel med maksimeringsknapp, 1000 piksler for fortellingspanel uten maksimeringsknapp.<br><br>Hvis et koblet bilde tegnes sakte, laster du det opp til historien for å få bedre resultat.",
+      "lblURLHelp": "Bildekoblingen må begynne med HTTPS.<br><br>Du får best resultat når bildene er mindre enn 400 KB. Bruk komprimerte JPG-bilder med 80 % kvalitet og følgende anbefalte bildebredder: 200 piksler for hovedområde- og fortellingspanel med maksimeringsknapp og 1000 piksler for fortellingspanel uten maksimeringsknapp.<br><br>Hvis et koblet bilde tegnes sakte, laster du det opp til historien for å få bedre resultat.",
       "tooltipDimension": "Verdien kan angis i 'px' eller '%'",
       "tooltipDimension2": "Verdien må angis i piksler",
       "lblPosition2Explain": "(kan bli beskåret)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Brukeren ser en kartmarkør når han/hun klikker på koblingen"
     },
     "editorActions": {
-      "navigate": "Naviger til en seksjon",
+      "navigate": "Naviger til et annet avsnitt",
       "remove": "Fjern handling",
       "preview": "Forhåndsvis handling"
     },

@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Lorsque ce mode est actif, vous disposez de contrôles pour lire le récit ou le mettre en pause, ainsi que régler la vitesse de navigation.",
       "linksupdated": "Liens mis à jour",
       "print": "Imprimer",
-      "printInstruction1": "Attendez le chargement de l'intégralité du contenu avant d'imprimer cette page",
-      "printInstruction1a": "Une partie du contenu risque de ne pas s'imprimer si vous n'activez pas \"Imprimer les images et couleurs d'arrière-plan\" dans la boîte de dialogue de configuration de l'impression",
+      "printInstruction1": "Attendez que le récit soit entièrement chargé avant de l’imprimer",
+      "printInstruction1a": "Si le chargement de la page est lent ou si certains supports n’apparaissent pas, essayez d’imprimer une plage de sections plus petite.",
+      "printInstruction1b": "Dans un souci d’optimisation des résultats, il se peut que vous deviez activer l’impression des éléments d’arrière-plan dans les paramètres d’impression de votre navigateur.",
       "printInstruction2": "Cette page ne peut pas être partagée avec d'autres utilisateurs. Partagez plutôt le lien ${link}",
       "link": "permettant d'accéder au récit",
+      "optionsHeader": "options",
       "printOptPageBreak": "Commencer chaque section sur une nouvelle page",
       "makeTextBlack": "Mettre tout le texte en noir",
-      "printWarning": "Il s'agit d'une version imprimée d'une Story Map. Le contenu dynamique, tel que les vidéos et les cartes interactives, est seulement disponible dans la version en ligne, accessible via le lien ${link}",
+      "showLinks": "Afficher les URL des liens",
+      "madeWith": "Ce récit a été réalisé avec ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esri Story Map Journal",
+      "readItOnline": "Lisez la version interactive sur le Web à l’adresse ${link}.",
       "printMSWarning": "dans le récit en ligne uniquement",
-      "printVideoWarning": "Cette vidéo peut être consultée dans la version en ligne de cette Story Map"
+      "printVideoWarning": "Cette vidéo peut être consultée dans la version en ligne de cette Story Map",
+      "printRangeHeader": "Imprimer une partie de ce récit",
+      "sectionLabel": "Sections :",
+      "apply": "Appliquer",
+      "resetRange": "Réinitialiser sur la totalité du récit"
     }
   }
 });

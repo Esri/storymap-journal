@@ -103,7 +103,21 @@ define({
       "lblAdd": "Quel nom voulez-vous donner à votre journal cartographique ?",
       "phAdd": "Entrez votre titre...",
       "lblOR": "Ou",
-      "lblHelp": "Suivre la visite"
+      "lblHelp": "Suivre la visite",
+      "quote0": "Un récit capable de transporter son public ailleurs trouvera toujours sa place.",
+      "quote1": "Raconter une histoire est le moyen le plus efficace pour proposer des idées dans le monde actuel.",
+      "quote2": "Les récits que nous racontons constituent le monde. Si vous voulez changer le monde, vous devez changer votre récit. Cette vérité s’applique à la fois aux individus et aux institutions.",
+      "quote3": "La distance la plus courte entre un être humain et la vérité est un récit.",
+      "quote4": "Les gens ne veulent pas davantage d’informations. Ils sont saturés d’informations. Ils souhaitent avoir foi en vous, vos objectifs, vos succès et le récit que vous racontez.",
+      "quote5": "Je crois profondément que les gens recherchent des récits qui ont un sens réel, des récits rédempteurs, inspirants et englobant davantage qu’un seul individu.",
+      "quote6": "Si vous souhaitez influencer un individu ou un groupe et faire en sorte qu’ils adhèrent à une valeur en particulier dans leur vie de tous les jours, racontez-leur un récit qui les captive.",
+      "quote7": "Si vous racontez, c’est un essai. Si vous montrez, c’est un récit.",
+      "quote8": "Si vous ne connaissez pas les arbres, vous risquez de vous perdre en forêt, mais si ne connaissez pas les récits, vous risquez de vous perdre dans la vie.",
+      "quote9": "Les récits convertissent de façon créative la vie elle-même en une expérience plus puissante, plus claire et plus significative. Ils constituent la monnaie du contact humain.",
+      "quote10": "Il n’existe pas de plus grande agonie que de garder un récit inédit pour vous seul.",
+      "quote11": "Les récits ne sont peut-être que des données dotées d’une âme.",
+      "quote12": "Ils constituent l’arme la plus puissante de l’arsenal d’un leader.",
+      "quote13": "Il est dans la nature même des récits d’omettre beaucoup plus que d’inclure."
     },
     "firstAddSplash": {
       "thisis": "Il s'agit du",

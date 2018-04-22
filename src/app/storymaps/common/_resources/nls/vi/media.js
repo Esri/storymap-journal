@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Liên kết trang web",
       "lblEmbed": "Mã nhúng",
+      "lblMustUseHTTPS": "Liên kết tới nội dung web phải bắt đầu bằng HTTPS",
       "lblOR": "HOẶC",
       "lblError1": "Lỗi, xóa một trong hai trường nhập.",
       "lblError2": "Mã nhúng chỉ có thể chứa một %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Liên kết hình ảnh",
       "lblURLPH": "Liên kết phải kết thúc bằng .jpg, .png, .gif, hoặc .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Hình ảnh này dường như không hợp lệ. Vui lòng chỉ định một liên kết trực tiếp đến tệp hình ảnh (URL của bạn thường sẽ kết thúc bằng .jpg hoặc .png). Các liên kết đến trang web chứa một hình ảnh sẽ không hoạt động.",
+      "lblURLErrorHTTPS": "Liên kết hình ảnh này không hợp lệ. URL phải bắt đầu bằng HTTPS và kết thúc bằng một định dạng hình ảnh được hỗ trợ (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Đang kiểm tra hình ảnh...",
       "lblLabel": "Chú thích hình ảnh",
       "lblLabel1": "Chú thích",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Đặt vừa",
       "lblPosition4": "Kéo giãn",
       "lblPosition5": "Tùy chỉnh",
-      "lblURLHelp": "Để có kết quả tốt nhất, kích thước hình ảnh phải nhỏ hơn 400 KB. Sử dụng ảnh JPG được nén lại ở mức 80% và chiều rộng khuyến nghị là: 2000 pixel cho giao diện chính hoặc bảng thuyết minh (narrative panel) có nút phóng đại, 1000 pixel cho bảng thuyết minh không có nút phóng đại. <br><br>Nếu ảnh được liên kết vẽ chậm, hãy tải ảnh lên câu chuyện của bạn để xử lý tốt hơn.",
+      "lblURLHelp": "Liên kết hình ảnh phải bắt đầu bằng HTTPS.<br><br>Để có kết quả tốt nhất, kích thước hình ảnh phải nhỏ hơn 400 KB. Sử dụng ảnh JPG được nén lại ở mức 80% chất lượng và chiều rộng hình ảnh khuyến nghị là: 2000 pixel cho giao diện chính hoặc bảng thuyết minh (narrative panel) có nút phóng đại, 1000 pixel cho bảng thuyết minh không có nút phóng đại.<br><br>Nếu liên kết hình ảnh hiển thị chậm, hãy tải ảnh lên câu chuyện của bạn để được xử lý tốt hơn.",
       "tooltipDimension": "Giá trị có thể được chỉ định theo 'px' hoặc '%'",
       "tooltipDimension2": "Giá trị phải được chỉ định bằng 'px'",
       "lblPosition2Explain": "(có thể xén)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Người dùng sẽ thấy một điểm đánh dấu trên bản đồ khi bấm vào liên kết"
     },
     "editorActions": {
-      "navigate": "Điều hướng đến một phần",
+      "navigate": "Điều hướng đến phần khác",
       "remove": "Xóa tương tác",
       "preview": "Xem trước tương tác"
     },

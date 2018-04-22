@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Este link não está ativo (a seção não foi publicada)"
     },
     "headerFromCommon": {
-      "storymapsText": "Um mapa histórico",
+      "storymapsText": "Um Mapa Histórico",
       "builderButton": "Editar",
       "facebookTooltip": "Compartilhar no Facebook",
       "twitterTooltip": "Compartilhar no Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Quando este modo está ativo há controles para reproduzir/pausar a história e ajustar a velocidade de navegação.",
       "linksupdated": "Links atualizados!",
       "print": "Imprimir",
-      "printInstruction1": "Aguarde todo o conteúdo carregar antes de imprimir esta página",
-      "printInstruction1a": "Algum conteúdo pode não imprimir a menos que você ative \"Imprimir Cores do Plano de Fundo e Imagens\" no diálogo de configuração da Página de Impressão",
+      "printInstruction1": "Espere até a história inteira carregar antes de imprimir",
+      "printInstruction1a": "Se esta página carrega lentamente ou algumas mídias não aparecem, tente imprimir uma faia menor de seções.",
+      "printInstruction1b": "Para melhores resultados, você pode precisar ativar a impressão de elementos de plano de fundo nas configurações de impressão do seu navegador.",
       "printInstruction2": "Esta página não pode ser compartilhada com outros, ao contrário, compartilhe o ${link}",
       "link": "link para a história",
+      "optionsHeader": "Opções",
       "printOptPageBreak": "Comece cada seção em uma nova página",
       "makeTextBlack": "Tornar todo o texto preto",
-      "printWarning": "Esta é uma versão impressa de um mapa histórico. O conteúdo dinâmico como vídeos e mapas interativos está disponível somente na versão online em ${link}",
+      "showLinks": "Mostrar URLs de links",
+      "madeWith": "Esta história foi feita com ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Diário do Mapa Histórico da Esri",
+      "readItOnline": "Leia a versão interativa na web em ${link}.",
       "printMSWarning": "link disponível somente na história online",
-      "printVideoWarning": "Este vídeo pode ser visualizado na versão online deste mapa histórico"
+      "printVideoWarning": "Este vídeo pode ser visualizado na versão online deste mapa histórico",
+      "printRangeHeader": "Imprimir parte de impressão desta história",
+      "sectionLabel": "Seções:",
+      "apply": "Aplicar",
+      "resetRange": "Redefinir para história inteira"
     }
   }
 });

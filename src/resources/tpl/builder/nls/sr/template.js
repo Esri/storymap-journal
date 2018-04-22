@@ -103,7 +103,21 @@ define({
       "lblAdd": "Kako želite da nazovete dnevnik mape?",
       "phAdd": "Unesite naslov...",
       "lblOR": "ili",
-      "lblHelp": "Krenite na turu"
+      "lblHelp": "Krenite na turu",
+      "quote0": "Uvek ima mesta za priču koja prenosi ljude na drugo mesto.",
+      "quote1": "Pričanje priče je najmoćniji način da svetu predstavite ideje u današnje vreme.",
+      "quote2": "Priče koje mi pričamo zaista čine svet. Ako želite da promenite svet, treba da promenite vašu priču. Ova istina se odnosi na pojedince, kao i na institucije.",
+      "quote3": "Najkraća razdaljina između ljudskog bića i istine je priča.",
+      "quote4": "Ljudi ne žele više informacija. Informacija im je preko glave. Oni žele da veruju – da veruju u vas, vaše ciljeve, vaš uspeh, u priču koju pričate.",
+      "quote5": "Zaista verujem da ljudi traže priče koje istinski nešto znače – priče koje govore o spasenju, one koje inspirišu i koje su veće od pojedinca.",
+      "quote6": "Ako želite da ostavite utisak na pojedinca ili da grupa usvoji određenu vrednost u svakodnevnom životu, ispričajte im živopisnu priču.",
+      "quote7": "Ako mi ispričate, to je esej. Ako mi pokažete, to je priča.",
+      "quote8": "Ko ne prepoznajete drveće, možete se izgubiti u šumi, ali ako ne znate priče, možete se izgubiti u životu.",
+      "quote9": "Priče su kreativne konverzije samog života u moćnije, jasnije, značajnije iskustvo. One su valute ljudskog kontakta.",
+      "quote10": "Nema veće agonije nego kada u sebi nosite neispričanu priču.",
+      "quote11": "Možda su priče samo podaci sa dušom.",
+      "quote12": "Priče su najmoćnije oružje u arsenalu vođe.",
+      "quote13": "Priroda priča je da izostavljaju mnogo više nego što prenose."
     },
     "firstAddSplash": {
       "thisis": "Ovo je",

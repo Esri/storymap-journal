@@ -5,7 +5,7 @@ define({
       "lblSelect2": "Vsebina",
       "lblMap": "Karta",
       "lblImage": "Slika",
-      "lblVideo": "Videoposnetek",
+      "lblVideo": "Video",
       "lblExternal": "Spletna stran",
       "lblUpload": "Naloži",
       "lblLink": "Povezava",
@@ -28,7 +28,7 @@ define({
       "infoUpload": "Slike bodo shranjene v vašem računu ArcGIS in dostopne samo znotraj vaše zgodbe.",
       "warningFileTypes": "Slika je lahko .jpg, .png, .gif, ali .bmp",
       "warningOneFile": "Datoteke se sprejemajo posamično.",
-      "warningFileSize": "Datoteka presega največjo dovoljeno velikost nalaganja. Izberite drugo datoteko.",
+      "warningFileSize": "Datoteka presega maksimalno dovoljeno velikost nalaganja. Izberite drugo datoteko.",
       "tooltipRemove": "Izbrišite neuporabljeno sliko z računa ArcGIS. <br> (Če se boste kasneje odločili za uporabo, jo boste morali znova naložiti.)"
     },
     "imageSelectorFlickr": {
@@ -38,8 +38,8 @@ define({
     },
     "imageSelectorFacebook": {
       "leftHeader": "Uporabnik Facebooka",
-      "rightHeader": "Facebookova stran",
-      "pageExplain": "Facebookova stran je javna blagovna znamka/izdelek ali znani subjekt, kot je <b>esrigis</b>. Ime strani vidite po prvem znaku »/« v URL-ju strani.",
+      "rightHeader": "Facebook stran",
+      "pageExplain": "Facebook stran je javna blagovna znamka/izdelek ali znani subjekt, kot je <b>esrigis</b>. Ime strani vidite po prvem znaku »/« v URL-ju strani.",
       "pageInputLbl": "Ime strani",
       "lookupMsgError": "Stran ni najdena",
       "warning": "Podpora za Facebook je opuščena, ${learn}.",
@@ -48,41 +48,42 @@ define({
     "imageSelectorPicasa": {
       "userInputLbl": "E-pošta ali ID za Google",
       "signInMsg2": "Račun ni najden",
-      "howToFind": "Kako poiskati ID Picase",
+      "howToFind": "Kako najti ID Picase",
       "howToFind2": "Kopirajte števke med prvim in drugim znakom »/« katerekoli strani Picase"
     },
     "videoSelectorCommon": {
       "check": "Preveri",
-      "notFound": "Videoposnetek ni najden",
-      "found": "Videoposnetek je najden",
-      "select": "Izberite ta videoposnetek"
+      "notFound": "Video ni najden",
+      "found": "Video je najden",
+      "select": "Izberite ta video"
     },
     "videoSelectorHome": {
       "other": "Drugo"
     },
     "videoSelectorYoutube": {
-      "url": "Povezava do videoposnetka na YouTubu",
+      "url": "Povezava do videa na YouTubu",
       "pageInputLbl": "Uporabniško ime",
       "lookupMsgError": "Uporabnik ni najden",
-      "howToFind": "Kako poiskati uporabniško ime za YouTube",
-      "howToFind2": "Uporabniško ime je prikazano pod videoposnetki",
+      "howToFind": "Kako najti uporabniško ime za YouTube",
+      "howToFind2": "Uporabniško ime je prikazano pod videi",
       "found": "Najdeno",
-      "noData": "Javni videoposnetki niso najdeni",
-      "videoNotChecked": "Videoposnetek ni bil preverjen na YouTubu, vendar je njegov naslov videti pravilno.",
+      "noData": "Javni videi niso najdeni",
+      "videoNotChecked": "Video ni bil preverjen na YouTubu, vendar je njegov naslov videti pravilno.",
       "checkFailedAPI": "Preverjanje na YouTubu ni uspelo, preverite YouTubov ključ API."
     },
     "videoSelectorVimeo": {
-      "url": "Povezava do videoposnetka na Vimeu"
+      "url": "Povezava do videa na Vimeu"
     },
     "videoSelectorOther": {
       "explain1": "Ta karta z zgodbo ne more predvajati neobdelanih videodatotek (npr. avi ali mpeg), vendar pa lahko predvaja gostujoče videe z vgrajenimi predvajalniki (npr. YouTube ali Vimeo).",
-      "explain2": "Večina video gostovanih storitev zagotavlja to funkcionalnost. Poiščite možnost za vdelavo videa, kopirajte navedeno kodo in jo dodajte zgodbi s pomočjo možnosti vsebine %WEBPAGE%.",
-      "explain3": "Druga možnost je, da sami gostite videoposnetek, skupaj s stranjo HTML, ki uporablja videopredvajalnik, kot je %EXAMPLE%. Nato pa URL te strani HTML dodate v svojo zgodbo kot %WEBPAGE%.",
+      "explain2": "Večina video gostovanih storitev zagotavlja to funkcionalnost. Najdite možnost za vdelavo videa, kopirajte navedeno kodo in jo dodajte zgodbi s pomočjo možnosti vsebine %WEBPAGE%.",
+      "explain3": "Druga možnost je, da sami gostite video, skupaj s stranjo HTML, ki uporablja videopredvajalnik, kot je %EXAMPLE%. Nato pa URL te strani HTML dodate v svojo zgodbo kot %WEBPAGE%.",
       "webpage": "Spletna stran"
     },
     "webpageSelectorHome": {
       "lblUrl": "Povezava do spletne strani",
       "lblEmbed": "Vdelana koda",
+      "lblMustUseHTTPS": "Povezave do spletne vsebine se morajo začeti s HTTPS",
       "lblOR": "ALI",
       "lblError1": "Napaka, počistite eno od dveh vnosnih polj.",
       "lblError2": "Vdelana koda lahko vsebuje samo eno %IFRAMETAG%",
@@ -91,14 +92,16 @@ define({
     "mediaConfigure": {
       "lblURL": "Povezava na sliko",
       "lblURLPH": "Povezava se mora končati z .jpg, .png, .gif, ali .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Videti je, da slika ni veljavna. Navedite neposredno povezavo do slikovne datoteke (vaš URL se bo po navadi končal z .jpg ali .png). Povezave do spletne strani, ki vsebuje sliko, ne bodo delovale.",
+      "lblURLErrorHTTPS": "Ta povezava slike ni veljavna. URL se mora začeti s HTTPS in končati s podprto končnico slikovne datoteke (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Preverjanje slike...",
       "lblLabel": "Napis slike",
       "lblLabel1": "Napis",
       "lblLabel2": "Lebdeče besedilo",
       "lblLabel3": "Brez",
       "lblLabelPH": "Vnesite besedilo...",
-      "lblMaximize": "V kotu slike vključite gumb za povečanje",
+      "lblMaximize": "V kotu slike vključite gumb za maksimiziranje",
       "lblMaximizeHelp": "Priporočljivo samo za fotografije visoke kakovosti",
       "lblPosition": "Položaj",
       "lblPosition1": "Na sredino",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Prilagodi",
       "lblPosition4": "Raztegni",
       "lblPosition5": "Po meri",
-      "lblURLHelp": "Za najboljše rezultate morajo biti slike manjše od 400 KB. Uporabite stisnjene slike JPG z 80% kakovostjo, z naslednjimi priporočenimi širinami slike: 2000 pikslov za glavni oder ali pripovedno ploščo z gumbom za maksimiziranje, 1000 pikslov za pripovedno ploščo brez gumba za maksimiziranje.<br><br>Če se slika s povezavo počasi izrisuje, jo za boljše rezultate naložite v svojo zgodbo.",
+      "lblURLHelp": "Povezava na sliko se mora začeti s HTTPS.<br><br>Če želite najboljše rezultate, morajo biti slike manjše od 400 KB. Uporabite stisnjene slike JPG, z 80-% kakovostjo, z naslednjimi priporočenimi širinami slike: 2000 pikslov za glavni oder ali pripovedno ploščo z gumbom za maksimiziranje, 1000 pikslov za pripovedno ploščo brez gumba za maksimiziranje.<br><br>Če se slika s povezavo počasi izrisuje, jo za boljše rezultate naložite v svojo zgodbo.",
       "tooltipDimension": "Vrednost je lahko navedena v »px« ali »%«",
       "tooltipDimension2": "Vrednost mora biti navedena v »px«",
       "lblPosition2Explain": "(lahko se obreže)",
@@ -119,21 +122,21 @@ define({
       "embedProtocolWarning1": "Če se ta stran v vaši zgodbi ne naloži, je ni mogoče vdelati zaradi varnostnih razlogov. Namesto tega dodajte povezavo v zgodbo, da odprete stran v novem zavihku brskalnika.",
       "embedProtocolWarning2": "Če se ta stran v vaši zgodbi ne naloži, odkljukajte to možnost in poskusite znova. Če se stran še vedno ne naloži, je ni mogoče vdelati zaradi varnostnih razlogov. Namesto tega dodajte povezavo v zgodbo, da odprete stran v novem zavihku brskalnika.",
       "learn": "Izvedite več",
-      "lblAltText": "Dodatno besedilo",
+      "lblAltText": "Alternativno besedilo",
       "placeholderAltText": "Vnesite opis tega medija za slabovidne bralce...",
-      "tooltipAltText": "Navedite opis te medijske vsebine, ki jo bodo uporabljale pomožne tehnologije, kot je programska oprema bralnika zaslona. Opis je neobvezen, vendar je priporočljivo, da izpolni smernice za spletno dostopnost, kot sta WCAG in oddelek 508."
+      "tooltipAltText": "Navedite opis te medijske vsebine, ki jo bodo uporabljale pomožne tehnologije, kot je programska oprema bralnika zaslona. Opis je izbiren, vendar je priporočljivo, da izpolni smernice za spletno dostopnost, kot sta WCAG in razdelek 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Najdite naslov ali kraj",
       "mapMarkerExplain": "Uporabnik bo videl označbo na karti, ko klikne na povezavo"
     },
     "editorActions": {
-      "navigate": "Pojdi na odsek",
+      "navigate": "Pojdi na drug odsek",
       "remove": "Odstrani dejanje",
       "preview": "Predogled dejanja"
     },
     "editorActionMedia": {
-      "lblTitle": "Spremenite vsebino glavnega okna"
+      "lblTitle": "Spremenite vsebino glavnega odra"
     },
     "editorInlineMedia": {
       "lblTitle": "Vstavite sliko, video ali spletno stran"

@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Web ページ リンク",
       "lblEmbed": "コードの埋め込み",
+      "lblMustUseHTTPS": "Web コンテンツへのリンクは、HTTPS で始まる必要があります",
       "lblOR": "または",
       "lblError1": "エラーです。2 つの入力フィールドの 1 つを削除してください。",
       "lblError2": "コードの埋め込みには 1 つの %IFRAMETAG% だけを含めることができます",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "画像リンク",
       "lblURLPH": "リンクの末尾は、*.jpg、*.png、*.gif、*.bmp のいずれかである必要があります。",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "この画像は有効ではありません。画像ファイルへの直接のリンクを指定してください (URL の末尾は通常 *.jpg または *.png となります)。画像を含む Web ページへのリンクは機能しません。",
+      "lblURLErrorHTTPS": "この画像リンクは有効ではありません。URL の先頭は HTTPS で始まり、末尾はサポートされている画像ファイルの拡張子 (*.jpg、*.png、*.gif、*.bmp) で終わる必要があります。",
       "lblURLCheck": "画像をチェックしています...",
       "lblLabel": "画像のキャプション",
       "lblLabel1": "キャプション",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "調整",
       "lblPosition4": "ストレッチ",
       "lblPosition5": "カスタム",
-      "lblURLHelp": "最高の結果を得るために、画像は 400 KB 未満である必要があります。80% の品質で圧縮された JPG 画像を使用します。推奨される画像の幅は、メイン ステージまたは最大化ボタン付きの注釈パネルの場合は 2000 ピクセル、最大化ボタンのない注釈パネルの場合は 1000 ピクセルです。<br><br>リンク付き画像の描画が遅い場合、それをストーリーにアップロードすると早くなります。",
+      "lblURLHelp": "画像リンクは HTTPS で始まる必要があります。<br><br>最善の結果を得るために、画像は 400 KB 未満にすることを推奨します。80% の品質で圧縮された JPG 画像を使用します。推奨される画像の幅は、メイン ステージまたは最大化ボタン付きの注釈パネルの場合は 2000 ピクセル、最大化ボタンのない注釈パネルの場合は 1000 ピクセルです。<br><br>リンク付き画像の描画が遅い場合、画像をストーリーにアップロードすると早くなります。",
       "tooltipDimension": "値は「px」または「%」で指定できます",
       "tooltipDimension2": "値は「px」で指定する必要があります",
       "lblPosition2Explain": "(トリミングの可能性あり)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "リンクをクリックすると、マップ マーカーが表示されます"
     },
     "editorActions": {
-      "navigate": "セクションに移動",
+      "navigate": "別のセクションに移動",
       "remove": "アクションの削除",
       "preview": "アクションのプレビュー"
     },

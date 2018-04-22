@@ -103,7 +103,21 @@ define({
       "lblAdd": "Harita Bülteninize ne ad vermek istersiniz?",
       "phAdd": "Başlığınızı girin...",
       "lblOR": "Veya",
-      "lblHelp": "Tanıtım Gezisi"
+      "lblHelp": "Tanıtım Gezisi",
+      "quote0": "İnsanları başka diyarlara götürecek bir hikayeye her zaman yer vardır.",
+      "quote1": "Hikaye anlatımı, günümüzde fikirleri dünyaya sunmanın en güçlü yoludur.",
+      "quote2": "Anlattığımız hikayeler, gerçekten dünyayı baştan yaratıyor. Dünyayı değiştirmek isterseniz, hikayenizi değiştirmelisiniz. Bu gerçek, hem bireyler hem de kurumlar için geçerlidir.",
+      "quote3": "Bir insanla gerçek arasındaki en kısa mesafe, bir hikayedir.",
+      "quote4": "İnsanlar daha fazla bilgi istemiyor. Tamamen bilgiye gömülmüş durumdalar. Size, hedeflerinize, başarınıza ve anlattığınız hikayelere inanmak istiyorlar.",
+      "quote5": "İnsanların gerçekten bir anlam ifade eden, kurtarıcı, ilham verici ve bireyden daha büyük hikayeler aradıklarına inanıyorum.",
+      "quote6": "Bireyi veya bir grubu, günlük yaşamlarında belirli bir değeri benimsemeleri için etkilemek istiyorsanız, onlara etkileyici bir hikaye anlatın.",
+      "quote7": "Anlatıyorsan deneme, gösteriyorsan hikayedir.",
+      "quote8": "Ağaçları bilmiyorsanız ormanda kaybolabilir, hikayeleri bilmiyorsanız hayatınızda kaybolabilirsiniz.",
+      "quote9": "Hikayeler, hayatın kendisinin daha güçlü, daha açık ve daha anlamlı bir deneyime dönüştürülmesidir. Hikayeler, insan iletişiminin para birimleridir.",
+      "quote10": "Anlatamadığınız bir hikayeye sahip olmaktan daha acı verici bir şey yoktur.",
+      "quote11": "Belki de hikayeler, ruhu olan verilerdir.",
+      "quote12": "Hikayeler, bir liderin cephaneliğindeki en güçlü silahlardır.",
+      "quote13": "İçeriklerinden çok daha fazlasını size bırakmak, hikayelerin doğasındadır."
     },
     "firstAddSplash": {
       "thisis": "Burası:",

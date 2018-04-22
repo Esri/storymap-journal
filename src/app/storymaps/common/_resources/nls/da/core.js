@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Organisationslogo",
       "logoCustomRadio": "Mit logo",
       "logoCustomLabel": "Billede:",
-      "logoCustomUploadHelp": "Logoer ser bedst ud, hvis de har et bredde:højdeforhold mellem 1:1 og 5:1. Hvis et linket logo tegnes langsomt, kan du gemme en kopi og overføre den hertil.",
+      "logoCustomUploadHelp": "Et logos billedlink skal begynde med HTTPS. Logoer ser bedst ud, hvis de har et bredde:højdeforhold mellem 1:1 og 5:1. Hvis et linket logo tegnes langsomt, kan du gemme en kopi og overføre den hertil.",
       "logoCustomUploadTooltip": "Brug et overført logo",
       "logoCustomUploadButton": "Overfør et logo",
       "logoUploadSizeError": "GIF-dimensioner er for store. Skift størrelse til en bredde på ${PIXEL-WIDTH} pixels.",
+      "logoCustomLinkHTTPSError": "Links skal begynde med HTTPS",
       "logoCustomLinkTooltip": "Link til et logo",
       "logoCustomLinkPlaceholder": "Billede-URL",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logoet kan være en .bmp-, .gif-, .jpg-, .jpeg- eller .png-fil. GIF-filer skal være mindre end 250 pixels i bredden og fylde mindre end 10 MB.",
       "logoCustomTargetPlaceholder": "Den webside, der skal åbnes, når der klikkes på logoet",
       "logoSocialText": "Tagline:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Denne sektion",
       "homeSection": "Hjem-sektion",
       "hiddenSection": "Skjult sektion"
+    },
+    "bannerNotification": {
+      "learnMore": "Yderligere oplysninger",
+      "close": "Luk",
+      "dontShowAgain": "Vis ikke denne meddelelse igen"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Vigtig meddelelse om internetsikkerhed og Story Maps",
+      "s1h1": "Esri forbedrer sikkerheden for Story Maps",
+      "s1p1": "Dine Story Maps lever på nettet, og internetfællesskabet arbejder altid for at skabe og implementere bedre sikkerhed. HTTPS som giver en sikker forbindelse til indhold, der sendes over internettet, bliver den mest almindelige måde at få adgang til webindhold på. De fleste moderne browsere viser nu advarselsmeddelelser, når der bruges HTTP i stedet for HTTPS. På grund af denne nye standard, der starter med opdateringen i juni 2018 til ArcGIS Online, skal dine Story Maps bruge HTTPS.",
+      "s1p2": "I praksis betyder det, at et Story Map og alt dets indhold (herunder billeder, lag, indlejrede apps og websteder) skal åbnes ved hjælp af links, der starter med HTTPS i stedet for HTTP. Det sikrer den bedste oplevelse for dine læsere, fordi de fleste webbrowsere vil vise, at dine historier er sikre.",
+      "s2h1": "Hvad skal jeg gøre?",
+      "s2p1": "Esri arbejder på at gøre overgangen let for Story Map-forfattere og -læsere. Der er værktøjer tilgængelige nu i Story Map builders og Mine historier, der hjælper dig med at finde usikkert indhold (HTTP) i dine historier og giver anbefalinger til, hvordan du ordner det. Kontrollér dine historier for usikkert indhold og opdatér til HTTPS inden juni 2018.",
+      "action1": "Luk",
+      "action2": "Kontrollér mine historier nu",
+      "action3": "Lær mere"
     }
   }
 });

@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Web 頁面連結",
       "lblEmbed": "嵌入代碼",
+      "lblMustUseHTTPS": "連結到 Web 內容時必須以 HTTPS 開頭",
       "lblOR": "OR",
       "lblError1": "錯誤，請清除其中一個輸入欄位。",
       "lblError2": "嵌入代碼僅可包含一個 %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "圖片連結",
       "lblURLPH": "連結應以 .jpg、.png、.gif 或 .bmp 結尾",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "此圖像可能無效。請指定圖像文件的直接連結(URL 通常以 .jpg 或 .png 結尾)。包含圖像的網頁連結無法使用。",
+      "lblURLErrorHTTPS": "此圖片連結無效。URL 必須以 HTTPS 開頭，並以支援的圖片檔的副檔名結尾 (.jpg、.png、.gif、.bmp)。",
       "lblURLCheck": "正在檢查圖像...",
       "lblLabel": "圖片標號",
       "lblLabel1": "說明文字",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "適合",
       "lblPosition4": "自動縮放",
       "lblPosition5": "自訂",
-      "lblURLHelp": "為了獲得最佳結果，圖片必須小於 400 KB。請使用 80% 品質的壓縮 JPG 圖片及這些建議的圖片寬度：為主舞台或包含最大化按鈕的敘述面板使用 2000 像素，為不含最大化按鈕的敘述面板使用 1000 像素。<br><br>如果連結的圖片繪製緩慢，會將它上傳到您的故事以獲得更好的結果。",
+      "lblURLHelp": "圖片連結必須以 HTTPS 開頭。<br><br>為了獲得最佳結果，圖片必須小於 400 KB。請使用 80% 品質的壓縮 JPG 圖片及這些建議的圖片寬度：為主舞台或包含最大化按鈕的敘述面板使用 2000 像素，為不含最大化按鈕的敘述面板使用 1000 像素。<br><br>如果連結的圖片繪製緩慢，會將它上傳到您的故事以獲得更好的結果。",
       "tooltipDimension": "可使用 'px' 或 '%' 指定值",
       "tooltipDimension2": "值必須在 'px'中指定",
       "lblPosition2Explain": "（可裁切）",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "使用者在按一下連結時會看到地圖標記"
     },
     "editorActions": {
-      "navigate": "導覽至部分",
+      "navigate": "導覽至其他部分",
       "remove": "移除動作",
       "preview": "預覽動作"
     },

@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Organisatielogo",
       "logoCustomRadio": "Mijn logo",
       "logoCustomLabel": "Afbeelding:",
-      "logoCustomUploadHelp": "Logo's zien er het beste uit als ze een breedte-hoogteverhouding hebben tussen 1:1 en 5:1. Als een gekoppeld logo langzaam wordt getekend, sla dan een kopie op en upload het hier.",
+      "logoCustomUploadHelp": "Logo-afbeeldingskoppelingen moeten beginnen met HTTPS. Logo's zien er het beste uit als ze een breedte-hoogteverhouding hebben tussen 1:1 en 5:1. Als een gekoppeld logo langzaam wordt getekend, sla dan een kopie op en upload het hier.",
       "logoCustomUploadTooltip": "Een geüpload logo gebruiken",
       "logoCustomUploadButton": "Een logo uploaden",
       "logoUploadSizeError": "GIF-afmetingen te groot. Graag aanpassen naar ${PIXEL-WIDTH} pixels breed.",
+      "logoCustomLinkHTTPSError": "Koppeling moet beginnen met HTTPS",
       "logoCustomLinkTooltip": "Koppelen aan een logo",
       "logoCustomLinkPlaceholder": "Afbeeldings-URL",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logo kan een .bmp, .gif, .jpg, .jpeg of .png-bestand zijn. Gif moet kleiner zijn dan 250 pixels breed en 10 Mb groot.",
       "logoCustomTargetPlaceholder": "Webpagina wordt geopend als het logo wordt aangeklikt",
       "logoSocialText": "Tagline:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Deze sectie",
       "homeSection": "Homesectie",
       "hiddenSection": "Verborgen sectie"
+    },
+    "bannerNotification": {
+      "learnMore": "Meer informatie",
+      "close": "Sluiten",
+      "dontShowAgain": "Dit bericht niet meer weergeven"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Belangrijk bericht over internetbeveiliging en Story Maps",
+      "s1h1": "Esri verbetert de beveiliging van Story Maps",
+      "s1p1": "Uw Story Maps staan live op het internet en de internetcommunity werkt permanent aan het bepalen en implementeren van betere beveiliging. HTTPS, dat een beveiligde verbinding biedt voor content die over het internet verzonden wordt, wordt meer en meer gebruikt als de manier bij uitstek om content op het internet te openen. De meeste moderne browsers tonen nu waarschuwingsberichten als HTTP wordt gebruikt in plaats van HTTPS. Omwille van deze nieuwe norm, en met ingang van de ArcGIS Online update van juni 2018, moeten uw Story Maps gebruik maken van HTTPS.",
+      "s1p2": "Praktisch betekent dit dat een Story Map en alle content ervan (inclusief afbeeldingen, lagen, geëmbedde apps en websites) moet worden geopend d.m.v. koppelingen die beginnen met HTTPS in plaats van HTTP. Dit garandeert de beste ervaring voor uw lezers, want de meeste webbrowsers zullen aangeven dat uw verhalen beveiligd zijn.",
+      "s2h1": "Wat moet ik doen?",
+      "s2p1": "Esri zorgt er voor dat dit een eenvoudige overgang wordt voor makers en lezers van Story Maps. Er zijn nu tools beschikbaar in Story Map builders en My Stories die u in staat stellen om onbeveiligde content (HTTP) in uw verhalen te vinden en aanbevelingen geven voor het corrigeren ervan. Controleer uw verhalen op onbeveiligde content en werkt alles bij naar HTTPS voor juni 2018.",
+      "action1": "Sluiten",
+      "action2": "Controleer nu mijn verhalen",
+      "action3": "Meer weten"
     }
   }
 });

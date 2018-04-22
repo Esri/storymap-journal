@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "啟用此模式時，可使用控制項來播放/暫停故事和調整瀏覽速度。",
       "linksupdated": "已更新連結!",
       "print": "列印",
-      "printInstruction1": "請等到全部內容皆載入完畢，再列印此頁面",
-      "printInstruction1a": "除非您在「列印頁面」設定對話方塊中啟用「列印背景顏色和圖片」，否則可能無法列印部分內容",
+      "printInstruction1": "請等到整個故事載入完畢再列印",
+      "printInstruction1a": "如果此頁面載入緩慢或未顯示部分媒體，請試著列印部分的較小範圍。",
+      "printInstruction1b": "為了獲得最佳結果，您可能需要在瀏覽器的列印設定中啟用背景元素列印。",
       "printInstruction2": "無法與其他人分享此頁面，請改為分享 ${link}",
       "link": "連結至故事",
+      "optionsHeader": "選項",
       "printOptPageBreak": "在一個新頁面上開始每個部分",
       "makeTextBlack": "將所有文字變成黑色",
-      "printWarning": "這是列印版本的故事地圖。只能在 ${link} 的線上版本中取得影片和互動式地圖之類的動態內容",
+      "showLinks": "顯示連結 URL",
+      "madeWith": "這是使用 ${JOURNAL_LINK_TEXT} 所製作的故事。",
+      "journalLinkText": "Esri 的 Story Map Journal",
+      "readItOnline": "在 Web (${link}) 上閱讀互動式版本。",
       "printMSWarning": "只能在線上故事中取得的連結",
-      "printVideoWarning": "可在此故事地圖的線上版本中檢視這段影片"
+      "printVideoWarning": "可在此故事地圖的線上版本中檢視這段影片",
+      "printRangeHeader": "列印此故事的部分",
+      "sectionLabel": "部分:",
+      "apply": "套用",
+      "resetRange": "重設為完整故事"
     }
   }
 });

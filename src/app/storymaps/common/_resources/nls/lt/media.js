@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Tinklalapio nuoroda",
       "lblEmbed": "Įterpimo kodas",
+      "lblMustUseHTTPS": "Žiniatinklio turinio nuorodos turi prasidėti HTTPS",
       "lblOR": "ARBA",
       "lblError1": "Klaida, išvalykite vieną iš dviejų įvesties laukų.",
       "lblError2": "Įterpimo kode gali būti tik vienas %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Paveikslėlio nuoroda",
       "lblURLPH": "Nuoroda gali būti .jpg, .png, .gif arba .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Atrodo, kad šis paveikslėlis netinkamas. Pateikite tiesioginę nuorodą į paveikslėlio failą (URL paprastai turi baigtis .jpg arba .png). Nuorodos į tinklalapį, kuriame yra paveikslėlis, neveiks.",
+      "lblURLErrorHTTPS": "Ši paveikslėlio nuoroda negalioja. URL turi prasidėti HTTPS ir baigtis palaikomu failo plėtiniu (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Tikrinamas paveikslėlis...",
       "lblLabel": "Paveikslėlio antraštė",
       "lblLabel1": "Antraštė",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Talpinti",
       "lblPosition4": "Ištempti",
       "lblPosition5": "Adaptuota",
-      "lblURLHelp": "Jei norite geriausių rezultatų, vaizdai turi būti mažesni nei 400 KB. Naudokite suglaudintus JPG vaizdus 80 % kokybės ir tokių rekomenduojamų vaizdo pločių: 2 000 pikselių pagrindinėje srityje arba pasakojimo skydelyje su padidinimo mygtuku, 1 000 pikselių pasakojimo skydelyje be padidinimo mygtuko.<br><br>Jei susietas vaizdas piešiamas lėtai, norėdami geresnių rezultatų, įkelkite jį į savo pasakojimą.",
+      "lblURLHelp": "Paveikslėlio nuoroda turi prasidėti HTTPS.<br><br>Jei norite geriausių rezultatų, paveikslėliai turi būti mažesni nei 400 KB. Naudokite 80% kokybės suglaudintus JPG paveikslėlius ir tokių rekomenduojamų pločių: 2 000 pikselių pagrindinėje srityje arba pasakojimo skydelyje su padidinimo mygtuku, 1 000 pikselių pasakojimo skydelyje be padidinimo mygtuko.<br><br>Jei susietas paveikslėlis atvaizduojamas lėtai, norėdami geresnių rezultatų, įkelkite jį į savo pasakojimą.",
       "tooltipDimension": "Reikšmę galima nurodyti piks. arba %",
       "tooltipDimension2": "Reikšmę reikia nurodyti piks.",
       "lblPosition2Explain": "(gali būti apkarpoma)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Spustelėjęs nuorodą, vartotojas matys žemėlapio žymeklį"
     },
     "editorActions": {
-      "navigate": "Eiti į skiltį",
+      "navigate": "Eiti į kitą skiltį",
       "remove": "Pašalinti veiksmą",
       "preview": "Peržiūrėti veiksmą"
     },

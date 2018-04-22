@@ -5,7 +5,7 @@ define([
 		MapViewerWrapperUtils
 	) {
 		var CONFIG = {
-			mapViewerOpt: 'embedded=1&hide=bm,share,save,analysis,directions,measure'
+			mapViewerOpt: 'embedded=1&hide=share,save,analysis,directions,measure'
 		};
 
 		//

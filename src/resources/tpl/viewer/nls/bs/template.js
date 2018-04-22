@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Poveznica nije aktivna (odjeljak nije objavljen)"
     },
     "headerFromCommon": {
-      "storymapsText": "Karta s pričom",
+      "storymapsText": "Story Map",
       "builderButton": "Uredi",
       "facebookTooltip": "Podijeli na Facebooku",
       "twitterTooltip": "Podijeli na Twitteru",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Kada je ovaj način rada aktivan, postoje kontrole za reprodukciju/pauziranje priče i podešavanje brzine navigacije.",
       "linksupdated": "Poveznice ažurirane!",
       "print": "Ispis",
-      "printInstruction1": "Pričekajte da se sav sadržaj učita prije nego što ispišete ovu stranicu",
-      "printInstruction1a": "Neki se sadržaj možda neće htjeti ispisivati osim ako ne omogućite opciju „Ispisi pozadinske boje i slike” u dijaloškom okviru za postavljanje stranice za ispis.",
+      "printInstruction1": "Pričekajte da se učita cijela priča prije ispisa",
+      "printInstruction1a": "Ako se ova stranica sporo učitava ili se neki mediji ne pojavljuju, pokušajte ispisati manji raspon odjeljaka.",
+      "printInstruction1b": "Za najbolje rezultate možda ćete trebati omogućiti ispis pozadinskih elemenata u postavkama ispisa preglednika.",
       "printInstruction2": "Ova se stranica ne može dijeliti s drugima, umjesto nje podijelite ${link}",
       "link": "poveznica na priču",
+      "optionsHeader": "Opcije",
       "printOptPageBreak": "Započnite svaki dio na novoj stranici",
       "makeTextBlack": "Promijeni cijeli tekst u crno",
-      "printWarning": "Ovo je ispisana verzija karte s pričom. Dinamički sadržaj, kao što su videozapisi i interaktivne karte, dostupan je samo u internetskoj verziji na ${link}",
+      "showLinks": "Prikaži URL-ove poveznica",
+      "madeWith": "Ova je priča napravljena pomoću ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esrijev Story Map Journal",
+      "readItOnline": "Pročitajte interaktivnu verziju na internetu na ${link}.",
       "printMSWarning": "poveznica dostupna samo u priči na internetu",
-      "printVideoWarning": "Ovaj se videozapis može pogledati u internetskoj verziji ove karte s pričom"
+      "printVideoWarning": "Ovaj se videozapis može pogledati u internetskoj verziji ove karte s pričom",
+      "printRangeHeader": "Ispiši dio ove priče",
+      "sectionLabel": "Odjeljci:",
+      "apply": "Primijeni",
+      "resetRange": "Vrati na cijelu priču"
     }
   }
 });

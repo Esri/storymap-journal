@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Deze koppeling is niet actief (sectie is niet gepubliceerd)"
     },
     "headerFromCommon": {
-      "storymapsText": "Een kaartverhaal",
+      "storymapsText": "Een Story Map",
       "builderButton": "Bewerken",
       "facebookTooltip": "Delen op Facebook",
       "twitterTooltip": "Delen op Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "Wanneer deze modus actief is, kan het verhaal worden afgespeeld en gepauzeerd en kan de navigatiesnelheid worden aangepast.",
       "linksupdated": "Links bijgewerkt!",
       "print": "Afdrukken",
-      "printInstruction1": "Wacht tot alle content geladen is alvorens de pagina af te drukken",
-      "printInstruction1a": "Bepaalde content wordt mogelijk niet afgedrukt tenzij u \"Achtergrondkleuren en beelden afdrukken\" activeert in het dialoogvenster Pagina afdrukken",
+      "printInstruction1": "Wacht tot het hele verhaal geladen is voordat u het afdrukt",
+      "printInstruction1a": "Als deze pagina langzaam wordt geladen of bepaalde media verschijnt niet, probeer dan een kleiner aantal secties af te drukken.",
+      "printInstruction1b": "Voor de beste resultaten moet u misschien het afdrukken van achtergrondelementen in de afdrukinstellingen van uw browser inschakelen.",
       "printInstruction2": "Deze pagina kan niet met anderen gedeeld worden, deel in plaats daarvan de ${link}",
       "link": "koppeling naar het verhaal",
+      "optionsHeader": "Opties",
       "printOptPageBreak": "Begin elke sectie op een nieuwe pagina",
       "makeTextBlack": "Maak alle tekst zwart",
-      "printWarning": "Dit is een afgedrukt versie van een storymap. Dynamische content zoals video's en interactieve kaarten is alleen beschikbaar in de onlineversie op ${link}",
+      "showLinks": "Koppelings-URL's weergeven",
+      "madeWith": "Dit verhaal werd gemaakt met ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esri's Story Map Journal",
+      "readItOnline": "Lees de interactieve versie op het internet op ${link}.",
       "printMSWarning": "koppeling beschikbaar in het onlineverhaal",
-      "printVideoWarning": "Deze video kan bekeken worden in de onlineversie van deze storymap"
+      "printVideoWarning": "Deze video kan bekeken worden in de onlineversie van deze storymap",
+      "printRangeHeader": "Een deel van dit verhaal afdrukken",
+      "sectionLabel": "Secties:",
+      "apply": "Toepassen",
+      "resetRange": "Resetten naar hele verhaal"
     }
   }
 });

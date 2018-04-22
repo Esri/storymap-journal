@@ -1,28 +1,36 @@
 /*
- * Quotes
+ * Quotes and Title input
  */
 
 #builderQuotes {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	text-align: center;
-	padding: 12% 0;
-}
-
-@media screen and (max-height: 714px) {
-	#builderQuotes {
-		padding: 9% 0;
-	}
+  color: darkgray;
+  font-size: 24px;
+  font-style: italic;
+  font-family: serif;
+  text-align: left;
+  line-height: 125%;
+  max-width: 600px; /* increased from 500px but see 100px of padding below */
+  padding: 10% 50px; /* keep horizontal padding even on narrow screens */
+  margin: auto;
+  min-height: 35%;
 }
 
 @media screen and (max-height: 630px) {
 	#builderQuotes {
-		padding: 3% 0;
+		font-size: 20px;
+		min-height: 30%;
 	}
 }
 
+#builderQuotes.is-floating {
+	padding-left: 0;
+	padding-right: 0;
+	max-width: 90%;
+}
+
+#builderLanding {
+	display: none;
+}
 
 .builderLanding {
 	text-align: center;

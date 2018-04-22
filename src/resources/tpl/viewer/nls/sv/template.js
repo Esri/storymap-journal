@@ -81,7 +81,7 @@ define({
       "errorNotPublished": "Den här länken är inte aktiv (sektionen är inte publicerad)"
     },
     "headerFromCommon": {
-      "storymapsText": "En berättelsekarta",
+      "storymapsText": "En Story Map",
       "builderButton": "Redigera",
       "facebookTooltip": "Dela på Facebook",
       "twitterTooltip": "Dela på Twitter",
@@ -112,15 +112,24 @@ define({
       "autoplayExplain2": "När läget är aktivt finns det kontroller för att spela upp/pausa berättelsen och anpassa navigeringshastigheten.",
       "linksupdated": "Länkarna har uppdaterats",
       "print": "Skriv ut",
-      "printInstruction1": "Vänta tills allt innehåll har lästs in innan du skriver ut den här sidan",
-      "printInstruction1a": "En del innehåll kanske inte skrivs ut om du inte aktiverar Skriv ut bakgrundsfärger och bilder i dialogrutan Utskriftsformat",
+      "printInstruction1": "Vänta tills hela berättelsen har lästs in innan du skriver ut",
+      "printInstruction1a": "Om den här sidan läses in långsamt eller vissa media inte visas kan du försöka skriva ut ett mindre antal avsnitt.",
+      "printInstruction1b": "För bästa resultat kan du behöva aktivera utskrift av bakgrundselement i din webbläsares skrivarinställningar.",
       "printInstruction2": "Det går inte att dela den här sidan med andra, dela i stället ${link}",
       "link": "länken till berättelsen",
+      "optionsHeader": "Alternativ",
       "printOptPageBreak": "Börja varje avsnitt på en ny sida",
       "makeTextBlack": "Gör all text svart",
-      "printWarning": "Det här är en utskriven version av en berättelsekarta. Dynamiskt innehåll som videor och interaktiva kartor är bara tillgängliga i onlineversionen på ${link}",
+      "showLinks": "Visa länk-URL:er",
+      "madeWith": "Den här berättelsen skapades med ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Esris Story Map-journal",
+      "readItOnline": "Läs den interaktiva versionen på webben på ${link}.",
       "printMSWarning": "länken är endast tillgänglig i onlineberättelsen",
-      "printVideoWarning": "Den här videon kan bara visas i onlineversionen av berättelsekartan"
+      "printVideoWarning": "Den här videon kan bara visas i onlineversionen av berättelsekartan",
+      "printRangeHeader": "Skriv ut en del av den här berättelsen",
+      "sectionLabel": "Avsnitt:",
+      "apply": "Verkställ",
+      "resetRange": "Återställ till hela berättelsen"
     }
   }
 });

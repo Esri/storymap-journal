@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Logotipo da organização",
       "logoCustomRadio": "Meu logo",
       "logoCustomLabel": "Imagem:",
-      "logoCustomUploadHelp": "Logos funcionam melhor se eles tiverem uma relação de largura:altura entre 1:1 e 5:1. Se um logo vinculado desenhar de forma devagar, salve uma cópia e carregue aqui.",
+      "logoCustomUploadHelp": "O link de imagem do logo deve iniciar com HTTPS. Logos funcionam melhor se eles tiverem uma relação de largura:altura entre 1:1 e 5:1. Se um logo vinculado desenhar de forma devagar, salve uma cópia e carregue aqui.",
       "logoCustomUploadTooltip": "Utilizar um logo transferido",
       "logoCustomUploadButton": "Transferir um logo",
       "logoUploadSizeError": "Dimensões do GIF muito grandes. Redimensione para ${PIXEL-WIDTH} pixels de largura.",
+      "logoCustomLinkHTTPSError": "O link deve iniciar com HTTPS",
       "logoCustomLinkTooltip": "Link para um logo",
       "logoCustomLinkPlaceholder": "URL da Imagem",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "O logo pode ser um arquivo .bmp, .gif, .jpg, .jpeg, ou .png. Gifs devem ser menores que 250px de largura e 10Mb em tamanho.",
       "logoCustomTargetPlaceholder": "Página da web para abrir quando o logo for clicado",
       "logoSocialText": "Linha da Tag:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Esta seção",
       "homeSection": "Seção da página inicial",
       "hiddenSection": "Seção oculta"
+    },
+    "bannerNotification": {
+      "learnMore": "Obtenha Mais Informações",
+      "close": "Fechar",
+      "dontShowAgain": "Não mostrar esta mensagem novamente"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Mensagem Importante sobre Segurança da Web e Mapas Históricos",
+      "s1h1": "A Esri está melhorando a segurança de Mapas Históricos",
+      "s1p1": "Seu Mapa Histórico em tempo real na web e a comunidade da web está sempre trabalhando para estabelecer e implementar uma segurança melhor. HTTPS, que fornece uma conexão segura para conteúdo transmitido na internet, está emergindo como o modo esperado para acessar conteúdo da web. A maioria dos navegadores modernos agora mostram mensagens de aviso quando HTTP é utilizado em vez de HTTPS. Devido ao fato deste padrão estar emergindo, iniciando com a atualização de junho de 2018 para ArcGIS Online, seus Mapas Históricos precisarão utilizar HTTPS.",
+      "s1p2": "Isto significa que um Mapa Histórico e todo seu conteúdo (incluindo imagens, camadas, aplicativos embutidos e sites da web) devem ter links acessados que iniciam com HTTPS em vez de HTTP. Isto assegura uma melhor experiência para seus leitores porque a maioria dos navegadores da web indicarão que suas histórias são seguras.",
+      "s2h1": "O que preciso fazer?",
+      "s2p1": "A Esri está trabalhando para facilitar a transição para autores e leitores de Mapa Histórico. As ferramentas estão disponíveis agora nos construtores de Mapa Histórico e Minhas Histórias que ajudam a você localizar conteúdo inseguro (HTTP) em suas histórias e fornecem recomendações de como proceder com isto. Verifique suas histórias sobre conteúdo inseguro e atualize para HTTPS antes de junho de 2018.",
+      "action1": "Fechar",
+      "action2": "Verificar minhas histórias agora",
+      "action3": "Mais informações"
     }
   }
 });

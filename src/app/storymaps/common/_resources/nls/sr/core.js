@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Logotip organizacije",
       "logoCustomRadio": "Moj logotip",
       "logoCustomLabel": "Snimak:",
-      "logoCustomUploadHelp": "Logotipi najbolje izgledaju ako imaju odnos širina:visina između 1:1 i 5:1. Ako se linkovani logotip sporo iscrtava, sačuvajte kopiju i otpremite je ovde.",
+      "logoCustomUploadHelp": "Snimak logotipa mora da počinje sa HTTPS. Logotipi najbolje izgledaju ako imaju odnos širina:visina između 1:1 i 5:1. Ako se linkovani logotip sporo iscrtava, sačuvajte kopiju i otpremite je ovde.",
       "logoCustomUploadTooltip": "Koristi postavljeni logotip",
       "logoCustomUploadButton": "Postavi logotip",
       "logoUploadSizeError": "Dimenzije GIF-a su prevelike. smanjite na širinu od ${PIXEL-WIDTH} piksela.",
+      "logoCustomLinkHTTPSError": "Link mora da počinje sa HTTPS",
       "logoCustomLinkTooltip": "Link ka logotipu",
       "logoCustomLinkPlaceholder": "URL adresa snimka",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logotip može da bude .bmp, .gif, .jpg, .jpeg ili .png datoteka. Gif-ovi moraju da imaju širinu manju od 250 piksela i veličinu manju od 10 MB.",
       "logoCustomTargetPlaceholder": "Veb stranica koja se otvara klikom na logotip",
       "logoSocialText": "Slogan:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Ovaj odeljak",
       "homeSection": "Početni odeljak",
       "hiddenSection": "Skriveni odeljak"
+    },
+    "bannerNotification": {
+      "learnMore": "Saznaj više",
+      "close": "Zatvori",
+      "dontShowAgain": "Ne prikazuj ponovo ovu poruku"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Važna poruka u vezi sa veb bezbednošću i Story Maps",
+      "s1h1": "Esri poboljšava bezbednost za Story Maps",
+      "s1p1": "Vaše Story Mape su uživo na vebu i veb zajednica uvek radi na uspostavljanju i realizaciji bolje bezbednosti. HTTPS, koji omogućava bezbednu vezu za prenos sadržaja putem interneta se pojavljuje kao očekivani način za pristup veb sadržaju. Najsavremeniji pregledači sada prikazuju poruke upozorenja kada se koristi HTTP umesto HTTPS. Zbog ovog novog standarda, počevši od ažuriranja ArcGIS Online platforme od juna 2018. Godine, vaše Story mape će morati da koriste HTTPS.",
+      "s1p2": "Drugim rečima, ovo znači da će Story mape i sav njihov sadržaj (uključujući snimke, slojeve, ugrađene aplikacije i veb lokacije) morati da imaju pristup preko linkova koji počinju sa HTTPS umesto HTTP. Ovim se obezbeđuje bolje iskustvo za čitaoce jer će većina veb pregledača prikazati da su priče bezbedne.",
+      "s2h1": "Šta treba da uradim?",
+      "s2p1": "Esri radi na tome da pojednostavi ovaj prelaz za autore i čitaoce Story mapa. Sada su dostupne alatke u alatkama za izradu Story mapa i liste „Moje priče“, koje vam pomažu da pronađete nebezbedan sadržaj (HTTPS) u pričama i pružaju vam preporuke kako da rešite taj problem. Proverite priče na nebezbedan sadržaj i ažurirajte ih na HTTPS vezu pre juna 2018. godine.",
+      "action1": "Zatvori",
+      "action2": "Proveri odmah moje priče",
+      "action3": "Saznaj više"
     }
   }
 });

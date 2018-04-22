@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Veebilehe link",
       "lblEmbed": "Lisa kood",
+      "lblMustUseHTTPS": "Veebisisu linkide alguses peab olema HTTPS",
       "lblOR": "VÕI",
       "lblError1": "Viga, tühjendage üks kahest sisendväljast.",
       "lblError2": "Lisatud kood võib sisaldada ainult ühte märksõna %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Pildi link",
       "lblURLPH": "Link peaks lõppema laiendiga .jpg, .png, .gif või .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "See pilt paistab olevat vigane. Määrake pildifaili otselink (URL-i lõpus on üldiselt laiend .jpg või .png). Pilti sisaldava veebilehe lingid ei tööta.",
+      "lblURLErrorHTTPS": "See pildi link on sobimatu. URL-i alguses peab olema HTTPS ja lõpus toetatava pildifaili tüübi laiend (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Pildi kontrollimine...",
       "lblLabel": "Pildi alapealkiri",
       "lblLabel1": "Alapealkiri",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Sobita",
       "lblPosition4": "Venita",
       "lblPosition5": "Kohandatud",
-      "lblURLHelp": "Parimate tulemuste saamiseks peaks piltide maht olema alla 400 kB. Kasutage tihendatud JPG-pilte 80% kvaliteediga ja järgmisi soovituslikke pildilaiusi: 2000 pikslit pealava või loo paneel koos maksimeerimisnupuga, 1000 pikslit loo paneel ilma maksimeerimisnuputa.<br><br>Kui lingitud pilti laaditatakse aeglaselt, laadige see parima tulemuse huvides oma loo juurde üles.",
+      "lblURLHelp": "Pildi lingi alguses peab olema HTTPS.<br><br>Parimate tulemuste saamiseks peaks piltide maht olema alla 400 kB. Kasutage tihendatud JPG-pilte 80% kvaliteediga ja järgmisi soovituslikke pildilaiusi: 2000 pikslit pealava või loo paneel koos maksimeerimisnupuga, 1000 pikslit loo paneel ilma maksimeerimisnuputa.<br><br>Kui lingitud pilti laaditatakse aeglaselt, laadige see parima tulemuse huvides oma loo juurde üles.",
       "tooltipDimension": "Väärtuse ühikuks võib olla px või %",
       "tooltipDimension2": "Väärtuse ühikuks peab olema px",
       "lblPosition2Explain": "(võib kärpida)",
@@ -128,7 +131,7 @@ define({
       "mapMarkerExplain": "Kasutajad näevad lingi klõpsamisel kaardil tähist"
     },
     "editorActions": {
-      "navigate": "Navigeeri jaotisse",
+      "navigate": "Navigeeri teise jaotisse",
       "remove": "Eemalda toiming",
       "preview": "Toimingu eelvaade"
     },

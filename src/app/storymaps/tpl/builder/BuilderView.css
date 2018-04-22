@@ -41,20 +41,11 @@
 }
 
 /*
- * Landing
+ * Landing has mostly been moved to Landing.css
  */
 
-#builderLanding {
+.show-landing .medias {
 	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	width: 100%;
-	margin: auto;
-	height: 220px;
-	z-index: 100;
 }
 
 /*

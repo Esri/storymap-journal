@@ -121,6 +121,7 @@ body.layout-float-left .floatingPanel .section {
 	font-weight: normal;
 	font-size: 1.85em;
 	margin-bottom: calc(10% - 30px);
+	margin-top: 2px; /* space for focus outline */
 }
 
 .floatingPanel .section:first-child .title {

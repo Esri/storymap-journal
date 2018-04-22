@@ -254,6 +254,29 @@ define(["./WebApplicationData",
 				return this.getStorySections()[index];
 			};
 
+			// this adjusts the index of section navigation where people can request
+			// a specific section. the two specific cases that are currently using this
+			// function are for url params (?section=4) and for story action section navigation
+			// but in BUILDER, all sections are visible, so ignore this call.
+			this.getAdjustedIndex = function(index) {
+				if (app.isInBuilder) {
+					return index;
+				}
+				var adjustedIndex = index;
+				var allSections = WebApplicationData.getStorySections();
+				// do this until we get to the current index.
+				_.every(allSections || [], function(section, i){
+					if (i > index) {
+						return false;
+					}
+					if (section.status !== "PUBLISHED" || section.pubDate > Date.now()) {
+						adjustedIndex--;
+					}
+					return true;
+				});
+				return adjustedIndex;
+			};
+
 			this.getCurrentSection = function()
 			{
 				return WebApplicationData.getStorySections()[_currentStoryIndex];

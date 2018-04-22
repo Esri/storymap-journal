@@ -235,6 +235,13 @@ html.dj_ie9 .mainMediaContainer.has-error .mainStageErrorContainer {
 	height: 100%;
 }
 
+/* stupid iOS and its inability to stick to web standards.
+ this allows some iframes scroll that weren't scrolling before.
+ idk why they weren't scrolling, but now they are. :tada: */
+html.dj_ios body.mobile-view .embedContainer {
+  position: relative;
+}
+
 /* invisible buttons */
 .mainMediaContainer .return-to-content {
   position: absolute;

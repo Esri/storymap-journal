@@ -103,7 +103,21 @@ define({
       "lblAdd": "Kā vēlaties nosaukt savu karšu žurnālu?",
       "phAdd": "Ievadiet nosaukumu...",
       "lblOR": "Vai",
-      "lblHelp": "Iepazīties"
+      "lblHelp": "Iepazīties",
+      "quote0": "Vienmēr atradīsies vieta stāstam, kas aizvedīs lietotāju citā pasaulē.",
+      "quote1": "Stāstījums mūsdienās ir vislabākais veids, kā pasaulei darīt zināmas savas idejas.",
+      "quote2": "Mūsu stāsti tiešā nozīmē veido pasauli. Ja vēlaties izmainīt pasauli, ir jāizmaina stāsts — tas attiecas gan uz indivīdiem, gan uzņēmumiem.",
+      "quote3": "Īsākais attālums no cilvēka līdz patiesībai ir stāsts.",
+      "quote4": "Cilvēki nevēlas iegūt informāciju — tās ir vairāk nekā pietiekami. Viņi vēlas uzticēties jums, jūsu mērķiem, jūsu veiksmei un stāstam.",
+      "quote5": "Es patiesi ticu, ka cilvēki meklē jēgpilnus stāstus, kas ir atslogojoši, iedvesmojoši un ar plašu nozīmi.",
+      "quote6": "Ja vēlaties ietekmēt indivīdu vai grupu un panākt vērtību maiņu, izstāstiet aizraujošu stāstu.",
+      "quote7": "Ja informācija tiek stāstīta, tā ir eseja. Ja informācija tiek rādīta, tas ir stāsts.",
+      "quote8": "Ja nepazīstat kokus, varat apmaldīties mežā. Ja jūsu rīcībā nav stāstu, varat apmaldīties dzīvē.",
+      "quote9": "Stāsti ir radošs veids, kā dzīves notikumus pārveidot par spēcīgāku, skaidrāku un jēgpilnāku pieredzi. Stāsti ir cilvēku savstarpējās saskarsmes valūta.",
+      "quote10": "Ir neizsakāmi grūti “nēsāt” neizstāstītu stāstu.",
+      "quote11": "Iespējams, stāsti ir dati ar dvēseli.",
+      "quote12": "Stāsti ir vislabākais vadītāja rīcībā esošais ierocis.",
+      "quote13": "Lielāka daļa stāsta satura vienmēr tiek atstāta iztēlei."
     },
     "firstAddSplash": {
       "thisis": "Šis ir",

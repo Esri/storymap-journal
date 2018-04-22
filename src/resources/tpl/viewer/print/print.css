@@ -54,7 +54,7 @@ html, body, h1, h2, h4, h5, h6, p, ul, form {
 body {
 	font-family: 'open_sansregular', sans-serif;
 	/* Safe A4 and US Letter */
-	width: 700px;
+	width: 7.8in;
 	margin-left: auto;
 	margin-right: auto;
 	-webkit-print-color-adjust: exact;
@@ -65,67 +65,148 @@ strong {
 	font-weight: normal;
 }
 
+/* --- BUTTONS --- */
+
+.btn {
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+  border-radius: 0;
+  padding: 5px 10px;
+  line-height: 1.5;
+  font-size: 12px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  background-image: none;
+}
+
+.btn:active {
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #196fa6;
+  border-color: #166090;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #005e95;
+  border-color: #005e95;
+}
+.btn-primary:active {
+  background-color: #12517a;
+  border-color: #0f4364;
+}
+
+.btn-link {
+  padding: 5px 0;
+  border: none;
+  background: none;
+  color: #0079c1;
+}
+.btn-link:hover, .btn-link:focus {
+  color: #0069a8;
+  background: none;
+}
+.btn-link:active {
+  color: #00598e;
+  background: none;
+  box-shadow: none;
+}
+
 /*
  * Print warning
  */
 
-.print-warning {
+.print-settings {
 	position: relative;
-	display: block;
-	margin: 20px auto;
-	padding: 10px;
-	background-color: #CCC;
-	color: #000;
-	border-radius: 2px;
-	font-size: 20px;
-	text-align: center;
+  padding: 1.5em 3em;
+	margin: 1em auto;
+	background-color: #e0e0e0;
+	color: #595959;
+	font-size: 14px;
 }
 
-.print-warning a {
+.print-settings a {
 	color: #0060B6 !important;
 }
 
+.print-settings label {
+  font-size: 13px;
+  color: #0e0e0e;
+  font-weight: bold;
+}
+
+.print-settings table {
+  width: 100%;
+}
+
+.print-settings td {
+  width: 50%;
+  vertical-align: top;
+}
+
+.print-settings .section-numbers input {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 @media print {
-	.print-warning {
-		display: none;
-	}
-	.esriSimpleSlider {
+	.print-settings,
+  .esriSimpleSlider,
+  .section-number {
 		display: none;
 	}
 }
 
-.share-warning {
-	font-size: 14px;
-	margin-top: 8px;
+.print-warning {
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
 
-.print-warning2 {
-	margin: 8px 0;
+.instructions {
+  font-size: 0.8em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 18px;
+  margin-bottom: 12px;
+  line-height: 100%;
 }
 
 .print-btn {
-	position: absolute;
-	top: 0;
-	left: 100%;
-	margin-left: 20px;
-	border: 1px solid #CCC;
-	border-radius: 3px;
-	padding: 7px 10px;
-	cursor: pointer;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  font-size: 18px;
 }
 
-.print-btn:hover {
-	background-color: #e6e6e6;
-	border-color: #adadad;
+.print-btn .glyphicon {
+  margin-right: 10px;
 }
 
 .print-options {
-	font-size: 14px;
-    margin-top: 8px;
+  font-size: 14px;
 }
 
-.print-options input {
-	vertical-align: -2px;
+.print-options input[type="checkbox"] {
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+}
+
+.print-options .checkbox {
+  line-height: 150%;
 }
 
 /*
@@ -146,6 +227,7 @@ header {
 	display: block;
 	margin-top: 10px;
 	font-size: 80%;
+  font-style: italic;
 }
 
 /*
@@ -156,6 +238,7 @@ section {
 	/*page-break-inside: avoid;*/
 	margin-top: 20px;
 	word-wrap: break-word;
+  position: relative;
 }
 
 section.blackText * {
@@ -165,6 +248,13 @@ section.blackText * {
 section.page-break {
 	page-break-before: always;
 }
+
+section.links-inline p a:not([data-storymaps]):after {
+  content: ' (link: ' attr(href) ') ';
+  font-size:0.8em;
+  word-break: break-all;
+}
+
 
 section:nth-of-type(1) {
 	font-size: 18px;
@@ -178,6 +268,18 @@ section:nth-of-type(1) {
 
 section:nth-of-type(1) .title-media-block {
 	page-break-inside: auto;
+}
+
+.section-number {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: 20px;
+  width: 8em;
+  border-top: 1px solid #666;
+  color: #666;
+  font-style: italic;
+  font-size: 10px;
 }
 
 /*
@@ -198,6 +300,16 @@ section:nth-of-type(1) .title-media-block {
 	page-break-inside: avoid;
 	width: 100%;
 	height: 500px;
+}
+
+.map svg text[filter] {
+  filter: none;
+  color: lime;
+  stroke: white;
+  paint-order: stroke;
+  stroke-opacity: 1;
+  stroke-width: 2;
+  font-weight: normal;
 }
 
 /*
@@ -310,4 +422,13 @@ iframe {
 
 .media-map-legend {
 	page-break-inside: avoid;
+}
+
+.section-numbers .btn-apply {
+  padding: 0 5px;
+  height: 23px;
+}
+
+.section-numbers .btn-reset {
+  display: block;
 }

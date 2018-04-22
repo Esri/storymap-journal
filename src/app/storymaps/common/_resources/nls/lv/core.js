@@ -112,12 +112,14 @@ define({
       "logoOrgRadio": "Organizācijas logotips",
       "logoCustomRadio": "Mans logotips",
       "logoCustomLabel": "Attēls:",
-      "logoCustomUploadHelp": "Logotipi vislabāk izskatās ar platuma:augstuma attiecību no 1:1 līdz 5:1. Ja saistītais logotips tiek zīmēts lēni, saglabājiet kopiju un augšupielādējiet to šeit.",
+      "logoCustomUploadHelp": "Logotipa attēla saitei ir jāsākas ar HTTPS. Logotipi vislabāk izskatās ar platuma un augstuma attiecību 1:1–5:1. Ja saistītais logotips tiek zīmēts lēni, saglabājiet kopiju un augšupielādējiet to šeit.",
       "logoCustomUploadTooltip": "Izmantot augšupielādētu logotipu",
       "logoCustomUploadButton": "Augšupielādēt logotipu",
       "logoUploadSizeError": "GIF izmēri ir pārāk lieli. Mainiet platuma izmērus uz ${PIXEL-WIDTH} pikseļiem.",
+      "logoCustomLinkHTTPSError": "Saitei ir jāsākas ar HTTPS",
       "logoCustomLinkTooltip": "Saite uz logotipu",
       "logoCustomLinkPlaceholder": "Attēla URL",
+      "logoCustomLinkPlaceholderHTTPS": "https://example.com/logo.jpg",
       "logoUploadGenericError": "Logotips var būt .bmp, .gif, .jpg, .jpeg vai .png fails. Gif nedrīkst būt platāks par 250px un lielāks par 10Mb.",
       "logoCustomTargetPlaceholder": "Tīmekļa lapa, ko atvērt, ja tiek noklikšķināts uz logotipa",
       "logoSocialText": "Devīze:",
@@ -134,6 +136,22 @@ define({
       "thisSection": "Šī sadaļa",
       "homeSection": "Sākuma sadaļa",
       "hiddenSection": "Slēptā sadaļa"
+    },
+    "bannerNotification": {
+      "learnMore": "Uzzināt vairāk",
+      "close": "Aizvērt",
+      "dontShowAgain": "Nerādīt šo ziņojumu vēlreiz"
+    },
+    "httpsTransitionMessage": {
+      "bannerMsg": "Svarīgs ziņojums par tīmekļa drošību un Kartes stāstiem (Story Maps)",
+      "s1h1": "Esri uzlabo Kartes stāstu drošību",
+      "s1p1": "Jūsu Story Maps vienības ir pieejamas tiešsaistē tīmeklī, un tīmekļa kopiena pastāvīgi veido un ievieš uzlabotus drošības pasākumus. Protokols HTTPS, kas gādā par drošu savienojumu ar saturu internetā, ir populārākais veids, kā piekļūt tīmekļa saturam. Vairākumā mūsdienīgu pārlūku tagad tiek rādīts brīdinājuma ziņojums, ja vietnē tiek izmantots protokols HTTP, nevis HTTPS. Šī jaunā standarta dēļ jūsu Story Maps vienībās būs jāizmanto protokols HTTPS, sākot ar ArcGIS Online 2018. gada jūnija atjauninājumu.",
+      "s1p2": "Tas nozīmē, ka Kartes stāstu saturam (tostarp attēliem, slāņiem, iegultām lietotnēm un tīmekļa vietnēm) ir jāpiekļūst, izmantojot saites, kas sākas ar HTTPS, nevis HTTP. Tādējādi lasītājiem tiks nodrošināta vislabākā pieredze, jo vairākumā tīmekļa pārlūku lietotājs tiks informēts par to, ka stāsti ir droši.",
+      "s2h1": "Kas man jādara?",
+      "s2p1": "Esri strādā pie tā, lai Kartes stāstu autoriem un lasītājiem pāreja būtu vienkārša. Pašlaik Kartes stāsta veidotājos un sadaļā Mani stāsti ir pieejami rīki, kas palīdz stāstos atrast nedrošu saturu (HTTP), kā arī ir pieejami ieteikumi šo problēmu novēršanai. Pārbaudiet, vai jūsu stāstos nav nedroša satura, un jauniniet uz protokolu HTTPS līdz 2018. gada jūnijam.",
+      "action1": "Aizvērt",
+      "action2": "Pārbaudīt manus stāstus tūlīt",
+      "action3": "Uzziniet vairāk"
     }
   }
 });
