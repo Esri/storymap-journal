@@ -85,7 +85,7 @@ define({
       "builderButton": "Editare",
       "facebookTooltip": "Partajare pe Facebook",
       "twitterTooltip": "Partajare pe Twitter",
-      "bitlyTooltip": "Obţinere link scurt",
+      "bitlyTooltip": "Partajați sau imprimați",
       "templateTitle": "Setare titlu şablon",
       "templateSubtitle": "Setare subtitlu şablon",
       "share": "Partajare",

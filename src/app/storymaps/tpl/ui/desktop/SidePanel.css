@@ -136,7 +136,6 @@ body.layout-side-right .sidePanel .navDots {
 .sidePanel .title {
 	/*font-family: 'open_sanssemibold', sans-serif;*/
 	/* TODO remove break compat with beta */
-	font-weight: normal;
 	font-size: 1.5em;
 	line-height: 1.5em;
 }

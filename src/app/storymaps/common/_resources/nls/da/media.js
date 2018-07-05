@@ -12,7 +12,8 @@ define({
       "disabled": "Dette objekt er blevet deaktiveret af administratoren",
       "userLookup": "Indlæs albummer",
       "notImplemented": "Ikke implementeret endnu.",
-      "noData": "Intet offentligt album fundet"
+      "noData": "Intet offentligt album fundet",
+      "thirdPartyTerms": "Ved at benytte en tredjeparts-tjeneste accepterer du vilkårene for brug af den pågældende tjeneste: "
     },
     "imageSelector": {
       "lblStep1": "Vælg tjeneste",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Brugernavn",
       "signInMsg2": "Bruger ikke fundet",
       "loadingFailed": "Indlæsning mislykkedes"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook-bruger",
-      "rightHeader": "Facebook-side",
-      "pageExplain": "En Facebook-side er et offentligt varemærke//produkt eller en celebritet ligesom <b>esrigis</b>. Du kan få sidenavnet efter den første '/' i sidens URL.",
-      "pageInputLbl": "Sidenavn",
-      "lookupMsgError": "Side ikke fundet",
-      "warning": "Facebook-understøttelse er blevet standset, ${learn}.",
-      "learn": "lær mere"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail eller Google-ID",

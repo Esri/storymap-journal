@@ -12,7 +12,8 @@ define({
       "disabled": "Tato funkce byla zakázána administrátorem.",
       "userLookup": "Nahrát alba",
       "notImplemented": "Dosud není implementováno.",
-      "noData": "Nebylo nalezeno žádné veřejné album."
+      "noData": "Nebylo nalezeno žádné veřejné album.",
+      "thirdPartyTerms": "Použitím služby třetí strany souhlasíte s jejími podmínkami: "
     },
     "imageSelector": {
       "lblStep1": "Vyberte službu.",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Uživatelské jméno",
       "signInMsg2": "Uživatel nenalezen",
       "loadingFailed": "Nahrávání se nezdařilo."
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Uživatel služby Facebook",
-      "rightHeader": "Stránka služby Facebook",
-      "pageExplain": "Stránka služby Facebook představuje veřejnou značku či službu nebo známou osobnost, jako je například <b>esrigis</b>. Název stránky začíná za prvním lomítkem (/) v URL adrese stránky.",
-      "pageInputLbl": "Název stránky",
-      "lookupMsgError": "Stránka nenalezena",
-      "warning": "Podpora Facebooku byla ukončena, ${learn}.",
-      "learn": "další informace"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail nebo identifikátor Google",

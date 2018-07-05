@@ -145,13 +145,29 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Svarbus pranešimas apie žiniatinklio saugą ir žemėlapių pasakojimus",
       "s1h1": "Esri tobulina žemėlapių pasakojimų saugą",
-      "s1p1": "Žemėlapių pasakojimai veikia žiniatinklyje, o žiniatinklio bendruomenė visuomet stengiasi sukurti ir įdiegti geresnę saugą. HTTPS, suteikianti saugų ryšį perduodant turinį internetu, atrodo kaip patikima žiniatinklio turinio prieiga. Naujausios naršyklės nuo šiol įspėja, jei vietoj HTTPS yra naudojama HTTP. Dėl įsigaliojančio standarto nuo 2018 m. birželio ArcGIS Online naujinimo jūsų žemėlapių pasakojimai naudos HTTPS.",
-      "s1p2": "Praktiškai tai reiškia, kad žemėlapio pasakojimas ir visas jo turinys (įskaitant paveikslėlius, sluoksnius, įdėtąsias aplikacijas ir svetaines) turi būti pasiekiamas naudojant nuorodas, kurios prasideda HTTPS, o ne HTTP. Tai užtikrina geriausią skaitytojų patirtį, nes daugelis naršyklių nurodys, kad jūsų pasakojimai yra saugūs.",
+      "s1p1": "Jūsų žemėlapių pasakojimai yra internete ir interneto bendruomenė nuolat stengiasi įgyvendinti didesnę saugą. Kaip numatytasis būdas pasiekti interneto turinį, pradedamas naudoti HTTPS, kuris suteikia saugų internetu perduodamo turinio ryšį. Dauguma šiuolaikinių naršyklių rodo įspėjamąjį pranešimą, kai vietoje HTTPS naudojamas HTTP. Dėl šio naujo standarto labai rekomenduojame žemėlapių pasakojimų kūrimui ir saugojimui naudoti HTTPS nuorodas, o įdedant interneto turinį ar susiejant atvaizdus su žemėlapio pasakojimu, naudoti tik HTTPS URL.",
+      "s1p2": "Tiksliau tariant, tai reiškia, kad žemėlapio pasakojimas ir visas jo turinys (įskaitant atvaizdus, sluoksnius, įdėtąsias aplikacijas ir svetaines) turi būti pasiekiamas naudojant nuorodas, prasidedančias HTTPS, o ne HTTP. Tai užtikrina jūsų skaitytojams geriausią patirtį, nes dauguma interneto naršyklių rodys, kad jūsų pasakojimai yra saugūs.",
       "s2h1": "Ką reikia daryti?",
-      "s2p1": "Esri stengiasi, kad žemėlapio pasakojimų autoriams ir skaitytojams pereiti būtų paprasta. Nuo šiol įrankiai yra pasiekiami žemėlapio pasakojimo kūrimo priemonėje ir skyriuje Mano pasakojimai. Taip pasakojimuose bus lengviau rasti nesaugų turinį (HTTP) ir pateikti rekomendacijas, ką daryti. Patikrinkite, ar jūsų pasakojimuose nėra nesaugaus turinio ir iki 2018 m. birželio atnaujinkite jį naudodami HTTPS.",
+      "s2p1": "Esri stengiasi, kad šis perėjimas žemėlapio pasakojimo autoriams ir skaitytojams būtų lengvas. Dabar žemėlapio pasakojimo kūrimo priemonėse ir Mano pasakojimuose yra įrankių, padedančių jums savo pasakojimuose rasti nesaugų turinį (HTTP) ir pateikti rekomendacijų, ką su juo daryti. Patikrinkite, ar jūsų pasakojimuose yra nesaugaus turinio, ir kuo greičiau atnaujinkite į HTTPS.",
       "action1": "Uždaryti",
       "action2": "Peržiūrėkite savo pasakojimus jau dabar",
       "action3": "Sužinokite daugiau"
+    },
+    "embedBar": {
+      "share": "Bendrinti",
+      "fullScreen": "Visas ekranas",
+      "exitFullScreen": "Išjungti viso ekrano rodymo režimą",
+      "enlarge": "Išplėsti",
+      "newTab": "Atidaryti naujame lange",
+      "tagline": "Žemėlapio pasakojimas"
+    },
+    "june2018SurveyMessage": {
+      "bannerMsg": "Ar galime kai ko jūsų paklausti? Tai padės ateityje kurti žemėlapių pasakojimus.",
+      "s1h1": "Pasidalykite savo mintimis ir kurkime ateitį kartu",
+      "s1p1": "Jūsų indėlis yra mūsų svarbiausias atsiliepimų šaltinis, o sužinoję apie jus daugiau, galėsime patobulinti žemėlapių pasakojimus. Būtume dėkingi, jei sudalyvautumėte šioje trijų minučių apklausoje.",
+      "s2p1": "Kaip visada, dėkojame, kad naudojate Esri žemėlapių pasakojimus!",
+      "action1": "Uždaryti",
+      "action2": "Užpildyti apklausą"
     }
   }
 });

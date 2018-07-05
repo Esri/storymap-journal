@@ -85,7 +85,7 @@ define({
       "builderButton": "Rediģēt",
       "facebookTooltip": "Koplietot Facebook",
       "twitterTooltip": "Koplietot Twitter",
-      "bitlyTooltip": "Iegūt īso saiti",
+      "bitlyTooltip": "Koplietot vai drukāt",
       "templateTitle": "Iestatīt šablona virsrakstu",
       "templateSubtitle": "Iestatīt šablona apakšvirsrakstu",
       "share": "Koplietot",

@@ -85,7 +85,7 @@ define({
       "builderButton": "Düzenle",
       "facebookTooltip": "Facebook'ta Paylaş",
       "twitterTooltip": "Twitter'da Paylaş",
-      "bitlyTooltip": "Kısa bağlantı edin",
+      "bitlyTooltip": "Paylaş veya yazdır",
       "templateTitle": "Şablon başlığını ayarla",
       "templateSubtitle": "Şablon altyazısını ayarla",
       "share": "Paylaş",

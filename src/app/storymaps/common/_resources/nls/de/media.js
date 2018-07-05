@@ -12,7 +12,8 @@ define({
       "disabled": "Diese Funktion wurde vom Administrator deaktiviert",
       "userLookup": "Alben laden",
       "notImplemented": "Noch nicht implementiert.",
-      "noData": "Kein öffentliches Album gefunden"
+      "noData": "Kein öffentliches Album gefunden",
+      "thirdPartyTerms": "Durch die Verwendung eines Drittanbieter-Service stimmen Sie dessen Geschäftsbedingungen zu: "
     },
     "imageSelector": {
       "lblStep1": "Service auswählen",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Benutzername",
       "signInMsg2": "Benutzer nicht gefunden",
       "loadingFailed": "Fehler beim Laden"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook-Benutzer",
-      "rightHeader": "Facebook-Seite",
-      "pageExplain": "Eine Facebook-Seite entspricht einer öffentlichen Marke/einem Produkt oder einer prominenten Person wie <b>esrigis</b>. Den Seitennamen können sie dem Text nach dem ersten Schrägstrich ('/') in der Seiten-URL entnehmen.",
-      "pageInputLbl": "Seitenname",
-      "lookupMsgError": "Seite nicht gefunden",
-      "warning": "Facebook wird nicht mehr unterstützt, ${learn}.",
-      "learn": "Weitere Informationen"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-Mail oder Google-ID",

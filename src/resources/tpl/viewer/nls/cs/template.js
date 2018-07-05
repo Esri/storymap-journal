@@ -85,7 +85,7 @@ define({
       "builderButton": "Editovat",
       "facebookTooltip": "Sdílet na Facebooku",
       "twitterTooltip": "Sdílet na Twitteru",
-      "bitlyTooltip": "Získat krátký odkaz",
+      "bitlyTooltip": "Sdílet či vytisknout",
       "templateTitle": "Nastavit název šablony",
       "templateSubtitle": "Nastavit podnadpis šablony",
       "share": "Sdílet",

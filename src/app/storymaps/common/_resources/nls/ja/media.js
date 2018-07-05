@@ -12,7 +12,8 @@ define({
       "disabled": "この機能は、管理者によって無効にされています",
       "userLookup": "アルバムを読み込む",
       "notImplemented": "まだ実装されていません。",
-      "noData": "パブリックなアルバムが見つかりませんでした"
+      "noData": "パブリックなアルバムが見つかりませんでした",
+      "thirdPartyTerms": "サードパーティのサービスを使用することによって、そのサービスの利用条件に同意します。 "
     },
     "imageSelector": {
       "lblStep1": "サービスの選択",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "ユーザ名",
       "signInMsg2": "ユーザが見つかりません",
       "loadingFailed": "読み込みに失敗しました"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook ユーザ",
-      "rightHeader": "Facebook ページ",
-      "pageExplain": "Facebook ページは、<b>esrigis</b> などの、公開されたブランド/製品または著名人です。ページ URL 内の最初の「/」以降から、ページ名を取得できます。",
-      "pageInputLbl": "ページ名",
-      "lookupMsgError": "ページが見つかりません",
-      "warning": "Facebook のサポートは中止されました。${learn}。",
-      "learn": "詳細"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "電子メールまたは Google ID",

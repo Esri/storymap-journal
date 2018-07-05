@@ -146,18 +146,35 @@ define({
 			httpsTransitionMessage: {
 				bannerMsg: "Important Message about Web Security and Story Maps",
 				s1h1: "Esri is enhancing the security of Story Maps",
-				s1p1: "Your Story Maps live on the web, and the web community is always working to establish and implement better security. HTTPS, which provides a secure connection for content transmitted over the internet, is emerging as the expected way to access web content. Most modern browsers now show warning messages when HTTP instead of HTTPS is used. Because of this emerging standard, beginning with the June 2018 update to ArcGIS Online, your Story Maps will need to use HTTPS.",
-				s1p2: "Practically speaking, this means a Story Map and all its content (including images, layers, embedded apps and websites) must be accessed using links that start with HTTPS rather than HTTP. This ensures the best experience for your readers because most web browsers will indicate that your stories are secure.",
+				s1p1: "Your Story Maps live on the web, and the web community is always working to establish and implement better security. HTTPS, which provides a secure connection for content transmitted over the internet, is emerging as the expected way to access web content. Most modern browsers now show warning messages when HTTP instead of HTTPS is used. Because of this emerging standard, we strongly recommend you use HTTPS links for authoring and sharing Story Maps, and only use HTTPS URLs when embedding web content or linking to images within a Story Map.",
+				s1p2: "Practically speaking, this means a Story Map and all its content (including images, layers, embedded apps and websites) should be accessed using links that start with HTTPS rather than HTTP. This ensures the best experience for your readers because most web browsers will indicate that your stories are secure.",
 				s2h1: "What do I need to do?",
-				s2p1: "Esri is working to make this an easy transition for Story Map authors and readers. Tools are available now in Story Map builders and My Stories that help you find insecure content (HTTP) in your stories and provide recommendations for how to address it. Please check your stories for insecure content and update to HTTPS before June 2018.",
+				s2p1: "Esri is working to make this an easy transition for Story Map authors and readers. Tools are available now in Story Map builders and My Stories that help you find insecure content (HTTP) in your stories and provide recommendations for how to address it. Please check your stories for insecure content and update to HTTPS as soon as possible.",
 				action1: "Close",
 				action2: "Check my stories now",
 				action3: "Learn more"
+			},
+			embedBar: {
+				share: "Share",
+				fullScreen: "Full screen",
+				exitFullScreen: "Exit full screen",
+				enlarge: "Enlarge",
+				newTab: "Open in a new tab",
+				tagline: "A Story Map"
+			},
+			june2018SurveyMessage: {
+				bannerMsg: "Can we ask you something? It will help shape the future of Story Maps.",
+				s1h1: "Share your thoughts, shape the future",
+				s1p1: "Your input is our single most important source of feedback, and learning more about you will help us improve Story Maps. We would be grateful if you could participate in this three-minute survey.",
+				s2p1: "As always, thanks for using Esri Story Maps!",
+				action1: "Close",
+				action2: "Take the survey"
 			}
 		}
 	}),
 	"ar": 1,
 	"bs": 1,
+	"ca": 1,
 	"cs": 1,
 	"da": 1,
 	"de": 1,
@@ -169,6 +186,7 @@ define({
 	"he": 1,
 	"hi": 1,
 	"hr": 1,
+	"hu": 1,
 	"id": 1,
 	"it": 1,
 	"ja": 1,

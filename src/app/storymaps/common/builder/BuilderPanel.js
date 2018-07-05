@@ -336,7 +336,7 @@ define(["lib-build/tpl!./BuilderPanel",
 				 * Share & preview button state
 				 */
 
-				var disableShare = app.isDirectCreationFirstSave || app.isGalleryCreation || app.isWebMapCreation,
+				var disableShare = app.isDirectCreationFirstSave || app.isGalleryCreation || app.isWebMapCreation || !app.data.getStoryLength(),
 					disablePreview =  app.data.getWebAppItem().access == "private"
 						|| app.data.getWebAppItem().access == "shared";
 

@@ -12,7 +12,8 @@ define({
       "disabled": "See funktsioon on administraatori poolt välja lülitatud",
       "userLookup": "Laadi albumid",
       "notImplemented": "Pole veel kasutusele võetud.",
-      "noData": "Avalikku albumit ei leitud"
+      "noData": "Avalikku albumit ei leitud",
+      "thirdPartyTerms": "Kolmanda osapoole pakutava teenuse kasutamisel nõustute selle teenusetingimustega: "
     },
     "imageSelector": {
       "lblStep1": "Valige teenus",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Kasutajanimi",
       "signInMsg2": "Kasutajat ei leitud",
       "loadingFailed": "Laadimine nurjus"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebooki kasutajanimi",
-      "rightHeader": "Facebooki leht",
-      "pageExplain": "Facebooki leht on avalik kaubamärk/toode nagu <b>esrigis</b>. Saad lehe nime pärast esimest '/' lehekülje URL-il.",
-      "pageInputLbl": "Lehe nimi",
-      "lookupMsgError": "Lehte ei leitud",
-      "warning": "Facebooki tuge ei pakuta enam, ${learn}.",
-      "learn": "lisateave"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Meiliaadress või Google ID",

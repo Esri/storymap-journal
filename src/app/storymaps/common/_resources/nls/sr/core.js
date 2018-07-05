@@ -145,13 +145,29 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Važna poruka u vezi sa veb bezbednošću i Story Maps",
       "s1h1": "Esri poboljšava bezbednost za Story Maps",
-      "s1p1": "Vaše Story Mape su uživo na vebu i veb zajednica uvek radi na uspostavljanju i realizaciji bolje bezbednosti. HTTPS, koji omogućava bezbednu vezu za prenos sadržaja putem interneta se pojavljuje kao očekivani način za pristup veb sadržaju. Najsavremeniji pregledači sada prikazuju poruke upozorenja kada se koristi HTTP umesto HTTPS. Zbog ovog novog standarda, počevši od ažuriranja ArcGIS Online platforme od juna 2018. Godine, vaše Story mape će morati da koriste HTTPS.",
-      "s1p2": "Drugim rečima, ovo znači da će Story mape i sav njihov sadržaj (uključujući snimke, slojeve, ugrađene aplikacije i veb lokacije) morati da imaju pristup preko linkova koji počinju sa HTTPS umesto HTTP. Ovim se obezbeđuje bolje iskustvo za čitaoce jer će većina veb pregledača prikazati da su priče bezbedne.",
+      "s1p1": "Vaše Story mape žive na vebu i veb zajednica uvek radi na uspostavljanju i primeni bolje sigurnosti. HTTPS, kojim se obezbeđuje sigurna veza za prenos sadržaja putem interneta, pojavljuje se kao očekivani način pristupa veb sadržaju. Najsavremeniji pregledači sada prikazuju poruke upozorenja kada se koristi HTTP umesto HTTPS. Zbog ovog novog standarda, preporučujemo da koristite HTTPS linkove za kreiranje i deljenje Story mapa i da isključivo koristite HTTPS URL adrese kada ugrađujete veb sadržaj ili povezujete sa snimcima u Story mapi.",
+      "s1p2": "Drugim rečima, ovo znači da Story mapi i svom njenom sadržaju (uključujući snimke, slojeve, ugrađene aplikacije i veb sajtove) treba da se pristupa korišćenjem linkova koji počinju sa HTTPS umesto sa HTTP. Ovim se obezbeđuje bolje iskustvo za čitaoce jer većina veb pregledača pokazuje da su vaše priče sigurne.",
       "s2h1": "Šta treba da uradim?",
-      "s2p1": "Esri radi na tome da pojednostavi ovaj prelaz za autore i čitaoce Story mapa. Sada su dostupne alatke u alatkama za izradu Story mapa i liste „Moje priče“, koje vam pomažu da pronađete nebezbedan sadržaj (HTTPS) u pričama i pružaju vam preporuke kako da rešite taj problem. Proverite priče na nebezbedan sadržaj i ažurirajte ih na HTTPS vezu pre juna 2018. godine.",
+      "s2p1": "Esri radi na tome da ovaj prelazak učini što lakšim za Story mape i njihove korisnike. Sada su dostupne alatke za izradu Story Map i Moje priče koje vam pomažu da pronađete sadržaj koji nije siguran (HTTP) u pričama i obezbeđuje preporuke o tome na koji način to da rešite. Proverite da li vaše priče sadrže sadržaj koji nije siguran i nadogradite na HTTPS što pre.",
       "action1": "Zatvori",
       "action2": "Proveri odmah moje priče",
       "action3": "Saznaj više"
+    },
+    "embedBar": {
+      "share": "Podeli",
+      "fullScreen": "Ceo ekran",
+      "exitFullScreen": "Izađi iz režima celog ekrana",
+      "enlarge": "Uvećaj",
+      "newTab": "Otvori u novoj kartici",
+      "tagline": "Story mapa"
+    },
+    "june2018SurveyMessage": {
+      "bannerMsg": "Možemo li nešto da vas pitamo? To će nam pomoći u oblikovanju budućnosti za Story Maps.",
+      "s1h1": "Podelite misli, oblikujte budućnost",
+      "s1p1": "Vaš doprinos je nama najvažniji izvor povratnih informacija, a to što ćemo saznati više o vama, pomoći će nam da poboljšamo Story mape. Bili bismo vam zahvalni kada biste učestvovali u ovoj trominutnoj anketi.",
+      "s2p1": "Kao i uvek, hvala vam što koristite Esri Story Maps.",
+      "action1": "Zatvori",
+      "action2": "Popuni anketu"
     }
   }
 });

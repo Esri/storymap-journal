@@ -12,7 +12,8 @@ define({
       "disabled": "Αυτή η λειτουργία έχει απενεργοποιηθεί από το Διαχειριστή",
       "userLookup": "Φόρτωση άλμπουμ",
       "notImplemented": "Δεν εφαρμόζεται ακόμη.",
-      "noData": "Δεν βρέθηκε δημόσιο άλμπουμ"
+      "noData": "Δεν βρέθηκε δημόσιο άλμπουμ",
+      "thirdPartyTerms": "Εφόσον χρησιμοποιήσετε κάποια υπηρεσία τρίτων, δηλώνετε ότι συμφωνείτε με τους όρους χρήσης της: "
     },
     "imageSelector": {
       "lblStep1": "Επιλογή της υπηρεσίας",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Όνομα χρήστη",
       "signInMsg2": "Ο χρήστης δεν βρέθηκε",
       "loadingFailed": "Η φόρτωση απέτυχε"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Χρήστης Facebook",
-      "rightHeader": "Σελίδα Facebook",
-      "pageExplain": "Μια Facebook σελίδα είναι μια εμπορική επωνυμία, ένα προϊόν ή μια διασημότητα, π.χ. <b>esrigis</b>. Το όνομα της σελίδας βρίσκεται μετά το πρώτο '/' στο URL της σελίδας.",
-      "pageInputLbl": "Όνομα σελίδας",
-      "lookupMsgError": "Η σελίδα δεν βρέθηκε",
-      "warning": "Η υποστήριξη του Facebook έχει διακοπεί, ${learn}.",
-      "learn": "μάθετε περισσότερα"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Email ή αναγνωριστικό Google",

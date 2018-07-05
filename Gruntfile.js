@@ -243,6 +243,12 @@
 						cwd: 'src/app/storymaps/common/builder/ckeditor/',
 						src:['editor.css', 'plugins/storymaps*/plugin.js', 'plugins/storymaps*/icons/**'],
 						dest: 'deploy/resources/lib/ckeditor/'
+					},
+					{
+						expand: true,
+						cwd: 'src/lib-app/arcgis-html-sanitizer/umd',
+						src:['arcgis-html-sanitizer.js'],
+						dest: 'deploy/resources/lib/arcgis-html-sanitizer/umd'
 					}]
 				},
 				jsapioptim: {

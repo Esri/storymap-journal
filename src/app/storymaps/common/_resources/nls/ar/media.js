@@ -12,7 +12,8 @@ define({
       "disabled": "لقد تم تعطيل هذا المعلم بواسطة المدير",
       "userLookup": "تحميل الألبومات",
       "notImplemented": "لم يتم تنفيذها بعد.",
-      "noData": "لم يتم العثور على ألبوم عام"
+      "noData": "لم يتم العثور على ألبوم عام",
+      "thirdPartyTerms": "باستخدام خدمة خارجية، أنت توافق على شروط الخدمة الخاصة بها: "
     },
     "imageSelector": {
       "lblStep1": "اختيار الخدمة",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "اسم المستخدم",
       "signInMsg2": "لم يتم العثور على المستخدم",
       "loadingFailed": "فشل التحميل"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "مستخدم Facebook",
-      "rightHeader": "صفحة Facebook",
-      "pageExplain": "صفحة Facebook هي علامة تجارية/منتج عام أو ذات شهرة مثل <b>esrigis</b>. يمكنك الحصول على اسم الصفحة بعد  '/' الأول في عنوان URL للصفحة.",
-      "pageInputLbl": "اسم الصفحة",
-      "lookupMsgError": "لم يتم العثور على الصفحة",
-      "warning": "تم قطع الاتصال بدعم الفيسبوك، ${learn}.",
-      "learn": "التعرف على المزيد"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "البريد الإلكتروني أو Google ID",

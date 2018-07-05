@@ -1,0 +1,102 @@
+{
+  "_from": "@esri/arcgis-html-sanitizer",
+  "_id": "@esri/arcgis-html-sanitizer@0.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-DrZ688p1kb9lTixpeThdpDyib5wzV0KBFYn6PYwuXmzy1br785rHgy5rIS6CEVzZjvzITbHX4pXWNSrL42GC0g==",
+  "_location": "/@esri/arcgis-html-sanitizer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@esri/arcgis-html-sanitizer",
+    "name": "@esri/arcgis-html-sanitizer",
+    "escapedName": "@esri%2farcgis-html-sanitizer",
+    "scope": "@esri",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@esri/arcgis-html-sanitizer/-/arcgis-html-sanitizer-0.4.0.tgz",
+  "_shasum": "1cd986e63ab18ba94f30802cc7e743ddc3e27d54",
+  "_spec": "@esri/arcgis-html-sanitizer",
+  "_where": "/Library/WebServer/Documents/storymaps/series",
+  "author": {
+    "name": "Esri"
+  },
+  "bugs": {
+    "url": "https://github.com/Esri/arcgis-html-sanitizer/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "lodash.isplainobject": "^4.0.6",
+    "xss": "^0.3.8"
+  },
+  "deprecated": false,
+  "description": "A simple utility to sanitize a string according to ArcGIS supported HTML specification.",
+  "devDependencies": {
+    "@types/jest": "^22.2.0",
+    "@types/lodash.isplainobject": "^4.0.3",
+    "jest": "^22.4.2",
+    "ts-jest": "^22.4.1",
+    "ts-loader": "^4.0.1",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.9.0",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.7.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10"
+  },
+  "homepage": "https://github.com/Esri/arcgis-html-sanitizer#readme",
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "license": "Apache-2.0",
+  "main": "dist/node/index.js",
+  "name": "@esri/arcgis-html-sanitizer",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esri/arcgis-html-sanitizer.git"
+  },
+  "scripts": {
+    "build": "yarn run build:node && yarn run build:esm && yarn run build:umd",
+    "build:esm": "tsc --module ESNext --outDir ./dist/esm --declaration",
+    "build:node": "tsc --module commonjs --outDir ./dist/node",
+    "build:umd": "webpack --mode development && webpack --mode production",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --project tsconfig.json --fix",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch"
+  },
+  "version": "0.4.0"
+}

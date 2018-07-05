@@ -12,7 +12,8 @@ define({
       "disabled": "Acest obiect spaţial a fost dezactivat de administrator",
       "userLookup": "Încărcare albume",
       "notImplemented": "Neimplementat încă.",
-      "noData": "Nu a fost găsit niciun album public"
+      "noData": "Nu a fost găsit niciun album public",
+      "thirdPartyTerms": "Utilizând un serviciu terț, sunteți de acord cu termenii săi asociați serviciilor: "
     },
     "imageSelector": {
       "lblStep1": "Alegere serviciu",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Nume utilizator",
       "signInMsg2": "Utilizator negăsit",
       "loadingFailed": "Încărcare eşuată"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Utilizator Facebook",
-      "rightHeader": "Pagină Facebook",
-      "pageExplain": "O pagină de Facebook este o marcă sau un produs public sau o celebritate precum <b>esrigis</b>. Puteţi prelua numele paginii după primul caracter „/” din URL-ul paginii.",
-      "pageInputLbl": "Nume pagină",
-      "lookupMsgError": "Pagină negăsită",
-      "warning": "Asistenţa Facebook a fost suspendată, ${learn}.",
-      "learn": "aflaţi mai multe"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail sau ID Google",

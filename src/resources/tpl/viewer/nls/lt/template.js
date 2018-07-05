@@ -85,7 +85,7 @@ define({
       "builderButton": "Redaguoti",
       "facebookTooltip": "Dalintis Facebook",
       "twitterTooltip": "Dalintis Twitter",
-      "bitlyTooltip": "Gauti trumpą nuorodą",
+      "bitlyTooltip": "Bendrinti arba spausdinti",
       "templateTitle": "Nustatyti šablono pavadinimą",
       "templateSubtitle": "Nustatyti šablono antraštę",
       "share": "Bendrinti",

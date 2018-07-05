@@ -85,7 +85,7 @@ define({
       "builderButton": "Bearbeiten",
       "facebookTooltip": "Auf Facebook freigeben",
       "twitterTooltip": "Auf Twitter freigeben",
-      "bitlyTooltip": "Kurzlink abrufen",
+      "bitlyTooltip": "Freigeben oder drucken",
       "templateTitle": "Vorlagentitel festlegen",
       "templateSubtitle": "Untertitel der Vorlage festlegen",
       "share": "Freigeben",

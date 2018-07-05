@@ -8,6 +8,8 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		"esri/arcgis/utils",
 		"./utils/CommonHelper",
 		"esri/urlUtils",
+		//Embed bar
+		"storymaps/common/ui/EmbedBar/EmbedBar",
 		// Builder
 		"./builder/MyStoriesWrapper",
 		// Utils
@@ -39,6 +41,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		arcgisUtils,
 		CommonHelper,
 		urlUtils,
+		EmbedBar,
 		MyStoriesWrapper,
 		has,
 		IdentityManager,
@@ -581,6 +584,35 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		{
 			console.log("common.core.Core - initApp");
 
+			// Initialize Embed bar
+			var urlParams = esri.urlToObject(document.location.search).query || {};
+			var classicEmbedMode = urlParams.classicEmbedMode ? true : urlParams.classicEmbedMode === "" ? true : urlParams.classicembedmode ? true : urlParams.classicembedmode === "" ? true : false;
+			var isEsriLogo = app.data.getWebAppData().getLogoURL() == "resources/tpl/viewer/icons/esri-logo-white.png" ? true : false;
+			var strings = i18n.commonCore.embedBar;
+			lang.mixin(strings, {
+				open: i18n.viewer.shareFromCommon.open,
+				close: i18n.viewer.common.close,
+				shareFacebook: i18n.viewer.headerFromCommon.facebookTooltip,
+				shareTwitter: i18n.viewer.headerFromCommon.twitterTooltip
+			});
+
+			var shareElements = [$(".shareBtns")];
+
+			app.embedBar = new EmbedBar({
+				classicEmbedMode: classicEmbedMode,
+				strings: strings,
+				appCreationDate: app.data.getWebAppItem().created,
+				june2018ReleaseDate: app.cfg.JUNE_RELEASE_DATE,
+				isBuilder: app.isInBuilder,
+				isEsriLogo: isEsriLogo,
+				logoPath: "app/storymaps/common/_resources/icons/esri-logo-black.png",
+				logoElements: [$(".logoContainer")],
+				taglineElements: [$(".linkContainer")],
+				shareElements: shareElements,
+				appTitle: app.data.getWebAppData().getTitle(),
+				bitlyCreds: [app.cfg.HEADER_SOCIAL.bitly.key, app.cfg.HEADER_SOCIAL.bitly.login]
+			});
+
 			// Resize everything after picture has been set
 			handleWindowResize();
 
@@ -620,12 +652,12 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				History.replaceState({}, "", "index.html" + document.location.search + document.location.hash);
 			}
 
-			var urlParams = document.location.search;
-			if (urlParams) {
-				urlParams = urlParams.replace('&preview', '');
+			var rawUrlParams = document.location.search;
+			if (rawUrlParams) {
+				rawUrlParams = rawUrlParams.replace('&preview', '');
 
-				if (urlParams != document.location.search) {
-					window.history.replaceState({}, '', 'index.html' + urlParams + document.location.hash);
+				if (rawUrlParams != document.location.search) {
+					window.history.replaceState({}, '', 'index.html' + rawUrlParams + document.location.hash);
 				}
 			}
 		}

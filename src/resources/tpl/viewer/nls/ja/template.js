@@ -85,7 +85,7 @@ define({
       "builderButton": "編集",
       "facebookTooltip": "Facebook で共有",
       "twitterTooltip": "Twitter で共有",
-      "bitlyTooltip": "ショート リンクを取得",
+      "bitlyTooltip": "共有または印刷",
       "templateTitle": "テンプレートのタイトルの設定",
       "templateSubtitle": "テンプレートのサブタイトルの設定",
       "share": "共有",

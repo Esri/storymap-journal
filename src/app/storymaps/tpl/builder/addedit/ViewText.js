@@ -732,7 +732,7 @@ define(["lib-build/tpl!./ViewText",
 					// main issue was with font type and background color
 					//allowedContent: true,
 
-					// Instead we allow all elements that can be styled using the editor plus those one
+					// Instead we allow all elements that can be styled using the editor (ex blockquote, strike) plus those one
 					// *(*) class attribute, *[*] all other attributes
 					// a[data-*] authorize data attribute on link, no idea why *[data-*] or *[*] doesn't works...
 					// Other elements are inserted as plain text

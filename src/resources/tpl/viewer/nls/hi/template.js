@@ -85,7 +85,7 @@ define({
       "builderButton": "संपादित करें",
       "facebookTooltip": "Facebook पर साझा करें",
       "twitterTooltip": "Twitter पर साझा करें",
-      "bitlyTooltip": "छोटा लिंक प्राप्त करें",
+      "bitlyTooltip": "साझा करें या प्रिंट करें",
       "templateTitle": "टेम्पलेट शीर्षक निर्धारित करें",
       "templateSubtitle": "टेम्पलेट उपशीर्षक निर्धारित करें",
       "share": "साझा करें",

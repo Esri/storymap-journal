@@ -51,7 +51,8 @@ body.mobile-view .shareDialog .share-url-container {
 body.mobile-view .shareDialog .btn-bitlylink-copy,
 body.mobile-view .shareDialog .btn-bitlylink-open,
 body.mobile-view .shareDialog .embed-title,
-body.mobile-view .shareDialog .share-embed-container {
+body.mobile-view .shareDialog .share-embed-container,
+body.mobile-view .shareDialog .btn-print {
 	display: none;
 }
 

@@ -27,6 +27,7 @@ define(["lib-build/css!./MainView",
 		"esri/arcgis/utils",
 		"esri/geometry/Extent",
 		"../ui/StoryText",
+		"lib-app/arcgis-html-sanitizer/umd/arcgis-html-sanitizer",
 		"lib-build/css!../ui/Common",
 		"lib-build/css!../ui/StoryText",
 		"lib-build/css!../ui/mobile/Common",
@@ -55,7 +56,8 @@ define(["lib-build/css!./MainView",
 		topic,
 		arcgisUtils,
 		Extent,
-		StoryText
+		StoryText,
+		Sanitizer
 	){
 		/**
 		 * @preserve This application is released under the Apache License V2.0 by Esri http://www.esri.com/
@@ -112,6 +114,68 @@ define(["lib-build/css!./MainView",
 							e.preventDefault();
 					}
 				);
+
+				// HTML sanitizer
+        app.sanitizer = new Sanitizer({
+          whiteList: {
+            // styles
+            h1: [],
+            h2: [],
+            h3: [],
+            h4: [],
+            h5: [],
+            h6: [],
+            s: [],
+            u: [],
+            sub: [],
+            sup: [],
+            strike: [],
+            blockquote: [],
+            // containers and structural elements
+            div: [],
+            a: ['data-storymaps', 'data-storymaps-type', 'title'],
+            // lists and tables
+            ol: [],
+            ul: ['type'],
+            td: ['bgcolor'],
+            caption: [],
+            // forms -- MJ ONLY
+            select: ['type'],
+            option: ['type'],
+            button: ['type'],
+            // media
+            figure: [],
+            figcaption: [],
+            iframe: [
+              'src',
+              'height',
+              'width',
+              'border',
+              'allowfullscreen',
+              'mozallowfullscreen',
+              'webkitallowfullscreen',
+              'frameborder',
+              'scrolling',
+              'allowtransparency',
+              'data-unload'
+            ],
+            // other
+            style: ['type']
+          },
+          onIgnoreTagAttr: function(tag, name, value) {
+            // if you take `style` off the universal attribute whitelist, you've gotta
+            // add it back for `li`, `p`, and `strong` above.
+            var universalAttrWhitelist = ['style', 'class', 'dir', 'lang', 'align', 'role'];
+            var formTags = ['select', 'option', 'button'];
+            var attrAllowed = universalAttrWhitelist.indexOf(name) >= 0 || name.match(/^aria-/);
+            // MJ ONLY
+            var formAttrAllowed = formTags.indexOf(tag) >= 0 && name.match(/^data-|disabled/);
+            if (attrAllowed || formAttrAllowed) {
+              return name + '="' + app.sanitizer.sanitize(value) + '"';
+            }
+          },
+          allowCommentTag: false // this also strips out vector markup elements
+        }, true);
 
 				// Data Model
 				app.data = new Data();
@@ -552,10 +616,8 @@ define(["lib-build/css!./MainView",
 				 */
 
 				// Section title
-				CommonHelper.addCSSRule(
-					".sectionPanel .title, .sectionPanel .appTitle, #mobileView .title, #AddEditTitleEditor { " + appFonts.sectionTitle.value + " }",
-					"SectionTitleFont"
-				);
+				var sectionTitleRules = ".sectionPanel .title, .sectionPanel .appTitle, #mobileView .title, #AddEditTitleEditor { " + appFonts.sectionTitle.value;
+
 				// Section content
 				CommonHelper.addCSSRule(
 					".sectionPanel .content, #mobileView .content { " + appFonts.sectionContent.value + " }",
@@ -568,19 +630,21 @@ define(["lib-build/css!./MainView",
 				// but duplicated <strong> here to target existing apps
 
 				// Section title strong
-				var titleFontRules = '.sectionPanel .title, #mobileView .title, #AddEditTitleEditor, ' +
-														'.sectionPanel .title strong, #mobileView .title strong, #AddEditTitleEditor strong { ';
-				var firstTitleFontRules = '.sectionPanel .section:first-child .title, ' +
-																	'.sectionPanel .section:first-child .title strong { ';
+				var titleFontRules = '.sectionPanel .title strong, #mobileView .title strong, #AddEditTitleEditor strong { ';
+				var firstTitleFontRules = '.sectionPanel .section:first-child .title { ';
 				if (appFonts.sectionTitle.id === 'default') {
 					titleFontRules += 'font-family: \'open_sanssemibold\', sans-serif;';
 					firstTitleFontRules += 'font-family: \'open_sansregular\', sans-serif; }';
+					sectionTitleRules += 'font-weight: normal;';
 				} else {
 					titleFontRules += appFonts.sectionTitle.value;
 					firstTitleFontRules += appFonts.sectionTitle.value + ' }';
 				}
 				titleFontRules += ' font-weight: bold; }';
+				sectionTitleRules += '}';
 
+				// Section title
+				CommonHelper.addCSSRule(sectionTitleRules, "SectionTitleFont");
 				CommonHelper.addCSSRule(titleFontRules, 'SectionTitleStrongFont');
 				CommonHelper.addCSSRule(firstTitleFontRules, 'FirstSectionTitleFont');
 
@@ -665,6 +729,12 @@ define(["lib-build/css!./MainView",
 				StoryText.styleSectionPanelContent();
 
 				app.ui.mainStage.updateMainStageWithLayoutSettings();
+
+				if( app.embedBar && app.embedBar.initiated ) {
+          $("#contentPanel").height(cfg.height - 26);
+          $("#mainStagePanelInner, .containerPanelInner, #sidePanelInner").height($("#contentPanel").height());
+					$("#floatingPanel").css({"bottom": "26px"});
+        }
 
 				// Stop autoplay in mobile view
 				if ( cfg.isMobileView && app.ui.autoplay ) {

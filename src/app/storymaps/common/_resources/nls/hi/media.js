@@ -12,7 +12,8 @@ define({
       "disabled": "यह सुविधा व्यवस्थापक द्वारा अक्षम कर दी गई है",
       "userLookup": "एलबम लोड करें",
       "notImplemented": "अभी तक लागू नहीं किया गया।",
-      "noData": "कोई सार्वजनिक एल्बम नहीं मिली"
+      "noData": "कोई सार्वजनिक एल्बम नहीं मिली",
+      "thirdPartyTerms": "किसी तृतीय-पक्ष सेवा का उपयोग करके, आप इसकी सेवा की शर्तों से सहमत होते हैं: "
     },
     "imageSelector": {
       "lblStep1": "सेवा चुनें",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "प्रयोक्ता का नाम",
       "signInMsg2": "प्रयोक्ता नहीं मिला",
       "loadingFailed": "लोड करना विफल रहा"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook प्रयोक्ता",
-      "rightHeader": "Facebook पृष्ठ",
-      "pageExplain": "एक Facebook पृष्ठ<b>esrigis</b>की तरह एक सार्वजनिक ब्रांड/उत्पाद या सेलिब्रिटी है। आप पृष्ठ के URL में '/' के बाद पृष्ठ का नाम पा सकते हैं।",
-      "pageInputLbl": "पृष्ठ का नाम",
-      "lookupMsgError": "पृष्ठ नहीं मिला",
-      "warning": "Facebook समर्थन बंद कर दिया गया है, ${जानें}।",
-      "learn": "और अधिक जानें"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "ईमेल या Google ID",

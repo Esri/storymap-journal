@@ -12,7 +12,8 @@ define({
       "disabled": "Administrator je onemogućio ovu značajku.",
       "userLookup": "Učitaj albume",
       "notImplemented": "Još nije implementirano.",
-      "noData": "Nije pronađen javni album"
+      "noData": "Nije pronađen javni album",
+      "thirdPartyTerms": "Upotrebom usluge treće strane pristajete na njihove uvjete korištenja: "
     },
     "imageSelector": {
       "lblStep1": "Odaberite uslugu",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Korisničko ime",
       "signInMsg2": "Korisnik nije pronađen",
       "loadingFailed": "Učitavanje nije uspješno"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Korisnik Facebooka",
-      "rightHeader": "Stranica Facebooka",
-      "pageExplain": "Stranica na Facebooku javni je brand/proizvod ili poznati subjekt kao <b>esrigis</b>. Možete vidjeti naziv stranice nakon '/' na URL-u stranice.",
-      "pageInputLbl": "Naziv stranice",
-      "lookupMsgError": "Stranica nije pronađena",
-      "warning": "Prekinuta je podrška za Facebook, ${learn}.",
-      "learn": "saznaj više"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "ID e-pošte ili Googlea",

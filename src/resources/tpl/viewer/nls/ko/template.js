@@ -85,7 +85,7 @@ define({
       "builderButton": "편집",
       "facebookTooltip": "Facebook에 공유",
       "twitterTooltip": "Twitter에 공유",
-      "bitlyTooltip": "짧은 링크 가져오기",
+      "bitlyTooltip": "공유 또는 인쇄",
       "templateTitle": "템플릿 제목 설정",
       "templateSubtitle": "템플릿 부제목 설정",
       "share": "공유",

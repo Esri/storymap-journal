@@ -12,7 +12,8 @@ define({
       "disabled": "Šią funkciją išjungė Administratorius",
       "userLookup": "Įkelti albumus",
       "notImplemented": "Dar neįdiegta.",
-      "noData": "Viešųjų albumų nerasta"
+      "noData": "Viešųjų albumų nerasta",
+      "thirdPartyTerms": "Naudodamiesi trečiųjų šalių paslaugomis, sutinkate su jų paslaugų teikimo sąlygomis: "
     },
     "imageSelector": {
       "lblStep1": "Pasirinkite paslaugą",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Vartotojo vardas",
       "signInMsg2": "Vartotojas nerastas",
       "loadingFailed": "Įkelti nepavyko"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook vartotojas",
-      "rightHeader": "Facebook puslapis",
-      "pageExplain": "Facebook puslapis yra viešas prekės ženklas, produktas ar įžymybė kaip <b>esrigis</b>. Jūs galite pamatyti puslapio pavadinimą po pirmo '/' puslapio URL.",
-      "pageInputLbl": "Puslapio pavadinimas",
-      "lookupMsgError": "Puslapis nerastas",
-      "warning": "Facebook palaikymas nutrauktas, ${learn}.",
-      "learn": "sužinokite daugiau"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "El. paštas arba Picasa / Google+ ID",

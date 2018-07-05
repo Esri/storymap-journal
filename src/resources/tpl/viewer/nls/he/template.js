@@ -85,7 +85,7 @@ define({
       "builderButton": "עריכה",
       "facebookTooltip": "שתף בפייסבוק",
       "twitterTooltip": "שתף בטוויטר",
-      "bitlyTooltip": "קבל קישור קצר",
+      "bitlyTooltip": "שיתוף או הדפסה",
       "templateTitle": "קבע כותרת תבנית",
       "templateSubtitle": "קבע כותרת משנה לתבנית",
       "share": "שתף",

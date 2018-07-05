@@ -29,7 +29,8 @@ define(["dojo/_base/lang", 'storymaps/tpl/core/Helper'],
 				}
 				*/
 
-				_data = data;
+				var shouldSanitize = app.data.getWebAppItem().created > app.cfg.HTML_SANITIZER_DATE;
+				_data = shouldSanitize ? app.sanitizer.sanitize(data) : data;
 			},
 			get: function()
 			{

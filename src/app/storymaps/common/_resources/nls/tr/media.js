@@ -12,7 +12,8 @@ define({
       "disabled": "Bu özellik Yönetici tarafından devre dışı bırakıldı",
       "userLookup": "Albüm yükle",
       "notImplemented": "Henüz uygulanmadı.",
-      "noData": "Hiçbir genel albüm bulunamadı"
+      "noData": "Hiçbir genel albüm bulunamadı",
+      "thirdPartyTerms": "Bir üçüncü parti hizmetini kullanarak, hizmet şartlarını kabul etmiş olursunuz: "
     },
     "imageSelector": {
       "lblStep1": "Servisi seç",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Kullanıcı adı",
       "signInMsg2": "Kullanıcı bulunamadı",
       "loadingFailed": "Yükleme başarısız"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook Kullanıcısı",
-      "rightHeader": "Facebook Sayfası",
-      "pageExplain": "Facebook sayfası, <b>esrigis</b> gibi genel bir marka/ürün veya ünlü kişiliktir. Sayfa adını sayfa URL'sindeki ilk '/' karakterinden alabilirsiniz.",
-      "pageInputLbl": "Sayfa adı",
-      "lookupMsgError": "Sayfa bulunamadı",
-      "warning": "Facebook desteği artık verilmemektedir, ${learn}.",
-      "learn": "daha fazla bilgi"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-posta veya Google ID",

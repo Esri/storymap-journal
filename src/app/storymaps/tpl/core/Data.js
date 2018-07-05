@@ -157,8 +157,9 @@ define(["./WebApplicationData",
 
 				// Filter by status
 				$.each(allSections || [], function(i, section){
-					if ( section.status == "PUBLISHED" && section.pubDate <= Date.now() )
+					if ( section.status == "PUBLISHED" && section.pubDate <= Date.now() ) {
 						filteredSections.push(section);
+					}
 				});
 
 				return filteredSections;

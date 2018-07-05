@@ -12,7 +12,8 @@ define({
       "disabled": "Pääkäyttäjä on poistanut tämän toiminnon käytöstä.",
       "userLookup": "Lataa albumit",
       "notImplemented": "Ei ole vielä toteutettu.",
-      "noData": "Julkista albumia ei löytynyt"
+      "noData": "Julkista albumia ei löytynyt",
+      "thirdPartyTerms": "Käyttämällä kolmannen osapuolen palvelua suostut sen palveluehtoihin: "
     },
     "imageSelector": {
       "lblStep1": "Valitse palvelu",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Käyttäjätunnus",
       "signInMsg2": "Käyttäjää ei löydy",
       "loadingFailed": "Lataus epäonnistui"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook-käyttäjä",
-      "rightHeader": "Facebook-sivu",
-      "pageExplain": "Facebook-sivu on julkinen tuotemerkki tai tunnettu tuote, kuten <b>esrigis</b>. Saat sivun nimen sivun URL-osoitteessa olevan ensimmäisen vinoviivan (/) jälkeen.",
-      "pageInputLbl": "Sivun nimi",
-      "lookupMsgError": "Sivua ei löydy",
-      "warning": "Facebook-tuki on lopetettu, ${learn}.",
-      "learn": "lisätietoja"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Sähköpostiosoite tai Google-tunnus",

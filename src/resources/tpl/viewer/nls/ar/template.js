@@ -85,7 +85,7 @@ define({
       "builderButton": "تحرير",
       "facebookTooltip": "مشاركة على الفيس بوك",
       "twitterTooltip": "مشاركة على تويتر",
-      "bitlyTooltip": "الحصول على رابط قصير",
+      "bitlyTooltip": "مشاركة أو طباعة",
       "templateTitle": "تحديد عنوان القالب",
       "templateSubtitle": "تحديد العنوان الفرعي للقالب",
       "share": "مشاركة",

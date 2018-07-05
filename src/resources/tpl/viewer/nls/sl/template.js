@@ -85,7 +85,7 @@ define({
       "builderButton": "Uredi",
       "facebookTooltip": "Deli na Facebooku",
       "twitterTooltip": "Deli na Twitterju",
-      "bitlyTooltip": "Pridobi kratko povezavo",
+      "bitlyTooltip": "Deli ali tiskaj",
       "templateTitle": "Nastavi ime predloge",
       "templateSubtitle": "Nastavi podnaslov predloge",
       "share": "Deli",

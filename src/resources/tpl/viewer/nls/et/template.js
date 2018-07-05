@@ -85,7 +85,7 @@ define({
       "builderButton": "Muuda",
       "facebookTooltip": "Jaga Facebookis",
       "twitterTooltip": "Jaga Twitteris",
-      "bitlyTooltip": "Hangi lühike link",
+      "bitlyTooltip": "Jaga või prindi",
       "templateTitle": "Määra mallile pealkiri",
       "templateSubtitle": "Määra mallile alampealkiri",
       "share": "Jaga",

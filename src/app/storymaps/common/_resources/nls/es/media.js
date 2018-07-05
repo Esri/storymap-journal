@@ -12,7 +12,8 @@ define({
       "disabled": "El administrador ha deshabilitado esta entidad",
       "userLookup": "Cargar álbumes",
       "notImplemented": "No se ha implementado aún.",
-      "noData": "No se ha encontrado ningún álbum público"
+      "noData": "No se ha encontrado ningún álbum público",
+      "thirdPartyTerms": "Al utilizar un servicio de terceros, usted acepta sus condiciones de servicio: "
     },
     "imageSelector": {
       "lblStep1": "Elegir el servicio",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Nombre de usuario",
       "signInMsg2": "Usuario no encontrado",
       "loadingFailed": "Error al cargar"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Usuario de Facebook",
-      "rightHeader": "Página de Facebook",
-      "pageExplain": "Una página de Facebook es una marca/producto público o famoso como <b>esrigis</b>. Puedes obtener el nombre de la página después de la  primera '/' de la URL de la página.",
-      "pageInputLbl": "Nombre de la página",
-      "lookupMsgError": "No se encontró la página",
-      "warning": "Facebook ya no se admite, ${learn}.",
-      "learn": "más información"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Id. de dirección de correo electrónico o Google",

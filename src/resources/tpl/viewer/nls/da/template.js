@@ -85,7 +85,7 @@ define({
       "builderButton": "Redigér",
       "facebookTooltip": "Del på Facebook",
       "twitterTooltip": "Del på Twitter",
-      "bitlyTooltip": "Hent et kort link",
+      "bitlyTooltip": "Del eller udskriv",
       "templateTitle": "Indstil skabelontitel",
       "templateSubtitle": "Indstil skabelonundertitel",
       "share": "Del",

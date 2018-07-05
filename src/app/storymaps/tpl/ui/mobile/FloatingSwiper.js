@@ -86,7 +86,15 @@ define(["lib-build/tpl!./FloatingSwiperSection",
 			{
 				container.toggleClass('expanded', view == "detail");
 				$('body').toggleClass('mobile-view-expanded', view == "detail");
+				if( app.embedBar && app.embedBar.initiated && $("body").hasClass("mobile-view-expanded") ) {
+					$("#mobileView .swiper-wrapper").height($("#contentPanel").height());
+					$("#mobileView .swiper-slide").height($("#contentPanel").height() - 30);
+				}
 				_swipePane && _swipePane.resizeFix();
+				if( app.embedBar && app.embedBar.initiated && $("body").hasClass("mobile-view-expanded") ) {
+					$("#mobileView .swiper-wrapper").height($("#contentPanel").height());
+					$("#mobileView .swiper-slide").height($("#contentPanel").height() - 30);
+				}
 			};
 
 			this.enableAutoplay = function()

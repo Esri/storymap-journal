@@ -12,7 +12,8 @@ define({
       "disabled": "Administratoren har deaktivert denne funksjonen",
       "userLookup": "Last inn albumer",
       "notImplemented": "Ikke implementert ennå.",
-      "noData": "Finner ingen offentlige albumer"
+      "noData": "Finner ingen offentlige albumer",
+      "thirdPartyTerms": "Når du bruker en tredjepartstjeneste, godtar du dennes tjenestevilkår: "
     },
     "imageSelector": {
       "lblStep1": "Velg tjeneste",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Brukernavn",
       "signInMsg2": "Finner ikke bruker",
       "loadingFailed": "Innlasting mislyktes"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook-bruker",
-      "rightHeader": "Facebook-side",
-      "pageExplain": "En Facebook-side er for et offisielt merke, et produkt eller en kjendis, for eksempel <b>esrigis</b>. Du finner navnet på siden etter første / i sidens URL-adresse.",
-      "pageInputLbl": "Sidenavn",
-      "lookupMsgError": "Finner ikke siden",
-      "warning": "Facebook-støtte har blitt avviklet, ${learn}.",
-      "learn": "få mer informasjon"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-post eller Google-ID",

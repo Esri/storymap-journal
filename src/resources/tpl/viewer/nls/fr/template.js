@@ -85,7 +85,7 @@ define({
       "builderButton": "Modifier",
       "facebookTooltip": "Partager sur Facebook",
       "twitterTooltip": "Partager sur Twitter",
-      "bitlyTooltip": "Obtenir un lien court",
+      "bitlyTooltip": "Partager ou imprimer",
       "templateTitle": "Définir le titre du modèle",
       "templateSubtitle": "Définir le sous-titre du modèle",
       "share": "Partager",

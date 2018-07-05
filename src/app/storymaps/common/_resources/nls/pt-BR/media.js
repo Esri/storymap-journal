@@ -12,7 +12,8 @@ define({
       "disabled": "Este recurso foi desabilitado pelo Administrador",
       "userLookup": "Carregar álbuns",
       "notImplemented": "Não implementado ainda.",
-      "noData": "Nenhum álbum público localizado"
+      "noData": "Nenhum álbum público localizado",
+      "thirdPartyTerms": "Ao utilizar um serviço de terceiros, você concorda com seus termos de serviço: "
     },
     "imageSelector": {
       "lblStep1": "Escolha o serviço",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Nome de usuário",
       "signInMsg2": "Usuário não encontrado",
       "loadingFailed": "Falha ao carregar"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Usuário do Facebook",
-      "rightHeader": "Página do Facebook",
-      "pageExplain": "A página do Facebook é um produto/marca pública ou figura pública como<b>esrigis</b>. Você pode obter um nome de página após o primeiro '/' na URL da página.",
-      "pageInputLbl": "Nome da página",
-      "lookupMsgError": "Página não encontrada",
-      "warning": "O suporte do Facebook foi descontinuado, ${learn}.",
-      "learn": "mais informações"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail ou ID do Google",

@@ -198,26 +198,27 @@ define([
 				container.toggleClass('theme-black', _params.bgColor == '#FFFFFF');
 			}
 
-			function initEvents()
-			{
-				container.off('click keypress').on('click keypress', function(e){
-					var target = $(e.target);
+			function initEvents() {
+				container.off('click keypress').on('click keypress', _.debounce(onClickKeypress, 200, true));
+			}
 
-					if (target.hasClass('dot'))
-						navigationCallback($(e.target).data('index'));
+			function onClickKeypress(e) {
+				var target = $(e.target);
 
-					if (target.hasClass('navDotsUp') && ! target.hasClass('disabled'))
-						navigationCallback(container.find('.dot.active').data('index') - 1);
+				if (target.hasClass('dot'))
+					navigationCallback($(e.target).data('index'));
 
-					if (target.hasClass('navDotsDown') && ! target.hasClass('disabled'))
-						navigationCallback(container.find('.dot.active').data('index') + 1);
+				if (target.hasClass('navDotsUp') && ! target.hasClass('disabled'))
+					navigationCallback(container.find('.dot.active').data('index') - 1);
 
-					if (target.hasClass('navGroupUp'))
-						navigationCallback(target.data('index'));
+				if (target.hasClass('navDotsDown') && ! target.hasClass('disabled'))
+					navigationCallback(container.find('.dot.active').data('index') + 1);
 
-					if (target.hasClass('navGroupDown'))
-						navigationCallback(target.data('index') - 14);
-				});
+				if (target.hasClass('navGroupUp'))
+					navigationCallback(target.data('index'));
+
+				if (target.hasClass('navGroupDown'))
+					navigationCallback(target.data('index') - 14);
 			}
 		};
 	}

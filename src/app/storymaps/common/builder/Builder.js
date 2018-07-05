@@ -102,45 +102,79 @@ define(["lib-build/css!./Builder",
 			app.builder.cleanApp = cleanApp;
 
 			// Show https-transition notification when app loads
-			if (!app.data.isOrga()) {
-				topic.subscribe('tpl-ready', function() {
-					var strings = i18n.commonCore.httpsTransitionMessage;
+			topic.subscribe('tpl-ready', function() {
+				if (!app.isPortal) {
+					var stringsSurvey = i18n.commonCore.june2018SurveyMessage;
+					var stringsHttps = i18n.commonCore.httpsTransitionMessage;
+					new BannerNotification({
+						id: 'june2018Survey',
+						bannerMsg: stringsSurvey.bannerMsg,
+						primaryColor: '#1e8a87',
+						mainMsgHtml: '\
+						<h2 class="banner-notification-text">' + stringsSurvey.s1h1 + '</h2>\
+						<p class="banner-notification-text">' + stringsSurvey.s1p1 + '</p>\
+						<p class="banner-notification-text">' + stringsSurvey.s2p1 + '</p>\
+						',
+						actions: [
+							{
+								string: stringsSurvey.action1,
+								closeOnAction: true
+							},
+							{
+								primary: true,
+								string: stringsSurvey.action2,
+								closeOnAction: true,
+								action: function() {
+									window.open('http://links.esri.com/storymaps/june2018-survey');
+								}
+							}
+						],
+						cookie: {
+							domain: 'arcgis.com',
+							path: '/',
+							maxAge: 60 * 60 * 24 * 365
+						}
+						// autohideAfter: new Date() > new Date(/*'July 31 2018'*/) ? 0 : 2
+					});
+
 					new BannerNotification({
 						id: "httpsTransitionMessage",
-						bannerMsg: strings.bannerMsg,
+						bannerMsg: stringsHttps.bannerMsg,
 						mainMsgHtml: '\
-							<h2>' + strings.s1h1 + '</h2>\
-							<p>' + strings.s1p1 + '</p>\
-							<p>' + strings.s1p2 + '</p>\
-							<h2>' + strings.s2h1 + '</h2>\
-							<p>' + strings.s2p1 + '</p>\
+							<h2>' + stringsHttps.s1h1 + '</h2>\
+							<p>' + stringsHttps.s1p1 + '</p>\
+							<p>' + stringsHttps.s1p2 + '</p>\
+							<h2>' + stringsHttps.s2h1 + '</h2>\
+							<p>' + stringsHttps.s2p1 + '</p>\
 						',
 						actions: [
 							{
 								primary: true,
-								string: strings.action1,
+								string: stringsHttps.action1,
 								closeOnAction: true
 							},
 							{
-								string: strings.action2,
+								string: stringsHttps.action2,
 								action: function() {
 									window.open('https://storymaps.arcgis.com/en/my-stories/');
 								}
 							},
 							{
-								string: strings.action3,
+								string: stringsHttps.action3,
 								action: function() {
 									window.open('https://links.esri.com/storymaps/web_security_faq');
 								}
 							}
 						],
 						cookie: {
-							domain: window.location.hostname,
+							domain: 'arcgis.com',
+							path: '/',
 							maxAge: 60 * 60 * 24 * 365
-						}
+						},
+						blockingNotifications: 'june2018Survey'
 					});
-				});
-			}
+				}
+			});
 		}
 
 		function appInitComplete()
@@ -166,9 +200,13 @@ define(["lib-build/css!./Builder",
 
 			/* themes */
 			var x; // walker
-			if ((x = app.portal) && (x = x.portalProperties) && (x = x.sharedTheme) && hasOrgTheme(x)) {
-				addOrgThemeToConfig(x);
-				addOrgLogoToConfig(x);
+			if ((x = app.portal) && (x = x.portalProperties) && (x = x.sharedTheme)) {
+				if (hasOrgTheme(x)) {
+					addOrgThemeToConfig(x);
+				}
+				if (hasOrgLogo(x)) {
+					addOrgLogoToConfig(x);
+				}
 			}
 			addModifiedThemeToConfig();
 
@@ -236,6 +274,10 @@ define(["lib-build/css!./Builder",
 				hasValues = colorExists(sharedTheme.button.text) || colorExists(sharedTheme.button.background);
 			}
 			return hasValues;
+		}
+
+		function hasOrgLogo(sharedTheme) {
+			return (sharedTheme.logo && sharedTheme.logo.small);
 		}
 
 		function configureAppGeocoders() {
@@ -422,8 +464,8 @@ define(["lib-build/css!./Builder",
 		}
 
 		function getWhiteOrBlackText(bgColor) {
-      var yiq = getYIQ(bgColor);
-      return (yiq >= 128) ? 'black' : 'white';
+			var yiq = getYIQ(bgColor);
+			return (yiq >= 128) ? 'black' : 'white';
 		}
 
 		function getMediaBackground(/* sharedTheme */) {

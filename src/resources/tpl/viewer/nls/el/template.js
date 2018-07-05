@@ -85,7 +85,7 @@ define({
       "builderButton": "Επεξεργασία",
       "facebookTooltip": "Κοινοποίηση στο Facebook",
       "twitterTooltip": "Κοινοποίηση στο Twitter",
-      "bitlyTooltip": "Λήψη σύντομου συνδέσμου",
+      "bitlyTooltip": "Κοινοποίηση ή εκτύπωση",
       "templateTitle": "Ορισμός τίτλου προτύπου",
       "templateSubtitle": "Ορισμός υπότιτλου προτύπου",
       "share": "Κοινοποίηση",

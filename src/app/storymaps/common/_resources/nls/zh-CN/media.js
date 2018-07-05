@@ -12,7 +12,8 @@ define({
       "disabled": "此功能已被管理员禁用",
       "userLookup": "加载图片集",
       "notImplemented": "尚未实现。",
-      "noData": "未找到公共图片集"
+      "noData": "未找到公共图片集",
+      "thirdPartyTerms": "使用第三方服务即表示您同意其服务条款。 "
     },
     "imageSelector": {
       "lblStep1": "选择服务",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "用户名",
       "signInMsg2": "未找到用户",
       "loadingFailed": "加载失败"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook 用户",
-      "rightHeader": "Facebook 页面",
-      "pageExplain": "Facebook 页面属于公共品牌/产品或像 <b>esrigis</b> 一样的名品。可以在页面 URL 的第一个“/”后面获得页面名称。",
-      "pageInputLbl": "页面名称",
-      "lookupMsgError": "未找到页面",
-      "warning": "已停止对 Facebook 的支持，${learn}。",
-      "learn": "了解详细信息"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "电子邮件或 Google ID",

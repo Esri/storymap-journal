@@ -12,7 +12,8 @@ define({
       "disabled": "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
       "userLookup": "앨범 불러오기",
       "notImplemented": "아직 구현되지 않았습니다.",
-      "noData": "공개 앨범을 찾을 수 없음"
+      "noData": "공개 앨범을 찾을 수 없음",
+      "thirdPartyTerms": "서드 파티 서비스를 사용하면 서비스 약관에 동의하는 것입니다. "
     },
     "imageSelector": {
       "lblStep1": "서비스 선택",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "사용자 이름",
       "signInMsg2": "사용자를 찾을 수 없습니다.",
       "loadingFailed": "불러오기 실패"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook 사용자",
-      "rightHeader": "Facebook 페이지",
-      "pageExplain": "Facebook 페이지는 공용 브랜드/제품 또는 <b>esrigis</b>와 같은 유명 브랜드/제품입니다. 페이지 URL의 첫 번째 '/' 뒤에서 페이지 이름을 확인할 수 있습니다.",
-      "pageInputLbl": "페이지 이름",
-      "lookupMsgError": "페이지를 찾을 수 없음",
-      "warning": "Facebook 지원이 중단되었습니다. ${learn}",
-      "learn": "자세한 정보"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "이메일 또는 Google ID",

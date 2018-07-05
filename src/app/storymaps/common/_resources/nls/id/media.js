@@ -12,7 +12,8 @@ define({
       "disabled": "Fitur ini telah dinonaktifkan oleh Administrator",
       "userLookup": "Muat album",
       "notImplemented": "Belum diterapkan.",
-      "noData": "Album publik tidak ditemukan"
+      "noData": "Album publik tidak ditemukan",
+      "thirdPartyTerms": "Dengan menggunakan layanan pihak ketiga, berarti Anda menyetujui ketentuan layanannya: "
     },
     "imageSelector": {
       "lblStep1": "Pilih layanan",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Nama pengguna",
       "signInMsg2": "Pengguna tidak ditemukan",
       "loadingFailed": "Gagal memuat"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Pengguna Facebook",
-      "rightHeader": "Halaman Facebook",
-      "pageExplain": "Halaman Facebook seperti produk/merek publik atau selebriti seperti <b>esrigis</b>. Anda bisa mendapatkan nama halaman setelah '/' pertama di URL halaman.",
-      "pageInputLbl": "Nama halaman",
-      "lookupMsgError": "Halaman tidak ditemukan",
-      "warning": "Dukungan untuk Facebook telah dihentikan, ${learn}.",
-      "learn": "pelajari selengkapnya"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "ID email atau ID Google",

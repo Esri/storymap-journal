@@ -12,7 +12,8 @@ define({
       "disabled": "Opcja ta została wyłączona przez Administratora",
       "userLookup": "Wczytaj albumy",
       "notImplemented": "Jeszcze nie wprowadzone",
-      "noData": "Nie znaleziono żadnych albumów publicznych"
+      "noData": "Nie znaleziono żadnych albumów publicznych",
+      "thirdPartyTerms": "Używając usługi innych producentów, zgadzasz się na warunki jej użytkowania: "
     },
     "imageSelector": {
       "lblStep1": "Wybierz usługę",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Nazwa użytkownika",
       "signInMsg2": "Nie odnaleziono użytkownika",
       "loadingFailed": "Wczytywanie zakończyło się niepowodzeniem"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Użytkownik Facebook",
-      "rightHeader": "Strona Facebook",
-      "pageExplain": "Strona Facebook to publiczna strona marki/produktu lub znanej osoby, np.<b>esrigis</b>. Nazwa strony została umieszczona po pierwszym znaku „/” w adresie URL strony.",
-      "pageInputLbl": "Nazwa strony",
-      "lookupMsgError": "Nie znaleziono strony",
-      "warning": "Facebook nie jest już obsługiwany, ${learn}.",
-      "learn": "więcej informacji"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Adres e-mail lub identyfikator z serwisu Google",

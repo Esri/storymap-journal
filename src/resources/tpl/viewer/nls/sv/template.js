@@ -85,7 +85,7 @@ define({
       "builderButton": "Redigera",
       "facebookTooltip": "Dela på Facebook",
       "twitterTooltip": "Dela på Twitter",
-      "bitlyTooltip": "Hämta en kort länk",
+      "bitlyTooltip": "Dela eller skriv ut",
       "templateTitle": "Ange malltitel",
       "templateSubtitle": "Ange underrubrik för mallen",
       "share": "Dela",

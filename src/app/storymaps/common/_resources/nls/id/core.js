@@ -145,13 +145,29 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Pesan Penting mengenai Keamanan Web dan Story Map",
       "s1h1": "Esri sedang meningkatkan keamanan Story Map",
-      "s1p1": "Story Map Anda berada di web, dan komunitas web selalu berupaya membangun dan mengimplementasikan keamanan yang lebih baik. HTTPS, yang menyediakan koneksi aman untuk konten yang ditransmisikan melalui internet, berkembang sebagai cara yang harapkan untuk mengakses konten web. Sebagian besar browser modern sekarang memperlihatkan pesan peringatan jika yang digunakan adalah HTTP, bukan HTTPS. Karena standar yang berkembang ini, mulai dari pembaruan Juni 2018 untuk ArcGIS Online, Story Map Anda harus menggunakan HTTPS.",
-      "s1p2": "Praktisnya, ini berarti Story Map dan semua kontennya (termasuk gambar, layer, aplikasi yang disematkan, dan situs web) harus diakses menggunakan tautan yang diawali dengan HTTPS, bukan HTTP. Ini memastikan pengalaman terbaik bagi pembaca Anda karena sebagai besar browser web akan menunjukkan bahwa cerita Anda aman.",
+      "s1p1": "Story Map Anda disiarkan langsung di web, dan komunitas web selalu berupaya menyusun dan mengimplementasikan keamanan yang lebih baik. HTTPS, yang memberikan koneksi aman bagi konten untuk ditransmisikan melalui internet, semakin berkembang sebagai cara mengakses konten web yang diharapkan. Sebagian besar browser modern saat ini menunjukkan pesan peringatan jika HTTP digunakan alih-alih HTTPS. Karena standar yang terus berkembang ini, kami sangat menyarankan Anda menggunakan tautan HTTPS untuk menulis dan berbagi Story Map, dan hanya menggunakan URL HTTPS saat menyematkan konten web atau menautkan gambar dalam Story Map.",
+      "s1p2": "Singkatnya, ini berarti Story Map dan semua kontennya (termasuk gambar, layer, aplikasi yang disematkan, dan situs web) harus diakses menggunakan tautan yang dimulai dengan HTTPS alih-alih HTTP. Ini memastikan pengalaman terbaik bagi pembaca Anda karena sebagian besar browser akan menunjukkan bahwa cerita Anda aman.",
       "s2h1": "Apa yang harus saya lakukan?",
-      "s2p1": "Esri sedang berupaya membuat ini menjadi transisi yang mudah bagi penulis dan pembaca Story Map. Alat sekarang tersedia di builder Story Map dan Cerita Saya yang membantu Anda menemukan konten tidak aman (HTTP) dalam cerita Anda dan memberi rekomendasi cara menanganinya. Harap periksa cerita Anda untuk mengetahui konten tidak aman dan perbarui ke HTTPS sebelum Juni 2018.",
+      "s2p1": "Esri berupaya untuk membuat ini menjadi transisi yang mudah bagi penulis dan pembaca Story Map. Alat sekarang sudah tersedia di builder Story Map dan My Stories yang membantu Anda menemukan konten (HTTP) tidak aman di cerita Anda dan memberi saran cara mengatasinya. Harap periksa peta Anda apakah ada konten tidak aman dan perbarui menjadi HTTPS sesegera mungkin.",
       "action1": "Tutup",
       "action2": "Periksa cerita saya sekarang",
       "action3": "Pelajari lebih lanjut"
+    },
+    "embedBar": {
+      "share": "Bagikan",
+      "fullScreen": "Layar penuh",
+      "exitFullScreen": "Keluar dari layar penuh",
+      "enlarge": "Perbesar",
+      "newTab": "Buka di tab baru",
+      "tagline": "Story Map"
+    },
+    "june2018SurveyMessage": {
+      "bannerMsg": "Bolehkah kami tanyakan sesuatu? Ini akan membantu membentuk masa depan Story Map.",
+      "s1h1": "Bagikan pemikiran Anda, bentuk masa depan",
+      "s1p1": "Masukan Anda adalah satu-satunya sumber umpan balik yang paling penting, dan mempelajari lebih banyak tentang Anda akan meningkatkan Story Map. Kami akan berterima kasih jika Anda dapat berpartisipasi dalam survei tiga menit ini.",
+      "s2p1": "Seperti biasa, terima kasih telah menggunakan Story Map Esri!",
+      "action1": "Tutup",
+      "action2": "Ikuti survei"
     }
   }
 });

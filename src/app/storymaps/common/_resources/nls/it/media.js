@@ -12,7 +12,8 @@ define({
       "disabled": "Questa feature è stata disabilitata dall'amministratore",
       "userLookup": "Carica album",
       "notImplemented": "Non ancora implementato.",
-      "noData": "Nessun album pubblico trovato"
+      "noData": "Nessun album pubblico trovato",
+      "thirdPartyTerms": "Utilizzando un servizio di terzi, si accettano i termini di servizio relativi: "
     },
     "imageSelector": {
       "lblStep1": "Scegli il servizio",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Nome utente",
       "signInMsg2": "Utente non trovato",
       "loadingFailed": "Caricamento non riuscito"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Utente Facebook",
-      "rightHeader": "Pagina Facebook",
-      "pageExplain": "Una pagina Facebook è un marchio/prodotto pubblico o un personaggio pubblico come <b>esrigis</b>. È possibile ottenere il nome della pagina dopo il primo '/' nell'URL della pagina.",
-      "pageInputLbl": "Nome pagina",
-      "lookupMsgError": "Pagina non trovata",
-      "warning": "Il supporto Facebook è stato interrotto, ${learn}.",
-      "learn": "ulteriori informazioni"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail o ID Google",

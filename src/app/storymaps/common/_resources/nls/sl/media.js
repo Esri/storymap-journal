@@ -12,7 +12,8 @@ define({
       "disabled": "Administrator je onemogočil to funkcionalnost",
       "userLookup": "Naloži albume",
       "notImplemented": "Ni še uveljavljeno.",
-      "noData": "Javni albumi niso najdeni"
+      "noData": "Javni albumi niso najdeni",
+      "thirdPartyTerms": "Z uporabo storitve tretje osebe se strinjate z njenimi pogoji storitve: "
     },
     "imageSelector": {
       "lblStep1": "Izberite storitev",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Uporabniško ime",
       "signInMsg2": "Uporabnik ni najden",
       "loadingFailed": "Nalaganje ni uspelo"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Uporabnik Facebooka",
-      "rightHeader": "Facebook stran",
-      "pageExplain": "Facebook stran je javna blagovna znamka/izdelek ali znani subjekt, kot je <b>esrigis</b>. Ime strani vidite po prvem znaku »/« v URL-ju strani.",
-      "pageInputLbl": "Ime strani",
-      "lookupMsgError": "Stran ni najdena",
-      "warning": "Podpora za Facebook je opuščena, ${learn}.",
-      "learn": "Izvedite več"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-pošta ali ID za Google",

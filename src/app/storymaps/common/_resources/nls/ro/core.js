@@ -145,13 +145,29 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Mesaj important referitor la Securitatea web şi Story Maps",
       "s1h1": "Esri îmbunătăţeşte securitatea Story Maps",
-      "s1p1": "Story Maps sunt operaționale pe internet, iar comunitatea web depune toate eforturile pentru a stabili şi implementa o mai bună securitate. HTTPS, care furnizează o conexiune securizată pentru conţinutul transmis prin internet, este recunoscut din ce în ce mai des ca modalitatea agreată pentru a accesa conţinut web. Majoritatea browserelor moderne emit acum mesaje de avertizare atunci când HTTP este utilizat în loc de HTTPS. Datorită acestui standard din ce în ce mai des folosit, începând cu actualizarea din iunie 2018 a ArcGIS Online, Story Maps dvs. vor trebui să folosească HTTPS.",
-      "s1p2": "În mod concret, acest lucru înseamnă că o Story Map şi întregul său conţinut (inclusiv imagini, straturi tematice, aplicaţii încorporate şi site-uri web) trebuie să fie accesate folosind mai degrabă link-uri care încep cu HTTPS decât HTTP. Acest lucru asigură cititorilor dvs. o experienţă optimă, deoarece cele mai multe browsere web vor indica faptul că relatările dvs. sunt sigure.",
+      "s1p1": "Hărțile dvs. informative se află pe web, iar comunitatea web lucrează în permanență pentru a stabili și implementa o securitate mai bună. HTTPS, care oferă o conexiune securizată pentru conținutul transmis prin internet, devine metoda așteptată pentru a accesa conținut web. Acum, majoritatea browserelor moderne afișează mesaje de avertizare atunci când se utilizează HTTP în loc de HTTPS. Având în vedere acest standard nou, vă recomandăm insistent să utilizați linkuri HTTPS pentru autorizarea și partajarea hărților informative și să utilizați numai URL-uri HTTPS atunci când încorporați conținut web sau când adăugați linkuri către imagini în cadrul unei hărți informative.",
+      "s1p2": "În mod concret, acest lucru înseamnă că o hartă informativă și întregul său conținut (inclusiv imagini, straturi tematice, aplicații încorporate și site-uri web) trebuie să fie accesate folosind mai degrabă link-uri care încep cu HTTPS decât cu HTTP. Acest lucru le asigură cititorilor dvs. o experiență optimă, deoarece cele mai multe browsere web vor indica faptul că relatările dvs. sunt sigure.",
       "s2h1": "Ce trebuie să fac?",
-      "s2p1": "Esri depune toate eforturile pentru a face această tranziţie să fie una uşoară pentru autorii Story Map şi pentru cititori. Sunt disponibile acum instrumentele în aplicaţiile de creare Story Map şi în Relatările mele care vă ajută să găsiţi conţinut nesigur (HTTP) în relatările dvs. şi vă oferă recomandări pentru modul în care puteţi să-l gestionați. Verificaţi-vă relatările pentru a vedea dacă includ conţinut nesigur și actualizați la HTTPS înainte de iunie 2018.",
+      "s2p1": "Esri depune toate eforturile pentru a face ca această tranziție să fie una ușoară pentru autorii de hărți informative și pentru cititori. Sunt disponibile acum instrumente în aplicațiile de creare a hărților informative și în Relatările mele, care vă ajută să găsiți conținut nesigur (HTTP) în relatările dvs. și care vă oferă recomandări pentru modul în care puteți să-l gestionați. Vă rugăm să vă verificați relatările pentru a vedea dacă includ conținut nesigur și să actualizați la HTTPS cât mai curând posibil.",
       "action1": "Închidere",
       "action2": "Verificaţi-mi acum relatările",
       "action3": "Aflaţi mai multe"
+    },
+    "embedBar": {
+      "share": "Partajare",
+      "fullScreen": "Pe tot ecranul",
+      "exitFullScreen": "Părăsiți modul pe tot ecranul",
+      "enlarge": "Mărire",
+      "newTab": "Deschideți într-o filă nouă",
+      "tagline": "O hartă informativă"
+    },
+    "june2018SurveyMessage": {
+      "bannerMsg": "Vă putem solicita un lucru? Acesta va contribui la modelarea viitorului hărților informative.",
+      "s1h1": "Împărtășiți-vă gândurile, modelați viitorul",
+      "s1p1": "Informațiile furnizate de dvs. reprezintă sursa noastră cea mai importantă de feedback și faptul că aflăm mai multe despre dvs. ne va ajuta să îmbunătățim hărțile informative. V-am fi recunoscători dacă ați putea participa la acest chestionar de trei minute.",
+      "s2p1": "Ca întotdeauna, vă mulțumim că utilizați hărțile informative Esri!",
+      "action1": "Închidere",
+      "action2": "Parcurgeți chestionarul"
     }
   }
 });

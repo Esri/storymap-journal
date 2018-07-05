@@ -12,7 +12,8 @@ define({
       "disabled": "Šo funkciju administrators ir atspējojis",
       "userLookup": "Ielādēt albumus",
       "notImplemented": "Vēl nav ieviests.",
-      "noData": "Nav atrasts publisks albums"
+      "noData": "Nav atrasts publisks albums",
+      "thirdPartyTerms": "Izmantojot šo trešās puses pakalpojumu, jūs piekrītat tā lietošanas noteikumiem. "
     },
     "imageSelector": {
       "lblStep1": "Izvēlēties servisu",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Lietotāja vārds",
       "signInMsg2": "Lietotājs nav atrasts",
       "loadingFailed": "Ielāde neizdevās"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook Lietotājs",
-      "rightHeader": "Facebook Lapa",
-      "pageExplain": "Facebook lapa ir publisks zīmols/produkts vai slavenība, piem., <b>esrigis</b>. Jūs varat saņemt lapas nosaukumu, pēc pirmās '/' lapas URL.",
-      "pageInputLbl": "Lapas nosaukums",
-      "lookupMsgError": "Lapa nav atrasta",
-      "warning": "Facebook atbalsts ir pārtraukts, ${learn}.",
-      "learn": "uzzināt vairāk"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-pasts vai Google ID",

@@ -12,7 +12,8 @@ define({
       "disabled": "Функция была отключена администратором",
       "userLookup": "Загрузить альбомы",
       "notImplemented": "Еще не реализовано.",
-      "noData": "Общедоступных альбомов не найдено"
+      "noData": "Общедоступных альбомов не найдено",
+      "thirdPartyTerms": "При использовании сервиса стороннего производителя, вы должны принять условия предоставления услуг сервиса: "
     },
     "imageSelector": {
       "lblStep1": "Выберите услугу",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Имя пользователя",
       "signInMsg2": "Пользователь не найден",
       "loadingFailed": "Загрузка не удалась"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Пользователь Facebook",
-      "rightHeader": "Страница Facebook",
-      "pageExplain": "Страница Facebook - это публичный продукт, как <b>esrigis</b>. Вы можете взять имя страницы, расположенное после первой косой черты '/' в URL страницы.",
-      "pageInputLbl": "Имя страницы",
-      "lookupMsgError": "Страница не найдена",
-      "warning": "Поддержка Facebook отменена, ${learn}.",
-      "learn": "более подробно"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Email или Google ID",

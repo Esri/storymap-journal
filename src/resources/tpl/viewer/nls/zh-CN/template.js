@@ -85,7 +85,7 @@ define({
       "builderButton": "编辑",
       "facebookTooltip": "共享至 Facebook",
       "twitterTooltip": "共享至 Twitter",
-      "bitlyTooltip": "获取短链接",
+      "bitlyTooltip": "共享或打印",
       "templateTitle": "设置模板标题",
       "templateSubtitle": "设置模板子标题",
       "share": "共享",

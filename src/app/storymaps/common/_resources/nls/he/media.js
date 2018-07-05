@@ -12,7 +12,8 @@ define({
       "disabled": "תכונה זו הוגדרה כלא זמינה על ידי המנהל",
       "userLookup": "טען אלבומים",
       "notImplemented": "לא נתמך כעת.",
-      "noData": "לא נמצא אלבום ציבורי"
+      "noData": "לא נמצא אלבום ציבורי",
+      "thirdPartyTerms": "על-ידי שימוש בשירות של צד שלישי, אתה מביע הסכמה לתנאי השירות שלו: "
     },
     "imageSelector": {
       "lblStep1": "בחר את השירות",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "שם משתמש",
       "signInMsg2": "משתמש לא נמצא",
       "loadingFailed": "טעינה נכשלה"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "משתמש פייסבוק",
-      "rightHeader": "עמוד פייסבוק",
-      "pageExplain": "A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the firstq'/' in the page URL.",
-      "pageInputLbl": "שם דף",
-      "lookupMsgError": "עמוד לא נמצא",
-      "warning": "התמיכה של Facebook נותקה, ${learn}.",
-      "learn": "מידע נוסף"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "דואר אלקטרוני או Google ID",

@@ -85,7 +85,7 @@ define({
       "builderButton": "Bewerken",
       "facebookTooltip": "Delen op Facebook",
       "twitterTooltip": "Delen op Twitter",
-      "bitlyTooltip": "Ontvang een korte URL",
+      "bitlyTooltip": "Delen of afdrukken",
       "templateTitle": "Titel voor template instellen",
       "templateSubtitle": "Subtitel voor template instellen",
       "share": "Delen",

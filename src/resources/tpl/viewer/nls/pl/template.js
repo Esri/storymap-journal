@@ -85,7 +85,7 @@ define({
       "builderButton": "Edytuj",
       "facebookTooltip": "Udostępnij na Facebooku",
       "twitterTooltip": "Udostępnij na Twitterze",
-      "bitlyTooltip": "Utwórz skrócone łącze",
+      "bitlyTooltip": "Udostępnij lub drukuj",
       "templateTitle": "Skonfiguruj tytuł szablonu",
       "templateSubtitle": "Skonfiguruj podtytuł szablonu",
       "share": "Udostępnij",

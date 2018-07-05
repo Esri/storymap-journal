@@ -28,6 +28,10 @@ app.cfg = {
 		}
 	},
 
+	// Date to enforce HTML sanitization for apps created after (06/27/18)
+	HTML_SANITIZER_DATE: 1530072000000,
+	JUNE_RELEASE_DATE: 1530072000000,
+
 	//
 	// Layouts
 	//
@@ -91,6 +95,12 @@ app.cfg = {
 
 	HELP_URL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
 	HELP_URL_PORTAL: "#/Story_Map_Journal/0193000000v4000000/",
+
+	// links to third-party terms of service
+	YOUTUBE_TERMS_LINK: "http://links.esri.com/storymaps/youtube-terms",
+	VIMEO_TERMS_LINK: "http://links.esri.com/storymaps/vimeo-terms",
+	FLICKR_TERMS_LINK: "http://links.esri.com/storymaps/flickr-terms",
+	GOOGLE_TERMS_LINK: "http://links.esri.com/storymaps/google-terms",
 
 	// Control the authorized data source (for initialization and import screen)
 	AUTHORIZED_IMPORT_SOURCE: {

@@ -145,13 +145,29 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Wichtige Informationen zur Websicherheit von Story-Maps",
       "s1h1": "Esri verbessert die Sicherheit von Story-Maps",
-      "s1p1": "Das Internet bildet den Rahmen für Ihre Story-Maps, und daher arbeitet die Web-Community stets daran, bessere Sicherheitsvorkehrungen zu entwickeln und umzusetzen. HTTPS, womit eine sichere Verbindung für im Internet übermittelte Inhalte hergestellt wird, setzt sich zunehmend als die Standardmethode für den Zugriff auf Webinhalte durch. Der Großteil der modernen Browser zeigt nun eine Warnmeldung an, wenn HTTP anstelle von HTTPS verwendet wird. Aufgrund des neuen Standards ist ab der ArcGIS Online-Aktualisierung im Juni 2018 die Verwendung von HTTPS in Ihren Story-Maps verpflichtend.",
-      "s1p2": "Kurz gesagt: Dies bedeutet, dass auf eine Story-Map und alle zugehörigen Inhalte (Bilder, Layer, eingebettete Apps und Websites) über HTTPS-Links anstelle von HTTP-Links zugegriffen werden muss. Auf diese Weise wird eine gute Benutzererfahrung für Ihre Leser sichergestellt, da die meisten Webbrowser anzeigen, dass Ihre Storys sicher sind.",
+      "s1p1": "Das Internet bildet den Rahmen für Ihre Story-Maps, und daher arbeitet die Web-Community stets daran, bessere Sicherheitsvorkehrungen zu entwickeln und umzusetzen. HTTPS, womit eine sichere Verbindung für im Internet übermittelte Inhalte hergestellt wird, setzt sich zunehmend als die Standardmethode für den Zugriff auf Webinhalte durch. Der Großteil der modernen Browser zeigt nun eine Warnmeldung an, wenn HTTP anstelle von HTTPS verwendet wird. Aufgrund dieses neuen Standards empfehlen wir dringend, für das Erstellen und Freigeben von Story-Maps HTTPS-Links zu verwenden und ausschließlich HTTPS URLs zu verwenden, wenn Sie in eine Story-Map Webinhalt einbetten oder Links zu Bildern hinzufügen.",
+      "s1p2": "Konkret bedeutet dies, dass auf eine Story-Map und alle zugehörigen Inhalte (Bilder, Layer, eingebettete Apps und Websites) über HTTPS-Links anstelle von HTTP-Links zugegriffen werden sollte. Auf diese Weise wird eine gute Benutzererfahrung für Ihre Leser sichergestellt, da die meisten Webbrowser anzeigen, dass Ihre Storys sicher sind.",
       "s2h1": "Was muss ich tun?",
-      "s2p1": "Esri arbeitet daran, einen einfachen Übergang für Autoren und Leser von Story-Maps sicherzustellen. In den Story Map Buildern und in \"Eigene Storys\" stehen nun Werkzeuge zur Verfügung, mit denen Sie unsichere Inhalte (HTTP) in Ihren Storys finden können. Es werden ebenfalls Empfehlungen für die Problembehebung gegeben. Überprüfen Sie Ihre Storys auf unsichere Inhalte, und wechseln Sie vor der Aktualisierung im Juni 2018 zu HTTPS.",
+      "s2p1": "Esri arbeitet daran, einen einfachen Übergang für Autoren und Leser von Story-Maps sicherzustellen. In den Story-Map-Buildern und in \"Eigene Storys\" stehen nun Werkzeuge zur Verfügung, mit denen Sie unsichere Inhalte (HTTP) in Ihren Storys finden können. Es werden ebenfalls Empfehlungen für die Problembehebung gegeben. Überprüfen Sie Ihre Storys auf unsichere Inhalte, und wechseln Sie so bald wie möglich zu HTTPS.",
       "action1": "Schließen",
       "action2": "Eigene Storys jetzt überprüfen",
       "action3": "Weitere Informationen"
+    },
+    "embedBar": {
+      "share": "Freigeben",
+      "fullScreen": "Vollbild",
+      "exitFullScreen": "Vollbild beenden",
+      "enlarge": "Vergrößern",
+      "newTab": "In neuer Registerkarte öffnen",
+      "tagline": "Eine Story-Map"
+    },
+    "june2018SurveyMessage": {
+      "bannerMsg": "Dürfen wir Ihnen ein paar Fragen stellen? Sie helfen uns damit, die zukünftige Entwicklung von Story Maps zu bestimmen.",
+      "s1h1": "Mit Ihrem Feedback stellen Sie die Weichen für die Zukunft",
+      "s1p1": "Ihr Feedback ist für uns äußerst wichtig. Je mehr wir über Sie erfahren, umso mehr können wir Story Maps verbessern. Wir würden uns freuen, wenn Sie sich drei Minuten Zeit für diesen Survey nehmen könnten.",
+      "s2p1": "Und wie immer danken wir Ihnen, dass Sie sich für Esri Story Maps entschieden haben!",
+      "action1": "Schließen",
+      "action2": "Am Survey teilnehmen"
     }
   }
 });

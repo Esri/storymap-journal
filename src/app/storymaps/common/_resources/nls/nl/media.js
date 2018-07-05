@@ -12,7 +12,8 @@ define({
       "disabled": "Deze functie is uitgeschakeld door de beheerder",
       "userLookup": "Albums laden",
       "notImplemented": "Nog niet geïmplementeerd.",
-      "noData": "Geen openbaar album gevonden"
+      "noData": "Geen openbaar album gevonden",
+      "thirdPartyTerms": "Als u een dienst van derden gebruikt, gaat u akkoord met de servicevoorwaarden van die derden: "
     },
     "imageSelector": {
       "lblStep1": "Kies de service",
@@ -35,15 +36,6 @@ define({
       "userInputLbl": "Gebruikersnaam",
       "signInMsg2": "Gebruiker niet gevonden",
       "loadingFailed": "Laden mislukt"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook-gebruiker",
-      "rightHeader": "Facebook-pagina",
-      "pageExplain": "Een Facebook-pagina is een openbaar merk/product of beroemdheid zoals <b>esrigis</b>. U vindt de naam van de pagina achter de eerste  '/' in de URL van de pagina.",
-      "pageInputLbl": "Paginanaam",
-      "lookupMsgError": "Pagina niet gevonden",
-      "warning": "Facebook ondersteuning is stopgezet, ${learn}.",
-      "learn": "meer informatie"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail- of Google-ID",

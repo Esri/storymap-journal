@@ -85,7 +85,7 @@ define({
       "builderButton": "Chỉnh sửa",
       "facebookTooltip": "Chia sẻ trên Facebook",
       "twitterTooltip": "Chia sẻ trên Twitter",
-      "bitlyTooltip": "Tải liên kết ngắn",
+      "bitlyTooltip": "Chia sẻ hoặc in ấn",
       "templateTitle": "Thiết lập tiêu đề mẫu",
       "templateSubtitle": "Thiết lập phụ đề mẫu",
       "share": "Chia sẻ",

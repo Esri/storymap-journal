@@ -85,7 +85,7 @@ define({
       "builderButton": "Редактировать",
       "facebookTooltip": "Разместить в Facebook",
       "twitterTooltip": "Разместить в Twitter",
-      "bitlyTooltip": "Получить краткую ссылку",
+      "bitlyTooltip": "Опубликовать или напечатать",
       "templateTitle": "Ввести заголовок шаблона",
       "templateSubtitle": "Ввести подзаголовок шаблона",
       "share": "Общий доступ",

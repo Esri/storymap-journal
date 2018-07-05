@@ -87,3 +87,13 @@ textarea.alt-text {
 .mediaSelector .media-type-wrapper input[type="radio"] {
 	margin-top: 0;
 }
+
+.mainMediaTypeContainer .footnote {
+	margin-top: 1em;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.mainMediaTypeContainer .link {
+	text-decoration: underline;
+}

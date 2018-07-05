@@ -85,7 +85,7 @@ define({
       "builderButton": "Edit",
       "facebookTooltip": "Bagikan ke Facebook",
       "twitterTooltip": "Bagikan ke Twitter",
-      "bitlyTooltip": "Dapatkan tautan pendek",
+      "bitlyTooltip": "Bagikan atau cetak",
       "templateTitle": "Tentukan judul templat",
       "templateSubtitle": "Tentukan subjudul pola dasar",
       "share": "Bagikan",

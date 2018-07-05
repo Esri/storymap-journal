@@ -85,7 +85,7 @@ define({
       "builderButton": "Muokkaa",
       "facebookTooltip": "Jaa Facebookissa",
       "twitterTooltip": "Jaa Twitterissä",
-      "bitlyTooltip": "Hanki lyhyt linkki",
+      "bitlyTooltip": "Jaa tai tulosta",
       "templateTitle": "Määritä mallin nimi",
       "templateSubtitle": "Määritä mallin alaotsikko",
       "share": "Jaa",
