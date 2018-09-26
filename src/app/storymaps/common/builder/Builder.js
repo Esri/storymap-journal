@@ -102,8 +102,8 @@ define(["lib-build/css!./Builder",
 			app.builder.cleanApp = cleanApp;
 
 			// Show https-transition notification when app loads
-			if (!app.data.isOrga()) {
-				topic.subscribe('tpl-ready', function() {
+			topic.subscribe('tpl-ready', function() {
+				if (!app.isPortal) {
 					var strings = i18n.commonCore.httpsTransitionMessage;
 					new BannerNotification({
 						id: "httpsTransitionMessage",
@@ -139,8 +139,8 @@ define(["lib-build/css!./Builder",
 							maxAge: 60 * 60 * 24 * 365
 						}
 					});
-				});
-			}
+				}
+			});
 		}
 
 		function appInitComplete()
