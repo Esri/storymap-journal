@@ -160,14 +160,6 @@ define({
       "enlarge": "Aumentar",
       "newTab": "Abrir num novo separador",
       "tagline": "Um Story Map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Podemos fazer-lhe uma pergunta? Irá ajudar definir o futuro dos Story Maps.",
-      "s1h1": "Partilhe as suas ideias, defina o futuro",
-      "s1p1": "A sua opinião é a nossa principal fonte de feedback, e aprender mais sobre si irá ajudar-nos a melhorar o Story Maps. Ficaremos agradecidos se puder participar neste questionário de três minutos.",
-      "s2p1": "Como sempre, obrigado por utilizar Esri Story Maps!",
-      "action1": "Fechar",
-      "action2": "Preencher o questionário"
     }
   }
 });

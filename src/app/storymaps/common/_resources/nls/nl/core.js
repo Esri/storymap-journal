@@ -160,14 +160,6 @@ define({
       "enlarge": "Vergroten",
       "newTab": "Openen in een nieuw tabblad",
       "tagline": "Een Story Map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Mogen we u iets vragen? Het zal de toekomst van Story Maps helpen vormgeven.",
-      "s1h1": "Deel u gedachten, vorm de toekomst",
-      "s1p1": "Uw input is onze belangrijkste bron van feedback en als we meer over u weten, helpt dit ons om Story Maps te verbeteren. We zouden het op prijs stellen als u zou kunnen deelnemen aan deze drie minuten durende enquête.",
-      "s2p1": "Bedankt voor het gebruik van Esri Story Maps!",
-      "action1": "Sluiten",
-      "action2": "De enquête invullen"
     }
   }
 });

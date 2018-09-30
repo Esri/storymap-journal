@@ -425,6 +425,8 @@ define(["dojo/topic",
 				if ( ! currentMediaIsWebmap )
 					return;
 
+				app.ui.mainStage.updateMainMediaWithStoryMainMedia(app.data.getCurrentSectionIndex());
+
 				// Add a marker
 				if ( action.zoom.mapMarker ) {
 					pointLayer = app.map.getLayer("MJActionsLocate");

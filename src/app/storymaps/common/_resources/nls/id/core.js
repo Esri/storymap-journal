@@ -160,14 +160,6 @@ define({
       "enlarge": "Perbesar",
       "newTab": "Buka di tab baru",
       "tagline": "Story Map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Bolehkah kami tanyakan sesuatu? Ini akan membantu membentuk masa depan Story Map.",
-      "s1h1": "Bagikan pemikiran Anda, bentuk masa depan",
-      "s1p1": "Masukan Anda adalah satu-satunya sumber umpan balik yang paling penting, dan mempelajari lebih banyak tentang Anda akan meningkatkan Story Map. Kami akan berterima kasih jika Anda dapat berpartisipasi dalam survei tiga menit ini.",
-      "s2p1": "Seperti biasa, terima kasih telah menggunakan Story Map Esri!",
-      "action1": "Tutup",
-      "action2": "Ikuti survei"
     }
   }
 });

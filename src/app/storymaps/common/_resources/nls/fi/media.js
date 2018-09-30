@@ -28,8 +28,8 @@ define({
       "lblDrop": "Vedä kuva tähän tai",
       "infoUpload": "Kuvat tallennetaan ArcGIS-tilillesi. Niitä voi käyttää vain tarinassasi.",
       "warningFileTypes": "Kuva voi olla jossakin seuraavista muodoista: .jpg, .png, .gif, tai .bmp.",
-      "warningOneFile": "Vain yksi tiedosto kerrallaan voidaan käsitellä.",
-      "warningFileSize": "Tiedoston koko ylittää palvelimelle ladattavien tiedostojen sallitun enimmäiskoon. Valitse toinen tiedosto.",
+      "warningOneFile": "Vain yhden kuvan voi ladata kerralla palvelimeen.",
+      "warningFileSize": "Kuvan on oltava kooltaan pienempi kuin 10 Mt.",
       "tooltipRemove": "Poista tämä käyttämätön kuva ArcGIS-tililtäsi. <br> (Sinun on ladattava se tilillesi uudelleen, jos päätät käyttää sitä myöhemmin.)"
     },
     "imageSelectorFlickr": {

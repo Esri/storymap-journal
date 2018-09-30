@@ -28,8 +28,8 @@ define({
       "lblDrop": "Bild hierhin ziehen oder",
       "infoUpload": "Bilder werden in Ihrem ArcGIS-Konto gespeichert und können nur innerhalb Ihrer Story abgerufen werden.",
       "warningFileTypes": "Bild kann eine JPG-, PNG-, GIF- oder BMP-Datei sein.",
-      "warningOneFile": "Es wird jeweils nur eine Datei akzeptiert.",
-      "warningFileSize": "Die Datei überschreitet die maximal zulässige Größe für das Hochladen. Wählen Sie eine andere Datei.",
+      "warningOneFile": "Es kann nur ein Bild gleichzeitig hochgeladen werden.",
+      "warningFileSize": "Das Bild muss kleiner als 10 MB sein.",
       "tooltipRemove": "Löschen Sie dieses nicht genutzte Bild aus Ihrem ArcGIS-Konto. <br> (Wenn Sie es später verwenden möchten, müssen Sie es erneut hochladen.)"
     },
     "imageSelectorFlickr": {

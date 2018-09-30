@@ -28,8 +28,8 @@ define({
       "lblDrop": "ここで画像を削除する",
       "infoUpload": "画像は、ArcGIS アカウントで格納され、ストーリー内でのみアクセスできます。",
       "warningFileTypes": "画像には、*.jpg、*.png、*.gif、*.bmp のいずれかを使用できます。",
-      "warningOneFile": "一度に 1 つのファイルをが受け付けます。",
-      "warningFileSize": "ファイルが、許容できる最大アップロード サイズを超えています。別のファイルを選択してください。",
+      "warningOneFile": "一度にアップロードできる画像は 1 つだけです。",
+      "warningFileSize": "画像の大きさは 10 MB 未満でなければなりません。",
       "tooltipRemove": "この未使用の画像を ArcGIS アカウントから削除します。<br>(この画像を後で使用する場合は、再びアップロードする必要があります。)"
     },
     "imageSelectorFlickr": {

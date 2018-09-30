@@ -49,11 +49,11 @@ define({
       "notConfiguredMobile": "Selle kuvasuuruse korral koosturit %TPL_NAME% ei toetata. Võimaluse korral muutke koosturile juurdepääsemiseks oma brauseri suurust või looge oma lugu suurema ekraaniga seadmes.",
       "notConfiguredMobile2": "Koosturi %TPL_NAME% kasutamiseks pöörake oma seadet ja kasutage horisontaalpaigutust.",
       "notAuthorized": "Teil puudub õigus sellele loole juurde pääseda",
-      "notAuthorizedBuilder": "Teil pole õigust koosturit %TPL_NAME% kasutada.",
+      "notAuthorizedBuilder": "Teil pole õigust %TPL_NAME% koostajat kasutada.",
       "noBuilderIE": "Internet Exploreri versioonist %VERSION% varasemad versioonid ei toeta koostajat. %UPGRADE%",
       "noViewerIE": "Seda lugu ei toetata Internet Exploreri varasemas versioonis %VERSION%. %UPGRADE%",
       "noViewerIE2": "Püüate seda lugu vaadata vanemas brauseris, mida ei toetata. Mõned funktsioonid ei pruugi töötada ning ilmneda võib ootamatuid probleeme. Soovitame kasutada brauserit Internet Explorer 11 või mõnda muud brauserit (nt Chrome’i).",
-      "noViewerIE3": "2017. aasta lõpus seda lugu selles brauseris enam ei laadita. Siis peate selle loo vaatamiseks kasutama toetatud brauserit.",
+      "noViewerIE3": "2017. aasta lõpust seda lugu selles brauseris enam ei laadita. Siis peate selle loo vaatamiseks kasutama toetatud brauserit.",
       "upgradeBrowser": "<a href='http://browsehappy.com/' target='_blank'>Värskendage oma brauserit</a>.",
       "mapLoadingFail": "Midagi läks valesti ning kaarti ei laaditud õigesti.",
       "signOut": "Logi välja",
@@ -63,10 +63,10 @@ define({
       "attention": "Tähelepanu!"
     },
     "mobileView": {
-      "tapForDetails": "Üksikasjade kuvamiseks puudutage",
+      "tapForDetails": "Üksikasjade kuvamiseks vajutage",
       "clickForDetails": "Loe lähemalt",
-      "swipeToExplore": "Uurimiseks svaipige",
-      "tapForMap": "Tagasiminemiseks puudutage",
+      "swipeToExplore": "Uurimiseks rullige",
+      "tapForMap": "Tagasiminemiseks vajutage",
       "clickForMap": "TAGASI"
     },
     "floatLayout": {
@@ -108,7 +108,7 @@ define({
       "embedExplain": "Kasutage ajakirja veebilehele lisamiseks järgmist HTML-koodi.",
       "size": "Suurus (laius/kõrgus):",
       "autoplayLabel": "Automaatesituse režiim",
-      "autoplayExplain1": "Automaatesituse režiimis keritakse teie lugu kindla ajavahemiku järel edasi. Seda on hea kasutada kioskite või avalike kohtade ekraanidel, kuid arvestage, et muudel juhtudel võib see raskendada teie loo lugemist. See funktsioon pole väikestel ekraanidel toetatud.",
+      "autoplayExplain1": "Automaatesituse režiimis keritakse Teie lugu kindla ajavahemiku järel edasi. Seda on hea kasutada kioskite või avalike kohtade ekraanidel, kuid arvestage, et muudel juhtudel võib see raskendada Teie loo lugemist. See funktsioon pole väikestel ekraanidel toetatud.",
       "autoplayExplain2": "Kui see režiim on aktiveeritud, saate kasutada loo esitamise või peatamise ja liikumiskiiruse reguleerimise juhtelemente.",
       "linksupdated": "Lingid on värskendatud!",
       "print": "Prindi",

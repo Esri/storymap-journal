@@ -160,14 +160,6 @@ define({
       "enlarge": "Genişlet",
       "newTab": "Yeni sekmede aç",
       "tagline": "Bir Hikaye Haritası"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Bir şey sorabilir miyiz? Story Maps’in geleceğini şekillendirmemize yardımcı olacak.",
-      "s1h1": "Düşüncelerinizi paylaşın ve geleceği şekillendirin",
-      "s1p1": "Verdiğiniz bilgiler, en önemli geri bildirim kaynağımız ve sizinle ilgili daha çok şey öğrenmek Story Maps’i geliştirmemize yardımcı olacak. Üç dakikanızı alacak bu ankete katılırsanız memnun oluruz.",
-      "s2p1": "Her zaman olduğu gibi Esri Story Maps’i kullandığınız için teşekkür ederiz!",
-      "action1": "Kapat",
-      "action2": "Ankete katıl"
     }
   }
 });

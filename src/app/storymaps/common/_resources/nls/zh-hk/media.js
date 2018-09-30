@@ -28,8 +28,8 @@ define({
       "lblDrop": "在這裡放置圖片，或",
       "infoUpload": "圖片將儲存在您的 ArcGIS 帳號中，並可在您的故事中存取。",
       "warningFileTypes": "圖片可為 .jpg、.png、.gif 或 .bmp",
-      "warningOneFile": "一次接受一個檔案。",
-      "warningFileSize": "檔案超過允許的上傳大小上限。請選擇其他檔案。",
+      "warningOneFile": "一次只能上傳一張圖片。",
+      "warningFileSize": "圖片必須小於 10 MB。",
       "tooltipRemove": "從您的 ArcGIS 帳號刪除此未使用的圖片 <br>(如果決定稍後使用它，您將需要重新上傳它)。"
     },
     "imageSelectorFlickr": {

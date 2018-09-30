@@ -28,8 +28,8 @@ define({
       "lblDrop": "여기에 이미지를 드롭하거나",
       "infoUpload": "이미지가 ArcGIS에 저장되며 스토리 내에서만 접근할 수 있습니다.",
       "warningFileTypes": "이미지는.jpg, .png, .gif 또는 .bmp 형식이 가능함",
-      "warningOneFile": "한 번에 하나의 파일이 허용됩니다.",
-      "warningFileSize": "파일이 허용 가능한 최대 업로드 크기를 초과합니다. 다른 파일을 선택하세요.",
+      "warningOneFile": "한 번에 하나의 이미지만 업로드할 수 있습니다.",
+      "warningFileSize": "이미지는 10MB 미만이어야 합니다.",
       "tooltipRemove": "ArcGIS 계정에서 사용하지 않은 이 이미지를 삭제하세요. <br> 나중에 사용하기로 결정한 경우 다시 업로드해야 합니다."
     },
     "imageSelectorFlickr": {

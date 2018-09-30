@@ -160,14 +160,6 @@ define({
       "enlarge": "Laajenna",
       "newTab": "Avaa uudessa välilehdessä",
       "tagline": "Tarinakartta"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Voimmeko kysyä sinulta jotain? Siitä on apua tarinakarttojen tulevaisuuden muokkaamisessa.",
-      "s1h1": "Jaa ajatuksesi, muokkaa tulevaisuutta",
-      "s1p1": "Panoksesi on tärkein yksittäinen palautelähteemme ja sinuun tutustumisesta on apua tarinakarttojen parantamisessa. Olisimme kiitollisia, jos osallistut tähän kolmen minuutin kyselyyn.",
-      "s2p1": "Kiitos, että käytit Esri Story Mapsia!",
-      "action1": "Sulje",
-      "action2": "Osallistu kyselyyn"
     }
   }
 });

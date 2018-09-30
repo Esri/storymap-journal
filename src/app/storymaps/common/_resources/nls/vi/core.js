@@ -160,14 +160,6 @@ define({
       "enlarge": "Phóng to",
       "newTab": "Mở trong tab mới",
       "tagline": "Story Map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Chúng tôi hỏi bạn đôi điều có được không? Điều này sẽ giúp định hình tương lai của Story Map.",
-      "s1h1": "Chia sẻ cảm nghĩ của bản thân để định hình tương lai",
-      "s1p1": "Dữ liệu đầu vào từ bạn là nguồn phản hồi duy nhất có tính chất quan trọng với chúng tôi, và việc tìm hiểu thêm về bạn sẽ giúp chúng tôi cải thiện ứng dụng Story Map hơn. Chúng tôi vô cùng biết ơn nếu bạn có thể dành ba phút để thực hiện khảo sát này.",
-      "s2p1": "Như thường lệ, xin chân thành cảm ơn bạn đã sử dụng Esri Story Maps!",
-      "action1": "Đóng",
-      "action2": "Thực hiện khảo sát"
     }
   }
 });

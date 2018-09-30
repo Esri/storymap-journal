@@ -28,8 +28,8 @@ define({
       "lblDrop": "Nometiet attēlu šeit vai",
       "infoUpload": "attēli tiks glabāti jūsu ArcGIS kontā un būs pieejami tikai jūsu stāstā.",
       "warningFileTypes": "Attēla formāts var būt .jpg, .png, .gif vai .bmp",
-      "warningOneFile": "Vienā reizē tiek pieņemts viens fails.",
-      "warningFileSize": "Fails pārsniedz maksimālo pieļaujamo augšupielādes izmēru. Izvēlieties citu failu.",
+      "warningOneFile": "Vienā reizē var augšupielādēt tikai vienu attēlu.",
+      "warningFileSize": "Attēla izmērs nedrīkst pārsniegt 10 MB.",
       "tooltipRemove": "Izdzēsiet šo neizmantoto attēlu no ArcGIS konta. <br> (Ja izlemsiet to izmantot vēlāk, to būs nepieciešams augšupielādēt vēlreiz.)"
     },
     "imageSelectorFlickr": {

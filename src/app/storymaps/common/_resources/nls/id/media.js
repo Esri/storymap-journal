@@ -28,8 +28,8 @@ define({
       "lblDrop": "Jatuhkan gambar di sini atau",
       "infoUpload": "Gambar akan disimpan di akun ArcGIS Anda dan dapat diakses hanya dari dalam cerita Anda.",
       "warningFileTypes": "Gambar dapat berupa .jpg, .png, .gif, atau .bmp",
-      "warningOneFile": "File diterima satu demi satu.",
-      "warningFileSize": "File melebihi ukuran maksimum yang diizinkan untuk diunggah. Harap pilih file lainnya.",
+      "warningOneFile": "Hanya satu gambar yang boleh diunggah dalam satu waktu.",
+      "warningFileSize": "Gambar harus lebih kecil dari 10 MB.",
       "tooltipRemove": "Hapus gambar yang tidak digunakan ini dari akun ArcGIS Anda. <br> (Anda harus mengunggahnya kembali jika memutuskan untuk menggunakannya nanti.)"
     },
     "imageSelectorFlickr": {

@@ -28,8 +28,8 @@ define({
       "lblDrop": "Upuść obraz tutaj lub",
       "infoUpload": "Obrazy zostaną zapisane na Twoim koncie na platformie ArcGIS i będą dostępne tylko w narracji.",
       "warningFileTypes": "Obraz może mieć format .jpg, .png, .gif lub .bmp",
-      "warningOneFile": "Akceptowany jest tylko jeden plik jednocześnie.",
-      "warningFileSize": "Plik przekracza maksymalną dozwoloną wielkość przesyłania. Wybierz inny plik.",
+      "warningOneFile": "Można przesyłać tylko jeden obraz na raz.",
+      "warningFileSize": "Obraz musi być mniejszy niż 10 MB.",
       "tooltipRemove": "Usuń nieużywany obraz z konta na platformie ArcGIS. <br> (Jeśli zechcesz ponownie go użyć w późniejszym czasie, konieczne będzie ponowne jego przesłanie)."
     },
     "imageSelectorFlickr": {

@@ -11,7 +11,7 @@ define({
       "close": "Sulge",
       "open": "Ava",
       "start": "Algus",
-      "loading": "Laen",
+      "loading": "Laadin",
       "disabledAdmin": "See funktsioon on administraatori poolt välja lülitatud",
       "width": "Laius",
       "height": "Kõrgus",
@@ -33,7 +33,7 @@ define({
       "buttonPreview": "Kuva lugu",
       "tooltipFirstSave": "See on saadaval alles pärast salvestamist.",
       "tooltipNotShared": "See on saadaval alles pärast jagamist.",
-      "tooltipNotShared2": "Teie lugu pole jagatud, ainult teie pääsete sellele juurde.",
+      "tooltipNotShared2": "Teie lugu pole jagatud, ainult Teie pääsete sellele juurde.",
       "noPendingChange": "Ühtegi muudatust ei ole ootel",
       "unSavedChangePlural": "Ootel muudatused",
       "closeWithPendingChange": "Kas olete kindel, et soovite tegevuse kinnitada? Teie tehtud muudatused lähevad kaotsi.",
@@ -41,7 +41,7 @@ define({
       "status1": "Lugu on ühiskasutuses, aga selles esineb probleeme",
       "status2": "Lugu ei ole ühiskasutuses, aga selles esineb probleeme",
       "status3": "Lugu on avalik",
-      "status4": "Lugu on teie ettevõttes ühiskasutuses",
+      "status4": "Lugu on Teie organisatsioonis ühiskasutuses",
       "status5": "Lugu on privaatne",
       "status6": "Lugu pole veel salvestatud",
       "checking": "Kontrollimine",
@@ -49,19 +49,19 @@ define({
     },
     "saveError": {
       "title": "Loo salvestamisel ilmnes tõrge",
-      "err1Div1": "Lugu ei saa salvestada, sest teil on juba sama nimega üksus.",
+      "err1Div1": "Lugu ei saa salvestada, sest Teil on juba sama nimega üksus.",
       "err1Div2": "Muutke loo pealkirja ning seejärel salvestage see.",
       "btnOk": "Redigeerige loo pealkirja"
     },
     "saveErrorSocial": {
       "title": "Sotsiaalmeedias jagamise värskendus",
-      "panel1": "Teie loo ilmet on sotsiaalmeedias täiustatud, kuid teie ArcGIS-i veebirakenduse üksuse pealkiri ei ühti teie loo pealkirjaga.",
-      "panel1tooltip": "Kui lisate pealkirja, kokkuvõtte ja pisipildi, näeb teie lugu välja järgmine:",
+      "panel1": "Teie loo ilmet on sotsiaalmeedias täiustatud, kuid Teie ArcGIS-i veebirakenduse üksuse pealkiri ei ühti Teie loo pealkirjaga.",
+      "panel1tooltip": "Kui lisate pealkirja, kokkuvõtte ja pisipildi, näeb Teie lugu välja järgmine:",
       "panel2": "Millist pealkirja soovite sotsiaalmeedias kasutada:",
       "panel2q1": "Loo pealkiri (soovitatav)",
-      "panel2q1tooltip": "Selle suvandi valimisel muudetakse teie üksuse pealkiri loo pealkirjaga samasuguseks ning sünkroonitakse täiendavad koosturis tehtud muudatused.",
+      "panel2q1tooltip": "Selle suvandi valimisel muudetakse Teie üksuse pealkiri loo pealkirjaga samasuguseks ning sünkroonitakse täiendavad koosturis tehtud muudatused.",
       "panel2q2": "Üksuse pealkiri",
-      "panel3": "Selleks et oma loo ilmet sotsiaalmeedias veelgi täiustada, kasutage portaali ${MYSTORIES}, et lisada kokkuvõte ja pisipilt.",
+      "panel3": "Selleks, et oma loo ilmet sotsiaalmeedias veelgi täiustada, kasutage portaali ${MYSTORIES}, et lisada kokkuvõte ja pisipilt.",
       "panel4": "Ära hoiata mind enam selle loo puhul"
     },
     "share": {
@@ -69,16 +69,16 @@ define({
       "preview": "Eelvaade",
       "viewlive": "Kuva lugu",
       "btnPrivate": "Privaatne",
-      "btnPrivateTooltip": "Lugu on nähtav ainult teile",
+      "btnPrivateTooltip": "Lugu on nähtav ainult Teile",
       "btnOrg": "Organisatsioon",
-      "btnOrgTooltip": "Lugu on nähtav ainult teie ettevõtte liikmetele",
+      "btnOrgTooltip": "Lugu on nähtav ainult Teie organisatsiooni liikmetele",
       "btnPublic": "Avalik",
       "btnPublicTooltip": "Lugu on nähtav kõigile",
       "loadingMessage": "Loos esinevate probleemide kontrollimine",
       "viewToggle1": "Kuva loo sisu",
       "viewToggle2": "Sule loo sisu",
       "socialize": "Suhelge",
-      "statusPrivate": "Teie lugu on privaatne. See on nähtav ainult teile.",
+      "statusPrivate": "Teie lugu on privaatne. See on nähtav ainult Teile.",
       "statusError": "Teie loo sisus leidub probleeme, mis on lugejatele märgatavad. Siin saate need probleemid tuvastada ja parandada.",
       "statusNoErrPrivate": "Jagage oma lugu, kui olete valmis!",
       "mystoriesinvite": "Lugude haldamine",
@@ -87,10 +87,10 @@ define({
       "notavailable3": "Saate seda lugu jagada %LINK% kaudu.",
       "notavailable4": "Minu lood",
       "notavailable5": "selle üksuse leht",
-      "notavailable6": "Kahjuks pole see funktsioon arendusrežiimis täielikult toetatud. Sõltuvalt teie juurutamise stsenaariumist võib see funktsioon pärast juurutamist olla toetatud.",
-      "notavailable7": "Külastage kindlasti %MYCONTENT% teie loos olevate kaartide ja kihtide jagamise kinnitamiseks.",
+      "notavailable6": "Kahjuks pole see funktsioon arendusrežiimis täielikult toetatud. Sõltuvalt Teie juurutamise stsenaariumist võib see funktsioon pärast juurutamist olla toetatud.",
+      "notavailable7": "Külastage kindlasti %MYCONTENT% Teie loos olevate kaartide ja kihtide jagamise kinnitamiseks.",
       "notavailable8": "Minu sisu",
-      "mystoriesinvite2": "Selleks et oma loo ilmet sotsiaalvõrgustikes täiustada, kasutage portaali ${MYSTORIES}, et lisada kokkuvõte ja pisipilt."
+      "mystoriesinvite2": "Selleks, et oma loo ilmet sotsiaalvõrgustikes täiustada, kasutage portaali ${MYSTORIES}, et lisada kokkuvõte ja pisipilt."
     },
     "settings": {
       "header": "Seaded",
@@ -145,10 +145,10 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Oluline teade veebiturvalisuse ja kaardilugude kohta",
       "s1h1": "Esri tegeleb kaardilugude turvalisuse tõstmisega",
-      "s1p1": "Teie kaardilugude kodu on veebis. Veebikogukond tegeleb pidevalt aina paremate turbemeetmete väljatöötamise ja kasutusele võtmisega. Veebisisule juurdepääsuks kasutatakse üha enam HTTPS-i, mis pakub sisu edastamiseks Internetis turvalist ühendust. Enamik tänapäevaseid brausereid kuvab nüüd hoiatuse, kui HTTPS-i asemel on kasutatud HTTP-d. Selle uue standardi tõttu soovitame teil kindlasti kasutada kaardilugude koostamiseks ja jagamiseks HTTPS-linke ning kaardiloos veebisisu manustamise või piltidega linkimise korral üksnes HTTPS-protokolli kasutavaid URL-e.",
-      "s1p2": "Sisuliselt tähendab see, et kaardilugu ja kogu selle sisu (sh pildid, kihid, manustatud rakendused ja veebisaidid) peaksid juurdepääsu lubamiseks kasutama linke, mille alguses on HTTP asemel HTTPS. Kuna enamik brausereid annab sel juhul märku, et teie lood on turvalised, on kasutajatel teie lugude vaatamisel kindlam tunne.",
+      "s1p1": "Teie kaardilugude kodu on veebis. Veebikogukond tegeleb pidevalt aina paremate turbemeetmete väljatöötamise ja kasutusele võtmisega. Veebisisule juurdepääsuks kasutatakse üha enam HTTPS-i, mis pakub sisu edastamiseks internetis turvalist ühendust. Enamik tänapäevaseid brausereid kuvab nüüd hoiatuse, kui HTTPS-i asemel on kasutatud HTTP-d. Selle uue standardi tõttu soovitame Teil kindlasti kasutada kaardilugude koostamiseks ja jagamiseks HTTPS-linke ning kaardiloos veebisisu manustamise või piltidega linkimise korral üksnes HTTPS-protokolli kasutavaid URL-e.",
+      "s1p2": "Sisuliselt tähendab see, et kaardilugu ja kogu selle sisu (sh pildid, kihid, manustatud rakendused ja veebisaidid) peaksid juurdepääsu lubamiseks kasutama linke, mille alguses on HTTP asemel HTTPS. Kuna enamik brausereid annab sel juhul märku, et Teie lood on turvalised, on kasutajatel Teie lugude vaatamisel kindlam tunne.",
       "s2h1": "Mida ma pean tegema?",
-      "s2p1": "Esri loodab teha selle ülemineku kaardilugude koostajate ja lugejate jaoks lihtsaks. Kaardilugude koosturites ja lehel Minu lood on nüüd saadaval tööriistad, mis aitavad teil oma lugudest üles leida ebaturvalist sisu (HTTP) ja pakuvad soovitusi probleemi lahendamiseks. Kontrollige lood üle ja viige ebaturvaline sisu esimesel võimalusel üle HTTPS-i kasutamisele.",
+      "s2p1": "Esri loodab teha selle ülemineku kaardilugude koostajate ja lugejate jaoks lihtsaks. Kaardilugude koosturites ja lehel minu lood on nüüd saadaval tööriistad, mis aitavad Teil oma lugudest üles leida ebaturvalist sisu (HTTP) ja pakuvad soovitusi probleemi lahendamiseks. Kontrollige lood üle ja viige ebaturvaline sisu esimesel võimalusel üle HTTPS-i kasutamisele.",
       "action1": "Sule",
       "action2": "Kontrolli minu lugusid kohe",
       "action3": "Lisateave"
@@ -160,14 +160,6 @@ define({
       "enlarge": "Kasvav",
       "newTab": "Avatakse uuel vahelehel",
       "tagline": "Kaardilugu"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Kas tohime teilt midagi küsida? See aitab vormida kaardilugude tulevikku.",
-      "s1h1": "Teie mõtted aitavad vormida tulevikku",
-      "s1p1": "Teie arvamused on meie kõige olulisem tagasiside allikas. Mida rohkem me teie kohta teame, seda paremaks saame kaardilugude funktsiooni edaspidi muuta. Meil oleks väga hea meel, kui leiaksite mõne minuti, et vastata järgmise lühikese uuringu küsimustele.",
-      "s2p1": "Täname teid Esri kaardilugude kasutamise eest!",
-      "action1": "Sulge",
-      "action2": "Vasta küsitlusele"
     }
   }
 });

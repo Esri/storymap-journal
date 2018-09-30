@@ -8,7 +8,7 @@ define([
 
     photoSettings: {
       maxFileSize: 10000000, // 10Mb in bytes.
-      widths: [1500], // separate from thumbnail, which has HEIGHT constraint, not WIDTH constraint
+      widths: [1920], // separate from thumbnail, which has HEIGHT constraint, not WIDTH constraint
       thumbHeight: 150,
       logoWidth: 250,
       logoName: 'sm_mj_logo',
@@ -101,11 +101,9 @@ define([
       // we make it into an Image object and wait for it to load...
 
       this.createNewImage(file).then(lang.hitch(this, function(img) {
-        // now we have the dimensions, so we can validate them client-side.
-        if (!this.validateDimensions(img, {width: this.photoSettings.widths[0]})) {
-          def.reject({reason: 'gif dimensions'});
-          return;
-        }
+        // we used to check gif dimensions here, but got complaints
+        // it was too narrow (used to be 1500px). so just go for it --
+        // upload whatever.
 
         // we pass the dimensions back to the requesting function.
         def.resolve({

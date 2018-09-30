@@ -49,6 +49,7 @@ function defineDojoConfig()
 		parseOnLoad: true,
 		isDebug: false,
 		useDeferredInstrumentation: true,
+		async: !app.isProduction,
 		//cacheBust: ! app.isProduction,
 		packages: [
       {

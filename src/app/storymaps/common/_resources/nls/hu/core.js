@@ -160,14 +160,6 @@ define({
       "enlarge": "Nagyítás",
       "newTab": "Megnyitás új fülön",
       "tagline": "Egy story map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Lehet egy kérdésünk? A segítségünkre lesz a Story Map-ek továbbfejlesztésében.",
-      "s1h1": "Ossza meg a gondolatait, és járuljon hozzá a fejlődéshez",
-      "s1p1": "Az Öntől érkező megjegyzések a legfontosabb visszajelzési forrásunkat adják, és minél többet tudunk Önről, annál hatékonyabban fejleszthetjük a story map-eket. Fogadja hálás köszönetünket, ha részt vesz ebben a háromperces felmérésben!",
-      "s2p1": "Köszönjük, hogy az Esri story mapeket választotta!",
-      "action1": "Bezárás",
-      "action2": "A felmérés indítása"
     }
   }
 });

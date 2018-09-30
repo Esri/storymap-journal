@@ -59,6 +59,8 @@ define([
       },
       // The number of times to show banner message before it doesn't show again.
       autohideAfter: typeof options.autohideAfter !== 'undefined' ? options.autohideAfter : 2,
+      // The number of milliseconds after which the banner will disappear.
+      fadeAfter: typeof options.fadeAfter !== 'undefined' ? options.fadeAfter : 30000,
       // The IDs of other banner notification that will block this banner from
       // showing if their hidden cookie has not been set. This allows you to
       // only show a single banner per app load.
@@ -101,6 +103,8 @@ define([
         document.cookie = cookieKey + '=false;expires=' + maxAge + ';' + domain + path;
       }
     };
+
+    var bannerTimer;
 
     var isNotificationBlocked = function() {
       var isBlocked = false;
@@ -411,10 +415,13 @@ define([
 
         document.querySelector('#' + settings.id + '-banner-notification-dont-show').checked = true;
         setDontShowCookie();
+        clearTimeout(bannerTimer);
       };
 
       var closeMessage = function (e) {
-        e.stopPropagation();
+        if (e && e.stopPropagation) {
+          e.stopPropagation();
+        }
 
         document.removeEventListener('keyup', escapeEvent);
         window.removeEventListener('resize', resizeMainMsg);
@@ -460,6 +467,9 @@ define([
             }
           });
         }
+
+        // Close message if ignored by author when bannerTimer expires
+        bannerTimer = setTimeout(closeMessage, settings.fadeAfter);
 
         // Don't show again checkbox
         dontShowCheckbox.addEventListener('click', setDontShowCookie);

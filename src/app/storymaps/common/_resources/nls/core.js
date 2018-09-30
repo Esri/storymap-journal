@@ -161,14 +161,6 @@ define({
 				enlarge: "Enlarge",
 				newTab: "Open in a new tab",
 				tagline: "A Story Map"
-			},
-			june2018SurveyMessage: {
-				bannerMsg: "Can we ask you something? It will help shape the future of Story Maps.",
-				s1h1: "Share your thoughts, shape the future",
-				s1p1: "Your input is our single most important source of feedback, and learning more about you will help us improve Story Maps. We would be grateful if you could participate in this three-minute survey.",
-				s2p1: "As always, thanks for using Esri Story Maps!",
-				action1: "Close",
-				action2: "Take the survey"
 			}
 		}
 	}),

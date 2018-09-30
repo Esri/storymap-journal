@@ -29,8 +29,8 @@ define({
 				lblDrop: "Drop an image here or",
 				infoUpload: "Images will be stored in your ArcGIS account and accessible only inside your story.",
 				warningFileTypes: "Image can be .jpg, .png, .gif, or .bmp",
-				warningOneFile: "One file accepted at a time.",
-				warningFileSize: "File exceeds maximum allowable upload size. Please choose another file.",
+				warningOneFile: "Only one image may be uploaded at a time.",
+				warningFileSize: "Image must be smaller than 10 MB.",
 				tooltipRemove: "Delete this unused image from your ArcGIS account. <br> (You'll need to upload it again if you decide to use it later.)"
 			},
 			imageSelectorFlickr: {

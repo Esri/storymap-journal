@@ -160,14 +160,6 @@ define({
       "enlarge": "Vergrößern",
       "newTab": "In neuer Registerkarte öffnen",
       "tagline": "Eine Story-Map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Dürfen wir Ihnen ein paar Fragen stellen? Sie helfen uns damit, die zukünftige Entwicklung von Story Maps zu bestimmen.",
-      "s1h1": "Mit Ihrem Feedback stellen Sie die Weichen für die Zukunft",
-      "s1p1": "Ihr Feedback ist für uns äußerst wichtig. Je mehr wir über Sie erfahren, umso mehr können wir Story Maps verbessern. Wir würden uns freuen, wenn Sie sich drei Minuten Zeit für diesen Survey nehmen könnten.",
-      "s2p1": "Und wie immer danken wir Ihnen, dass Sie sich für Esri Story Maps entschieden haben!",
-      "action1": "Schließen",
-      "action2": "Am Survey teilnehmen"
     }
   }
 });

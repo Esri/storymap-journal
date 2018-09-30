@@ -28,8 +28,8 @@ define({
       "lblDrop": "Rilasciare un'immagine qui o",
       "infoUpload": "Le immagini verranno memorizzate nell'account ArcGIS e saranno accessibili solo all'interno della storia.",
       "warningFileTypes": "L'immagine può essere un file con estensione .jpg, .png, .gif o .bmp.",
-      "warningOneFile": "È accettato un file alla volta.",
-      "warningFileSize": "Il file supera le dimensioni massime consentite per il caricamento. Scegliere un altro file.",
+      "warningOneFile": "È possibile caricare una sola immagine alla volta.",
+      "warningFileSize": "L’immagine deve essere inferiore a 10 MB.",
       "tooltipRemove": "Eliminare questa immagine non utilizzata dall'account ArcGIS. <br> Se si decide di utilizzarla in un secondo momento, sarà necessario caricarla di nuovo."
     },
     "imageSelectorFlickr": {

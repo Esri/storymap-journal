@@ -160,14 +160,6 @@ define({
       "enlarge": "Palielināt",
       "newTab": "Atvēriet jaunā cilnē",
       "tagline": "Kartes stāsts"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Vai varam jums kaut ko pajautāt? Tas palīdzēs veidot Kartes stāstu nākotni.",
-      "s1h1": "Dalieties savās domās, veidojiet nākotni",
-      "s1p1": "Jūsu ieguldījums ir viens no mūsu svarīgākajiem atsauksmju avotiem, pastāstot vairāk, jūs palīdzēsiet mums uzlabot Kartes stāstus. Mēs būtu pateicīgi, ja jūs varētu piedalīties šajā trīs minūšu aptaujā.",
-      "s2p1": "Kā vienmēr, paldies, ka izmantojat Esri Kartes stāstus!",
-      "action1": "Aizvērt",
-      "action2": "Aizpildīt aptauju"
     }
   }
 });

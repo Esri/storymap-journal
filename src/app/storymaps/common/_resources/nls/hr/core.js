@@ -160,14 +160,6 @@ define({
       "enlarge": "Uvećaj",
       "newTab": "Otvori u novoj kartici",
       "tagline": "Story Map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Možemo li vas nešto pitati? Pomoći će nam u oblikovanju budućnosti usluge Story Maps.",
-      "s1h1": "Podijelite svoje misli, oblikujte budućnost",
-      "s1p1": "Vaša su iskustva naš najvažniji izvor povratnih informacija i ako saznamo više o vama, to će nam pomoći poboljšati Story Maps. Bili bismo zahvalni ako biste sudjelovali u ovoj anketi koja traje tri minute.",
-      "s2p1": "Kao i uvijek, hvala na korištenju Esri Story Maps!",
-      "action1": "Zatvori",
-      "action2": "Ispuni anketu"
     }
   }
 });

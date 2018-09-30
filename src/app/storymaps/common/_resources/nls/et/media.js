@@ -26,10 +26,10 @@ define({
     "imageSelectorUpload": {
       "lblUploadButton": "sirvige piltidest",
       "lblDrop": "Lohistage pilt siia või",
-      "infoUpload": "Pildid salvestatakse teie ArcGIS-i kontole ja need on ligipääsetavad ainult teie loos.",
+      "infoUpload": "Pildid salvestatakse Teie ArcGIS-i kontole ja need on ligipääsetavad ainult Teie loos.",
       "warningFileTypes": "Pilt võib olla JPG-, PNG-, GIF- või BMP-vormingus",
-      "warningOneFile": "Korraga on lubatud üks fail.",
-      "warningFileSize": "Faili suurus ületab üleslaadimiseks lubatud maksimumsuuruse. Valige muu fail.",
+      "warningOneFile": "Korraga saab üles laadida ainult ühe pildi.",
+      "warningFileSize": "Pilt peab olema väiksem kui 10 MB.",
       "tooltipRemove": "Kustutage see kasutamata pilt oma ArcGIS-i kontolt. <br> (Kui tahate seda hiljem kasutada, peate selle uuesti üles laadima.)"
     },
     "imageSelectorFlickr": {
@@ -111,8 +111,8 @@ define({
       "unloadLbl": "Laadi maha, kui lugeja liigub mujale",
       "unloadHelp": "Kui veebileht sisaldab audio- või videosisu, jätke see valik märgituks, et lõpetada selle sisu esitamine, kui lugeja liigub mujale. Tühjendage see valik näiteks siis, kui soovite, et heliriba esitataks samal ajal, kui lugeja läbi loo liigub.<br />Kui veebileht on rakendus, tühjendage see valik, et kasutaja naasmisel ei laaditaks lugu uuesti.",
       "embedProtocolLabel": "Lehe laadimine turvalise ühenduse (HTTPS) kaudu",
-      "embedProtocolWarning1": "Kui seda lehte teie loos ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas.",
-      "embedProtocolWarning2": "Kui seda lehte teie loos ei laadita, tühjendage see valik ja proovige uuesti. Kui lehte ikkagi ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas.",
+      "embedProtocolWarning1": "Kui seda lehte Teie loos ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas.",
+      "embedProtocolWarning2": "Kui seda lehte Teie loos ei laadita, tühjendage see valik ja proovige uuesti. Kui lehte ikkagi ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas.",
       "learn": "Lisateave",
       "lblAltText": "Alternatiivne tekst",
       "placeholderAltText": "Sisestage selle meediasisu kirjeldus nägemispuudega lugejate jaoks...",

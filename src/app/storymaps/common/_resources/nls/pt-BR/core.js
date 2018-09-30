@@ -160,14 +160,6 @@ define({
       "enlarge": "Aumentar",
       "newTab": "Abrir em uma nova guia",
       "tagline": "Um Mapa Histórico"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Podemos te perguntar uma coisa? Isto ajudará a moldar o futuro dos Mapas Históricos.",
-      "s1h1": "Compartilhe seus pensamentos, modele o futuro",
-      "s1p1": "Sua opinião é a nossa mais importante fonte de comentários, e aprender mais sobre você nos ajudará a melhorar os Mapas Históricos. Ficaríamos muito gratos se você pudesse participar desta pesquisa de três minutos.",
-      "s2p1": "Como sempre, obrigado por utilizar o Esri Story Maps!",
-      "action1": "Fechar",
-      "action2": "Realizar a pesquisa"
     }
   }
 });

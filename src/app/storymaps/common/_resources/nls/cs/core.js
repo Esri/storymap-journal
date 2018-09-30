@@ -160,14 +160,6 @@ define({
       "enlarge": "Zvětšit",
       "newTab": "Otevřít na nové kartě.",
       "tagline": "Mapa s příběhem"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Můžeme vám položit několik otázek? Pomůže nám to vytvořit budoucnost map s příběhem.",
-      "s1h1": "Podělte se o své nápady, vytvářejte budoucnost.",
-      "s1p1": "Váš ohlas je naším nejdůležitějším zdrojem zpětné vazby a více informací o vás nám pomůže mapy s příběhem dále vylepšovat. Velice bychom ocenili, kdybyste se mohli zúčastnit tohoto tříminutového průzkumu.",
-      "s2p1": "A jako vždy, děkujeme vám za to, že používáte mapy s příběhem!",
-      "action1": "Zavřít",
-      "action2": "Provést průzkum"
     }
   }
 });

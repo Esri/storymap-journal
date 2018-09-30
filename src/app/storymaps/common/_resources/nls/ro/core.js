@@ -160,14 +160,6 @@ define({
       "enlarge": "Mărire",
       "newTab": "Deschideți într-o filă nouă",
       "tagline": "O hartă informativă"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Vă putem solicita un lucru? Acesta va contribui la modelarea viitorului hărților informative.",
-      "s1h1": "Împărtășiți-vă gândurile, modelați viitorul",
-      "s1p1": "Informațiile furnizate de dvs. reprezintă sursa noastră cea mai importantă de feedback și faptul că aflăm mai multe despre dvs. ne va ajuta să îmbunătățim hărțile informative. V-am fi recunoscători dacă ați putea participa la acest chestionar de trei minute.",
-      "s2p1": "Ca întotdeauna, vă mulțumim că utilizați hărțile informative Esri!",
-      "action1": "Închidere",
-      "action2": "Parcurgeți chestionarul"
     }
   }
 });

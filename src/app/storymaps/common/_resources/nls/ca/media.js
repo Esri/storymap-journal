@@ -28,8 +28,8 @@ define({
       "lblDrop": "Deixa anar una imatge aquí o bé",
       "infoUpload": "Les imatges s'emmagatzemaran al vostre compte de l'ArcGIS i només s'hi podrà accedir a la vostra història.",
       "warningFileTypes": "La imatge pot ser .jpg, .png, .gif o .bmp",
-      "warningOneFile": "Només s'accepta un fitxer cada vegada.",
-      "warningFileSize": "El fitxer supera la mida màxima que es permet pujar. Trieu-ne un altre.",
+      "warningOneFile": "Només es pot pujar una imatge a la vegada.",
+      "warningFileSize": "La imatge ha de tenir una mida inferior a 10 MB.",
       "tooltipRemove": "Suprimiu aquesta imatge no utilitzada del vostre compte de l'ArcGIS. <br> (L'haureu de tornar a pujar si decidiu fer-la servir més endavant.)"
     },
     "imageSelectorFlickr": {

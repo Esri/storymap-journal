@@ -160,14 +160,6 @@ define({
       "enlarge": "Forstør",
       "newTab": "Åbn på en ny fane",
       "tagline": "Et Story Map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Kan vi spørge dig om noget? Det vil bidrage til at definere fremtiden for Story Maps.",
-      "s1h1": "Del dine tanker, og påvirk fremtiden",
-      "s1p1": "Dit input er vores vigtigste kilde til feedback, og når vi ved mere om dig, hjælper det os med at forbedre Story Maps. Det ville glæde os, hvis du vil deltage i denne undersøgelse, der varer tre minutter.",
-      "s2p1": "Tak, fordi du bruger Esri Story Maps!",
-      "action1": "Luk",
-      "action2": "Deltag i undersøgelsen"
     }
   }
 });

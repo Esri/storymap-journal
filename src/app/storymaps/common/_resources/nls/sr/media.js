@@ -28,8 +28,8 @@ define({
       "lblDrop": "Otpustite sliku ovde ili",
       "infoUpload": "Slike se čuvaju na ArcGIS nalog i dostupne su samo u okviru priče.",
       "warningFileTypes": "Snimak može da bude .jpg, .png, .gif ili .bmp",
-      "warningOneFile": "Prihvataju se pojedinačne datoteke slika.",
-      "warningFileSize": "Datoteka prevazilazi maksimalnu dozvoljenu veličinu za otpremanje. Odaberite drugu datoteku.",
+      "warningOneFile": "U datom trenutku je moguće otpremanje samo jednog snimka.",
+      "warningFileSize": "Snimak mora biti manji od 10 MB.",
       "tooltipRemove": "Izbrišite ovu nekorišćenu sliku sa ArcGIS naloga. <br> (Moraćete ponovo da je postavite ako ponovo poželite da je upotrebite.)"
     },
     "imageSelectorFlickr": {

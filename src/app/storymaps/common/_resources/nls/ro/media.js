@@ -28,8 +28,8 @@ define({
       "lblDrop": "Fixaţi o imagine aici sau",
       "infoUpload": "Imaginile vor fi stocate în contul ArcGIS şi vor fi accesibile doar în relatarea dvs.",
       "warningFileTypes": "Imaginile pot fi .jpg, .png, .gif sau .bmp",
-      "warningOneFile": "Câte un fişier acceptat pe rând.",
-      "warningFileSize": "Fişierul depăşeşte dimensiunea maximă permisă de încărcare. Alegeţi un alt fişier.",
+      "warningOneFile": "Se poate încărca o singură imagine în același timp.",
+      "warningFileSize": "Imaginea trebuie să aibă mai puțin de 10 MB.",
       "tooltipRemove": "Ştergeţi această imagine neutilizată din contul ArcGIS. <br> (Va trebui să o încărcaţi din nou dacă decideţi să o utilizaţi mai târziu.)"
     },
     "imageSelectorFlickr": {

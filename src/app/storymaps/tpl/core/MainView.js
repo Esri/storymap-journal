@@ -144,6 +144,7 @@ define(["lib-build/css!./MainView",
             option: ['type'],
             button: ['type'],
             // media
+            source: ['src', 'type'], // match tour, which needs this for audio
             figure: [],
             figcaption: [],
             iframe: [

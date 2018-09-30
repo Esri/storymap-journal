@@ -160,14 +160,6 @@ define({
       "enlarge": "Powiększ",
       "newTab": "Otwórz w nowej karcie",
       "tagline": "Mapa narracyjna"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Czy możemy o coś prosić? Pomoże to nadawać przyszły kształt mapom narracyjnym.",
-      "s1h1": "Podziel się z nami swoją opinią, weź udział w kształtowaniu przyszłości",
-      "s1p1": "Przekazane opinie są dla nas najważniejszym źródłem informacji, a dzięki lepszej znajomości Twoich oczekiwań możemy ulepszać mapy narracyjne. Będziemy wdzięczni za wzięcie udziału w tej trzyminutowej ankiecie.",
-      "s2p1": "Jak zawsze, dziękujemy też za korzystanie z map narracyjnych firmy Esri!",
-      "action1": "Zamknij",
-      "action2": "Wypełnij ankietę"
     }
   }
 });

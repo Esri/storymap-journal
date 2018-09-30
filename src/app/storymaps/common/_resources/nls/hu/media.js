@@ -28,8 +28,8 @@ define({
       "lblDrop": "Tegyen ide egy képet vagy",
       "infoUpload": "A képek az ArcGIS-fiókjában lesznek tárolva, és csak a történetében lesznek elérhetők.",
       "warningFileTypes": "A kép lehet .jpg, .png, .gif vagy .bmp",
-      "warningOneFile": "Egyszerre egy fájl fogadható el.",
-      "warningFileSize": "A fájl mérete meghaladja a maximális feltöltési méretet. Válasszon másik fájlt.",
+      "warningOneFile": "Egyszerre csak egy kép tölthető fel.",
+      "warningFileSize": "A kép méretének 10 MB-nál kisebbnek kell lennie.",
       "tooltipRemove": "Törölje ezt a nem használt képet az ArcGIS-fiókjából. <br> (Ha később mégis használni kívánja, újból fel kell majd töltenie.)"
     },
     "imageSelectorFlickr": {

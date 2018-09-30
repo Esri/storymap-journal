@@ -28,8 +28,8 @@ define({
       "lblDrop": "Vilkite atvaizdą čia arba",
       "infoUpload": "Atvaizdai bus saugomi jūsų ArcGIS paskyroje ir pasiekiami tik jūsų pasakojimo viduje.",
       "warningFileTypes": "Vaizdas gali būti .jpg, .png, .gif arba .bmp",
-      "warningOneFile": "Vienu metu priimamas vienas failas.",
-      "warningFileSize": "Failas viršija maksimalų leidžiamą įkėlimo dydį. Pasirinkite kitą failą.",
+      "warningOneFile": "Vienu metu galima įkelti tik vieną atvaizdą.",
+      "warningFileSize": "Atvaizdas turi būti mažesnis nei 10 MB.",
       "tooltipRemove": "Ištrinkite šį nenaudojamą atvaizdą iš savo ArcGIS paskyros. <br> (Jei vėliau nuspręsite jį naudoti, turėsite įkelti dar kartą.)"
     },
     "imageSelectorFlickr": {

@@ -160,14 +160,6 @@ define({
       "enlarge": "Išplėsti",
       "newTab": "Atidaryti naujame lange",
       "tagline": "Žemėlapio pasakojimas"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Ar galime kai ko jūsų paklausti? Tai padės ateityje kurti žemėlapių pasakojimus.",
-      "s1h1": "Pasidalykite savo mintimis ir kurkime ateitį kartu",
-      "s1p1": "Jūsų indėlis yra mūsų svarbiausias atsiliepimų šaltinis, o sužinoję apie jus daugiau, galėsime patobulinti žemėlapių pasakojimus. Būtume dėkingi, jei sudalyvautumėte šioje trijų minučių apklausoje.",
-      "s2p1": "Kaip visada, dėkojame, kad naudojate Esri žemėlapių pasakojimus!",
-      "action1": "Uždaryti",
-      "action2": "Užpildyti apklausą"
     }
   }
 });

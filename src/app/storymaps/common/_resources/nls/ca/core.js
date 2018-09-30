@@ -160,14 +160,6 @@ define({
       "enlarge": "Amplia",
       "newTab": "Obre-ho en una pestanya nova",
       "tagline": "Un Story Map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Us podem preguntar una cosa? Ajudarà a definir el futur de l'Story Maps.",
-      "s1h1": "Compartiu les vostres idees i definiu el futur",
-      "s1p1": "La vostra entrada és la nostra font de comentaris més important i obtenir més informació sobre vós ens ajudarà a millorar els Story Maps. Us agrairíem que responguéssiu aquesta enquesta de tres minuts.",
-      "s2p1": "Com sempre, gràcies per utilitzar l'Esri Story Maps.",
-      "action1": "Tanca",
-      "action2": "Responeu l'enquesta"
     }
   }
 });

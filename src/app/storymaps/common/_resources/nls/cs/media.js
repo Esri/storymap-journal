@@ -28,8 +28,8 @@ define({
       "lblDrop": "Přetáhněte sem obrázek",
       "infoUpload": "Obrázky se uloží do vašeho účtu ArcGIS a bude možné k nim přistupovat pouze ve vašem příběhu.",
       "warningFileTypes": "Lze použít obrázky ve formátech .jpg, .png, .gif a .bmp.",
-      "warningOneFile": "Soubory je nutné nahrávat po jednom.",
-      "warningFileSize": "Velikost souboru přesahuje maximální povolenou velikost přílohy. Zvolte jiný soubor.",
+      "warningOneFile": "V jednu chvíli lze nahrát pouze jeden obrázek.",
+      "warningFileSize": "Obrázek musí být menší než 10 MB.",
       "tooltipRemove": "Odstraňte tento nepoužitý obrázek z účtu ArcGIS. <br> (Rozhodnete-li se obrázek později použít, bude nutné ho znovu nahrát.)"
     },
     "imageSelectorFlickr": {

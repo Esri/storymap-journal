@@ -28,8 +28,8 @@ define({
       "lblDrop": "Buraya bir görüntü bırakın veya",
       "infoUpload": "Görüntüler ArcGIS hesabınızda saklanır ve yalnızca hikayenizin içinden erişilebilir.",
       "warningFileTypes": "Görüntü .jpg, .png, .gif veya .bmp olabilir",
-      "warningOneFile": "Tek seferde bir dosya onaylanır.",
-      "warningFileSize": "Dosya izin verilen yükleme boyutu üst sınırını aştı. Başka bir dosya seçin.",
+      "warningOneFile": "Bir seferde sadece bir görüntü yüklenebilir.",
+      "warningFileSize": "Görüntü 10 MB’den küçük olmalıdır.",
       "tooltipRemove": "Kullanılmayan bu görüntüyü ArcGIS hesabınızdan silin. <br> (Daha sonra kullanmak isterseniz, dosyayı yeniden yüklemeniz gerekir.)"
     },
     "imageSelectorFlickr": {

@@ -60,6 +60,7 @@ define(["dojo/Deferred"],
 						+ '&key=' + app.cfg.YOUTUBE_API_KEY;
 
 				$.ajax({
+					dataType: 'json',
 					url: rqStr,
 					timeout: 4000
 				}).then(

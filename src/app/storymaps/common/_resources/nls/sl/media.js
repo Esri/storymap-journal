@@ -28,8 +28,8 @@ define({
       "lblDrop": "Odložite sliko tukaj ali",
       "infoUpload": "Slike bodo shranjene v vašem računu ArcGIS in dostopne samo znotraj vaše zgodbe.",
       "warningFileTypes": "Slika je lahko .jpg, .png, .gif, ali .bmp",
-      "warningOneFile": "Datoteke se sprejemajo posamično.",
-      "warningFileSize": "Datoteka presega maksimalno dovoljeno velikost nalaganja. Izberite drugo datoteko.",
+      "warningOneFile": "Istočasno je mogoče naložiti samo eno sliko.",
+      "warningFileSize": "Slika mora biti manjša od 10 MB.",
       "tooltipRemove": "Izbrišite neuporabljeno sliko z računa ArcGIS. <br> (Če se boste kasneje odločili za uporabo, jo boste morali znova naložiti.)"
     },
     "imageSelectorFlickr": {

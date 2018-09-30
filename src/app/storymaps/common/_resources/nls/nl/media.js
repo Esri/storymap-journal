@@ -28,8 +28,8 @@ define({
       "lblDrop": "Drop hier een afbeelding of",
       "infoUpload": "Afbeeldingen worden opgeslagen in uw ArcGIS-account en zijn alleen toegankelijk in uw verhaal.",
       "warningFileTypes": "Afbeelding mag .jpg, .png, .gif of .bmp zijn",
-      "warningOneFile": "Eén bestand geaccepteerd per keer.",
-      "warningFileSize": "Bestand is groter dan de maximaal toegestane uploadgrootte. Kies een ander bestand.",
+      "warningOneFile": "Er kan slechts één afbeelding per keer worden geüpload.",
+      "warningFileSize": "Afbeelding moet kleiner zijn dan 10 MB.",
       "tooltipRemove": "Verwijder deze ongebruikte afbeelding uit uw ArcGIS-account. <br> (U moet het opnieuw uploaden als u besluit om het later te gebruiken.)"
     },
     "imageSelectorFlickr": {

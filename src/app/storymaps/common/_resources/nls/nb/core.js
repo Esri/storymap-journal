@@ -160,14 +160,6 @@ define({
       "enlarge": "Forstørr",
       "newTab": "Åpne i ny fane",
       "tagline": "Et fortellingskart"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Kan vi spørre deg om noe? Det vil bidra til å forme fortellingskartenes fremtid.",
-      "s1h1": "Si hva du tenker, bidra til å forme fremtiden",
-      "s1p1": "Du er vår viktigste kilde til tilbakemeldinger, og når vi vet mer om deg, kan vil lettere forbedre fortellingskartene. Vi setter stor pris på om du kan avse tre minutter til å delta i denne undersøkelsen.",
-      "s2p1": "Nok en gang takk for at du bruker Esri Story Maps!",
-      "action1": "Lukk",
-      "action2": "Ta undersøkelsen"
     }
   }
 });

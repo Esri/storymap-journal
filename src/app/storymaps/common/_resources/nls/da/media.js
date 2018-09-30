@@ -28,8 +28,8 @@ define({
       "lblDrop": "Slip et billede her eller",
       "infoUpload": "Billeder vil blive gemt på din ArcGIS-konto og kun være tilgængelige inde i din historie.",
       "warningFileTypes": "Billede kan være .jpg, .png, .gif eller .bmp",
-      "warningOneFile": "Én fil accepteres ad gangen.",
-      "warningFileSize": "Filen overskrider den maksimalt tilladte overførselsstørrelse. Vælg en anden fil.",
+      "warningOneFile": "Du kan kun uploade et billede ad gangen.",
+      "warningFileSize": "Billedet skal være mindre end 10 MB.",
       "tooltipRemove": "Slet dette ubrugte billede fra din ArcGIS-konto. <br> (Du skal overføre det igen, hvis du beslutter at bruge det igen senere)."
     },
     "imageSelectorFlickr": {

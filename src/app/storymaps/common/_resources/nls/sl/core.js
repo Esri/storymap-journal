@@ -160,14 +160,6 @@ define({
       "enlarge": "Povečaj",
       "newTab": "Odpri v novem zavihku",
       "tagline": "Karta z zgodbo"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Ali vas lahko nekaj vprašamo? To bo pomagalo oblikovati prihodnost Kart z zgodbo.",
-      "s1h1": "Delite svoje misli z nami in oblikujte prihodnost",
-      "s1p1": "Vaš prispevek je naš edini in najpomembnejši vir povratnih informacij. Več informacij o vas nam pomaga izboljšati Karte z zgodbo. Zelo bi bili veseli, če bi lahko izpolnili ta vprašalnik, reševanje katerega vam bo vzelo 3 minute.",
-      "s2p1": "Kot vedno se vam zahvaljujemo za uporabo Esri Kart z zgodbo.",
-      "action1": "Zapri",
-      "action2": "Izpolni obrazec"
     }
   }
 });

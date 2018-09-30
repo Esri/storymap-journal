@@ -160,14 +160,6 @@ define({
       "enlarge": "Agrandir",
       "newTab": "Ouvrir dans un nouvel onglet",
       "tagline": "Une Story Map"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "Pouvons-nous vous poser une question ? C’est pour vous l’occasion de contribuer aux Story Maps de demain.",
-      "s1h1": "Donnez-nous votre avis, prenez part à l’avenir",
-      "s1p1": "Vos commentaires nous sont précieux. Ils nous permettront de mieux vous connaître, et ainsi d’améliorer nos Story Maps. Nous vous serions reconnaissants de bien vouloir participer à cette enquête qui ne prendra que trois minutes de votre temps.",
-      "s2p1": "Encore merci d’utiliser Esri Story Maps !",
-      "action1": "Fermer",
-      "action2": "Participer à l’enquête"
     }
   }
 });

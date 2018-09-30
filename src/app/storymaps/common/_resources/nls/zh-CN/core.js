@@ -160,14 +160,6 @@ define({
       "enlarge": "最大化",
       "newTab": "在新选项卡中打开",
       "tagline": "故事地图"
-    },
-    "june2018SurveyMessage": {
-      "bannerMsg": "我们能问您一些问题吗? 这能够帮助我们塑造 Story Maps 的未来。",
-      "s1h1": "分享观点，塑造未来",
-      "s1p1": "您的观点是我们最重要的反馈来源，了解您的更多观点能帮助我们改进 Story Maps。 如果您能参与用时三分钟的调查，我们将万分感激。",
-      "s2p1": "最后，感谢您一如既往地使用 Esri Story Maps!",
-      "action1": "关闭",
-      "action2": "参与调查"
     }
   }
 });
