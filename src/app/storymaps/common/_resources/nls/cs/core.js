@@ -160,6 +160,9 @@ define({
       "enlarge": "Zvětšit",
       "newTab": "Otevřít na nové kartě.",
       "tagline": "Mapa s příběhem"
+    },
+    "licenseChange2018": {
+      "noAccess": "Váš účet (%USER_NAME%) nevlastní licenci k otevření mapy s příběhem, která není veřejná. Požádejte prosím správce své organizace, aby vám přidělil typ uživatele, jehož součástí jsou mapy s příběhem nebo doplňková licence základních aplikací."
     }
   }
 });

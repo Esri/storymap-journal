@@ -160,6 +160,9 @@ define({
       "enlarge": "放大",
       "newTab": "在新頁籤中開啟",
       "tagline": "故事地圖"
+    },
+    "licenseChange2018": {
+      "noAccess": "您的帳號 (%USER_NAME%) 未經授權，無法開啟非公開的故事地圖。 請聯繫您的組織管理員，請其將包含 Story Maps 或附加元件基礎應用程式授權的使用者類型指派給您。"
     }
   }
 });

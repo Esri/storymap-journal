@@ -115,7 +115,7 @@ define({
       "logoCustomUploadHelp": "ลิงก์ภาพโลโก้ต้องขึ้นต้นด้วย HTTPS โลโก้จะดูดีที่สุด หากมีอัตราส่วนความกว้าง:ความสูงระหว่าง 1:1 ถึง 5:1 หากโลโก้ที่เชื่อมโยงดึงช้า ให้บันทึกสำเนาแล้วอัปโหลดที่นี่",
       "logoCustomUploadTooltip": "ใช้โลโก้ที่อัพโหลด",
       "logoCustomUploadButton": "อัพโหลดโลโก้",
-      "logoUploadSizeError": "ขนาด GIF มีขนาดใหญ่เกินไป โปรดปรับขนาดไปยัง $ {PIXEL-WIDTH} พิกเซลกว้าง",
+      "logoUploadSizeError": "ขนาด GIF มีขนาดใหญ่เกินไป โปรดปรับขนาดไปยัง ${PIXEL-WIDTH} พิกเซลกว้าง",
       "logoCustomLinkHTTPSError": "ลิงก์ต้องขึ้นต้นด้วย HTTPS",
       "logoCustomLinkTooltip": "ลิงค์ไปยังโลโก้",
       "logoCustomLinkPlaceholder": "URL รูปภาพ",
@@ -160,6 +160,9 @@ define({
       "enlarge": "ขยาย",
       "newTab": "เปิดในแท็บใหม่",
       "tagline": "Story Map"
+    },
+    "licenseChange2018": {
+      "noAccess": "บัญชีผู้ใช้ของคุณ (%USER_NAME%) ไม่มีใบอนุญาตในการเปิดแผนที่เรื่องราวซึ่งไม่ใช่แบบสาธารณะ โปรดขอให้ผู้ดูแลองค์กรของคุณกำหนดประเภทผู้ใช้ที่มีใบอนุญาตแผนที่เรื่องราวหรือแอดออนแอป Essential ให้กับคุณ"
     }
   }
 });

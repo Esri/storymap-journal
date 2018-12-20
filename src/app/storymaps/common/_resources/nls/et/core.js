@@ -160,6 +160,9 @@ define({
       "enlarge": "Kasvav",
       "newTab": "Avatakse uuel vahelehel",
       "tagline": "Kaardilugu"
+    },
+    "licenseChange2018": {
+      "noAccess": "Teie kontol (%USER_NAME%) puudub litsents kaardiloo avamiseks, mis ei ole avalik. Paluge oma organisatsiooni administraatoril määrata teile kasutajatüüp, mis sisaldab kaardilugusid või oluliste rakenduse lisalitsentsi."
     }
   }
 });

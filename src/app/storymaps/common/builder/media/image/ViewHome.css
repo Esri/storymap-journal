@@ -14,9 +14,12 @@
 	margin-right: 4px;
 }
 
+td.btn-container.btn-select-picasa {
+    display: none;
+}
+
 .imageSelectorHome .imageSelectorTable .btn-container {
 	padding: 10px 0;
-	width: auto;
 }
 
 .mediaSelector.smallSize .imageSelectorHome .imageSelectorTable .btn-container {

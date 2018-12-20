@@ -160,6 +160,9 @@ define({
       "enlarge": "Aumentar",
       "newTab": "Abrir em uma nova guia",
       "tagline": "Um Mapa Histórico"
+    },
+    "licenseChange2018": {
+      "noAccess": "Sua conta (%USER_NAME%) não está licenciada para abrir um Mapa Histórico que não seja público. Solicite ao administrador da sua organização que lhe atribua um tipo de usuário que inclua os Aplicativos Fundamentais ou uma licença complementar dos Aplicativos Fundamentais."
     }
   }
 });

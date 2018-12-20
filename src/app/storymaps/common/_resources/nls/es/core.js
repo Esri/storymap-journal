@@ -160,6 +160,9 @@ define({
       "enlarge": "Ampliar",
       "newTab": "Abrir en una nueva pestaña",
       "tagline": "Un story map"
+    },
+    "licenseChange2018": {
+      "noAccess": "Su cuenta (%USER_NAME%) no tiene licencia para abrir un story map que no sea público.  Pídale al administrador de su organización que le asigne un tipo de usuario que incluya Story Maps o una licencia complementaria de aplicaciones esenciales."
     }
   }
 });

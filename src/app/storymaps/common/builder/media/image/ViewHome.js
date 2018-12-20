@@ -15,8 +15,7 @@ define(["lib-build/tpl!./ViewHome",
 				lblUpload: i18n.commonMedia.mediaSelector.lblUpload,
 				lblLink: i18n.commonMedia.mediaSelector.lblLink,
 				thirdPartyTerms: i18n.commonMedia.mediaSelector.thirdPartyTerms,
-				flickrTermsLink: app.cfg.FLICKR_TERMS_LINK || '',
-				googleTermsLink: app.cfg.GOOGLE_TERMS_LINK || ''
+				flickrTermsLink: app.cfg.FLICKR_TERMS_LINK || ''
 			}));
 
 			init();

@@ -160,6 +160,9 @@ define({
       "enlarge": "Vergrößern",
       "newTab": "In neuer Registerkarte öffnen",
       "tagline": "Eine Story-Map"
+    },
+    "licenseChange2018": {
+      "noAccess": "Ihr Konto (%USER_NAME%) ist nicht dafür lizenziert, eine nicht öffentliche Story-Map zu öffnen. Bitten Sie den Administrator der Organisation, Ihnen einen Benutzertyp mit Story-Maps oder eine Add-On-Lizenz für Essential Apps zuzuweisen."
     }
   }
 });

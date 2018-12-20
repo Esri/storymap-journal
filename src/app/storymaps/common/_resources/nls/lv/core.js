@@ -160,6 +160,9 @@ define({
       "enlarge": "Palielināt",
       "newTab": "Atvēriet jaunā cilnē",
       "tagline": "Kartes stāsts"
+    },
+    "licenseChange2018": {
+      "noAccess": "Jūsu kontam (%USER_NAME%) nav licences, lai atvērtu Kartes stāstu, kas nav publisks. Pieprasiet savas organizācijas administratoram piešķirt jums lietotāja veidu, kurā iekļauts Story Maps vai papildinājumlietotņu Essential Apps licence."
     }
   }
 });

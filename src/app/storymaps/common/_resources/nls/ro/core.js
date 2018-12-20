@@ -160,6 +160,9 @@ define({
       "enlarge": "Mărire",
       "newTab": "Deschideți într-o filă nouă",
       "tagline": "O hartă informativă"
+    },
+    "licenseChange2018": {
+      "noAccess": "Contul dvs. (%USER_NAME%) nu este licențiat să deschidă o hartă informativă care nu este publică. Solicitați-i administratorului organizației să vă aloce un tip de utilizator care include hărți informative sau o licență pentru aplicații esențiale de completare."
     }
   }
 });

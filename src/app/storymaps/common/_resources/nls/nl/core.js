@@ -160,6 +160,9 @@ define({
       "enlarge": "Vergroten",
       "newTab": "Openen in een nieuw tabblad",
       "tagline": "Een Story Map"
+    },
+    "licenseChange2018": {
+      "noAccess": "Uw account  (%USER_NAME%) heeft geen licentie om een Story Map te openen die niet openbaar is. Vraag uw organisatiebeheerder om u een gebruikerstype toe te wijzen die Sory Maps of een add-on Essential Apps-licentie bevat."
     }
   }
 });

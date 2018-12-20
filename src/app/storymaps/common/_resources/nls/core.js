@@ -161,6 +161,9 @@ define({
 				enlarge: "Enlarge",
 				newTab: "Open in a new tab",
 				tagline: "A Story Map"
+			},
+			licenseChange2018: {
+				noAccess: "Your account (%USER_NAME%) is not licensed to open a Story Map that is not public.  Please ask your organization administrator to assign you a user type that includes Story Maps or an add-on Essential Apps license."
 			}
 		}
 	}),
