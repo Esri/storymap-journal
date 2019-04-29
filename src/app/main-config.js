@@ -84,48 +84,52 @@ function defineDojoConfig()
 	}
 }
 
-app.isProduction = false;
+function bootstrap () {
+  app.isProduction = false;
 
-defineDojoConfig();
+  defineDojoConfig();
 
-app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
-app.indexCfg = configOptions;
+  app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
+  app.indexCfg = configOptions;
 
-loadCSS(app.pathJSAPI + "esri/css/esri.css", true);
-loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);
+  loadCSS(app.pathJSAPI + "esri/css/esri.css", true);
+  loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);
 
-if( app.isProduction ) {
-	if ( app.isInBuilder )
-		loadCSS("app/builder-min.css");
-	else
-		loadCSS("app/viewer-min.css");
+  if( app.isProduction ) {
+    if ( app.isInBuilder )
+      loadCSS("app/builder-min.css");
+    else
+      loadCSS("app/viewer-min.css");
+  }
+
+  loadJS(app.pathJSAPI + 'init.js', true);
+  loadJS('app/config.js');
+
+  CKEDITOR_BASEPATH = app.isProduction ? 'resources/lib/ckeditor/' : 'lib-app/ckeditor/';
+
+  if( app.isProduction ) {
+    _ = {};
+
+    if ( app.isInBuilder )
+      loadJS('app/builder-min.js');
+    else
+      loadJS('app/viewer-min.js');
+  }
+
+  loadJS('app/main-app.js');
+
+  // Enable Google Analytics on storymaps.esri.com
+  if (window.location.href.toLowerCase().indexOf("storymaps.esri.com") >= 0) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26529417-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  }
 }
 
-loadJS(app.pathJSAPI + 'init.js', true);
-loadJS('app/config.js');
-
-CKEDITOR_BASEPATH = app.isProduction ? 'resources/lib/ckeditor/' : 'lib-app/ckeditor/';
-
-if( app.isProduction ) {
-	_ = {};
-
-	if ( app.isInBuilder )
-		loadJS('app/builder-min.js');
-	else
-		loadJS('app/viewer-min.js');
-}
-
-loadJS('app/main-app.js');
-
-// Enable Google Analytics on storymaps.esri.com
-if (window.location.href.toLowerCase().indexOf("storymaps.esri.com") >= 0) {
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-26529417-1']);
-	_gaq.push(['_trackPageview']);
-
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-}
+bootstrap();
