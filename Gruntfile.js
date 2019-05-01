@@ -404,6 +404,27 @@
 			}
 		});
 
+    /**
+     * Custom task to spit out template files
+     */
+    var template = grunt.file.read('./src/index.html');
+    var menu = grunt.file.readJSON('./src/app/menu/menu.json');
+
+    grunt.registerTask('buildStorymaps', 'Build storymap html files from template', function() {
+      grunt.file.expand('./src/index.html').forEach(function (file) {
+        for (var page in menu) {
+          var outputFilePath = 'deploy/' + menu[page].file,
+            contentToInsert = menu[page].id,
+            content = template.replace(/<!--{{appid}}-->/g, contentToInsert);
+
+          grunt.file.write(outputFilePath, content);
+        }
+
+        // Log message to console.
+        grunt.log.writeln('Storymap files created');
+      });
+    });
+
 		/*
 		 * Create a web server on port 8080
 		 * Run 'start grunt server' or 'grunt server &'
@@ -430,7 +451,7 @@
 			'concat',
 
 			// Copy html
-			'copy:html',
+      'buildStorymaps',
 
 			// Copy main
 			'copy:main',
