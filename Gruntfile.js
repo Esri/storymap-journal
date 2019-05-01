@@ -186,7 +186,7 @@
 					files: [{
 						expand: true,
 						cwd: 'src',
-						src:['app/main-app.js', 'app/main-config.js','app/custom-scripts.js'],
+						src:['app/main-app.js', 'app/main-config.js','app/custom-scripts.js', 'app/ik-menu.js', 'app/ik-actions.js'],
 						dest: 'deploy/'
 					}]
 				},

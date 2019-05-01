@@ -116,6 +116,8 @@ function bootstrap () {
       loadJS('app/viewer-min.js');
   }
 
+  loadJS('app/ik-menu.js');
+  loadJS('app/ik-actions.js');
   loadJS('app/main-app.js');
 
   // Enable Google Analytics on storymaps.esri.com
@@ -130,6 +132,15 @@ function bootstrap () {
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   }
+}
+
+function reset (page) {
+  // Reset the template
+  $('#loadingOverlay').show();
+  $('#loadingIndicator').show();
+
+  // Load new page
+  window.location.replace(page);
 }
 
 bootstrap();
