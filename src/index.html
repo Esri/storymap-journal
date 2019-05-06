@@ -73,277 +73,279 @@
 			</div>
 		</noscript>
 	</head>
-	<body class="claro">
-		<style>
-			/* CUSTOM CSS RULES */
-		</style>
-    <!-- <div class="ik-menu">
-      <button onclick="reset();">Switch</button>
-    </div> -->
+	<body>
+    <div class="claro">
+      <style>
+        /* CUSTOM CSS RULES */
+      </style>
+      <!-- <div class="ik-menu">
+        <button onclick="reset();">Switch</button>
+      </div> -->
 
-		<!-- Builder top panel is injected here -->
-		<div id="builderPanel" class="hide mainViewAboveMap"></div>
-		<button class="skip-to-content visible-on-focus"></button>
+      <!-- Builder top panel is injected here -->
+      <div id="builderPanel" class="hide mainViewAboveMap"></div>
+      <button class="skip-to-content visible-on-focus"></button>
 
-		<!-- Content -->
-		<div id="contentPanel" class="mobileView">
-			<table class="containerPanelInner">
-				<tr>
-					<!-- Text panel of the Side Panel layout -->
-					<td id="sidePanel">
-						<div id="sidePanelInner" class="mainViewSideMap sidePanel sectionPanel">
-							<div class="navDots vertical">
-								<!-- navigation dots -->
-							</div>
-							<div class="header" role="banner">
-								<div class="linkSocialContainer">
-									<span class="linkContainer"></span>
-									<span class="shareBtns">
-										<button class="shareIcon blackHover share_facebook icon-facebook-squared"></button>
-										<button class="shareIcon blackHover share_twitter icon-twitter"></button>
-										<button class="shareIcon blackHover share_bitly icon-link"></button>
-										<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
-									</span>
-								</div>
-								<table class="logoContainer">
-									<tr>
-										<td class="logoWrapper">
-											<a class="logoLink" target="_blank">
-												<img class="logoImg" />
-											</a>
-										</td>
-									</tr>
-								</table>
-							</div>
-							<!-- <div class="resizer"></div> -->
-							<button class="scroll" tabindex="-1">
-								<div class="scrollInner" data-toggle="tooltip"></div>
-							</button>
-							<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
-							<span class="error-status">
-								<button class="btn btn-xs btn-warning check-story"></button>
-								<button class="btn btn-xs btn-warning share-story"></button>
-							</span>
-							<div class="separator"></div>
-							<div class="sectionsWrapper">
-								<div class="panelEditBtn">
-									<div class="panelEditBtnInner"></div>
-								</div>
-								<div class="sections" role="main">
-									<!-- sections injected here -->
-								</div>
-								<div class="centering loop-wrapper">
-									<button class="visible-on-focus loop-to-top"></button>
-								</div>
-							</div>
-							<div class="builder builder-content-panel">
-								<div class="builder-content-panel-group builder-add">
-									<div class="builder-btn"></div>
-									<div class="builder-lbl"></div>
-								</div>
-								<div class="builder-content-panel-group builder-organize">
-									<div class="builder-btn"></div>
-									<div class="builder-lbl"></div>
-								</div>
-							</div>
-							<div class="builder-mask"></div>
-							<div class="firstAddExplain"></div>
-						</div>
-					</td>
-					<!-- Map -->
-					<td id="mainStagePanel" class="mainStagePanel" role="complementary">
-						<div id="mainStagePanelInner">
-							<div class="medias">
-								<!-- Maps and media injected here -->
-							</div>
-							<div id="mainStageLoadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
-							  <img class="loadingGif" src="resources/tpl/viewer/icons/loading-light.gif"/>
-							</div>
-							<!-- Back button -->
-							<div class="mediaBackContainer">
-								<button class="backButton">
-									<div class="backArrow"></div>
-									<span class="backLbl"></span>
-								</button>
-							</div>
-							<!-- Builder -->
-							<div id="builderQuotes" class="centerAlignOnFloat"></div>
-							<div id="builderLanding" class="centerAlignOnFloat"></div>
-							<div id="builderHelp" class="centerAlignOnFloat"></div>
-							<div class="firstAddExplain"></div>
-							<!-- Autoplay -->
-							<div id="autoplay" class="autoplay"></div>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<!-- /Content -->
+      <!-- Content -->
+      <div id="contentPanel" class="mobileView">
+        <table class="containerPanelInner">
+          <tr>
+            <!-- Text panel of the Side Panel layout -->
+            <td id="sidePanel">
+              <div id="sidePanelInner" class="mainViewSideMap sidePanel sectionPanel">
+                <div class="navDots vertical">
+                  <!-- navigation dots -->
+                </div>
+                <div class="header" role="banner">
+                  <div class="linkSocialContainer">
+                    <span class="linkContainer"></span>
+                    <span class="shareBtns">
+                      <button class="shareIcon blackHover share_facebook icon-facebook-squared"></button>
+                      <button class="shareIcon blackHover share_twitter icon-twitter"></button>
+                      <button class="shareIcon blackHover share_bitly icon-link"></button>
+                      <button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
+                    </span>
+                  </div>
+                  <table class="logoContainer">
+                    <tr>
+                      <td class="logoWrapper">
+                        <a class="logoLink" target="_blank">
+                          <img class="logoImg" />
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!-- <div class="resizer"></div> -->
+                <button class="scroll" tabindex="-1">
+                  <div class="scrollInner" data-toggle="tooltip"></div>
+                </button>
+                <div class="appTitle" tabindex="-1" aria-hidden="true"></div>
+                <span class="error-status">
+                  <button class="btn btn-xs btn-warning check-story"></button>
+                  <button class="btn btn-xs btn-warning share-story"></button>
+                </span>
+                <div class="separator"></div>
+                <div class="sectionsWrapper">
+                  <div class="panelEditBtn">
+                    <div class="panelEditBtnInner"></div>
+                  </div>
+                  <div class="sections" role="main">
+                    <!-- sections injected here -->
+                  </div>
+                  <div class="centering loop-wrapper">
+                    <button class="visible-on-focus loop-to-top"></button>
+                  </div>
+                </div>
+                <div class="builder builder-content-panel">
+                  <div class="builder-content-panel-group builder-add">
+                    <div class="builder-btn"></div>
+                    <div class="builder-lbl"></div>
+                  </div>
+                  <div class="builder-content-panel-group builder-organize">
+                    <div class="builder-btn"></div>
+                    <div class="builder-lbl"></div>
+                  </div>
+                </div>
+                <div class="builder-mask"></div>
+                <div class="firstAddExplain"></div>
+              </div>
+            </td>
+            <!-- Map -->
+            <td id="mainStagePanel" class="mainStagePanel" role="complementary">
+              <div id="mainStagePanelInner">
+                <div class="medias">
+                  <!-- Maps and media injected here -->
+                </div>
+                <div id="mainStageLoadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
+                  <img class="loadingGif" src="resources/tpl/viewer/icons/loading-light.gif"/>
+                </div>
+                <!-- Back button -->
+                <div class="mediaBackContainer">
+                  <button class="backButton">
+                    <div class="backArrow"></div>
+                    <span class="backLbl"></span>
+                  </button>
+                </div>
+                <!-- Builder -->
+                <div id="builderQuotes" class="centerAlignOnFloat"></div>
+                <div id="builderLanding" class="centerAlignOnFloat"></div>
+                <div id="builderHelp" class="centerAlignOnFloat"></div>
+                <div class="firstAddExplain"></div>
+                <!-- Autoplay -->
+                <div id="autoplay" class="autoplay"></div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- /Content -->
 
-		<div id="floatingPanel" class="floatingPanel sectionPanel">
-			<div class="backdrop"></div>
-			<div class="header" role="banner">
-				<div class="linkSocialContainer">
-					<span class="linkContainer"></span>
-					<span class="shareBtns">
-						<button class="shareIcon blackHover share_facebook icon-facebook-squared"></button>
-						<button class="shareIcon blackHover share_twitter icon-twitter"></button>
-						<button class="shareIcon blackHover share_bitly icon-link"></button>
-						<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
-					</span>
-				</div>
-				<table class="logoContainer">
-					<tr>
-						<td class="logoWrapper">
-							<a class="logoLink" target="_blank">
-								<img class="logoImg"/>
-							</a>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
-			<span class="error-status">
-				<button class="btn btn-xs btn-warning check-story"></button>
-				<button class="btn btn-xs btn-warning share-story"></button>
-			</span>
-			<div class="separator"></div>
-			<div class="panelEditBtn">
-				<div class="panelEditBtnInner"></div>
-			</div>
-			<div class="sections">
-				<div class="swiper-container">
-					<div class="swiper-wrapper" role="main">
-						<!-- sections injected here -->
-					</div>
-					<div class="centering loop-wrapper">
-						<button class="visible-on-focus loop-to-top"></button>
-					</div>
-				</div>
-			</div>
-			<div class="builder builder-content-panel">
-				<div class="builder-content-panel-group builder-add">
-					<div class="builder-btn"></div>
-					<div class="builder-lbl"></div>
-				</div>
-				<div class="builder-content-panel-group builder-organize">
-					<div class="builder-btn"></div>
-					<div class="builder-lbl"></div>
-				</div>
-			</div>
-			<div class="navDots vertical">
-				<!-- navigation dots -->
-			</div>
-			<button class="scroll" tabindex="-1">
-				<div class="scrollInner" data-toggle="tooltip"></div>
-			</button>
-			<div class="builder-mask"></div>
-			<div class="firstAddExplain"></div>
-		</div>
+      <div id="floatingPanel" class="floatingPanel sectionPanel">
+        <div class="backdrop"></div>
+        <div class="header" role="banner">
+          <div class="linkSocialContainer">
+            <span class="linkContainer"></span>
+            <span class="shareBtns">
+              <button class="shareIcon blackHover share_facebook icon-facebook-squared"></button>
+              <button class="shareIcon blackHover share_twitter icon-twitter"></button>
+              <button class="shareIcon blackHover share_bitly icon-link"></button>
+              <button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
+            </span>
+          </div>
+          <table class="logoContainer">
+            <tr>
+              <td class="logoWrapper">
+                <a class="logoLink" target="_blank">
+                  <img class="logoImg"/>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="appTitle" tabindex="-1" aria-hidden="true"></div>
+        <span class="error-status">
+          <button class="btn btn-xs btn-warning check-story"></button>
+          <button class="btn btn-xs btn-warning share-story"></button>
+        </span>
+        <div class="separator"></div>
+        <div class="panelEditBtn">
+          <div class="panelEditBtnInner"></div>
+        </div>
+        <div class="sections">
+          <div class="swiper-container">
+            <div class="swiper-wrapper" role="main">
+              <!-- sections injected here -->
+            </div>
+            <div class="centering loop-wrapper">
+              <button class="visible-on-focus loop-to-top"></button>
+            </div>
+          </div>
+        </div>
+        <div class="builder builder-content-panel">
+          <div class="builder-content-panel-group builder-add">
+            <div class="builder-btn"></div>
+            <div class="builder-lbl"></div>
+          </div>
+          <div class="builder-content-panel-group builder-organize">
+            <div class="builder-btn"></div>
+            <div class="builder-lbl"></div>
+          </div>
+        </div>
+        <div class="navDots vertical">
+          <!-- navigation dots -->
+        </div>
+        <button class="scroll" tabindex="-1">
+          <div class="scrollInner" data-toggle="tooltip"></div>
+        </button>
+        <div class="builder-mask"></div>
+        <div class="firstAddExplain"></div>
+      </div>
 
-		<!-- Mobile -->
-		<div id="mobileView" class="floatingSwiper">
-			<div class="swiper-container">
-				<div class="backdrop"></div>
-				<div class="embed-btn-container embed-btn-left">
-					<div class="embed-btn"></div>
-				</div>
-				<div class="swiper-wrapper">
-					<!-- sections injected here -->
-				</div>
-				<div class="embed-btn-container embed-btn-right">
-					<div class="embed-btn"></div>
-				</div>
-			</div>
-			<div class="header">
-				<div class="backdrop"></div>
-				<div class="linkSocialContainer">
-					<span class="linkContainer"></span>
-					<span class="shareBtns">
-						<i class="shareIcon share_facebook icon-facebook-squared"></i>
-						<i class="shareIcon share_twitter icon-twitter"></i>
-						<i class="shareIcon share_bitly icon-link"></i>
-					</span>
-				</div>
-			</div>
-		</div>
+      <!-- Mobile -->
+      <div id="mobileView" class="floatingSwiper">
+        <div class="swiper-container">
+          <div class="backdrop"></div>
+          <div class="embed-btn-container embed-btn-left">
+            <div class="embed-btn"></div>
+          </div>
+          <div class="swiper-wrapper">
+            <!-- sections injected here -->
+          </div>
+          <div class="embed-btn-container embed-btn-right">
+            <div class="embed-btn"></div>
+          </div>
+        </div>
+        <div class="header">
+          <div class="backdrop"></div>
+          <div class="linkSocialContainer">
+            <span class="linkContainer"></span>
+            <span class="shareBtns">
+              <i class="shareIcon share_facebook icon-facebook-squared"></i>
+              <i class="shareIcon share_twitter icon-twitter"></i>
+              <i class="shareIcon share_bitly icon-link"></i>
+            </span>
+          </div>
+        </div>
+      </div>
 
-		<!-- Loading -->
-		<style>
-			#loadingOverlay {
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 1100;
-				width: 100%;
-				height: 100%;
-				overflow: hidden;
-				background-color: #EFEFEF;
-			}
+      <!-- Loading -->
+      <style>
+        #loadingOverlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1100;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          background-color: #EFEFEF;
+        }
 
-			@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-			@-moz-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-			@-webkit-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-			@-ms-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-			@-o-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+        @-moz-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+        @-webkit-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+        @-ms-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+        @-o-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 
-			@keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
-			@-moz-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
-			@-webkit-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
-			@-ms-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
-			@-o-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+        @keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+        @-moz-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+        @-webkit-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+        @-ms-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
+        @-o-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
 
-			#loadingOverlay.fadeOut {
-				-webkit-animation: fadeout 1.1s;
-				-moz-animation: fadeout 1.1s;
-				-ms-animation: fadeout 1.1s;
-				-o-animation: fadeout 1.1s;
-				animation: fadeout 1.1s;
-				-webkit-animation-fill-mode:forwards;
-				-moz-animation-fill-mode:forwards;
-				animation-fill-mode:forwards;
-			}
+        #loadingOverlay.fadeOut {
+          -webkit-animation: fadeout 1.1s;
+          -moz-animation: fadeout 1.1s;
+          -ms-animation: fadeout 1.1s;
+          -o-animation: fadeout 1.1s;
+          animation: fadeout 1.1s;
+          -webkit-animation-fill-mode:forwards;
+          -moz-animation-fill-mode:forwards;
+          animation-fill-mode:forwards;
+        }
 
-			#loadingIndicator {
-				position: fixed;
-				top: 50%;
-				left: 50%;
-				z-index: 1101;
-			}
+        #loadingIndicator {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          z-index: 1101;
+        }
 
-			.loadingIndicator {
-				margin-left: -17px;
-				margin-top: -20px;
-			}
-		</style>
+        .loadingIndicator {
+          margin-left: -17px;
+          margin-top: -20px;
+        }
+      </style>
 
-		<div id="loadingOverlay"></div>
-		<div id="loadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
-			<img class="loadingGif" src="resources/tpl/viewer/icons/loading-light.gif"/>
-		</div>
-		<div id="loadingMessage"></div>
+      <div id="loadingOverlay"></div>
+      <div id="loadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
+        <img class="loadingGif" src="resources/tpl/viewer/icons/loading-light.gif"/>
+      </div>
+      <div id="loadingMessage"></div>
 
-		<!-- Share dialog -->
-		<div class="modal fade shareDialog" id="shareDialog" role="dialog" data-backdrop="static" tabindex="-1"></div>
+      <!-- Share dialog -->
+      <div class="modal fade shareDialog" id="shareDialog" role="dialog" data-backdrop="static" tabindex="-1"></div>
 
-		<!-- Builder views are injected here -->
-		<div id="builder-views"></div>
+      <!-- Builder views are injected here -->
+      <div id="builder-views"></div>
 
-		<!-- Fatal error box -->
-		<div id="fatalError">
-			<table border="0">
-				<tr>
-					<td width="70px" align="center" id="fatalError-icon"></td>
-					<td id="fatalError-msg">
-						<b class="error-title"></b>
-						<p class="error-msg"></p>
-					</td>
-				</tr>
-			</table>
-		</div>
+      <!-- Fatal error box -->
+      <div id="fatalError">
+        <table border="0">
+          <tr>
+            <td width="70px" align="center" id="fatalError-icon"></td>
+            <td id="fatalError-msg">
+              <b class="error-title"></b>
+              <p class="error-msg"></p>
+            </td>
+          </tr>
+        </table>
+      </div>
 
-		<div class="print-warning"></div>
+      <div class="print-warning"></div>
 
-		<script type="text/javascript" src="app/main-config.js"></script>
+      <script type="text/javascript" src="app/main-config.js"></script>
+    </div>
 	</body>
 </html>

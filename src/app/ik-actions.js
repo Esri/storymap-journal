@@ -2,13 +2,13 @@ var menu = document.createElement('div');
 menu.setAttribute('id', 'ik-menu');
 
 for (let page in pages) {
-  let file = pages[page].file;
+  let appid = pages[page].id;
   let link = document.createElement('button');
-  let text = document.createTextNode('link');
+  let text = document.createTextNode(page);
   link.appendChild(text);
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    reset(file);
+    reset(appid);
   });
   menu.appendChild(link);
 }
