@@ -413,7 +413,11 @@
     grunt.registerTask('buildStorymaps', 'Build storymap html files from template', function() {
       grunt.file.expand('./src/index.html').forEach(function (file) {
         for (var page in menu) {
-          var outputFilePath = 'deploy/' + menu[page].file,
+          if (!menu[page].index) {
+            continue;
+          }
+
+          var outputFilePath = 'deploy/index.html',
             contentToInsert = menu[page].id,
             content = template.replace(/<!--{{appid}}-->/g, contentToInsert);
 
