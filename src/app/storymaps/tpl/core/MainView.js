@@ -28,6 +28,7 @@ define(["lib-build/css!./MainView",
 		"esri/geometry/Extent",
 		"../ui/StoryText",
 		"lib-app/arcgis-html-sanitizer/umd/arcgis-html-sanitizer",
+    "interactiveknowledge/utils",
 		"lib-build/css!../ui/Common",
 		"lib-build/css!../ui/StoryText",
 		"lib-build/css!../ui/mobile/Common",
@@ -57,7 +58,8 @@ define(["lib-build/css!./MainView",
 		arcgisUtils,
 		Extent,
 		StoryText,
-		Sanitizer
+		Sanitizer,
+    IK
 	){
 		/**
 		 * @preserve This application is released under the Apache License V2.0 by Esri http://www.esri.com/
@@ -482,7 +484,10 @@ define(["lib-build/css!./MainView",
 				var appLayout = WebApplicationData.getLayoutId(),
 					appColors = WebApplicationData.getColors(),
 					layoutOpt = WebApplicationData.getLayoutOptions(),
-					sections = app.data.getStorySections();
+					sectionsApi = app.data.getStorySections();
+
+          // Alter the Sections for IK App
+          var sections = IK.alterSections(sectionsApi);
 
 				if ( appLayout == "side" ) {
 					// As layout is now using a table to align Side Panel and Main Stage
