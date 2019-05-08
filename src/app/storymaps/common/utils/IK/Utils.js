@@ -22,7 +22,7 @@ define([],
 
           if (firstSection === false) {
             // Back links
-            var actionName = 'IK-SECTION-BACK' + index.toString();
+            var actionName = 'IK-SECTION-BACK-' + index.toString();
             section.content = '<div class="previous-section"><a data-storymaps="' + actionName + '" data-storymaps-type="navigate" href="#"><span>BACK</span></div>' + section.content;
             section.contentActions.push({
               id: actionName,
@@ -33,7 +33,7 @@ define([],
 
           if (lastSection === false) {
             // Next section links
-            var actionName = 'IK-SECTION-NEXT' + index.toString();
+            var actionName = 'IK-SECTION-NEXT-' + index.toString();
             section.content = section.content + '<div class="next-section"><a data-storymaps="' + actionName + '" data-storymaps-type="navigate" href="#">' + thisSection[index + 1].title + '</div>';
             section.contentActions.push({
               id: actionName,
