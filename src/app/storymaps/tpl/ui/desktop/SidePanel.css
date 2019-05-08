@@ -29,6 +29,7 @@
 	padding: 0 15px;
 	overflow-y: scroll;
 	height: 100%;
+  touch-action: none;
 }
 
 .sidePanel .sections:focus {
