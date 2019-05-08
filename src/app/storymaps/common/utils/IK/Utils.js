@@ -44,7 +44,7 @@ define([],
 
           if (lastSection === true) {
             // Link to another storymap
-            section.content = section.content + '<div class="next-storymap"><a href="#" onclick="reset(\'602866fef9d14b20bd75b83d94fd6bca\');">See another story</a></div>'
+            section.content = section.content + '<div class="next-storymap"><a href="#" onclick="reset(\'602866fef9d14b20bd75b83d94fd6bca\');">See another story</a></div>';
           }
         });
 
