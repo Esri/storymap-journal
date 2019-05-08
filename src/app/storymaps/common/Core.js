@@ -1079,6 +1079,12 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 			// Use geometry service from the portal if none declared in config
 			var geometryServiceURL;
+
+      // Check for missing object (common occurrance during reset()).
+      if (!app.portal.helperServices) {
+        app.portal['helperServices'] = configOptions.helperServices;
+      }
+
 			if (app.cfg.HELPER_SERVICES.geometry && app.cfg.HELPER_SERVICES.geometry.url) {
 				geometryServiceURL = app.cfg.HELPER_SERVICES.geometry.url;
 			}

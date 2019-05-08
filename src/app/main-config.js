@@ -151,10 +151,15 @@ function bootstrap (reset = false) {
 }
 
 function reset (appid = '') {
+  // Back up some variables which give 
+  configOptions['helperServices'] = app.portal.helperServices;
+
+  // Set new appid
   if (appid.length > 0) {
     configOptions.appid = appid;
   }
 
+  // Start the application
   bootstrap(true);
 
   var i18n = null;
@@ -179,14 +184,14 @@ function reset (appid = '') {
 			i18n = i18nViewer;
 			lang.mixin(i18n, i18nCommonCore);
 
-		 	require([
+			require([
 					"storymaps/common/Core",
 					"storymaps/tpl/core/MainView"
 				], function(
 					Core,
 					MainView
 				){
-		 			if (app.isInBuilder) {
+					if (app.isInBuilder) {
 						require([
 								"storymaps/common/builder/Builder",
 								"storymaps/tpl/builder/BuilderView" ,
