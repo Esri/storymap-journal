@@ -1082,7 +1082,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
       // Check for missing object (common occurrance during reset()).
       if (!app.portal.helperServices) {
-        app.portal['helperServices'] = configOptions.helperServices;
+        app.portal.helperServices = configOptions.helperServices;
       }
 
 			if (app.cfg.HELPER_SERVICES.geometry && app.cfg.HELPER_SERVICES.geometry.url) {

@@ -15,6 +15,7 @@
 		"commonConfig": true,
 		"i18n": false,
 		"app": true,
+    "configOptions": true,
 
 		"FB": false,
 		"History": false,

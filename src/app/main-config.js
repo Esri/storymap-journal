@@ -152,7 +152,7 @@ function bootstrap (reset = false) {
 
 function reset (appid = '') {
   // Back up some variables which give 
-  configOptions['helperServices'] = app.portal.helperServices;
+  configOptions.helperServices = app.portal.helperServices;
 
   // Set new appid
   if (appid.length > 0) {
