@@ -288,7 +288,7 @@ define(["lib-build/tpl!./SidePanelSection",
 				container.find('.appTitle').html(sections.length ? sections[0].title : '');
 				container.find('.sections').html(StoryText.prepareSectionPanelContent(contentHTML));
 				container.find('.section')
-					.click(onClickSection)
+					// .click(onClickSection)
 					.eq(sectionIndex).addClass('active');
 
 				// Builder edit btn
@@ -392,6 +392,7 @@ define(["lib-build/tpl!./SidePanelSection",
 
 			function onClickSection(evt)
 			{
+        console.log('onClickSection');
 
 				var index = $(this).index();
 
