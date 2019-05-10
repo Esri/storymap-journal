@@ -208,11 +208,11 @@ define(["lib-build/css!./MainView",
 				app.isAddEditInProgress = false;
 
 				// Mobile UI
-				app.ui.mobileView = new FloatingSwiper(
-					$("#mobileView"),
-					app.isInBuilder,
-					navigateStoryToIndex
-				);
+				// app.ui.mobileView = new FloatingSwiper(
+				// 	$("#mobileView"),
+				// 	app.isInBuilder,
+				// 	navigateStoryToIndex
+				// );
 
 				// Autoplay in viewer mode
 				if ( ! app.isInBuilder && CommonHelper.getUrlParams().autoplay !== undefined && CommonHelper.getUrlParams().autoplay !== "false" ) {
@@ -249,7 +249,7 @@ define(["lib-build/css!./MainView",
 
 					app.ui.sidePanel.enableAutoplay();
 					app.ui.floatingPanel.enableAutoplay();
-					app.ui.mobileView.enableAutoplay();
+					// .enableAutoplay();
 				}
 
 				topic.subscribe("story-navigate-section", navigateStoryToIndex);
@@ -534,12 +534,12 @@ define(["lib-build/css!./MainView",
 					sections = app.data.getStorySections();
 
 				if (has("ie") === undefined || has("ie") > 8) {
-					app.ui.mobileView.init(
-						sections,
-						app.data.getCurrentSectionIndex(),
-						_core.getHeaderUserCfg(),
-						appColors
-					);
+					// app.ui.mobileView.init(
+					// 	sections,
+					// 	app.data.getCurrentSectionIndex(),
+					// 	_core.getHeaderUserCfg(),
+					// 	appColors
+					// );
 				}
 			}
 
@@ -613,7 +613,7 @@ define(["lib-build/css!./MainView",
 				updateDesktopLayout();
 				app.ui.mainStage.updateMainStageWithLayoutSettings();
 
-				app.ui.mobileView.update(_core.getHeaderUserCfg(), appColors);
+				// app.ui.mobileView.update(_core.getHeaderUserCfg(), appColors);
 
 				/*
 				 * Fonts settings
@@ -716,7 +716,8 @@ define(["lib-build/css!./MainView",
 				$("#sidePanelInner, #mainStagePanelInner").height($("#contentPanel").height());
 
 				if ( cfg.isMobileView )
-					app.ui.mobileView.resize(cfg);
+          null;
+					// .resize(cfg);
 				else if ( appLayout == "side" )
 					app.ui.sidePanel.resize(cfg);
 				else if ( appLayout == "float" )
@@ -729,7 +730,7 @@ define(["lib-build/css!./MainView",
 				var sectionIndex = app.data.getCurrentSectionIndex();
 				app.ui.sidePanel.showSectionNumber(sectionIndex);
 				app.ui.floatingPanel.showSectionNumber(sectionIndex);
-				app.ui.mobileView.showSectionNumber(sectionIndex);
+				// .showSectionNumber(sectionIndex);
 
 				// Style panel content (iframe sizing)
 				StoryText.styleSectionPanelContent();
@@ -766,7 +767,7 @@ define(["lib-build/css!./MainView",
 				var disableSharingLinks =  app.data.getWebAppData().isBlank() || app.data.getWebAppItem().access == "private" || app.data.getWebAppItem().access == "shared";
 				app.ui.sidePanel.toggleSocialBtnAppSharing(disableSharingLinks);
 				app.ui.floatingPanel.toggleSocialBtnAppSharing(disableSharingLinks);
-				app.ui.mobileView.toggleSocialBtnAppSharing(disableSharingLinks);
+				// .toggleSocialBtnAppSharing(disableSharingLinks);
 
 				if ( ! app.isDirectCreation )
 					_core.displayApp();
@@ -800,7 +801,7 @@ define(["lib-build/css!./MainView",
 
 				app.ui.sidePanel.showSectionNumber(index);
 				app.ui.floatingPanel.showSectionNumber(index);
-				app.ui.mobileView.showSectionNumber(index);
+				// .showSectionNumber(index);
 
 				$('.mediaBackContainer').hide();
 			}
@@ -816,7 +817,7 @@ define(["lib-build/css!./MainView",
 			this.onHashChange = function()
 			{
 				var view = location.hash ? location.hash.substring(1) : "";
-				app.ui.mobileView.setView(view);
+				// .setView(view);
 			};
 
 			//
