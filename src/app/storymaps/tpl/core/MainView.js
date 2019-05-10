@@ -210,13 +210,6 @@ define(["lib-build/css!./MainView",
 
 				app.isAddEditInProgress = false;
 
-				// Mobile UI
-				// app.ui.mobileView = new FloatingSwiper(
-				// 	$("#mobileView"),
-				// 	app.isInBuilder,
-				// 	navigateStoryToIndex
-				// );
-
 				// Autoplay in viewer mode
 				if ( ! app.isInBuilder && CommonHelper.getUrlParams().autoplay !== undefined && CommonHelper.getUrlParams().autoplay !== "false" ) {
 					app.ui.autoplay = new Autoplay(
@@ -533,17 +526,7 @@ define(["lib-build/css!./MainView",
 
 			function initMobileLayout()
 			{
-				var appColors = WebApplicationData.getColors(),
-					sections = app.data.getStorySections();
-
-				if (has("ie") === undefined || has("ie") > 8) {
-					// app.ui.mobileView.init(
-					// 	sections,
-					// 	app.data.getCurrentSectionIndex(),
-					// 	_core.getHeaderUserCfg(),
-					// 	appColors
-					// );
-				}
+				//
 			}
 
 			// about data...
@@ -819,8 +802,7 @@ define(["lib-build/css!./MainView",
 
 			this.onHashChange = function()
 			{
-				var view = location.hash ? location.hash.substring(1) : "";
-				// .setView(view);
+				//
 			};
 
 			//
