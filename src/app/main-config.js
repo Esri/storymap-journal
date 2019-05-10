@@ -1,5 +1,6 @@
 function loadJS(url, isExternal)
 {
+  let src = url;
 	if( isExternal )
 		url = document.location.protocol == 'file:' ? 'http:' + url : url;
 	else
@@ -7,7 +8,7 @@ function loadJS(url, isExternal)
 
   var embedJS = document.getElementsByTagName("script");
   for (var link of embedJS) {
-    if (link.getAttribute('src') === url) {
+    if (link.getAttribute('src') && link.getAttribute('src').indexOf(src) > -1) {
       return;
     }
   }
@@ -21,6 +22,7 @@ function loadJS(url, isExternal)
 
 function loadCSS(url, isExternal)
 {
+  let src = url;
 	if( isExternal )
 		url = document.location.protocol == 'file:' ? 'http:' + url : url;
 	else
@@ -28,7 +30,7 @@ function loadCSS(url, isExternal)
 
   var embedCSS = document.getElementsByTagName("link");
   for (var link of embedCSS) {
-    if (link.getAttribute('href') === url) {
+    if (link.getAttribute('href').indexOf(src) > -1) {
       return;
     }
   }
@@ -101,7 +103,10 @@ function defineDojoConfig()
 function bootstrap (reset = false) {
   app.isProduction = false;
 
-  defineDojoConfig();
+  if (reset !== true) {
+    console.log('Define Dojo Config');
+    defineDojoConfig();
+  }
 
   app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
   app.indexCfg = configOptions;
