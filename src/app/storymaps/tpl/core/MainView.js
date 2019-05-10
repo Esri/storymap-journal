@@ -183,6 +183,9 @@ define(["lib-build/css!./MainView",
 				// Data Model
 				app.data = new Data();
 
+        // Dojo pub-sub
+        app.events = {};
+
 				app.ui = {};
 
 				app.ui.mainView = this;
@@ -236,14 +239,14 @@ define(["lib-build/css!./MainView",
 					);
 
 					// Start when app is ready
-					topic.subscribe("tpl-ready", function(){
+					app.events.tplReady = topic.subscribe("tpl-ready", function(){
 						if ( ! $("body").hasClass("mobile-view") ) {
 							app.ui.autoplay.start();
 						}
 					});
 
 					// Inform autoplay of story navigation events
-					topic.subscribe("story-load-section", function(index) {
+					app.events.storyLoadSection = topic.subscribe("story-load-section", function(index) {
 						app.ui.autoplay.onNavigationEvent(index);
 					});
 
@@ -252,11 +255,11 @@ define(["lib-build/css!./MainView",
 					// .enableAutoplay();
 				}
 
-				topic.subscribe("story-navigate-section", navigateStoryToIndex);
-				topic.subscribe("story-update-sections", updateUIStory);
-				topic.subscribe("story-update-section", updateStorySection);
-				topic.subscribe("story-perform-action-media", app.ui.mainStage.updateMainMediaWithStoryAction);
-				topic.subscribe("story-focus-section", focusSection);
+				app.events.storyNavigateSection = topic.subscribe("story-navigate-section", navigateStoryToIndex);
+				app.events.storyUpdateSections = topic.subscribe("story-update-sections", updateUIStory);
+				app.events.storyUpdateSection = topic.subscribe("story-update-section", updateStorySection);
+				app.events.storyPerformActionMedia = topic.subscribe("story-perform-action-media", app.ui.mainStage.updateMainMediaWithStoryAction);
+				app.events.storyFocusSection = topic.subscribe("story-focus-section", focusSection);
 
 				topic.subscribe("ADDEDIT_LOAD_WEBMAP", app.ui.mainStage.loadTmpWebmap);
 				topic.subscribe("ADDEDIT_SHOW_WEBMAP", app.ui.mainStage.showWebmapById);

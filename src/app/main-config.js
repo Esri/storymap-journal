@@ -102,9 +102,9 @@ function defineDojoConfig()
 
 function bootstrap (reset = false) {
   app.isProduction = false;
+  app.isReset = reset;
 
   if (reset !== true) {
-    console.log('Define Dojo Config');
     defineDojoConfig();
   }
 
@@ -156,6 +156,11 @@ function bootstrap (reset = false) {
 }
 
 function reset (appid = '') {
+
+  console.log('Reset Storymap -', appid)
+
+  app.isReset = true;
+
   // Back up some variables which give 
   configOptions.helperServices = app.portal.helperServices;
 
@@ -163,6 +168,10 @@ function reset (appid = '') {
   if (appid.length > 0) {
     configOptions.appid = appid;
   }
+
+  Object.keys(app.events).forEach(function (event) {
+    app.events[event].remove();
+  });
 
   // Start the application
   bootstrap(true);
@@ -228,7 +237,7 @@ function reset (appid = '') {
 					else {
 						Core.init(new MainView());
 					}
-		 		}
+				}
 			);
 		}
 	);

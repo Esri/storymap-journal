@@ -72,7 +72,7 @@ define(["lib-build/tpl!./SidePanelSection",
 					container.find('.sections')[0].scrollTop = 0;
 				}, 0);
 
-				if ( _isFirstLoad )
+				if ( _isFirstLoad || app.isReset === true )
 					_selectReady = true;
 
 				_isFirstLoad = false;
@@ -392,7 +392,6 @@ define(["lib-build/tpl!./SidePanelSection",
 
 			function onClickSection(evt)
 			{
-        console.log('onClickSection');
 
 				var index = $(this).index();
 
@@ -614,7 +613,7 @@ define(["lib-build/tpl!./SidePanelSection",
 
 			function initEvents()
 			{
-				container.find('.sections').scroll(onScroll);
+				container.find('.sections').off('scroll').scroll(onScroll);
 				$('body').on('keydown', function(evt) {
 					$('body').off('keydown');
 					if ((evt.keyCode === 40 || evt.keyCode === 34) && $('.scroll').is(':visible')) {
