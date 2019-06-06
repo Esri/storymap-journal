@@ -65,6 +65,9 @@
 
 						/* Localization */
 						'i18n': '../lib-build/i18n',
+
+            /* Menu */
+            'menu': './menu/',
 					},
 					stubModules: [
 						'text',
@@ -189,7 +192,7 @@
 						src:['app/main-app.js', 'app/main-config.js','app/custom-scripts.js', 'app/ik-menu.js', 'app/ik-actions.js'],
 						dest: 'deploy/'
 					}]
-				},
+        },
 				readme: {
 					files: [{
 						expand: true,

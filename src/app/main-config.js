@@ -76,6 +76,10 @@ function defineDojoConfig()
 				name: 'storymaps',
 				location: path1 + 'app/storymaps'
 			},
+      {
+        name: 'menu',
+        location: path1 + 'app/menu'
+      },
 			{
 				name: 'lib-app',
 				location: path1 + 'lib-app'
@@ -138,7 +142,6 @@ function bootstrap (reset = false) {
   }
 
   loadJS('app/ik-menu.js');
-  loadJS('app/ik-actions.js');
   loadJS('app/main-app.js');
 
   // Enable Google Analytics on storymaps.esri.com
@@ -242,6 +245,8 @@ function reset (appid = '') {
 		}
 	);
 }
+
+
 
 // Start App
 bootstrap();

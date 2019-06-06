@@ -30,10 +30,12 @@ else {
 
 			require([
 					"storymaps/common/Core",
-					"storymaps/tpl/core/MainView"
+					"storymaps/tpl/core/MainView",
+          "menu/common/Menu"
 				], function(
 					Core,
-					MainView
+					MainView,
+          Menu
 				){
 					if (app.isInBuilder) {
 						require([
@@ -65,6 +67,11 @@ else {
 						);
 					}
 					else {
+            var ikMenu = new Menu();
+            ikMenu.init();
+
+            console.log(MainView);
+
 						Core.init(new MainView());
 					}
 				}

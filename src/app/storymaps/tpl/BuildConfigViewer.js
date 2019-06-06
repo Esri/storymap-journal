@@ -1,7 +1,8 @@
 require(
 	[
 		"storymaps/common/Core",
-		"storymaps/tpl/core/MainView"
+		"storymaps/tpl/core/MainView",
+    "menu/common/Menu"
 	],
 	function()
 	{
