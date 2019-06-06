@@ -66,8 +66,8 @@
 						/* Localization */
 						'i18n': '../lib-build/i18n',
 
-            /* Menu */
-            'menu': './menu/',
+            /* Wrapper */
+            'menu': './wrapper/',
 					},
 					stubModules: [
 						'text',
@@ -411,7 +411,7 @@
      * Custom task to spit out template files
      */
     var template = grunt.file.read('./src/index.html');
-    var menu = grunt.file.readJSON('./src/app/menu/menu.json');
+    var menu = grunt.file.readJSON('./src/app/wrapper/menu.json');
 
     grunt.registerTask('buildStorymaps', 'Build storymap html files from template', function() {
       grunt.file.expand('./src/index.html').forEach(function (file) {

@@ -78,7 +78,7 @@ function defineDojoConfig()
 			},
       {
         name: 'menu',
-        location: path1 + 'app/menu'
+        location: path1 + 'app/wrapper'
       },
 			{
 				name: 'lib-app',

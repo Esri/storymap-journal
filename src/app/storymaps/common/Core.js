@@ -312,6 +312,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 			// Load using a Web Mapping Application item
 			if (appId) {
+        topic.publish('story-is-loading', appId);
 				loadWebMappingApp(appId);
 				return;
 			}
@@ -669,6 +670,8 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 			_mainView.appInitComplete();
 			app.builder && app.builder.appInitComplete();
+
+      topic.publish('story-init-complete');
 
 			// Load My Stories in builder or viewer if user is owning the story
 

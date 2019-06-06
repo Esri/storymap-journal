@@ -1,0 +1,18 @@
+#ik-menu {
+  height: 30vh;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.no-touch {
+  background: gray;
+  flex: 1;
+}
+
+.menu {
+  background: tomato;
+}
