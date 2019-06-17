@@ -20,10 +20,9 @@ define([
 
       this.menuEvents();
       this.topicSubscribers();
+      this.stateWatchers();
 
-      state.watch('appid', function() {
-        console.debug('AppId changed to ' + state.get('appid'));
-      })
+      state.set('navigation-history', []);
     }
 
     this.menuEvents = function () {
@@ -56,6 +55,12 @@ define([
       body.insertBefore(menu, body.childNodes[0] || null);
     }
 
+  this.stateWatchers = function () {
+    state.watch('appid', function() {
+      console.debug('AppId changed to ' + state.get('appid'));
+    })
+  }
+
   this.topicSubscribers = function () {
     topic.subscribe('tpl-ready', this.storyTplReady);
     topic.subscribe('story-navigate-section', this.storyNavigatedSection);
@@ -64,7 +69,11 @@ define([
   }
 
   /**
-   * Dojo topic listener callbacks
+   * Dojo topic/state callbacks
+   */
+
+  /**
+   * Story listeners
    */
   this.storyFocusedSection = function (index) {
     console.debug('Story Focused Section', index);
@@ -72,6 +81,12 @@ define([
 
   this.storyNavigatedSection = function (index) {
     console.debug('Story Navigated Section', index);
+
+    var currentHistory = state.get('navigation-history');
+
+    currentHistory.push(index);
+
+    state.set('navigation-history', currentHistory);
   }
 
   this.storyLoadedMap = function (map) {
@@ -92,6 +107,9 @@ define([
     console.debug('Story init completed');
   }
 
+  /**
+   * Wrapper callbacks
+   */
   this.wrapperNavigatedToAttractScreen = function () {}
 
   this.wrapperNavigatedToStorymap = function () {}
