@@ -67,10 +67,12 @@ else {
 						);
 					}
 					else {
+            // Creates hthe Story Map
+						Core.init(new MainView());
+
+            // Renders the menu
             var ikWrapper = new Wrapper();
             ikWrapper.init();
-
-						Core.init(new MainView());
 					}
 				}
 			);
