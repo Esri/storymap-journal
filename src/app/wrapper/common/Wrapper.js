@@ -2,12 +2,16 @@ define([
   'lib-build/tpl!./Wrapper',
   'lib-build/css!./Wrapper',
   'dojo/topic',
-  'dojo/Stateful'
+  'dojo/Stateful',
+  './Info',
+  './Menu'
 ], function(
-  viewTpl,
-  viewCss,
+  wrapperTpl,
+  wrapperCss,
   topic,
-  Stateful
+  Stateful,
+  Info,
+  Menu
 ) {
   return function Wrapper() {
     var state = new Stateful();
@@ -19,9 +23,14 @@ define([
       this.topicSubscribers();
       this.stateWatchers();
 
-      $('#ik-menu').append(viewTpl({
-        storyMapTitle: 'Mexico'
-      }));
+      // Add Wrapper
+      $('#wrapper').append(wrapperTpl());
+
+      // Initialize the Info Panel
+      new Info();
+
+      // Initialize Menu
+      new Menu();
 
       this.menuEvents();
 
