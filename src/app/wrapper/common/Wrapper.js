@@ -4,14 +4,16 @@ define([
   'dojo/topic',
   'dojo/Stateful',
   './Info',
-  './Menu'
+  './Menu',
+  '../tpl/llc/Menu'
 ], function(
   wrapperTpl,
   wrapperCss,
   topic,
   Stateful,
   Info,
-  Menu
+  Menu,
+  LLCMenu
 ) {
   return function Wrapper() {
     var state = new Stateful();
@@ -40,7 +42,7 @@ define([
     this.menuEvents = function () {
       $('.menu__button')[0].addEventListener('click', function (e) {
         e.preventDefault();
-        toggleMenu();
+        toggleFullMenu();
       })
     }
 
@@ -66,12 +68,8 @@ define([
       body.insertBefore(menu, body.childNodes[0] || null);
     }
 
-    var toggleMenu = function () {
-      if ($('#ik-menu').css('height') === window.innerHeight + 'px') {
-        $('#ik-menu').css('height', '30vh');
-      } else {
-        $('#ik-menu').css('height', '100vh');
-      }
+    var toggleFullMenu = function () {
+      topic.publish('toggle-full-menu');
     }
 
     this.stateWatchers = function () {
@@ -85,6 +83,15 @@ define([
       topic.subscribe('story-navigate-section', this.storyNavigatedSection);
       topic.subscribe('story-loaded-map', this.storyLoadedMap);
       topic.subscribe('story-is-loading', this.storyIsLoading);
+
+      // Toggle the Full Menu
+      topic.subscribe('toggle-full-menu', function () {
+        // Initialize the Menu
+        new LLCMenu();
+
+        // Hide the IK menu
+        $('#menu').hide();
+      })
     }
 
     /**
