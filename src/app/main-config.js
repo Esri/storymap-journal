@@ -164,7 +164,7 @@ function reset (appid = '') {
 
   app.isReset = true;
 
-  ik.wrapper.state.set('wrapper-state', 'storymap');
+  ik.wrapper.toggleStorymap();
 
   // Back up some variables which give 
   configOptions.helperServices = app.portal.helperServices;

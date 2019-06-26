@@ -82,6 +82,12 @@ define([
 
       // Global functions (event) subscribers
       topic.subscribe('toggle-nav', this.toggleNav);
+      topic.subscribe('toggle-storymap', this.toggleStorymap);
+    }
+
+    this.toggleStorymap = function () {
+      // Set state
+      ik.wrapper.state.set('wrapper-state', 'storymap');
     }
 
     this.toggleNav = function () {
@@ -167,6 +173,10 @@ define([
      */
     var toggleNav = function () {
       topic.publish('toggle-nav');
+    }
+
+    var toggleStorymap = function (appid) {
+      topic.publish('toggle-storymap');
     }
   }
 });
