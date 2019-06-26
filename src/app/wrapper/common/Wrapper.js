@@ -5,7 +5,7 @@ define([
   'dojo/Stateful',
   './Info',
   './Menu',
-  '../tpl/llc/Menu'
+  '../tpl/llc/Nav'
 ], function(
   wrapperTpl,
   wrapperCss,
@@ -13,20 +13,19 @@ define([
   Stateful,
   Info,
   Menu,
-  LLCMenu
+  Nav
 ) {
   return function Wrapper() {
+    // Have a wrapper state
     var state = new Stateful();
 
     this.init = function() {
       console.log('common.menu.Menu - init');
-      console.log('common.menu.Menu - pages', pages);
+
+      this.state = state;
 
       this.topicSubscribers();
       this.stateWatchers();
-
-      // Add Wrapper
-      $('#wrapper').append(wrapperTpl());
 
       // Initialize the Info Panel
       new Info();
@@ -34,64 +33,60 @@ define([
       // Initialize Menu
       new Menu();
 
+      // Initialize the Menu
+      new Nav();
+
       this.menuEvents();
 
-      state.set('navigation-history', []);
+      this.state.set('navigation-history', []);
     }
 
     this.menuEvents = function () {
       $('.menu__button')[0].addEventListener('click', function (e) {
         e.preventDefault();
-        toggleFullMenu();
+        toggleNav();
       })
-    }
-
-    this.buildMenu = function () {
-      // Build Elements
-      var menu = document.createElement('div');
-      menu.setAttribute('id', 'ik-menu');
-
-      var pagesKeys = Object.keys(pages);
-      pagesKeys.forEach(function(key, index) {
-        var appid = pages[key].id;
-        var link = document.createElement('button');
-        var text = document.createTextNode(key);
-        link.appendChild(text);
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          reset(appid);
-        });
-        menu.appendChild(link);
-      })
-
-      var body = document.getElementsByTagName('body')[0];
-      body.insertBefore(menu, body.childNodes[0] || null);
-    }
-
-    var toggleFullMenu = function () {
-      topic.publish('toggle-full-menu');
     }
 
     this.stateWatchers = function () {
-      state.watch('appid', function() {
+      // Story Map ID
+      this.state.watch('appid', function() {
         console.debug('AppId changed to ' + state.get('appid'));
+      })
+
+      // Wrapper States
+      this.state.watch('wrapper-state', function () {
+        switch (ik.wrapper.state.get('wrapper-state')) {
+          case 'storymap':
+            console.log('Wrapper State storymap: AppId ', ik.wrapper.state.get('appid'));
+            topic.publish('show-storymap');
+            break;
+          case 'nav':
+            topic.publish('show-nav');
+            break;
+          default:
+            console.log('state unrecognized');
+        }
       })
     }
 
     this.topicSubscribers = function () {
+      // Storymap subscribers
       topic.subscribe('tpl-ready', this.storyTplReady);
       topic.subscribe('story-navigate-section', this.storyNavigatedSection);
-      topic.subscribe('story-loaded-map', this.storyLoadedMap);
       topic.subscribe('story-is-loading', this.storyIsLoading);
 
-      // Toggle the Full Menu
-      topic.subscribe('toggle-full-menu', function () {
-        // Initialize the Menu
-        new LLCMenu();
+      // Wrapper-State Changes
+      topic.subscribe('show-nav', this.showNav);
+      topic.subscribe('show-storymap', this.showStorymap);
 
-        // Hide the IK menu
-        $('#menu').hide();
-      })
+      // Global functions (event) subscribers
+      topic.subscribe('toggle-nav', this.toggleNav);
+    }
+
+    this.toggleNav = function () {
+      // Set state
+      ik.wrapper.state.set('wrapper-state', 'nav');
     }
 
     /**
@@ -101,22 +96,14 @@ define([
     /**
      * Story listeners
      */
-    this.storyFocusedSection = function (index) {
-      console.debug('Story Focused Section', index);
-    }
-
     this.storyNavigatedSection = function (index) {
       console.debug('Story Navigated Section', index);
 
-      var currentHistory = state.get('navigation-history');
+      var currentHistory = this.state.get('navigation-history');
 
       currentHistory.push(index);
 
-      state.set('navigation-history', currentHistory);
-    }
-
-    this.storyLoadedMap = function (map) {
-      console.debug('Story Loaded Map', map);
+      this.state.set('navigation-history', currentHistory);
     }
 
     this.storyTplReady = function () {
@@ -126,11 +113,27 @@ define([
     this.storyIsLoading = function(appid) {
       console.debug('Story is loading', appid);
 
-      state.set('appid', appid);
+      ik.wrapper.state.set('appid', appid);
     }
 
     this.storyInitCompleted = function () {
       console.debug('Story init completed');
+    }
+
+    /**
+     * Wrapper state changes
+     */
+    this.showNav = function () {
+      // Hide the menu and storymap
+      $('#menu').hide();
+      $('#interaction').children().hide();
+      $('.interaction__nav').show();
+    }
+
+    this.showStorymap = function () {
+      $('#menu').show();
+      $('#interaction').children().hide();
+      $('.interaction__storymap').show();
     }
 
     /**
@@ -159,5 +162,11 @@ define([
 
     this.wrapperToMapMenu = function () {}
 
+    /**
+     * Global functions
+     */
+    var toggleNav = function () {
+      topic.publish('toggle-nav');
+    }
   }
 });

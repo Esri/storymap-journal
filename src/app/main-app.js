@@ -73,6 +73,7 @@ else {
             // Renders the menu
             var ikWrapper = new Wrapper();
             ikWrapper.init();
+            ik.wrapper = ikWrapper;
 					}
 				}
 			);
