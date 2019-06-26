@@ -8,6 +8,8 @@ define([
   menuLink
 ) {
   return function Nav () {
+    console.log('wrapper.tpl.llc.Nav -- init');
+
     // Build Menu
     $('.interaction__nav').html(navTpl());
 

@@ -6,7 +6,7 @@ define([
   infoCss
 ) {
   return function Info () {
-    console.log('Info.js Init');
+    console.log('wrapper.common.Info -- init');
 
     // Add Info
     $('#info').append(infoTpl({

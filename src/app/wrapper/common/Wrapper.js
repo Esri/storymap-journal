@@ -1,31 +1,36 @@
 define([
+  "lib-build/css!lib-app/font-awesome/css/font-awesome.min",
   'lib-build/tpl!./Wrapper',
   'lib-build/css!./Wrapper',
   'dojo/topic',
   'dojo/Stateful',
   './Info',
   './Menu',
-  '../tpl/llc/Nav'
+  '../tpl/llc/Nav',
+  '../tpl/llc/Attract',
+  '../tpl/llc/Explore'
 ], function(
+  fontAwesomeCss,
   wrapperTpl,
   wrapperCss,
   topic,
   Stateful,
   Info,
   Menu,
-  Nav
+  Nav,
+  Attract,
+  Explore
 ) {
   return function Wrapper() {
     // Have a wrapper state
     var state = new Stateful();
 
     this.init = function() {
-      console.log('common.menu.Menu - init');
+      console.log('wrapper.common.Wrapper - init');
 
       this.state = state;
 
       this.topicSubscribers();
-      this.stateWatchers();
 
       // Initialize the Info Panel
       new Info();
@@ -36,17 +41,21 @@ define([
       // Initialize the Menu
       new Nav();
 
-      this.menuEvents();
+      // Intialize Attract
+      new Attract();
+
+      // Initialize Explore
+      new Explore();
+
+      // Initial States
+      this.state.set('wrapper-state', 'attract');
 
       this.state.set('navigation-history', []);
+
+      this.stateWatchers();
     }
 
-    this.menuEvents = function () {
-      $('.menu__button')[0].addEventListener('click', function (e) {
-        e.preventDefault();
-        toggleNav();
-      })
-    }
+
 
     this.stateWatchers = function () {
       // Story Map ID
@@ -57,6 +66,9 @@ define([
       // Wrapper States
       this.state.watch('wrapper-state', function () {
         switch (ik.wrapper.state.get('wrapper-state')) {
+          case 'explore':
+            topic.publish('show-explore');
+            break;
           case 'storymap':
             console.log('Wrapper State storymap: AppId ', ik.wrapper.state.get('appid'));
             topic.publish('show-storymap');
@@ -77,12 +89,19 @@ define([
       topic.subscribe('story-is-loading', this.storyIsLoading);
 
       // Wrapper-State Changes
+      topic.subscribe('show-explore', this.showExplore);
       topic.subscribe('show-nav', this.showNav);
       topic.subscribe('show-storymap', this.showStorymap);
 
       // Global functions (event) subscribers
+      topic.subscribe('toggle-explore', this.toggleExplore);
       topic.subscribe('toggle-nav', this.toggleNav);
       topic.subscribe('toggle-storymap', this.toggleStorymap);
+    }
+
+    this.toggleExplore = function () {
+      // Set state
+      ik.wrapper.state.set('wrapper-state', 'explore');
     }
 
     this.toggleStorymap = function () {
@@ -129,6 +148,12 @@ define([
     /**
      * Wrapper state changes
      */
+    this.showExplore = function () {
+      $('#menu').hide();
+      $('#interaction').children().hide();
+      $('.interaction__explore').show();
+    }
+
     this.showNav = function () {
       // Hide the menu and storymap
       $('#menu').hide();
@@ -173,6 +198,10 @@ define([
      */
     var toggleNav = function () {
       topic.publish('toggle-nav');
+    }
+
+    var toggleExplore = function () {
+      topic.publish('toggle-explore');
     }
 
     var toggleStorymap = function (appid) {

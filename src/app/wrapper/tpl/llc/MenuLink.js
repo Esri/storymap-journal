@@ -4,6 +4,8 @@ define([
   menuLinkTpl
 ) {
   return function MenuLink () {
+    console.log('wrapper.tpl.llc.MenuLink -- init');
+
     // Populate links
     Object.keys(pages).forEach(function (page) {
       $('.interaction__nav__menu ul').append(menuLinkTpl({
