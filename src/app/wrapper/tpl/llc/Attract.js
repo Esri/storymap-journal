@@ -6,9 +6,9 @@ define([
   return function Attract () {
     console.log('wrapper.tpl.llc.Attract -- init');
 
-    $('.interaction__attract').html(attractTpl());
+    $('#menu').hide();
 
-    console.log($('.interaction__attract div')[0]);
+    $('.interaction__attract').html(attractTpl());
 
     $('.interaction__attract div h1')[0].addEventListener('click', function (e) {
       e.preventDefault();

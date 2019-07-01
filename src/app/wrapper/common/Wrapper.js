@@ -6,6 +6,7 @@ define([
   'dojo/Stateful',
   './Info',
   './Menu',
+  './Bottom',
   '../tpl/llc/Nav',
   '../tpl/llc/Attract',
   '../tpl/llc/Explore'
@@ -17,6 +18,7 @@ define([
   Stateful,
   Info,
   Menu,
+  Bottom,
   Nav,
   Attract,
   Explore
@@ -35,17 +37,20 @@ define([
       // Initialize the Info Panel
       new Info();
 
-      // Initialize Menu
-      new Menu();
+      // Intialize Attract
+      new Attract();
 
       // Initialize the Menu
       new Nav();
 
-      // Intialize Attract
-      new Attract();
-
       // Initialize Explore
       new Explore();
+
+      // Initialize Menu
+      new Menu();
+
+      // Initialize Bottom border
+      new Bottom();
 
       // Initial States
       this.state.set('wrapper-state', 'attract');

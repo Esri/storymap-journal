@@ -1,4 +1,13 @@
 .no-touch {
   background: gray;
-  flex: 1;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#interaction {
+  height: 640px;
 }
