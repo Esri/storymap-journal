@@ -2,7 +2,7 @@ require(
 	[
 		"storymaps/common/Core",
 		"storymaps/tpl/core/MainView",
-    "menu/common/wrapper",
+    "menu/common/Wrapper",
 		"storymaps/common/builder/Builder",
 		"storymaps/tpl/builder/BuilderView"
 	],
