@@ -849,8 +849,8 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 		function handleWindowResize()
 		{
-			var widthViewport = $("body").width(),
-				heightViewport = $("body").height(),
+			var widthViewport = $("#interaction").width(),
+				heightViewport = $("#interaction").height(),
 				heightAboveMap = 0,
 				widthSideMap = 0,
 				forceDesktop = _urlParams.forceDesktop !== undefined || app.indexCfg.forceDesktop,
