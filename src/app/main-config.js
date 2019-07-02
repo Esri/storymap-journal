@@ -164,19 +164,21 @@ function reset (appid = '') {
 
   app.isReset = true;
 
-  ik.wrapper.toggleStorymap();
+  ik.wrapper.toggleStorymap(appid);
 
   // Back up some variables which give 
-  configOptions.helperServices = app.portal.helperServices;
-
-  // Set new appid
-  if (appid.length > 0) {
-    configOptions.appid = appid;
+  if (app.portal && app.portal.helperServices) {
+    configOptions.helperServices = app.portal.helperServices;
   }
 
-  Object.keys(app.events).forEach(function (event) {
-    app.events[event].remove();
-  });
+  // Set new appid
+  configOptions.appid = appid;
+
+  if (app.events) {
+    Object.keys(app.events).forEach(function (event) {
+      app.events[event].remove();
+    });
+  }
 
   // Start the application
   bootstrap(true);

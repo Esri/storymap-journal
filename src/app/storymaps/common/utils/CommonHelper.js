@@ -98,7 +98,6 @@ define(["dojo/cookie",
 			getAppID: function(isProd)
 			{
 				var urlParams = this.getUrlParams();
-
 				if( app.indexCfg && app.indexCfg.appid )
 					return app.indexCfg.appid;
 

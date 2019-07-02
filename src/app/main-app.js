@@ -68,7 +68,9 @@ else {
 					}
 					else {
             // Creates hthe Story Map
-						Core.init(new MainView());
+            if (configOptions.appid.length) {
+              Core.init(new MainView());
+            }
 
             // Renders the menu
             var ikWrapper = new Wrapper();

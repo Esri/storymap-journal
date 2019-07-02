@@ -109,14 +109,19 @@ define([
       ik.wrapper.state.set('wrapper-state', 'explore');
     }
 
-    this.toggleStorymap = function () {
+    this.toggleStorymap = function (appid) {
       // Set state
+      ik.wrapper.setAppId(appid);
       ik.wrapper.state.set('wrapper-state', 'storymap');
     }
 
     this.toggleNav = function () {
       // Set state
       ik.wrapper.state.set('wrapper-state', 'nav');
+    }
+
+    this.setAppId = function (appid) {
+      ik.wrapper.state.set('appid', appid);
     }
 
     /**
@@ -129,11 +134,11 @@ define([
     this.storyNavigatedSection = function (index) {
       console.debug('Story Navigated Section', index);
 
-      var currentHistory = this.state.get('navigation-history');
+      var currentHistory = ik.wrapper.state.get('navigation-history');
 
       currentHistory.push(index);
 
-      this.state.set('navigation-history', currentHistory);
+      ik.wrapper.state.set('navigation-history', currentHistory);
     }
 
     this.storyTplReady = function () {

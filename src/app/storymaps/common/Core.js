@@ -102,6 +102,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			// Keep only some properties in development
 			else if ( !isProd() ) {
 				app.indexCfg = {
+          appid: app.indexCfg.appid, // Keep App ID
 					proxyurl: app.indexCfg.proxyurl,
 					sharingurl: app.indexCfg.sharingurl,
 					username: app.indexCfg.username,
