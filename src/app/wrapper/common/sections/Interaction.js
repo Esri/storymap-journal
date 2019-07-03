@@ -13,6 +13,9 @@ define([
         case 'active':
           this.renderActive();
           break;
+        case 'storymaps':
+          this.renderStorymaps();
+          break;
         default: // attract screen
           this.renderAttract();
       }
@@ -20,13 +23,33 @@ define([
       ik.wrapper.states[currentState].show();
     }
 
+    /**
+     * Render Templates
+     * Bind Javascript Events
+     */
+
     this.renderActive = function () {
-      $('.interaction__active').html(interactionActiveTpl())
+      var activeClass = '.interaction__active';
+
+      $(activeClass).html(interactionActiveTpl());
+
+      $(activeClass + ' [data-nav]').each(function (i,ele) {
+        var data = $(ele).data();
+
+        $(ele).click(function (e){
+          e.preventDefault();
+          ik.wrapper.showStorymap(data[data.nav]);
+          reset(data[data.nav]);
+        })
+
+      });
     }
 
     this.renderAttract = function () {
-      $('.interaction__attract').html(interactionAttractTpl())
+      $('.interaction__attract').html(interactionAttractTpl());
     }
+
+    this.renderStorymaps = function () { }
 
     return {
       render: render.bind(this)

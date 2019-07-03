@@ -7,6 +7,7 @@ define([
   './states/Active',
   './states/Attract',
   './states/Explore',
+  './states/Storymap',
   './sections/Nav',
   './sections/Info',
   './sections/Interaction',
@@ -21,6 +22,7 @@ define([
   Active,
   Attract,
   Explore,
+  Storymap,
   Nav,
   Interaction,
   Info,
@@ -35,6 +37,7 @@ define([
     var active = new Active();
     var attract = new Attract();
     var explore = new Explore();
+    var storymap = new Storymap();
 
     // Wrapper sections
     var info = new Info();
@@ -93,8 +96,8 @@ define([
             topic.publish('show-explore');
             break;
           case 'storymap':
-            console.log('Wrapper State storymap: AppId ', ik.wrapper.state.get('appid'));
-            topic.publish('show-storymap');
+            ik.wrapper.sections.info.render();
+            ik.wrapper.sections.interaction.render();
             break;
           case 'nav':
             topic.publish('show-nav');
@@ -123,9 +126,9 @@ define([
       ik.wrapper.states.explore.show();
     }
 
-    this.toggleStorymap = function (appid) {
+    this.showStorymap = function (appid) {
       // Set state
-      ik.wrapper.setAppId(appid);
+      ik.wrapper.state.set('appid', appid);
       ik.wrapper.state.set('wrapper-state', 'storymap');
     }
 
@@ -176,12 +179,6 @@ define([
       $('.interaction__nav').show();
     }
 
-    this.showStorymap = function () {
-      $('#menu').show();
-      $('#interaction').children().hide();
-      $('.interaction__storymap').show();
-    }
-
     /**
      * Wrapper callbacks
      */
@@ -228,6 +225,7 @@ define([
       showActive: this.showActive,
       showAttract: this.showAttract,
       showExplore: this.showExplore,
+      showStorymap: this.showStorymap,
       sections: {
         info: info,
         interaction: interaction
@@ -235,7 +233,8 @@ define([
       states: {
         active: active,
         attract: attract,
-        explore: explore
+        explore: explore,
+        storymap: storymap
       }
     }
   }
