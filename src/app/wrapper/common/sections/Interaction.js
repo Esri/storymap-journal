@@ -41,7 +41,6 @@ define([
           ik.wrapper.showStorymap(data[data.nav]);
           reset(data[data.nav]);
         })
-
       });
     }
 

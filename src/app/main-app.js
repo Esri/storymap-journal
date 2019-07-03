@@ -73,9 +73,8 @@ else {
             }
 
             // Renders the menu
-            var ikWrapper = new Wrapper();
-            ikWrapper.init();
-            ik.wrapper = ikWrapper;
+            ik.wrapper = new Wrapper();
+            ik.wrapper.init();
 					}
 				}
 			);

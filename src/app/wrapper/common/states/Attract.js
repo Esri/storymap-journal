@@ -17,9 +17,8 @@ define([
 
       $('.interaction__attract').html(attractInteractionTpl());
 
-      $('.interaction__attract div h1')[0].addEventListener('click', function (e) {
-        e.preventDefault();
-        ik.wrapper.showActive();
+      $('.interaction__attract [data-nav]').each(function (i, ele) {
+        ik.wrapper.createLinks($(ele));
       })
 
       $('.info__attract').html(attractInfoTpl({

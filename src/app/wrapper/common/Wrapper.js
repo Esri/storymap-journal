@@ -34,53 +34,49 @@ define([
     var state = new Stateful();
 
     // State controllers
-    var active = new Active();
-    var attract = new Attract();
-    var explore = new Explore();
-    var storymap = new Storymap();
+    var active = {};
+    var attract = {};
+    var explore = {};
+    var storymap = {};
 
     // Wrapper sections
-    var info = new Info();
-    var interaction = new Interaction();
-    var nav = new Nav();
-    var menu = new Menu();
-    var bottom = new Bottom();
+    var info = {};
+    var interaction = {};
+    var nav = {};
+    var menu = {};
+    var bottom = {};
 
     var init = function() {
       console.log('wrapper.common.Wrapper - init');
 
-      // Initialize state controllers
-      active.init();
-      attract.init();
-      explore.init();
+      // State controllers
+      this.states.active = new Active();
+      this.states.attract = new Attract();
+      this.states.explore = new Explore();
+      this.states.storymap = new Storymap();
 
-      // // Storymap subscribers
-      // topic.subscribe('tpl-ready', this.storyTplReady);
-      // topic.subscribe('story-navigate-section', this.storyNavigatedSection);
-      // topic.subscribe('story-is-loading', this.storyIsLoading);
+      // Wrapper sections
+      this.sections.info = new Info();
+      this.sections.interaction = new Interaction();
+      this.sections.nav = new Nav();
+      this.sections.menu = new Menu();
+      this.sections.bottom = new Bottom();
 
-      // // Wrapper-State Changes
-      // topic.subscribe('show-explore', this.showExplore);
-      // topic.subscribe('show-nav', this.showNav);
-      // topic.subscribe('show-storymap', this.showStorymap);
+      // Start with Attract state
+      this.states.attract.init();
 
-      // // Global functions (event) subscribers
-      // topic.subscribe('toggle-explore', this.toggleExplore);
-      // topic.subscribe('toggle-nav', this.toggleNav);
-      // topic.subscribe('toggle-storymap', this.toggleStorymap);
-
-      // Initial States
       this.state = state;
-      state.set('wrapper-state', 'attract');
 
-      state.set('navigation-history', []);
+      this.state.set('wrapper-state', 'attract');
+
+      this.state.set('navigation-history', []);
 
             // Story Map ID
-      state.watch('appid', function() {
+      this.state.watch('appid', function() {
         console.debug('AppId changed to ' + state.get('appid'));
       })
 
-      // Wrapper States
+      // Wrapper State watcher
       this.state.watch('wrapper-state', function () {
         console.log('Current wrapper state:', ik.wrapper.state.get('wrapper-state'));
 
@@ -179,49 +175,21 @@ define([
       $('.interaction__nav').show();
     }
 
-    /**
-     * Wrapper callbacks
-     */
-    this.wrapperNavigatedToAttractScreen = function () {}
+    var createLinks = function (element) {
+      var data = element.data();
+      var state = data.nav;
+      var showState = 'show' + state.charAt(0).toUpperCase() + state.slice(1);
+      var option = data[data.nav];
 
-    this.wrapperNavigatedToStorymap = function () {}
-
-    this.wrapperNavigatedToRegionMenu = function() {}
-
-    this.wrapperNavigatedToFullMenu = function () {}
-
-    this.wrapperNavigatedToMapMenu = function () {}
-
-    /**
-     * Navigation Methods
-     */
-    this.wrapperToAttractScreen = function () {}
-
-    this.wrapperToStorymap = function (storymap) {}
-
-    this.wrapperToRegionMenu = function(region) {}
-
-    this.wrapperToFullMenu = function () {}
-
-    this.wrapperToMapMenu = function () {}
-
-    /**
-     * Global functions
-     */
-    var toggleNav = function () {
-      topic.publish('toggle-nav');
-    }
-
-    var toggleExplore = function () {
-      topic.publish('toggle-explore');
-    }
-
-    var toggleStorymap = function (appid) {
-      topic.publish('toggle-storymap');
+      element.click(function (e) {
+        e.preventDefault();
+        ik.wrapper[showState]();
+      })
     }
 
     return {
       init: init,
+      createLinks: createLinks,
       showActive: this.showActive,
       showAttract: this.showAttract,
       showExplore: this.showExplore,
