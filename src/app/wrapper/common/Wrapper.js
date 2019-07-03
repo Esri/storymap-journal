@@ -4,73 +4,91 @@ define([
   'lib-build/css!./Wrapper',
   'dojo/topic',
   'dojo/Stateful',
-  './Info',
-  './Menu',
-  './Bottom',
-  '../tpl/llc/Nav',
-  '../tpl/llc/Attract',
-  '../tpl/llc/Explore'
+  './states/Active',
+  './states/Attract',
+  './states/Explore',
+  './sections/Nav',
+  './sections/Info',
+  './sections/Interaction',
+  './sections/Menu',
+  './sections/Bottom',
 ], function(
   fontAwesomeCss,
   wrapperTpl,
   wrapperCss,
   topic,
   Stateful,
+  Active,
+  Attract,
+  Explore,
+  Nav,
+  Interaction,
   Info,
   Menu,
-  Bottom,
-  Nav,
-  Attract,
-  Explore
+  Bottom
 ) {
   return function Wrapper() {
     // Have a wrapper state
     var state = new Stateful();
 
-    this.init = function() {
+    // State controllers
+    var active = new Active();
+    var attract = new Attract();
+    var explore = new Explore();
+
+    // Wrapper sections
+    var info = new Info();
+    var interaction = new Interaction();
+    var nav = new Nav();
+    var menu = new Menu();
+    var bottom = new Bottom();
+
+    var init = function() {
       console.log('wrapper.common.Wrapper - init');
 
-      this.state = state;
+      // Initialize state controllers
+      active.init();
+      attract.init();
+      explore.init();
 
-      this.topicSubscribers();
+      // // Storymap subscribers
+      // topic.subscribe('tpl-ready', this.storyTplReady);
+      // topic.subscribe('story-navigate-section', this.storyNavigatedSection);
+      // topic.subscribe('story-is-loading', this.storyIsLoading);
 
-      // Initialize the Info Panel
-      new Info();
+      // // Wrapper-State Changes
+      // topic.subscribe('show-explore', this.showExplore);
+      // topic.subscribe('show-nav', this.showNav);
+      // topic.subscribe('show-storymap', this.showStorymap);
 
-      // Intialize Attract
-      new Attract();
-
-      // Initialize the Menu
-      new Nav();
-
-      // Initialize Explore
-      new Explore();
-
-      // Initialize Menu
-      new Menu();
-
-      // Initialize Bottom border
-      new Bottom();
+      // // Global functions (event) subscribers
+      // topic.subscribe('toggle-explore', this.toggleExplore);
+      // topic.subscribe('toggle-nav', this.toggleNav);
+      // topic.subscribe('toggle-storymap', this.toggleStorymap);
 
       // Initial States
-      this.state.set('wrapper-state', 'attract');
+      this.state = state;
+      state.set('wrapper-state', 'attract');
 
-      this.state.set('navigation-history', []);
+      state.set('navigation-history', []);
 
-      this.stateWatchers();
-    }
-
-
-
-    this.stateWatchers = function () {
-      // Story Map ID
-      this.state.watch('appid', function() {
+            // Story Map ID
+      state.watch('appid', function() {
         console.debug('AppId changed to ' + state.get('appid'));
       })
 
       // Wrapper States
       this.state.watch('wrapper-state', function () {
+        console.log('Current wrapper state:', ik.wrapper.state.get('wrapper-state'));
+
         switch (ik.wrapper.state.get('wrapper-state')) {
+          case 'active':
+            ik.wrapper.sections.info.render();
+            ik.wrapper.sections.interaction.render();
+            break;
+          case 'attract':
+            ik.wrapper.sections.info.render();
+            ik.wrapper.sections.interaction.render();
           case 'explore':
             topic.publish('show-explore');
             break;
@@ -82,31 +100,27 @@ define([
             topic.publish('show-nav');
             break;
           default:
-            console.log('state unrecognized');
+            // nothing
         }
       })
     }
 
-    this.topicSubscribers = function () {
-      // Storymap subscribers
-      topic.subscribe('tpl-ready', this.storyTplReady);
-      topic.subscribe('story-navigate-section', this.storyNavigatedSection);
-      topic.subscribe('story-is-loading', this.storyIsLoading);
-
-      // Wrapper-State Changes
-      topic.subscribe('show-explore', this.showExplore);
-      topic.subscribe('show-nav', this.showNav);
-      topic.subscribe('show-storymap', this.showStorymap);
-
-      // Global functions (event) subscribers
-      topic.subscribe('toggle-explore', this.toggleExplore);
-      topic.subscribe('toggle-nav', this.toggleNav);
-      topic.subscribe('toggle-storymap', this.toggleStorymap);
+    this.showActive = function () {
+      // Set state
+      ik.wrapper.state.set('wrapper-state', 'active');
     }
 
-    this.toggleExplore = function () {
+    this.showAttract = function () {
+      // Set state
+      ik.wrapper.state.set('wrapper-state', 'attract');
+    }
+
+    this.showExplore = function () {
       // Set state
       ik.wrapper.state.set('wrapper-state', 'explore');
+
+      // Show content for Explore state
+      ik.wrapper.states.explore.show();
     }
 
     this.toggleStorymap = function (appid) {
@@ -153,15 +167,6 @@ define([
 
     this.storyInitCompleted = function () {
       console.debug('Story init completed');
-    }
-
-    /**
-     * Wrapper state changes
-     */
-    this.showExplore = function () {
-      $('#menu').hide();
-      $('#interaction').children().hide();
-      $('.interaction__explore').show();
     }
 
     this.showNav = function () {
@@ -216,6 +221,22 @@ define([
 
     var toggleStorymap = function (appid) {
       topic.publish('toggle-storymap');
+    }
+
+    return {
+      init: init,
+      showActive: this.showActive,
+      showAttract: this.showAttract,
+      showExplore: this.showExplore,
+      sections: {
+        info: info,
+        interaction: interaction
+      },
+      states: {
+        active: active,
+        attract: attract,
+        explore: explore
+      }
     }
   }
 });
