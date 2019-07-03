@@ -123,7 +123,7 @@ define([
     }
 
     this.showStorymap = function (appid) {
-      // Set state
+      // Set states
       ik.wrapper.state.set('appid', appid);
       ik.wrapper.state.set('wrapper-state', 'storymap');
     }
@@ -179,11 +179,11 @@ define([
       var data = element.data();
       var state = data.nav;
       var showState = 'show' + state.charAt(0).toUpperCase() + state.slice(1);
-      var option = data[data.nav];
+      var option = data[data.nav] || null;
 
       element.click(function (e) {
         e.preventDefault();
-        ik.wrapper[showState]();
+        ik.wrapper[showState](option);
       })
     }
 

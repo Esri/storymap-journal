@@ -13,8 +13,8 @@ define([
         case 'active':
           this.renderActive();
           break;
-        case 'storymaps':
-          this.renderStorymaps();
+        case 'storymap':
+          this.renderStorymap();
           break;
         default: // attract screen
           this.renderAttract();
@@ -34,13 +34,7 @@ define([
       $(activeClass).html(interactionActiveTpl());
 
       $(activeClass + ' [data-nav]').each(function (i,ele) {
-        var data = $(ele).data();
-
-        $(ele).click(function (e){
-          e.preventDefault();
-          ik.wrapper.showStorymap(data[data.nav]);
-          reset(data[data.nav]);
-        })
+        ik.wrapper.createLinks($(ele));
       });
     }
 
@@ -48,7 +42,10 @@ define([
       $('.interaction__attract').html(interactionAttractTpl());
     }
 
-    this.renderStorymaps = function () { }
+    this.renderStorymap = function (appid) {
+      var appid =ik.wrapper.state.get('appid');
+      reset(appid);
+    }
 
     return {
       render: render.bind(this)
