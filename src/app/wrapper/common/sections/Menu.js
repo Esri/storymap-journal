@@ -10,11 +10,5 @@ define([
 
     // Add menu
     $('#menu').append(menuTpl());
-
-    // Attach events to the menu bar
-    $('.menu__button')[0].addEventListener('click', function (e) {
-      e.preventDefault();
-      ik.wrapper.toggleNav();
-    })
   }
 });

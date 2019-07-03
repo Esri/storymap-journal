@@ -49,6 +49,10 @@ define([
     var init = function() {
       console.log('wrapper.common.Wrapper - init');
 
+      /**
+       * Initialize State and Section classes
+       */
+
       // State controllers
       this.states.active = new Active();
       this.states.attract = new Attract();
@@ -62,24 +66,38 @@ define([
       this.sections.menu = new Menu();
       this.sections.bottom = new Bottom();
 
-      // Start with Attract state
+      /**
+       * When app starts set the first states.
+       */
       this.states.attract.init();
 
       this.state = state;
 
       this.state.set('wrapper-state', 'attract');
 
+      this.state.set('rendering', false);
+
       this.state.set('navigation-history', []);
 
-            // Story Map ID
+      /**
+       * appid watcher.
+       * Kick off necessary methods here if the storymap has changed but wrapper-state has not.
+       */
       this.state.watch('appid', function() {
         console.debug('AppId changed to ' + state.get('appid'));
       })
 
-      // Wrapper State watcher
+      /**
+       * Wrapper state watcher. Handles wrapper navigation.
+       * Passes current state to section renderers.
+       */
       this.state.watch('wrapper-state', function () {
         console.log('Current wrapper state:', ik.wrapper.state.get('wrapper-state'));
 
+        // Kick of the rendering lifecycle
+        ik.wrapper.state.set('rendering', true);
+
+        // Render the appropriate sections
         switch (ik.wrapper.state.get('wrapper-state')) {
           case 'active':
             ik.wrapper.sections.info.render();
@@ -89,92 +107,67 @@ define([
             ik.wrapper.sections.info.render();
             ik.wrapper.sections.interaction.render();
           case 'explore':
-            topic.publish('show-explore');
             break;
           case 'storymap':
             ik.wrapper.sections.info.render();
             ik.wrapper.sections.interaction.render();
             break;
           case 'nav':
-            topic.publish('show-nav');
             break;
           default:
             // nothing
         }
-      })
-    }
 
+        // End rendering lifecycle
+        ik.wrapper.state.set('rendering', false);
+      })
+
+      /**
+       * Section render lifecyle state watcher.
+       */
+      this.state.watch('rendering', function () {
+        if (ik.wrapper.state.get('rendering') === true) {
+          // Begin Render
+          console.log('Render period begins');
+        } else {
+          // End Render
+          console.log('Render period ends', ik.wrapper.states);
+          ik.wrapper.states[ik.wrapper.state.get('wrapper-state')].show();
+        }
+      })
+    } // End init()
+
+    /**
+     * Public methods, avail globally, which set the wrapper state.
+     */
     this.showActive = function () {
-      // Set state
       ik.wrapper.state.set('wrapper-state', 'active');
     }
 
     this.showAttract = function () {
-      // Set state
       ik.wrapper.state.set('wrapper-state', 'attract');
     }
 
     this.showExplore = function () {
-      // Set state
       ik.wrapper.state.set('wrapper-state', 'explore');
-
-      // Show content for Explore state
-      ik.wrapper.states.explore.show();
-    }
-
-    this.showStorymap = function (appid) {
-      // Set states
-      ik.wrapper.state.set('appid', appid);
-      ik.wrapper.state.set('wrapper-state', 'storymap');
-    }
-
-    this.toggleNav = function () {
-      // Set state
-      ik.wrapper.state.set('wrapper-state', 'nav');
-    }
-
-    this.setAppId = function (appid) {
-      ik.wrapper.state.set('appid', appid);
-    }
-
-    /**
-     * Dojo topic/state callbacks
-     */
-
-    /**
-     * Story listeners
-     */
-    this.storyNavigatedSection = function (index) {
-      console.debug('Story Navigated Section', index);
-
-      var currentHistory = ik.wrapper.state.get('navigation-history');
-
-      currentHistory.push(index);
-
-      ik.wrapper.state.set('navigation-history', currentHistory);
-    }
-
-    this.storyTplReady = function () {
-      console.debug('Story TPL Ready');
-    }
-
-    this.storyIsLoading = function(appid) {
-      console.debug('Story is loading', appid);
-
-      ik.wrapper.state.set('appid', appid);
-    }
-
-    this.storyInitCompleted = function () {
-      console.debug('Story init completed');
     }
 
     this.showNav = function () {
-      // Hide the menu and storymap
-      $('#menu').hide();
-      $('#interaction').children().hide();
-      $('.interaction__nav').show();
+      ik.wrapper.state.set('wrapper-state', 'nav');
     }
 
+    this.showStorymap = function (appid) {
+      if (ik.wrapper.state.get('appid') !== appid) {
+        ik.wrapper.state.set('appid', appid);
+      }
+
+      ik.wrapper.state.set('wrapper-state', 'storymap');
+    }
+
+    /**
+     * During section render this function will pass click() events
+     * to elements with recognized data attributes.
+     */
     var createLinks = function (element) {
       var data = element.data();
       var state = data.nav;

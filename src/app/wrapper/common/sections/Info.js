@@ -23,8 +23,6 @@ define([
         default: // attract screen
           this.renderAttract();
       }
-
-      ik.wrapper.states[currentState].show();
     }
 
     /**
