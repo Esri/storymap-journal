@@ -33,21 +33,21 @@ define([
     this.renderActive = function () {
       $('.info__active').html(infoActiveTpl({
         h1: 'LEAF Love & Connections',
-        h2: `(${ik.wrapper.state.get('wrapper-state')} screen)`
+        h2: ik.wrapper.state.get('wrapper-state') + screen
       }))
     }
 
     this.renderAttract = function () {
       $('.info__attract').html(infoAttractTpl({
         h1: 'LEAF Love & Connections',
-        h2: `(${ik.wrapper.state.get('wrapper-state')} screen)`
+        h2: ik.wrapper.state.get('wrapper-state') + screen
       }))
     }
 
     this.renderStorymap = function () {
       $('.info__storymap').html(infoStorymapTpl({
         h1: 'LEAF Love & Connections',
-        h2: `(${ik.wrapper.state.get('wrapper-state')} screen)`
+        h2: ik.wrapper.state.get('wrapper-state') + screen
       }))
 
 
