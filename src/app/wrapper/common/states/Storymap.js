@@ -1,6 +1,8 @@
 define([], function () {
   return function Storymap () {
     var show = function () {
+      $('#container').css('background-image', 'unset');
+
       $('#menu').show();
 
       // Interaction Element

@@ -1,3 +1,11 @@
 #info {
   height: 1080px;
 }
+
+#info > div {
+  height: 100%;
+}
+
+#info .info__storymap .content {
+  height: 100%;
+}

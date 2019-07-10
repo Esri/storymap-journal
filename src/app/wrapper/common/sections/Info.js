@@ -41,8 +41,6 @@ define([
 
     this.renderStorymap = function () {
       $('.info__storymap').html(infoStorymapTpl(ik.wrapper.layout.state.storymap.section.info))
-
-
     }
 
     return {
