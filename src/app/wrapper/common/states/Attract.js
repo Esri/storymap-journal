@@ -7,11 +7,13 @@ define([
 ) {
   return function Attract () {
     var init = function () {
-      /**
+    /**
      * Set up the default view on the attract screen
      */
 
       console.log('wrapper.tpl.llc.Attract -- init');
+
+      $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');
 
       $('#menu').hide();
 
@@ -21,16 +23,15 @@ define([
         ik.wrapper.createLinks($(ele));
       })
 
-      $('.info__attract').html(attractInfoTpl({
-        h1: 'LEAF Love & Connections',
-        h2: '(attract screen)'
-      }));
+      $('.info__attract').html(attractInfoTpl(ik.wrapper.layout.state.attract.section.info));
 
       $('.interaction__attract').show();
       $('.info__attract').show();
     }
 
     var show = function () {
+      $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');
+
       // Do not show the menu
       $('#menu').hide();
 

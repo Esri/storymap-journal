@@ -4,6 +4,7 @@ define([
   'lib-build/css!./Wrapper',
   'dojo/topic',
   'dojo/Stateful',
+  'dojo/request',
   './states/Active',
   './states/Attract',
   './states/Explore',
@@ -19,6 +20,7 @@ define([
   wrapperCss,
   topic,
   Stateful,
+  request,
   Active,
   Attract,
   Explore,
@@ -32,6 +34,10 @@ define([
   return function Wrapper() {
     // Have a wrapper state
     var state = new Stateful();
+
+    // Global Wrapper Data
+    var layout = {};
+    var storymaps = {};
 
     // State controllers
     var active = {};
@@ -48,6 +54,32 @@ define([
 
     var init = function() {
       console.log('wrapper.common.Wrapper - init');
+
+      // Initialize storymaps data
+      request('/api/layout.json', {
+        sync: true,
+        handleAs: 'json'
+      }).then(
+        function(json) {
+          ik.wrapper.layout = json;
+        },
+        function(error) {
+          console.error(error.message);
+        }
+      );
+
+      // Initialize storymaps data
+      request('/api/storymaps.json', {
+        sync: true,
+        handleAs: 'json'
+      }).then(
+        function(json) {
+          ik.wrapper.storymaps = json;
+        },
+        function(error) {
+          console.error(error.message);
+        }
+      );
 
       /**
        * Initialize State and Section classes
@@ -96,6 +128,9 @@ define([
 
         // Kick of the rendering lifecycle
         ik.wrapper.state.set('rendering', true);
+
+        $('#container').removeClass();
+        $('#container').addClass(ik.wrapper.state.get('wrapper-state'));
 
         // Render the appropriate sections
         switch (ik.wrapper.state.get('wrapper-state')) {
@@ -183,20 +218,22 @@ define([
     return {
       init: init,
       createLinks: createLinks,
-      showActive: this.showActive,
-      showAttract: this.showAttract,
-      showExplore: this.showExplore,
-      showStorymap: this.showStorymap,
+      layout: layout,
       sections: {
         info: info,
         interaction: interaction
       },
+      showActive: this.showActive,
+      showAttract: this.showAttract,
+      showExplore: this.showExplore,
+      showStorymap: this.showStorymap,
       states: {
         active: active,
         attract: attract,
         explore: explore,
         storymap: storymap
-      }
+      },
+      storymaps: storymaps
     }
   }
 });

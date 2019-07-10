@@ -11,19 +11,16 @@ define([
      * Set up the default view on the attract screen
      */
     var init = function () {
-      // console.log('wrapper.tpl.llc.Active -- init');
+      console.log('wrapper.tpl.llc.Active -- init');
 
-      // $('.interaction__active').html(activeInteractionTpl());
-      // $('.info__active').html(activeInfoTpl({
-      //   h1: 'LEAF Love & Connections',
-      //   h2: '(attracts screen)'
-      // }))
+      $('.interaction__active').html(activeInteractionTpl());
+      $('.info__active').html(activeInfoTpl(ik.wrapper.layout.state.active.section.info))
 
-      // $('#explore-1').click(function (e) {
-      //   e.preventDefault();
+      $('#explore-1').click(function (e) {
+        e.preventDefault();
 
-      //   reset('602866fef9d14b20bd75b83d94fd6bca');
-      // })
+        reset('602866fef9d14b20bd75b83d94fd6bca');
+      })
     }
 
     /**
@@ -31,6 +28,8 @@ define([
      * Hide all others
      */
     var show = function () {
+      $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.active.background.img + ')');
+
       // Do not show the menu
       $('#menu').hide();
 

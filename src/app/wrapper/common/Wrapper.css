@@ -1,8 +1,10 @@
 .no-touch {
-  background: gray;
+  background: transparent;
 }
 
 #container {
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   height: 100%;

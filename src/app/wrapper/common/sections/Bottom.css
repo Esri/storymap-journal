@@ -1,4 +1,8 @@
 #bottom {
-  background-color: tomato;
+  background-color: transparent;
   flex: 1;
+}
+
+.storymap #bottom {
+  background-color: black;
 }

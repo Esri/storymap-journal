@@ -1,0 +1,40 @@
+{
+  "state": {
+    "attract": {
+      "background": {
+        "img": "/static/images/geo-color-2.png"
+      },
+      "section": {
+        "info": {
+          "img": "/static/images/leaf-community-arts.jpg",
+          "h1": "LEAF Love & Connections"
+        },
+        "interaction": {}
+      }
+    },
+    "active": {
+      "background": {
+        "img": "/static/images/la-sunset.jpg"
+      },
+      "section": {
+        "info": {
+          "img": "/static/images/leaf-community-arts.jpg",
+          "h1": "Love & Connections"
+        },
+        "interaction": {}
+      }
+    },
+    "storymap": {
+      "background": {
+        "img": "/static/images/la-sunset.jpg"
+      },
+      "section": {
+        "info": {
+          "img": "/static/images/leaf-community-arts.jpg",
+          "h1": "Love & Connections"
+        },
+        "interaction": {}
+      }
+    }
+  }
+}
