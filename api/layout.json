@@ -3,12 +3,15 @@
     "attract": {
       "background": {
         "img": "/static/images/attract-background.png",
-        "video": "/static/video/loop.mp4"
+        "video": {
+          "src": "/static/video/LIRwandaKidLearningDrum18-encoded.mp4",
+          "type": "video/mp4"
+        }
       },
       "section": {
         "info": {
-          "img": "/static/images/leaf-community-arts.jpg",
-          "h1": "LEAF Love & Connections"
+          "img": "/static/images/leaf-community-arts.png",
+          "h1": "Love & Connections"
         },
         "interaction": {}
       }

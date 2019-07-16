@@ -1,4 +1,5 @@
 #info {
+  color: #ffffff;
   height: 1080px;
 }
 
@@ -8,4 +9,19 @@
 
 #info .info__storymap .content {
   height: 100%;
+}
+
+.info__attract__img {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 35px;
+  padding-top: 305px;
+  width: 550px;
+}
+
+.info__attract h1 {
+  font-family: 'Habana';
+  font-size: 120px;
+  line-height: 110px;
+  text-align: center;
 }

@@ -2,7 +2,7 @@ define([
   'lib-build/tpl!../../tpl/sections/Info/Active',
   'lib-build/tpl!../../tpl/sections/Info/Attract',
   'lib-build/tpl!../../tpl/sections/Info/Storymap',
-  'lib-build/css!./Info'
+  'lib-build/css!./Interaction'
 ], function (
   infoActiveTpl,
   infoAttractTpl,

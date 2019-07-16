@@ -1,6 +1,7 @@
 define([
   'lib-build/tpl!../../tpl/sections/Interaction/Active',
-  'lib-build/tpl!../../tpl/sections/Interaction/Attract'
+  'lib-build/tpl!../../tpl/sections/Interaction/Attract',
+  'lib-build/css!./Info'
 ], function (
   interactionActiveTpl,
   interactionAttractTpl

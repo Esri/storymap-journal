@@ -1,0 +1,12 @@
+#interaction {
+  color: #ffffff;
+}
+
+.interaction__attract h1 {
+  color: #53B048;
+  font-family: 'Hallo Sans';
+  font-size: 40px;
+  line-height: 35px;
+  text-align: center;
+  text-transform: uppercase;
+}

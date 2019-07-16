@@ -18,7 +18,12 @@ define([
       // Set Background Video or Image
       if (ik.wrapper.layout.state.attract.background.video) {
         var video = $('#container video');
-        video.html('<source src="' + ik.wrapper.layout.state.attract.background.video + '" type="video/mp4">');
+        video.html('<source src="' + ik.wrapper.layout.state.attract.background.video.src + '" type="' + ik.wrapper.layout.state.attract.background.video.type + '">');
+
+        if (ik.wrapper.layout.state.attract.background.img) {
+          video.attr('poster', ik.wrapper.layout.state.attract.background.img);
+        }
+
         video.show();
       } else if (ik.wrapper.layout.state.attract.background.img) {
         $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');
