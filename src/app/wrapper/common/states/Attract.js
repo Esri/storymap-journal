@@ -13,7 +13,17 @@ define([
 
       console.log('wrapper.tpl.llc.Attract -- init');
 
-      $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');
+      console.log(ik.wrapper);
+
+      // Set Background Video or Image
+      if (ik.wrapper.layout.state.attract.background.video) {
+        var video = $('#container video');
+        video.html('<source src="' + ik.wrapper.layout.state.attract.background.video + '" type="video/mp4">');
+        video.show();
+      } else if (ik.wrapper.layout.state.attract.background.img) {
+        $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');
+        $('#container').css('background-position', '50% 50%');
+      }
 
       $('#menu').hide();
 

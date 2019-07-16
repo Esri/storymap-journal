@@ -2,7 +2,8 @@
   "state": {
     "attract": {
       "background": {
-        "img": "/static/images/geo-color-2.png"
+        "img": "/static/images/attract-background.png",
+        "video": "/static/video/loop.mp4"
       },
       "section": {
         "info": {
