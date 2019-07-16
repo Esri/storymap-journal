@@ -2,11 +2,30 @@
   color: #ffffff;
 }
 
+/* Make sure the height of the interaction pane 
+ * spans the height
+ */
+.interaction__attract, .interaction__nav,
+.interaction__explore, .interaction__explore {
+  height: 100%;
+}
+
+/* Attract Screen */
+.interaction__attract > div {
+  height: 100%;
+}
+
 .interaction__attract h1 {
   color: #53B048;
   font-family: 'Hallo Sans';
   font-size: 40px;
   line-height: 35px;
+  padding-bottom: 35px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.interaction__attract img {
+  display: block;
+  margin: 0 auto;
 }
