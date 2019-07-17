@@ -5,37 +5,55 @@
       "id": "81124501642d4bca8fbb16b7e02ee475",
       "name": "What Is LEAF?",
       "language": "en",
-      "weight": 0
+      "weight": 0,
+      "theme": {
+        "color": "#C84107"
+      }
     },
     {
       "id": "2",
       "name": "LEAF Schools & Streets",
       "language": "en",
-      "weight": 0
+      "weight": 0,
+      "theme": {
+        "color": "#E5C031"
+      }
     },
     {
       "id": "3",
       "name": "LEAF International",
       "language": "en",
-      "weight": 0
+      "weight": 0,
+      "theme": {
+        "color": "#C65F20"
+      }
     },
     {
       "id": "4",
       "name": "LEAF Festival",
       "language": "en",
-      "weight": 0
+      "weight": 0,
+      "theme": {
+        "color": "#53B048"
+      }
     },
     {
       "id": "5",
       "name": "LEAF Downtown",
       "language": "en",
-      "weight": 0
+      "weight": 0,
+      "theme": {
+        "color": "#5DC5C7"
+      }
     },
     {
       "id": "6",
       "name": "LEAF Global",
       "language": "en",
-      "weight": 0
+      "weight": 0,
+      "theme": {
+        "color": "#B6AA82"
+      }
     }
   ]
 }

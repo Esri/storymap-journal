@@ -37,6 +37,9 @@ define([
     // Have a wrapper state
     var state = new Stateful();
 
+    // Initialize Utilities
+    var apiStorymap = new storymapUtil();
+
     // Global Wrapper Data
     var layout = {};
     var storymaps = {};
@@ -147,6 +150,7 @@ define([
             break;
           case 'storymap':
             ik.wrapper.sections.info.render();
+            ik.wrapper.sections.menu.render();
             ik.wrapper.sections.interaction.render();
             break;
           case 'nav':
@@ -220,6 +224,9 @@ define([
     }
 
     return {
+      api: {
+        storymap: apiStorymap
+      },
       init: init,
       createLinks: createLinks,
       layout: layout,

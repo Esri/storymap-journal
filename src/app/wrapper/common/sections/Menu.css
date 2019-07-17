@@ -1,4 +1,9 @@
 #menu {
   background: transparent;
-  height: 60px;
+}
+
+.menu__storymap__wrapper {
+  background-image: url('/static/svg/button-background.svg');
+  background-repeat: repeat;
+  height: 190px;
 }

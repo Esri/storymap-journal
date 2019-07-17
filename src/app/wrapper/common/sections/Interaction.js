@@ -55,7 +55,7 @@ define([
 
       ik.wrapper.storymaps.data.forEach(function (storymap, index) {
         $('.nav__list').append(StorymapButton({
-          color: ik.wrapper.layout.theme.storymaps.color[index],
+          color: storymap.theme.color,
           storymap: storymap.id,
           title: storymap.name
         }));
