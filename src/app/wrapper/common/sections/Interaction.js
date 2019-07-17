@@ -1,10 +1,12 @@
 define([
   'lib-build/tpl!../../tpl/sections/Interaction/Active',
   'lib-build/tpl!../../tpl/sections/Interaction/Attract',
+  'lib-build/tpl!../../tpl/sections/Interaction/Nav',
   'lib-build/css!./Info'
 ], function (
   interactionActiveTpl,
-  interactionAttractTpl
+  interactionAttractTpl,
+  interactionNavTpl
 ) {
   return function Interaction () {
     var render = function () {
@@ -16,6 +18,9 @@ define([
           break;
         case 'storymap':
           this.renderStorymap();
+          break;
+        case 'nav':
+          this.renderNav();
           break;
         default: // attract screen
           this.renderAttract();
@@ -39,6 +44,10 @@ define([
 
     this.renderAttract = function () {
       $('.interaction__attract').html(interactionAttractTpl());
+    }
+
+    this.renderNav = function () {
+      $('.interaction__nav').html(interactionNavTpl());
     }
 
     this.renderStorymap = function (appid) {

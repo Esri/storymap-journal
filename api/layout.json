@@ -28,6 +28,15 @@
         "interaction": {}
       }
     },
+    "nav": {
+      "section": {
+        "info": {
+          "img": "/static/images/leaf-community-arts.png",
+          "h1": "Love & Connections"
+        },
+        "interaction": {}
+      }
+    },
     "storymap": {
       "background": {
         "img": "/static/images/la-sunset.jpg"

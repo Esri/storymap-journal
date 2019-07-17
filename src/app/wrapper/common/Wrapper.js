@@ -9,8 +9,8 @@ define([
   './states/Active',
   './states/Attract',
   './states/Explore',
+  './states/Nav',
   './states/Storymap',
-  './sections/Nav',
   './sections/Info',
   './sections/Interaction',
   './sections/Menu',
@@ -26,8 +26,8 @@ define([
   Active,
   Attract,
   Explore,
-  Storymap,
   Nav,
+  Storymap,
   Interaction,
   Info,
   Menu,
@@ -45,12 +45,12 @@ define([
     var active = {};
     var attract = {};
     var explore = {};
+    var nav = {};
     var storymap = {};
 
     // Wrapper sections
     var info = {};
     var interaction = {};
-    var nav = {};
     var menu = {};
     var bottom = {};
 
@@ -91,12 +91,12 @@ define([
       this.states.active = new Active();
       this.states.attract = new Attract();
       this.states.explore = new Explore();
+      this.states.nav = new Nav();
       this.states.storymap = new Storymap();
 
       // Wrapper sections
       this.sections.info = new Info();
       this.sections.interaction = new Interaction();
-      this.sections.nav = new Nav();
       this.sections.menu = new Menu();
       this.sections.bottom = new Bottom();
 
@@ -150,6 +150,8 @@ define([
             ik.wrapper.sections.interaction.render();
             break;
           case 'nav':
+            ik.wrapper.sections.info.render();
+            ik.wrapper.sections.interaction.render();
             break;
           default:
             // nothing
@@ -228,11 +230,13 @@ define([
       showActive: this.showActive,
       showAttract: this.showAttract,
       showExplore: this.showExplore,
+      showNav: this.showNav,
       showStorymap: this.showStorymap,
       states: {
         active: active,
         attract: attract,
         explore: explore,
+        nav: nav,
         storymap: storymap
       },
       storymaps: storymaps

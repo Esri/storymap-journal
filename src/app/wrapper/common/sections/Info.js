@@ -1,11 +1,13 @@
 define([
   'lib-build/tpl!../../tpl/sections/Info/Active',
   'lib-build/tpl!../../tpl/sections/Info/Attract',
+  'lib-build/tpl!../../tpl/sections/Info/Nav',
   'lib-build/tpl!../../tpl/sections/Info/Storymap',
   'lib-build/css!./Interaction'
 ], function (
   infoActiveTpl,
   infoAttractTpl,
+  infoNavTpl,
   infoStorymapTpl,
   infoCss
 ) {
@@ -16,6 +18,9 @@ define([
       switch (currentState) {
         case 'active':
           this.renderActive();
+          break;
+        case 'nav':
+          this.renderNav();
           break;
         case 'storymap':
           this.renderStorymap();
@@ -37,6 +42,10 @@ define([
 
     this.renderAttract = function () {
       $('.info__attract').html(infoAttractTpl(ik.wrapper.layout.state.attract.section.info))
+    }
+
+    this.renderNav = function () {
+      $('.info__nav').html(infoNavTpl(ik.wrapper.layout.state.nav.section.info))
     }
 
     this.renderStorymap = function () {
