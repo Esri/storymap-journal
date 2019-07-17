@@ -2,11 +2,13 @@ define([
   'lib-build/tpl!../../tpl/sections/Interaction/Active',
   'lib-build/tpl!../../tpl/sections/Interaction/Attract',
   'lib-build/tpl!../../tpl/sections/Interaction/Nav',
+  'lib-build/tpl!../../tpl/components/StorymapButton',
   'lib-build/css!./Info'
 ], function (
   interactionActiveTpl,
   interactionAttractTpl,
-  interactionNavTpl
+  interactionNavTpl,
+  StorymapButton,
 ) {
   return function Interaction () {
     var render = function () {
@@ -47,7 +49,21 @@ define([
     }
 
     this.renderNav = function () {
-      $('.interaction__nav').html(interactionNavTpl());
+      var activeClass = '.interaction__nav';
+
+      $(activeClass).html(interactionNavTpl());
+
+      ik.wrapper.storymaps.data.forEach(function (storymap, index) {
+        $('.nav__list').append(StorymapButton({
+          color: ik.wrapper.layout.theme.storymaps.color[index],
+          storymap: storymap.id,
+          title: storymap.name
+        }));
+      })
+
+      $(activeClass + ' [data-nav]').each(function(i, ele) {
+        ik.wrapper.createLinks($(ele));
+      });
     }
 
     this.renderStorymap = function (appid) {

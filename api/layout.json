@@ -1,4 +1,16 @@
 {
+  "theme": {
+    "storymaps": {
+      "color": [
+        "#C84107",
+        "#E5C031",
+        "#C65F20",
+        "#53B048",
+        "#5DC5C7",
+        "#B6AA82"
+      ]
+    }
+  },
   "state": {
     "attract": {
       "background": {

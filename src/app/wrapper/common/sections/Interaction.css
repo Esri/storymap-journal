@@ -29,3 +29,57 @@
   display: block;
   margin: 0 auto;
 }
+
+/* Nav section */
+.interaction__nav {
+  padding: 50px 20px;
+}
+
+.interaction__nav h2 {
+  font-family: 'Open Sans';
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 46px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.interaction__nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.interaction__nav ul li {
+  display: flex;
+  flex-basis: 520px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.interaction__nav ul li button {
+  align-items: center;
+  background-image: url('/static/svg/button-background.svg');
+  background-repeat: repeat;
+  border: 0;
+  border-radius: 45px;
+  display: flex;
+  justify-content: flex-start;
+  height: 90px;
+  width: 500px;
+}
+
+.interaction__nav ul li button img {
+  flex-basis: 70px;
+}
+
+.interaction__nav ul li button span {
+  flex-basis: 400px;
+  font-family: 'HalloSans';
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 26px;
+}

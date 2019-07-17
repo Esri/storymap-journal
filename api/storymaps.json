@@ -1,33 +1,41 @@
 {
-  "total": 2,
+  "total": 6,
   "data": [
     {
       "id": "81124501642d4bca8fbb16b7e02ee475",
-      "name": "Mexico",
-      "region": "North America",
-      "country": "United States",
+      "name": "What Is LEAF?",
       "language": "en",
-      "weight": 0,
-      "header": {
-        "image": "/static/images/geo-color-2.png"
-      },
-      "menu": {
-        "color": "#FADA5E"
-      }
+      "weight": 0
     },
     {
-      "id": "602866fef9d14b20bd75b83d94fd6bca",
-      "name": "Philip",
-      "region": "North America",
-      "country": "United States",
+      "id": "2",
+      "name": "LEAF Schools & Streets",
       "language": "en",
-      "weight": 1,
-      "header": {
-        "image": "/static/images/la-sunset.jpg"
-      },
-      "menu": {
-        "color": "#FFCC00"
-      }
+      "weight": 0
+    },
+    {
+      "id": "3",
+      "name": "LEAF International",
+      "language": "en",
+      "weight": 0
+    },
+    {
+      "id": "4",
+      "name": "LEAF Festival",
+      "language": "en",
+      "weight": 0
+    },
+    {
+      "id": "5",
+      "name": "LEAF Downtown",
+      "language": "en",
+      "weight": 0
+    },
+    {
+      "id": "6",
+      "name": "LEAF Global",
+      "language": "en",
+      "weight": 0
     }
   ]
 }

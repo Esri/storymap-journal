@@ -5,6 +5,10 @@ define([], function () {
 
       $('#menu').show();
 
+      $('#menu [data-nav]').each(function(i, ele) {
+        ik.wrapper.createLinks($(ele));
+      })
+
       // Interaction Element
       $('#interaction').children().hide();
       $('.interaction__storymap').show();
