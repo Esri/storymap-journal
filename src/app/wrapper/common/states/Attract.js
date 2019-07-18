@@ -25,6 +25,10 @@ define([
           video.attr('poster', ik.wrapper.layout.state.attract.background.img);
         }
 
+        if (ik.wrapper.state) {
+          ik.wrapper.state.set('video', 'playing');
+        }
+
         video.show();
       } else if (ik.wrapper.layout.state.attract.background.img) {
         $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');

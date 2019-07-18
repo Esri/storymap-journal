@@ -3,6 +3,8 @@ define([], function () {
     var show = function () {
       $('#container').css('background-image', 'unset');
 
+      ik.wrapper.state.set('video', 'muted');
+
       $('#menu').show();
 
       $('#menu [data-nav]').each(function(i, ele) {

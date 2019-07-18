@@ -179,7 +179,36 @@ define([
           ik.wrapper.states[ik.wrapper.state.get('wrapper-state')].show();
         }
       })
-    } // End init()
+
+    /**
+     * Background video and sounds watcher.
+     */
+    this.state.watch('video', function () {
+      var bgVideo = $('.fullscreen-bg video').get(0);
+
+      switch (ik.wrapper.state.get('video')) {
+        case 'playing':
+          if (bgVideo.muted) {
+            bgVideo.muted = false;
+          }
+
+          if (bgVideo.paused) {
+            bgVideo.play();
+          }
+          break;
+        case 'muted':
+          if (!bgVideo.muted) {
+            bgVideo.muted = true;
+          }
+          break;
+        case 'stopped':
+          bgVideo.stop();
+        default:
+          break;
+
+      }
+    })
+  } // End init()
 
     /**
      * Public methods, avail globally, which set the wrapper state.

@@ -8,6 +8,8 @@ define([
     }
 
     var show = function () {
+      ik.wrapper.state.set('video', 'playing');
+
       // Do not show the menu
       $('#menu').hide();
 
