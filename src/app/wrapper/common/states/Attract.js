@@ -18,6 +18,7 @@ define([
       // Set Background Video or Image
       if (ik.wrapper.layout.state.attract.background.video) {
         var video = $('#container video');
+
         video.html('<source src="' + ik.wrapper.layout.state.attract.background.video.src + '" type="' + ik.wrapper.layout.state.attract.background.video.type + '">');
 
         if (ik.wrapper.layout.state.attract.background.img) {

@@ -74,7 +74,7 @@ define([
       );
 
       // Initialize storymaps data
-      request('/api/storymaps.json', {
+      request('/api/' + app.indexCfg.ik.version + '/storymaps.json', {
         sync: true,
         handleAs: 'json'
       }).then(

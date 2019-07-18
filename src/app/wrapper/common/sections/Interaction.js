@@ -8,7 +8,7 @@ define([
   interactionActiveTpl,
   interactionAttractTpl,
   interactionNavTpl,
-  StorymapButton,
+  StorymapButton
 ) {
   return function Interaction () {
     var render = function () {
