@@ -36,7 +36,7 @@
 @font-face {
   font-family: 'OpenSans';
   font-weight: 500;
-  src: url('/static/fonts/OpenSans/OpenSans-SemiBold.ttf') format('truetype');
+  src: url('/static/fonts/OpenSans/OpenSans-Semibold.ttf') format('truetype');
 }
 
 @font-face {
