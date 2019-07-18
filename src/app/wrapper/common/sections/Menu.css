@@ -5,5 +5,39 @@
 .menu__storymap__wrapper {
   background-image: url('/static/svg/button-background.svg');
   background-repeat: repeat;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 190px;
+  padding: 10px 25px;
+}
+
+.menu__storymap__wrapper__title,
+.menu__storymap__wrapper__buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.menu__storymap__wrapper__title img {
+  height: 100px;
+  width: 100px;
+}
+
+.menu__storymap__wrapper__title h2 {
+  font-family: 'Hallo Sans';
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 58px;
+}
+
+.menu__storymap__wrapper__buttons {
+  justify-content: flex-end;
+}
+
+.menu__storymap__wrapper__buttons button {
+  background: none;
+  border: 0;
 }

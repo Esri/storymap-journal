@@ -30,7 +30,8 @@ define([
       var storymap = ik.wrapper.api.storymap.get(appid);
       console.log('renderStorymap', storymap);
       $('.menu__storymap').html(menuTplStoryMap({
-        color: storymap[0].theme.color
+        color: storymap[0].theme.color,
+        name: storymap[0].name
       }));
     }
 

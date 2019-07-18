@@ -1,0 +1,18 @@
+
+<svg width="130px" height="50px" viewBox="0 0 130 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Love-&amp;-Connections---55&quot;" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="What-Is-LEAF" transform="translate(-790.000000, -970.000000)">
+            <g id="Content" transform="translate(0.000000, 839.000000)">
+                <g id="Header">
+                    <g id="Back-Button" transform="translate(790.000000, 131.000000)">
+                        <path d="M25,0 L105,0 C118.807119,-2.53632657e-15 130,11.1928813 130,25 C130,38.8071187 118.807119,50 105,50 L25,50 C11.1928813,50 1.69088438e-15,38.8071187 0,25 C-1.69088438e-15,11.1928813 11.1928813,2.53632657e-15 25,0 Z" id="Background" fill="#000000" opacity="0.25" fill-rule="nonzero"></path>
+                        <path d="M38.6922397,21.5646256 C37.1481775,20.6230278 34.6240898,19.0808612 33.0801914,18.139123 L30.2580192,16.4167999 C28.7158059,15.4752021 27.4524631,16.1836846 27.4524631,17.9910286 L27.4524631,21.7135157 L27.4524631,21.7674527 L20,21.7665385 L20,28.2334998 L27.451527,28.2334998 L27.451527,28.2865217 L27.451527,32.0080726 C27.451527,33.8163317 28.7149165,34.5248352 30.2570831,33.583214 L33.0792553,31.8599782 C34.6233175,30.9183804 37.1474052,29.3762139 38.6913036,28.4344757 L41.5134758,26.7121526 C43.057538,25.7696421 43.057538,24.2293244 41.5143902,23.28665 L38.6922397,21.5646256 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero" transform="translate(31.335818, 25.000000) rotate(-180.000000) translate(-31.335818, -25.000000) "></path>
+                        <text id="Back" font-family="OpenSans-Bold, Open Sans" font-size="22" font-weight="bold" fill="#FFFFFF">
+                            <tspan x="51.2060547" y="34">BACK</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
