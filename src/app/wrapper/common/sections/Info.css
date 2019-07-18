@@ -1,6 +1,7 @@
 #info {
   color: #ffffff;
   height: 840px;
+  padding: 50px;
 }
 
 #info > div {
@@ -24,5 +25,42 @@
   font-family: 'Habana';
   font-size: 120px;
   line-height: 110px;
+  text-align: center;
+}
+
+.info__storymap__background {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.info__storymap__shader {
+  background-color: #111111;
+  height: 100%;
+  left: 0;
+  opacity: 0.65;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.info__storymap__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  width: 400px;
+}
+
+.info__storymap__content img {
+  width: 270px;
+}
+
+.info__storymap__content h1 {
+  font-family: 'Habana';
+  font-size: 48px;
   text-align: center;
 }

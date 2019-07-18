@@ -1,3 +1,12 @@
-<div class="content" style="background: url(<%= image %>);">
+<div class="info__storymap__background" style="background: url(<%= background %>);"></div>
+<div class="info__storymap__shader"></div>
+<div class="info__storymap__content">
+  <% if (logo.length > 0) { %>
+  <img src="<%= logo %>" />
+  <% } %>
+
+  <% if (h1.length > 0) { %>
   <h1><%= h1 %></h1>
+  <% } %>
 </div>
+

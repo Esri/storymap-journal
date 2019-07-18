@@ -49,7 +49,14 @@ define([
     }
 
     this.renderStorymap = function () {
-      $('.info__storymap').html(infoStorymapTpl(ik.wrapper.layout.state.storymap.section.info))
+      var appid = ik.wrapper.state.get('appid');
+      var storymap = ik.wrapper.api.storymap.get(appid);
+      console.log(storymap[0]);
+      $('.info__storymap').html(infoStorymapTpl({
+        h1: "Love & Connections",
+        background: storymap[0].theme.background,
+        logo: '/static/images/leaf-community-arts.png'
+      }))
     }
 
     return {

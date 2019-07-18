@@ -7,6 +7,7 @@
       "language": "en",
       "weight": 0,
       "theme": {
+        "background": "/static/images/what-is-leaf-bg.jpg",
         "color": "#C84107"
       }
     },
