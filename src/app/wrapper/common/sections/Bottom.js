@@ -31,9 +31,11 @@ define([
     }
 
     this.renderStorymap = function () {
+      var appid = ik.wrapper.state.get('appid');
+      var storymap = ik.wrapper.api.storymap.get(appid);
       $('.bottom__storymap').html(bottomStorymapTpl({
-        title: 'Get Involved',
-        body: '<p>Text <b>LEAF</b> to 89304 or see an attendant</p>'
+        title: storymap[0].callout.title,
+        body: storymap[0].callout.body
       }));
     }
 
