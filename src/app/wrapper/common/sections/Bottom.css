@@ -6,3 +6,48 @@
 .storymap #bottom {
   background-color: black;
 }
+
+.bottom__storymap {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+}
+
+.bottom__storymap__callout {
+  background-color: #FBFFFE;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-family: OpenSans;
+  padding: 30px;
+  width: 450px;
+}
+
+.bottom__storymap__callout__text {
+  color: #5C5D5D;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 0 30px;
+}
+
+
+.bottom__storymap__callout__text h3 {
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.bottom__storymap__callout__text p {
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 26px;
+}

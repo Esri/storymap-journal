@@ -56,6 +56,8 @@ define([
 
       $('#info').children().hide();
       $('.info__attract').show();
+
+      $('#bottom').children().hide();
     }
 
     return {

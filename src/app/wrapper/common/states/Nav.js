@@ -17,6 +17,8 @@ define([
 
       $('#info').children().hide();
       $('.info__nav').show();
+
+      $('#bottom').children().hide();
     }
 
     return {

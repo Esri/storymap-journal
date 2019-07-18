@@ -39,6 +39,8 @@ define([
 
       $('#info').children().hide();
       $('.info__active').show();
+
+      $('#bottom').children().hide();
     }
 
     return {

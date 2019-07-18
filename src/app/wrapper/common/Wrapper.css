@@ -21,6 +21,36 @@
   src: url('/static/fonts/HalloSans/Hallo\ sans\ black.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 100;
+  src: url('/static/fonts/OpenSans/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 400;
+  src: url('/static/fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 500;
+  src: url('/static/fonts/OpenSans/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 700;
+  src: url('/static/fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 900;
+  src: url('/static/fonts/OpenSans/OpenSans-ExtraBold.ttf') format('truetype');
+}
+
 .no-touch {
   background: transparent;
 }

@@ -152,6 +152,7 @@ define([
             ik.wrapper.sections.info.render();
             ik.wrapper.sections.menu.render();
             ik.wrapper.sections.interaction.render();
+            ik.wrapper.sections.bottom.render();
             break;
           case 'nav':
             ik.wrapper.sections.info.render();
@@ -231,8 +232,10 @@ define([
       createLinks: createLinks,
       layout: layout,
       sections: {
+        bottom: bottom,
         info: info,
-        interaction: interaction
+        interaction: interaction,
+        menu: menu
       },
       showActive: this.showActive,
       showAttract: this.showAttract,

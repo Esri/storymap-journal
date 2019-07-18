@@ -15,6 +15,9 @@ define([], function () {
 
       $('#info').children().hide();
       $('.info__storymap').show();
+
+      $('#bottom').children().hide();
+      $('.bottom__storymap').show();
     }
 
     return {
