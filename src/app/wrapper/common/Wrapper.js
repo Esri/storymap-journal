@@ -116,6 +116,8 @@ define([
 
       this.state.set('navigation-history', []);
 
+      this.state.set('language', 'en');
+
       /**
        * appid watcher.
        * Kick off necessary methods here if the storymap has changed but wrapper-state has not.
@@ -205,7 +207,24 @@ define([
           bgVideo.stop();
         default:
           break;
+      }
+    })
 
+    /**
+     * Watch state change of wrapper language
+     */
+    this.state.watch('language', function () {
+      switch(ik.wrapper.state.get('language')) {
+        case 'en':
+          $('#container').removeClass();
+          $('#container').addClass('en');
+          break;
+        case 'es':
+          $('#container').removeClass();
+          $('#container').addClass('es');
+          break;
+        default:
+          break;
       }
     })
   } // End init()

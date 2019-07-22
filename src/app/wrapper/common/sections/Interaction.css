@@ -78,8 +78,24 @@
 
 .interaction__nav ul li button span {
   flex-basis: 400px;
-  font-family: 'Hallo Sans';
-  font-size: 36px;
-  font-weight: 700;
   line-height: 26px;
+}
+
+.interaction__nav ul li button span.primary {
+  font-size: 36px;
+}
+
+.interaction__nav ul li button span.alternate {
+  font-size: 22px;
+}
+
+.interaction__nav ul li button span.en {
+  font-family: 'Hallo Sans';
+  font-weight: 700;
+}
+
+.interaction__nav ul li button span.es {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
 }

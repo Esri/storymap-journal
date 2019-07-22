@@ -53,13 +53,29 @@ define([
 
       $(activeClass).html(interactionNavTpl());
 
-      ik.wrapper.storymaps.data.forEach(function (storymap, index) {
+      var currentLanguage = ik.wrapper.state.get('language');
+
+      var alternateLanguage = (currentLanguage === 'en') ? 'es' : 'en';
+
+      var storymaps = ik.wrapper.api.storymap.getAllLanguage(currentLanguage);
+
+      storymaps.forEach(function (storymap, index) {
+        var alternate = '';
+        if (storymap.relationships) {
+          var alternateStorymap = ik.wrapper.api.storymap.get(storymap.relationships.id);
+
+          alternate = alternateStorymap[0].name;
+        }
+
         $('.nav__list').append(StorymapButton({
+          alternate: alternate,
+          alternateLanguage: alternateLanguage,
           color: storymap.theme.color,
+          currentLanguage: currentLanguage,
           storymap: storymap.id,
           title: storymap.name
         }));
-      })
+      });
 
       $(activeClass + ' [data-nav]').each(function(i, ele) {
         ik.wrapper.createLinks($(ele));
