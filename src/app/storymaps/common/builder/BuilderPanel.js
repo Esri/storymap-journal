@@ -374,7 +374,7 @@ define(["lib-build/tpl!./BuilderPanel",
 
 				app.ui.sidePanel.toggleSocialBtnAppSharing(disablePreview);
 				app.ui.floatingPanel.toggleSocialBtnAppSharing(disablePreview);
-				app.ui.mobileView.toggleSocialBtnAppSharing(disablePreview);
+				// app.ui.mobileView.toggleSocialBtnAppSharing(disablePreview);
 
 				/*
 				 * Status

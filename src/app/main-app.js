@@ -63,11 +63,18 @@ else {
 
 								Core.init(mainView, Builder);
 								Builder.init(Core, builderView);
+
+                // Show only the storymap
+                $('.fullscreen-bg').hide();
+                $('#info').hide();
+                $('#bottom').hide();
+                $('.interaction__attract').hide();
+                $('.interaction__storymap').show();
 							}
 						);
 					}
 					else {
-            // Creates hthe Story Map
+            // Creates the Story Map
             if (configOptions.appid.length) {
               Core.init(new MainView());
             }

@@ -21,10 +21,12 @@ define([],
             lastSection = true;
           }
 
-          if (firstSection === false) {
+          if (firstSection === false &&
+            !section.content.includes('<div class="previous-section"><button data-storymaps="IK-SECTION-BACK-')
+          ) {
             // Back links
             actionName = 'IK-SECTION-BACK-' + index.toString();
-            section.content = '<div class="previous-section"><a data-storymaps="' + actionName + '" data-storymaps-type="navigate" href="#"><span>BACK</span></div>' + section.content;
+            section.content = '<div class="previous-section"><button data-storymaps="' + actionName + '" data-storymaps-type="navigate"><span>BACK</span></button></div>' + section.content;
             section.contentActions.push({
               id: actionName,
               type: 'navigate',
@@ -32,10 +34,12 @@ define([],
             });
           }
 
-          if (lastSection === false) {
+          if (lastSection === false &&
+            !section.content.includes('<div class="next-section"><button data-storymaps="IK-SECTION-NEXT-')
+          ) {
             // Next section links
             actionName = 'IK-SECTION-NEXT-' + index.toString();
-            section.content = section.content + '<div class="next-section"><a data-storymaps="' + actionName + '" data-storymaps-type="navigate" href="#">' + thisSection[index + 1].title + '</div>';
+            section.content = section.content + '<div class="next-section"><button data-storymaps="' + actionName + '" data-storymaps-type="navigate" href="#">' + thisSection[index + 1].title + '</button></div>';
             section.contentActions.push({
               id: actionName,
               type: 'navigate',
@@ -43,9 +47,11 @@ define([],
             });
           }
 
-          if (lastSection === true) {
+          if (lastSection === true &&
+            !section.content.includes('<div class="next-storymap"><button data-nav="nav">Go back to the home menu</button></div>')
+          ) {
             // Link to another storymap
-            section.content = section.content + '<div class="next-storymap"><a href="#" onclick="reset(\'602866fef9d14b20bd75b83d94fd6bca\');">See another story</a></div>';
+            section.content = section.content + '<div class="next-storymap"><button data-nav="nav">Go back to the home menu</button></div>';
           }
         });
 
