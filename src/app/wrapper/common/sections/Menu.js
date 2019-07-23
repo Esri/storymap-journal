@@ -24,13 +24,22 @@ define([
      * Render Templates
      * Bind Javascript Events
      */
-
     this.renderStorymap = function () {
       var appid = ik.wrapper.state.get('appid');
       var storymap = ik.wrapper.api.storymap.get(appid);
-      console.log('renderStorymap', storymap);
+      var currentLanguage = ik.wrapper.state.get('language');
+      var anotherLanguage = ik.wrapper.api.storymap.hasAlternateLanguage(appid);
+      var alternateStorymap = "";
+
+      if (anotherLanguage) {
+        alternateStorymap = storymap[0].relationships.id;
+      }
+
       $('.menu__storymap').html(menuTplStoryMap({
+        alternateId: alternateStorymap,
+        anotherLanguage: anotherLanguage,
         color: storymap[0].theme.color,
+        language: currentLanguage,
         name: storymap[0].name
       }));
     }

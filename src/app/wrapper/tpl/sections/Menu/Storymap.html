@@ -7,9 +7,15 @@
     <button data-nav="nav">
       <img src="/static/svg/menu-back.svg" />
     </button>
-    <button data-nav="nav">
-      <img src="/static/svg/menu-language-es.svg" />
-    </button>
+    <% if (anotherLanguage) { %>
+      <button data-nav="storymap" data-storymap="<%= alternateId %>" data-language="<%= (language === 'en') ? 'es' : 'en' %>">
+      <% if (language === 'en') { %>
+        <img src="/static/svg/menu-language-es.svg" />
+      <% } else { %>
+        <img src="/static/svg/menu-language-en.svg" />
+      <% } %>
+      </button>
+    <% } %>
     <button data-nav="nav">
       <img src="/static/svg/hamburger-button.svg" />
     </button>

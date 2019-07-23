@@ -76,8 +76,14 @@
   flex-basis: 70px;
 }
 
-.interaction__nav ul li button span {
+.interaction__nav ul li button div {
+  display: flex;
   flex-basis: 400px;
+  flex-wrap: wrap;
+}
+
+.interaction__nav ul li button span {
+  flex-basis: 100%;
   line-height: 26px;
 }
 

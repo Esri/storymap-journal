@@ -1,9 +1,11 @@
 <li>
   <button style="background-color: <%= color %>;" data-nav="storymap" data-storymap="<%= storymap %>">
     <img src="/static/svg/leaf.svg" />
-    <span class="primary <%= currentLanguage %>"><%= title %></span>
-    <% if (alternate.length > 0) { %>
-      <span class="alternate <%= alternateLanguage %>"><%= alternate %></span>
-    <% } %>
+    <div>
+      <span class="primary <%= currentLanguage %>"><%= title %></span>
+      <% if (alternate.length > 0) { %>
+        <span class="alternate <%= alternateLanguage %>"><%= alternate %></span>
+      <% } %>
+    </div>
   </button>
 </li>

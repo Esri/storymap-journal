@@ -110,13 +110,15 @@ define([
 
       this.state = state;
 
+      this.state.set('language', 'en');
+
       this.state.set('wrapper-state', 'attract');
+
+      this.state.set('prev-wrapper-state', 'attract');
 
       this.state.set('rendering', false);
 
       this.state.set('navigation-history', []);
-
-      this.state.set('language', 'en');
 
       /**
        * appid watcher.
@@ -136,7 +138,8 @@ define([
         // Kick of the rendering lifecycle
         ik.wrapper.state.set('rendering', true);
 
-        $('#container').removeClass();
+        // Set the state as a container class
+        $('#container').removeClass(ik.wrapper.state.get('prev-wrapper-state'));
         $('#container').addClass(ik.wrapper.state.get('wrapper-state'));
 
         // Render the appropriate sections
@@ -163,6 +166,9 @@ define([
           default:
             // nothing
         }
+
+        // Track the last wrapper state
+        ik.wrapper.state.set('prev-wrapper-state', ik.wrapper.state.get('wrapper-state'))
 
         // End rendering lifecycle
         ik.wrapper.state.set('rendering', false);
@@ -216,11 +222,11 @@ define([
     this.state.watch('language', function () {
       switch(ik.wrapper.state.get('language')) {
         case 'en':
-          $('#container').removeClass();
+          $('#container').removeClass('es');
           $('#container').addClass('en');
           break;
         case 'es':
-          $('#container').removeClass();
+          $('#container').removeClass('es');
           $('#container').addClass('es');
           break;
         default:
@@ -266,8 +272,16 @@ define([
       var showState = 'show' + state.charAt(0).toUpperCase() + state.slice(1);
       var option = data[data.nav] || null;
 
+      // Optionally check to see if language state should be changed
+      var language = data.language || null;
+
       element.click(function (e) {
         e.preventDefault();
+
+        if (language) {
+          ik.wrapper.state.set('language', language);
+        }
+
         ik.wrapper[showState](option);
       })
     }
