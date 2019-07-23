@@ -7,8 +7,8 @@
   background-repeat: repeat;
   color: #ffffff;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
   height: 190px;
   padding: 10px 25px;
 }
@@ -31,10 +31,11 @@
   font-size: 56px;
   font-weight: 700;
   line-height: 58px;
+  padding: 0 20px;
 }
 
 .menu__storymap__wrapper__buttons {
-  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .menu__storymap__wrapper__buttons button {
