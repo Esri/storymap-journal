@@ -1,0 +1,6 @@
+#builderPanel .builder-settings.builder-cmd,
+#builderPanel .builder-share.builder-cmd,
+#builderPanel .builder-preview.builder-cmd,
+#builderPanel .builder-help.builder-cmd {
+  display: none;
+}

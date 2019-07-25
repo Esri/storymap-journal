@@ -21,18 +21,18 @@ define([],
             lastSection = true;
           }
 
-          if (firstSection === false &&
-            !section.content.includes('<div class="previous-section"><button data-storymaps="IK-SECTION-BACK-')
-          ) {
-            // Back links
-            actionName = 'IK-SECTION-BACK-' + index.toString();
-            section.content = '<div class="previous-section"><button data-storymaps="' + actionName + '" data-storymaps-type="navigate"><span>BACK</span></button></div>' + section.content;
-            section.contentActions.push({
-              id: actionName,
-              type: 'navigate',
-              index: index - 1
-            });
-          }
+          // if (firstSection === false &&
+          //   !section.content.includes('<div class="previous-section"><button data-storymaps="IK-SECTION-BACK-')
+          // ) {
+          //   // Back links
+          //   actionName = 'IK-SECTION-BACK-' + index.toString();
+          //   section.content = '<div class="previous-section"><button data-storymaps="' + actionName + '" data-storymaps-type="navigate"><span>BACK</span></button></div>' + section.content;
+          //   section.contentActions.push({
+          //     id: actionName,
+          //     type: 'navigate',
+          //     index: index - 1
+          //   });
+          // }
 
           if (lastSection === false &&
             !section.content.includes('<div class="next-section"><button data-storymaps="IK-SECTION-NEXT-')
