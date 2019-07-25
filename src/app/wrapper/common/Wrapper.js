@@ -271,21 +271,38 @@ define([
     var createLinks = function (element) {
       var data = element.data();
       var state = data.nav;
-      var showState = 'show' + state.charAt(0).toUpperCase() + state.slice(1);
-      var option = data[data.nav] || null;
 
-      // Optionally check to see if language state should be changed
-      var language = data.language || null;
+      switch (state) {
+        case 'back':
+          element.click(function (e) {
+            e.preventDefault();
 
-      element.click(function (e) {
-        e.preventDefault();
+            var index = app.data.getCurrentSectionIndex();
+            console.log(index);
+            if (index === 0) {
+              ik.wrapper.showNav();
+            } else {
+              ik.wrapper.topic.publish('story-navigate-section', index - 1);
+            }
+          })
+          break;
+        default:
+          var showState = 'show' + state.charAt(0).toUpperCase() + state.slice(1);
+          var option = data[data.nav] || null;
 
-        if (language) {
-          ik.wrapper.state.set('language', language);
-        }
+          // Optionally check to see if language state should be changed
+          var language = data.language || null;
 
-        ik.wrapper[showState](option);
-      })
+          element.click(function (e) {
+            e.preventDefault();
+
+            if (language) {
+              ik.wrapper.state.set('language', language);
+            }
+
+            ik.wrapper[showState](option);
+          })
+      }
     }
 
     return {
@@ -313,7 +330,8 @@ define([
         nav: nav,
         storymap: storymap
       },
-      storymaps: storymaps
+      storymaps: storymaps,
+      topic: topic
     }
   }
 });
