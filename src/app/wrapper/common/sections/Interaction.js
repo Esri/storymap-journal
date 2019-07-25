@@ -2,12 +2,14 @@ define([
   'lib-build/tpl!../../tpl/sections/Interaction/Active',
   'lib-build/tpl!../../tpl/sections/Interaction/Attract',
   'lib-build/tpl!../../tpl/sections/Interaction/Nav',
+  'lib-build/tpl!../../tpl/sections/Interaction/Storymap',
   'lib-build/tpl!../../tpl/components/StorymapButton',
   'lib-build/css!./Info'
 ], function (
   interactionActiveTpl,
   interactionAttractTpl,
   interactionNavTpl,
+  interactionStorymapTpl,
   StorymapButton
 ) {
   return function Interaction () {
@@ -84,6 +86,7 @@ define([
 
     this.renderStorymap = function (appid) {
       var appid =ik.wrapper.state.get('appid');
+      $('.interaction__storymap').html(interactionStorymapTpl());
       reset(appid);
     }
 
