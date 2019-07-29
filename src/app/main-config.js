@@ -131,10 +131,6 @@ function bootstrap (reset = false) {
   CKEDITOR_BASEPATH = app.isProduction ? 'resources/lib/ckeditor/' : 'lib-app/ckeditor/';
 
   if( app.isProduction ) {
-    if (!reset) {
-      _ = {};
-    }
-
     if ( app.isInBuilder )
       loadJS('app/builder-min.js');
     else
