@@ -12,13 +12,13 @@
 @font-face {
   font-family: 'Hallo Sans';
   font-weight: 100;
-  src: url('/static/fonts/HalloSans/HalloSans-Light-IK.otf') format('opentype');
+  src: url('/static/fonts/HalloSans/Hallosans-Light-IK.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Hallo Sans';
   font-weight: 700;
-  src: url('/static/fonts/HalloSans/HalloSans-Black-IK.otf') format('opentype');
+  src: url('/static/fonts/HalloSans/Hallosans-Black-IK.otf') format('opentype');
 }
 
 @font-face {
