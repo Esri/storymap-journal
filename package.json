@@ -11,6 +11,16 @@
       "buildResources": "./",
       "output": "release"
     },
+    "files": [
+      "!.{DS_Store,eslintignore,eslintrc.yml,gitignore,sass-lint.yml}",
+      "!README.md",
+      "!src",
+      "!release",
+      "!public"
+    ],
+    "nsis": {
+      "oneClick": true
+    },
     "mac": {
       "target": [
         {
@@ -34,6 +44,7 @@
       "icon": "build/icon.png"
     }
   },
+  "postinstall": "electron-builder install-app-deps",
   "scripts": {
     "build": "grunt",
     "build-release": "electron-builder -mw",
@@ -61,6 +72,7 @@
     "grunt-regex-replace": "~0.2.5",
     "load-grunt-tasks": "~0.3.0"
   },
+  "browserslist": "electron 1.8",
   "dependencies": {
     "express": "^4.17.1",
     "jquery": "^3.4.1",

@@ -24,30 +24,54 @@ server.listen(3000, error => {
 
     const {app, BrowserWindow} = require('electron')
 
-function createWindow () {
-  let mainWindow = new BrowserWindow({
-    width: 1080,
-    height: 1920,
-    webPreferences: {
-      nodeIntegration: false
+    function createWindow () {
+      let mainWindow = new BrowserWindow({
+        fullscreen: false,
+        height: 1920,
+        show: false,
+        webPreferences: {
+          experimentalFeatures: true,
+          nodeIntegration: false, // causing issues with JQuery
+          //preload: '' // @TODO - Use to preload files when ready to write code,
+          webSecurity: false
+        },
+        width: 1080
+      })
+
+      mainWindow.on('ready-to-show', () => {
+        mainWindow.show()
+      })
+
+      mainWindow.on('closed', function () {
+        mainWindow = null
+      })
+
+      let { webContents } = mainWindow
+
+      webContents.on('crashed', () => {
+        mainWindow.destroy()
+        createWindow()
+      })
+
+      webContents.on('did-finish-load', () => {
+        webContents.setZoomFactor(1)
+        webContents.setVisualZoomLevelLimits(1, 1)
+        webContents.setLayoutZoomLevelLimits(0, 0)
+      })
+
+      mainWindow.loadURL(`http://localhost:3000`)
     }
-  })
 
-  mainWindow.loadURL(`http://localhost:3000`)
+    app.on('ready', () => {
+      createWindow()
+    })
 
-  mainWindow.on('closed', function () {
-    mainWindow = null
-  })
-}
+    app.on('window-all-closed', function () {
+      if (process.platform !== 'darwin') app.quit()
+    })
 
-app.on('ready', createWindow)
-
-app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') app.quit()
-})
-
-app.on('activate', function () {
-  if (mainWindow === null) createWindow()
-})
+    app.on('activate', function () {
+      if (mainWindow === null) createWindow()
+    })
   }
 })
