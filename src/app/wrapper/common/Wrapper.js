@@ -153,7 +153,10 @@ define([
           case 'attract':
             ik.wrapper.sections.info.render();
             ik.wrapper.sections.interaction.render();
+            break;
           case 'explore':
+            ik.wrapper.sections.info.render();
+            ik.wrapper.sections.interaction.render();
             break;
           case 'storymap':
             ik.wrapper.sections.info.render();
@@ -248,7 +251,12 @@ define([
       ik.wrapper.state.set('wrapper-state', 'attract');
     }
 
-    this.showExplore = function () {
+    this.showExplore = function (mapid) {
+      console.log('mapid', mapid);
+      if (ik.wrapper.state.get('mapid') !== mapid) {
+        ik.wrapper.state.set('mapid', mapid);
+      }
+
       ik.wrapper.state.set('wrapper-state', 'explore');
     }
 

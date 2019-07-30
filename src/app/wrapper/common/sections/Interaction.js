@@ -4,13 +4,18 @@ define([
   'lib-build/tpl!../../tpl/sections/Interaction/Nav',
   'lib-build/tpl!../../tpl/sections/Interaction/Storymap',
   'lib-build/tpl!../../tpl/components/StorymapButton',
-  'lib-build/css!./Info'
+  'lib-build/tpl!../../tpl/components/ExploreButton',
+  'lib-build/css!./Info',
+  'esri/arcgis/utils'
 ], function (
   interactionActiveTpl,
   interactionAttractTpl,
   interactionNavTpl,
   interactionStorymapTpl,
-  StorymapButton
+  StorymapButton,
+  ExploreButton,
+  InfoCss,
+  esriUtils
 ) {
   return function Interaction () {
     var render = function () {
@@ -25,6 +30,9 @@ define([
           break;
         case 'nav':
           this.renderNav();
+          break;
+        case 'explore':
+          this.renderExplore();
           break;
         default: // attract screen
           this.renderAttract();
@@ -79,15 +87,35 @@ define([
         }));
       });
 
+      $('.nav__list__explore').html(ExploreButton({
+        color: '#715035',
+        mapid: ik.wrapper.layout.state.explore.section.interaction.map
+      }));
+
       $(activeClass + ' [data-nav]').each(function(i, ele) {
         ik.wrapper.createLinks($(ele));
       });
     }
 
-    this.renderStorymap = function (appid) {
+    this.renderStorymap = function () {
       var appid =ik.wrapper.state.get('appid');
       $('.interaction__storymap').html(interactionStorymapTpl());
       reset(appid);
+    }
+
+    this.renderExplore = function () {
+      var mapid = ik.wrapper.state.get('mapid');
+      var popup = null;
+      var container = $('#explore-map');
+
+      var map = esriUtils.createMap(mapid, container[0], {
+        mapOptions: {
+          slider: true,
+          nav:false
+        }
+      }).then(function (response) {
+        console.log('Map Data Received');
+      });
     }
 
     return {

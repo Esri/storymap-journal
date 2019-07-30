@@ -12,7 +12,8 @@
   height: 100%;
 }
 
-.info__attract__img {
+.info__attract__img,
+.info__explore__img {
   display: block;
   margin: 0 auto;
   padding-bottom: 35px;
@@ -21,6 +22,7 @@
 }
 
 .info__attract h1,
+.info__explore h1,
 .info__nav h1 {
   font-family: 'Habana';
   font-size: 120px;
@@ -55,11 +57,11 @@
   width: 400px;
 }
 
-.info__storymap__content img {
+.info__storymap__content img, .info__explore__content img {
   width: 270px;
 }
 
-.info__storymap__content h1 {
+.info__storymap__content h1, .info__explore__content h1 {
   font-family: 'Habana';
   font-size: 48px;
   text-align: center;

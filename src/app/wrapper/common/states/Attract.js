@@ -13,8 +13,6 @@ define([
 
       console.log('wrapper.tpl.llc.Attract -- init');
 
-      console.log(ik.wrapper);
-
       // Set Background Video or Image
       if (ik.wrapper.layout.state.attract.background.video) {
         var video = $('#container video');

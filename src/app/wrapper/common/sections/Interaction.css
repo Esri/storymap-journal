@@ -30,6 +30,10 @@
   margin: 0 auto;
 }
 
+.interaction__explore #explore-map {
+  height: 100%;
+}
+
 /* Nav section */
 .interaction__nav {
   padding: 50px 20px;

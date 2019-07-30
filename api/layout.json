@@ -33,6 +33,20 @@
         "interaction": {}
       }
     },
+    "explore": {
+      "background": {
+        "img": "/static/images/la-sunset.jpg"
+      },
+      "section": {
+        "info": {
+          "img": "/static/images/leaf-community-arts.png",
+          "h1": "Explore our LEAF Community"
+        },
+        "interaction": {
+          "map": "3e95c031a4004d1fa980583704327a2b"
+        }
+      }
+    },
     "nav": {
       "section": {
         "info": {
