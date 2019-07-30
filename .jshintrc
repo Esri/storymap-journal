@@ -21,7 +21,9 @@
 		"History": false,
 
 		"CKEDITOR": false,
-		"CKEDITOR_BASEPATH": true
+		"CKEDITOR_BASEPATH": true,
+
+    "ik": true
 	},
 
 	"expr": true,
@@ -31,6 +33,6 @@
 	"loopfunc": true,
 	"newcap": true,
 	"noarg": true,
-	"undef": true,
-	"unused": true
+	"undef": false,
+	"unused": false
 }
