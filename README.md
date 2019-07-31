@@ -5,16 +5,16 @@ This is the IK Wrapper version of ESRI's storymap-journal. This will be deployed
 
 ## Installing
 
-`npm install`
+`yarn install`
 
 ## Running
 
- - `npm run start-dev` - runs the server in development mode. Access the application through the browser.
- - `npm run build` - executes the grunt cli builder which will create deploy code (compresses and compiles JS).
- - `npm run start` - Runs the server in production mode. Access the application through the browser.
- - `npm run start-electron-dev` - Runs the application in development mode and opens it in an Electron window.
- - `npm run start-electron` - Runs the application in production and opens it in an Electron window.
- - `npm run build-release[-{mac,windows}]` - Build electron package for mac, windows, or both.
+ - `yarn run start-dev` - runs the server in development mode. Access the application through the browser.
+ - `yarn run build` - executes the grunt cli builder which will create deploy code (compresses and compiles JS).
+ - `yarn run start` - Runs the server in production mode. Access the application through the browser.
+ - `yarn run start-electron-dev` - Runs the application in development mode and opens it in an Electron window.
+ - `yarn run start-electron` - Runs the application in production and opens it in an Electron window.
+ - `yarn run build-release[-{mac,windows}]` - Build electron package for mac, windows, or both.
 
 ## Licensing
 Copyright 2014-2018 Esri
