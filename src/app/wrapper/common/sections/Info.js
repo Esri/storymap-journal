@@ -1,4 +1,5 @@
 define([
+  'wrapper/utils/layout',
   'lib-build/tpl!../../tpl/sections/Info/Active',
   'lib-build/tpl!../../tpl/sections/Info/Attract',
   'lib-build/tpl!../../tpl/sections/Info/Explore',
@@ -6,6 +7,7 @@ define([
   'lib-build/tpl!../../tpl/sections/Info/Storymap',
   'lib-build/css!./Interaction'
 ], function (
+  layout,
   infoActiveTpl,
   infoAttractTpl,
   infoExploreTpl,
@@ -41,31 +43,28 @@ define([
      */
 
     this.renderActive = function () {
-      console.log(screen)
-      $('.info__active').html(infoActiveTpl(ik.wrapper.layout.state.active.section.info))
+      $('.info__active').html(infoActiveTpl(layout.getInfo()))
     }
 
     this.renderAttract = function () {
-      $('.info__attract').html(infoAttractTpl(ik.wrapper.layout.state.attract.section.info))
+      $('.info__attract').html(infoAttractTpl(layout.getInfo()));
     }
 
     this.renderExplore = function () {
-      $('.info__explore').html(infoExploreTpl(ik.wrapper.layout.state.explore.section.info));
+      $('.info__explore').html(infoExploreTpl(layout.getInfo()));
     }
 
     this.renderNav = function () {
-      $('.info__nav').html(infoNavTpl(ik.wrapper.layout.state.nav.section.info))
+      $('.info__nav').html(infoNavTpl(layout.getInfo()));
     }
 
     this.renderStorymap = function () {
       var appid = ik.wrapper.state.get('appid');
       var storymap = ik.wrapper.api.storymap.get(appid);
-      console.log(storymap[0]);
-      $('.info__storymap').html(infoStorymapTpl({
-        h1: "Love & Connections",
-        background: storymap[0].theme.background,
-        logo: '/static/images/leaf-community-arts.png'
-      }))
+      var template = layout.getInfo();
+      template.background = storymap[0].theme.background;
+
+      $('.info__storymap').html(infoStorymapTpl(template));
     }
 
     return {

@@ -1,9 +1,4 @@
 {
-  "theme": {
-    "storymaps": {
-      "color": []
-    }
-  },
   "state": {
     "attract": {
       "background": {
@@ -23,7 +18,8 @@
     },
     "active": {
       "background": {
-        "img": "/static/images/la-sunset.jpg"
+        "img": "/static/images/la-sunset.jpg",
+        "video": null
       },
       "section": {
         "info": {
@@ -35,7 +31,8 @@
     },
     "explore": {
       "background": {
-        "img": "/static/images/la-sunset.jpg"
+        "img": "/static/images/la-sunset.jpg",
+        "video": null
       },
       "section": {
         "info": {
@@ -48,6 +45,10 @@
       }
     },
     "nav": {
+      "background": {
+        "img": null,
+        "video": null
+      },
       "section": {
         "info": {
           "img": "/static/images/leaf-community-arts.png",
@@ -58,11 +59,12 @@
     },
     "storymap": {
       "background": {
-        "img": "/static/images/la-sunset.jpg"
+        "img": "/static/images/la-sunset.jpg",
+        "video": null
       },
       "section": {
         "info": {
-          "image": "",
+          "image": "/static/images/leaf-community-arts.png",
           "h1": "Love & Connections"
         },
         "interaction": {}

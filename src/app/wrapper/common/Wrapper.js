@@ -5,7 +5,7 @@ define([
   'lib-build/css!./Storymaps',
   'dojo/topic',
   'dojo/Stateful',
-  'dojo/request',
+  '../utils/api',
   '../utils/storymaps',
   './states/Active',
   './states/Attract',
@@ -23,7 +23,7 @@ define([
   storyMapCss,
   topic,
   Stateful,
-  request,
+  apiUtil,
   storymapUtil,
   Active,
   Attract,
@@ -62,31 +62,10 @@ define([
     var init = function() {
       console.log('wrapper.common.Wrapper - init');
 
-      // Initialize storymaps data
-      request('/api/layout.json', {
-        sync: true,
-        handleAs: 'json'
-      }).then(
-        function(json) {
-          ik.wrapper.layout = json;
-        },
-        function(error) {
-          console.error(error.message);
-        }
-      );
-
-      // Initialize storymaps data
-      request('/api/' + app.indexCfg.ik.version + '/storymaps.json', {
-        sync: true,
-        handleAs: 'json'
-      }).then(
-        function(json) {
-          ik.wrapper.storymaps = json;
-        },
-        function(error) {
-          console.error(error.message);
-        }
-      );
+      /**
+       * Grab data
+       */
+      apiUtil.init();
 
       /**
        * Initialize State and Section classes

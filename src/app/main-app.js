@@ -31,7 +31,7 @@ else {
 			require([
 					"storymaps/common/Core",
 					"storymaps/tpl/core/MainView",
-          "menu/common/Wrapper"
+          "wrapper/common/Wrapper"
 				], function(
 					Core,
 					MainView,
@@ -39,7 +39,7 @@ else {
 				){
 					if (app.isInBuilder) {
 						require([
-                "menu/common/Edit",
+                "wrapper/common/Edit",
 								"storymaps/common/builder/Builder",
 								"storymaps/tpl/builder/BuilderView" ,
 								"dojo/i18n!./resources/tpl/builder/nls/template.js?v=" + app.version,

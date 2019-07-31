@@ -77,7 +77,7 @@ function defineDojoConfig()
 				location: path1 + 'app/storymaps'
 			},
       {
-        name: 'menu',
+        name: 'wrapper',
         location: path1 + 'app/wrapper'
       },
 			{
