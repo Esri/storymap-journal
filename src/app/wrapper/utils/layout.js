@@ -15,6 +15,16 @@ define([], function () {
     return ik.wrapper.layout.state[this.getState()].section.interaction;
   }
 
+  // Set Data
+  this.set = function (state, section, field, value) {
+    if (section === 'background') {
+      ik.wrapper.layout.state[state][section][field] = value;
+    } else {
+      ik.wrapper.layout.state[state].section[section][field] = value;
+    }
+  }
+
+  // Manipulates the background.
   this.setBackground = function () {
     // Set Background Video or Image
     if (ik.wrapper.layout.state[this.getState()].background.video) {
