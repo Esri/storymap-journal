@@ -46,7 +46,7 @@
     },
     "nav": {
       "background": {
-        "img": null,
+        "img": "/static/images/la-sunset.jpg",
         "video": null
       },
       "section": {

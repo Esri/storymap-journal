@@ -1,5 +1,7 @@
 define([
+  'wrapper/utils/layout'
 ], function (
+  layout
 ) {
   return function Nav () {
 
@@ -8,7 +10,7 @@ define([
     }
 
     var show = function () {
-      ik.wrapper.state.set('video', 'playing');
+      layout.setBackground();
 
       // Do not show the menu
       $('#menu').hide();

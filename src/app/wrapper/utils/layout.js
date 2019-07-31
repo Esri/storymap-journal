@@ -1,6 +1,6 @@
 define([], function () {
   this.getState = function () {
-    return ik.wrapper.state.get('wrapper-state');
+    return (ik.wrapper.state) ? ik.wrapper.state.get('wrapper-state') : 'attract';
   };
 
   this.getBackground = function () {
@@ -13,6 +13,39 @@ define([], function () {
 
   this.getInteraction = function () {
     return ik.wrapper.layout.state[this.getState()].section.interaction;
+  }
+
+  this.setBackground = function () {
+    // Set Background Video or Image
+    if (ik.wrapper.layout.state[this.getState()].background.video) {
+      var video = $('#container video');
+
+      video.html('<source src="' + ik.wrapper.layout.state[this.getState()].background.video.src + '" type="' + ik.wrapper.layout.state.attract.background.video.type + '">');
+
+      if (ik.wrapper.layout.state[this.getState()].background.img) {
+        video.attr('poster', ik.wrapper.layout.state[this.getState()].background.img);
+      }
+
+      if (ik.wrapper.state) {
+        ik.wrapper.state.set('video', 'playing');
+      }
+
+      video.show();
+
+      return;
+    }
+    
+    if (ik.wrapper.layout.state[this.getState()].background.img) {
+      var source = $('#container video source');
+      if (source.attr('src').length > 1) {
+        console.log('Source found!');
+        ik.wrapper.state.set('video', 'stopped');
+        $('#container video').attr('poster', '');
+      }
+
+      $('.fullscreen-bg').css('background-image', 'url(' + ik.wrapper.layout.state[this.getState()].background.img + ')');
+      $('.fullscreen-bg').css('background-position', '50% 50%');
+    }
   }
 
   return this;

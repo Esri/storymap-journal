@@ -1,7 +1,7 @@
 define([], function () {
   return function Storymap () {
     var show = function () {
-      $('#container').css('background-image', 'unset');
+      $('.fullscreen-bg').css('background-image', 'unset');
 
       ik.wrapper.state.set('video', 'muted');
 

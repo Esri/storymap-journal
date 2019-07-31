@@ -28,7 +28,7 @@ define([
      * Hide all others
      */
     var show = function () {
-      $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.active.background.img + ')');
+      $('.fullscreen-bg').css('background-image', 'url(' + ik.wrapper.layout.state.active.background.img + ')');
 
       // Do not show the menu
       $('#menu').hide();

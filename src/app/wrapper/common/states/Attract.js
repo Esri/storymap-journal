@@ -1,7 +1,9 @@
 define([
+  'wrapper/utils/layout',
   'lib-build/tpl!../../tpl/sections/Info/Attract',
   'lib-build/tpl!../../tpl/sections/Interaction/Attract'
 ], function (
+  layout,
   attractInfoTpl,
   attractInteractionTpl
 ) {
@@ -13,25 +15,7 @@ define([
 
       console.log('wrapper.tpl.llc.Attract -- init');
 
-      // Set Background Video or Image
-      if (ik.wrapper.layout.state.attract.background.video) {
-        var video = $('#container video');
-
-        video.html('<source src="' + ik.wrapper.layout.state.attract.background.video.src + '" type="' + ik.wrapper.layout.state.attract.background.video.type + '">');
-
-        if (ik.wrapper.layout.state.attract.background.img) {
-          video.attr('poster', ik.wrapper.layout.state.attract.background.img);
-        }
-
-        if (ik.wrapper.state) {
-          ik.wrapper.state.set('video', 'playing');
-        }
-
-        video.show();
-      } else if (ik.wrapper.layout.state.attract.background.img) {
-        $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');
-        $('#container').css('background-position', '50% 50%');
-      }
+      layout.setBackground();
 
       $('#menu').hide();
 
@@ -48,7 +32,7 @@ define([
     }
 
     var show = function () {
-      $('#container').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');
+      $('.fullscreen-bg').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');
 
       // Do not show the menu
       $('#menu').hide();

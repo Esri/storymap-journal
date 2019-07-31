@@ -194,7 +194,7 @@ define([
           }
           break;
         case 'stopped':
-          bgVideo.stop();
+          bgVideo.pause();
         default:
           break;
       }
