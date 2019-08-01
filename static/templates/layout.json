@@ -1,0 +1,71 @@
+{
+  "state": {
+    "attract": {
+      "background": {
+        "img": "",
+        "video": ""
+      },
+      "section": {
+        "info": {
+          "logo": "",
+          "h1": ""
+        },
+        "interaction": {}
+      }
+    },
+    "active": {
+      "background": {
+        "img": "",
+        "video": ""
+      },
+      "section": {
+        "info": {
+          "logo": "",
+          "h1": ""
+        },
+        "interaction": {}
+      }
+    },
+    "explore": {
+      "background": {
+        "img": "",
+        "video": ""
+      },
+      "section": {
+        "info": {
+          "logo": "",
+          "h1": ""
+        },
+        "interaction": {
+          "map": ""
+        }
+      }
+    },
+    "nav": {
+      "background": {
+        "img": "",
+        "video": ""
+      },
+      "section": {
+        "info": {
+          "logo": "",
+          "h1": ""
+        },
+        "interaction": {}
+      }
+    },
+    "storymap": {
+      "background": {
+        "img": "",
+        "video": ""
+      },
+      "section": {
+        "info": {
+          "logo": "",
+          "h1": ""
+        },
+        "interaction": {}
+      }
+    }
+  }
+}

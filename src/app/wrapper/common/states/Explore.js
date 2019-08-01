@@ -1,5 +1,7 @@
 define([
+  'wrapper/utils/layout'
 ], function (
+  layout
 ) {
   return function Explore () {
 
@@ -8,6 +10,8 @@ define([
     }
 
     var show = function () {
+      layout.setBackground();
+
       // Do not show the menu
       $('#menu').hide();
 

@@ -28,6 +28,7 @@ define([], function () {
   this.setBackground = function () {
     // Set Background Video or Image
     if (ik.wrapper.layout.state[this.getState()].background.video) {
+      console.log('Video BG')
       var video = $('#container video');
 
       video.html('<source src="' + ik.wrapper.layout.state[this.getState()].background.video.src + '" type="' + ik.wrapper.layout.state.attract.background.video.type + '">');
@@ -46,13 +47,14 @@ define([], function () {
     }
     
     if (ik.wrapper.layout.state[this.getState()].background.img) {
+      console.log('IMG BG')
       var source = $('#container video source');
-      if (source.attr('src').length > 1) {
-        console.log('Source found!');
+      if (source.attr('src') && source.attr('src').length > 1) {
         ik.wrapper.state.set('video', 'stopped');
         $('#container video').attr('poster', '');
       }
 
+      console.log('bg image', ik.wrapper.layout.state[this.getState()].background.img)
       $('.fullscreen-bg').css('background-image', 'url(' + ik.wrapper.layout.state[this.getState()].background.img + ')');
       $('.fullscreen-bg').css('background-position', '50% 50%');
     }
