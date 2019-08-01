@@ -7,43 +7,30 @@ define([
 ) {
   this.init = function () {
     // Initialize storymaps data
-      request('/api/layout.json', {
-        sync: true,
-        handleAs: 'json'
-      }).then(
-        function(json) {
-          ik.wrapper.layout = json;
-        },
-        function(error) {
-          console.error(error.message);
-        }
-      );
+    request('/api/layout.json', {
+      sync: true,
+      handleAs: 'json'
+    }).then(
+      function(json) {
+        ik.wrapper.layout = json;
+      },
+      function(error) {
+        console.error(error.message);
+      }
+    );
 
-      // Initialize storymaps data
-      request('/api/storymaps.json', {
-        sync: true,
-        handleAs: 'json'
-      }).then(
-        function(json) {
-          ik.wrapper.storymaps = json;
-        },
-        function(error) {
-          console.error(error.message);
-        }
-      );
-
-    // request('https://backend-dev.leaf.ikshare.com/jsonapi/node/kiosk_llc?include=field_logo,field_logo.image,field_state_attract_bg_img,field_state_nav_bg_img', {
-    //   sync: true,
-    //   handleAs: 'json'
-    // }).then(
-    //   function(json) {
-    //     console.log(json);
-    //     this.setLayout(json);
-    //   },
-    //   function (error) {
-    //     console.error(error.message);
-    //   }
-    // );
+    // Initialize storymaps data
+    request('/api/storymaps.json', {
+      sync: true,
+      handleAs: 'json'
+    }).then(
+      function(json) {
+        ik.wrapper.storymaps = json;
+      },
+      function(error) {
+        console.error(error.message);
+      }
+    );
   }
 
   this.setLayout = function (json) {
