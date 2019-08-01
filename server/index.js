@@ -80,6 +80,9 @@ request(
 
     // Write changes back to the layout.json file
     fs.writeFileSync(apiPath + '/layout.json', JSON.stringify(layoutDefault), 'utf8')
+
+    // Story maps
+    fs.createReadStream(staticPath + '/templates/llc/storymaps.json').pipe(fs.createWriteStream(apiPath + '/storymaps.json'))
   })
 
 // Create server app
