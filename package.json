@@ -16,7 +16,8 @@
       "!README.md",
       "!src",
       "!release",
-      "!public"
+      "!public",
+      "!static/download"
     ],
     "nsis": {
       "oneClick": true

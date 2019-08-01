@@ -1,8 +1,12 @@
 const express = require('express')
 const path = require('path')
+const build = require('./server/build')
 
 const environment = (process.env.ENV === 'dev') ? 'development' : 'production'
 const environmentPath = (environment === 'development') ? 'src' : 'deploy'
+
+// Get and set data
+build()
 
 // Create server app
 const server = express()
