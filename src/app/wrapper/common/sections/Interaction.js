@@ -74,7 +74,8 @@ define([
         if (storymap.relationships) {
           var alternateStorymap = ik.wrapper.api.storymap.get(storymap.relationships.id);
 
-          alternate = alternateStorymap[0].name;
+          if (alternateStorymap.length === 1)
+            alternate = alternateStorymap[0].name;
         }
 
         $('.nav__list').append(StorymapButton({

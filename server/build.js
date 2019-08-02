@@ -21,9 +21,6 @@ const setFile = (fileuri) => {
   const absFilepath = staticPath + '/download' + url.parse(fileuri).pathname
   const relFilepath = '/static/download' + url.parse(fileuri).pathname
 
-    console.log(absFilepath)
-
-
   // No need to download the same file twice, if already exists
   if (fs.existsSync(absFilepath) === true) {
     return relFilepath
@@ -110,12 +107,26 @@ const writeStorymaps = (body) => {
     callout: {
       title: "",
       body: ""
+    },
+    relationships: {
+      id: ""
     }
   }
 
-  const storymaps = cmsContent[0].field_story_map.map((storymap) => {
-    return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(backendUrl + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
+  const primaryStorymaps = cmsContent[0].field_story_map.map((storymap) => {
+    if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0)
+      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(backendUrl + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
+    else
+      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(backendUrl + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
   })
+
+  const translatedStorymaps = cmsContent[0].field_story_map.map((storymap) => {
+    if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0) {
+      return { ...storymapTemplate, ...{id: storymap.field_translated_id}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(backendUrl + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
+    }
+  }).filter((result) => result !== undefined)
+
+  const storymaps = primaryStorymaps.concat(translatedStorymaps)
 
   // Write changes back to the layout.json file
   fs.writeFileSync(apiPath + '/storymaps.json', JSON.stringify(storymaps), 'utf8')

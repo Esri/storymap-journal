@@ -233,5 +233,5 @@ sftp-config-alt.json
 #############
 ## IK Additions
 #############
-api/
+api/*
 static/download
