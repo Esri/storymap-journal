@@ -21,6 +21,9 @@ const setFile = (fileuri) => {
   const absFilepath = staticPath + '/download' + url.parse(fileuri).pathname
   const relFilepath = '/static/download' + url.parse(fileuri).pathname
 
+    console.log(absFilepath)
+
+
   // No need to download the same file twice, if already exists
   if (fs.existsSync(absFilepath) === true) {
     return relFilepath
@@ -34,9 +37,8 @@ const setFile = (fileuri) => {
   return relFilepath
 }
 
-// Main logic
-const setData = (err, res, body) => {
-  const cmsContent = formatter.deserialize(body)
+const writeLayout = (body) => {
+    const cmsContent = formatter.deserialize(body)
 
   // Save file for future reference
   fs.writeFileSync(staticPath + '/download/cms.json', JSON.stringify(cmsContent), 'utf8')
@@ -91,14 +93,43 @@ const setData = (err, res, body) => {
 
   // Write changes back to the layout.json file
   fs.writeFileSync(apiPath + '/layout.json', JSON.stringify(layoutDefault), 'utf8')
+}
 
-  // Story maps
-  fs.createReadStream(staticPath + '/templates/llc/storymaps.json').pipe(fs.createWriteStream(apiPath + '/storymaps.json'))
+const writeStorymaps = (body) => {
+  const cmsContent = formatter.deserialize(body)
+
+  const storymapTemplate = {
+    id: "",
+    name: "",
+    language: "",
+    weight: 0,
+    theme: {
+      background: "",
+      color: ""
+    },
+    callout: {
+      title: "",
+      body: ""
+    }
+  }
+
+  const storymaps = cmsContent[0].field_story_map.map((storymap) => {
+    return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(backendUrl + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
+  })
+
+  // Write changes back to the layout.json file
+  fs.writeFileSync(apiPath + '/storymaps.json', JSON.stringify(storymaps), 'utf8')
+}
+
+// Main logic
+const setData = (err, res, body) => {
+  writeLayout(body)
+  writeStorymaps(body)
 }
 
 module.exports = () => {
   request(
-    backendUrl + '/jsonapi/node/kiosk_llc?include=field_logo,field_logo.image,field_state_attract_bg_img,field_state_nav_bg_img,field_state_explore_bg_img,field_state_attract_bg_video,field_state_attract_bg_video.field_media_video_file',
+    backendUrl + '/jsonapi/node/kiosk_llc?include=field_logo,field_logo.image,field_state_attract_bg_img,field_state_nav_bg_img,field_state_explore_bg_img,field_state_attract_bg_video,field_state_attract_bg_video.field_media_video_file,field_story_map,field_story_map.field_callout,field_story_map.field_translated_callout,field_story_map.field_media,field_story_map.field_media.image',
     setData
     )
 }

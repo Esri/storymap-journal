@@ -11,7 +11,7 @@ define([], function () {
      * @return {Array[storymap]} array of storymaps, of length 0 or 1
      */
     var get = function (appid) {
-      return ik.wrapper.storymaps.data.filter(function (storymap) {
+      return ik.wrapper.storymaps.filter(function (storymap) {
         return (storymap.id === appid) ? storymap : false;
       })
     }
@@ -32,7 +32,7 @@ define([], function () {
      * @return {Array[storymaps]} an array of storymaps
      */
     var getAllLanguage = function (lang) {
-      return ik.wrapper.storymaps.data.filter(function (storymap) {
+      return ik.wrapper.storymaps.filter(function (storymap) {
         return (storymap.language === lang) ? storymap : false;
       })
     }

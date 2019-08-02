@@ -28,7 +28,6 @@ define([], function () {
   this.setBackground = function () {
     // Set Background Video or Image
     if (ik.wrapper.layout.state[this.getState()].background.video) {
-      console.log('Video BG')
       var video = $('#container video');
 
       video.html('<source src="' + ik.wrapper.layout.state[this.getState()].background.video.src + '" type="' + ik.wrapper.layout.state.attract.background.video.type + '">');
@@ -47,7 +46,6 @@ define([], function () {
     }
     
     if (ik.wrapper.layout.state[this.getState()].background.img) {
-      console.log('IMG BG')
       var source = $('#container video source');
       if (source.attr('src') && source.attr('src').length > 1) {
         ik.wrapper.state.set('video', 'stopped');
