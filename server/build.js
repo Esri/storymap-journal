@@ -9,9 +9,23 @@ const jsona = require('jsona')
 const { Jsona } = jsona
 const formatter = new Jsona()
 
-// Set up some constants
 const apiPath = path.join(__dirname, '../api')
+
+if (fs.existsSync(apiPath) === false) {
+  fs.mkdirSync(apiPath, { recursive: true })
+}
+
 const staticPath = path.join(__dirname, '../static')
+
+if (fs.existsSync(staticPath) === false) {
+  fs.mkdirSync(staticPath, { recursive: true })
+}
+
+const downloadPath = staticPath + '/download'
+
+if (fs.existsSync(downloadPath) === false) {
+  fs.mkdirSync(downloadPath, { recursive: true })
+}
 const backendUrl = 'https://backend-dev.leaf.ikshare.com'
 
 // Utils

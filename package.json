@@ -7,6 +7,7 @@
   "build": {
     "appId": "com.interactiveknowledge.storymaps",
     "productName": "Story Map Wrapper",
+    "asar": false,
     "directories": {
       "buildResources": "./",
       "output": "release"
@@ -16,8 +17,7 @@
       "!README.md",
       "!src",
       "!release",
-      "!public",
-      "!static/download"
+      "!public"
     ],
     "nsis": {
       "oneClick": true

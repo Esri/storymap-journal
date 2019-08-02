@@ -22,7 +22,7 @@ define([], function () {
      * @return {Array[storymaps]} an array of storymaps
      */
     var getAll = function () {
-      return ik.wrapper.storymaps.data
+      return ik.wrapper.storymaps
     }
 
     /**
@@ -48,8 +48,6 @@ define([], function () {
 
       return (currentApp.relationships && currentApp.relationships.id.length > 0) ? true : false;
     }
-
-
 
     return {
       get: get,
