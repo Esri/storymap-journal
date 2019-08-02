@@ -35,7 +35,7 @@ const setFile = (fileuri) => {
 }
 
 const writeLayout = (body) => {
-    const cmsContent = formatter.deserialize(body)
+  const cmsContent = formatter.deserialize(body)
 
   // Save file for future reference
   fs.writeFileSync(staticPath + '/download/cms.json', JSON.stringify(cmsContent), 'utf8')
