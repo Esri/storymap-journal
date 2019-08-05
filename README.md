@@ -7,6 +7,8 @@ This is the IK Wrapper version of ESRI's storymap-journal. This will be deployed
 
 `yarn install`
 
+Copy `.env` as `.env.local`
+
 ## Running
 
  - `yarn run start-dev` - runs the server in development mode. Access the application through the browser.
@@ -15,6 +17,11 @@ This is the IK Wrapper version of ESRI's storymap-journal. This will be deployed
  - `yarn run start-electron-dev` - Runs the application in development mode and opens it in an Electron window.
  - `yarn run start-electron` - Runs the application in production and opens it in an Electron window.
  - `yarn run build-release[-{mac,windows}]` - Build electron package for mac, windows, or both.
+
+## Environment Variables
+ - `BUILD_TARGET`: 'electron' or 'browser'
+ - `KIOSK_VERSION`: 'llc' or 'cdi'
+ - `REGION`: Region string for CDI builds. Not established yet.
 
 ## Licensing
 Copyright 2014-2018 Esri

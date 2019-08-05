@@ -235,3 +235,4 @@ sftp-config-alt.json
 #############
 api/*
 static/download
+.env.local
