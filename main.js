@@ -2,10 +2,25 @@ const express = require('express')
 const path = require('path')
 const build = require('./server/build')
 
-const environment = (process.env.ENV === 'dev') ? 'development' : 'production'
-const environmentPath = (environment === 'development') ? 'src' : 'deploy'
+// Import environment specific configuration
+const config = require('dotenv').config({
+  path: path.resolve(__dirname, '.env')
+}).parsed
+
+process.env = { ...process.env, ...config }
+
+const dev = (process.env.ENV === 'dev')
+const environmentLongName = (dev === true) ? 'development' : 'production'
+const environmentPath = (dev === true) ? 'src' : 'deploy'
 
 // Get and set data
+const versionLongName = (process.env.KIOSK_VERSION === 'llc') ? 'LEAF Love & Connections' : 'Cultural Dive In'
+
+if (dev === true) {
+console.log('Building', versionLongName)
+}
+
+// Build data from the CMS
 build()
 
 // Create server app
@@ -24,7 +39,9 @@ server.listen(3000, error => {
   if (error) {
     throw error
   } else {
-    console.log(environment + ' server ready!', 'http://localhost:3000/')
+    if (dev === true) {
+      console.log(environmentLongName + ' server ready!', 'http://localhost:3000/')
+    }
 
     const {app, BrowserWindow} = require('electron')
 
