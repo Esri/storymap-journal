@@ -9,6 +9,7 @@ const jsona = require('jsona')
 const { Jsona } = jsona
 const formatter = new Jsona()
 
+// Set up local paths for files
 const apiPath = path.join(__dirname, '../api')
 
 if (fs.existsSync(apiPath) === false) {
@@ -26,11 +27,23 @@ const downloadPath = staticPath + '/download'
 if (fs.existsSync(downloadPath) === false) {
   fs.mkdirSync(downloadPath, { recursive: true })
 }
-const backendUrl = 'https://backend-dev.leaf.ikshare.com'
 
-// Utils
+/**
+ * getHeader - returns title data for the Info section
+ *
+ * @param {[Object]} content
+ * @param {[String]} field
+ * @return {[String]}
+ */
 const getHeader = (content = {}, field = '') => (_.isEmpty(_.get(content, field, content.title)) === true) ? content.title : _.get(content, field, content.title)
-// Return a file path. If file can be downloaded, do so. If not
+
+/**
+ * Take a pathname from Drupal, download the file if possible.
+ * Return the remote or local pathname.
+ *
+ * @param {[String]} fileuri
+ * @return {[String]}
+ */
 const setFile = (fileuri) => {
   const absFilepath = staticPath + '/download' + url.parse(fileuri).pathname
   const relFilepath = '/static/download' + url.parse(fileuri).pathname
@@ -48,6 +61,11 @@ const setFile = (fileuri) => {
   return relFilepath
 }
 
+/**
+ * Sets data to a layout.json object and writes the stringify object to file
+ *
+ * @param {[Object]} body JSON:API object parsed by Jsona
+ */
 const writeLayout = (body) => {
   const cmsContent = formatter.deserialize(body)
 
@@ -63,49 +81,54 @@ const writeLayout = (body) => {
   const { attract, explore, nav, storymap } = layoutDefault.state
 
   // Attract section
-  attract.section.info.h1 = getHeader(cmsContent[0], 'title')
+  attract.section.info.h1 = getHeader(cmsContent, 'title')
 
-  attract.section.info.logo = setFile(backendUrl + cmsContent[0].field_logo.image.uri.url)
+  attract.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
 
-  if (filepath = _.get(cmsContent[0], 'field_state_attract_bg_img.image.uri.url', defaultAttractBgImg)) {
-    attract.background.img = setFile(backendUrl + filepath)
+  if (filepath = _.get(cmsContent, 'field_state_attract_bg_img.image.uri.url', defaultAttractBgImg)) {
+    attract.background.img = setFile(process.env.BACKEND_URL + filepath)
     defaultAttractBgImg = filepath
   }
 
-  if (filepath = _.get(cmsContent[0], 'field_state_attract_bg_video.field_media_video_file.uri.url', false))
+  if (filepath = _.get(cmsContent, 'field_state_attract_bg_video.field_media_video_file.uri.url', false))
     attract.background.video = {
-    src: setFile(backendUrl + cmsContent[0].field_state_attract_bg_video.field_media_video_file.uri.url),
-    type: _.get(cmsContent[0], 'field_state_attract_bg_video.field_media_video_file.filemime', '')
+    src: setFile(process.env.BACKEND_URL + cmsContent.field_state_attract_bg_video.field_media_video_file.uri.url),
+    type: _.get(cmsContent, 'field_state_attract_bg_video.field_media_video_file.filemime', '')
   }
 
   // Nav section
-  nav.section.info.h1 = getHeader(cmsContent[0], 'field_state_nav_title')
+  nav.section.info.h1 = getHeader(cmsContent, 'field_state_nav_title')
 
-  nav.section.info.logo = setFile(backendUrl + cmsContent[0].field_logo.image.uri.url)
+  nav.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
 
   // Use attract screen background as template for others
-  if (filepath = _.get(cmsContent[0], 'field_state_nav_bg_img.image.uri.url', defaultAttractBgImg))
-    nav.background.img = setFile(backendUrl + filepath)
+  if (filepath = _.get(cmsContent, 'field_state_nav_bg_img.image.uri.url', defaultAttractBgImg))
+    nav.background.img = setFile(process.env.BACKEND_URL + filepath)
 
   // Explore section
-  explore.section.info.h1 = getHeader(cmsContent[0], 'field_state_explore_title')
+  explore.section.info.h1 = getHeader(cmsContent, 'field_state_explore_title')
 
-  explore.section.info.logo = setFile(backendUrl + cmsContent[0].field_logo.image.uri.url)
+  explore.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
 
-  if (filepath = _.get(cmsContent[0], 'field_state_explore_bg_img.image.uri.url', defaultAttractBgImg))
-    explore.background.img = setFile(backendUrl + filepath)
+  if (filepath = _.get(cmsContent, 'field_state_explore_bg_img.image.uri.url', defaultAttractBgImg))
+    explore.background.img = setFile(process.env.BACKEND_URL + filepath)
 
-  explore.section.interaction.map = _.get(cmsContent[0], 'field_explore_map', '')
+  explore.section.interaction.map = _.get(cmsContent, 'field_explore_map', '')
 
   // Story map section
-  storymap.section.info.h1 = getHeader(cmsContent[0], 'field_state_storymap_title')
+  storymap.section.info.h1 = getHeader(cmsContent, 'field_state_storymap_title')
 
-  storymap.section.info.logo = setFile(backendUrl + cmsContent[0].field_logo.image.uri.url)
+  storymap.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
 
   // Write changes back to the layout.json file
   fs.writeFileSync(apiPath + '/layout.json', JSON.stringify(layoutDefault), 'utf8')
 }
 
+/**
+ * Sets data to a storymaps.json object and writes the stringify object to file
+ *
+ * @param {[Object]} body JSON:API object parsed by Jsona
+ */
 const writeStorymaps = (body) => {
   const cmsContent = formatter.deserialize(body)
 
@@ -127,16 +150,16 @@ const writeStorymaps = (body) => {
     }
   }
 
-  const primaryStorymaps = cmsContent[0].field_story_map.map((storymap) => {
+  const primaryStorymaps = cmsContent.field_story_map.map((storymap) => {
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0)
-      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(backendUrl + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
+      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
     else
-      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(backendUrl + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
+      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
   })
 
-  const translatedStorymaps = cmsContent[0].field_story_map.map((storymap) => {
+  const translatedStorymaps = cmsContent.field_story_map.map((storymap) => {
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0) {
-      return { ...storymapTemplate, ...{id: storymap.field_translated_id}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(backendUrl + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
+      return { ...storymapTemplate, ...{id: storymap.field_translated_id}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: '#' + storymap.field_color}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
     }
   }).filter((result) => result !== undefined)
 
@@ -146,15 +169,42 @@ const writeStorymaps = (body) => {
   fs.writeFileSync(apiPath + '/storymaps.json', JSON.stringify(storymaps), 'utf8')
 }
 
-// Main logic
-const setData = (err, res, body) => {
-  writeLayout(body)
-  writeStorymaps(body)
-}
-
+/**
+ * Export the logic so that the 
+ */
 module.exports = () => {
+  const { BACKEND_URL, KIOSK_VERSION, KIOSK_UUID } = process.env
+  const api = new URL(`/jsonapi/node/kiosk_${KIOSK_VERSION.toLowerCase()}/${KIOSK_UUID}`, BACKEND_URL)
+  const map = new Map()
+
+  if (KIOSK_VERSION === 'llc') {
+    map.set('include', [
+        'field_logo',
+        'field_logo.image',
+        'field_state_attract_bg_img',
+        'field_state_attract_bg_img.image',
+        'field_state_attract_bg_video',
+        'field_state_attract_bg_video.field_media_video_file',
+        'field_state_nav_bg_img',
+        'field_state_nav_bg_img.image',
+        'field_state_explore_bg_img',
+        'field_state_explore_bg_img.image',
+        'field_story_map',
+        'field_story_map.field_callout',
+        'field_story_map.field_translated_callout',
+        'field_story_map.field_media',
+        'field_story_map.field_media.image'
+      ].join(','))
+  }
+
+  params = new URLSearchParams(map)
+
+  api.search = decodeURIComponent(params.toString())
+
   request(
-    backendUrl + '/jsonapi/node/kiosk_llc?include=field_logo,field_logo.image,field_state_attract_bg_img,field_state_attract_bg_img.image,field_state_nav_bg_img,field_state_nav_bg_img.image,field_state_explore_bg_img,field_state_explore_bg_img.image,field_state_attract_bg_video,field_state_attract_bg_video.field_media_video_file,field_story_map,field_story_map.field_callout,field_story_map.field_translated_callout,field_story_map.field_media,field_story_map.field_media.image',
-    setData
-    )
+    api.toString(),
+    (err, res, body) => {
+      writeLayout(body)
+      writeStorymaps(body)
+  })
 }

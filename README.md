@@ -18,6 +18,7 @@ Copy `.env.example` as `.env`
  - `yarn run build-release[-{mac,windows}]` - Build electron package for mac, windows, or both.
 
 ## Environment Variables
+ - `BACKEND_URL`: the drupal backend url
  - `ELECTRON_HEIGHT`, `ELECTRON_WIDTH`: the electron window height and width
  - `ELECTRON_FULLSCREEN`: 1 to turn on, 0 for windowed mode
  - `BUILD_TARGET`: 'electron' or 'browser'
