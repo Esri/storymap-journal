@@ -4,16 +4,15 @@ Story Map Journal
 This is the IK Wrapper version of ESRI's storymap-journal. This will be deployed for LEAF's implementation. This code introduces a Wrapper module, among many other changes, which displays a predetermined list of Story Maps.
 
 ## Installing
-
 `yarn install`
 
-Copy `.env` as `.env.local`
+Copy `.env.template` as `.env`
 
 ## Running
-
  - `yarn run start-dev` - runs the server in development mode. Access the application through the browser.
  - `yarn run build` - executes the grunt cli builder which will create deploy code (compresses and compiles JS).
  - `yarn run start` - Runs the server in production mode. Access the application through the browser.
+ - `yarn run set-env` - Prepares the build.json configuration file for electron-builder
  - `yarn run start-electron-dev` - Runs the application in development mode and opens it in an Electron window.
  - `yarn run start-electron` - Runs the application in production and opens it in an Electron window.
  - `yarn run build-release[-{mac,windows}]` - Build electron package for mac, windows, or both.

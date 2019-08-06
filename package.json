@@ -4,53 +4,14 @@
   "main": "main.js",
   "private": true,
   "author": "Interactive Knowledge",
-  "build": {
-    "appId": "com.interactiveknowledge.storymaps",
-    "productName": "Story Map Wrapper",
-    "asar": false,
-    "directories": {
-      "buildResources": "./",
-      "output": "release"
-    },
-    "files": [
-      "!.{DS_Store,eslintignore,eslintrc.yml,gitignore,sass-lint.yml}",
-      "!README.md",
-      "!src",
-      "!release",
-      "!public"
-    ],
-    "nsis": {
-      "oneClick": true
-    },
-    "mac": {
-      "target": [
-        {
-          "target": "dmg",
-          "arch": [
-            "x64"
-          ]
-        }
-      ],
-      "icon": "build/icon.png"
-    },
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64"
-          ]
-        }
-      ],
-      "icon": "build/icon.png"
-    }
-  },
   "postinstall": "electron-builder install-app-deps",
   "scripts": {
     "build": "grunt",
-    "build-release": "BUILD_TARGET=electron electron-builder -mw",
-    "build-release-mac": "BUILD_TARGET=electron electron-builder -m",
-    "build-release-windows": "BUILD_TARGET=electron electron-builder -w",
+    "build-release": "yarn run prepare && BUILD_TARGET=electron electron-builder -mw --config=build.json",
+    "build-release-mac": "yarn run prepare && BUILD_TARGET=electron electron-builder -m --config=build.json",
+    "build-release-windows": "yarn run prepare && BUILD_TARGET=electron electron-builder -w --config=build.js",
+    "prepare": "yarn run build && yarn run set-env",
+    "set-env": "node -r dotenv/config builder.js",
     "start": "ENV=production BUILD_TARGET=browser node server/index.js",
     "start-dev": "ENV=dev BUILD_TARGET=browser node main.js",
     "start-dev-electron": "ENV=dev BUILD_TARGET=electron electron .",

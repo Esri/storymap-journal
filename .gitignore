@@ -235,5 +235,5 @@ sftp-config-alt.json
 #############
 api/*
 static/download
-electron-builder.json
+build.json
 .env

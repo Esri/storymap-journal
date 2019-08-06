@@ -5,7 +5,7 @@ const fs = require('fs')
 
 // Import environment specific configuration
 const localConfig = require('dotenv').config({
-  path: path.resolve(__dirname, '.env.local')
+  path: path.resolve(__dirname, '.env')
 }).parsed
 
 process.env = { ...process.env, ...localConfig }
