@@ -17,6 +17,13 @@ Copy `.env.example` as `.env`
  - `yarn run start-electron` - Runs the application in production and opens it in an Electron window.
  - `yarn run build-release[-{mac,windows}]` - Build electron package for mac, windows, or both.
 
+## Developing on the browser
+If you choose to develop in the browser use `yarn run start-dev` and visit `https://localhost:3000?version={KIOSK_VERSION}` in the browser. `KIOSK_VERSION` should be specified so that environment variables are passed into the browser window Javascript application.
+
+Use Google Chrome for development since Electron is based on Chrome. Chromium will work up to the point of testing MP4/H.264 videos (it can not decode the video). Firefox and Safari are fine but unnecessary since we don't really need to worry about support them.
+
+The best way to emulate the Electron application is to use the Developer Tools and the Device Emulator. Set the width and height to 1080 x 1920 or the values specified in your .env file.
+
 ## Environment Variables
  - `BACKEND_URL`: the drupal backend url
  - `ELECTRON_HEIGHT`, `ELECTRON_WIDTH`: the electron window height and width

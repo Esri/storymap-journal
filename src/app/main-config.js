@@ -113,6 +113,10 @@ function bootstrap (reset = false) {
   }
 
   app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fromscratch');
+
+  // Get the version of the kiosk which needs to spin up
+  configOptions.ik.version = getUrlVar('version');
+
   app.indexCfg = configOptions;
 
   loadCSS(app.pathJSAPI + "esri/css/esri.css", true);

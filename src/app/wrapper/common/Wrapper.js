@@ -36,6 +36,8 @@ define([
   Bottom
 ) {
   return function Wrapper() {
+    var version = app.indexCfg.ik.version
+
     // Have a wrapper state
     var state = new Stateful();
 
@@ -61,6 +63,11 @@ define([
 
     var init = function() {
       console.log('wrapper.common.Wrapper - init');
+
+      /**
+       * Set the current version of the kiosk
+       */
+      this.version = version;
 
       /**
        * Grab data
@@ -90,6 +97,8 @@ define([
       this.states.attract.init();
 
       this.state = state;
+
+      this.state.set('version', this.version);
 
       this.state.set('language', 'en');
 
@@ -251,6 +260,10 @@ define([
       ik.wrapper.state.set('wrapper-state', 'storymap');
     }
 
+    this.getVersion = function () {
+      return this.version;
+    }
+
     /**
      * During section render this function will pass click() events
      * to elements with recognized data attributes.
@@ -298,6 +311,7 @@ define([
       },
       init: init,
       createLinks: createLinks,
+      getVersion: this.getVersion,
       layout: layout,
       sections: {
         bottom: bottom,
