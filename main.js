@@ -18,7 +18,7 @@ const environmentPath = (dev === true) ? 'src' : 'deploy'
 const versionLongName = (process.env.KIOSK_VERSION === 'llc') ? 'LEAF Love & Connections' : 'Cultural Dive In'
 
 if (dev === true) {
-console.log('Building', versionLongName)
+  console.log('Building', versionLongName)
 }
 
 // Set up directories
@@ -68,8 +68,8 @@ server.listen(3000, error => {
 
       function createWindow () {
         let mainWindow = new BrowserWindow({
-          fullscreen: false,
-          height: 1920,
+          fullscreen: process.env.ELECTRON_FULLSCREEN === '1',
+          height: parseInt(process.env.ELECTRON_HEIGHT),
           show: false,
           webPreferences: {
             experimentalFeatures: true,
@@ -77,7 +77,7 @@ server.listen(3000, error => {
             //preload: '' // @TODO - Use to preload files when ready to write code,
             webSecurity: false
           },
-          width: 1080
+          width: parseInt(process.env.ELECTRON_WIDTH)
         })
 
         mainWindow.on('ready-to-show', () => {
@@ -113,7 +113,9 @@ server.listen(3000, error => {
       })
 
       app.on('activate', function () {
-        if (mainWindow === null) createWindow()
+        if (mainWindow === null) {
+          createWindow()
+        }
       })
     }
   }

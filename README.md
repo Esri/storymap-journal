@@ -6,7 +6,7 @@ This is the IK Wrapper version of ESRI's storymap-journal. This will be deployed
 ## Installing
 `yarn install`
 
-Copy `.env.template` as `.env`
+Copy `.env.example` as `.env`
 
 ## Running
  - `yarn run start-dev` - runs the server in development mode. Access the application through the browser.
