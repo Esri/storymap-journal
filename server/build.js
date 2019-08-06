@@ -44,7 +44,7 @@ const setFile = (fileuri) => {
     fs.mkdirSync(path.dirname(absFilepath), { recursive: true })
   }
 
-  request(fileuri).pipe(fs.createWriteStream(absFilepath))
+  request(fileuri).pipe(fs.createWriteStream(decodeURI(absFilepath)))
   return relFilepath
 }
 
@@ -67,7 +67,7 @@ const writeLayout = (body) => {
 
   attract.section.info.logo = setFile(backendUrl + cmsContent[0].field_logo.image.uri.url)
 
-  if (filepath = _.get(cmsContent[0], 'field_state_attract_bg_img.uri.url', defaultAttractBgImg)) {
+  if (filepath = _.get(cmsContent[0], 'field_state_attract_bg_img.image.uri.url', defaultAttractBgImg)) {
     attract.background.img = setFile(backendUrl + filepath)
     defaultAttractBgImg = filepath
   }
@@ -84,7 +84,7 @@ const writeLayout = (body) => {
   nav.section.info.logo = setFile(backendUrl + cmsContent[0].field_logo.image.uri.url)
 
   // Use attract screen background as template for others
-  if (filepath = _.get(cmsContent[0], 'field_state_nav_bg_img.uri.url', defaultAttractBgImg))
+  if (filepath = _.get(cmsContent[0], 'field_state_nav_bg_img.image.uri.url', defaultAttractBgImg))
     nav.background.img = setFile(backendUrl + filepath)
 
   // Explore section
@@ -92,7 +92,7 @@ const writeLayout = (body) => {
 
   explore.section.info.logo = setFile(backendUrl + cmsContent[0].field_logo.image.uri.url)
 
-  if (filepath = _.get(cmsContent[0], 'field_state_explore_bg_img.uri.url', defaultAttractBgImg))
+  if (filepath = _.get(cmsContent[0], 'field_state_explore_bg_img.image.uri.url', defaultAttractBgImg))
     explore.background.img = setFile(backendUrl + filepath)
 
   explore.section.interaction.map = _.get(cmsContent[0], 'field_explore_map', '')
@@ -154,7 +154,7 @@ const setData = (err, res, body) => {
 
 module.exports = () => {
   request(
-    backendUrl + '/jsonapi/node/kiosk_llc?include=field_logo,field_logo.image,field_state_attract_bg_img,field_state_nav_bg_img,field_state_explore_bg_img,field_state_attract_bg_video,field_state_attract_bg_video.field_media_video_file,field_story_map,field_story_map.field_callout,field_story_map.field_translated_callout,field_story_map.field_media,field_story_map.field_media.image',
+    backendUrl + '/jsonapi/node/kiosk_llc?include=field_logo,field_logo.image,field_state_attract_bg_img,field_state_attract_bg_img.image,field_state_nav_bg_img,field_state_nav_bg_img.image,field_state_explore_bg_img,field_state_explore_bg_img.image,field_state_attract_bg_video,field_state_attract_bg_video.field_media_video_file,field_story_map,field_story_map.field_callout,field_story_map.field_translated_callout,field_story_map.field_media,field_story_map.field_media.image',
     setData
     )
 }
