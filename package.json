@@ -9,7 +9,7 @@
     "build": "grunt",
     "build-release": "yarn run prepare && BUILD_TARGET=electron electron-builder -mw --config=build.json",
     "build-release-mac": "yarn run prepare && BUILD_TARGET=electron electron-builder -m --config=build.json",
-    "build-release-windows": "yarn run prepare && BUILD_TARGET=electron electron-builder -w --config=build.js",
+    "build-release-windows": "yarn run prepare && BUILD_TARGET=electron electron-builder -w --config=build.json",
     "prepare": "yarn run build && yarn run set-env",
     "set-env": "node -r dotenv/config builder.js",
     "start": "ENV=production BUILD_TARGET=browser node server/index.js",
