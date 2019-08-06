@@ -18,9 +18,12 @@ Copy `.env.example` as `.env`
  - `yarn run build-release[-{mac,windows}]` - Build electron package for mac, windows, or both.
 
 ## Environment Variables
+ - `ELECTRON_HEIGHT`, `ELECTRON_WIDTH`: the electron window height and width
+ - `ELECTRON_FULLSCREEN`: 1 to turn on, 0 for windowed mode
  - `BUILD_TARGET`: 'electron' or 'browser'
+ - `KIOSK_REGION`: The region content a cdi kiosk will highlight
  - `KIOSK_VERSION`: 'llc' or 'cdi'
- - `REGION`: Region string for CDI builds. Not established yet.
+ - `KIOSK_UUID`: The drupal node uuid for the kiosk content
 
 ## Licensing
 Copyright 2014-2018 Esri
