@@ -6,7 +6,8 @@
  * spans the height
  */
 .interaction__attract, .interaction__nav,
-.interaction__explore, .interaction__explore {
+.interaction__explore, .interaction__explore,
+.interaction__region {
   height: 100%;
 }
 

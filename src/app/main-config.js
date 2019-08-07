@@ -122,6 +122,8 @@ function bootstrap (reset = false) {
     return;
   }
 
+  var container = document.getElementById("container");
+  container.classList.add(configOptions.ik.version);
   app.indexCfg = configOptions;
 
   loadCSS(app.pathJSAPI + "esri/css/esri.css", true);

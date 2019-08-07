@@ -2,6 +2,7 @@ define([
   'lib-build/tpl!../../tpl/sections/Interaction/Active',
   'lib-build/tpl!../../tpl/sections/Interaction/Attract',
   'lib-build/tpl!../../tpl/sections/Interaction/Nav',
+  'lib-build/tpl!../../tpl/sections/Interaction/Region',
   'lib-build/tpl!../../tpl/sections/Interaction/Storymap',
   'lib-build/tpl!../../tpl/components/StorymapButton',
   'lib-build/tpl!../../tpl/components/ExploreButton',
@@ -11,6 +12,7 @@ define([
   interactionActiveTpl,
   interactionAttractTpl,
   interactionNavTpl,
+  interactionRegionTpl,
   interactionStorymapTpl,
   StorymapButton,
   ExploreButton,
@@ -25,14 +27,17 @@ define([
         case 'active':
           this.renderActive();
           break;
-        case 'storymap':
-          this.renderStorymap();
+        case 'explore':
+          this.renderExplore();
           break;
         case 'nav':
           this.renderNav();
           break;
-        case 'explore':
-          this.renderExplore();
+        case 'region':
+          this.renderRegion();
+          break;
+        case 'storymap':
+          this.renderStorymap();
           break;
         default: // attract screen
           this.renderAttract();
@@ -96,6 +101,10 @@ define([
       $(activeClass + ' [data-nav]').each(function(i, ele) {
         ik.wrapper.createLinks($(ele));
       });
+    }
+
+    this.renderRegion = function () {
+      $('.interaction__region').html(interactionRegionTpl());
     }
 
     this.renderStorymap = function () {

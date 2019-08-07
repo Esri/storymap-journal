@@ -4,6 +4,7 @@ define([
   'lib-build/tpl!../../tpl/sections/Info/Attract',
   'lib-build/tpl!../../tpl/sections/Info/Explore',
   'lib-build/tpl!../../tpl/sections/Info/Nav',
+  'lib-build/tpl!../../tpl/sections/Info/Region',
   'lib-build/tpl!../../tpl/sections/Info/Storymap',
   'lib-build/css!./Interaction'
 ], function (
@@ -12,6 +13,7 @@ define([
   infoAttractTpl,
   infoExploreTpl,
   infoNavTpl,
+  infoRegionTpl,
   infoStorymapTpl,
   infoCss
 ) {
@@ -23,11 +25,14 @@ define([
         case 'active':
           this.renderActive();
           break;
+        case 'explore':
+          this.renderExplore();
+          break;
         case 'nav':
           this.renderNav();
           break;
-        case 'explore':
-          this.renderExplore();
+        case 'region':
+          this.renderRegion();
           break;
         case 'storymap':
           this.renderStorymap();
@@ -56,6 +61,10 @@ define([
 
     this.renderNav = function () {
       $('.info__nav').html(infoNavTpl(layout.getInfo()));
+    }
+
+    this.renderRegion = function () {
+      $('.info__region').html(infoRegionTpl(layout.getInfo()));
     }
 
     this.renderStorymap = function () {

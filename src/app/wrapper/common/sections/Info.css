@@ -13,12 +13,30 @@
 }
 
 .info__attract__img,
-.info__explore__img {
+.info__explore__img,
+.info__nav__img,
+.info__region__img {
   display: block;
   margin: 0 auto;
+  width: 550px;
+}
+
+.llc .info__attract__img,
+.llc .info__explore__img,
+.llc .info__nav__img,
+.llc .info__region__img {
   padding-bottom: 35px;
   padding-top: 305px;
-  width: 550px;
+}
+
+.cdi .info__attract > div,
+.cdi .info__explore > div,
+.cdi .info__nav > div,
+.cdi .info__region > div {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .info__attract h1,
@@ -28,6 +46,22 @@
   font-size: 120px;
   line-height: 110px;
   text-align: center;
+}
+
+.info__region h1,
+.info__region h2 {
+  font-family: 'Refrigerator';
+  line-height: 80px;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.info__region h1 {
+  font-size: 140px;
+}
+
+.info__region h2 {
+  font-size: 80px;
 }
 
 .info__storymap__background {

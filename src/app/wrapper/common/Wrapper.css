@@ -51,6 +51,12 @@
   src: url('/static/fonts/OpenSans/OpenSans-ExtraBold.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Refrigerator';
+  font-weight: 700;
+  src: url('/static/fonts/Refrigerator Deluxe Bold.otf') format('opentype')
+}
+
 .no-touch {
   background: transparent;
 }
