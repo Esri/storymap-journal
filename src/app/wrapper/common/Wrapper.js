@@ -11,6 +11,7 @@ define([
   './states/Attract',
   './states/Explore',
   './states/Nav',
+  './states/Region',
   './states/Storymap',
   './sections/Info',
   './sections/Interaction',
@@ -29,6 +30,7 @@ define([
   Attract,
   Explore,
   Nav,
+  Region,
   Storymap,
   Interaction,
   Info,
@@ -53,6 +55,7 @@ define([
     var attract = {};
     var explore = {};
     var nav = {};
+    var region = {};
     var storymap = {};
 
     // Wrapper sections
@@ -83,6 +86,7 @@ define([
       this.states.attract = new Attract();
       this.states.explore = new Explore();
       this.states.nav = new Nav();
+      this.states.region = new Region();
       this.states.storymap = new Storymap();
 
       // Wrapper sections
@@ -156,6 +160,9 @@ define([
             ik.wrapper.sections.info.render();
             ik.wrapper.sections.interaction.render();
             break;
+          case 'region':
+            ik.wrapper.sections.info.render();
+            ik.wrapper.sections.interaction.render();
           default:
             // nothing
         }
@@ -252,6 +259,10 @@ define([
       ik.wrapper.state.set('wrapper-state', 'nav');
     }
 
+    this.showRegion = function () {
+      ik.wrapper.state.set('wrapper-state', 'region');
+    }
+
     this.showStorymap = function (appid) {
       if (ik.wrapper.state.get('appid') !== appid) {
         ik.wrapper.state.set('appid', appid);
@@ -323,12 +334,14 @@ define([
       showAttract: this.showAttract,
       showExplore: this.showExplore,
       showNav: this.showNav,
+      showRegion: this.showRegion,
       showStorymap: this.showStorymap,
       states: {
         active: active,
         attract: attract,
         explore: explore,
         nav: nav,
+        region: region,
         storymap: storymap
       },
       storymaps: storymaps,
