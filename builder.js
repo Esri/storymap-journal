@@ -3,10 +3,11 @@ const fs = require('fs')
 const { KIOSK_REGION, KIOSK_VERSION } = process.env
 
 const humanName = (KIOSK_VERSION.toLowerCase() === 'cdi')
-  ? 'Cultural_Dive_In' + '-' + KIOSK_REGION
-  : 'Love_and_Connections'
+  ? 'Cultural Dive In' + ' ' + KIOSK_REGION
+  : 'Love and Connections'
 
 buildOptions.productName = humanName
+buildOptions.appId = buildOptions.appId + `.${KIOSK_VERSION.toLowerCase()}`
 
 const jsonString = JSON.stringify(buildOptions)
 

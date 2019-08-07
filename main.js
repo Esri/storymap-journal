@@ -64,12 +64,13 @@ server.listen(3000, error => {
     }
 
     if (process.env.BUILD_TARGET === 'electron') {
-      const {app, BrowserWindow} = require('electron')
+      const { app, BrowserWindow, ipcMain } = require('electron')
+      const logger = require('electron-log')
 
       function createWindow () {
         let mainWindow = new BrowserWindow({
           fullscreen: process.env.ELECTRON_FULLSCREEN === '1',
-          height: parseInt(process.env.ELECTRON_HEIGHT),
+          height: parseInt(process.env.ELECTRON_HEIGHT, 10),
           show: false,
           webPreferences: {
             experimentalFeatures: true,
@@ -77,7 +78,7 @@ server.listen(3000, error => {
             //preload: '' // @TODO - Use to preload files when ready to write code,
             webSecurity: false
           },
-          width: parseInt(process.env.ELECTRON_WIDTH)
+          width: parseInt(process.env.ELECTRON_WIDTH, 10)
         })
 
         mainWindow.on('ready-to-show', () => {
@@ -91,6 +92,9 @@ server.listen(3000, error => {
         let { webContents } = mainWindow
 
         webContents.on('crashed', () => {
+          // Log error
+          logger.error('App crashed! Creating new window.')
+          // Destroy window and start over
           mainWindow.destroy()
           createWindow()
         })
@@ -105,6 +109,7 @@ server.listen(3000, error => {
       }
 
       app.on('ready', () => {
+        logger.info('App started.')
         createWindow()
       })
 
@@ -117,6 +122,13 @@ server.listen(3000, error => {
           createWindow()
         }
       })
+
+      app.on('quit', () => {logger.info('App closed.')})
+      app.on('uncaughException', error => logger.error(error))
+      app.on('unhandledRejection', error => logger.error(error))
+
+      // Log to a file that holds a log of useful information
+      ipcMain.on('log-message-to-file', (event, arg) => logger[arg.type](arg.message))
     }
   }
 })
