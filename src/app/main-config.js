@@ -117,6 +117,11 @@ function bootstrap (reset = false) {
   // Get the version of the kiosk which needs to spin up
   configOptions.ik.version = getUrlVar('version');
 
+  if (configOptions.ik.version === undefined || configOptions.ik.version === null) {
+    console.error('Wrapper will fail to initialize until a "version" paramter is passed in the window URL.');
+    return;
+  }
+
   app.indexCfg = configOptions;
 
   loadCSS(app.pathJSAPI + "esri/css/esri.css", true);
