@@ -14,20 +14,6 @@
         "interaction": {}
       }
     },
-    "active": {
-      "background": {
-        "img": "",
-        "video": ""
-      },
-      "section": {
-        "info": {
-          "logo": "",
-          "h1": "",
-          "h2": ""
-        },
-        "interaction": {}
-      }
-    },
     "explore": {
       "background": {
         "img": "",
@@ -45,6 +31,20 @@
       }
     },
     "nav": {
+      "background": {
+        "img": "",
+        "video": ""
+      },
+      "section": {
+        "info": {
+          "logo": "",
+          "h1": "",
+          "h2": ""
+        },
+        "interaction": {}
+      }
+    },
+    "region": {
       "background": {
         "img": "",
         "video": ""

@@ -1,5 +1,5 @@
 const path = require('path')
-const request  = require('request')
+const axios = require('axios')
 const fs = require('fs')
 const _ = require('lodash')
 const url = require('url')
@@ -28,6 +28,41 @@ if (fs.existsSync(downloadPath) === false) {
   fs.mkdirSync(downloadPath, { recursive: true })
 }
 
+const storymapTemplate = {
+  id: "",
+  name: "",
+  language: "",
+  weight: 0,
+  theme: {
+    background: "",
+    color: {
+      primary: "",
+      secondary: ""
+    }
+  },
+  callout: {
+    title: "",
+    body: ""
+  },
+  relationships: {
+    id: ""
+  }
+}
+
+const regionTemplate = {
+  id: '',
+  machine_name: '',
+  name: '',
+  translated: '',
+  storymaps: [],
+  theme: {
+    color: {
+      primary: '',
+      secondary: ''
+    }
+  }
+}
+
 /**
  * getHeader - returns title data for the Info section
  *
@@ -36,6 +71,14 @@ if (fs.existsSync(downloadPath) === false) {
  * @return {[String]}
  */
 const getHeader = (content = {}, field = '') => (_.isEmpty(_.get(content, field, content.title)) === true) ? content.title : _.get(content, field, content.title)
+
+/**
+ * Take JSON object and write it to path
+ *
+ * @param {String} path 
+ * @param {Object} json 
+ */
+const writeJsonToFile = (path = '', json = {}) => {fs.writeFileSync(path, JSON.stringify(json), 'utf8')}
 
 /**
  * Take a pathname from Drupal, download the file if possible.
@@ -57,7 +100,17 @@ const setFile = (fileuri) => {
     fs.mkdirSync(path.dirname(absFilepath), { recursive: true })
   }
 
-  request(fileuri).pipe(fs.createWriteStream(decodeURI(absFilepath)))
+  axios({
+    method: 'GET',
+    url: fileuri,
+    responseType: 'stream'
+  })
+    .then((res) => {
+      res.data.pipe(fs.createWriteStream(decodeURI(absFilepath)))
+    }).catch(error => {
+      console.error(error)
+    })
+
   return relFilepath
 }
 
@@ -66,11 +119,11 @@ const setFile = (fileuri) => {
  *
  * @param {[Object]} body JSON:API object parsed by Jsona
  */
-const writeLayout = (body) => {
+const createLayout = (body) => {
   const cmsContent = formatter.deserialize(body)
 
   // Save file for future reference
-  fs.writeFileSync(staticPath + '/download/cms.json', JSON.stringify(cmsContent), 'utf8')
+  writeJsonToFile(staticPath + '/download/kiosk.json', cmsContent)
 
   // Get the default layout file
   const layoutDefault = JSON.parse(fs.readFileSync(staticPath + '/templates/layout.json', 'utf8'))
@@ -78,10 +131,12 @@ const writeLayout = (body) => {
   let defaultAttractBgImg = staticPath + '/image/attract-background.json'
 
   // Write layout information
-  const { attract, explore, nav, storymap } = layoutDefault.state
+  const { attract, explore, nav, region, storymap } = layoutDefault.state
 
   // Attract section
   attract.section.info.h1 = getHeader(cmsContent, 'title')
+
+  attract.section.info.h2 = getHeader(cmsContent, 'field_translated_title')
 
   attract.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
 
@@ -99,6 +154,8 @@ const writeLayout = (body) => {
   // Nav section
   nav.section.info.h1 = getHeader(cmsContent, 'field_state_nav_title')
 
+  nav.section.info.h2 = getHeader(cmsContent, 'field_state_nav_translated_title')
+
   nav.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
 
   // Use attract screen background as template for others
@@ -108,6 +165,8 @@ const writeLayout = (body) => {
   // Explore section
   explore.section.info.h1 = getHeader(cmsContent, 'field_state_explore_title')
 
+  explore.section.info.h2 = getHeader(cmsContent, 'field_state_explore_translated_title')
+
   explore.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
 
   if (filepath = _.get(cmsContent, 'field_state_explore_bg_img.image.uri.url', defaultAttractBgImg))
@@ -115,13 +174,18 @@ const writeLayout = (body) => {
 
   explore.section.interaction.map = _.get(cmsContent, 'field_explore_map', '')
 
+  // Region section
+  region.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
+
   // Story map section
   storymap.section.info.h1 = getHeader(cmsContent, 'field_state_storymap_title')
+
+  explore.section.info.h2 = getHeader(cmsContent, 'field_state_storymap_translated_title')
 
   storymap.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
 
   // Write changes back to the layout.json file
-  fs.writeFileSync(apiPath + '/layout.json', JSON.stringify(layoutDefault), 'utf8')
+  return layoutDefault
 }
 
 /**
@@ -129,57 +193,72 @@ const writeLayout = (body) => {
  *
  * @param {[Object]} body JSON:API object parsed by Jsona
  */
-const writeStorymaps = (body) => {
+const createStorymaps = (body) => {
   const cmsContent = formatter.deserialize(body)
 
-  const storymapTemplate = {
-    id: "",
-    name: "",
-    language: "",
-    weight: 0,
-    theme: {
-      background: "",
-      color: {
-        primary: "",
-        secondary: ""
-      }
-    },
-    callout: {
-      title: "",
-      body: ""
-    },
-    relationships: {
-      id: ""
-    }
+  writeJsonToFile(staticPath + '/download/storymaps.json', cmsContent)
+
+  let storyMapList
+  if (process.env.KIOSK_VERSION === 'cdi') {
+    storyMapList = cmsContent
+  } else {
+    storyMapList = cmsContent.field_story_map
   }
 
-  const primaryStorymaps = cmsContent.field_story_map.map((storymap) => {
+  const primaryStorymaps = storyMapList.map((storymap) => {
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0)
-      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ""}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
+      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
     else
-      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ""}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
+      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
   })
 
-  const translatedStorymaps = cmsContent.field_story_map.map((storymap) => {
+  const translatedStorymaps = storyMapList.map((storymap) => {
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0) {
-      return { ...storymapTemplate, ...{id: storymap.field_translated_id}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ""}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
+      return { ...storymapTemplate, ...{id: storymap.field_translated_id}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
     }
   }).filter((result) => result !== undefined)
 
   const storymaps = primaryStorymaps.concat(translatedStorymaps)
 
-  // Write changes back to the layout.json file
-  fs.writeFileSync(apiPath + '/storymaps.json', JSON.stringify(storymaps), 'utf8')
+  return storymaps
+}
+
+const createRegions = (body) => {
+  const cmsContent = formatter.deserialize(body)
+
+  // Save file for future reference
+  writeJsonToFile(staticPath + '/download/regions.json', cmsContent)
+
+  const regions = cmsContent.map((region, index) => {
+    return {
+      ...regionTemplate,
+      ...{ id: region.drupal_internal__tid },
+      ...{ machine_name: region.field_machine_name },
+      ...{ name: region.name },
+      ...{ translated: region.field_translated_display_name},
+      ...{ theme: {
+          color: {
+            primary: region.field_primary.color,
+            secondary: region.field_secondary.color
+          }
+        }}
+      }
+  })
+
+  return regions
 }
 
 /**
  * Export the logic so that the 
  */
-module.exports = () => {
+module.exports = async () => {
   const { BACKEND_URL, KIOSK_VERSION, KIOSK_UUID } = process.env
-  const api = new URL(`/jsonapi/node/kiosk_${KIOSK_VERSION.toLowerCase()}/${KIOSK_UUID}`, BACKEND_URL)
+
+  // Endpoint for the Kiosk node
+  const kiosk = new URL(`/jsonapi/node/kiosk_${KIOSK_VERSION.toLowerCase()}/${KIOSK_UUID}`, BACKEND_URL)
   const map = new Map()
 
+  // Set a large amount of query paramters
   if (KIOSK_VERSION === 'llc') {
     map.set('include', [
         'field_logo',
@@ -198,16 +277,98 @@ module.exports = () => {
         'field_story_map.field_media',
         'field_story_map.field_media.image'
       ].join(','))
+  } else {
+        map.set('include', [
+        'field_logo',
+        'field_logo.image',
+        'field_state_attract_bg_img',
+        'field_state_attract_bg_img.image',
+        'field_state_attract_bg_video',
+        'field_state_attract_bg_video.field_media_video_file',
+        'field_state_nav_bg_img',
+        'field_state_nav_bg_img.image',
+        'field_state_nav_bg_video',
+        'field_state_nav_bg_video.field_media_video_file',
+        'field_state_region_bg_img',
+        'field_state_region_bg_img.image',
+        'field_state_region_bg_video',
+        'field_state_region_bg_video.field_media_video_file'
+      ].join(','))
   }
 
   params = new URLSearchParams(map)
+  kiosk.search = decodeURIComponent(params.toString())
 
-  api.search = decodeURIComponent(params.toString())
+  try {
+    // Grab response, format it, and save the object
+    const response = await axios.get(kiosk.toString())
+    const apiLayout = createLayout(response.data)
+    writeJsonToFile(apiPath + '/layout.json', apiLayout)
 
-  request(
-    api.toString(),
-    (err, res, body) => {
-      writeLayout(body)
-      writeStorymaps(body)
-  })
+    if (KIOSK_VERSION === 'llc') {
+      const apiStorymaps = createStorymaps(response.data)
+      writeJsonToFile(apiPath + '/storymaps.json', apiStorymaps)
+    }
+  } catch (error) {
+    console.error(error)
+  }
+
+  if (KIOSK_VERSION === 'cdi') {
+    // Get Regions for Cultural Dive Ins
+    taxonomy = new URL('/jsonapi/taxonomy_term/cdi_region?sort=weight', BACKEND_URL)
+
+    try {
+      // Grab the regions
+      const response = await axios.get(taxonomy.toString())
+
+      // Use the regions to get Story Maps which are tagged with those regions
+      const regionStorymaps = response.data.data.map(
+        region => axios.get(
+          new URL(`/jsonapi/node/story_map?filter[field_region.tid]=${region.attributes.drupal_internal__tid}&include=field_callout,field_translated_callout,field_media,field_media.image,field_region`, BACKEND_URL)
+            .toString()
+      ))
+      const storymapGroup = await axios.all(regionStorymaps)
+
+      /**
+       * Given a group of story maps from multiple requests,
+       * group them into a single JSON:API object
+       */
+      const storymaps = storymapGroup.reduce((accumulator, region) => {
+        if (region.data.data.length > 0) {
+          let newAcc = {...accumulator, ...{ jsonapi: region.data.jsonapi }, ...{ links: region.data.links }}
+          newAcc.data = accumulator.data.concat(region.data.data)
+          newAcc.included = accumulator.included.concat(region.data.included)
+          return newAcc
+        } else {
+          return accumulator
+        }
+      }, {jsonapi: {}, data: [], included: [], links: {}})
+
+      // Format the the story maps and regions
+      const storymapApi = createStorymaps(storymaps)
+      const regions = createRegions(response.data)
+
+      // Take regions and associate story map field_id to those regions
+      const newRegions = regions.map(region => {
+        region.storymaps = formatter.deserialize(storymaps).map(storymap => {
+          if (region.id === storymap.field_region.drupal_internal__tid) {
+            // Also add the region theme colors to the story maps
+            storymapApi.forEach((x, i, y) => {
+              if (x.id === storymap.field_id) {
+                y[i].theme = region.theme
+              }
+            })
+            return storymap.field_id
+          }
+        }).filter(x => x !== undefined)
+        return region
+      })
+
+      // Write these objects to the api static endpoints
+      writeJsonToFile(apiPath + '/storymaps.json', storymapApi)
+      writeJsonToFile(apiPath + '/regions.json', newRegions)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }

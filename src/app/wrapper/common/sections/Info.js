@@ -64,7 +64,15 @@ define([
     }
 
     this.renderRegion = function () {
-      $('.info__region').html(infoRegionTpl(layout.getInfo()));
+      // Region headers are the region info
+      var values = layout.getInfo()
+      var regionid = ik.wrapper.state.get('regionid');
+      var region = ik.wrapper.api.region.get(regionid);
+
+      values.h1 = region[0].name;
+      values.h2 = region[0].translated;
+
+      $('.info__region').html(infoRegionTpl(values));
     }
 
     this.renderStorymap = function () {
