@@ -4,8 +4,7 @@ define([
   'lib-build/tpl!../../tpl/sections/Interaction/Nav',
   'lib-build/tpl!../../tpl/sections/Interaction/Region',
   'lib-build/tpl!../../tpl/sections/Interaction/Storymap',
-  'lib-build/tpl!../../tpl/components/StorymapButton',
-  'lib-build/tpl!../../tpl/components/ExploreButton',
+  'lib-build/tpl!../../tpl/components/NavigationButton',
   'lib-build/css!./Info',
   'esri/arcgis/utils'
 ], function (
@@ -14,8 +13,7 @@ define([
   interactionNavTpl,
   interactionRegionTpl,
   interactionStorymapTpl,
-  StorymapButton,
-  ExploreButton,
+  NavigationButton,
   InfoCss,
   esriUtils
 ) {
@@ -72,18 +70,22 @@ define([
 
       var alternateLanguage = (currentLanguage === 'en') ? 'es' : 'en';
 
+      var action = '';
       var buttons = [];
 
       if (ik.wrapper.getVersion() === 'llc') {
+        action = 'storymap'
         buttons = ik.wrapper.api.storymap.getAllLanguage(currentLanguage);
       } else {
+        action = 'region'
         buttons = ik.wrapper.api.region.getAll();
       }
 
+      // Create navigation buttons
       buttons.forEach(function (button, index) {
         var alternate = '';
         if (button.relationships) {
-          var alternateStorymap = ik.wrapper.api.storymap.get(button.relationships.id);
+          var alternateStorymap = ik.wrapper.api.storymap.get([button.relationships.id]);
 
           if (alternateStorymap.length === 1)
             alternate = alternateStorymap[0].name;
@@ -93,30 +95,90 @@ define([
           alternate = button.translated;
         }
 
-        $('.nav__list').append(StorymapButton({
+        $('.nav__list').append(NavigationButton({
+          action: action,
           alternate: alternate,
           alternateLanguage: alternateLanguage,
           color: button.theme.color.primary,
           currentLanguage: currentLanguage,
-          storymap: button.id,
+          targetId: button.id,
           title: button.name
         }));
       });
 
+      // Set button to explore section
       if (ik.wrapper.getVersion() === 'llc') {
-        $('.nav__list__explore').html(ExploreButton({
+        $('.nav__list__explore').html(NavigationButton({
+          action: 'explore',
+          alternate: 'Explore nuestro Comunidad de hojas',
+          alternateLanguage: 'es',
           color: '#715035',
-          mapid: ik.wrapper.layout.state.explore.section.interaction.map
+          currentLanguage: currentLanguage,
+          targetId: ik.wrapper.layout.state.explore.section.interaction.map,
+          title: 'Learn more about LEAF Community'
         }));
       }
 
+      // Bind events to links
       $(activeClass + ' [data-nav]').each(function(i, ele) {
         ik.wrapper.createLinks($(ele));
       });
     }
 
     this.renderRegion = function () {
-      $('.interaction__region').html(interactionRegionTpl());
+      var activeClass = '.interaction__region';
+
+      $(activeClass).html(interactionRegionTpl());
+
+      var currentLanguage = ik.wrapper.state.get('language');
+
+      var alternateLanguage = (currentLanguage === 'en') ? 'es' : 'en';
+
+      var action = 'storymap';
+      var region = ik.wrapper.state.get('regionid');
+      var regionInfo = ik.wrapper.api.region.get(region);
+
+      var buttons = ik.wrapper.api.storymap.get(regionInfo[0].storymaps);
+
+      // Create navigation buttons
+      buttons.forEach(function (button, index) {
+        var alternate = '';
+        if (button.relationships) {
+          var alternateStorymap = ik.wrapper.api.storymap.get([button.relationships.id]);
+
+          if (alternateStorymap.length === 1)
+            alternate = alternateStorymap[0].name;
+        }
+
+        if (alternate.length === 0 && ik.wrapper.getVersion() === 'cdi') {
+          alternate = '';
+        }
+
+        $('.region__list').append(NavigationButton({
+          action: action,
+          alternate: alternate,
+          alternateLanguage: alternateLanguage,
+          color: button.theme.color.primary,
+          currentLanguage: currentLanguage,
+          targetId: button.id,
+          title: button.name
+        }));
+      });
+
+      $('.region__list__back').html(NavigationButton({
+        action: 'nav',
+        alternate: 'ver todas las regiones',
+        alternateLanguage: 'es',
+        color: '#ffffff',
+        currentLanguage: currentLanguage,
+        targetId: '',
+        title: 'View all regions'
+      }));
+
+      // Bind events to links
+      $(activeClass + ' [data-nav]').each(function(i, ele) {
+        ik.wrapper.createLinks($(ele));
+      });
     }
 
     this.renderStorymap = function () {

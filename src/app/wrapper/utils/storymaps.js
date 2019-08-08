@@ -7,12 +7,16 @@ define([], function () {
     /**
      * Return a single storymap using the app id
      *
-     * @param {string} appid
-     * @return {Array[storymap]} array of storymaps, of length 0 or 1
+     * @param {ArrayOf[String]} appid
+     * @return {Array[storymap]} array of storymaps, length 0 if there are none
      */
     var get = function (appid) {
+      if (Array.isArray(appid) === false) {
+        appid = [appid];
+      }
+
       return ik.wrapper.storymaps.filter(function (storymap) {
-        return (storymap.id === appid) ? storymap : false;
+        return (appid.includes(storymap.id)) ? storymap : false;
       })
     }
 

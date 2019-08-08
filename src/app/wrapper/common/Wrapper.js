@@ -127,6 +127,13 @@ define([
       })
 
       /**
+       * regionid watcher.
+       */
+      this.state.watch('regionid', function () {
+        console.debug('RegionID changed to ' + state.get('regionid'));
+      })
+
+      /**
        * Wrapper state watcher. Handles wrapper navigation.
        * Passes current state to section renderers.
        */
@@ -263,7 +270,11 @@ define([
       ik.wrapper.state.set('wrapper-state', 'nav');
     }
 
-    this.showRegion = function () {
+    this.showRegion = function (regionid) {
+      if (ik.wrapper.state.get('regionid') !== regionid) {
+        ik.wrapper.state.set('regionid', regionid);
+      }
+
       ik.wrapper.state.set('wrapper-state', 'region');
     }
 

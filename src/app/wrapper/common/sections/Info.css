@@ -60,13 +60,9 @@
 
 .info__attract h1,
 .info__region h1 {
-  font-size: 140px;
-  line-height: 140px;
-  text-transform: uppercase;
-}
-
-.info__nav h1 {
   font-size: 130px;
+  line-height: 130px;
+  text-transform: uppercase;
 }
 
 .info__attract h2,

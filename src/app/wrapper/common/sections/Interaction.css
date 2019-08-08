@@ -35,12 +35,14 @@
   height: 100%;
 }
 
-/* Nav section */
-.interaction__nav {
+/* Nav and Region sections */
+.interaction__nav,
+.interaction__region {
   padding: 50px 20px;
 }
 
-.interaction__nav h2 {
+.interaction__nav h2,
+.interaction__region h2 {
   font-family: 'OpenSans';
   font-size: 36px;
   font-weight: 500;
@@ -49,7 +51,8 @@
   text-align: center;
 }
 
-.interaction__nav ul {
+.interaction__nav ul,
+.interaction__region ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,14 +61,16 @@
   padding: 0;
 }
 
-.interaction__nav ul li {
+.interaction__nav ul li,
+.interaction__region ul li {
   display: flex;
   flex-basis: 520px;
   justify-content: center;
   margin-bottom: 30px;
 }
 
-.interaction__nav ul li button {
+.interaction__nav ul li button,
+.interaction__region ul li button {
   align-items: center;
   background-image: url('/static/svg/button-background.svg');
   background-repeat: repeat;
@@ -77,35 +82,42 @@
   width: 500px;
 }
 
-.interaction__nav ul li button img {
+.interaction__nav ul li button img,
+.interaction__region ul li button img {
   flex-basis: 70px;
 }
 
-.interaction__nav ul li button div {
+.interaction__nav ul li button div,
+.interaction__region ul li button div {
   display: flex;
   flex-basis: 400px;
   flex-wrap: wrap;
 }
 
-.interaction__nav ul li button span {
+.interaction__nav ul li button span,
+.interaction__region ul li button span {
   flex-basis: 100%;
   line-height: 26px;
 }
 
-.interaction__nav ul li button span.primary {
+.interaction__nav ul li button span.primary,
+.interaction__region ul li button span.primary {
   font-size: 36px;
 }
 
-.interaction__nav ul li button span.alternate {
+.interaction__nav ul li button span.alternate,
+.interaction__region ul li button span.alternate {
   font-size: 22px;
 }
 
-.interaction__nav ul li button span.en {
+.interaction__nav ul li button span.en,
+.interaction__region ul li button span.en {
   font-family: 'Hallo Sans';
   font-weight: 700;
 }
 
-.interaction__nav ul li button span.es {
+.interaction__nav ul li button span.es
+.interaction__region ul li button span.es {
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: 700;
