@@ -6,6 +6,7 @@ define([
   'dojo/topic',
   'dojo/Stateful',
   '../utils/api',
+  '../utils/regions',
   '../utils/storymaps',
   './states/Active',
   './states/Attract',
@@ -25,6 +26,7 @@ define([
   topic,
   Stateful,
   apiUtil,
+  regionUtil,
   storymapUtil,
   Active,
   Attract,
@@ -45,10 +47,12 @@ define([
 
     // Initialize Utilities
     var apiStorymap = new storymapUtil();
+    var apiRegion = new regionUtil();
 
     // Global Wrapper Data
     var layout = {};
     var storymaps = {};
+    var regions = {};
 
     // State controllers
     var active = {};
@@ -318,12 +322,14 @@ define([
 
     return {
       api: {
-        storymap: apiStorymap
+        storymap: apiStorymap,
+        region: apiRegion
       },
       init: init,
       createLinks: createLinks,
       getVersion: this.getVersion,
       layout: layout,
+      regions: regions,
       sections: {
         bottom: bottom,
         info: info,

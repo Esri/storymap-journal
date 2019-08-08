@@ -38,7 +38,7 @@ define([
       $('.menu__storymap').html(menuTplStoryMap({
         alternateId: alternateStorymap,
         anotherLanguage: anotherLanguage,
-        color: storymap[0].theme.color,
+        color: storymap[0].theme.color.primary,
         language: currentLanguage,
         name: storymap[0].name
       }));

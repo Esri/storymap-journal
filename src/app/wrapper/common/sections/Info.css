@@ -48,20 +48,32 @@
   text-align: center;
 }
 
-.info__region h1,
-.info__region h2 {
+.cdi .info__attract h1,
+.cdi .info__attract h2,
+.cdi .info__nav h1,
+.cdi .info__nav h2,
+.cdi .info__region h1,
+.cdi .info__region h2 {
   font-family: 'Refrigerator';
-  line-height: 80px;
-  padding: 15px 0;
   text-align: center;
 }
 
+.info__attract h1,
 .info__region h1 {
   font-size: 140px;
+  line-height: 140px;
+  text-transform: uppercase;
 }
 
+.info__nav h1 {
+  font-size: 130px;
+}
+
+.info__attract h2,
+.info__nav h2,
 .info__region h2 {
   font-size: 80px;
+  line-height: 80px;
 }
 
 .info__storymap__background {

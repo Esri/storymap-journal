@@ -1,4 +1,9 @@
 <div>
-  <img class="info__attract__img" src="<%= logo %>"/>
-  <h1><%= h1 %></h1>
+  <img class="info__nav__img" src="<%= logo %>"/>
+  <div>
+    <h1><%= h1 %></h1>
+    <% if (h2) { %>
+    <h2><%= h2 %></h2>
+    <% } %>
+  </div>
 </div>

@@ -72,31 +72,43 @@ define([
 
       var alternateLanguage = (currentLanguage === 'en') ? 'es' : 'en';
 
-      var storymaps = ik.wrapper.api.storymap.getAllLanguage(currentLanguage);
+      var buttons = [];
 
-      storymaps.forEach(function (storymap, index) {
+      if (ik.wrapper.getVersion() === 'llc') {
+        buttons = ik.wrapper.api.storymap.getAllLanguage(currentLanguage);
+      } else {
+        buttons = ik.wrapper.api.region.getAll();
+      }
+
+      buttons.forEach(function (button, index) {
         var alternate = '';
-        if (storymap.relationships) {
-          var alternateStorymap = ik.wrapper.api.storymap.get(storymap.relationships.id);
+        if (button.relationships) {
+          var alternateStorymap = ik.wrapper.api.storymap.get(button.relationships.id);
 
           if (alternateStorymap.length === 1)
             alternate = alternateStorymap[0].name;
         }
 
+        if (alternate.length === 0 && ik.wrapper.getVersion() === 'cdi') {
+          alternate = button.translated;
+        }
+
         $('.nav__list').append(StorymapButton({
           alternate: alternate,
           alternateLanguage: alternateLanguage,
-          color: storymap.theme.color,
+          color: button.theme.color.primary,
           currentLanguage: currentLanguage,
-          storymap: storymap.id,
-          title: storymap.name
+          storymap: button.id,
+          title: button.name
         }));
       });
 
-      $('.nav__list__explore').html(ExploreButton({
-        color: '#715035',
-        mapid: ik.wrapper.layout.state.explore.section.interaction.map
-      }));
+      if (ik.wrapper.getVersion() === 'llc') {
+        $('.nav__list__explore').html(ExploreButton({
+          color: '#715035',
+          mapid: ik.wrapper.layout.state.explore.section.interaction.map
+        }));
+      }
 
       $(activeClass + ' [data-nav]').each(function(i, ele) {
         ik.wrapper.createLinks($(ele));

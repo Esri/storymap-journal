@@ -31,6 +31,19 @@ define([
         console.error(error.message);
       }
     );
+
+    if (ik.wrapper.getVersion() === 'cdi') {
+      request('/api/regions.json', {
+        sync: true,
+        handleAs: 'json'
+      }).then(
+        function (json) {
+          ik.wrapper.regions = json;
+        }, function (error) {
+          console.error(error.message);
+        }
+      );
+    }
   }
 
   return this;
