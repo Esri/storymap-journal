@@ -162,6 +162,12 @@ const createLayout = (body) => {
   if (filepath = _.get(cmsContent, 'field_state_nav_bg_img.image.uri.url', defaultAttractBgImg))
     nav.background.img = setFile(process.env.BACKEND_URL + filepath)
 
+  if (filepath = _.get(cmsContent, 'field_state_nav_bg_video.field_media_video_file.uri.url', false))
+    nav.background.video = {
+    src: setFile(process.env.BACKEND_URL + cmsContent.field_state_nav_bg_video.field_media_video_file.uri.url),
+    type: _.get(cmsContent, 'field_state_nav_bg_video.field_media_video_file.filemime', '')
+  }
+
   // Explore section
   explore.section.info.h1 = getHeader(cmsContent, 'field_state_explore_title')
 
@@ -176,6 +182,12 @@ const createLayout = (body) => {
 
   // Region section
   region.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
+
+  if (filepath = _.get(cmsContent, 'field_state_region_bg_video.field_media_video_file.uri.url', false))
+    region.background.video = {
+    src: setFile(process.env.BACKEND_URL + cmsContent.field_state_region_bg_video.field_media_video_file.uri.url),
+    type: _.get(cmsContent, 'field_state_region_bg_video.field_media_video_file.filemime', '')
+  }
 
   // Story map section
   storymap.section.info.h1 = getHeader(cmsContent, 'field_state_storymap_title')
