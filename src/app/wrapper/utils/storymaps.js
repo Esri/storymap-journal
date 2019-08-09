@@ -10,7 +10,7 @@ define([], function () {
      * @param {ArrayOf[String]} appid
      * @return {Array[storymap]} array of storymaps, length 0 if there are none
      */
-    var get = function (appid) {
+    var get = function (appid = []) {
       if (Array.isArray(appid) === false) {
         appid = [appid];
       }
@@ -30,13 +30,15 @@ define([], function () {
     }
 
     /**
-     * Get all storymaps of a single language
+     * Get all storymaps of a single language.
+     * Pass a language and a list of storymaps to filter.
      * 
-     * @param {string} lang
+     * @param {string} language 'en' or 'es'
+     * @param {Array} storymaps
      * @return {Array[storymaps]} an array of storymaps
      */
-    var getAllLanguage = function (lang) {
-      return ik.wrapper.storymaps.filter(function (storymap) {
+    var getAllLanguage = function (lang = '', storymaps = []) {
+      return storymaps.filter(function (storymap) {
         return (storymap.language === lang) ? storymap : false;
       })
     }

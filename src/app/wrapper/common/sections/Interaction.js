@@ -75,7 +75,8 @@ define([
 
       if (ik.wrapper.getVersion() === 'llc') {
         action = 'storymap'
-        buttons = ik.wrapper.api.storymap.getAllLanguage(currentLanguage);
+        allStorymaps = ik.wrapper.api.storymap.getAll();
+        buttons = ik.wrapper.api.storymap.getAllLanguage(currentLanguage, allStorymaps);
       } else {
         action = 'region'
         buttons = ik.wrapper.api.region.getAll();
@@ -138,7 +139,8 @@ define([
       var region = ik.wrapper.state.get('regionid');
       var regionInfo = ik.wrapper.api.region.get(region);
 
-      var buttons = ik.wrapper.api.storymap.get(regionInfo[0].storymaps);
+      var regionStorymaps = ik.wrapper.api.storymap.get(regionInfo[0].storymaps);
+      var buttons = ik.wrapper.api.storymap.getAllLanguage(currentLanguage, regionStorymaps);
 
       // Create navigation buttons
       buttons.forEach(function (button, index) {
