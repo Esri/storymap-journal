@@ -8,7 +8,7 @@ const localConfig = require('dotenv').config({
   path: path.resolve(__dirname, '.env')
 }).parsed
 
-process.env = { ...process.env, ...localConfig }
+process.env = { ...localConfig, ...process.env,}
 
 const dev = (process.env.ENV === 'dev')
 const environmentLongName = (dev === true) ? 'Development' : 'Production'
