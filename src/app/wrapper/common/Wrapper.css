@@ -121,10 +121,3 @@
     top: -100%;
   }
 }
-
-@media (max-aspect-ratio: 16/9) {
-  .fullscreen-bg__video {
-    left: -50%;
-    transform: translate(50%);
-  }
-}

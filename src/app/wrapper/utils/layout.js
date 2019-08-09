@@ -3,6 +3,10 @@ define([], function () {
     return (ik.wrapper.state) ? ik.wrapper.state.get('wrapper-state') : 'attract';
   };
 
+  this.getPrevState = function () {
+    return (ik.wrapper.state) ? ik.wrapper.state.get('prev-wrapper-state') : false;
+  }
+
   this.getBackground = function () {
     return ik.wrapper.layout[this.getState()].background;
   }
@@ -26,11 +30,26 @@ define([], function () {
 
   // Manipulates the background.
   this.setBackground = function () {
-    // Set Background Video or Image
+    // Determine if the current state is using video
     if (ik.wrapper.layout.state[this.getState()].background.video) {
+      var nextVideoDiffers = false
+
+      if (this.getPrevState()) 
+        nextVideoDiffers = ik.wrapper.layout.state[this.getState()].background.video !== ik.wrapper.layout.state[this.getPrevState()].background.video
+
       var video = $('#container video');
 
-      video.html('<source src="' + ik.wrapper.layout.state[this.getState()].background.video.src + '" type="' + ik.wrapper.layout.state.attract.background.video.type + '">');
+      if (ik.wrapper.state && ik.wrapper.state.get('video') === 'playing') {
+        ik.wrapper.state.set('video', 'stopped')
+      }
+
+      var newSource = '<source src="' + ik.wrapper.layout.state[this.getState()].background.video.src + '" type="' + ik.wrapper.layout.state[this.getState()].background.video.type + '">'
+      video.append(newSource);
+
+      if (nextVideoDiffers === true) {
+        video.children().get(0).remove();
+        video.load();
+      }
 
       if (ik.wrapper.layout.state[this.getState()].background.img) {
         video.attr('poster', ik.wrapper.layout.state[this.getState()].background.img);

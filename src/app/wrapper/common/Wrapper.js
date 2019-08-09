@@ -178,9 +178,6 @@ define([
             // nothing
         }
 
-        // Track the last wrapper state
-        ik.wrapper.state.set('prev-wrapper-state', ik.wrapper.state.get('wrapper-state'))
-
         // End rendering lifecycle
         ik.wrapper.state.set('rendering', false);
       })
@@ -250,14 +247,17 @@ define([
      * Public methods, avail globally, which set the wrapper state.
      */
     this.showActive = function () {
+      ik.wrapper.state.set('prev-wrapper-state', ik.wrapper.state.get('wrapper-state'));
       ik.wrapper.state.set('wrapper-state', 'active');
     }
 
     this.showAttract = function () {
+      ik.wrapper.state.set('prev-wrapper-state', ik.wrapper.state.get('wrapper-state'));
       ik.wrapper.state.set('wrapper-state', 'attract');
     }
 
     this.showExplore = function (mapid) {
+      ik.wrapper.state.set('prev-wrapper-state', ik.wrapper.state.get('wrapper-state'));
       console.log('mapid', mapid);
       if (ik.wrapper.state.get('mapid') !== mapid) {
         ik.wrapper.state.set('mapid', mapid);
@@ -267,10 +267,12 @@ define([
     }
 
     this.showNav = function () {
+      ik.wrapper.state.set('prev-wrapper-state', ik.wrapper.state.get('wrapper-state'));
       ik.wrapper.state.set('wrapper-state', 'nav');
     }
 
     this.showRegion = function (regionid) {
+      ik.wrapper.state.set('prev-wrapper-state', ik.wrapper.state.get('wrapper-state'));
       if (ik.wrapper.state.get('regionid') !== regionid) {
         ik.wrapper.state.set('regionid', regionid);
       }
@@ -279,6 +281,7 @@ define([
     }
 
     this.showStorymap = function (appid) {
+      ik.wrapper.state.set('prev-wrapper-state', ik.wrapper.state.get('wrapper-state'));
       if (ik.wrapper.state.get('appid') !== appid) {
         ik.wrapper.state.set('appid', appid);
       }
