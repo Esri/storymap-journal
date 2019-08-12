@@ -23,7 +23,7 @@
 
 .fullscreen-bg__video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-.fullscreen-bg__shader { background-color: #111111; height: 100%; opacity: 0.65; position: absolute; width: 100%; z-index: 1; }
+.fullscreen-bg__shader { background-color: rgba(17, 17, 17, 0.65); height: 100%; position: absolute; width: 100%; z-index: 1; }
 
 @media (min-aspect-ratio: 16 / 9) { .fullscreen-bg__video { width: 100%; height: auto; } }
 @media (max-aspect-ratio: 16 / 9) { .fullscreen-bg__video { width: auto; height: 100%; } }
@@ -32,7 +32,7 @@
 
 #menu { background: transparent; }
 
-.menu__storymap__wrapper { background-image: url("/static/svg/button-background.svg"); background-repeat: repeat; color: #ffffff; display: flex; flex-direction: row; justify-content: space-between; height: 190px; padding: 10px 25px; }
+.menu__storymap__wrapper { background-image: url("/static/svg/button-background.svg"); background-repeat: repeat; color: #FFFFFF; display: flex; flex-direction: row; justify-content: space-between; height: 190px; padding: 10px 25px; }
 
 .menu__storymap__wrapper__title, .menu__storymap__wrapper__buttons { align-items: center; display: flex; flex-direction: row; flex-wrap: nowrap; }
 
@@ -44,7 +44,7 @@
 
 .menu__storymap__wrapper__buttons button { background: none; border: 0; }
 
-#info { color: #ffffff; height: 840px; padding: 50px; }
+#info { color: #FFFFFF; height: 840px; padding: 50px; }
 #info > div { height: 100%; }
 #info .info__storymap .content { height: 100%; }
 
@@ -63,12 +63,12 @@
 .info__storymap__content { align-items: center; display: flex; flex-direction: column; float: right; width: 400px; }
 .info__storymap__content h1 { font-size: 48px; line-height: 48px; font-family: "Habana"; text-align: center; }
 .info__storymap__content img { width: 270px; }
-.info__storymap__shader { background-color: #111111; height: 100%; left: 0; opacity: 0.65; position: absolute; top: 0; width: 100%; z-index: -1; }
+.info__storymap__shader { background-color: rgba(17, 17, 17, 0.65); height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: -1; }
 
 .info__explore__content h1 { font-size: 48px; line-height: 48px; font-family: "Habana"; text-align: center; }
 .info__explore__content img { width: 270px; }
 
-#interaction { color: #ffffff; }
+#interaction { color: #FFFFFF; }
 
 /* Make sure the height of the interaction pane  spans the height */
 .interaction__attract, .interaction__nav, .interaction__explore, .interaction__explore, .interaction__region { height: 100%; }
@@ -109,7 +109,7 @@
 
 #bottom { background-color: transparent; flex: 1; }
 
-.storymap #bottom { background-color: black; }
+.storymap #bottom { background-color: #000000; }
 
 .bottom__storymap { align-items: center; display: flex; flex-direction: row; height: 100%; justify-content: center; }
 .bottom__storymap__callout { background-color: #FBFFFE; border-radius: 10px; display: flex; flex-direction: row; flex-wrap: nowrap; font-family: OpenSans; padding: 30px; width: 450px; }

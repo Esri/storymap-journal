@@ -1,5 +1,5 @@
 #interaction {
-  color: #ffffff;
+  color: $white;
 }
 
 /* Make sure the height of the interaction pane 
@@ -18,7 +18,7 @@
 
 .interaction__attract h1 {
   @include font(40, 35, 'Hallo Sans');
-  color: #53B048;
+  color: $green;
   padding-bottom: 35px;
   text-align: center;
   text-transform: uppercase;

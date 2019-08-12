@@ -5,7 +5,7 @@
 .menu__storymap__wrapper {
   background-image: url('/static/svg/button-background.svg');
   background-repeat: repeat;
-  color: #ffffff;
+  color: $white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

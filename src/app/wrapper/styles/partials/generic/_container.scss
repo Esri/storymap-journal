@@ -34,9 +34,8 @@
 }
 
 .fullscreen-bg__shader {
-  background-color: #111111;
+  background-color: $shader;
   height: 100%;
-  opacity: 0.65;
   position: absolute;
   width: 100%;
   z-index: 1;
