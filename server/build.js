@@ -218,10 +218,18 @@ const createStorymaps = (body) => {
   }
 
   const primaryStorymaps = storyMapList.map((storymap) => {
+    let concatStorymap
+
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0)
-      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
     else
-      return { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
+
+    if (process.env.KIOSK_VERSION === 'cdi') {
+      concatStorymap.theme.flag = `${process.env.BACKEND_URL}/modules/client/ik_d8_module_wb_migration/includes/flags/${storymap.field_country.field_iso_code.toLowerCase()}.png`
+    }
+
+    return concatStorymap
   })
 
   const translatedStorymaps = storyMapList.map((storymap) => {
@@ -336,7 +344,7 @@ module.exports = async () => {
       // Use the regions to get Story Maps which are tagged with those regions
       const regionStorymaps = response.data.data.map(
         region => axios.get(
-          new URL(`/jsonapi/node/story_map?filter[field_region.tid]=${region.attributes.drupal_internal__tid}&include=field_callout,field_translated_callout,field_media,field_media.image,field_region`, BACKEND_URL)
+          new URL(`/jsonapi/node/story_map?filter[field_region.tid]=${region.attributes.drupal_internal__tid}&include=field_callout,field_translated_callout,field_media,field_media.image,field_region,field_country`, BACKEND_URL)
             .toString()
       ))
       const storymapGroup = await axios.all(regionStorymaps)
@@ -367,7 +375,7 @@ module.exports = async () => {
             // Also add the region theme colors to the story maps
             storymapApi.forEach((x, i, y) => {
               if (x.id === storymap.field_id) {
-                y[i].theme = region.theme
+                y[i].theme.color = region.theme.color
               }
             })
             return storymap.field_id
