@@ -234,6 +234,8 @@ sftp-config-alt.json
 ## IK Additions
 #############
 api/*
+src/app/wrapper/styles/main.css
+src/app/wrapper/styles/main.css.map
 static/download
 build.json
 .env

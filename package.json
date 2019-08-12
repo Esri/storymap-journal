@@ -11,11 +11,11 @@
     "build-release": "yarn run prepare && BUILD_TARGET=electron ENV=production electron-builder -mw --config=build.json",
     "build-release-mac": "yarn run prepare && BUILD_TARGET=electron ENV=production electron-builder -m --config=build.json",
     "build-release-windows": "yarn run prepare && BUILD_TARGET=electron ENV=production electron-builder -w --config=build.json",
-    "prepare": "yarn run build && yarn run set-env",
+    "prepare": "grunt && yarn run set-env",
     "set-env": "node -r dotenv/config builder.js",
     "start": "ENV=production BUILD_TARGET=browser node server/index.js",
-    "start-dev": "concurrently \"grunt watch\" \"ENV=dev BUILD_TARGET=browser node main.js\"",
-    "start-dev-electron": "ENV=dev BUILD_TARGET=electron electron .",
+    "start-dev": "concurrently \"grunt sass\" \"grunt watch\" \"ENV=dev BUILD_TARGET=browser node main.js\"",
+    "start-dev-electron": "concurrently \"grunt sass\" \"grunt watch\" \"ENV=dev BUILD_TARGET=electron electron .\"",
     "start-electron": "ENV=production BUILD_TARGET=electron electron ."
   },
   "devDependencies": {
