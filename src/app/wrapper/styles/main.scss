@@ -1,10 +1,13 @@
 // Global
-@import 'global/fonts';
-@import 'global/container';
+@import 'partials/variables';
+@import 'partials/mixins/typography';
+@import 'partials/mixins/mixins';
+@import 'partials/generic/fonts';
+@import 'partials/generic/container';
 
 // Components
-@import 'components/storymap';
-@import 'components/menu';
-@import 'components/info';
-@import 'components/interaction';
-@import 'components/bottom';
+@import 'partials/components/storymap';
+@import 'partials/components/menu';
+@import 'partials/components/info';
+@import 'partials/components/interaction';
+@import 'partials/components/bottom';

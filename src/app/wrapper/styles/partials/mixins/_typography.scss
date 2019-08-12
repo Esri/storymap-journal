@@ -1,0 +1,26 @@
+@mixin font($size, $line-height: -1, $font-family: inherit) {
+  font-size: $size + px;
+
+  @if ($line-height > -1) {
+    line-height: $line-height + px;
+  }
+  @else {
+    line-height: inherit;
+  }
+
+  @if ($font-family) {
+    font-family: $font-family;
+  }
+}
+
+/**
+ * Simple helper class for nowrap white-space on text
+ * 
+ * X: text-
+ *    wrapping
+ * 
+ * ✓: no-text-wrapping
+ */
+.nowrap {
+  white-space: nowrap;
+}

@@ -1,0 +1,96 @@
+#info {
+  color: #ffffff;
+  height: 840px;
+  padding: 50px;
+
+  & > div {
+    height: 100%;
+  }
+
+  .info__storymap .content {
+    height: 100%;
+  }
+}
+
+.info__attract, .info__explore, .info__nav, .info__region {
+  @include infoLogoImg();
+}
+
+.info__attract, .info__explore, .info__nav {
+  h1 {
+    @include font(120, 110, 'Habana');
+    text-align: center;
+  }
+}
+
+.info__attract, .info__nav, .info__region {
+  .cdi & {
+    h1, h2 {
+      font-family: 'Refrigerator';
+      text-align: center;
+    }
+  }
+
+  h2 {
+    @include font(80);
+  }
+}
+
+.info__attract, .info__region {
+  h1 {
+    @include font(130);
+    text-transform: uppercase;
+  }
+}
+
+.info__storymap {
+  &__background {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    width: 400px;
+
+    h1 {
+      @include font(48, 48, 'Habana');
+      text-align: center;
+    }
+
+    img {
+      width: 270px;
+    }
+  }
+
+  &__shader {
+    background-color: #111111;
+    height: 100%;
+    left: 0;
+    opacity: 0.65;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.info__explore {
+  &__content {
+    h1 {
+      @include font(48, 48, 'Habana');
+      text-align: center;
+    }
+
+    img {
+      width: 270px;
+    }
+  }
+}

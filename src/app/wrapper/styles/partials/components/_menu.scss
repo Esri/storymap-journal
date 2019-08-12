@@ -27,10 +27,8 @@
 }
 
 .menu__storymap__wrapper__title h2 {
-  font-family: 'Hallo Sans';
-  font-size: 56px;
+  @include font(56, 58, 'Hallo Sans');
   font-weight: 700;
-  line-height: 58px;
   padding: 0 20px;
 }
 

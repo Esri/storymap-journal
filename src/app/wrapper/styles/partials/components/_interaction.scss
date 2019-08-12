@@ -17,10 +17,8 @@
 }
 
 .interaction__attract h1 {
+  @include font(40, 35, 'Hallo Sans');
   color: #53B048;
-  font-family: 'Hallo Sans';
-  font-size: 40px;
-  line-height: 35px;
   padding-bottom: 35px;
   text-align: center;
   text-transform: uppercase;
@@ -43,10 +41,8 @@
 
 .interaction__nav h2,
 .interaction__region h2 {
-  font-family: 'OpenSans';
-  font-size: 36px;
+  @include font(36, 46, 'OpenSans');
   font-weight: 500;
-  line-height: 46px;
   margin-bottom: 50px;
   text-align: center;
 }
