@@ -11,22 +11,23 @@
   height: 100%;
 }
 
-/* Attract Screen */
-.interaction__attract > div {
-  height: 100%;
-}
+.interaction__attract {
+  & > div {
+    height: 100%;
+  }
 
-.interaction__attract h1 {
-  @include font(40, 35, 'Hallo Sans');
-  color: $white;
-  padding-bottom: 35px;
-  text-align: center;
-  text-transform: uppercase;
-}
+  h1 {
+    @include font(40, 35, 'Hallo Sans');
+    color: $white;
+    padding-bottom: 35px;
+    text-align: center;
+    text-transform: uppercase;
+  }
 
-.interaction__attract img {
-  display: block;
-  margin: 0 auto;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .interaction__explore #explore-map {
@@ -37,80 +38,69 @@
 .interaction__nav,
 .interaction__region {
   padding: 50px 20px;
-}
 
-.interaction__nav h2,
-.interaction__region h2 {
-  @include font(36, 46, 'OpenSans');
-  font-weight: 500;
-  margin-bottom: 50px;
-  text-align: center;
-}
+  h2 {
+    @include font(36, 46, 'OpenSans');
+    font-weight: 500;
+    margin-bottom: 50px;
+    text-align: center;
+  }
 
-.interaction__nav ul,
-.interaction__region ul {
-  @include flex(row, normal, normal, wrap);
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+  ul {
+    @include flex(row, normal, normal, wrap);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 
-.interaction__nav ul li,
-.interaction__region ul li {
-  display: flex;
-  flex-basis: 520px;
-  justify-content: center;
-  margin-bottom: 30px;
-}
+    li {
+      display: flex;
+      flex-basis: 520px;
+      justify-content: center;
+      margin-bottom: 30px;
 
-.interaction__nav ul li button,
-.interaction__region ul li button {
-  @include flex(row, center, flex-start);
-  background-image: url('/static/svg/button-background.svg');
-  background-repeat: repeat;
-  border: 0;
-  border-radius: 45px;
-  height: 90px;
-  width: 500px;
-}
+      button {
+        @include flex(row, center, flex-start);
+        background-image: url('/static/svg/button-background.svg');
+        background-repeat: repeat;
+        border: 0;
+        border-radius: 45px;
+        height: 90px;
+        width: 500px;
 
-.interaction__nav ul li button img,
-.interaction__region ul li button img {
-  flex-basis: 70px;
-}
+        div {
+          display: flex;
+          flex-basis: 400px;
+          flex-wrap: wrap;
+        }
 
-.interaction__nav ul li button div,
-.interaction__region ul li button div {
-  display: flex;
-  flex-basis: 400px;
-  flex-wrap: wrap;
-}
+        img {
+          flex-basis: 70px;
+        }
 
-.interaction__nav ul li button span,
-.interaction__region ul li button span {
-  flex-basis: 100%;
-  line-height: 26px;
-}
+        span {
+          flex-basis: 100%;
+          line-height: 26px;
 
-.interaction__nav ul li button span.primary,
-.interaction__region ul li button span.primary {
-  font-size: 36px;
-}
+          &.alternate {
+            font-size: 22px;
+          }
 
-.interaction__nav ul li button span.alternate,
-.interaction__region ul li button span.alternate {
-  font-size: 22px;
-}
+          &.en {
+            font-family: 'Hallo Sans';
+            font-weight: 700;
+          }
 
-.interaction__nav ul li button span.en,
-.interaction__region ul li button span.en {
-  font-family: 'Hallo Sans';
-  font-weight: 700;
-}
+          &.primary {
+            font-size: 36px;
+          }
 
-.interaction__nav ul li button span.es
-.interaction__region ul li button span.es {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 700;
+          &.es {
+            font-family: 'Open Sans';
+            font-style: italic;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
 }
