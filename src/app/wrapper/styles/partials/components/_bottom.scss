@@ -8,27 +8,20 @@
 }
 
 .bottom__storymap {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
+  @include flex(row, center, center);
   height: 100%;
-  justify-content: center;
 
   &__callout {
+    @include flex(row);
     background-color: $bottom-light-gray;
     border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     font-family: OpenSans;
     padding: 30px;
     width: 450px;
 
     &__text {
+      @include flex(column);
       color: $bottom-gray;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
       padding: 0 30px;
 
       h3 {

@@ -18,7 +18,7 @@
 
 .interaction__attract h1 {
   @include font(40, 35, 'Hallo Sans');
-  color: $green;
+  color: $white;
   padding-bottom: 35px;
   text-align: center;
   text-transform: uppercase;
@@ -49,9 +49,7 @@
 
 .interaction__nav ul,
 .interaction__region ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  @include flex(row, normal, normal, wrap);
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -67,13 +65,11 @@
 
 .interaction__nav ul li button,
 .interaction__region ul li button {
-  align-items: center;
+  @include flex(row, center, flex-start);
   background-image: url('/static/svg/button-background.svg');
   background-repeat: repeat;
   border: 0;
   border-radius: 45px;
-  display: flex;
-  justify-content: flex-start;
   height: 90px;
   width: 500px;
 }

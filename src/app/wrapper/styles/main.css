@@ -14,7 +14,7 @@
 @font-face { font-family: 'Refrigerator'; font-weight: 700; src: url("/static/fonts/Refrigerator Deluxe Bold.otf") format("opentype"); }
 .no-touch { background: transparent; }
 
-#container { background-size: cover; background-repeat: no-repeat; display: flex; flex-direction: column; height: 100%; }
+#container { align-items: normal; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: normal; background-size: cover; background-repeat: no-repeat; height: 100%; }
 
 #interaction { height: 640px; }
 
@@ -32,41 +32,60 @@
 
 #menu { background: transparent; }
 
-.menu__storymap__wrapper { background-image: url("/static/svg/button-background.svg"); background-repeat: repeat; color: #FFFFFF; display: flex; flex-direction: row; justify-content: space-between; height: 190px; padding: 10px 25px; }
-
-.menu__storymap__wrapper__title, .menu__storymap__wrapper__buttons { align-items: center; display: flex; flex-direction: row; flex-wrap: nowrap; }
-
-.menu__storymap__wrapper__title img { height: 100px; width: 100px; }
-
-.menu__storymap__wrapper__title h2 { font-size: 56px; line-height: 58px; font-family: "Hallo Sans"; font-weight: 700; padding: 0 20px; }
-
+.menu__storymap__wrapper { align-items: normal; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; background-image: url("/static/images/menu-background.png"); background-repeat: repeat; color: #FFFFFF; height: 190px; padding: 10px 25px; }
+.menu__storymap__wrapper__title, .menu__storymap__wrapper__buttons { align-items: center; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: normal; }
 .menu__storymap__wrapper__buttons { align-items: flex-end; }
-
 .menu__storymap__wrapper__buttons button { background: none; border: 0; }
+.menu__storymap__wrapper__title h2 { font-size: 56px; line-height: 58px; font-family: "Hallo Sans"; font-weight: 700; padding: 0 20px; }
+.menu__storymap__wrapper__title img { height: 100px; width: 100px; }
 
 #info { color: #FFFFFF; height: 840px; padding: 50px; }
 #info > div { height: 100%; }
 #info .info__storymap .content { height: 100%; }
 
-.cdi .info__attract > div, .cdi .info__explore > div, .cdi .info__nav > div, .cdi .info__region > div { display: flex; height: 100%; flex-direction: column; justify-content: space-between; }
-.info__attract__img, .info__explore__img, .info__nav__img, .info__region__img { display: block; margin: 0 auto; width: 550px; }
-.llc .info__attract__img, .llc .info__explore__img, .llc .info__nav__img, .llc .info__region__img { padding-bottom: 35px; padding-top: 305px; }
+.cdi .info__attract > div { display: flex; height: 100%; flex-direction: column; justify-content: space-between; }
+.info__attract__img { display: block; margin: 0 auto; width: 550px; }
+.llc .info__attract__img { padding-bottom: 35px; padding-top: 305px; }
+.llc .info__attract h1 { font-size: 120px; line-height: 110px; font-family: "Habana"; text-align: center; }
+.llc .info__attract h2 { display: none; }
+.cdi .info__attract h1, .cdi .info__attract h2 { text-align: center; }
+.cdi .info__attract h1 { font-size: 140px; line-height: 130px; font-family: "Refrigerator"; text-transform: uppercase; }
+.cdi .info__attract h2 { font-size: 80px; line-height: 80px; font-family: "Refrigerator"; }
 
-.info__attract h1, .info__explore h1, .info__nav h1 { font-size: 120px; line-height: 110px; font-family: "Habana"; text-align: center; }
+.cdi .info__explore > div { display: flex; height: 100%; flex-direction: column; justify-content: space-between; }
+.info__explore__img { display: block; margin: 0 auto; width: 550px; }
+.llc .info__explore__img { padding-bottom: 35px; padding-top: 305px; }
+.llc .info__explore h1 { font-size: 120px; line-height: 110px; font-family: "Habana"; text-align: center; }
+.llc .info__explore h2 { display: none; }
+.cdi .info__explore h1, .cdi .info__explore h2 { text-align: center; }
+.cdi .info__explore h1 { font-size: 140px; line-height: 130px; font-family: "Refrigerator"; text-transform: uppercase; }
+.cdi .info__explore h2 { font-size: 80px; line-height: 80px; font-family: "Refrigerator"; }
+.info__explore h1 { font-size: 120px; line-height: 110px; font-family: "Habana"; }
 
-.cdi .info__attract h1, .cdi .info__attract h2, .cdi .info__nav h1, .cdi .info__nav h2, .cdi .info__region h1, .cdi .info__region h2 { font-family: 'Refrigerator'; text-align: center; }
-.info__attract h2, .info__nav h2, .info__region h2 { font-size: 80px; line-height: inherit; font-family: inherit; }
+.cdi .info__nav > div { display: flex; height: 100%; flex-direction: column; justify-content: space-between; }
+.info__nav__img { display: block; margin: 0 auto; width: 550px; }
+.llc .info__nav__img { padding-bottom: 35px; padding-top: 305px; }
+.llc .info__nav h1 { font-size: 120px; line-height: 110px; font-family: "Habana"; text-align: center; }
+.llc .info__nav h2 { display: none; }
+.cdi .info__nav h1, .cdi .info__nav h2 { text-align: center; }
+.cdi .info__nav h1 { font-size: 140px; line-height: 130px; font-family: "Refrigerator"; text-transform: uppercase; }
+.cdi .info__nav h2 { font-size: 80px; line-height: 80px; font-family: "Refrigerator"; }
+.cdi .info__nav h1 { font-size: 130px; line-height: 110px; font-family: "Refrigerator"; }
 
-.info__attract h1, .info__region h1 { font-size: 130px; line-height: inherit; font-family: inherit; text-transform: uppercase; }
+.cdi .info__region > div { display: flex; height: 100%; flex-direction: column; justify-content: space-between; }
+.info__region__img { display: block; margin: 0 auto; width: 550px; }
+.llc .info__region__img { padding-bottom: 35px; padding-top: 305px; }
+.llc .info__region h1 { font-size: 120px; line-height: 110px; font-family: "Habana"; text-align: center; }
+.llc .info__region h2 { display: none; }
+.cdi .info__region h1, .cdi .info__region h2 { text-align: center; }
+.cdi .info__region h1 { font-size: 140px; line-height: 130px; font-family: "Refrigerator"; text-transform: uppercase; }
+.cdi .info__region h2 { font-size: 80px; line-height: 80px; font-family: "Refrigerator"; }
 
 .info__storymap__background { position: absolute; left: 0; height: 100%; top: 0; width: 100%; z-index: -1; }
-.info__storymap__content { align-items: center; display: flex; flex-direction: column; float: right; width: 400px; }
+.info__storymap__content { align-items: center; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: normal; float: right; width: 400px; }
 .info__storymap__content h1 { font-size: 48px; line-height: 48px; font-family: "Habana"; text-align: center; }
 .info__storymap__content img { width: 270px; }
 .info__storymap__shader { background-color: rgba(17, 17, 17, 0.65); height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: -1; }
-
-.info__explore__content h1 { font-size: 48px; line-height: 48px; font-family: "Habana"; text-align: center; }
-.info__explore__content img { width: 270px; }
 
 #interaction { color: #FFFFFF; }
 
@@ -76,7 +95,7 @@
 /* Attract Screen */
 .interaction__attract > div { height: 100%; }
 
-.interaction__attract h1 { font-size: 40px; line-height: 35px; font-family: "Hallo Sans"; color: #53B048; padding-bottom: 35px; text-align: center; text-transform: uppercase; }
+.interaction__attract h1 { font-size: 40px; line-height: 35px; font-family: "Hallo Sans"; color: #FFFFFF; padding-bottom: 35px; text-align: center; text-transform: uppercase; }
 
 .interaction__attract img { display: block; margin: 0 auto; }
 
@@ -87,11 +106,11 @@
 
 .interaction__nav h2, .interaction__region h2 { font-size: 36px; line-height: 46px; font-family: "OpenSans"; font-weight: 500; margin-bottom: 50px; text-align: center; }
 
-.interaction__nav ul, .interaction__region ul { display: flex; flex-direction: row; flex-wrap: wrap; list-style-type: none; margin: 0; padding: 0; }
+.interaction__nav ul, .interaction__region ul { align-items: normal; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: normal; list-style-type: none; margin: 0; padding: 0; }
 
 .interaction__nav ul li, .interaction__region ul li { display: flex; flex-basis: 520px; justify-content: center; margin-bottom: 30px; }
 
-.interaction__nav ul li button, .interaction__region ul li button { align-items: center; background-image: url("/static/svg/button-background.svg"); background-repeat: repeat; border: 0; border-radius: 45px; display: flex; justify-content: flex-start; height: 90px; width: 500px; }
+.interaction__nav ul li button, .interaction__region ul li button { align-items: center; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; background-image: url("/static/svg/button-background.svg"); background-repeat: repeat; border: 0; border-radius: 45px; height: 90px; width: 500px; }
 
 .interaction__nav ul li button img, .interaction__region ul li button img { flex-basis: 70px; }
 
@@ -111,9 +130,9 @@
 
 .storymap #bottom { background-color: #000000; }
 
-.bottom__storymap { align-items: center; display: flex; flex-direction: row; height: 100%; justify-content: center; }
-.bottom__storymap__callout { background-color: #FBFFFE; border-radius: 10px; display: flex; flex-direction: row; flex-wrap: nowrap; font-family: OpenSans; padding: 30px; width: 450px; }
-.bottom__storymap__callout__text { color: #5C5D5D; display: flex; flex-direction: column; flex-wrap: nowrap; padding: 0 30px; }
+.bottom__storymap { align-items: center; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; height: 100%; }
+.bottom__storymap__callout { align-items: normal; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: normal; background-color: #FBFFFE; border-radius: 10px; font-family: OpenSans; padding: 30px; width: 450px; }
+.bottom__storymap__callout__text { align-items: normal; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: normal; color: #5C5D5D; padding: 0 30px; }
 .bottom__storymap__callout__text h3 { font-size: 34px; line-height: 24px; font-family: inherit; font-weight: 900; margin-bottom: 10px; text-align: center; text-transform: uppercase; }
 .bottom__storymap__callout__text p { font-size: 26px; font-weight: 400; letter-spacing: 0; text-align: center; line-height: 26px; }
 

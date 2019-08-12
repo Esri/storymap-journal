@@ -2,41 +2,41 @@
   background: transparent;
 }
 
-.menu__storymap__wrapper {
-  background-image: url('/static/svg/button-background.svg');
-  background-repeat: repeat;
-  color: $white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 190px;
-  padding: 10px 25px;
-}
+.menu {
+  &__storymap {
+    &__wrapper {
+      @include flex(row, normal, space-between);
+      background-image: url('/static/images/menu-background.png');
+      background-repeat: repeat;
+      color: $white;
+      height: 190px;
+      padding: 10px 25px;
 
-.menu__storymap__wrapper__title,
-.menu__storymap__wrapper__buttons {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
+      &__title, &__buttons {
+        @include flex(row, center);
+      }
 
-.menu__storymap__wrapper__title img {
-  height: 100px;
-  width: 100px;
-}
+      &__buttons {
+        align-items: flex-end;
 
-.menu__storymap__wrapper__title h2 {
-  @include font(56, 58, 'Hallo Sans');
-  font-weight: 700;
-  padding: 0 20px;
-}
+        button {
+          background: none;
+          border: 0;
+        }
+      }
 
-.menu__storymap__wrapper__buttons {
-  align-items: flex-end;
-}
+      &__title {
+        h2 {
+          @include font(56, 58, 'Hallo Sans');
+          font-weight: 700;
+          padding: 0 20px;
+        }
 
-.menu__storymap__wrapper__buttons button {
-  background: none;
-  border: 0;
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
+  }
 }

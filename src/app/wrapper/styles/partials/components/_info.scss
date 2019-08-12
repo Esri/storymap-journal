@@ -12,35 +12,33 @@
   }
 }
 
-.info__attract, .info__explore, .info__nav, .info__region {
+.info__attract {
   @include infoLogoImg();
+  @include infoHeader();
 }
 
-.info__attract, .info__explore, .info__nav {
+.info__explore {
+  @include infoLogoImg();
+  @include infoHeader();
+
   h1 {
     @include font(120, 110, 'Habana');
-    text-align: center;
   }
 }
 
-.info__attract, .info__nav, .info__region {
-  .cdi & {
-    h1, h2 {
-      font-family: 'Refrigerator';
-      text-align: center;
-    }
-  }
+.info__nav {
+  @include infoLogoImg();
+  @include infoHeader();
 
-  h2 {
-    @include font(80);
+  // Overrides for Nav screen which has a long title
+  .cdi & h1 {
+    @include font(130, 110, 'Refrigerator');
   }
 }
 
-.info__attract, .info__region {
-  h1 {
-    @include font(130);
-    text-transform: uppercase;
-  }
+.info__region {
+  @include infoLogoImg();
+  @include infoHeader();
 }
 
 .info__storymap {
@@ -54,9 +52,7 @@
   }
 
   &__content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    @include flex(column, center);
     float: right;
     width: 400px;
 
@@ -78,18 +74,5 @@
     top: 0;
     width: 100%;
     z-index: -1;
-  }
-}
-
-.info__explore {
-  &__content {
-    h1 {
-      @include font(48, 48, 'Habana');
-      text-align: center;
-    }
-
-    img {
-      width: 270px;
-    }
   }
 }

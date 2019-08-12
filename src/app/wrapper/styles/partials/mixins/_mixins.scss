@@ -18,3 +18,30 @@
   }
 }
 
+@mixin infoHeader () {
+  .llc & {
+    h1 {
+      @include font(120, 110, 'Habana');
+      text-align: center;
+    }
+
+    h2 {
+      display: none;
+    }
+  }
+
+  .cdi & {
+    h1, h2 {
+      text-align: center;
+    }
+
+    h1 {
+      @include font(140, 130, 'Refrigerator');
+      text-transform: uppercase;
+    }
+
+    h2 {
+      @include font(80, 80, 'Refrigerator');
+    }
+  }
+}

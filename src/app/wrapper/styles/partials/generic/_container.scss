@@ -3,10 +3,9 @@
 }
 
 #container {
+  @include flex(column);
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
   height: 100%;
 }
 
