@@ -237,3 +237,4 @@ api/*
 static/download
 build.json
 .env
+.sass-cache
