@@ -233,9 +233,17 @@ const createStorymaps = (body) => {
   })
 
   const translatedStorymaps = storyMapList.map((storymap) => {
+    let concatStorymap
+
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0) {
-      return { ...storymapTemplate, ...{id: storymap.field_translated_id}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_translated_id}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
     }
+
+    if (concatStorymap && process.env.KIOSK_VERSION === 'cdi') {
+      concatStorymap.theme.flag = `${process.env.BACKEND_URL}/modules/client/ik_d8_module_wb_migration/includes/flags/${storymap.field_country.field_iso_code.toLowerCase()}.png`
+    }
+
+    return concatStorymap
   }).filter((result) => result !== undefined)
 
   const storymaps = primaryStorymaps.concat(translatedStorymaps)
