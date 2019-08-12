@@ -5,7 +5,6 @@ define([
   'lib-build/tpl!../../tpl/sections/Interaction/Region',
   'lib-build/tpl!../../tpl/sections/Interaction/Storymap',
   'lib-build/tpl!../../tpl/components/NavigationButton',
-  'lib-build/css!./Info',
   'esri/arcgis/utils'
 ], function (
   interactionActiveTpl,
@@ -14,7 +13,6 @@ define([
   interactionRegionTpl,
   interactionStorymapTpl,
   NavigationButton,
-  InfoCss,
   esriUtils
 ) {
   return function Interaction () {

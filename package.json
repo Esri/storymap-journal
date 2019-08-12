@@ -7,13 +7,14 @@
   "postinstall": "electron-builder install-app-deps",
   "scripts": {
     "build": "grunt",
+    "build-sass": "grunt sass",
     "build-release": "yarn run prepare && BUILD_TARGET=electron ENV=production electron-builder -mw --config=build.json",
     "build-release-mac": "yarn run prepare && BUILD_TARGET=electron ENV=production electron-builder -m --config=build.json",
     "build-release-windows": "yarn run prepare && BUILD_TARGET=electron ENV=production electron-builder -w --config=build.json",
     "prepare": "yarn run build && yarn run set-env",
     "set-env": "node -r dotenv/config builder.js",
     "start": "ENV=production BUILD_TARGET=browser node server/index.js",
-    "start-dev": "ENV=dev BUILD_TARGET=browser node main.js",
+    "start-dev": "concurrently \"grunt watch\" \"ENV=dev BUILD_TARGET=browser node main.js\"",
     "start-dev-electron": "ENV=dev BUILD_TARGET=electron electron .",
     "start-electron": "ENV=production BUILD_TARGET=electron electron ."
   },
@@ -37,10 +38,12 @@
   "browserslist": "electron 1.8",
   "dependencies": {
     "axios": "^0.19.0",
+    "concurrently": "^4.1.1",
     "dotenv": "^8.0.0",
     "electron-log": "^3.0.7",
     "electron-logger": "^0.0.3",
     "express": "^4.17.1",
+    "grunt-contrib-sass": "^1.0.0",
     "jquery": "^3.4.1",
     "jsona": "^1.5.0",
     "lodash": "^4.17.15",

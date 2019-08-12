@@ -8,14 +8,24 @@ This is the IK Wrapper version of ESRI's storymap-journal. This will be deployed
 
 Copy `.env.example` as `.env`
 
+Ensure that you have sass running on your machine. It will require ruby on your system. `gem install sass`. Else you will not be able to compile *scss files.
+
 ## Running
- - `yarn run start-dev` - runs the server in development mode. Access the application through the browser.
- - `yarn run build` - executes the grunt cli builder which will create deploy code (compresses and compiles JS).
- - `yarn run start` - Runs the server in production mode. Access the application through the browser.
- - `yarn run set-env` - Prepares the build.json configuration file for electron-builder
- - `yarn run start-electron-dev` - Runs the application in development mode and opens it in an Electron window.
- - `yarn run start-electron` - Runs the application in production and opens it in an Electron window.
- - `yarn run build-release[-{mac,windows}]` - Build electron package for mac, windows, or both.
+ - `yarn run start-dev`: runs the server in development mode. Access the application through the browser.
+ - `yarn run build`: executes the grunt cli builder which will create deploy code (compresses and compiles JS).
+ - `yarn run build-sass`: recompile the scss files.
+ - `yarn run start`: Runs the server in production mode. Access the application through the browser.
+ - `yarn run set-env`: Prepares the build.json configuration file for electron-builder
+ - `yarn run start-electron-dev`: Runs the application in development mode and opens it in an Electron window.
+ - `yarn run start-electron`: Runs the application in production and opens it in an Electron window.
+ - `yarn run build-release[-{mac,windows}]`: Build electron package for mac, windows, or both.
+
+## Development and filesystem
+- `src/app/storymaps`: Files specific to the ESRI Story Map Journal.
+- `src/app/wrapper`: Files which belong to the wrapper/kiosk application
+- `src/app/wrapper/styles`: The SCSS files. **Please update wrapper styles here**
+- `src/index.html`: The html file which is loaded.
+- `src/app/{main-app.js,main-config.js}`: The javascript files which bootstrap the Dojo application.
 
 ## Developing on the browser
 If you choose to develop in the browser use `yarn run start-dev` and visit `https://localhost:3000?version={KIOSK_VERSION}` in the browser. `KIOSK_VERSION` should be specified so that environment variables are passed into the browser window Javascript application.

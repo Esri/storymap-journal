@@ -5,8 +5,7 @@ define([
   'lib-build/tpl!../../tpl/sections/Info/Explore',
   'lib-build/tpl!../../tpl/sections/Info/Nav',
   'lib-build/tpl!../../tpl/sections/Info/Region',
-  'lib-build/tpl!../../tpl/sections/Info/Storymap',
-  'lib-build/css!./Interaction'
+  'lib-build/tpl!../../tpl/sections/Info/Storymap'
 ], function (
   layout,
   infoActiveTpl,
@@ -14,8 +13,7 @@ define([
   infoExploreTpl,
   infoNavTpl,
   infoRegionTpl,
-  infoStorymapTpl,
-  infoCss
+  infoStorymapTpl
 ) {
   return function Info () {
     var render = function () {

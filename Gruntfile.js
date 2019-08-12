@@ -117,6 +117,17 @@
 				}
 			},
 
+      sass: {
+        dist: {
+          options: {
+            style: 'compact'
+          },
+          files: {
+            './src/app/wrapper/styles/main.css': './src/app/wrapper/styles/main.scss'
+          }
+        }
+      },
+
 			concat: {
 				options: {
 					stripBanners: true,
@@ -402,8 +413,20 @@
 			},
 
 			watch: {
-				files: ['src/app/**/*.js'],
-				tasks: ['jshint']
+        js: {
+          files: ['src/app/**/*.js'],
+          tasks: ['jshint'],
+          options: {
+            livereload: true
+          }
+        },
+        scss: {
+          files: ['src/app/wrapper/styles/**/*.scss'],
+          tasks: ['sass'],
+          options: {
+            livereload: true
+          }
+        }
 			}
 		});
 
@@ -438,6 +461,8 @@
 		 */
 		grunt.registerTask('server', ['connect']);
 
+    grunt.loadNpmTasks('grunt-contrib-sass');
+
 		/*
 		 * Build production version of the template
 		 */
@@ -453,6 +478,7 @@
 
 			// Minify and compress JS & CSS
 			'requirejs',
+      'sass',
 			'regex-replace:js',
 			'regex-replace:css',
 			'concat',

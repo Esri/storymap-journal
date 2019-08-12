@@ -1,9 +1,7 @@
 define([
-  'lib-build/tpl!../../tpl/sections/Menu/Storymap',
-  'lib-build/css!./Menu'
+  'lib-build/tpl!../../tpl/sections/Menu/Storymap'
 ], function (
-  menuTplStoryMap,
-  menuCss
+  menuTplStoryMap
 ) {
   return function Menu () {
     console.log('wrapper.common.Menu -- init');

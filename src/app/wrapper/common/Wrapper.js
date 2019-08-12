@@ -1,8 +1,7 @@
 define([
   "lib-build/css!lib-app/font-awesome/css/font-awesome.min",
   'lib-build/tpl!./Wrapper',
-  'lib-build/css!./Wrapper',
-  'lib-build/css!./Storymaps',
+  'lib-build/css!../styles/main',
   'dojo/topic',
   'dojo/Stateful',
   '../utils/api',
@@ -17,12 +16,11 @@ define([
   './sections/Info',
   './sections/Interaction',
   './sections/Menu',
-  './sections/Bottom',
+  './sections/Bottom'
 ], function(
   fontAwesomeCss,
   wrapperTpl,
-  wrapperCss,
-  storyMapCss,
+  mainCss,
   topic,
   Stateful,
   apiUtil,
@@ -40,6 +38,7 @@ define([
   Bottom
 ) {
   return function Wrapper() {
+
     var version = app.indexCfg.ik.version
 
     // Have a wrapper state

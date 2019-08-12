@@ -1,9 +1,7 @@
 define([
   'lib-build/tpl!../../tpl/sections/Bottom/Storymap',
-  'lib-build/css!./Bottom'
 ], function (
-  bottomStorymapTpl,
-  bottomCss
+  bottomStorymapTpl
 ) {
   return function Bottom () {
     var render = function () {
