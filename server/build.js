@@ -302,7 +302,7 @@ module.exports = async () => {
   const kiosk = new URL(`/jsonapi/node/kiosk_${KIOSK_VERSION.toLowerCase()}/${KIOSK_UUID}`, BACKEND_URL)
   const map = new Map()
 
-  // Set a large amount of query paramters
+  // Set a large amount of query parameters
   if (KIOSK_VERSION === 'llc') {
     map.set('include', [
         'field_logo',

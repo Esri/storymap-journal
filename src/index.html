@@ -52,7 +52,10 @@
         // The version of the wrapper. Is this LLC or CDI?
         ik: {
           version: 'llc'
-        }
+        },
+        // User name and password for editing
+        username: "",
+        password: ""
 			};
 			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required
 			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapJournal/ or /apps/MapJournal/.
@@ -149,6 +152,16 @@
           <div id="builderPanel" class="hide mainViewAboveMap"></div>
           <button class="skip-to-content visible-on-focus"></button>
 
+          <div class="builder builder-content-panel">
+            <div class="builder-content-panel-group builder-add">
+              <div class="builder-btn"></div>
+              <div class="builder-lbl"></div>
+            </div>
+            <div class="builder-content-panel-group builder-organize">
+              <div class="builder-btn"></div>
+              <div class="builder-lbl"></div>
+            </div>
+          </div>
           <!-- Content -->
           <div id="contentPanel" class="mobileView">
             <table class="containerPanelInner">
@@ -198,16 +211,6 @@
                       </div>
                       <div class="centering loop-wrapper">
                         <button class="visible-on-focus loop-to-top"></button>
-                      </div>
-                    </div>
-                    <div class="builder builder-content-panel">
-                      <div class="builder-content-panel-group builder-add">
-                        <div class="builder-btn"></div>
-                        <div class="builder-lbl"></div>
-                      </div>
-                      <div class="builder-content-panel-group builder-organize">
-                        <div class="builder-btn"></div>
-                        <div class="builder-lbl"></div>
                       </div>
                     </div>
                     <div class="builder-mask"></div>

@@ -106,7 +106,6 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				if ( _scrollInviteDisplayed )
 					updateSwiperWrapperForScrollInvite();
 
-
 				container.find('.swiper-container, .sections, .section').css("height", height);
 
 				container.find('.sections').css(

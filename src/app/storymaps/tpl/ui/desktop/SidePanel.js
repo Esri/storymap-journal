@@ -108,7 +108,7 @@ define(["lib-build/tpl!./SidePanelSection",
 				$("#sidePanel .sections").height(
 					cfg.height
 					- $("#sidePanel .sectionsWrapper").position().top
-					- $(".builder-content-panel:visible").outerHeight()
+					- $(".sidePanel .builder-content-panel:visible").outerHeight()
 				);
 				updateAppTitle();
 				// TODO should make sure that the current section continue to be visible?

@@ -117,10 +117,13 @@ function bootstrap (reset = false) {
   // Get the version of the kiosk which needs to spin up
   configOptions.ik.version = getUrlVar('version');
 
-  if (['llc', 'cdi'].includes(configOptions.ik.version) === false) {
-    console.error('Wrapper will fail to initialize until a "version" paramter is passed in the window URL.');
+  if (app.isInBuilder === false && ['llc', 'cdi'].includes(configOptions.ik.version) === false) {
+    console.error('Wrapper will fail to initialize until a "version" parameter is passed in the window URL.');
     return;
   }
+
+  configOptions.username = getUrlVar('username');
+  configOptions.password = getUrlVar('password');
 
   var container = document.getElementById("container");
   container.classList.add(configOptions.ik.version);
