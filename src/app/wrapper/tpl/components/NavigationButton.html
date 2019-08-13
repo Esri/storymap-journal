@@ -1,6 +1,12 @@
 <li>
-  <button style="background-color: <%= color %>;" data-nav="<%= action %>" data-<%= action %>="<%= targetId %>">
-    <img src="/static/svg/leaf.svg" />
+  <button 
+  <% if (color.length > 0) { %>
+    style="background-color: <%= color %>;"
+  <% } %>
+  data-nav="<%= action %>" data-<%= action %>="<%= targetId %>">
+    <% if (imgSrc.length > 0) { %>
+      <img src="<%= imgSrc %>" />
+    <% } %>
     <div>
       <span class="primary <%= currentLanguage %>"><%= title %></span>
       <% if (alternate.length > 0) { %>

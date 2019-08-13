@@ -6,9 +6,12 @@
 @import 'partials/generic/fonts';
 @import 'partials/generic/container';
 
+// Sections
+@import 'partials/sections/storymap';
+@import 'partials/sections/menu';
+@import 'partials/sections/info';
+@import 'partials/sections/interaction';
+@import 'partials/sections/bottom';
+
 // Components
-@import 'partials/components/storymap';
-@import 'partials/components/menu';
-@import 'partials/components/info';
-@import 'partials/components/interaction';
-@import 'partials/components/bottom';
+@import 'partials/components/navigation-button';

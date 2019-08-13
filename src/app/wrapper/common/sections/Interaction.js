@@ -100,6 +100,7 @@ define([
           alternateLanguage: alternateLanguage,
           color: button.theme.color.primary,
           currentLanguage: currentLanguage,
+          imgSrc: '/static/svg/leaf.svg',
           targetId: button.id,
           title: button.name
         }));
@@ -113,6 +114,7 @@ define([
           alternateLanguage: 'es',
           color: '#715035',
           currentLanguage: currentLanguage,
+          imgSrc: '/static/svg/leaf.svg',
           targetId: ik.wrapper.layout.state.explore.section.interaction.map,
           title: 'Learn more about LEAF Community'
         }));
@@ -160,6 +162,7 @@ define([
           alternateLanguage: alternateLanguage,
           color: button.theme.color.primary,
           currentLanguage: currentLanguage,
+          imgSrc: '/static/svg/leaf.svg',
           targetId: button.id,
           title: button.name
         }));
@@ -169,8 +172,9 @@ define([
         action: 'nav',
         alternate: 'ver todas las regiones',
         alternateLanguage: 'es',
-        color: '#ffffff',
+        color: '',
         currentLanguage: currentLanguage,
+        imgSrc: '',
         targetId: '',
         title: 'View all regions'
       }));
