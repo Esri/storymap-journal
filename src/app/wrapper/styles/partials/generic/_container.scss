@@ -9,10 +9,6 @@
   height: 100%;
 }
 
-#interaction {
-  height: 640px;
-}
-
 /* Full Screen Video Info */
 .fullscreen-bg {
   position: fixed;
@@ -58,5 +54,32 @@
   .fullscreen-bg__video {
     height: 300%;
     top: -100%;
+  }
+}
+
+// Heights
+.attract {
+  #info {
+    height: 960px;
+  }
+
+  #interaction {
+    height: 960px;
+  }
+}
+
+.nav, .region {
+  #info {
+    height: 960px;
+  }
+
+  #interaction {
+    height: 960px;
+  }
+}
+
+.storymap {
+  #interaction {
+    height: 570px;
   }
 }
