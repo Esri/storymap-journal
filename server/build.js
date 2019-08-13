@@ -145,10 +145,15 @@ const createLayout = (body) => {
     defaultAttractBgImg = filepath
   }
 
-  if (filepath = _.get(cmsContent, 'field_state_attract_bg_video.field_media_video_file.uri.url', false))
+  if (filepath = _.get(cmsContent, 'field_state_attract_bg_video.field_media_video_file.uri.url', false)) {
     attract.background.video = {
-    src: setFile(process.env.BACKEND_URL + cmsContent.field_state_attract_bg_video.field_media_video_file.uri.url),
-    type: _.get(cmsContent, 'field_state_attract_bg_video.field_media_video_file.filemime', '')
+      src: setFile(process.env.BACKEND_URL + cmsContent.field_state_attract_bg_video.field_media_video_file.uri.url),
+      type: _.get(cmsContent, 'field_state_attract_bg_video.field_media_video_file.filemime', '')
+    }
+
+    // Check for MOV files
+    if (attract.background.video.type === 'video/quicktime')
+      attract.background.video.type = 'video/mp4'
   }
 
   // Nav section
@@ -162,10 +167,15 @@ const createLayout = (body) => {
   if (filepath = _.get(cmsContent, 'field_state_nav_bg_img.image.uri.url', defaultAttractBgImg))
     nav.background.img = setFile(process.env.BACKEND_URL + filepath)
 
-  if (filepath = _.get(cmsContent, 'field_state_nav_bg_video.field_media_video_file.uri.url', false))
+  if (filepath = _.get(cmsContent, 'field_state_nav_bg_video.field_media_video_file.uri.url', false)) {
     nav.background.video = {
-    src: setFile(process.env.BACKEND_URL + cmsContent.field_state_nav_bg_video.field_media_video_file.uri.url),
-    type: _.get(cmsContent, 'field_state_nav_bg_video.field_media_video_file.filemime', '')
+      src: setFile(process.env.BACKEND_URL + cmsContent.field_state_nav_bg_video.field_media_video_file.uri.url),
+      type: _.get(cmsContent, 'field_state_nav_bg_video.field_media_video_file.filemime', '')
+    }
+
+    // Check for MOV files
+    if (nav.background.video.type === 'video/quicktime')
+      nav.background.video.type = 'video/mp4'
   }
 
   // Explore section
@@ -183,11 +193,17 @@ const createLayout = (body) => {
   // Region section
   region.section.info.logo = setFile(process.env.BACKEND_URL + cmsContent.field_logo.image.uri.url)
 
-  if (filepath = _.get(cmsContent, 'field_state_region_bg_video.field_media_video_file.uri.url', false))
+  if (filepath = _.get(cmsContent, 'field_state_region_bg_video.field_media_video_file.uri.url', false)) {
     region.background.video = {
-    src: setFile(process.env.BACKEND_URL + cmsContent.field_state_region_bg_video.field_media_video_file.uri.url),
-    type: _.get(cmsContent, 'field_state_region_bg_video.field_media_video_file.filemime', '')
+      src: setFile(process.env.BACKEND_URL + cmsContent.field_state_region_bg_video.field_media_video_file.uri.url),
+      type: _.get(cmsContent, 'field_state_region_bg_video.field_media_video_file.filemime', '')
+    }
+
+    // Check for MOV files
+    if (region.background.video.type === 'video/quicktime')
+      region.background.video.type = 'video/mp4'
   }
+
 
   // Story map section
   storymap.section.info.h1 = getHeader(cmsContent, 'field_state_storymap_title')
