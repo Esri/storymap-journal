@@ -12,6 +12,7 @@
 		 *  - grunt jsapioptim	Generate the JS API modules list used by the app in deploy/
 		 */
 
+    const sass = require('node-sass')
 		require('load-grunt-tasks')(grunt);
 
 		grunt.initConfig({
@@ -118,10 +119,11 @@
 			},
 
       sass: {
+        options: {
+          implementation: sass,
+          sourceMap: true
+        },
         dist: {
-          options: {
-            style: 'compact'
-          },
           files: {
             './src/app/wrapper/styles/main.css': './src/app/wrapper/styles/main.scss'
           }
@@ -460,8 +462,6 @@
 		 * Run 'start grunt server' or 'grunt server &'
 		 */
 		grunt.registerTask('server', ['connect']);
-
-    grunt.loadNpmTasks('grunt-contrib-sass');
 
 		/*
 		 * Build production version of the template
