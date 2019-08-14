@@ -34,7 +34,9 @@
     "grunt-execute": "^0.2.2",
     "grunt-mkdir": "~0.1.1",
     "grunt-regex-replace": "~0.2.5",
-    "load-grunt-tasks": "~0.3.0"
+    "grunt-sass": "^3.1.0",
+    "load-grunt-tasks": "~0.3.0",
+    "node-sass": "^4.12.0"
   },
   "browserslist": "electron 1.8",
   "dependencies": {
@@ -44,11 +46,9 @@
     "electron-log": "^3.0.7",
     "electron-logger": "^0.0.3",
     "express": "^4.17.1",
-    "grunt-sass": "^3.0.2",
     "jquery": "^3.4.1",
     "jsona": "^1.5.0",
     "lodash": "^4.17.15",
-    "node-sass": "^4.12.0",
     "underscore": "^1.9.1"
   }
 }
