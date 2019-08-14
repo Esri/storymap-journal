@@ -26,15 +26,18 @@ define([
       var appid = ik.wrapper.state.get('appid');
       var storymap = ik.wrapper.api.storymap.get(appid);
       var currentLanguage = ik.wrapper.state.get('language');
+      var alternateLanguage = currentLanguage === 'en' ? 'es' : 'en';
       var anotherLanguage = ik.wrapper.api.storymap.hasAlternateLanguage(appid);
       var alternateStorymap = "";
+      var alternateStorymapId = "";
 
       if (anotherLanguage) {
-        alternateStorymap = storymap[0].relationships.id;
+        var alternateStorymap = ik.wrapper.api.storymap.getAlternateLanguage(storymap[0].relationships.id, alternateLanguage)
+        alternateStorymapId = alternateStorymap[0].uuid;
       }
 
       $('.menu__storymap').html(menuTplStoryMap({
-        alternateId: alternateStorymap,
+        alternateId: alternateStorymapId,
         anotherLanguage: anotherLanguage,
         color: storymap[0].theme.color.primary,
         language: currentLanguage,

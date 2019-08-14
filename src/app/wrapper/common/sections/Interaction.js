@@ -195,6 +195,7 @@ define([
     this.renderStorymap = function () {
       var appid =ik.wrapper.state.get('appid');
       var storymapData = ik.wrapper.api.storymap.get(appid);
+      console.log(appid, storymapData)
       $('.interaction__storymap').html(interactionStorymapTpl());
       reset(storymapData[0].id);
     }

@@ -253,7 +253,7 @@ const createStorymaps = (body) => {
     let concatStorymap
 
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0) {
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_translated_id}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_translated_id},  ...{uuid: storymap.id + '-alt'}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
     }
 
     if (concatStorymap && process.env.KIOSK_VERSION === 'cdi') {

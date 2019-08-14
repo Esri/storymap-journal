@@ -43,6 +43,12 @@ define([], function () {
       })
     }
 
+    var getAlternateLanguage = function (id = '', lang = '') {
+      return ik.wrapper.storymaps.filter(function (storymap) {
+        return (storymap.id === id && storymap.language === lang) ? storymap : false;
+      })
+    }
+
     /**
      * Checks if the passed appid has an alternative language storymap
      * 
@@ -59,6 +65,7 @@ define([], function () {
       get: get,
       getAll: getAll,
       getAllLanguage: getAllLanguage,
+      getAlternateLanguage: getAlternateLanguage,
       hasAlternateLanguage: hasAlternateLanguage
     }
   }
