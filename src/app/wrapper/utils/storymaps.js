@@ -16,7 +16,7 @@ define([], function () {
       }
 
       return ik.wrapper.storymaps.filter(function (storymap) {
-        return (appid.includes(storymap.id)) ? storymap : false;
+        return (appid.includes(storymap.uuid)) ? storymap : false;
       })
     }
 

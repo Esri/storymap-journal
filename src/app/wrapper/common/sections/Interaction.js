@@ -94,6 +94,13 @@ define([
           alternate = button.translated;
         }
 
+        var id = '';
+        if (ik.wrapper.getVersion() === 'cdi') {
+          id = button.id;
+        } else {
+          id = button.uuid;
+        }
+
         $('.nav__list').append(NavigationButton({
           action: action,
           alternate: alternate,
@@ -101,7 +108,7 @@ define([
           color: button.theme.color.primary,
           currentLanguage: currentLanguage,
           imgSrc: '/static/svg/leaf.svg',
-          targetId: button.id,
+          targetId: id,
           title: button.name
         }));
       });
@@ -163,7 +170,7 @@ define([
           color: button.theme.color.primary,
           currentLanguage: currentLanguage,
           imgSrc: '/static/svg/leaf.svg',
-          targetId: button.id,
+          targetId: button.uuid,
           title: button.name
         }));
       });
@@ -187,8 +194,9 @@ define([
 
     this.renderStorymap = function () {
       var appid =ik.wrapper.state.get('appid');
+      var storymapData = ik.wrapper.api.storymap.get(appid);
       $('.interaction__storymap').html(interactionStorymapTpl());
-      reset(appid);
+      reset(storymapData[0].id);
     }
 
     this.renderExplore = function () {

@@ -30,6 +30,7 @@ if (fs.existsSync(downloadPath) === false) {
 
 const storymapTemplate = {
   id: "",
+  uuid: "",
   name: "",
   language: "",
   weight: 0,
@@ -237,9 +238,9 @@ const createStorymaps = (body) => {
     let concatStorymap
 
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0)
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
     else
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
 
     if (process.env.KIOSK_VERSION === 'cdi') {
       concatStorymap.theme.flag = `${process.env.BACKEND_URL}/modules/client/ik_d8_module_wb_migration/includes/flags/${storymap.field_country.field_iso_code.toLowerCase()}.png`
@@ -398,11 +399,13 @@ module.exports = async () => {
           if (region.id === storymap.field_region.drupal_internal__tid) {
             // Also add the region theme colors to the story maps
             storymapApi.forEach((x, i, y) => {
-              if (x.id === storymap.field_id) {
+              // If story map object UUID = JSON:API UUID
+              if (x.uuid === storymap.id) {
+                // Set story map object theme color to current region theme color
                 y[i].theme.color = region.theme.color
               }
             })
-            return storymap.field_id
+            return storymap.id
           }
         }).filter(x => x !== undefined)
         return region
