@@ -1,7 +1,17 @@
-.nav__list, .region__list {
-  @include navigationList();
+.nav__list,
+.region__list,
+.region__list__back {
+  @include flex(row, normal, normal, wrap);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 
   li {
+    display: flex;
+    flex-basis: 520px;
+    justify-content: center;
+    margin-bottom: 30px;
+    // For the animation(s)
     opacity: 0;
     transform: translateY(30px);
     transition: transform ease 1s;
@@ -17,12 +27,55 @@
         animation-delay: 0.15s * $i;
       }
     }
+
+    button {
+      @include flex(row, center, flex-start);
+      background-image: url('/static/svg/button-background.svg');
+      background-repeat: repeat;
+      border: 0;
+      border-radius: 15px;
+      height: 90px;
+      width: 500px;
+
+      div {
+        display: flex;
+        flex-basis: 400px;
+        flex-wrap: wrap;
+      }
+
+      img {
+        flex-basis: 70px;
+      }
+
+      span {
+        flex-basis: 100%;
+        line-height: 26px;
+
+        &.alternate {
+          font-size: 22px;
+        }
+
+        &.en {
+          font-family: 'Hallo Sans';
+          font-weight: 700;
+        }
+
+        &.primary {
+          font-size: 36px;
+        }
+
+        &.es {
+          font-family: 'Open Sans';
+          font-style: italic;
+          font-weight: 700;
+        }
+      }
+    }
   }
 }
 
 // Override the list style for the back button
 .region__list__back {
-  @include navigationList();
   justify-content: center;
 
   li {
