@@ -139,7 +139,12 @@ server.listen(3000, error => {
         const loading = createLoadingWindow()
 
         loading.once('show', () => {
-          events.on('finish-build', () => {
+
+          // Show the main window when event 'finish-build' is fired
+          const eventFinishBuildCallback = () => {
+            // Remove listener to prevent any chance of duplicate windows
+            events.removeListener('finish-build', eventFinishBuildCallback)
+
             logger.info('Data has finished downloading from Drupal.')
 
             let mainWindow = createMainWindow()
@@ -149,7 +154,9 @@ server.listen(3000, error => {
               loading.close()
               mainWindow.show()
             })
-          })
+          }
+
+          events.on('finish-build', eventFinishBuildCallback)
 
           // Build data from the CMS
           logger.info('Start building data from Drupal.')

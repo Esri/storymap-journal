@@ -114,7 +114,8 @@ const setFile = (fileuri) => {
 
       writeStream.on('open', () => {this.event.emit('add-file')})
 
-      writeStream.on('close', () => {this.event.emit('remove-file')})
+      // Use setTimeout to let other files begin downloading before emitting event
+      writeStream.on('close', () => {setTimeout(() => {this.event.emit('remove-file')}, 500)})
 
       res.data.pipe(writeStream)
     }).catch(error => {
