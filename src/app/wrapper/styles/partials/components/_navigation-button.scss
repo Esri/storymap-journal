@@ -1,10 +1,124 @@
-.nav__list, .region__list {
-  @include navigationList();
+.nav__list,
+.region__list,
+.region__list__back {
+  @include flex(row, normal, normal, wrap);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    display: flex;
+    flex-basis: 520px;
+    justify-content: center;
+    margin-bottom: 30px;
+    // For the animation(s)
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform ease 1s;
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+
+    // TODO: Change 8 to max number of possible buttons
+    @for $i from 1 through 8 {
+      &:nth-of-type(#{$i}) {
+        animation-delay: 0.15s * $i;
+      }
+    }
+
+    button {
+      @include flex(row, center, flex-start);
+      position: relative;
+      background-image: url('/static/svg/button-background.svg');
+      background-repeat: repeat;
+      border: 0;
+      border-radius: 15px;
+      height: 96px;
+      width: 445px;
+
+      div {
+        display: flex;
+        flex-basis: 300px;
+        flex-wrap: wrap;
+        padding-left: 10px;
+      }
+
+      img {
+        flex-basis: 70px;
+      }
+
+      span {
+        flex-basis: 100%;
+        line-height: 26px;
+
+        &.alternate {
+          font-size: 22px;
+        }
+
+        &.en {
+          font-family: 'Hallo Sans';
+          font-weight: 700;
+        }
+
+        &.primary {
+          font-size: 36px;
+        }
+
+        &.es {
+          font-family: 'Open Sans';
+          font-style: italic;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.nav__list {
+  & li {
+    & button {
+      clip-path: url('#nav-button-clipping-path');
+    }
+  }
+}
+
+.region__list {
+  & li {
+    & button {
+      clip-path: url('#region-button-clipping-path');
+    }
+  }
+}
+
+.nav__list,
+.region__list {
+  & li {
+
+    & button {
+      text-align: left;
+    }
+
+    & .arrow {
+      position: absolute;
+      top: 50%;
+      right: 38px;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      transform: translateY(-50%);
+      background-image: url('/static/svg/arrow-right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 22px auto;
+    }
+  }
 }
 
 // Override the list style for the back button
 .region__list__back {
-  @include navigationList();
   justify-content: center;
 
   li {
@@ -17,5 +131,15 @@
         flex-basis: 100%;
       }
     }
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

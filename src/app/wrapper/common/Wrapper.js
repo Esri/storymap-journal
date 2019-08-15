@@ -188,7 +188,18 @@ define([
         if (ik.wrapper.state.get('rendering') === true) {
           // Begin Render
           console.log('Render period begins');
+          // Adjust our transition overlay
+          var overlay = document.querySelector('.transition-overlay');
+          overlay.style.transition = 'unset';
+          overlay.style.opacity = 1;
         } else {
+          // Adjust our transition overlay
+          var overlay = document.querySelector('.transition-overlay');
+          setTimeout(function () {
+            overlay.style.transition = 'opacity ease 0.75s';
+            overlay.style.opacity = 0;
+          }, 150);
+
           // End Render
           console.log('Render period ends', ik.wrapper.states);
           ik.wrapper.states[ik.wrapper.state.get('wrapper-state')].show();
