@@ -1,7 +1,13 @@
-const express = require('express')
-const path = require('path')
-const build = require('./server/build')
+// Node API
 const fs = require('fs')
+const path = require('path')
+
+// Local API
+const build = require('./server/build')
+const events = require('./server/events')
+
+// Installed packages
+const express = require('express')
 
 // Import environment specific configuration
 const localConfig = require('dotenv').config({
@@ -40,9 +46,6 @@ if (fs.existsSync(downloadPath) === false) {
   fs.mkdirSync(downloadPath, { recursive: true })
 }
 
-// Build data from the CMS
-build()
-
 // Create server app
 const server = express()
 
@@ -54,7 +57,7 @@ server.use('/static', express.static(path.join(__dirname, './static')))
 // The app
 server.use(express.static(path.join(__dirname, './' + environmentPath)))
 
-// Listen on port 3000
+// Start the Express Server
 server.listen(3000, error => {
   if (error) {
     throw error
@@ -65,9 +68,27 @@ server.listen(3000, error => {
 
     if (process.env.BUILD_TARGET === 'electron') {
       const { app, BrowserWindow, ipcMain } = require('electron')
+
       const logger = require('electron-log')
 
-      function createWindow () {
+      // Loading window will appear while files are downloading
+      function createLoadingWindow () {
+        return new BrowserWindow({
+          fullscreen: process.env.ELECTRON_FULLSCREEN === '1',
+          height: parseInt(process.env.ELECTRON_HEIGHT, 10),
+          show: false,
+          webPreferences: {
+            experimentalFeatures: true,
+            nodeIntegration: false, // causing issues with JQuery
+            //preload: '' // @TODO - Use to preload files when ready to write code,
+            webSecurity: false
+          },
+          width: parseInt(process.env.ELECTRON_WIDTH, 10)
+        })
+      }
+
+      // The Main Window loads 
+      function createMainWindow () {
         let mainWindow = new BrowserWindow({
           fullscreen: process.env.ELECTRON_FULLSCREEN === '1',
           height: parseInt(process.env.ELECTRON_HEIGHT, 10),
@@ -81,10 +102,6 @@ server.listen(3000, error => {
           width: parseInt(process.env.ELECTRON_WIDTH, 10)
         })
 
-        mainWindow.on('ready-to-show', () => {
-          mainWindow.show()
-        })
-
         mainWindow.on('closed', function () {
           mainWindow = null
         })
@@ -96,7 +113,12 @@ server.listen(3000, error => {
           logger.error('App crashed! Creating new window.')
           // Destroy window and start over
           mainWindow.destroy()
-          createWindow()
+
+          let mainWindow = createMainWindow()
+
+          mainWindow.on('ready-to-show', () => {
+            mainWindow.show()
+          })
         })
 
         webContents.on('did-finish-load', () => {
@@ -106,11 +128,36 @@ server.listen(3000, error => {
         })
 
         mainWindow.loadURL(`http://localhost:3000?version=${process.env.KIOSK_VERSION}`)
+
+        return mainWindow
       }
 
+      // Start by showing the loading page until the building data is done.
       app.on('ready', () => {
         logger.info('App started.')
-        createWindow()
+
+        const loading = createLoadingWindow()
+
+        loading.once('show', () => {
+          events.on('finish-build', () => {
+            logger.info('Data has finished downloading from Drupal.')
+
+            let mainWindow = createMainWindow()
+
+            mainWindow.on('ready-to-show', () => {
+              loading.hide()
+              loading.close()
+              mainWindow.show()
+            })
+          })
+
+          // Build data from the CMS
+          logger.info('Start building data from Drupal.')
+          build(events)
+        })
+
+        loading.loadFile('./loading.html')
+        loading.show()
       })
 
       app.on('window-all-closed', function () {
@@ -118,8 +165,16 @@ server.listen(3000, error => {
       })
 
       app.on('activate', function () {
-        if (mainWindow === null) {
-          createWindow()
+        if (!loadingWindow) {
+          let loadingWindow = createLoadingWindow()
+        }
+
+        if (!mainWindow) {
+          let mainWindow = createMainWindow()
+
+          mainWindow.on('ready-to-show', () => {
+            mainWindow.show()
+          })
         }
       })
 
@@ -129,6 +184,8 @@ server.listen(3000, error => {
 
       // Log to a file that holds a log of useful information
       ipcMain.on('log-message-to-file', (event, arg) => logger[arg.type](arg.message))
+    } else {
+      build(events)
     }
   }
 })

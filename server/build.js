@@ -1,11 +1,14 @@
-const path = require('path')
-const axios = require('axios')
+// Node API
 const fs = require('fs')
-const _ = require('lodash')
+const path = require('path')
 const url = require('url')
 
-// Set up Jsona
+// Installed packages
+const axios = require('axios')
 const jsona = require('jsona')
+const _ = require('lodash')
+
+// Set up Jsona
 const { Jsona } = jsona
 const formatter = new Jsona()
 
@@ -107,7 +110,13 @@ const setFile = (fileuri) => {
     responseType: 'stream'
   })
     .then((res) => {
-      res.data.pipe(fs.createWriteStream(decodeURI(absFilepath)))
+      const writeStream = fs.createWriteStream(decodeURI(absFilepath))
+
+      writeStream.on('open', () => {this.event.emit('add-file')})
+
+      writeStream.on('close', () => {this.event.emit('remove-file')})
+
+      res.data.pipe(writeStream)
     }).catch(error => {
       console.error(error)
     })
@@ -237,10 +246,11 @@ const createStorymaps = (body) => {
   const primaryStorymaps = storyMapList.map((storymap) => {
     let concatStorymap
 
+    const storyMapImage = setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url)
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0)
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage, color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
     else
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage ,color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
 
     if (process.env.KIOSK_VERSION === 'cdi') {
       concatStorymap.theme.flag = `${process.env.BACKEND_URL}/modules/client/ik_d8_module_wb_migration/includes/flags/${storymap.field_country.field_iso_code.toLowerCase()}.png`
@@ -252,8 +262,10 @@ const createStorymaps = (body) => {
   const translatedStorymaps = storyMapList.map((storymap) => {
     let concatStorymap
 
+    const storyMapImage = setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url)
+
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0) {
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_translated_id},  ...{uuid: storymap.id + '-alt'}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url),color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_translated_id},  ...{uuid: storymap.id + '-alt'}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: storyMapImage, color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
     }
 
     if (concatStorymap && process.env.KIOSK_VERSION === 'cdi') {
@@ -296,8 +308,32 @@ const createRegions = (body) => {
 /**
  * Export the logic so that the 
  */
-module.exports = async () => {
+module.exports = async (event) => {
   const { BACKEND_URL, KIOSK_VERSION, KIOSK_UUID } = process.env
+
+  /**
+   * Set up events that track files which are downloading.
+   * 
+   * Obvious point of failure is if a few files finish before
+   * the next files kick start.
+   */
+  event.on('add-file', () => {
+    this.event.file += 1
+  })
+
+  event.on('remove-file', () => {
+    this.event.file -= 1
+
+    if (this.event.file === 0) {
+      this.event.emit('finish-build')
+    }
+  })
+
+  // Make event a local in scope
+  this.event = event
+
+  // Track number of files downloading
+  this.event.file = 0
 
   // Endpoint for the Kiosk node
   const kiosk = new URL(`/jsonapi/node/kiosk_${KIOSK_VERSION.toLowerCase()}/${KIOSK_UUID}`, BACKEND_URL)
