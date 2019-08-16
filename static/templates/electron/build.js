@@ -10,6 +10,7 @@ module.exports = {
     "!.{DS_Store,eslintignore,eslintrc.yml,gitignore,sass-cache,sass-lint.yml,vscode}",
     "!CONTRIBUTING.md",
     "!README.*",
+    "!api/*",
     "!public",
     "!release",
     "!src",
