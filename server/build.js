@@ -68,6 +68,32 @@ const regionTemplate = {
 }
 
 /**
+ * capture the image derivatives from the response data and append it 
+ * to the JSONa object which does not process meta objects
+ *
+ * @param {Object[Jsona]} jsona 
+ * @param {Object[JSONAPI response]} response
+ */
+const appendImageDerivatives = (jsona, response) => {
+  jsona.forEach((a) => {
+    if (a.field_media) {
+      const c = response.included.filter(b => b.id === a.field_media.id)
+
+      if (c.length === 1) {
+        const d = c[0].relationships.image.data.meta.derivatives
+        jsona.map(e => {
+          if (e.field_media.id === a.field_media.id) {
+            e.field_media.meta = d
+          }
+
+          return e
+        })
+      }
+    }
+  })
+}
+
+/**
  * getHeader - returns title data for the Info section
  *
  * @param {[Object]} content
@@ -235,6 +261,8 @@ const createLayout = (body) => {
 const createStorymaps = (body) => {
   const cmsContent = formatter.deserialize(body)
 
+  appendImageDerivatives(cmsContent, body)
+
   writeJsonToFile(staticPath + '/download/storymaps.json', cmsContent)
 
   let storyMapList
@@ -247,7 +275,11 @@ const createStorymaps = (body) => {
   const primaryStorymaps = storyMapList.map((storymap) => {
     let concatStorymap
 
-    const storyMapImage = setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url)
+    let storyMapImageSrc = storymap.field_media.image.uri.url
+    if (storymap.field_media.meta && storymap.field_media.meta.story_map_header_image) {
+      storyMapImageSrc = storymap.field_media.meta.story_map_header_image.url
+    }
+    const storyMapImage = setFile(process.env.BACKEND_URL + storyMapImageSrc)
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0)
       concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage, color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
     else
@@ -263,7 +295,11 @@ const createStorymaps = (body) => {
   const translatedStorymaps = storyMapList.map((storymap) => {
     let concatStorymap
 
-    const storyMapImage = setFile(process.env.BACKEND_URL + storymap.field_media.image.uri.url)
+    let storyMapImageSrc = storymap.field_media.image.uri.url
+    if (storymap.field_media.meta && storymap.field_media.meta.story_map_header_image) {
+      storyMapImageSrc = storymap.field_media.meta.story_map_header_image.url
+    }
+    const storyMapImage = setFile(process.env.BACKEND_URL + storyMapImageSrc)
 
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0) {
       concatStorymap = { ...storymapTemplate, ...{id: storymap.field_translated_id},  ...{uuid: storymap.id + '-alt'}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: storyMapImage, color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
