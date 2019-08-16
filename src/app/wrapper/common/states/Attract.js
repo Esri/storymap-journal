@@ -32,10 +32,14 @@ define([
     }
 
     var show = function () {
-      $('.fullscreen-bg').css('background-image', 'url(' + ik.wrapper.layout.state.attract.background.img + ')');
+      layout.setBackground();
 
       // Do not show the menu
       $('#menu').hide();
+
+      $('.interaction__attract [data-nav]').each(function (i, ele) {
+        ik.wrapper.createLinks($(ele));
+      })
 
       // Interaction Element
       $('#interaction').children().hide();

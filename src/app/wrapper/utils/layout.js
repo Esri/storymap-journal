@@ -34,7 +34,7 @@ define([], function () {
     if (ik.wrapper.layout.state[this.getState()].background.video) {
       var nextVideoDiffers = false
 
-      if (this.getPrevState()) 
+      if (this.getPrevState())
         nextVideoDiffers = ik.wrapper.layout.state[this.getState()].background.video !== ik.wrapper.layout.state[this.getPrevState()].background.video
 
       var video = $('#container video');
@@ -51,27 +51,21 @@ define([], function () {
         video.load();
       }
 
-      if (ik.wrapper.layout.state[this.getState()].background.img) {
-        video.attr('poster', ik.wrapper.layout.state[this.getState()].background.img);
-      }
-
       if (ik.wrapper.state) {
         ik.wrapper.state.set('video', 'playing');
       }
 
       video.show();
-
-      return;
     }
-    
-    if (ik.wrapper.layout.state[this.getState()].background.img) {
-      var source = $('#container video source');
-      if (source.attr('src') && source.attr('src').length > 1) {
-        ik.wrapper.state.set('video', 'stopped');
-        $('#container video').attr('poster', '');
-      }
 
-      console.log('bg image', ik.wrapper.layout.state[this.getState()].background.img)
+    if (ik.wrapper.layout.state[this.getState()].background.img) {
+      // var source = $('#container video source');
+      // if (source.attr('src') && source.attr('src').length > 1) {
+      //   ik.wrapper.state.set('video', 'stopped');
+      //   $('#container video').attr('poster', '');
+      //   $('#container video').hide();
+      // }
+
       $('.fullscreen-bg').css('background-image', 'url(' + ik.wrapper.layout.state[this.getState()].background.img + ')');
       $('.fullscreen-bg').css('background-position', '50% 50%');
     }
