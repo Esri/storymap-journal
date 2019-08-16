@@ -7,11 +7,13 @@ module.exports = {
     output: "release"
   },
   files: [
-    "!.{DS_Store,eslintignore,eslintrc.yml,gitignore,sass-lint.yml}",
-    "!README.md",
-    "!src",
+    "!.{DS_Store,eslintignore,eslintrc.yml,gitignore,sass-cache,sass-lint.yml,vscode}",
+    "!CONTRIBUTING.md",
+    "!README.*",
+    "!public",
     "!release",
-    "!public"
+    "!src",
+    "!static/download/**/*"
   ],
   nsis: {
     "oneClick": true
@@ -28,6 +30,8 @@ module.exports = {
     icon: "build/icon.png"
   },
   win: {
+    icon: "build/icon.png",
+    publisherName: "Interactive Knowledge",
     target: [
       {
         target: "nsis",
@@ -35,7 +39,6 @@ module.exports = {
           "x64"
         ]
       }
-    ],
-    icon: "build/icon.png"
+    ]
   }
 }
