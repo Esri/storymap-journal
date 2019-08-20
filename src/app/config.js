@@ -50,8 +50,26 @@ app.cfg = {
 				{name: "side-default-3", themeMajor: "white", dotNav: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#aaa",    esriLogo: "black"},
 				{name: "side-default-4", themeMajor: "black", dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA",    esriLogo: "white"},
 				{name: "side-default-5", themeMajor: "white", dotNav: "#68AAE1", panel: "#FFFFFF", media: "#E8E8DF", text: "#000000", textLink: "#555", softText: "#FFF",    softBtn: "#4D4D4D", esriLogo: "black"},
-				{name: "side-default-6", themeMajor: "white", dotNav: "#676C7E", panel: "#F9F9EF", media: "#C2E3EE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#AAA",    esriLogo: "black"}
-			]
+				{name: "side-default-6", themeMajor: "white", dotNav: "#676C7E", panel: "#F9F9EF", media: "#C2E3EE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#AAA",    esriLogo: "black"},
+        {name: "cdi-africa", themeMajor: "white", dotNav: "#777777", panel: "#F1F5F0", media: "#EEEEEE", text: "#475E40", textLink: "#555", softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black"}
+      ],
+      leafThemes: [
+        {name: "cdi-africa", themeMajor: "white", primary: "#6F9364", secondary: "#475E40", background: "#F1F5F0"},
+        {name: "cdi-americas", themeMajor: "white", primary: "#7890B0", secondary: "#4D5C71", background: "#f0f2f5"},
+        {name: "cdi-caribbean", themeMajor: "white", primary: "#D8CFAF", secondary: "#767160", background: "#f7f5ee"},
+        {name: 'cdi-europe', themeMajor: "white", primary: "#BE6E46", secondary: "#8B5133", background: "#f8f0ec"},
+        {name: 'cdi-asia', themeMajor: "white", primary: "#A57548", secondary: "#795635", background: "#f7f2ed"},
+        {name: 'cdi-region-6', themeMajor: "white", primary: "#885053", secondary: "#633B3D", background: "#f5efef"},
+        {name: 'cdi-region-7', themeMajor: "white", primary: "#508484", secondary: "#335454", background: "#eff5f5"},
+        {name: 'cdi-region-7', themeMajor: "white", primary: "#CCA43B", secondary: "#826926", background: "#faf6eb"},
+        {name: 'what-is-leaf', themeMajor: "white", primary: "#C84107", secondary: "#923006", background: "#FAEDE8"},
+        {name: 'schools-streets', themeMajor: "white", primary: "#E5C031", secondary: "#A08722", background: "#fcf8e8"},
+        {name: 'leaf-international', themeMajor: "white", primary: "#C65F20", secondary: "#8C4417", background: "#fbf0e9"},
+        {name: 'leaf-festival', themeMajor: "white", primary: "#53B048", secondary: "#3E8436", background: "#eef8ed"},
+        {name: 'leaf-downtown', themeMajor: "white", primary: "#5DC5C7", secondary: "#449091", background: "#ecf8f8"},
+        {name: 'leaf-global', themeMajor: "white", primary: "#B6AA82", secondary: "#857C5F", background: "#f6f4ef"},
+        {name: 'more-about-leaf', themeMajor: "white", primary: "#715035", secondary: "#533B27", background: "#f7f2ee"},
+      ]
 		},
 		{
 			id: "float",
