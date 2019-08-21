@@ -39,17 +39,21 @@ define([
       }
 
       var shiftNext = function() {
+        // Remove the disabled property if it's on btnPrev
+        btnPrev.removeAttribute('disabled');
         currentIndex++;
-        if (currentIndex > slides.length - 1) {
-          currentIndex = 0;
+        if (currentIndex === slides.length - 1) {
+          btnNext.setAttribute('disabled', true);
         }
         transformFrame(currentIndex);
       }
 
       var shiftPrev = function() {
+        // Remove the disabled property if it's on btnNext
+        btnNext.removeAttribute('disabled');
         currentIndex--;
-        if (currentIndex < 0) {
-          currentIndex = slides.length - 1;
+        if (currentIndex === 0) {
+          btnPrev.setAttribute('disabled', true);
         }
         transformFrame(currentIndex);
       }
