@@ -176,7 +176,9 @@ define(["lib-build/css!./Builder",
 					addOrgLogoToConfig(x);
 				}
 			}
-			addModifiedThemeToConfig();
+
+      // Was creating themes we didn't want.
+			// addModifiedThemeToConfig();
 
 			var y; // walker
 			if ((y = app.data.getWebAppData().getTheme()) && (y = y.colors)) {
@@ -373,6 +375,8 @@ define(["lib-build/css!./Builder",
 
 		function addModifiedThemeToConfig() {
 			var currentTheme = app.data.getWebAppData().getTheme();
+      console.log('currentTheme', currentTheme);
+      console.log('currentColors', currentColors);
 			var currentColors = currentTheme.colors;
 			if (!currentColors) {
 				return;

@@ -1,3 +1,28 @@
+@mixin sidePanelTheme ($primary, $secondary, $background) {
+  #sidePanel {
+    background-color: $background;
+
+    .section {
+      h1, h2 {
+        color: $secondary;
+      }
+    }
+
+    .next-section {
+      li {
+        button {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+
+      .arrow {
+        background-color: $primary;
+      }
+    }
+  }
+}
+
 #sidePanel {
   .section {
     @include flex(column, normal);
@@ -16,6 +41,30 @@
 
     .next-section {
       margin-top: auto;
+
+      li {
+        button {
+          div {
+            @include font(22, 22, 'OpenSans');
+            display: block;
+            font-weight: 700;
+            flex-basis: unset;
+            width: 100%;
+          }
+        }
+      }
     }
   }
+}
+
+.interaction__storymap.cdi-africa {
+  @include sidePanelTheme($region-1-primary, $region-1-secondary, $region-1-background);
+}
+
+.interaction__storymap.cdi-americas {
+  @include sidePanelTheme($region-2-primary, $region-2-secondary, $region-2-background);
+}
+
+.interaction__storymap.cdi-caribbean {
+  @include sidePanelTheme($region-3-primary, $region-3-secondary, $region-3-background);
 }

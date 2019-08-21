@@ -67,7 +67,6 @@ else {
 								Builder.init(Core, builderView);
                 ik.wrapper = new Edit();
 
-
                 // Show only the storymap
                 $('.fullscreen-bg').hide();
                 $('#info').hide();

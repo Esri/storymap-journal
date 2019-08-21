@@ -580,7 +580,7 @@ define(["lib-build/tpl!./SidePanelSection",
 					tooltipBgColor: colors.text,
 					tooltipFontColor: colors.panel
 				});
-				container.css("background-color", colors.panel);
+				// container.css("background-color", colors.panel);
 				var transparentPanel = CommonHelper.getRgba(colors.panel, 0.001);
 				container.find('.scroll').css({
 					'background': 'linear-gradient(' + transparentPanel + ', ' + colors.panel + ')'

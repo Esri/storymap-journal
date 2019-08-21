@@ -607,6 +607,14 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			var subtitle = app.indexCfg.subtitle || app.data.getWebAppData().getSubtitle() /*|| response.itemInfo.item.snippet*/;
 
 			var appColors = app.data.getWebAppData().getColors();
+      if ( !app.ui.theme ) {
+        app.ui.theme = {};
+      }
+
+      app.ui.theme.colors = appColors;
+
+      // Add class to interaction__storymap
+      $('.interaction__storymap').addClass(appColors.name);
 
 			if ( app.ui.headerDesktop ) {
 				app.ui.headerDesktop.init(
