@@ -264,7 +264,10 @@ define(["lib-build/tpl!./SidePanelSection",
 			{
 				container.toggleClass("section-social-links", layoutOptions.socialLinks);
 
-				container.css("width", layoutOptions.layoutCfg.sizeVal);
+        // Force 50%
+				// container.css("width", layoutOptions.layoutCfg.sizeVal);
+        container.css("width", "50%");
+
 				$("body")
 					.removeClass("layout-side-left layout-side-right")
 					.addClass(layoutOptions.layoutCfg.position == "left" ? "layout-side-left" : "layout-side-right");
