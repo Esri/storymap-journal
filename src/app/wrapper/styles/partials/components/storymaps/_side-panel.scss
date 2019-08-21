@@ -1,0 +1,21 @@
+#sidePanel {
+  .section {
+    @include flex(column, normal);
+
+    h1, h2 {
+      @include font(30, 31, 'Hallo Sans');
+      font-weight: 700;
+    }
+
+    .content {
+      p {
+        @include font(20, 30, 'OpenSans');
+        color: #000;
+      }
+    }
+
+    .next-section {
+      margin-top: auto;
+    }
+  }
+}

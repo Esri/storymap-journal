@@ -279,12 +279,18 @@ define(["lib-build/tpl!./SidePanelSection",
 				var contentHTML = "";
 
 				$.each(sections, function(i, section){
+          var nextTitle = '';
+          if (i < sections.length-1) {
+            nextTitle = sections[i+1].title;
+          }
+
 					contentHTML += createSectionBlock(
 						i,
 						section.status,
 						section.content,
 						section.title,
-						section.OBJECTID
+						section.OBJECTID,
+            nextTitle
 					);
 				});
 
@@ -325,7 +331,7 @@ define(["lib-build/tpl!./SidePanelSection",
 
 			}
 
-			function createSectionBlock(/*editEl,*/ index, status, content, title)
+			function createSectionBlock(/*editEl,*/ index, status, content, title, objectId, nextTitle)
 			{
 				var optHtmlClass = "";
 
@@ -338,14 +344,21 @@ define(["lib-build/tpl!./SidePanelSection",
 				shareURL += shareURL.match(/\?/) ? '&' : '?';
 				shareURL += "section=" + (index+1);
 
+        var actionName = 'IK-SECTION-NEXT-' + (index+2);
+        var buttonTitle = nextTitle;
+
+        console.log('actionName', actionName);
+        console.log('buttonTitle', buttonTitle );
+
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
 					title: StoryText.prepareEditorContent(title),
 					content: StoryText.prepareEditorContent(content, true),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					lblMainstageBtn: i18n.viewer.common.focusMainstage,
-					shareURL: shareURL,
-					titleTag: index === 0 ? 'h1' : 'h2'
+					titleTag: index === 0 ? 'h1' : 'h2',
+          actionName: actionName,
+          buttonTitle: buttonTitle
 				});
 			}
 

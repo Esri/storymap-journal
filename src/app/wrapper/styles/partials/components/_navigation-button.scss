@@ -1,6 +1,7 @@
 .nav__list,
 .region__list,
-.region__list__back {
+.region__list__back,
+.next-section {
   @include flex(row, normal, normal, wrap);
   list-style-type: none;
   margin: 0;
@@ -93,6 +94,23 @@
   }
 }
 
+.next-section {
+  & li {
+    & button {
+      clip-path: url('#storymap-button-clipping-path');
+    }
+  }
+
+  li {
+    margin-bottom: 0;
+
+    button {
+      height: 60px;
+      width: 470px;
+    }
+  }
+}
+
 .nav__list,
 .region__list {
   & li {
@@ -113,6 +131,29 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: 22px auto;
+    }
+  }
+}
+
+.next-section {
+  & li {
+
+    & button {
+      text-align: left;
+    }
+
+    & .arrow {
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      transform: translateY(-50%);
+      background-image: url('/static/svg/arrow-right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 13px auto;
     }
   }
 }
