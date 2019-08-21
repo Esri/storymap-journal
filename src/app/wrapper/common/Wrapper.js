@@ -149,14 +149,10 @@ define([
         // Render the appropriate sections
         switch (ik.wrapper.state.get('wrapper-state')) {
           case 'active':
-            ik.wrapper.sections.info.render();
-            ik.wrapper.sections.interaction.render();
-            break;
           case 'attract':
-            ik.wrapper.sections.info.render();
-            ik.wrapper.sections.interaction.render();
-            break;
           case 'explore':
+          case 'nav':
+          case 'region':
             ik.wrapper.sections.info.render();
             ik.wrapper.sections.interaction.render();
             break;
@@ -166,13 +162,6 @@ define([
             ik.wrapper.sections.interaction.render();
             ik.wrapper.sections.bottom.render();
             break;
-          case 'nav':
-            ik.wrapper.sections.info.render();
-            ik.wrapper.sections.interaction.render();
-            break;
-          case 'region':
-            ik.wrapper.sections.info.render();
-            ik.wrapper.sections.interaction.render();
           default:
             // nothing
         }
@@ -203,6 +192,10 @@ define([
           // End Render
           console.log('Render period ends', ik.wrapper.states);
           ik.wrapper.states[ik.wrapper.state.get('wrapper-state')].show();
+          // Init slideshow funtionality here if its a region screen
+          if (ik.wrapper.state.get('wrapper-state') === 'region') {
+            ik.wrapper.states[ik.wrapper.state.get('wrapper-state')].initSlides();
+          }
         }
       })
 

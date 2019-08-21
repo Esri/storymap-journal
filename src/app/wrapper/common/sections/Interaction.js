@@ -149,8 +149,38 @@ define([
       var regionStorymaps = ik.wrapper.api.storymap.get(regionInfo[0].storymaps);
       var buttons = ik.wrapper.api.storymap.getAllLanguage(currentLanguage, regionStorymaps);
 
-      // Create navigation buttons
-      buttons.forEach(function (button, index) {
+      // TODO: remove testing var and resort to buttons var for length check and forEach
+      var testing = [];
+      testing.push(...buttons);
+      testing.push(...buttons);
+      testing.push(...buttons);
+      testing.push(...buttons);
+      testing.push(...buttons);
+      testing.push(...buttons);
+
+      if (testing.length > 8) {
+        $('.region__heading').hide();
+      } else {
+        $('.region__controls').hide();
+      }
+
+      /**
+       * Loop through all buttons, rather than automatically appending to the list,
+       * Create NavigationButtson with each and Append them to a group (slide) in quantities of 8
+       */
+      testing.forEach(function (button, index) {
+        // Create new slide(s) for each 8 buttons
+        if (index % 8 === 0) {
+          var slide = document.createElement('ul');
+          var slideClass = `region__list__slide-${index / 8}`
+          slide.classList.add(slideClass);
+          // Append the slide to the region__list
+          $('.region__list').append(slide);
+        } else {
+          // If we don't need a new slide, get the last one
+          var slideClass = `region__list__slide-${Math.floor(index / 8)}`;
+        }
+
         var alternate = '';
         if (button.relationships) {
           var alternateStorymap = ik.wrapper.api.storymap.get([button.relationships.id]);
@@ -163,7 +193,7 @@ define([
           alternate = '';
         }
 
-        $('.region__list').append(NavigationButton({
+        $(`.${slideClass}`).append(NavigationButton({
           action: action,
           alternate: alternate,
           alternateLanguage: alternateLanguage,
@@ -173,8 +203,15 @@ define([
           targetId: button.uuid,
           title: button.name
         }));
+
+        // Make region__list__controls background-color correct
+        var controlBtns = document.querySelectorAll('[class^="region__controls__btn-"]');
+        Array.from(controlBtns).forEach(btn => {
+          btn.style.backgroundColor = button.theme.color.primary;
+        })
       });
 
+      // Set up the back button
       $('.region__list__back').html(NavigationButton({
         action: 'nav',
         alternate: 'ver todas las regiones',
