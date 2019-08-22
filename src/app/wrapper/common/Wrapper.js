@@ -250,15 +250,19 @@ define([
       muteToggle.addEventListener('click', function() {
         if (ik.wrapper.state && ik.wrapper.state.get('video') !== 'muted') {
           ik.wrapper.state.set('video', 'muted');
+          $(muteToggle).addClass('active');
         } else {
           ik.wrapper.state.set('video', 'unmuted');
+          $(muteToggle).removeClass('active');
         }
       });
       playToggle.addEventListener('click', function() {
         if (ik.wrapper.state && ik.wrapper.state.get('video') !== 'stopped') {
           ik.wrapper.state.set('video', 'stopped');
+          $(playToggle).addClass('active');
         } else {
           ik.wrapper.state.set('video', 'playing');
+          $(playToggle).removeClass('active');
         }
       });
     }
