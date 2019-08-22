@@ -344,9 +344,13 @@ define([
             e.preventDefault();
 
             var index = app.data.getCurrentSectionIndex();
-            console.log(index);
             if (index === 0) {
-              ik.wrapper.showNav();
+              var region = ik.wrapper.state.get('regionid');
+              if (region !== undefined && region > 0) {
+                ik.wrapper.showRegion(region);
+              } else {
+                ik.wrapper.showNav();
+              }
             } else {
               ik.wrapper.topic.publish('story-navigate-section', index - 1);
             }
