@@ -78,6 +78,12 @@ define([
 
       var currentLanguage = ik.wrapper.state.get('language');
 
+      // LG-67: Disable language nav switching for now
+      if (currentLanguage !== 'en') {
+        ik.wrapper.state.set('language', 'en');
+        currentLanguage = 'en'
+      }
+
       var alternateLanguage = (currentLanguage === 'en') ? 'es' : 'en';
 
       var action = '';
@@ -151,6 +157,12 @@ define([
       $(activeClass).html(interactionRegionTpl());
 
       var currentLanguage = ik.wrapper.state.get('language');
+
+      // LG-67: Disable language nav switching for now
+      if (currentLanguage !== 'en') {
+        ik.wrapper.state.set('language', 'en');
+        currentLanguage = 'en'
+      }
 
       var alternateLanguage = (currentLanguage === 'en') ? 'es' : 'en';
 
