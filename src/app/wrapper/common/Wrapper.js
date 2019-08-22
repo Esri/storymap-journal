@@ -196,14 +196,30 @@ define([
           if (ik.wrapper.state.get('wrapper-state') === 'region') {
             ik.wrapper.states[ik.wrapper.state.get('wrapper-state')].initSlides();
           }
+
+          // Increase volume and opacity of bgVideo until 1(00%)
+          var bgVideo = $('.fullscreen-bg video').get(0);
+          bgVideo.volume = 0;
+          bgVideo.style.opacity = 0;
+          var fadeInterval = setInterval(function() {
+            if (bgVideo.volume + 0.05 <= 1) {
+              bgVideo.volume = bgVideo.volume + 0.05;
+              bgVideo.style.opacity = parseFloat(bgVideo.style.opacity) + 0.05;
+            } else {
+              clearInterval(fadeInterval);
+              bgVideo.volume = 1;
+              bgVideo.style.opacity = 1;
+            }
+          }, 100);
         }
-      })
+      });
 
     /**
      * Background video and sounds watcher.
      */
     this.state.watch('video', function () {
       var bgVideo = $('.fullscreen-bg video').get(0);
+      console.dir(bgVideo);
 
       switch (ik.wrapper.state.get('video')) {
         case 'playing':
