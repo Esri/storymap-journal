@@ -1076,7 +1076,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 			// Use geocode service from the portal if none declared in config
 			var existingGeocoders = app.data.getWebAppData().getAppGeocoders();
-			var existingGeocoderUrls = existingGeocoders ? existingGeocoders.map(function(g) {
+			var existingGeocoderUrls = Array.isArray(existingGeocoders) ? existingGeocoders.map(function(g) {
 				return g.url;
 			}) : [];
 			var additionalGeocoders = [];
