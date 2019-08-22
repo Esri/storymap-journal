@@ -9,5 +9,7 @@ define([
 ) {
   return function Edit () {
     $('#container').addClass('edit');
+
+    $('.video-controls').remove();
   }
 })
