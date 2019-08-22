@@ -57,6 +57,7 @@ const regionTemplate = {
   id: '',
   machine_name: '',
   name: '',
+  featured: false,
   translated: '',
   storymaps: [],
   theme: {
@@ -320,7 +321,7 @@ const createStorymaps = (body) => {
   return storymaps
 }
 
-const createRegions = (body) => {
+const createRegions = (body, featuredRegion) => {
   const cmsContent = formatter.deserialize(body)
 
   // Save file for future reference
@@ -333,6 +334,7 @@ const createRegions = (body) => {
       ...{ machine_name: region.field_machine_name },
       ...{ name: region.name },
       ...{ translated: region.field_translated_display_name},
+      ...{ featured: region.drupal_internal__tid === featuredRegion },
       ...{ theme: {
           color: {
             primary: region.field_primary.color,
@@ -402,6 +404,7 @@ module.exports = async (event) => {
         map.set('include', [
         'field_logo',
         'field_logo.image',
+        'field_region',
         'field_state_attract_bg_img',
         'field_state_attract_bg_img.image',
         'field_state_attract_bg_video',
@@ -420,6 +423,8 @@ module.exports = async (event) => {
   params = new URLSearchParams(map)
   kiosk.search = decodeURIComponent(params.toString())
 
+  let kioskResponse = {}
+
   try {
     // Grab response, format it, and save the object
     const response = await axios.get(kiosk.toString())
@@ -430,6 +435,9 @@ module.exports = async (event) => {
       const apiStorymaps = createStorymaps(response.data)
       writeJsonToFile(apiPath + '/storymaps.json', apiStorymaps)
     }
+
+    // Pass the kiosk data outside this scope
+    kioskResponse = formatter.deserialize(response.data)
   } catch (error) {
     console.error(error)
   }
@@ -467,7 +475,8 @@ module.exports = async (event) => {
 
       // Format the the story maps and regions
       const storymapApi = createStorymaps(storymaps)
-      const regions = createRegions(response.data)
+      const primaryRegion = kioskResponse.field_region.drupal_internal__tid
+      const regions = createRegions(response.data, primaryRegion)
 
       // Take regions and associate story map field_id to those regions
       const newRegions = regions.map(region => {

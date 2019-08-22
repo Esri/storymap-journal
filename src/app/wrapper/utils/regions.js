@@ -25,9 +25,21 @@ define([], function () {
       return ik.wrapper.regions
     }
 
+    /**
+     * For CDI only: return the featured region
+     * 
+     * @return {Array[region]}
+     */
+    var getFeaturedRegion = function () {
+      return ik.wrapper.regions.filter(function (region) {
+        return region.featured === true;
+      })
+    }
+
     return {
       get: get,
-      getAll: getAll
+      getAll: getAll,
+      getFeaturedRegion: getFeaturedRegion
     }
   }
 });

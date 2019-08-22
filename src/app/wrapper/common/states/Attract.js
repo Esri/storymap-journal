@@ -19,7 +19,19 @@ define([
 
       $('#menu').hide();
 
-      $('.interaction__attract').html(attractInteractionTpl());
+      var action = 'nav';
+      var targetId = 0;
+      if (ik.wrapper.getVersion() === 'cdi') {
+        var action = 'region';
+
+        var featured = ik.wrapper.api.region.getFeaturedRegion();
+        var targetId = featured[0].id;
+      }
+
+      $('.interaction__attract').html(attractInteractionTpl({
+        action: action,
+        targetId: targetId
+      }));
 
       $('.interaction__attract [data-nav]').each(function (i, ele) {
         ik.wrapper.createLinks($(ele));

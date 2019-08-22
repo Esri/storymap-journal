@@ -1,4 +1,8 @@
+<% if (targetId > 0) { %>
+<div data-nav="<%= action %>" data-<%= action %>="<%= targetId %>">
+<% } else { %>
 <div data-nav="nav">
+<% } %>
   <h1>touch anywhere to begin</h1>
   <img src="/static/svg/pointer.svg">
 </div>

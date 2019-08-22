@@ -56,7 +56,19 @@ define([
     }
 
     this.renderAttract = function () {
-      $('.interaction__attract').html(interactionAttractTpl());
+      var action = 'nav'
+      targetId = 0;
+      if (ik.wrapper.getVersion() === 'cdi') {
+        var action = 'region';
+
+        var featured = ik.wrapper.api.region.getFeaturedRegion();
+        targetId = featured[0].id
+      }
+
+      $('.interaction__attract').html(interactionAttractTpl({
+        action: action,
+        targetId: targetId
+      }));
     }
 
     this.renderNav = function () {
