@@ -222,17 +222,47 @@ define([
             bgVideo.play();
           }
           break;
+        case 'stopped':
+          bgVideo.pause();
+          break;
         case 'muted':
           if (!bgVideo.muted) {
             bgVideo.muted = true;
           }
           break;
-        case 'stopped':
-          bgVideo.pause();
+        case 'unmuted':
+          if (bgVideo.muted) {
+            bgVideo.muted = false;
+          }
+          break;
         default:
           break;
       }
     })
+
+    /**
+    * Temporary script to hook up our play and mute toggle buttons for development
+    */
+    var initVideoToggleButtons = function() {
+      var muteToggle = document.getElementById('mute-toggle');
+      var playToggle = document.getElementById('play-toggle');
+
+      muteToggle.addEventListener('click', function() {
+        if (ik.wrapper.state && ik.wrapper.state.get('video') !== 'muted') {
+          ik.wrapper.state.set('video', 'muted');
+        } else {
+          ik.wrapper.state.set('video', 'unmuted');
+        }
+      });
+      playToggle.addEventListener('click', function() {
+        if (ik.wrapper.state && ik.wrapper.state.get('video') !== 'stopped') {
+          ik.wrapper.state.set('video', 'stopped');
+        } else {
+          ik.wrapper.state.set('video', 'playing');
+        }
+      });
+    }
+    initVideoToggleButtons();
 
     /**
      * Watch state change of wrapper language
