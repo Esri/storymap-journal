@@ -1,7 +1,8 @@
 .nav__list,
 .region__list,
 .region__list__back,
-.next-section {
+.next-section,
+.region__list__back {
   @include flex(row, normal, normal, wrap);
   list-style-type: none;
   margin: 0;
@@ -23,7 +24,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease;
 
-    // TODO: Change 8 to max number of possible buttons
+    // At most there will be 8 links top to bottom, the rest will slide in
     @for $i from 1 through 8 {
       &:nth-of-type(#{$i}) {
         animation-delay: 0.15s * $i;
@@ -112,7 +113,8 @@
 }
 
 .nav__list,
-.region__list {
+.region__list,
+.nav__list {
   & li {
 
     & button {
