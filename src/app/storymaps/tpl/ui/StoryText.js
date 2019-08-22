@@ -123,7 +123,8 @@ define(["dojo/topic",
 		function createMainMediaActionLink()
 		{
 			$.each(app.data.getContentActions(), function(i, action){
-				var link = $("a[data-storymaps=" + action.id + "]"),
+				var link = $("a[data-storymaps=" + action.id + "]");
+        var linkButton = $("button[data-storymaps=" + action.id + "]");
 					validAction = true;
 
 				if (action.type == 'navigate' && (action.index == -1 || action.hiddenSection)) {
@@ -133,6 +134,7 @@ define(["dojo/topic",
 					// In viewer when not owner, just disable the link
 					var errorClass = app.userCanEdit ? 'navigate-error' : 'navigate-error-silent';
 					link.addClass(errorClass);
+          linkButton.addClass(errorClass);
 
 					if (app.userCanEdit) {
 						var label = i18n.viewer.mainStage.errorDeleted;
@@ -152,6 +154,11 @@ define(["dojo/topic",
 
 				if (validAction) {
 					$("a[data-storymaps=" + action.id + "]").off('click').click(function(evt){
+						var fromKeyboard = !(evt.screenX || evt.screenY);
+						performAction(action, link, fromKeyboard);
+					});
+
+          $("button[data-storymaps=" + action.id + "]").off('click').click(function(evt){
 						var fromKeyboard = !(evt.screenX || evt.screenY);
 						performAction(action, link, fromKeyboard);
 					});

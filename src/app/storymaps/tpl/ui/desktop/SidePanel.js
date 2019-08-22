@@ -344,11 +344,8 @@ define(["lib-build/tpl!./SidePanelSection",
 				shareURL += shareURL.match(/\?/) ? '&' : '?';
 				shareURL += "section=" + (index+1);
 
-        var actionName = 'IK-SECTION-NEXT-' + (index+2);
+        var actionName = 'IK-SECTION-NEXT-' + (index);
         var buttonTitle = nextTitle;
-
-        console.log('actionName', actionName);
-        console.log('buttonTitle', buttonTitle );
 
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
