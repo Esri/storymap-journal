@@ -75,6 +75,9 @@ const regionTemplate = {
  * @param {Object[JSONAPI response]} response
  */
 const appendImageDerivatives = (jsona, response) => {
+  if (!Array.isArray(jsona)) {
+    return
+  }
   jsona.forEach((a) => {
     if (a.field_media) {
       const c = response.included.filter(b => b.id === a.field_media.id)

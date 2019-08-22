@@ -59,15 +59,17 @@ define([], function () {
     }
 
     if (ik.wrapper.layout.state[this.getState()].background.img) {
-      // var source = $('#container video source');
-      // if (source.attr('src') && source.attr('src').length > 1) {
-      //   ik.wrapper.state.set('video', 'stopped');
-      //   $('#container video').attr('poster', '');
-      //   $('#container video').hide();
-      // }
-
       $('.fullscreen-bg').css('background-image', 'url(' + ik.wrapper.layout.state[this.getState()].background.img + ')');
       $('.fullscreen-bg').css('background-position', '50% 50%');
+    }
+
+    // If a video is used for multiple states, go ahead and play it.
+    try {
+      if ($('#container video source').length > 0) {
+        ik.wrapper.state.set('video', 'playing');
+      }
+    } catch (err) {
+      $('#container video').load();
     }
   }
 
