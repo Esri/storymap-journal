@@ -274,6 +274,8 @@ const createStorymaps = (body) => {
   writeJsonToFile(staticPath + '/download/storymaps.json', cmsContent)
 
   let storyMapList
+  let primaryColor = null
+  let secondaryColor = null
   if (process.env.KIOSK_VERSION === 'cdi') {
     storyMapList = cmsContent
   } else {
@@ -287,11 +289,17 @@ const createStorymaps = (body) => {
     if (storymap.field_media.meta && storymap.field_media.meta.story_map_header_image) {
       storyMapImageSrc = storymap.field_media.meta.story_map_header_image.url
     }
+
+    if (process.env.KIOSK_VERSION === 'llc') {
+      primaryColor = storymap.field_color_primary.color
+      secondaryColor = storymap.field_color_secondary.color
+    }
+
     const storyMapImage = setFile(process.env.BACKEND_URL + storyMapImageSrc)
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0)
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage, color: {primary: storymap.field_color_primary.color, secondary:  storymap.field_color_secondary.color}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}}, ...{titles: {primary: storymap.field_button_title, secondary: storymap.field_translated_button_title}}}
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage, color: {primary: primaryColor, secondary: secondaryColor}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}}, ...{titles: {primary: storymap.field_button_title, secondary: storymap.field_translated_button_title}}}
     else
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage ,color: {primary: storymap.field_color_primary.color, secondary:  storymap.field_color_secondary.color}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{titles: {primary: storymap.field_button_title, secondary: storymap.field_translated_button_title}}}
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage ,color: {primary: primaryColor, secondary: secondaryColor}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{titles: {primary: storymap.field_button_title, secondary: storymap.field_translated_button_title}}}
 
     if (process.env.KIOSK_VERSION === 'cdi') {
       concatStorymap.theme.flag = `${process.env.BACKEND_URL}/modules/client/ik_d8_module_wb_migration/includes/flags/${storymap.field_country.field_iso_code.toLowerCase()}.png`
