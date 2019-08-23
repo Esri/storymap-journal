@@ -44,6 +44,10 @@ const storymapTemplate = {
       secondary: ""
     }
   },
+  titles: {
+    primary: "",
+    secondary: ""
+  },
   callout: {
     title: "",
     body: ""
@@ -285,9 +289,9 @@ const createStorymaps = (body) => {
     }
     const storyMapImage = setFile(process.env.BACKEND_URL + storyMapImageSrc)
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0)
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage, color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage, color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_translated_id}}, ...{titles: {primary: storymap.field_button_title, secondary: storymap.field_translated_button_title}}}
     else
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage ,color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage ,color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{titles: {primary: storymap.field_button_title, secondary: storymap.field_translated_button_title}}}
 
     if (process.env.KIOSK_VERSION === 'cdi') {
       concatStorymap.theme.flag = `${process.env.BACKEND_URL}/modules/client/ik_d8_module_wb_migration/includes/flags/${storymap.field_country.field_iso_code.toLowerCase()}.png`
@@ -306,7 +310,7 @@ const createStorymaps = (body) => {
     const storyMapImage = setFile(process.env.BACKEND_URL + storyMapImageSrc)
 
     if (storymap.field_translated_id !== null && storymap.field_translated_id.length > 0) {
-      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_translated_id},  ...{uuid: storymap.id + '-alt'}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: storyMapImage, color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}} }
+      concatStorymap = { ...storymapTemplate, ...{id: storymap.field_translated_id},  ...{uuid: storymap.id + '-alt'}, ...{name: storymap.field_translated_title}, ...{language: 'es'}, ...{theme: {background: storyMapImage, color: {primary: '#' + storymap.field_color, secondary: ''}}}, ...{callout: {title: storymap.field_translated_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{relationships: {id: storymap.field_id}}, ...{titles: {primary: storymap.field_button_title, secondary: storymap.field_translated_button_title}}}
     }
 
     if (concatStorymap && process.env.KIOSK_VERSION === 'cdi') {
@@ -483,11 +487,21 @@ module.exports = async (event) => {
         region.storymaps = formatter.deserialize(storymaps).map(storymap => {
           if (region.id === storymap.field_region.drupal_internal__tid) {
             // Also add the region theme colors to the story maps
-            storymapApi.forEach((x, i, y) => {
+            storymapApi.forEach((x, y, z) => {
               // If story map object UUID = JSON:API UUID
               if (x.uuid === storymap.id) {
                 // Set story map object theme color to current region theme color
-                y[i].theme.color = region.theme.color
+                z[y].theme.color = region.theme.color
+
+                // Add color to the translated story maps
+                if (x.relationships.id.length > 0) {
+                  let rel = x.relationships.id
+                  z.forEach((a, b, c) => {
+                    if (a.id === rel) {
+                      c[b].theme.color = region.theme.color
+                    }
+                  })
+                }
               }
             })
             return storymap.id
