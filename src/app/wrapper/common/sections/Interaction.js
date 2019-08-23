@@ -205,7 +205,7 @@ define([
           var slideClass = `region__list__slide-${Math.floor(index / 8)}`;
         }
 
-        var alternate = '';
+        var alternate = 'es';
         if (button.relationships) {
           var alternateStorymap = ik.wrapper.api.storymap.get([button.relationships.id]);
 
@@ -219,13 +219,13 @@ define([
 
         $(`.${slideClass}`).append(NavigationButton({
           action: action,
-          alternate: alternate,
+          alternate: button.titles.secondary,
           alternateLanguage: alternateLanguage,
           color: button.theme.color.primary,
           currentLanguage: currentLanguage,
           imgSrc: '/static/svg/leaf.svg',
           targetId: button.uuid,
-          title: button.name
+          title: button.titles.primary
         }));
 
         // Make region__list__controls background-color correct
