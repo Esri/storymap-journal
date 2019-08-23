@@ -79,7 +79,7 @@ server.listen(3000, error => {
           show: false,
           webPreferences: {
             experimentalFeatures: true,
-            nodeIntegration: false, // causing issues with JQuery
+            nodeIntegration: true, // Necessary for progress/loading window
             //preload: '' // @TODO - Use to preload files when ready to write code,
             webSecurity: false
           },
@@ -155,6 +155,11 @@ server.listen(3000, error => {
               mainWindow.show()
             })
           }
+
+          // Send files remaining to loading window for progress bar
+          events.on('remove-file', () => {
+            loading.webContents.send('progress', events.file)
+          })
 
           events.on('finish-build', eventFinishBuildCallback)
 
