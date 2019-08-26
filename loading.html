@@ -3,19 +3,78 @@
   <head>
     <style>
       body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        color: white;
         background-color: rgba(49, 36, 80, .67);
+        background-image: url("static/download/sites/default/files/geo-color-2_0.png");
+        /* background-image: url("static/images/la-sunset.jpg"); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Helvetica, Arial, sans-serif;
       }
 
-      div {
-        color: white;
-        display: block;
-        margin: 0 auto;
+      .loading-copy {
+        position: relative;
+      }
+      
+      .loading-copy:after {
+        content: "\2026"; /* ASCII code for ellipses */
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 0px;
+        animation: ellipses steps(4,end) 1s infinite;
+      }
+
+      @keyframes ellipses {
+        to {
+          width: 1.25em;
+        }
+      }
+
+      .loading-bar {
+        overflow: hidden;
+        position: relative;
+        width: 500px;
+        height: 25px;
+        border-radius: 15px;
+        background-color: white;
+        box-shadow:
+          0px 3px 5px rgba(0,0,0,0.5),
+          0 20px 20px rgba(0,0,0,0.3);
+      }
+
+      .loading-bar__progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: green;
+        transform: translateX(-100%);
+        transition: transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s;
       }
     </style>
   </head>
   <body>
-    <div>
-      <h1>Loading content...</h1>
+    <h1 class='loading-copy'>Loading content</h1>
+
+    <div class="loading-bar">
+      <div id="progress-bar" class="loading-bar__progress"></div>
     </div>
+
+    <script>
+      const { ipcRenderer } = require('electron');
+      const progressBar = document.getElementById('progress-bar')
+      ipcRenderer.on('progress', (event, files) => {
+        progressBar.style.transform = `translateX(${-100 + (100 / files)}%)`;
+      });
+    </script>
   </body>
 </html>
