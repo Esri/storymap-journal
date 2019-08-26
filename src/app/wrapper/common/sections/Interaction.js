@@ -100,35 +100,29 @@ define([
 
       // Create navigation buttons
       buttons.forEach(function (button, index) {
-        var alternate = '';
-        if (button.relationships) {
-          var alternateStorymap = ik.wrapper.api.storymap.get([button.relationships.id]);
-
-          if (alternateStorymap.length === 1)
-            alternate = alternateStorymap[0].name;
-        }
-
-        if (alternate.length === 0 && ik.wrapper.getVersion() === 'cdi') {
-          alternate = button.translated;
-        }
-
         var id = '';
+        var buttonTitle = ''
+        var buttonTitleAlt = ''
         if (ik.wrapper.getVersion() === 'cdi') {
           id = button.id;
+          buttonTitle = button.name;
+          buttonTitleAlt = button.translated;
         } else {
           id = button.uuid;
+          buttonTitle = button.titles.primary;
+          buttonTitleAlt = button.titles.secondary;
         }
 
         $('.nav__list').append(NavigationButton({
           action: action,
-          alternate: button.titles.secondary,
+          alternate: buttonTitleAlt,
           alternateLanguage: alternateLanguage,
           colorPrimary: button.theme.color.primary,
           colorSecondary: button.theme.color.secondary,
           currentLanguage: currentLanguage,
           imgSrc: '/static/svg/leaf.svg',
           targetId: id,
-          title: button.titles.primary
+          title: buttonTitle
         }));
       });
 
