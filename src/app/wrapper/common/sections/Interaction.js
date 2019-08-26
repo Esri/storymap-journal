@@ -121,13 +121,14 @@ define([
 
         $('.nav__list').append(NavigationButton({
           action: action,
-          alternate: alternate,
+          alternate: button.titles.secondary,
           alternateLanguage: alternateLanguage,
-          color: button.theme.color.primary,
+          colorPrimary: button.theme.color.primary,
+          colorSecondary: button.theme.color.secondary,
           currentLanguage: currentLanguage,
           imgSrc: '/static/svg/leaf.svg',
           targetId: id,
-          title: button.name
+          title: button.titles.primary
         }));
       });
 
@@ -137,7 +138,8 @@ define([
           action: 'explore',
           alternate: 'Explore nuestro Comunidad de hojas',
           alternateLanguage: 'es',
-          color: '#715035',
+          colorPrimary: '#715035',
+          colorSecondary: '#533B27',
           currentLanguage: currentLanguage,
           imgSrc: '/static/svg/leaf.svg',
           targetId: ik.wrapper.layout.state.explore.section.interaction.map,
@@ -221,7 +223,8 @@ define([
           action: action,
           alternate: button.titles.secondary,
           alternateLanguage: alternateLanguage,
-          color: button.theme.color.primary,
+          colorPrimary: button.theme.color.primary,
+          colorSecondary: button.theme.color.secondary,
           currentLanguage: currentLanguage,
           imgSrc: '/static/svg/leaf.svg',
           targetId: button.uuid,
@@ -240,7 +243,8 @@ define([
         action: 'nav',
         alternate: 'ver todas las regiones',
         alternateLanguage: 'es',
-        color: '',
+        colorPrimary: '',
+        colorSecondary: '',
         currentLanguage: currentLanguage,
         imgSrc: '',
         targetId: '',

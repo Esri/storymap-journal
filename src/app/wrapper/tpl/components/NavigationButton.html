@@ -1,7 +1,7 @@
 <li>
   <button 
-  <% if (color.length > 0) { %>
-    style="background-color: <%= color %>;"
+  <% if (colorPrimary.length > 0) { %>
+    style="background-color: <%= colorPrimary %>;"
   <% } %>
   data-nav="<%= action %>" data-<%= action %>="<%= targetId %>">
     <% if (imgSrc.length > 0) { %>
@@ -15,8 +15,8 @@
     </div>
   </button>
   <div class="arrow"
-    <% if (color.length > 0) { %>
-      style="background-color: <%= color %>;"
+    <% if (colorSecondary.length > 0) { %>
+      style="background-color: <%= colorSecondary %>;"
     <% } %>
   ></div>
 </li>
