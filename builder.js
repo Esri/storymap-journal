@@ -9,6 +9,19 @@ const humanName = (KIOSK_VERSION.toLowerCase() === 'cdi')
 buildOptions.productName = humanName
 buildOptions.appId = buildOptions.appId + `.${KIOSK_VERSION.toLowerCase()}`
 
-const jsonString = JSON.stringify(buildOptions)
+const jsonString = JSON.stringify(buildOptions, null, 2)
 
 fs.writeFileSync('./build.json', jsonString, 'utf8')
+
+// Update package name
+const rawdata = fs.readFileSync('package.json')
+let application = JSON.parse(rawdata)
+const baseName = application.name
+
+if (KIOSK_VERSION.toLowerCase() === 'cdi') {
+  application.name = baseName + '-' + KIOSK_VERSION.toLowerCase() + '-' + KIOSK_REGION.toLowerCase()
+} else {
+  application.name = baseName + '-' + KIOSK_VERSION.toLowerCase()
+}
+
+fs.writeFileSync('package.json', JSON.stringify(application, null, 2))
