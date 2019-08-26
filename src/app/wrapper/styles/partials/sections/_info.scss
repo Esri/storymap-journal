@@ -64,6 +64,10 @@
     img {
       width: 270px;
     }
+
+    .llc & img {
+      width: 395px;
+    }
   }
 
   &__shader {

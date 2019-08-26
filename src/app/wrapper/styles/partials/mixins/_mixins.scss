@@ -1,5 +1,5 @@
 @mixin infoLogoImg () {
-  .cdi & > div {
+  & > div {
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -12,8 +12,8 @@
     width: 550px;
 
     .llc & {
-      padding-bottom: 35px;
-      padding-top: 305px;
+      margin-top: auto;
+      width: 810px;
     }
   }
 }

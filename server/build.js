@@ -108,7 +108,7 @@ const appendImageDerivatives = (jsona, response) => {
  * @param {[String]} field
  * @return {[String]}
  */
-const getHeader = (content = {}, field = '') => (_.isEmpty(_.get(content, field, content.title)) === true) ? content.title : _.get(content, field, content.title)
+const getHeader = (content = {}, field = '') => (process.env.KIOSK_VERSION === 'cdi' || field.indexOf('field_state_explore') === 0) ? (_.isEmpty(_.get(content, field, content.title)) === true) ? content.title : _.get(content, field, content.title) : ''
 
 /**
  * Take JSON object and write it to path
@@ -301,7 +301,7 @@ const createStorymaps = (body) => {
     else
       concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage ,color: {primary: primaryColor, secondary: secondaryColor}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.field_text.value}}, ...{titles: {primary: storymap.field_button_title, secondary: storymap.field_translated_button_title}}}
 
-    if (process.env.KIOSK_VERSION === 'cdi') {
+    if (process.env.KIOSK_VERSION === 'cdi' && storymap.field_country !== null) {
       concatStorymap.theme.flag = `${process.env.BACKEND_URL}/modules/client/ik_d8_module_wb_migration/includes/flags/${storymap.field_country.field_iso_code.toLowerCase()}.png`
     }
 

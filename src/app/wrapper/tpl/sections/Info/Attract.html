@@ -1,9 +1,11 @@
 <div>
   <img class="info__attract__img" src="<%= logo %>"/>
+  <% if (h1.length > 0) { %>
   <div>
     <h1><%= h1 %></h1>
-    <% if (h2) { %>
+    <% if (h2.length > 0) { %>
     <h2><%= h2 %></h2>
     <% } %>
   </div>
+  <% } %>
 </div>
