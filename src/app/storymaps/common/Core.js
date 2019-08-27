@@ -614,6 +614,22 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
       app.ui.theme.colors = appColors;
 
       // Add class to interaction__storymap
+      $('.interaction__storymap').removeClass('cdi-americas');
+      $('.interaction__storymap').removeClass('cdi-caribbean');
+      $('.interaction__storymap').removeClass('cdi-africa');
+      $('.interaction__storymap').removeClass('cdi-europe');
+      $('.interaction__storymap').removeClass('cdi-asia');
+      $('.interaction__storymap').removeClass('cdi-region-6');
+      $('.interaction__storymap').removeClass('cdi-region-7');
+      $('.interaction__storymap').removeClass('cdi-region-8');
+      $('.interaction__storymap').removeClass('what-is-leaf');
+      $('.interaction__storymap').removeClass('schools-streets');
+      $('.interaction__storymap').removeClass('leaf-international');
+      $('.interaction__storymap').removeClass('leaf-festival');
+      $('.interaction__storymap').removeClass('leaf-downtown');
+      $('.interaction__storymap').removeClass('leaf-global');
+      $('.interaction__storymap').removeClass('more-about-leaf');
+
       $('.interaction__storymap').addClass(appColors.name);
 
 			if ( app.ui.headerDesktop ) {
