@@ -103,6 +103,7 @@ define([
         var id = '';
         var buttonTitle = ''
         var buttonTitleAlt = ''
+        var image = '/static/svg/leaf.svg'
         if (ik.wrapper.getVersion() === 'cdi') {
           id = button.id;
           buttonTitle = button.name;
@@ -120,7 +121,7 @@ define([
           colorPrimary: button.theme.color.primary,
           colorSecondary: button.theme.color.secondary,
           currentLanguage: currentLanguage,
-          imgSrc: '/static/svg/leaf.svg',
+          imgSrc: image,
           targetId: id,
           title: buttonTitle
         }));
@@ -209,8 +210,13 @@ define([
             alternate = alternateStorymap[0].name;
         }
 
-        if (alternate.length === 0 && ik.wrapper.getVersion() === 'cdi') {
-          alternate = '';
+        var image = '/static/svg/leaf.svg';
+        if (ik.wrapper.getVersion() === 'cdi') {
+          image = button.theme.flag;
+
+          if (alternate.length === 0) {
+            alternate = '';
+          }
         }
 
         $(`.${slideClass}`).append(NavigationButton({
@@ -220,7 +226,7 @@ define([
           colorPrimary: button.theme.color.primary,
           colorSecondary: button.theme.color.secondary,
           currentLanguage: currentLanguage,
-          imgSrc: '/static/svg/leaf.svg',
+          imgSrc: image,
           targetId: button.uuid,
           title: button.titles.primary
         }));

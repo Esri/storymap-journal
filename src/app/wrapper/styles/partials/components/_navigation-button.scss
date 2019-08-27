@@ -77,6 +77,27 @@
       }
     }
   }
+
+  .cdi.region & li {
+    button {
+      $right: 26px;
+
+      div {
+        position: relative;
+        right: $right - 10px;
+      }
+
+      img {
+        bottom: 7px;
+        border-radius: 56px;
+        box-shadow: 0 0 15px 0 rgba(255,255,255,0.40);
+        opacity: 1;
+        position: relative;
+        right: $right;
+        width: 108px;
+      }
+    }
+  }
 }
 
 .nav__list {

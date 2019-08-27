@@ -301,8 +301,12 @@ const createStorymaps = (body) => {
     else
       concatStorymap = { ...storymapTemplate, ...{id: storymap.field_id}, ...{uuid: storymap.id}, ...{name: storymap.title}, ...{language: 'en'}, ...{theme: {background: storyMapImage ,color: {primary: primaryColor, secondary: secondaryColor}}}, ...{callout: {title: storymap.field_callout.field_heading, body: storymap.field_callout.body.value}}, ...{titles: {primary: storymap.field_button_title, secondary: storymap.field_translated_button_title}}}
 
-    if (process.env.KIOSK_VERSION === 'cdi' && storymap.field_country !== null) {
-      concatStorymap.theme.flag = `${process.env.BACKEND_URL}/modules/client/ik_d8_module_wb_migration/includes/flags/${storymap.field_country.field_iso_code.toLowerCase()}.png`
+    if (process.env.KIOSK_VERSION === 'cdi') {
+      if (storymap.field_flag !== null) {
+        concatStorymap.theme.flag = setFile(process.env.BACKEND_URL + storymap.field_flag.image.uri.url)
+      } else {
+        concatStorymap.theme.flag = '/static/images/empty-flag.png'
+      }
     }
 
     return concatStorymap
@@ -465,7 +469,7 @@ module.exports = async (event) => {
       // Use the regions to get Story Maps which are tagged with those regions
       const regionStorymaps = response.data.data.map(
         region => axios.get(
-          new URL(`/jsonapi/node/story_map?filter[field_region.tid]=${region.attributes.drupal_internal__tid}&include=field_callout,field_translated_callout,field_media,field_media.image,field_region,field_country`, BACKEND_URL)
+          new URL(`/jsonapi/node/story_map?filter[field_region.tid]=${region.attributes.drupal_internal__tid}&include=field_callout,field_flag,field_flag.image,field_translated_callout,field_media,field_media.image,field_region,field_country`, BACKEND_URL)
             .toString()
       ))
       const storymapGroup = await axios.all(regionStorymaps)
