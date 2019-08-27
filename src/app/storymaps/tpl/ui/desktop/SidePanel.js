@@ -559,9 +559,9 @@ define(["lib-build/tpl!./SidePanelSection",
 				if ( anchorTitle != titleIsAnchored ) {
 					container.find('.appTitle').toggleClass('anchored', anchorTitle);
 					container.find('.header').toggleClass('titleanchored', anchorTitle);
-					setTimeout(function(){
-						_this.resize({height: container.height()});
-					}, 300);
+					// setTimeout(function(){
+					// 	_this.resize({height: container.height()});
+					// }, 300);
 				}
 			}
 

@@ -33,6 +33,10 @@
     }
 
     .content {
+      $height: 450px;
+      height: $height;
+      overflow-y: scroll;
+
       p {
         @include font(20, 30, 'OpenSans');
         color: #000;

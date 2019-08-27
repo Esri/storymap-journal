@@ -21,20 +21,6 @@ define([],
             lastSection = true;
           }
 
-          // if (firstSection === false &&
-          //   !section.content.includes('<div class="previous-section"><button data-storymaps="IK-SECTION-BACK-')
-          // ) {
-          //   // Back links
-          //   actionName = 'IK-SECTION-BACK-' + index.toString();
-          //   section.content = '<div class="previous-section"><button data-storymaps="' + actionName + '" data-storymaps-type="navigate"><span>BACK</span></button></div>' + section.content;
-          //   section.contentActions.push({
-          //     id: actionName,
-          //     type: 'navigate',
-          //     index: index - 1
-          //   });
-          // }
-
-
           if (lastSection === false) {
             // Next section links
             actionName = 'IK-SECTION-NEXT-' + index.toString();
@@ -49,13 +35,6 @@ define([],
 
             section.contentActions = newActions;
           }
-
-        //   if (lastSection === true &&
-        //     !section.content.includes('<div class="next-storymap"><button data-nav="nav">Go back to the home menu</button></div>')
-        //   ) {
-        //     // Link to another storymap
-        //     section.content = section.content + '<div class="next-storymap"><button data-nav="nav">Go back to the home menu</button></div>';
-        //   }
         });
 
         return sections;
