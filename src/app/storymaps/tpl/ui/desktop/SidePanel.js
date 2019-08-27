@@ -357,7 +357,7 @@ define(["lib-build/tpl!./SidePanelSection",
         var regionId = '';
         var navTitle = '';
         if (nextTitle.length === 0) {
-          navTitle = 'explore another region'
+          navTitle = 'explore another region';
 
           if (app.isInBuilder === true) {
             regionTitle = 'Region Name';

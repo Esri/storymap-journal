@@ -127,6 +127,8 @@ server.listen(3000, error => {
           webContents.setLayoutZoomLevelLimits(0, 0)
         })
 
+        mainWindow.removeMenu()
+
         mainWindow.loadURL(`http://localhost:3000?version=${process.env.KIOSK_VERSION}`)
 
         return mainWindow
@@ -168,7 +170,10 @@ server.listen(3000, error => {
           build(events)
         })
 
+        loading.removeMenu()
+
         loading.loadFile('./loading.html')
+
         loading.show()
       })
 
