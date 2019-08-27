@@ -80,6 +80,7 @@ body.error-no-content {
 
 p {
 	margin: 0;
+  margin-bottom: 1em;
 }
 
 strong {
