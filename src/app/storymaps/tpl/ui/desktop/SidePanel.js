@@ -329,6 +329,12 @@ define(["lib-build/tpl!./SidePanelSection",
 						$(this).removeData("mouseDown");
 					});
 
+        if (app.isInBuilder !== true) {
+          $('.sections [data-nav]').each(function (i, ele) {
+            ik.wrapper.createLinks($(ele));
+          });
+        }
+
 			}
 
 			function createSectionBlock(/*editEl,*/ index, status, content, title, objectId, nextTitle)
@@ -347,6 +353,22 @@ define(["lib-build/tpl!./SidePanelSection",
         var actionName = 'IK-SECTION-NEXT-' + (index);
         var buttonTitle = nextTitle;
 
+        var regionTitle = '';
+        var regionId = '';
+        var navTitle = '';
+        if (nextTitle.length === 0) {
+          navTitle = 'explore another region'
+
+          if (app.isInBuilder === true) {
+            regionTitle = 'Region Name';
+            regionId = 0;
+          } else {
+            regionId = ik.wrapper.state.get('regionid');
+            var region = ik.wrapper.api.region.get(regionId);
+            regionTitle = region[0].name;
+          }
+        }
+
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
 					title: StoryText.prepareEditorContent(title),
@@ -355,7 +377,10 @@ define(["lib-build/tpl!./SidePanelSection",
 					lblMainstageBtn: i18n.viewer.common.focusMainstage,
 					titleTag: index === 0 ? 'h1' : 'h2',
           actionName: actionName,
-          buttonTitle: buttonTitle
+          buttonTitle: buttonTitle,
+          regionTitle:regionTitle,
+          regionId: regionId,
+          navTitle: navTitle
 				});
 			}
 
