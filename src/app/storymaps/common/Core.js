@@ -8,6 +8,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		"esri/arcgis/utils",
 		"./utils/CommonHelper",
 		"esri/urlUtils",
+    "./utils/IK/Utils",
 		//Embed bar
 		"storymaps/common/ui/EmbedBar/EmbedBar",
 		// Builder
@@ -41,6 +42,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		arcgisUtils,
 		CommonHelper,
 		urlUtils,
+    ikUtils,
 		EmbedBar,
 		MyStoriesWrapper,
 		has,
@@ -650,6 +652,9 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		function appInitComplete()
 		{
 			console.log("common.core.Core - initApp");
+
+      // Bind some events to rendered sections
+      ikUtils.bindScrollEventsToSections();
 
 			// Initialize Embed bar
 			var urlParams = esri.urlToObject(document.location.search).query || {};
