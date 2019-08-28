@@ -356,7 +356,7 @@ define(["lib-build/tpl!./SidePanelSection",
               }
             });
           }
-        })
+        });
 			}
 
 			function createSectionBlock(/*editEl,*/ index, status, content, title, objectId, nextTitle)
