@@ -106,6 +106,27 @@
       clip-path: url('#nav-button-clipping-path');
     }
   }
+
+  .llc & {
+    li {
+      button {
+        width: 480px;
+        clip-path: url('#nav-button-clipping-path-llc');
+
+        div {
+          flex-basis: 400px;
+        }
+
+        span.primary {
+          @include font(36, 26, 'Hallo Sans');
+        }
+      }
+
+      & .arrow {
+        right: -5px;
+      }
+    }
+  }
 }
 
 .region__list {

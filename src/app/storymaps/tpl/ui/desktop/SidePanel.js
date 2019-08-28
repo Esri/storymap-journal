@@ -363,12 +363,13 @@ define(["lib-build/tpl!./SidePanelSection",
             regionTitle = 'Region Name';
             regionId = 0;
           } else {
-            regionId = ik.wrapper.state.get('regionid');
-            var region = ik.wrapper.api.region.get(regionId);
-            regionTitle = region[0].name;
+            if (ik.wrapper.state.get('version') === 'cdi') {
+              regionId = ik.wrapper.state.get('regionid');
+              var region = ik.wrapper.api.region.get(regionId);
+              regionTitle = region[0].name;
+            }
           }
         }
-
 
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
