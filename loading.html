@@ -69,11 +69,15 @@
       <div id="progress-bar" class="loading-bar__progress"></div>
     </div>
 
+    <h2 id="progress-name">Starting</h2>
+
     <script>
       const { ipcRenderer } = require('electron');
       const progressBar = document.getElementById('progress-bar')
-      ipcRenderer.on('progress', (event, files) => {
-        progressBar.style.transform = `translateX(${-100 + (100 / files)}%)`;
+      const progressName = document.getElementById('progress-name')
+      ipcRenderer.on('progress', (event, data) => {
+        progressBar.style.transform = `translateX(${-100 + data.percentage}%)`
+        progressName.innerText = data.percentage + '% complete'
       });
     </script>
   </body>

@@ -160,7 +160,9 @@ server.listen(3000, error => {
 
           // Send files remaining to loading window for progress bar
           events.on('remove-file', () => {
-            loading.webContents.send('progress', events.file)
+            let downloaded = events.total - events.file
+            let percentage = parseInt(parseFloat(downloaded/events.total).toFixed(2) * 100)
+            loading.webContents.send('progress', { file: events.file, total: events.total, downloaded: downloaded, percentage: percentage })
           })
 
           events.on('finish-build', eventFinishBuildCallback)

@@ -376,6 +376,7 @@ module.exports = async (event) => {
    * the next files kick start.
    */
   event.on('add-file', () => {
+    this.event.total += 1
     this.event.file += 1
   })
 
@@ -389,6 +390,9 @@ module.exports = async (event) => {
 
   // Make event a local in scope
   this.event = event
+
+  // Track total downloaded
+  this.event.total = 0
 
   // Track number of files downloading
   this.event.file = 0
