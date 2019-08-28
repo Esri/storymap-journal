@@ -10,7 +10,7 @@
 }
 
 .storymap #bottom {
-  background-color: $black;
+  background-image: linear-gradient(180deg, $bottom-background-linear-1 0%, $bottom-background-linear-2 44%);
 }
 
 .bottom__storymap {
@@ -19,11 +19,14 @@
 
   &__callout {
     @include flex(row);
+    @include font(21, 26, 'OpenSans');
     background-color: $bottom-light-gray;
     border-radius: 10px;
-    font-family: OpenSans;
+    box-shadow: 0 0 60px 0 $bottom-shadow;
+    font-weight: 400;
+    max-height: 175px;
     padding: 30px;
-    width: 450px;
+    width: 600px;
 
     &__text {
       @include flex(column);
@@ -33,17 +36,14 @@
       h3 {
         @include font(34, 24);
         font-weight: 900;
-        margin-bottom: 10px;
+        margin-bottom: 18px;
         text-align: center;
         text-transform: uppercase;
       }
 
       p {
-        font-size: 26px;
-        font-weight: 400;
         letter-spacing: 0;
         text-align: center;
-        line-height: 26px;
       }
     }
   }
