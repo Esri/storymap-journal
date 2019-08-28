@@ -1,4 +1,4 @@
-@mixin sidePanelTheme ($primary, $secondary, $background) {
+@mixin sidePanelTheme ($primary, $secondary, $background, $font-color: $white) {
   #sidePanel {
     background-color: $background;
 
@@ -6,13 +6,25 @@
       h1, h2 {
         color: $secondary;
       }
+
+      .content {
+        &.overflow::after {
+          background: linear-gradient(transparent 15px, $background);
+          content: '';
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
     }
 
-    .next-section {
+    .storymap__list {
       li {
         button {
           background-color: $primary;
-          color: $white;
+          color: $font-color;
         }
       }
 
@@ -26,6 +38,10 @@
 #sidePanel {
   .section {
     @include flex(column, normal);
+
+    &:last-child {
+      padding-bottom: 30px;
+    }
 
     h1, h2 {
       @include font(30, 31, 'Hallo Sans');
@@ -44,10 +60,14 @@
       }
     }
 
-    .next-section {
+    .storymap__list {
       margin-top: auto;
 
       li {
+        &:nth-child(2) {
+          margin-top: 10px;
+        }
+
         button {
           div {
             @include font(22, 22, 'OpenSans');
@@ -71,5 +91,5 @@
 }
 
 .interaction__storymap.cdi-caribbean {
-  @include sidePanelTheme($region-3-primary, $region-3-secondary, $region-3-background);
+  @include sidePanelTheme($region-3-primary, $region-3-secondary, $region-3-background, $region-3-secondary);
 }

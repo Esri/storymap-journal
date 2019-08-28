@@ -1,40 +1,40 @@
 <div class="section <%= optHtmlClass %>">
   <<%= titleTag %> class="title" tabindex="-1"><%= title %></<%= titleTag %>>
-  <div class="content"><%= content %></div>
-  <% if (buttonTitle.length > 0) { %>
-    <div class="next-section">
-      <li>
-        <button data-storymaps="<%= actionName %>" data-storymaps-type="navigate" href="#">
-          <div>
-            <%= buttonTitle %>
-          </div>
-        </button>
-        <div class="arrow"></div>
-      </li>
+  <div class="content">
+    <div class="content__inner">
+      <%= content %>
     </div>
-  <% } %>
-  <% if (regionTitle.length > 0) { %>
-    <div class="next-section">
-      <li>
-        <button data-nav="region" data-region="<%= regionId %>" href="#">
-          <div>
-            Explore more of <%= regionTitle %>
-          </div>
-        </button>
-        <div class="arrow"></div>
-      </li>
-    </div>
-  <% } %>
-  <% if (navTitle.length > 0) { %>
-    <div class="next-section">
-      <li>
-        <button data-nav="nav" href="#">
-          <div>
-            <%= navTitle %>
-          </div>
-        </button>
-        <div class="arrow"></div>
-      </li>
-    </div>
-  <% } %>
+  </div>
+  <div class="storymap__list">
+    <% if (buttonTitle.length > 0) { %>
+    <li>
+      <button data-storymaps="<%= actionName %>" data-storymaps-type="navigate" href="#">
+        <div>
+          <%= buttonTitle %>
+        </div>
+      </button>
+      <div class="arrow"></div>
+    </li>
+    <% } %>
+    <% if (regionTitle.length > 0) { %>
+    <li>
+      <button data-nav="region" data-region="<%= regionId %>" href="#">
+        <div>
+          Explore more of <%= regionTitle %>
+        </div>
+      </button>
+      <div class="arrow"></div>
+    </li>
+    <% } %>
+    <% if (navTitle.length > 0) { %>
+    <li>
+      <button data-nav="nav" href="#">
+        <div>
+          <%= navTitle %>
+        </div>
+      </button>
+      <div class="arrow"></div>
+    </li>
+    <% } %>
+  </div>
 </div>

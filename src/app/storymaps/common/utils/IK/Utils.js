@@ -24,7 +24,6 @@ define([],
           if (lastSection === false) {
             // Next section links
             actionName = 'IK-SECTION-NEXT-' + index.toString();
-            // section.content = section.content + '<div class="next-section"><button data-storymaps="' + actionName + '" data-storymaps-type="navigate" href="#">' + thisSection[index + 1].title + '</button></div>';
             var newActions =  [];
 
             newActions.push({
