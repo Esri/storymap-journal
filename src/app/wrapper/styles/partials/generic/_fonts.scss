@@ -3,50 +3,58 @@
   src: url('/static/fonts/HabanaFont.ttf') format('truetype');
 }
 
+// Hallo Sans - Regular - 400
 @font-face {
   font-family: 'Hallo Sans';
   font-weight: 400;
   src: url('/static/fonts/HalloSans/HalloSans-IK.otf') format('opentype');
 }
 
+// Hallo Sans - Light - 300
 @font-face {
-  font-family: 'Hallo Sans Light';
-  font-weight: 100;
+  font-family: 'Hallo Sans';
+  font-weight: 300;
   src: url('/static/fonts/HalloSans/Hallosans-Light-IK.otf') format('opentype');
 }
 
+// Hallo Sans - Black - 900
 @font-face {
-  font-family: 'Hallo Sans Black';
-  font-weight: 700;
+  font-family: 'Hallo Sans';
+  font-weight: 900;
   src: url('/static/fonts/HalloSans/Hallosans-Black-IK.otf') format('opentype');
 }
 
+// Open Sans - Light - 300
 @font-face {
-  font-family: 'OpenSans Light';
-  font-weight: 100;
+  font-family: 'OpenSans';
+  font-weight: 300;
   src: url('/static/fonts/OpenSans/OpenSans-Light.ttf') format('truetype');
 }
 
+// Open Sans - Regular - 400
 @font-face {
-  font-family: 'OpenSans Regular';
+  font-family: 'OpenSans';
   font-weight: 400;
   src: url('/static/fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
 }
 
+// Open Sans - Semibold - 600
 @font-face {
-  font-family: 'OpenSans Semibold';
-  font-weight: 500;
+  font-family: 'OpenSans';
+  font-weight: 600;
   src: url('/static/fonts/OpenSans/OpenSans-Semibold.ttf') format('truetype');
 }
 
+// Open Sans - Bold - 700
 @font-face {
-  font-family: 'OpenSans Bold';
+  font-family: 'OpenSans';
   font-weight: 700;
   src: url('/static/fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
 }
 
+// Open Sans - Extrabold - 800
 @font-face {
-  font-family: 'OpenSans ExtraBold';
+  font-family: 'OpenSans';
   font-weight: 900;
   src: url('/static/fonts/OpenSans/OpenSans-ExtraBold.ttf') format('truetype');
 }
