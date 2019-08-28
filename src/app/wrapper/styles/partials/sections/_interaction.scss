@@ -43,8 +43,8 @@
   padding: 50px 20px;
 
   h2 {
-    @include font(36, 46, 'OpenSans');
-    font-weight: 500;
+    @include font(34, 46, 'OpenSans');
+    font-weight: 600;
     margin-bottom: 50px;
     text-align: center;
   }
