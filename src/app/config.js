@@ -125,7 +125,7 @@ app.cfg = {
 	// If the application is deployed on Portal for ArcGIS or your own server, the Youtube api call
 	//  won't be perfomed until you set the following flag and provide your own key
 	YOUTUBE_DISABLE_ON_PORTAL: true,
-	YOUTUBE_API_KEY: "AIzaSyDevTFP16nz6sA-akiOVi6wWXiplJnQ4qw",
+	YOUTUBE_API_KEY: "AIzaSyBw-7VwM82JPI57ajoQeVG1bl7YCHI5Jag",
 
 	//
 	// Builder direct creation
