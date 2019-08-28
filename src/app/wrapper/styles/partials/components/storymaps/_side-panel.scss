@@ -1,35 +1,37 @@
 @mixin sidePanelTheme ($primary, $secondary, $background, $font-color: $white) {
-  #sidePanel {
-    background-color: $background;
+  .interaction__storymap {
+    #sidePanel {
+      background-color: $background;
 
-    .section {
-      h1, h2 {
-        color: $secondary;
-      }
-
-      .content {
-        &.overflow::after {
-          background: linear-gradient(transparent 15px, $background);
-          content: '';
-          height: 100%;
-          left: 0;
-          position: absolute;
-          top: 0;
-          width: 100%;
+      .section {
+        h1, h2 {
+          color: $secondary;
         }
-      }
-    }
 
-    .storymap__list {
-      li {
-        button {
-          background-color: $primary;
-          color: $font-color;
+        .content {
+          &.overflow::after {
+            background: linear-gradient(transparent 15px, $background);
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
         }
       }
 
-      .arrow {
-        background-color: $primary;
+      .storymap__list {
+        li {
+          button {
+            background-color: $primary;
+            color: $font-color;
+          }
+        }
+
+        .arrow {
+          background-color: $secondary;
+        }
       }
     }
   }
@@ -82,14 +84,14 @@
   }
 }
 
-.interaction__storymap.cdi-africa {
+.cdi-africa {
   @include sidePanelTheme($region-1-primary, $region-1-secondary, $region-1-background);
 }
 
-.interaction__storymap.cdi-americas {
+.cdi-americas {
   @include sidePanelTheme($region-2-primary, $region-2-secondary, $region-2-background);
 }
 
-.interaction__storymap.cdi-caribbean {
+.cdi-caribbean {
   @include sidePanelTheme($region-3-primary, $region-3-secondary, $region-3-background, $region-3-secondary);
 }

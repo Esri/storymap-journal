@@ -1,3 +1,9 @@
+@mixin bottomCalloutHeadingColor($heading: $bottom-gray) {
+  .bottom__storymap__callout__text h3 {
+    color: $heading;
+  }
+}
+
 #bottom {
   background-color: transparent;
   flex: 1;
@@ -41,4 +47,16 @@
       }
     }
   }
+}
+
+.cdi-africa {
+  @include bottomCalloutHeadingColor($region-1-secondary);
+}
+
+.cdi-americas {
+  @include bottomCalloutHeadingColor($region-2-secondary);
+}
+
+.cdi-caribbean {
+  @include bottomCalloutHeadingColor($region-3-secondary);
 }
