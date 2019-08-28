@@ -9,14 +9,20 @@
         }
 
         .content {
-          &.overflow::after {
-            background: linear-gradient(transparent 15px, $background);
-            content: '';
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
+          touch-action: none;
+
+          &.overflow {
+            touch-action: pan-y;
+
+            &::after {
+              background: linear-gradient(transparent 15px, $background);
+              content: '';
+              height: 100%;
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 100%;
+            }
           }
         }
       }
@@ -40,6 +46,7 @@
 #sidePanel {
   .section {
     @include flex(column, normal);
+    touch-action: none;
 
     &:last-child {
       padding-bottom: 30px;
@@ -48,6 +55,7 @@
     h1, h2 {
       @include font(30, 31, 'Hallo Sans');
       font-weight: 700;
+      touch-action: none;
     }
 
     .content {
