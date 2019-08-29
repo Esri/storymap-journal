@@ -1,4 +1,5 @@
 .nav__list,
+.nav__list__explore,
 .region__list,
 .region__list__back,
 .storymap__list,
@@ -156,7 +157,7 @@
 
 .nav__list,
 .region__list,
-.nav__list {
+.nav__list__explore {
   & li {
 
     & button {
@@ -179,6 +180,37 @@
   }
 }
 
+.nav__list__explore {
+  @include flex(row, normal, center, wrap);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    flex-basis: 570px;
+
+    button {
+      clip-path: url('#nav-button-clipping-path-explore');
+      width: 570px;
+
+      div {
+        flex-basis: 570px;
+      }
+
+      span {
+        &.primary {
+          @include font(30, 22, 'Hallo Sans');
+        }
+
+        &.alternate {
+          @include font(16, 22, 'OpenSans');
+        }
+      }
+    }
+  }
+}
+
+// Story Map buttons
 .storymap__list {
   & li {
 

@@ -60,3 +60,31 @@
 .cdi-caribbean {
   @include bottomCalloutHeadingColor($region-3-secondary);
 }
+
+.what-is-leaf {
+  @include bottomCalloutHeadingColor($what-is-leaf-secondary);
+}
+
+.schools-streets {
+  @include bottomCalloutHeadingColor($schools-streets-secondary);
+}
+
+.leaf-international {
+  @include bottomCalloutHeadingColor($leaf-international-secondary);
+}
+
+.leaf-festival {
+  @include bottomCalloutHeadingColor($leaf-festival-secondary);
+}
+
+.leaf-downtown {
+  @include bottomCalloutHeadingColor($leaf-downtown-secondary);
+}
+
+.leaf-global {
+  @include bottomCalloutHeadingColor($leaf-global-secondary);
+}
+
+.more-about-leaf {
+  @include bottomCalloutHeadingColor($more-about-leaf-secondary);
+}

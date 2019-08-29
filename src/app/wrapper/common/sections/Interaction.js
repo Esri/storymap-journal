@@ -129,7 +129,7 @@ define([
 
       // Set button to explore section
       if (ik.wrapper.getVersion() === 'llc') {
-        $('.nav__list__explore').html(NavigationButton({
+        $('.nav__list__explore').append(NavigationButton({
           action: 'explore',
           alternate: 'Explore nuestro Comunidad de hojas',
           alternateLanguage: 'es',

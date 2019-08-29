@@ -103,3 +103,31 @@
 .cdi-caribbean {
   @include sidePanelTheme($region-3-primary, $region-3-secondary, $region-3-background, $region-3-secondary);
 }
+
+.what-is-leaf {
+  @include sidePanelTheme($what-is-leaf-primary, $what-is-leaf-secondary, $what-is-leaf-background);
+}
+
+.schools-streets {
+  @include sidePanelTheme($schools-streets-primary, $schools-streets-secondary, $schools-streets-background);
+}
+
+.leaf-international {
+  @include sidePanelTheme($leaf-international-primary, $leaf-international-secondary, $leaf-international-background);
+}
+
+.leaf-festival {
+  @include sidePanelTheme($leaf-festival-primary, $leaf-festival-secondary, $leaf-festival-background);
+}
+
+.leaf-downtown {
+  @include sidePanelTheme($leaf-downtown-primary, $leaf-downtown-secondary, $leaf-downtown-background);
+}
+
+.leaf-global {
+  @include sidePanelTheme($leaf-global-primary, $leaf-global-secondary, $leaf-global-background);
+}
+
+.more-about-leaf {
+  @include sidePanelTheme($more-about-leaf-primary, $more-about-leaf-secondary, $more-about-leaf-background);
+}
