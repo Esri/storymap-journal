@@ -5,6 +5,7 @@
 .storymap__list,
 .region__list__back {
   @include flex(row, normal, normal, wrap);
+  color: $white;
   list-style-type: none;
   margin: 0;
   padding: 0;
