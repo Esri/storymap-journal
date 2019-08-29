@@ -360,8 +360,12 @@ define(["lib-build/tpl!./SidePanelSection",
           buttonTitle = [''];
 
           if (app.isInBuilder === true) {
-            regionTitle = 'Region Name';
-            regionId = 0;
+            if (configOptions.ik.version === 'cdi') {
+              regionTitle = 'Region Name';
+              regionId = 0;
+            } else {
+              navTitle = 'back to navigation';
+            }
           } else {
             if (ik.wrapper.state.get('version') === 'cdi') {
               regionId = ik.wrapper.state.get('regionid');
