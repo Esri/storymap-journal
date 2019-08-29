@@ -114,12 +114,18 @@ define([
           buttonTitleAlt = button.titles.secondary;
         }
 
+        colorText = '#fff';
+        if (button.theme.color.primary === '#d8cfaf') {
+          colorText = button.theme.color.secondary;
+        }
+
         $('.nav__list').append(NavigationButton({
           action: action,
           alternate: buttonTitleAlt,
           alternateLanguage: alternateLanguage,
           colorPrimary: button.theme.color.primary,
           colorSecondary: button.theme.color.secondary,
+          colorText: colorText,
           currentLanguage: currentLanguage,
           imgSrc: image,
           targetId: id,
@@ -135,6 +141,7 @@ define([
           alternateLanguage: 'es',
           colorPrimary: '#715035',
           colorSecondary: '#533B27',
+          colorText: '#fff',
           currentLanguage: currentLanguage,
           imgSrc: '/static/svg/leaf.svg',
           targetId: ik.wrapper.layout.state.explore.section.interaction.map,
@@ -219,12 +226,18 @@ define([
           }
         }
 
+        colorText = '#fff';
+        if (button.theme.color.primary === '#d8cfaf') {
+          colorText = button.theme.color.secondary;
+        }
+
         $(`.${slideClass}`).append(NavigationButton({
           action: action,
           alternate: button.titles.secondary,
           alternateLanguage: alternateLanguage,
           colorPrimary: button.theme.color.primary,
           colorSecondary: button.theme.color.secondary,
+          colorText: colorText,
           currentLanguage: currentLanguage,
           imgSrc: image,
           targetId: button.uuid,
@@ -245,6 +258,7 @@ define([
         alternateLanguage: 'es',
         colorPrimary: '',
         colorSecondary: '',
+        colorText: '#fff',
         currentLanguage: currentLanguage,
         imgSrc: '',
         targetId: '',

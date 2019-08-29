@@ -40,6 +40,7 @@
 
   h2 {
     @include font(34, 46, 'OpenSans');
+    color: $white;
     font-weight: 600;
     margin-bottom: 50px;
     text-align: center;
