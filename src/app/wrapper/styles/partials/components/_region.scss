@@ -11,8 +11,9 @@
   margin-left: auto;
 
   &__copy {
+    font-family: 'OpenSans', sans-serif;
     font-size: 22px;
-    font-family: 'OpenSans ExtraBold', sans-serif;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
   }

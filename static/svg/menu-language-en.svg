@@ -6,7 +6,7 @@
                 <g id="Header">
                     <g id="ESP-Button" transform="translate(940.000000, 131.000000)">
                         <circle id="Oval" fill="#000000" opacity="0.25" fill-rule="nonzero" cx="25" cy="25" r="25"></circle>
-                        <text id="Esp" font-family="OpenSans-Bold, Open Sans" font-size="21" font-weight="bold" fill="#FFFFFF">
+                        <text id="Esp" font-family="OpenSans, Open Sans, sans-serif" font-size="21" font-weight="bold" fill="#FFFFFF">
                             <tspan x="7.24291992" y="33">EN</tspan>
                         </text>
                     </g>
