@@ -12,7 +12,7 @@ define([
       layout.setBackground();
 
       // Do not show the menu
-      $('#menu').hide();
+      $('#menu').children().hide();
 
       // Interaction Element
       $('#interaction').children().hide();

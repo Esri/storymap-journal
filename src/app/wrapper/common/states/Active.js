@@ -31,7 +31,7 @@ define([
       $('.fullscreen-bg').css('background-image', 'url(' + ik.wrapper.layout.state.active.background.img + ')');
 
       // Do not show the menu
-      $('#menu').hide();
+      $('#menu').children().hide();
 
       // Interaction Element
       $('#interaction').children().hide();

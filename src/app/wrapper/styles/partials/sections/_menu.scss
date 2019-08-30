@@ -3,7 +3,7 @@
 }
 
 .menu {
-  &__storymap {
+  &__storymap, &__explore {
     &__wrapper {
       @include flex(row, normal, space-between);
       background-image: url('/static/images/menu-background.png');
@@ -37,6 +37,14 @@
           width: 100px;
         }
       }
+    }
+  }
+}
+
+.menu {
+  &__explore {
+    &__wrapper {
+      height: 70px;
     }
   }
 }

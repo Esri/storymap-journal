@@ -150,12 +150,12 @@ define([
         switch (ik.wrapper.state.get('wrapper-state')) {
           case 'active':
           case 'attract':
-          case 'explore':
           case 'nav':
           case 'region':
             ik.wrapper.sections.info.render();
             ik.wrapper.sections.interaction.render();
             break;
+          case 'explore':
           case 'storymap':
             ik.wrapper.sections.info.render();
             ik.wrapper.sections.menu.render();

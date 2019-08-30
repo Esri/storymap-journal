@@ -8,14 +8,14 @@ define([
       var currentState = ik.wrapper.state.get('wrapper-state');
 
       switch (currentState) {
-        case 'active':
-          this.renderActive();
+        case 'explore':
+          this.renderExplore();
           break;
         case 'storymap':
           this.renderStorymap();
           break;
         default: // attract screen
-          this.renderActive();
+          // Do nothing
       }
     }
 
@@ -24,8 +24,13 @@ define([
      * Bind Javascript Events
      */
 
-    this.renderActive = function () {
-      //
+    this.renderExplore = function () {
+      this.renderStorymap = function () {
+        $('.bottom__explore').html(bottomStorymapTpl({
+          title: 'Title',
+          body: '<p>Body</p>'
+        }));
+      }
     }
 
     this.renderStorymap = function () {

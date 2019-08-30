@@ -284,6 +284,8 @@ define([
       var popup = null;
       var container = $('#explore-map');
 
+      container.html('');
+
       var map = esriUtils.createMap(mapid, container[0], {
         mapOptions: {
           slider: true,

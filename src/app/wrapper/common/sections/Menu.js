@@ -1,7 +1,9 @@
 define([
-  'lib-build/tpl!../../tpl/sections/Menu/Storymap'
+  'lib-build/tpl!../../tpl/sections/Menu/Storymap',
+  'lib-build/tpl!../../tpl/sections/Menu/Explore',
 ], function (
-  menuTplStoryMap
+  menuTplStoryMap,
+  menuTplExplore
 ) {
   return function Menu () {
     console.log('wrapper.common.Menu -- init');
@@ -10,12 +12,21 @@ define([
       var currentState = ik.wrapper.state.get('wrapper-state');
 
       switch (currentState) {
+        case 'explore':
+          this.renderExplore();
+          break;
         case 'storymap':
           this.renderStorymap();
           break;
         default: // attract screen
           this.renderStorymap();
       }
+    }
+
+    this.renderExplore = function () {
+      $('.menu__explore').html(menuTplExplore({
+        color: '#C84107'
+      }))
     }
 
     /**

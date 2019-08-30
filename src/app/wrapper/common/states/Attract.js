@@ -17,7 +17,7 @@ define([
 
       layout.setBackground();
 
-      $('#menu').hide();
+      $('#menu').children().hide();
 
       var action = 'nav';
       var targetId = 0;
@@ -47,7 +47,7 @@ define([
       layout.setBackground();
 
       // Do not show the menu
-      $('#menu').hide();
+      $('#menu').children().hide();
 
       $('.interaction__attract [data-nav]').each(function (i, ele) {
         ik.wrapper.createLinks($(ele));
