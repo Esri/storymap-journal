@@ -1,3 +1,17 @@
+@mixin menuSvgColor ($bgColor: $black, $textColor: $white) {
+  .menu__storymap__wrapper {
+    svg {
+      .background {
+        fill: $bgColor;
+      }
+
+      .text {
+        fill: $textColor;
+      }
+    }
+  }
+}
+
 #menu {
   background: transparent;
 }
@@ -32,11 +46,43 @@
           padding: 0 20px;
         }
 
-        img {
+        img, svg {
           height: 100px;
           width: 100px;
         }
       }
     }
   }
+}
+
+.cdi-africa {
+  @include menuSvgColor($region-1-secondary);
+}
+
+.cdi-americas {
+  @include menuSvgColor($region-2-secondary);
+}
+
+.cdi-caribbean {
+  @include menuSvgColor($region-3-secondary, $region-3-background);
+}
+
+.cdi-europe {
+  @include menuSvgColor($region-4-secondary);
+}
+
+.cdi-asia {
+  @include menuSvgColor($region-5-secondary);
+}
+
+.cdi-region-6 {
+  @include menuSvgColor($region-6-secondary);
+}
+
+.cdi-region-7 {
+  @include menuSvgColor($region-7-secondary);
+}
+
+.cdi-region-8 {
+  @include menuSvgColor($region-8-secondary);
 }

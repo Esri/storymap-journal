@@ -61,6 +61,26 @@
   @include bottomCalloutHeadingColor($region-3-secondary);
 }
 
+.cdi-europe {
+  @include bottomCalloutHeadingColor($region-4-secondary);
+}
+
+.cdi-asia {
+  @include bottomCalloutHeadingColor($region-5-secondary);
+}
+
+.cdi-region-6 {
+  @include bottomCalloutHeadingColor($region-6-secondary);
+}
+
+.cdi-region-7 {
+  @include bottomCalloutHeadingColor($region-7-secondary);
+}
+
+.cdi-region-8 {
+  @include bottomCalloutHeadingColor($region-8-secondary);
+}
+
 .what-is-leaf {
   @include bottomCalloutHeadingColor($what-is-leaf-secondary);
 }

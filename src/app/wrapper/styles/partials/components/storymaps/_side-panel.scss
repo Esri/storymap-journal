@@ -104,6 +104,26 @@
   @include sidePanelTheme($region-3-primary, $region-3-secondary, $region-3-background, $region-3-secondary);
 }
 
+.cdi-europe {
+  @include sidePanelTheme($region-4-primary, $region-4-secondary, $region-4-background);
+}
+
+.cdi-asia {
+  @include sidePanelTheme($region-5-primary, $region-5-secondary, $region-5-background);
+}
+
+.cdi-region-6 {
+  @include sidePanelTheme($region-6-primary, $region-6-secondary, $region-6-background);
+}
+
+.cdi-region-7 {
+  @include sidePanelTheme($region-7-primary, $region-7-secondary, $region-7-background);
+}
+
+.cdi-region-8 {
+  @include sidePanelTheme($region-8-primary, $region-8-secondary, $region-8-background);
+}
+
 .what-is-leaf {
   @include sidePanelTheme($what-is-leaf-primary, $what-is-leaf-secondary, $what-is-leaf-background);
 }

@@ -1,23 +1,23 @@
 <div class="menu__storymap__wrapper" style="background-color: <%= color %>;">
   <div class="menu__storymap__wrapper__title">
-    <img src="/static/svg/leaf.svg" />
+    <%= leafLogo %>
     <h2><%= name %></h2>
   </div>
   <div class="menu__storymap__wrapper__buttons">
     <button data-nav="back">
-      <img src="/static/svg/menu-back.svg" />
+      <%= buttonBack %>
     </button>
     <% if (anotherLanguage) { %>
       <button data-nav="storymap" data-storymap="<%= alternateId %>" data-language="<%= (language === 'en') ? 'es' : 'en' %>">
       <% if (language === 'en') { %>
-        <img src="/static/svg/menu-language-es.svg" />
+        <%= buttonLanguageEs %>
       <% } else { %>
-        <img src="/static/svg/menu-language-en.svg" />
+        <%= buttonLanguageEn %>
       <% } %>
       </button>
     <% } %>
     <button data-nav="nav">
-      <img src="/static/svg/hamburger-button.svg" />
+      <%= buttonHamburger %>
     </button>
   </div>
 </div>

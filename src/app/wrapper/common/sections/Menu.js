@@ -1,7 +1,17 @@
 define([
-  'lib-build/tpl!../../tpl/sections/Menu/Storymap'
+  'lib-build/tpl!../../tpl/sections/Menu/Storymap',
+  'lib-build/tpl!../../tpl/svg/leaf',
+  'lib-build/tpl!../../tpl/svg/menu-back',
+  'lib-build/tpl!../../tpl/svg/menu-language-en',
+  'lib-build/tpl!../../tpl/svg/menu-language-es',
+  'lib-build/tpl!../../tpl/svg/hamburger-button'
 ], function (
-  menuTplStoryMap
+  menuTplStoryMap,
+  menuTplLeafLogo,
+  menuTplBack,
+  menuTplLanguageEn,
+  menuTplLanguageEs,
+  menuTplHamburger,
 ) {
   return function Menu () {
     console.log('wrapper.common.Menu -- init');
@@ -36,11 +46,22 @@ define([
         alternateStorymapId = alternateStorymap[0].uuid;
       }
 
+      var leafLogo = menuTplLeafLogo({});
+      var menuBack = menuTplBack({});
+      var languageEn = menuTplLanguageEn({});
+      var languageEs = menuTplLanguageEs({});
+      var hamburger = menuTplHamburger({});
+
       $('.menu__storymap').html(menuTplStoryMap({
         alternateId: alternateStorymapId,
         anotherLanguage: anotherLanguage,
+        buttonBack: menuBack,
+        buttonLanguageEn: languageEn,
+        buttonLanguageEs: languageEs,
+        buttonHamburger: hamburger,
         color: storymap[0].theme.color.primary,
         language: currentLanguage,
+        leafLogo: leafLogo,
         name: storymap[0].name
       }));
     }
