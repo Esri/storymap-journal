@@ -113,7 +113,6 @@
     li {
       button {
         width: 480px;
-        clip-path: url('#nav-button-clipping-path-llc');
 
         div {
           flex-basis: 400px;
@@ -131,21 +130,7 @@
   }
 }
 
-.region__list {
-  & li {
-    & button {
-      clip-path: url('#region-button-clipping-path');
-    }
-  }
-}
-
 .storymap__list {
-  & li {
-    & button {
-      clip-path: url('#storymap-button-clipping-path');
-    }
-  }
-
   li {
     margin-bottom: 0;
 
