@@ -255,6 +255,7 @@ define([
     var initVideoToggleButtons = function() {
       var muteToggle = document.getElementById('mute-toggle');
       var playToggle = document.getElementById('play-toggle');
+      var reload = document.getElementById('reload');
 
       muteToggle.addEventListener('click', function() {
         if (ik.wrapper.state && ik.wrapper.state.get('video') !== 'muted') {
@@ -273,6 +274,9 @@ define([
           ik.wrapper.state.set('video', 'playing');
           $(playToggle).removeClass('active');
         }
+      });
+      reload.addEventListener('click', function () {
+        window.location.reload();
       });
     }
     initVideoToggleButtons();
