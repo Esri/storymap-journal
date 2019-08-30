@@ -47,7 +47,7 @@
         display: flex;
         flex-basis: 300px;
         flex-wrap: wrap;
-        padding-left: 10px;
+        padding-left: 20px;
       }
 
       img {
@@ -106,6 +106,7 @@
   & li {
     & button {
       clip-path: url('#nav-button-clipping-path');
+      padding-left: 20px;
     }
   }
 

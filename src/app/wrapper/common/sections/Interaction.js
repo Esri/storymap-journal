@@ -5,6 +5,8 @@ define([
   'lib-build/tpl!../../tpl/sections/Interaction/Region',
   'lib-build/tpl!../../tpl/sections/Interaction/Storymap',
   'lib-build/tpl!../../tpl/components/NavigationButton',
+  'lib-build/tpl!../../tpl/tags/img',
+  'lib-build/tpl!../../tpl/svg/leaf',
   'esri/arcgis/utils'
 ], function (
   interactionActiveTpl,
@@ -13,6 +15,8 @@ define([
   interactionRegionTpl,
   interactionStorymapTpl,
   NavigationButton,
+  imgTag,
+  leafLogo,
   esriUtils
 ) {
   return function Interaction () {
@@ -103,7 +107,9 @@ define([
         var id = '';
         var buttonTitle = ''
         var buttonTitleAlt = ''
-        var image = '/static/svg/leaf.svg'
+        var image = leafLogo({
+          fill: button.theme.color.secondary
+        });
         if (ik.wrapper.getVersion() === 'cdi') {
           id = button.id;
           buttonTitle = button.name;
@@ -217,9 +223,13 @@ define([
             alternate = alternateStorymap[0].name;
         }
 
-        var image = '/static/svg/leaf.svg';
+        var image = leafLogo({
+          fill: ''
+        });
         if (ik.wrapper.getVersion() === 'cdi') {
-          image = button.theme.flag;
+          image = imgTag({
+            src: button.theme.flag
+          });
 
           if (alternate.length === 0) {
             alternate = '';

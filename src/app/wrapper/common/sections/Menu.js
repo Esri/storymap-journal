@@ -46,7 +46,9 @@ define([
         alternateStorymapId = alternateStorymap[0].uuid;
       }
 
-      var leafLogo = menuTplLeafLogo({});
+      var leafLogo = menuTplLeafLogo({
+        fill: ''
+      });
       var menuBack = menuTplBack({});
       var languageEn = menuTplLanguageEn({});
       var languageEs = menuTplLanguageEs({});
