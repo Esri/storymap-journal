@@ -35,9 +35,17 @@ define([
 
       $('.interaction__attract [data-nav]').each(function (i, ele) {
         ik.wrapper.createLinks($(ele));
-      })
+      });
 
-      $('.info__attract').html(attractInfoTpl(ik.wrapper.layout.state.attract.section.info));
+      var infoData = ik.wrapper.layout.state.attract.section.info;
+      infoData.action = action;
+      infoData.targetId = targetId;
+
+      $('.info__attract').html(attractInfoTpl(infoData));
+
+      $('.info__attract [data-nav]').each(function (i, ele) {
+        ik.wrapper.createLinks($(ele));
+      });
 
       $('.interaction__attract').show();
       $('.info__attract').show();
@@ -51,7 +59,11 @@ define([
 
       $('.interaction__attract [data-nav]').each(function (i, ele) {
         ik.wrapper.createLinks($(ele));
-      })
+      });
+
+      $('.info__attract [data-nav]').each(function (i, ele) {
+        ik.wrapper.createLinks($(ele));
+      });
 
       // Interaction Element
       $('#interaction').children().hide();
