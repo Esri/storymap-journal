@@ -1002,7 +1002,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			$("#header").css("display", "inherit");
 			$(".mobileView").css("display", "inherit");
 			$("#fatalError").css("display", "none");
-			$("#loadingOverlay").css("top", "0px");
+			$("#loadingOverlay").css("top", "1030px");
 
 			//app.ui.loadingIndicator.start();
 
@@ -1197,7 +1197,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		function initPopupFail()
 		{
 			replaceInitErrorMessage("notConfiguredDesktop");
-			$("#loadingOverlay").css("top", "0px");
+			$("#loadingOverlay").css("top", "1030px");
 			$("#header").css("display", "inherit");
 			$("#fatalError").css("display", "block");
 
