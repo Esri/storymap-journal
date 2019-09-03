@@ -49,6 +49,7 @@ define([],
 
           if (innerHeight > contentHeight) {
             $(b).addClass('overflow');
+            $(b).addClass('allow-scroll');
 
             $(b).scroll(function () {
               var target = $(this).get(0);

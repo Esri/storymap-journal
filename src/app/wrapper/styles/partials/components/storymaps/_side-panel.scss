@@ -11,9 +11,12 @@
         .content {
           touch-action: none;
 
-          &.overflow {
+          &.allow-scroll {
+            overscroll-behavior: contain;
             touch-action: pan-y;
+          }
 
+          &.overflow {
             &::after {
               background: linear-gradient(transparent 15px, $background);
               content: '';
