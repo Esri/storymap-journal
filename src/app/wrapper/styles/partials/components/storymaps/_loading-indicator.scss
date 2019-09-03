@@ -7,14 +7,21 @@
     fill: $fgColor;
     opacity: 1;
   }
-
-  #loadingMessage {
-    display: block;
-    position: relative;
-  }
 }
 
+#loadingOverlay {
+  @include flex(column, center, center);
+}
 
+#loadingIndicator svg {
+  opacity: 1;
+  animation: loadingFade 1s linear infinite;
+}
+
+@keyframes loadingFade {
+  0%,100% { opacity: .25 }
+  50% { opacity: 1 }
+}
 
 .cdi-africa {
   @include loadingIndicator($region-1-primary, $region-1-background);
