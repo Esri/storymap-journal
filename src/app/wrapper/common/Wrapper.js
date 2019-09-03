@@ -376,6 +376,17 @@ define([
             }
           })
           break;
+        case 'first':
+          element.click(function (e) {
+            e.preventDefault();
+
+            var index = app.data.getCurrentSectionIndex();
+
+            if (index > 0) {
+              ik.wrapper.topic.publish('story-navigate-section', 0);
+            }
+          });
+          break;
         default:
           var showState = 'show' + state.charAt(0).toUpperCase() + state.slice(1);
           var option = data[data.nav] || null;
