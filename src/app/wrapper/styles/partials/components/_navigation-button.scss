@@ -48,7 +48,6 @@
         flex-basis: 300px;
         flex-wrap: wrap;
         padding-left: 20px;
-        padding-right: 50px;
       }
 
       img {
@@ -139,6 +138,10 @@
     button {
       height: 60px;
       width: 470px;
+
+      div {
+        padding-right: 50px;
+      }
     }
   }
 }
