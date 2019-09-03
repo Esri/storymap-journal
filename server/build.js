@@ -108,7 +108,21 @@ const appendImageDerivatives = (jsona, response) => {
  * @param {[String]} field
  * @return {[String]}
  */
-const getHeader = (content = {}, field = '') => (process.env.KIOSK_VERSION === 'cdi' || field.indexOf('field_state_explore') === 0) ? (_.isEmpty(_.get(content, field, content.title)) === true) ? content.title : _.get(content, field, content.title) : ''
+const getHeader = (content = {}, field = '') => {
+  if (process.env.KIOSK_VERSION === 'cdi' || field.indexOf('field_state_explore') === 0) {
+    if (field.indexOf('field_state_storymap') === 0) {
+      return ''
+    }
+
+    if (_.isEmpty(_.get(content, field, content.title)) === true) {
+      return content.title
+    } else {
+      return _.get(content, field, content.title)
+    }
+  }
+
+  return ''
+}
 
 /**
  * Take JSON object and write it to path
