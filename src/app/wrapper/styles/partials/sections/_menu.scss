@@ -20,7 +20,7 @@
   &__storymap {
     &__wrapper {
       @include flex(row, normal, space-between);
-      background-image: url('/static/images/menu-background.png');
+      background-image: url('/static/svg/button-background.svg');
       background-repeat: repeat;
       color: $white;
       height: 190px;
