@@ -58,10 +58,7 @@ define([], function () {
       video.show();
     }
 
-    if (ik.wrapper.layout.state[this.getState()].background.img) {
-      $('.fullscreen-bg').css('background-image', 'url(' + ik.wrapper.layout.state[this.getState()].background.img + ')');
-      $('.fullscreen-bg').css('background-position', '50% 50%');
-    }
+    $('.fullscreen-bg').css('background', 'black');
 
     // If a video is used for multiple states, go ahead and play it.
     try {
