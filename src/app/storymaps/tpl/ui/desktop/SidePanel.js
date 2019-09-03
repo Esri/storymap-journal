@@ -356,7 +356,7 @@ define(["lib-build/tpl!./SidePanelSection",
         var regionId = '';
         var navTitle = '';
         if (nextTitle.length === 0) {
-          navTitle = 'explore another region';
+          navTitle = 'Explore another region';
           buttonTitle = [''];
 
           if (app.isInBuilder === true) {
@@ -364,7 +364,7 @@ define(["lib-build/tpl!./SidePanelSection",
               regionTitle = 'Region Name';
               regionId = 0;
             } else {
-              navTitle = 'back to navigation';
+              navTitle = 'Back to navigation';
             }
           } else {
             if (ik.wrapper.state.get('version') === 'cdi') {
