@@ -1,0 +1,77 @@
+@mixin loadingIndicator ($fgColor: $black, $bgColor: $white) {
+  #loadingOverlay {
+    background-color: $bgColor;
+  }
+
+  #loadingIndicator svg g {
+    fill: $fgColor;
+    opacity: 1;
+  }
+
+  #loadingMessage {
+    display: block;
+    position: relative;
+  }
+}
+
+
+
+.cdi-africa {
+  @include loadingIndicator($region-1-primary, $region-1-background);
+}
+
+.cdi-americas {
+  @include loadingIndicator($region-2-primary, $region-2-background);
+}
+
+.cdi-caribbean {
+  @include loadingIndicator($region-3-primary, $region-3-background);
+}
+
+.cdi-europe {
+  @include loadingIndicator($region-4-primary, $region-4-background);
+}
+
+.cdi-asia {
+  @include loadingIndicator($region-5-primary, $region-5-background);
+}
+
+.cdi-region-6 {
+  @include loadingIndicator($region-6-primary, $region-6-background);
+}
+
+.cdi-region-7 {
+  @include loadingIndicator($region-7-primary, $region-7-background);
+}
+
+.cdi-region-8 {
+  @include loadingIndicator($region-8-primary, $region-8-background);
+}
+
+.what-is-leaf {
+  @include loadingIndicator($what-is-leaf-primary, $what-is-leaf-background);
+}
+
+.schools-streets {
+  @include loadingIndicator($schools-streets-primary, $schools-streets-background);
+}
+
+.leaf-international {
+  @include loadingIndicator($leaf-international-primary, $leaf-international-background);
+}
+
+.leaf-festival {
+  @include loadingIndicator($leaf-festival-primary, $leaf-festival-background);
+}
+
+.leaf-downtown {
+  @include loadingIndicator($leaf-downtown-primary, $leaf-downtown-background);
+}
+
+.leaf-global {
+  @include loadingIndicator($leaf-global-primary, $leaf-global-background);
+}
+
+.more-about-leaf {
+  @include loadingIndicator($more-about-leaf-primary, $more-about-leaf-background);
+}
