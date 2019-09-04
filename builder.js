@@ -9,6 +9,14 @@ const humanName = (KIOSK_VERSION.toLowerCase() === 'cdi')
 buildOptions.productName = humanName
 buildOptions.appId = buildOptions.appId + `.${KIOSK_VERSION.toLowerCase()}`
 
+if (KIOSK_VERSION.toLowerCase() === 'cdi') {
+  let icon = 'build/icon-' + KIOSK_REGION.toLowerCase() + '.png'
+  if (fs.existsSync(icon)) {
+    buildOptions.mac.icon = icon
+    buildOptions.win.icon = icon
+  }
+}
+
 const jsonString = JSON.stringify(buildOptions, null, 2)
 
 fs.writeFileSync('./build.json', jsonString, 'utf8')
