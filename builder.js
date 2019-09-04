@@ -10,6 +10,8 @@ buildOptions.productName = humanName
 buildOptions.appId = buildOptions.appId + `.${KIOSK_VERSION.toLowerCase()}`
 
 if (KIOSK_VERSION.toLowerCase() === 'cdi') {
+  buildOptions.appId = buildOptions.appId + `.${KIOSK_REGION.toLowerCase()}`
+
   let icon = 'build/icon-' + KIOSK_REGION.toLowerCase() + '.png'
   if (fs.existsSync(icon)) {
     buildOptions.mac.icon = icon
