@@ -143,10 +143,11 @@ const setFile = (fileuri) => {
   const absFilepath = staticPath + '/download' + url.parse(fileuri).pathname
   const relFilepath = '/static/download' + url.parse(fileuri).pathname
 
+  // @TODO - Decide if keeping this logic is necessary
   // No need to download the same file twice, if already exists
-  if (fs.existsSync(absFilepath) === true) {
-    return relFilepath
-  }
+  // if (fs.existsSync(absFilepath) === true) {
+  //   return relFilepath
+  // }
 
   if (fs.existsSync(path.dirname(absFilepath)) === false) {
     fs.mkdirSync(path.dirname(absFilepath), { recursive: true })
