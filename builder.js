@@ -17,6 +17,10 @@ if (KIOSK_VERSION.toLowerCase() === 'cdi') {
     buildOptions.mac.icon = icon
     buildOptions.win.icon = icon
   }
+} else {
+  let icon = 'build/icon-llc.png'
+  buildOptions.mac.icon = icon
+  buildOptions.win.icon = icon
 }
 
 const jsonString = JSON.stringify(buildOptions, null, 2)
