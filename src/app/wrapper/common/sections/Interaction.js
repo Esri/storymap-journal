@@ -186,11 +186,11 @@ define([
       // TODO: remove testing var and resort to buttons var for length check and forEach
       var testing = [];
       testing.push(...buttons);
-      testing.push(...buttons);
-      testing.push(...buttons);
-      testing.push(...buttons);
-      testing.push(...buttons);
-      testing.push(...buttons);
+      // testing.push(...buttons);
+      // testing.push(...buttons);
+      // testing.push(...buttons);
+      // testing.push(...buttons);
+      // testing.push(...buttons);
 
       if (testing.length > 8) {
         $('.region__heading').hide();
