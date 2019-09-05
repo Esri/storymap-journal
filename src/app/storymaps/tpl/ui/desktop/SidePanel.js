@@ -364,6 +364,11 @@ define(["lib-build/tpl!./SidePanelSection",
           buttonSubtitle = nextSubtitle.match(/(?<=(?!h1|h2|h3|h4|h5|h6|span)\>)(.+?)(?=<\/(h1|h2|h3|h4|h5|h6|span))/g);
         }
 
+
+        if (subtitle === undefined ) {
+          subtitle = '';
+        }
+
         var regionTitle = '';
         var regionId = '';
         var navTitle = '';
