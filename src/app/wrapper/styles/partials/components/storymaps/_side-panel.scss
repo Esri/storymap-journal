@@ -20,11 +20,21 @@
             &::after {
               background: linear-gradient(transparent 15px, $background);
               content: '';
-              height: 100%;
+              height: 150px;
               left: 0;
               position: absolute;
-              top: 0;
+              bottom: 90px;
               width: 100%;
+            }
+          }
+        }
+
+        &:last-of-type {
+          .content {
+            &.overflow {
+              &::after {
+                bottom: 175px;
+              }
             }
           }
         }
