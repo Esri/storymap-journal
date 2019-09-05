@@ -710,16 +710,18 @@ define(["lib-build/tpl!./ViewText",
 				CKEDITOR.replace('addEditRTE', {
 					// See http://ckeditor.com/latest/samples/plugins/toolbar/toolbar.html for all options
 					toolbar: [
-						{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat' ] },
-						{ name: 'styles', items: [ 'FontSize' ] },
-						{ name: 'colors', items: [ 'TextColor' ] },
+						{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'RemoveFormat' ] },
+						// { name: 'styles', items: [ 'FontSize' ] },
+            { name: 'styles', items: ['Styles'] },
+						// { name: 'colors', items: [ 'TextColor' ] },
 						{ name: 'insert', groups: [ 'storymapsInlineMedia' ], items: [ 'InlineMedia' ] },
-						{ name: 'links', items: [ 'Link', 'Unlink' ] },
+						// { name: 'links', items: [ 'Link', 'Unlink' ] },
 						[ 'Undo', 'Redo' ],
 						{ name: 'document', groups: [ 'mode', 'document', 'doctools', 'tools' ], items: [ 'Source', 'Maximize' ] },
 
 						{ name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
-						{ name: 'storymapsAction', groups: [ 'storymapsAction' ], items: [ 'Media', 'Geocode', 'Navigate', 'PreviewAction', 'RemoveAction' ] }
+						// { name: 'storymapsAction', groups: [ 'storymapsAction' ], items: [ 'Media', 'Geocode', 'Navigate', 'PreviewAction', 'RemoveAction' ] }
+						{ name: 'storymapsAction', groups: [ 'storymapsAction' ], items: [ 'Media', 'Geocode', 'PreviewAction', 'RemoveAction' ] }
 
 					],
 					customConfig: '',
@@ -746,8 +748,8 @@ define(["lib-build/tpl!./ViewText",
 						'b,big,code,del,dfn,em,font,i,ins,kbd,q,s,samp,small,span,strike,strong,sub,sup,tt,u,var'
 						+ ',h1,h2,h3,h4,h5,h6',
 					// Copy/paste magic
-					pasteFromWordRemoveFontStyles: false,
-					pasteFromWordRemoveStyles: false,
+					pasteFromWordRemoveFontStyles: true,
+					pasteFromWordRemoveStyles: true,
 
 					linkShowAdvancedTab: false,
 					linkShowTargetTab: false,
