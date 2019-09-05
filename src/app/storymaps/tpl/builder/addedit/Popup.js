@@ -22,6 +22,7 @@ define(["lib-build/tpl!./Popup",
 		{
 			container.append(viewTpl({
 				titlePlaceholder: i18n.builder.addEditPopup.titlePlaceholder,
+        subtitlePlaceholder: i18n.builder.addEditPopup.subtitlePlaceholder,
 				lblMainStage: i18n.builder.layouts.mainStage,
 				firstAddExplain: i18n.builder.addEditPopup.firstAddExplain
 					+ ' <a onclick="app.builder.firstAddLearnMore()">' + i18n.builder.addEditPopup.firstAddLeanMore + '</a>.',
@@ -98,14 +99,22 @@ define(["lib-build/tpl!./Popup",
 				}
 				else {
 					container.find('.titleContainerEdit').html(cfg.section.title);
+          container.find('.subtitleContainerEdit').html(cfg.section.subtitle);
 				}
 
 				container.find('.titleContainerAdd').toggle(cfg.mode == "add" && ! cfg.title);
 				container.find('.titleContainerFirstAdd').toggle(cfg.mode == "add" && !! cfg.title);
 				container.find('.titleContainerEdit').toggle(cfg.mode != "add");
+				container.find('.subtitleContainerAdd').toggle(cfg.mode == "add" && ! cfg.title);
+				container.find('.subtitleContainerFirstAdd').toggle(cfg.mode == "add" && !! cfg.title);
+				container.find('.subtitleContainerEdit').toggle(cfg.mode != "add");
 
 				var appColors = WebApplicationData.getColors();
 				container.find('.titleContainerAdd .title, .titleContainerEdit').css({
+					"backgroundColor": appColors.panel,
+					"color": appColors.text
+				});
+        container.find('.subtitleContainerAdd .title, .subtitleContainerEdit').css({
 					"backgroundColor": appColors.panel,
 					"color": appColors.text
 				});
@@ -245,6 +254,25 @@ define(["lib-build/tpl!./Popup",
 							autoParagraph: false
 						});
 					}
+
+          $('#AddEditSubtitleEditor').toggleClass('first-title', isFirst);
+					if ( ! CKEDITOR.instances.AddEditSubtitleEditor ) {
+						CKEDITOR.inline(container.find('.subtitleContainerEdit')[0], {
+							toolbar: [
+								{ name: 'basicstyles', groups: ['basicstyles'], items: ['Bold', 'Italic'] },
+								{ name: 'styles', items: ['FontSize'] },
+								{ name: 'colors', items: ['TextColor'] }
+							],
+							uiColor: '#FCFCFC',
+							floatSpaceDockedOffsetX: $("#AddEditSubitleEditor").width() - 194,
+							floatSpaceDockedOffsetY: - 1,
+							removePlugins: 'liststyle,tableresize,tabletools,contextmenu',
+							disableNativeSpellChecker: false,
+							fontSize_sizes: '18/18px;20/20px;22/22px;24/24px;26/26px;28/28px;36/36px;40/40px;44/44px;48/48px;60/60px;72/72px',
+							fontSize_defaultLabel: isFirst ? '40px' : '26px',
+							autoParagraph: false
+						});
+					}
 				}
 
 				if ( _cfg.mode == "add" )
@@ -319,7 +347,7 @@ define(["lib-build/tpl!./Popup",
 
 				if ($(this).hasClass("disabled")) {
 					return;
-				}
+        }
 
 				if ( viewTextData.promise ) {
 					viewTextData.then(onClickSubmitStep2);
@@ -343,6 +371,9 @@ define(["lib-build/tpl!./Popup",
 				else {
 					CKEDITOR.instances.AddEditTitleEditor.focus();
 					sectionTitle = CKEDITOR.instances.AddEditTitleEditor.getData();
+
+          // CKEDITOR.instances.AddEditSubtitleEditor.focus();
+          sectionSubtitle = CKEDITOR.instances.AddEditSubtitleEditor.getData();
 				}
 
 				var postErrorCheck = function() {
@@ -355,6 +386,7 @@ define(["lib-build/tpl!./Popup",
 					else {
 						_popupDeferred.resolve({
 							title: sectionTitle,
+              subtitle: sectionSubtitle,
 							content: viewTextData.text,
 							contentActions: viewTextData.actions,
 							creaDate: Date.now(),

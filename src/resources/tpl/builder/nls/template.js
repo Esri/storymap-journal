@@ -53,7 +53,8 @@ define({
 				stepNextTooltipAdd: "to add the section",
 				firstAddExplain: "This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts.",
 				firstAddLeanMore: "Learn More",
-				titlePlaceholder: "Section title..."
+				titlePlaceholder: "Section title...",
+        subtitlePlaceholder: "Section subtitle..."
 			},
 			addEditViewText: {
 				editorPlaceholder: "Add text, links, and small graphics here.",

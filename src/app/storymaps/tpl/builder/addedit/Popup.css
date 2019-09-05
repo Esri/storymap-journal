@@ -44,10 +44,10 @@
  * Header
  */
 
-.addEditPopup .titleContainerAdd {
+.addEditPopup .titleContainerAdd, .addEditPopup .subtitleContainerAdd {
 	position: relative;
 	width: 438px;
-	margin-top: 20px;
+	margin-top: 5px;
 	margin-bottom: 20px;
 }
 
@@ -60,8 +60,8 @@
 	margin: 30px 1px;
 }
 
-.addEditPopup .titleContainerEdit {
-	margin: 10px 0 15px 0;
+.addEditPopup .titleContainerEdit, .addEditPopup .subTitleContainerEdit {
+	margin: 5px 0 15px 0;
 }
 
 /* Prevent text from not being selectable in FF and Safari */

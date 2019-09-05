@@ -255,6 +255,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 						section["status"],
 						section["content"],
 						section["title"],
+            section["subtitle"],
 						section["OBJECTID"]
 					);
 				});
@@ -340,7 +341,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					container.find(".header .shareIcon")[0].focus();
 			}
 
-			function createSectionBlock(index, status, content, title)
+			function createSectionBlock(index, status, content, title, subtitle)
 			{
 				var optHtmlClass = "";
 
@@ -356,12 +357,14 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
 					title: StoryText.prepareEditorContent(title),
+          subtitle: StoryText.prepareEditorContent(subtitle),
 					content: StoryText.prepareEditorContent(content, true),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					shareURL: shareURL,
 					scroll: i18n.viewer.floatLayout.scroll,
 					lblMainstageBtn: i18n.viewer.common.focusMainstage,
-					titleTag: index === 0 ? 'h1' : 'h2'
+					titleTag: 'h2',
+          subtitleTag: 'h3'
 				});
 			}
 

@@ -17,14 +17,22 @@
 			</div>
 
 			<!-- Title field -->
+      <label>Title</label>
 			<div class="form-group titleContainerAdd">
 				<input type="text" class="form-control title clear" placeholder="<%= titlePlaceholder %>"/>
 				<span class="glyphicon glyphicon-remove form-control-feedback"></span>
 			</div>
+			<div id="AddEditTitleEditor" class="titleContainerEdit" contenteditable="true" spellcheck="true"></div>
+      <label>Subtitle (Optional)</label>
+      <div class="form-group subtitleContainerAdd">
+				<input type="text" class="form-control subtitle clear" placeholder="<%= subtitlePlaceholder %>"/>
+				<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+			</div>
+      <div id="AddEditSubtitleEditor" class="subtitleContainerEdit" contenteditable="true" spellcheck="true"></div>
+
 			<div class="form-group titleContainerFirstAdd">
 				<%= firstAddExplain %>
 			</div>
-			<div id="AddEditTitleEditor" class="titleContainerEdit" contenteditable="true" spellcheck="true"></div>
 
 			<!-- Navigation in EDIT -->
 			<ul class="nav nav-tabs navigation-edit" style="width:100%; display: none;">

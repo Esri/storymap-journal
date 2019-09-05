@@ -84,11 +84,18 @@
         button {
           div {
             @include font(22, 22, 'OpenSans');
-            display: block;
+            @include flex(column, flex-start, flex-start);
             font-weight: 700;
             flex-basis: unset;
             width: 100%;
           }
+        }
+      }
+
+      &__button{
+        &-subtitle {
+          @include font(14, 8);
+          opacity: 0.67;
         }
       }
     }

@@ -280,8 +280,10 @@ define(["lib-build/tpl!./SidePanelSection",
 
 				$.each(sections, function(i, section){
           var nextTitle = '';
+          var nextSubtitle = '';
           if (i < sections.length-1) {
             nextTitle = sections[i+1].title;
+            nextSubtitle = sections[i+1].subtitle;
           }
 
 					contentHTML += createSectionBlock(
@@ -289,8 +291,10 @@ define(["lib-build/tpl!./SidePanelSection",
 						section.status,
 						section.content,
 						section.title,
+            section.subtitle,
 						section.OBJECTID,
-            nextTitle
+            nextTitle,
+            nextSubtitle
 					);
 				});
 
@@ -336,7 +340,7 @@ define(["lib-build/tpl!./SidePanelSection",
         }
 			}
 
-			function createSectionBlock(/*editEl,*/ index, status, content, title, objectId, nextTitle)
+			function createSectionBlock(/*editEl,*/ index, status, content, title, subtitle, objectId, nextTitle, nextSubtitle)
 			{
 				var optHtmlClass = "";
 
@@ -350,7 +354,15 @@ define(["lib-build/tpl!./SidePanelSection",
 				shareURL += "section=" + (index+1);
 
         var actionName = 'IK-SECTION-NEXT-' + (index);
-        var buttonTitle = nextTitle.match(/(?<=(?!h1|h2|h3|h4|h5|h6|span)\>)(.+?)(?=<\/(h1|h2|h3|h4|h5|h6|span))/g);
+        var buttonTitle = nextTitle;
+        if (buttonTitle.indexOf('<') === 0) {
+          buttonTitle = nextTitle.match(/(?<=(?!h1|h2|h3|h4|h5|h6|span)\>)(.+?)(?=<\/(h1|h2|h3|h4|h5|h6|span))/g);
+        }
+
+        var buttonSubtitle = nextSubtitle;
+        if (buttonSubtitle.indexOf('<') === 0) {
+          buttonSubtitle = nextSubtitle.match(/(?<=(?!h1|h2|h3|h4|h5|h6|span)\>)(.+?)(?=<\/(h1|h2|h3|h4|h5|h6|span))/g);
+        }
 
         var regionTitle = '';
         var regionId = '';
@@ -378,12 +390,15 @@ define(["lib-build/tpl!./SidePanelSection",
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
 					title: StoryText.prepareEditorContent(title),
+          subtitle: StoryText.prepareEditorContent(subtitle),
 					content: StoryText.prepareEditorContent(content, true),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					lblMainstageBtn: i18n.viewer.common.focusMainstage,
-					titleTag: index === 0 ? 'h1' : 'h2',
+					titleTag: 'h2',
+          subtitleTag: 'h3',
           actionName: actionName,
           buttonTitle: buttonTitle[0],
+          buttonSubtitle: buttonSubtitle,
           regionTitle:regionTitle,
           regionId: regionId,
           navTitle: navTitle

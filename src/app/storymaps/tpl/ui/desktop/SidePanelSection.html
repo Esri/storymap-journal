@@ -1,4 +1,7 @@
 <div class="section <%= optHtmlClass %>">
+  <% if (subtitle.length > 0) { %>
+  <<%= subtitleTag %> class="subtitle"><%= subtitle %></<%= subtitleTag %>>
+  <% } %>
   <<%= titleTag %> class="title" tabindex="-1"><%= title %></<%= titleTag %>>
   <div class="content">
     <div class="content__inner">
@@ -10,7 +13,8 @@
     <li>
       <button data-storymaps="<%= actionName %>" data-storymaps-type="navigate" href="#">
         <div>
-          <%= buttonTitle %>
+          <% if (buttonSubtitle.length > 0) { %><span class='storymap__list__button-subtitle'><%= buttonSubtitle %></span><% } %>
+          <span class='storymap__list__button-title'><%= buttonTitle %></span>
         </div>
       </button>
       <div class="arrow"></div>

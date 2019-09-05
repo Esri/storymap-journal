@@ -149,6 +149,10 @@ body.layout-side-right .sidePanel .navDots {
 	font-weight: normal;
 }
 
+.sidePanel .subtitle {
+  opacity: 0.66;
+}
+
 .sidePanel .content {
 	margin: 10px 0 20px;
 	font-size: 16px;
