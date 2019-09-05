@@ -239,13 +239,9 @@ define(["lib-build/tpl!./Popup",
 					$('#AddEditTitleEditor').toggleClass('first-title', isFirst);
 					if ( ! CKEDITOR.instances.AddEditTitleEditor ) {
 						CKEDITOR.inline(container.find('.titleContainerEdit')[0], {
-							toolbar: [
-								{ name: 'basicstyles', groups: ['basicstyles'], items: ['Bold', 'Italic'] },
-								{ name: 'styles', items: ['FontSize'] },
-								{ name: 'colors', items: ['TextColor'] }
-							],
+							toolbar: [],
 							uiColor: '#FCFCFC',
-							floatSpaceDockedOffsetX: $("#AddEditTitleEditor").width() - 194,
+							floatSpaceDockedOffsetX: 0,
 							floatSpaceDockedOffsetY: - 1,
 							removePlugins: 'liststyle,tableresize,tabletools,contextmenu',
 							disableNativeSpellChecker: false,
@@ -258,14 +254,10 @@ define(["lib-build/tpl!./Popup",
           $('#AddEditSubtitleEditor').toggleClass('first-title', isFirst);
 					if ( ! CKEDITOR.instances.AddEditSubtitleEditor ) {
 						CKEDITOR.inline(container.find('.subtitleContainerEdit')[0], {
-							toolbar: [
-								{ name: 'basicstyles', groups: ['basicstyles'], items: ['Bold', 'Italic'] },
-								{ name: 'styles', items: ['FontSize'] },
-								{ name: 'colors', items: ['TextColor'] }
-							],
+							toolbar: [],
 							uiColor: '#FCFCFC',
-							floatSpaceDockedOffsetX: $("#AddEditSubitleEditor").width() - 194,
-							floatSpaceDockedOffsetY: - 1,
+							floatSpaceDockedOffsetX: 0,
+							floatSpaceDockedOffsetY: -1,
 							removePlugins: 'liststyle,tableresize,tabletools,contextmenu',
 							disableNativeSpellChecker: false,
 							fontSize_sizes: '18/18px;20/20px;22/22px;24/24px;26/26px;28/28px;36/36px;40/40px;44/44px;48/48px;60/60px;72/72px',
