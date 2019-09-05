@@ -183,6 +183,12 @@ define([
       var regionStorymaps = ik.wrapper.api.storymap.get(regionInfo[0].storymaps);
       var buttons = ik.wrapper.api.storymap.getAllLanguage(currentLanguage, regionStorymaps);
 
+      if (ik.wrapper.getVersion() === 'cdi') {
+        buttons.sort(function (a, b) {
+          return a.weight - b.weight;
+        });
+      }
+
       // TODO: remove testing var and resort to buttons var for length check and forEach
       var testing = [];
       testing.push(...buttons);
