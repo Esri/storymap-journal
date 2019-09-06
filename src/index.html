@@ -84,7 +84,13 @@
 			</div>
 		</noscript>
 	</head>
-	<body>
+	<body
+    oncontextmenu="return false"
+    onmousedown="return false;"
+    onselectstart="return false;"
+    style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+    unselectable="on"
+  >
     <div id="container" class="en attract">
       <div class="fullscreen-bg">
         <div class="fullscreen-bg__shader"></div>
