@@ -52,6 +52,11 @@ define([
     var layout = {};
     var storymaps = {};
     var regions = {};
+    var idle = {
+      current: 0,
+      warning: 90,
+      reset: 120
+    };
 
     // State controllers
     var active = {};
@@ -297,7 +302,33 @@ define([
         default:
           break;
       }
-    })
+    });
+
+    var resetIdleTimer = function () {
+      ik.wrapper.idle.current = 0;
+      $('#idle-modal').hide();
+    }
+
+    document.getElementsByTagName('body')[0].addEventListener('click', resetIdleTimer);
+    document.getElementsByTagName('body')[0].addEventListener('touch', resetIdleTimer);
+
+    setInterval(function () {
+      if (ik.wrapper.state.get('wrapper-state') !== 'attract') {
+        ik.wrapper.idle.current += 5;
+      }
+
+      if (ik.wrapper.idle.current > ik.wrapper.idle.warning) {
+        $('#idle-modal').show();
+      } else {
+        $('#idle-modal').hide();
+      }
+
+      if (ik.wrapper.idle.current > ik.wrapper.idle.reset) {
+          ik.wrapper.idle.current = 0;
+          $('#idle-modal').hide();
+          ik.wrapper.showAttract();
+      }
+    }, 5000);
   } // End init()
 
     /**
@@ -416,6 +447,7 @@ define([
       getVersion: this.getVersion,
       layout: layout,
       regions: regions,
+      idle: idle,
       sections: {
         bottom: bottom,
         info: info,
