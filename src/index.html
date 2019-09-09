@@ -439,8 +439,15 @@
       </button>
     </div>
     <!-- Idle Popup -->
-    <div id='idle-modal'>
-      You have been idle. Click anywhere to to continue your experience.
+    <div id='idle-modal' class='idle-modal'>
+      <div class="idle-modal__wrapper">
+        <div class="idle-modal__title">
+          Timeout Alert
+        </div>
+        <div class="idle-modal__body">
+          Touch anywhere on the screen to continue. Otherwise the interactive will restart in {x} seconds.
+        </div>
+      </div>
     </div>
     <div class="transition-overlay"></div>
     <script src="//localhost:35729/livereload.js"></script>

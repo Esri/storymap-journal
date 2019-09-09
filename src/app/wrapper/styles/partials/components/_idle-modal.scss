@@ -1,11 +1,74 @@
-#idle-modal {
-  background: $white;
+@mixin modalBackground ($background-color: $white) {
+  background-color: $background-color;
+}
+
+.idle-modal {
+  background-color: $shader-dark;
   display: none;
-  height: 500px;
-  left: 50%;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
   z-index: 1;
+
+  &__wrapper {
+    @include flex(column, center, flex-start);
+    background-color: $white;
+    background-image: url('/static/svg/button-background.svg');
+    border-radius: 34px;
+    color: $white;
+    height: 350px;
+    left: 50%;
+    padding: 80px 50px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+  }
+
+  &__title {
+    @include font(56, 58, 'Hallo Sans');
+    color: $white;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__body {
+    @include font(30, 41, 'OpenSans');
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &.cdi-africa &__wrapper {
+    @include modalBackground($region-1-primary);
+  }
+
+  &.cdi-americas &__wrapper {
+    @include modalBackground($region-2-primary);
+  }
+
+  &.cdi-caribbean &__wrapper {
+    @include modalBackground($region-3-primary);
+  }
+
+  &.cdi-europe &__wrapper {
+    @include modalBackground($region-4-primary);
+  }
+
+  &.cdi-asia &__wrapper {
+    @include modalBackground($region-5-primary);
+  }
+
+  &.cdi-region-6 &__wrapper {
+    @include modalBackground($region-6-primary);
+  }
+
+  &.cdi-region-7 &__wrapper {
+    @include modalBackground($region-7-primary);
+  }
+
+  &.cdi-region-8 &__wrapper {
+    @include modalBackground($region-8-primary);
+  }
 }
