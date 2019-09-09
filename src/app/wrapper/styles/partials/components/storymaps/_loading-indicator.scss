@@ -15,12 +15,28 @@
 
 #loadingIndicator svg {
   opacity: 1;
-  animation: loadingFade 1s linear infinite;
+
+  .firework {
+    opacity: 0;
+    animation: loadingShow 1.5s linear infinite;
+  }
+
+  $number: 11;
+  @for $i from 1 through $number {
+    .loading-#{$i} {
+      animation-delay: $i * .1s;
+    }
+  }
 }
 
-@keyframes loadingFade {
-  0%,100% { opacity: .25 }
-  50% { opacity: 1 }
+@keyframes loadingShow {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 .cdi-africa {
