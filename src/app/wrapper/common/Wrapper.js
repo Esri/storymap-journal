@@ -16,7 +16,8 @@ define([
   './sections/Info',
   './sections/Interaction',
   './sections/Menu',
-  './sections/Bottom'
+  './sections/Bottom',
+  'lib-build/tpl!../tpl/components/IdleModal'
 ], function(
   fontAwesomeCss,
   wrapperTpl,
@@ -35,7 +36,8 @@ define([
   Interaction,
   Info,
   Menu,
-  Bottom
+  Bottom,
+  tplIdleModal
 ) {
   return function Wrapper() {
 
@@ -54,6 +56,7 @@ define([
     var regions = {};
     var idle = {
       current: 0,
+      interval: 1000,
       warning: 90,
       reset: 120
     };
@@ -314,7 +317,9 @@ define([
 
     setInterval(function () {
       if (ik.wrapper.state.get('wrapper-state') !== 'attract') {
-        ik.wrapper.idle.current += 5;
+        ik.wrapper.idle.current += ik.wrapper.idle.interval / 1000;
+      } else {
+        ik.wrapper.idle.current = 0;
       }
 
       if (ik.wrapper.idle.current > ik.wrapper.idle.warning) {
@@ -323,6 +328,12 @@ define([
           targetName = featured[0].name.toLowerCase();
           $('#idle-modal').addClass(ik.wrapper.getVersion() + '-' + targetName);
         }
+
+        var timeLeft = ik.wrapper.idle.reset - ik.wrapper.idle.current;
+
+        $('#idle-modal').html(tplIdleModal({
+          timeLeft: timeLeft
+        }));
 
         $('#idle-modal').show();
       } else {
@@ -334,7 +345,7 @@ define([
           $('#idle-modal').hide();
           ik.wrapper.showAttract();
       }
-    }, 5000);
+    }, ik.wrapper.idle.interval);
   } // End init()
 
     /**
