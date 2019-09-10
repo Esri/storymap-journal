@@ -8,24 +8,34 @@ This is the IK Wrapper version of ESRI's storymap-journal. This will be deployed
 
 Copy `.env.example` as `.env`
 
-Ensure that you have sass running on your machine. It will require ruby on your system. `gem install sass`. Else you will not be able to compile *scss files.
+## Environment Variables
+ - `BACKEND_URL`: the drupal back-end url
+ - `ELECTRON_HEIGHT`, `ELECTRON_WIDTH`: the electron window height and width
+ - `ELECTRON_FULLSCREEN`: 1 to turn on, 0 for windowed mode
+ - `KIOSK_REGION`: The region content a cdi kiosk will highlight. Current examples `Americas`, `Caribbean`, `Africa`.
+ - `KIOSK_VERSION`: `llc` or `cdi`
+ - `KIOSK_UUID`: The drupal node uuid for the kiosk content. You must obtain this UUID from the Drupal back-end or else this wrapper won't know from where to populate its content.
 
-## Running
- - `yarn run start-dev`: runs the server in development mode. Access the application through the browser.
- - `yarn run build`: executes the grunt cli builder which will create deploy code (compresses and compiles JS).
- - `yarn run build-sass`: recompile the scss files.
- - `yarn run start`: Runs the server in production mode. Access the application through the browser.
- - `yarn run set-env`: Prepares the build.json configuration file for electron-builder
- - `yarn run start-electron-dev`: Runs the application in development mode and opens it in an Electron window.
- - `yarn run start-electron`: Runs the application in production and opens it in an Electron window.
- - `yarn run build-release[-{mac,windows}]`: Build electron package for mac, windows, or both.
+## Scripts
+### Development
+- `yarn run start-dev`: runs the server in development mode. Access the application through the browser.
+- `yarn run start-electron-dev`: Runs the application in development mode and opens it in an Electron window.
+### Building Application
+- `yarn run build-release[-{mac,windows}]`: Build electron package for mac, windows, or both.
+### Scripts of note
+- `yarn run build`: executes the grunt cli builder which will create deploy code (compresses and compiles JS).
+- `yarn run build-sass`: recompile the scss files.
+- `yarn run set-env`: Prepares the build.json configuration file for electron-builder.
 
-## Development and filesystem
+## Filesystem
 - `src/app/storymaps`: Files specific to the ESRI Story Map Journal.
 - `src/app/wrapper`: Files which belong to the wrapper/kiosk application
 - `src/app/wrapper/styles`: The SCSS files. **Please update wrapper styles here**
 - `src/index.html`: The html file which is loaded.
 - `src/app/{main-app.js,main-config.js}`: The javascript files which bootstrap the Dojo application.
+- `api`: Contains the JSON files which are accessed by the Wrapper. They are created or updated when the application is started.
+- `server`: Scripts which must be run serverside to populate data accessible in the Browser/Electron window Javascript application.
+- `static`: Static files referenced by the Wrapper applications and downloaded from Drupal back-end.
 
 ## Developing on the browser
 If you choose to develop in the browser use `yarn run start-dev` and visit `https://localhost:3000?version={KIOSK_VERSION}` in the browser. `KIOSK_VERSION` should be specified so that environment variables are passed into the browser window Javascript application.
@@ -33,15 +43,6 @@ If you choose to develop in the browser use `yarn run start-dev` and visit `http
 Use Google Chrome for development since Electron is based on Chrome. Chromium will work up to the point of testing MP4/H.264 videos (it can not decode the video). Firefox and Safari are fine but unnecessary since we don't really need to worry about support them.
 
 The best way to emulate the Electron application is to use the Developer Tools and the Device Emulator. Set the width and height to 1080 x 1920 or the values specified in your .env file.
-
-## Environment Variables
- - `BACKEND_URL`: the drupal backend url
- - `ELECTRON_HEIGHT`, `ELECTRON_WIDTH`: the electron window height and width
- - `ELECTRON_FULLSCREEN`: 1 to turn on, 0 for windowed mode
- - `BUILD_TARGET`: 'electron' or 'browser'
- - `KIOSK_REGION`: The region content a cdi kiosk will highlight
- - `KIOSK_VERSION`: 'llc' or 'cdi'
- - `KIOSK_UUID`: The drupal node uuid for the kiosk content
 
 ## Licensing
 Copyright 2014-2018 Esri
