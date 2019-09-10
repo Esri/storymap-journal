@@ -44,11 +44,11 @@
     @include modalBackground($region-1-primary);
   }
 
-  &.cdi-americas &__wrapper {
+  &.cdi-americas &__wrapper, &.cdi-the_americas &__wrapper {
     @include modalBackground($region-2-primary);
   }
 
-  &.cdi-caribbean &__wrapper {
+  &.cdi-caribbean &__wrapper, &.cdi-the_caribbean &__wrapper {
     @include modalBackground($region-3-primary);
   }
 

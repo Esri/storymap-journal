@@ -325,7 +325,7 @@ define([
       if (ik.wrapper.idle.current > ik.wrapper.idle.warning) {
         if (ik.wrapper.getVersion() === 'cdi') {
           var featured = ik.wrapper.api.region.getFeaturedRegion();
-          targetName = featured[0].name.toLowerCase();
+          targetName = featured[0].machine_name.toLowerCase();
           $('#idle-modal').addClass(ik.wrapper.getVersion() + '-' + targetName);
         }
 
