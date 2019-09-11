@@ -263,3 +263,24 @@ iframe {
 	top: auto;
 	margin-top: -20px;
 }
+
+.countryIcon {
+  font-size: 0; }
+  .countryIcon:after {
+    content: ''; }
+  .countryIcon--capital:after {
+    background: url("/lib-app/ckeditor/../../app/storymaps/common/builder/ckeditor/plugins/countryIcons/icons/capital.png");
+    background-repeat: no-repeat;
+    padding: 19px 10px 2px 17px; }
+  .countryIcon--population {
+    background: url("/lib-app/ckeditor/../../app/storymaps/common/builder/ckeditor/plugins/countryIcons/icons/population.png");
+    background-repeat: no-repeat;
+    padding: 19px 10px 10px 17px; }
+  .countryIcon--currency {
+    background: url("/lib-app/ckeditor/../../app/storymaps/common/builder/ckeditor/plugins/countryIcons/icons/currency.png");
+    background-repeat: no-repeat;
+    padding: 16px 10px 7px 17px; }
+  .countryIcon--language {
+    background: url("/lib-app/ckeditor/../../app/storymaps/common/builder/ckeditor/plugins/countryIcons/icons/messageBox.png");
+    background-repeat: no-repeat;
+    padding: 14px 10px 5px 17px; }

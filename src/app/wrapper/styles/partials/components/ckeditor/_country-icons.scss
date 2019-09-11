@@ -1,0 +1,33 @@
+.countryIcon {
+  font-size: 0;
+
+  &:after {
+    content: '';
+  }
+
+  &--capital {
+    &:after {
+      background: url('/lib-app/ckeditor/../../app/storymaps/common/builder/ckeditor/plugins/countryIcons/icons/capital.png');
+      background-repeat: no-repeat;
+      padding: 19px 10px 2px 17px;
+    }
+  }
+
+  &--population {
+    background: url('/lib-app/ckeditor/../../app/storymaps/common/builder/ckeditor/plugins/countryIcons/icons/population.png');
+    background-repeat: no-repeat;
+    padding: 19px 10px 10px 17px;
+  }
+
+  &--currency {
+    background: url('/lib-app/ckeditor/../../app/storymaps/common/builder/ckeditor/plugins/countryIcons/icons/currency.png');
+    background-repeat: no-repeat;
+    padding: 16px 10px 7px 17px;
+  }
+
+  &--language {
+    background: url('/lib-app/ckeditor/../../app/storymaps/common/builder/ckeditor/plugins/countryIcons/icons/messageBox.png');
+    background-repeat: no-repeat;
+    padding: 14px 10px 5px 17px;
+  }
+}
