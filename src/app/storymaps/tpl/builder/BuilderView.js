@@ -86,9 +86,8 @@ define(["lib-build/tpl!./BuilderView",
 				app.builder.openMapViewer = openMapViewer;
 
 				CKEDITOR.disableAutoInline = true;
-        console.log('BUILDER VIEw');
-        CKEDITOR.dtd.$removeEmpty['i'] = false;
-        CKEDITOR.dtd.$removeEmpty['span'] = false;
+        CKEDITOR.dtd.$removeEmpty.i = false;
+        CKEDITOR.dtd.$removeEmpty.span = false;
 
 				// Add buttons for all layouts
 				$(".builder-add")
