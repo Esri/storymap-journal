@@ -187,6 +187,8 @@ define([
           console.log('Render period begins');
           // Adjust our transition overlay
           var overlay = document.querySelector('.transition-overlay');
+          // Grab/prevent all touch events with the overlay until things are loaded
+          overlay.style.pointerEvents = 'all';
           overlay.style.transition = 'unset';
           overlay.style.opacity = 1;
         } else {
@@ -196,6 +198,10 @@ define([
             overlay.style.transition = 'opacity ease 0.75s';
             overlay.style.opacity = 0;
           }, 150);
+          // Buttons/etc can be touched 1.5 seconds after render
+          setTimeout(function () {
+            overlay.style.pointerEvents = 'none';
+          }, 1500);
 
           // End Render
           console.log('Render period ends', ik.wrapper.states);
