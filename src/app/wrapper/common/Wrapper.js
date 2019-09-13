@@ -405,23 +405,6 @@ define([
     }
 
     /**
-     * Utility for throttling events
-     * @TODO Replace with underscore method
-     */
-    var throttle = function (callback, limit = 1000) {
-      var wait = false; // Initially, we're not waiting
-      return function (...args) { // We return a throttled function
-        if (!wait) { // If we're not waiting
-          callback.apply(this, args); // Execute users function
-          wait = true; // Prevent future invocations
-          setTimeout(function () { // After a period of time
-            wait = false; // And allow future invocations
-          }, limit);
-        }
-      }
-    }
-
-    /**
      * During section render this function will pass click() events
      * to elements with recognized data attributes.
      */
@@ -431,7 +414,7 @@ define([
 
       switch (state) {
         case 'back':
-          element.click(throttle(function (e) {
+          element.click(_.throttle(function (e) {
             e.preventDefault();
 
             var index = app.data.getCurrentSectionIndex();
@@ -445,7 +428,7 @@ define([
             } else {
               ik.wrapper.topic.publish('story-navigate-section', index - 1);
             }
-          }))
+          }, 1000));
           break;
         case 'first':
           element.click(function (e) {
