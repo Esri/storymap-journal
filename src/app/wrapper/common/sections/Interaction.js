@@ -140,6 +140,10 @@ define([
       });
 
       // Set button to explore section
+      var image = leafLogo({
+        fill: '#533B27'
+      });
+
       if (ik.wrapper.getVersion() === 'llc') {
         $('.nav__list__explore').append(NavigationButton({
           action: 'explore',
@@ -149,7 +153,7 @@ define([
           colorSecondary: '#533B27',
           colorText: '#fff',
           currentLanguage: currentLanguage,
-          imgSrc: '/static/svg/leaf.svg',
+          imgSrc: image,
           targetId: ik.wrapper.layout.state.explore.section.interaction.map,
           title: 'Learn more about LEAF Community'
         }));

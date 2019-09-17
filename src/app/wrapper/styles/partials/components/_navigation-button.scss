@@ -132,8 +132,17 @@
       &:nth-of-type(1), &:nth-of-type(6) {
         flex-basis: 100%;
 
+        button {
+          clip-path: url('#nav-button-clipping-path-explore');
+          width: 570px;
+
+          div {
+            flex-basis: 570px;
+          }
+        }
+
         & .arrow {
-          right: 255px;
+          right: 208px;
         }
       }
     }
@@ -162,12 +171,13 @@
 
     & button {
       text-align: left;
+      padding-left: 20px;
     }
 
     & .arrow {
       position: absolute;
       top: 50%;
-      right: 38px;
+      right: -26px;
       width: 50px;
       height: 50px;
       border-radius: 100%;
@@ -187,6 +197,12 @@
   padding: 0;
 
   li {
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 1.05s !important;
     flex-basis: 570px;
 
     button {
@@ -195,15 +211,11 @@
 
       div {
         flex-basis: 570px;
-      }
 
-      span {
-        &.primary {
-          @include font(30, 22, 'Hallo Sans');
-        }
-
-        &.alternate {
-          @include font(16, 22, 'OpenSans');
+        span {
+          &.primary {
+            @include font(31.5, 26, 'Hallo Sans');
+          }
         }
       }
     }
