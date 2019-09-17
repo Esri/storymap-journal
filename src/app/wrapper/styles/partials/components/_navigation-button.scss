@@ -113,6 +113,7 @@
   .llc & {
     li {
       button {
+        clip-path: url('#nav-button-clipping-path-llc');
         width: 480px;
 
         div {
@@ -126,6 +127,14 @@
 
       & .arrow {
         right: -5px;
+      }
+
+      &:nth-of-type(1), &:nth-of-type(6) {
+        flex-basis: 100%;
+
+        & .arrow {
+          right: 255px;
+        }
       }
     }
   }
