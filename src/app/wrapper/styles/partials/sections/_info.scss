@@ -18,11 +18,22 @@
 }
 
 .info__explore {
-  @include infoLogoImg();
-  @include infoHeader();
+  &__content {
+    @include flex(column, space-between, space-between);
+    height: 100%;
+
+    &__img {
+      align-self: flex-end;
+    }
+  }
 
   h1 {
     @include font(120, 110, 'Habana');
+    text-align: center;
+  }
+
+  .llc & img {
+    width: 395px;
   }
 }
 

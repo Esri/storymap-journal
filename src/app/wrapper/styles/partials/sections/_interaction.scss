@@ -29,8 +29,10 @@
   }
 }
 
-.interaction__explore #explore-map {
-  height: 100%;
+.interaction__explore {
+  #explore-map {
+    height: 100%;
+  }
 }
 
 /* Nav and Region sections */

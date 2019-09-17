@@ -147,7 +147,7 @@ define([
       if (ik.wrapper.getVersion() === 'llc') {
         $('.nav__list__explore').append(NavigationButton({
           action: 'explore',
-          alternate: 'Explore nuestro Comunidad de hojas',
+          alternate: 'Spanish Translation',
           alternateLanguage: 'es',
           colorPrimary: '#715035',
           colorSecondary: '#533B27',
@@ -155,7 +155,7 @@ define([
           currentLanguage: currentLanguage,
           imgSrc: image,
           targetId: ik.wrapper.layout.state.explore.section.interaction.map,
-          title: 'Learn more about LEAF Community'
+          title: 'Explore Our Global Community'
         }));
       }
 
@@ -294,7 +294,6 @@ define([
     this.renderStorymap = function () {
       var appid =ik.wrapper.state.get('appid');
       var storymapData = ik.wrapper.api.storymap.get(appid);
-      console.log(appid, storymapData)
       $('.interaction__storymap').html(interactionStorymapTpl());
       reset(storymapData[0].id);
     }
@@ -309,10 +308,13 @@ define([
       var map = esriUtils.createMap(mapid, container[0], {
         mapOptions: {
           slider: true,
-          nav:false
+          nav:false,
+          minZoom: 3,
+          center: [-40.0, 18.3]
         }
       }).then(function (response) {
         console.log('Map Data Received');
+        ik.map = response.map;
       });
     }
 

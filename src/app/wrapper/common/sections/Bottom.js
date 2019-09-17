@@ -25,12 +25,12 @@ define([
      */
 
     this.renderExplore = function () {
-      this.renderStorymap = function () {
-        $('.bottom__explore').html(bottomStorymapTpl({
-          title: 'Title',
-          body: '<p>Body</p>'
-        }));
-      }
+      // this.renderStorymap = function () {
+      //   $('.bottom__explore').html(bottomStorymapTpl({
+      //     title: 'Title',
+      //     body: '<p>Body</p>'
+      //   }));
+      // }
     }
 
     this.renderStorymap = function () {
