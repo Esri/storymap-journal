@@ -1,5 +1,6 @@
 define([
   'lib-build/tpl!../../tpl/sections/Menu/Storymap',
+  'lib-build/tpl!../../tpl/sections/Menu/Explore',
   'lib-build/tpl!../../tpl/svg/leaf',
   'lib-build/tpl!../../tpl/svg/menu-back',
   'lib-build/tpl!../../tpl/svg/menu-language-en',
@@ -7,11 +8,12 @@ define([
   'lib-build/tpl!../../tpl/svg/hamburger-button'
 ], function (
   menuTplStoryMap,
+  menuTplExplore,
   menuTplLeafLogo,
   menuTplBack,
   menuTplLanguageEn,
   menuTplLanguageEs,
-  menuTplHamburger,
+  menuTplHamburger
 ) {
   return function Menu () {
     console.log('wrapper.common.Menu -- init');
@@ -20,12 +22,21 @@ define([
       var currentState = ik.wrapper.state.get('wrapper-state');
 
       switch (currentState) {
+        case 'explore':
+          this.renderExplore();
+          break;
         case 'storymap':
           this.renderStorymap();
           break;
         default: // attract screen
           this.renderStorymap();
       }
+    }
+
+    this.renderExplore = function () {
+      $('.menu__explore').html(menuTplExplore({
+        color: '#C84107'
+      }))
     }
 
     /**

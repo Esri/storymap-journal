@@ -5,7 +5,8 @@ define([], function () {
 
       ik.wrapper.state.set('video', 'muted');
 
-      $('#menu').show();
+      $('#menu').children().hide();
+      $('.menu__storymap').show();
 
       $('#menu [data-nav]').each(function(i, ele) {
         ik.wrapper.createLinks($(ele));

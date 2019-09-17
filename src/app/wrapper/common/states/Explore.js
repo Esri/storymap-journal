@@ -12,8 +12,12 @@ define([
     var show = function () {
       layout.setBackground();
 
-      // Do not show the menu
-      $('#menu').hide();
+      $('#menu').children().hide();
+      $('.menu__explore').show();
+
+      $('.menu__explore [data-nav]').each(function(i, ele) {
+        ik.wrapper.createLinks($(ele));
+      });
 
       // Interaction Element
       $('#interaction').children().hide();
