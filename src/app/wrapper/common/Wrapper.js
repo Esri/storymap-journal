@@ -57,7 +57,7 @@ define([
     var idle = {
       current: 0,
       interval: 1000,
-      warning: 90,
+      warning: 105,
       reset: 120
     };
 
