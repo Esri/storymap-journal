@@ -359,6 +359,7 @@ define(["lib-build/tpl!./Popup",
 				if ( _cfg.mode == "add" ) {
 					var fontSize = app.data.getStoryLength() ? '26px' : '40px';
 					sectionTitle = '<span style="font-size: ' + fontSize + ';">' + container.find('.title').val() + '</span>';
+          sectionSubtitle = container.find('.subtitle').val();
 				}
 				else {
 					CKEDITOR.instances.AddEditTitleEditor.focus();
