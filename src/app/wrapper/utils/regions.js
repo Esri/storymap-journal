@@ -22,7 +22,11 @@ define([], function () {
      * @return {Array[region]} an array of regions
      */
     var getAll = function () {
-      return ik.wrapper.regions
+      return ik.wrapper.regions.filter(function(x,y) {
+        if (x.storymaps.length > 0) {
+          return x;
+        }
+      });
     }
 
     /**

@@ -102,6 +102,8 @@ define([
         buttons = ik.wrapper.api.region.getAll();
       }
 
+      console.log(buttons)
+
       // Create navigation buttons
       buttons.forEach(function (button, index) {
         var id = '';
