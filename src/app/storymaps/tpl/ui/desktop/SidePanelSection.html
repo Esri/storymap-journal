@@ -17,7 +17,7 @@
           <span class='storymap__list__button-title'><%= buttonTitle %></span>
         </div>
       </button>
-      <div class="arrow"></div>
+      <div class="arrow" data-storymaps="<%= actionName %>" data-storymaps-type="navigate"></div>
     </li>
     <% } %>
     <% if (regionTitle.length > 0) { %>
@@ -27,7 +27,7 @@
           Explore more of <%= regionTitle %>
         </div>
       </button>
-      <div class="arrow"></div>
+      <div class="arrow" data-nav="region" data-region="<%= regionId %>"></div>
     </li>
     <% } %>
     <% if (navTitle.length > 0) { %>
@@ -37,7 +37,7 @@
           <%= navTitle %>
         </div>
       </button>
-      <div class="arrow"></div>
+      <div class="arrow" data-nav="nav"></div>
     </li>
     <% } %>
   </div>
