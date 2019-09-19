@@ -63,7 +63,16 @@ define([
       var menuBack = menuTplBack({});
       var languageEn = menuTplLanguageEn({});
       var languageEs = menuTplLanguageEs({});
+
       var hamburger = menuTplHamburger({});
+
+      var hamburgerNav = "nav";
+      var hamburgerData = "";
+
+      if (ik.wrapper.state.get('version') === 'cdi') {
+        hamburgerNav = "region";
+        hamburgerData = ik.wrapper.state.get('regionid');
+      }
 
       $('.menu__storymap').html(menuTplStoryMap({
         alternateId: alternateStorymapId,
@@ -72,6 +81,8 @@ define([
         buttonLanguageEn: languageEn,
         buttonLanguageEs: languageEs,
         buttonHamburger: hamburger,
+        buttonHamburgerNav: hamburgerNav,
+        buttonHamburgerData: hamburgerData,
         color: storymap[0].theme.color.primary,
         language: currentLanguage,
         leafLogo: leafLogo,
