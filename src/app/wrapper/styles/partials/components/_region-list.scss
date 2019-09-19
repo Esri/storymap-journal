@@ -7,12 +7,15 @@
   transition: transform cubic-bezier(0.215, 0.610, 0.355, 1) 0.5s;
 
   [class^="region__list__slide"] {
-    @include flex(row, normal, center, wrap);
+    display: flex;
     flex-grow: 0;
     flex-shrink: 0;
-    height: 100%;
+    min-height: 505px;
     width: 100%;
     padding-left: 0; // remove default ul padding
+    // Order matters below
+    place-content: flex-start;
+    justify-content: center;
 
     & li {
       position: relative;
