@@ -10,6 +10,7 @@ Copy `.env.example` as `.env`
 
 ## Environment Variables
  - `BACKEND_URL`: the drupal back-end url
+ - `BUILD_TARGET`: Set to electron to build a successful electron application
  - `ELECTRON_HEIGHT`, `ELECTRON_WIDTH`: the electron window height and width
  - `ELECTRON_FULLSCREEN`: 1 to turn on, 0 for windowed mode
  - `KIOSK_REGION`: The region content a cdi kiosk will highlight. Current examples `Americas`, `Caribbean`, `Africa`.
