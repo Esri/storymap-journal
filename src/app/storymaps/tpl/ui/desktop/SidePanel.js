@@ -355,6 +355,10 @@ define(["lib-build/tpl!./SidePanelSection",
 
         var actionName = 'IK-SECTION-NEXT-' + (index);
         var buttonTitle = nextTitle;
+        if (Array.isArray(buttonTitle)) {
+          buttonTitle = buttonTitle[0]
+        }
+
         if (buttonTitle.indexOf('<') === 0) {
           buttonTitle = nextTitle.match(/(?<=(?!h1|h2|h3|h4|h5|h6|span)\>)(.+?)(?=<\/(h1|h2|h3|h4|h5|h6|span))/g);
         }
@@ -378,7 +382,7 @@ define(["lib-build/tpl!./SidePanelSection",
         var navTitle = '';
         if (nextTitle.length === 0) {
           navTitle = 'Explore another region';
-          buttonTitle = [''];
+          buttonTitle = '';
 
           if (app.isInBuilder === true) {
             if (configOptions.ik.version === 'cdi') {
@@ -396,6 +400,23 @@ define(["lib-build/tpl!./SidePanelSection",
           }
         }
 
+        console.log({
+					optHtmlClass: optHtmlClass,
+					title: StoryText.prepareEditorContent(title),
+          subtitle: StoryText.prepareEditorContent(subtitle),
+					content: StoryText.prepareEditorContent(content, true),
+					lblShare: i18n.viewer.headerFromCommon.share,
+					lblMainstageBtn: i18n.viewer.common.focusMainstage,
+					titleTag: 'h2',
+          subtitleTag: 'h3',
+          actionName: actionName,
+          buttonTitle: buttonTitle,
+          buttonSubtitle: buttonSubtitle,
+          regionTitle:regionTitle,
+          regionId: regionId,
+          navTitle: navTitle
+				});
+
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
 					title: StoryText.prepareEditorContent(title),
@@ -406,7 +427,7 @@ define(["lib-build/tpl!./SidePanelSection",
 					titleTag: 'h2',
           subtitleTag: 'h3',
           actionName: actionName,
-          buttonTitle: buttonTitle[0],
+          buttonTitle: buttonTitle,
           buttonSubtitle: buttonSubtitle,
           regionTitle:regionTitle,
           regionId: regionId,
