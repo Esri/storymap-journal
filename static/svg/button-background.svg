@@ -1,16 +1,15 @@
-
-<svg width="500px" height="90px" viewBox="0 0 500 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1080px" height="191px" viewBox="0 0 1080 191" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
-        <pattern id="pattern-1" width="22" height="22" x="-22" y="-181" patternUnits="userSpaceOnUse">
+        <pattern id="pattern-1" width="22" height="22" x="-22" y="-126" patternUnits="userSpaceOnUse">
             <use xlink:href="#image-2"></use>
         </pattern>
-        <image id="image-2" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAYJpQ0NQSUNDIFByb2ZpbGUAACiRlZE7SANBEIb/i0ia+CiCiNWBkipKjCAKIiQpREgRQwoVLe6VB8TLcVmjoqWgZcBCtFFMY2GtbcBWK0URxMbGPmij4Zy9jSYiKv5wzHezszuz/wKeY8Wy8p5uYMlkdnIqKs/OzcveR3hBOS5FK1qRRCLO+SN+1csNJB6vBvlZ39d/lU83ihog+YmZZtmMeJu4f4VZnE+I/TYNRVzlnBF8zVkV/OTWpJIx4jfizpKWob0eH3HI1HMm8QTxpJZVdOIN4qDaUp9pYTGPq76Yks+ptsIMXebWxAr5gl20FM345yX/EjNWGY+xgrVm5zJZJkfISUOeNrWhoBwODY8D/F1EdW3G9VvquWjmCofA2DPQVm7m1F3gbAvovWvmBg6Ark3g9FxbtkuN9hKou/Cs8S99En5i4aurUaByC6TWgfglsLcPBNLUZwFIdFCepmeLzU+omB4Ji7N8UaD9wXFqAcC7A9TLjvN65Dj1Ct3nHqia7yRab5W/nNP7AAAAfElEQVQ4EeWQQQqAMBAD9/+fVi+5DM2G1hYEBVmSbKa0VVXX83dfyruuhb+C6kRCqLW3NAXTXIK40lHoVjhh1O6Gre8gzm9hClM55eL8bKZnSXn7XK7s/BbGkBBq7k9pwTSnymn5KHQrnDDqdNNh7iDOH0JopnLKyfuQvgGuvCHfAokTnQAAAABJRU5ErkJggg=="></image>
+        <image id="image-2" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAYRpQ0NQSUNDIFByb2ZpbGUAACiRlZE/SMNAFMa/VKQI9Q9YRJwCSqcqtYIoiNBmEKFDLR1UdEiT9A/UJKRnVXQUdCw4iC6KXRycdS246qQogri4uBddtMR3SbUVUfGD8H559+7eu+8Az7FsmnlPF7CkMysxFRVn5+ZF7yPa0A1HslIwI/F4jPNH/KqXGwg8Xg3ys76v/yqfqhUUQPATM8W0GPE2cf8KMzmfEPstGoq4wjnj8jXnlMtPTk0yIRG/EXcUlQzt9fiIQ7qa04kniCeVrKwSbxAHU031mSZ253HUJ8n5XMqSmaaK3BrJyBtWwZQV7Z+X/EtMW2U8Soa5ZuUyWSZGyElNnNaVoaAYDg2PA/xd3OrqjOO30HPRyBmHwNgz0FJq5FK7wNkW0HvXyA0cAJ2bwOm5smwV6+0FUHfXs/q/8En4iV1fHY0C5VsguQ7ELoG9fSCQpj4LQLyd8jQ9W2x8rgrpkbB7li8KtD7YdjUAeHeAWsm2X49su1am+9wDFf0dMRVvmpVeDioAAAB8SURBVDgR5ZBBCoAwEAP3/59WL7kMzYbWFgQFWZJsprRVVdfzd1/Ku66Fv4LqREKotbc0BdNcgrjSUehWOGHU7oat7yDOb2EKUznl4vxspmdJeftcruz8FsaQEGruT2nBNKfKafkodCucMOp002HuIM4fQmimcsrJ+5C+Aa68Id8CiROdAAAAAElFTkSuQmCC"></image>
     </defs>
-    <g id="Love-&amp;-Connections---55&quot;" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.2">
-        <g id="Menu" transform="translate(-550.000000, -1070.000000)" fill="url(#pattern-1)">
-            <g id="Content" transform="translate(0.000000, 960.000000)">
-                <g id="*-Schools-&amp;-Streets" transform="translate(550.000000, 110.000000)">
-                    <rect id="Pattern" x="0" y="-159" width="500" height="300"></rect>
+    <g id="Cultural-Dive-Ins---45&quot;" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.2">
+        <g id="Rwanda:-4" transform="translate(0.000000, -839.000000)" fill="url(#pattern-1)">
+            <g id="Content" transform="translate(0.000000, 839.000000)">
+                <g id="Header">
+                    <rect id="Pattern" x="0" y="-104" width="1080" height="300"></rect>
                 </g>
             </g>
         </g>
