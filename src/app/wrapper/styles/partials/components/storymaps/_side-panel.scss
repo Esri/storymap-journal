@@ -103,6 +103,10 @@
       }
 
       &__button{
+        &-title {
+          @include font(20, 26);
+        }
+
         &-subtitle {
           @include font(14, 8);
           opacity: 0.67;
