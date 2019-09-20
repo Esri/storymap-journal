@@ -98,8 +98,15 @@ define(["lib-build/tpl!./Popup",
 						.find('.title').val(cfg.title || "");
 				}
 				else {
-					container.find('.titleContainerEdit').html(cfg.section.title);
-          container.find('.subtitleContainerEdit').html(cfg.section.subtitle);
+          var title = cfg.section.title.replace(/<[^>]+>/g, '');
+
+          if (cfg.section.subtitle === undefined) {
+            cfg.section.subtitle = '';
+          }
+          var subtitle = cfg.section.subtitle.replace(/<[^>]+>/g, '');
+
+					container.find('.titleContainerEdit').html(title);
+          container.find('.subtitleContainerEdit').html(subtitle);
 				}
 
 				container.find('.titleContainerAdd').toggle(cfg.mode == "add" && ! cfg.title);
@@ -237,6 +244,7 @@ define(["lib-build/tpl!./Popup",
 				if ( _cfg.mode == "edit" ) {
 					var isFirst = app.data.getCurrentSectionIndex() === 0;
 					$('#AddEditTitleEditor').toggleClass('first-title', isFirst);
+
 					if ( ! CKEDITOR.instances.AddEditTitleEditor ) {
 						CKEDITOR.inline(container.find('.titleContainerEdit')[0], {
 							toolbar: [],
@@ -252,6 +260,7 @@ define(["lib-build/tpl!./Popup",
 					}
 
           $('#AddEditSubtitleEditor').toggleClass('first-title', isFirst);
+
 					if ( ! CKEDITOR.instances.AddEditSubtitleEditor ) {
 						CKEDITOR.inline(container.find('.subtitleContainerEdit')[0], {
 							toolbar: [],

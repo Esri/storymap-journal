@@ -67,6 +67,12 @@ else {
 								Builder.init(Core, builderView);
                 ik.wrapper = new Edit();
 
+                var returnTrue = function () { return true; }
+                var body = $('body');
+                body.contextmenu(returnTrue);
+                body.mousedown(returnTrue);
+                body.on('selectstart', returnTrue);
+
                 // Show only the storymap
                 $('.fullscreen-bg').hide();
                 $('#info').hide();
@@ -85,6 +91,12 @@ else {
             // Renders the menu
             ik.wrapper = new Wrapper();
             ik.wrapper.init();
+
+            var returnFalse = function () { return false; }
+            var body = $('body');
+            body.contextmenu(returnFalse);
+            body.mousedown(returnFalse);
+            body.on('selectstart', returnFalse);
 					}
 				}
 			);
