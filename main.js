@@ -9,6 +9,7 @@ const events = require('./server/events')
 // Installed packages
 const express = require('express')
 
+
 // Import environment specific configuration
 const localConfig = require('dotenv').config({
   path: path.resolve(__dirname, '.env')
@@ -70,6 +71,32 @@ server.listen(3000, error => {
       const { app, BrowserWindow, ipcMain } = require('electron')
 
       const logger = require('electron-log')
+      const os = require('os')
+      const Sentry = require('@sentry/electron')
+      const user = os.userInfo().username
+
+      let loadingWindow
+      let mainWindow
+
+      // Sentry.
+      if (process.env.REACT_APP_SENTRY_DSN) {
+        Sentry.init({ dsn: config.REACT_APP_SENTRY_DSN })
+      }
+
+      function notifySentry (message, level, exception = false) {
+        if (dev !== true && process.env.REACT_APP_SENTRY_DSN) {
+          Sentry.configureScope((scope) => {
+            scope.setUser({ 'username': user })
+            scope.setLevel(level)
+          })
+      
+          if (exception === true) {
+            Sentry.captureMessage(message)
+          } else {
+            Sentry.captureException(message)
+          }
+        }
+      }
 
       // Loading window will appear while files are downloading
       function createLoadingWindow () {
@@ -80,7 +107,7 @@ server.listen(3000, error => {
           webPreferences: {
             experimentalFeatures: true,
             nodeIntegration: true, // Necessary for progress/loading window
-            //preload: '' // @TODO - Use to preload files when ready to write code,
+            preload: path.join(__dirname, '/preload.js'), // @see https://github.com/electron/electron/issues/9920
             webSecurity: false
           },
           width: parseInt(process.env.ELECTRON_WIDTH, 10)
@@ -96,7 +123,7 @@ server.listen(3000, error => {
           webPreferences: {
             experimentalFeatures: true,
             nodeIntegration: false, // causing issues with JQuery
-            //preload: '' // @TODO - Use to preload files when ready to write code,
+            preload: path.join(__dirname, '/preload.js'), // @see https://github.com/electron/electron/issues/9920
             webSecurity: false
           },
           width: parseInt(process.env.ELECTRON_WIDTH, 10)
@@ -110,7 +137,10 @@ server.listen(3000, error => {
 
         webContents.on('crashed', () => {
           // Log error
-          logger.error('App crashed! Creating new window.')
+          const message = 'App crashed! Creating new window.'
+          notifySentry(message, 'error')
+          logger.error(message)
+
           // Destroy window and start over
           mainWindow.destroy()
 
@@ -197,12 +227,38 @@ server.listen(3000, error => {
         }
       })
 
-      app.on('quit', () => {logger.info('App closed.')})
-      app.on('uncaughException', error => logger.error(error))
-      app.on('unhandledRejection', error => logger.error(error))
+      app.on('quit', () => {
+        notifySentry('App closed.', 'info')
+        logger.info('App closed.')
+      })
+      
+      app.on('uncaughException', error => {
+        notifySentry(error, 'error', true)
+        logger.error(error)
+      })
+      
+      app.on('unhandledRejection', error => {
+        notifySentry(error, 'error', true)
+        logger.error(error)
+      })
 
       // Log to a file that holds a log of useful information
-      ipcMain.on('log-message-to-file', (event, arg) => logger[arg.type](arg.message))
+      ipcMain.on('log-message-to-file', (event, arg) => {
+        // Only log warnings, errors and fatals to sentry.
+        const sentry = ['warning', 'error', 'fatal']
+        if (process.env.REACT_APP_ENVIRONMENT === 'production' && sentry.indexOf(arg.type) !== -1) {
+          if (arg.type === 'warn') {
+            arg.type = 'warning'
+          }
+          notifySentry(arg.message, arg.type)
+        }
+      
+        if (arg.type === 'warning') {
+          arg.type = 'warn'
+        }
+      
+        logger[arg.type](arg.message)
+      })
     } else {
       build(events)
     }
