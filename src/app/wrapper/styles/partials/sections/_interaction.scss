@@ -45,13 +45,20 @@
 /* Nav and Region sections */
 .interaction__nav,
 .interaction__region {
+  color: $white;
   padding: 50px 20px;
+  text-align: center;
 
   h2 {
     @include font(34, 46, 'OpenSans');
-    color: $white;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  p {
+    @include font(24, 46, 'OpenSans');
+    font-style: italic;
     font-weight: 600;
     margin-bottom: 50px;
-    text-align: center;
   }
 }
