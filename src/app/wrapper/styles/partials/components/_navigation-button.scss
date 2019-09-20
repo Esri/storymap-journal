@@ -36,7 +36,8 @@
     button {
       @include flex(row, center, flex-start);
       position: relative;
-      background-image: url('/static/svg/button-background.svg');
+      background-image: url('/static/images/button-background.png');
+      background-position: center;
       background-repeat: repeat;
       border: 0;
       border-radius: 15px;
