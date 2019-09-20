@@ -3,6 +3,7 @@ define([
   'lib-build/tpl!../../tpl/sections/Menu/Explore',
   'lib-build/tpl!../../tpl/svg/leaf',
   'lib-build/tpl!../../tpl/svg/menu-back',
+  'lib-build/tpl!../../tpl/svg/menu-next',
   'lib-build/tpl!../../tpl/svg/menu-language-en',
   'lib-build/tpl!../../tpl/svg/menu-language-es',
   'lib-build/tpl!../../tpl/svg/hamburger-button'
@@ -11,6 +12,7 @@ define([
   menuTplExplore,
   menuTplLeafLogo,
   menuTplBack,
+  menuTplNext,
   menuTplLanguageEn,
   menuTplLanguageEs,
   menuTplHamburger
@@ -61,6 +63,7 @@ define([
         fill: ''
       });
       var menuBack = menuTplBack({});
+      var menuNext = menuTplNext({});
       var languageEn = menuTplLanguageEn({});
       var languageEs = menuTplLanguageEs({});
 
@@ -78,6 +81,7 @@ define([
         alternateId: alternateStorymapId,
         anotherLanguage: anotherLanguage,
         buttonBack: menuBack,
+        buttonNext: menuNext,
         buttonLanguageEn: languageEn,
         buttonLanguageEs: languageEs,
         buttonHamburger: hamburger,

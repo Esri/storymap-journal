@@ -655,6 +655,8 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
       // Bind some events to rendered sections
       ikUtils.bindScrollEventsToSections();
 
+      ikUtils.fadeNextButton();
+
 			// Initialize Embed bar
 			var urlParams = esri.urlToObject(document.location.search).query || {};
 			var classicEmbedMode = urlParams.classicEmbedMode ? true : urlParams.classicEmbedMode === "" ? true : urlParams.classicembedmode ? true : urlParams.classicembedmode === "" ? true : false;

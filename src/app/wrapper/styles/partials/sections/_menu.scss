@@ -1,11 +1,20 @@
 @mixin menuSvgColor ($bgColor: $black, $textColor: $white) {
   .menu__storymap__wrapper {
     svg {
+      &.fade {
+        opacity: 1;
+
+        .text, .arrow {
+          fill: $textColor;
+          opacity: 0.3;
+        }
+      }
+
       .background {
         fill: $bgColor;
       }
 
-      .text {
+      .text, .arrow {
         fill: $textColor;
       }
     }

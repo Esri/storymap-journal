@@ -66,6 +66,12 @@ define([],
             });
           }
         });
+      },
+
+      fadeNextButton: function () {
+        if (app.data.getStoryLength() === 1) {
+          $('#button-next').attr('class', 'fade');
+        }
       }
     };
   }
