@@ -15,7 +15,7 @@
   &__wrapper {
     @include flex(column, center, flex-start);
     background-color: $white;
-    background-image: url('/static/svg/button-background.svg');
+    background-image: url('/static/images/button-background.png');
     border-radius: 34px;
     color: $white;
     height: 350px;
