@@ -1,5 +1,6 @@
-@mixin modalBackground ($background-color: $white) {
+@mixin modalBackground ($background-color: $white, $text-color: $white) {
   background-color: $background-color;
+  color: $text-color;
 }
 
 .idle-modal {
@@ -15,12 +16,12 @@
   &__wrapper {
     @include flex(column, center, flex-start);
     background-color: $white;
-    background-image: url('/static/svg/button-background.svg');
+    background-image: url('/static/images/button-background.png');
     border-radius: 34px;
     color: $white;
-    height: 350px;
+    height: 440px;
     left: 50%;
-    padding: 80px 50px;
+    padding: 60px 45px;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -30,6 +31,7 @@
   &__title {
     @include font(56, 58, 'Hallo Sans');
     color: $white;
+    font-weight: 900;
     margin-bottom: 20px;
     text-align: center;
   }
@@ -38,6 +40,12 @@
     @include font(30, 41, 'OpenSans');
     font-weight: 600;
     text-align: center;
+
+    &-spanish {
+      @include font(22, 41);
+      font-style: italic;
+      padding-top: 20px;
+    }
   }
 
   &.cdi-africa &__wrapper {
@@ -48,8 +56,8 @@
     @include modalBackground($region-2-primary);
   }
 
-  &.cdi-caribbean &__wrapper, &.cdi-the_caribbean &__wrapper {
-    @include modalBackground($region-3-primary);
+  &.cdi-caribbean &__wrapper, &.cdi-the_caribbean &__wrapper, &.cdi-the_caribbean &__title {
+    @include modalBackground($region-3-primary, $region-2-secondary);
   }
 
   &.cdi-europe &__wrapper {

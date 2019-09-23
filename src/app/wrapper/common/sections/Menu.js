@@ -3,6 +3,9 @@ define([
   'lib-build/tpl!../../tpl/sections/Menu/Explore',
   'lib-build/tpl!../../tpl/svg/leaf',
   'lib-build/tpl!../../tpl/svg/menu-back',
+  'lib-build/tpl!../../tpl/svg/menu-next',
+  'lib-build/tpl!../../tpl/svg/menu-back-es',
+  'lib-build/tpl!../../tpl/svg/menu-next-es',
   'lib-build/tpl!../../tpl/svg/menu-language-en',
   'lib-build/tpl!../../tpl/svg/menu-language-es',
   'lib-build/tpl!../../tpl/svg/hamburger-button'
@@ -11,6 +14,9 @@ define([
   menuTplExplore,
   menuTplLeafLogo,
   menuTplBack,
+  menuTplNext,
+  menuTplBackEs,
+  menuTplNextEs,
   menuTplLanguageEn,
   menuTplLanguageEs,
   menuTplHamburger
@@ -60,7 +66,9 @@ define([
       var leafLogo = menuTplLeafLogo({
         fill: ''
       });
-      var menuBack = menuTplBack({});
+
+      var menuBack = (currentLanguage === 'en') ? menuTplBack({}) : menuTplBackEs({});
+      var menuNext = (currentLanguage === 'en') ? menuTplNext({}) : menuTplNextEs({});
       var languageEn = menuTplLanguageEn({});
       var languageEs = menuTplLanguageEs({});
 
@@ -78,6 +86,7 @@ define([
         alternateId: alternateStorymapId,
         anotherLanguage: anotherLanguage,
         buttonBack: menuBack,
+        buttonNext: menuNext,
         buttonLanguageEn: languageEn,
         buttonLanguageEs: languageEs,
         buttonHamburger: hamburger,

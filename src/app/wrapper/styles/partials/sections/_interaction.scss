@@ -9,6 +9,7 @@
 }
 
 .interaction__attract {
+  color: $white;
   padding: 75px 0;
 
   & > div {
@@ -17,8 +18,6 @@
 
   h1 {
     @include font(40, 35, 'Hallo Sans');
-    color: $white;
-    padding-bottom: 35px;
     text-align: center;
     text-transform: uppercase;
   }
@@ -26,6 +25,14 @@
   img {
     display: block;
     margin: 0 auto;
+  }
+
+  p {
+    @include font(30, 41, 'Open Sans');
+    font-style: italic;
+    font-weight: 600;
+    padding-bottom: 35px;
+    text-align: center;
   }
 }
 
@@ -38,13 +45,20 @@
 /* Nav and Region sections */
 .interaction__nav,
 .interaction__region {
+  color: $white;
   padding: 50px 20px;
+  text-align: center;
 
   h2 {
     @include font(34, 46, 'OpenSans');
-    color: $white;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  p {
+    @include font(24, 46, 'OpenSans');
+    font-style: italic;
     font-weight: 600;
     margin-bottom: 50px;
-    text-align: center;
   }
 }

@@ -1,11 +1,20 @@
 @mixin menuSvgColor ($bgColor: $black, $textColor: $white) {
   .menu__storymap__wrapper {
     svg {
+      &.fade {
+        opacity: 1;
+
+        .text, .arrow {
+          fill: $textColor;
+          opacity: 0.3;
+        }
+      }
+
       .background {
         fill: $bgColor;
       }
 
-      .text {
+      .text, .arrow {
         fill: $textColor;
       }
     }
@@ -20,7 +29,7 @@
   &__storymap, &__explore {
     &__wrapper {
       @include flex(row, normal, space-between);
-      background-image: url('/static/svg/button-background.svg');
+      background-image: url('/static/images/button-background.png');
       background-repeat: repeat;
       color: $white;
       height: 190px;
