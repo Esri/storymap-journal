@@ -79,12 +79,12 @@ server.listen(3000, error => {
       let mainWindow
 
       // Sentry.
-      if (process.env.REACT_APP_SENTRY_DSN) {
-        Sentry.init({ dsn: config.REACT_APP_SENTRY_DSN })
+      if (process.env.SENTRY_DSN) {
+        Sentry.init({ dsn: process.env.SENTRY_DSN })
       }
 
       function notifySentry (message, level, exception = false) {
-        if (dev !== true && process.env.REACT_APP_SENTRY_DSN) {
+        if (dev !== true && process.env.SENTRY_DSN) {
           Sentry.configureScope((scope) => {
             scope.setUser({ 'username': user })
             scope.setLevel(level)
