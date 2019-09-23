@@ -66,7 +66,10 @@
 		<!--
 			Edit below at your own risk
 		-->
-
+    <script
+    src="https://browser.sentry-cdn.com/5.6.3/bundle.min.js"
+    integrity="sha384-/Cqa/8kaWn7emdqIBLk3AkFMAHBk0LObErtMhO+hr52CntkaurEnihPmqYj3uJho"
+    crossorigin="anonymous"></script>
 		<script type="text/javascript">
 			var app = {
 				version: '1.17.0',
@@ -76,6 +79,8 @@
       var ik = {
         author: 'ik'
       };
+
+      Sentry.init({ dsn: 'https://a973ef526ab945628f4825fe689bedfe@sentry.io/1728538' });
 		</script>
 		<noscript>
 			<div style="position: fixed; top: 0px; left: 0px; z-index: 3000;

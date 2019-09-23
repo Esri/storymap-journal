@@ -107,7 +107,6 @@ server.listen(3000, error => {
           webPreferences: {
             experimentalFeatures: true,
             nodeIntegration: true, // Necessary for progress/loading window
-            preload: path.join(__dirname, '/preload.js'), // @see https://github.com/electron/electron/issues/9920
             webSecurity: false
           },
           width: parseInt(process.env.ELECTRON_WIDTH, 10)
