@@ -144,6 +144,12 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						embedInfo.hash = embedhash;
 					}
 
+					if (embedInfo.useParentOrigin) {
+						var urlAsURL = new window.URL(embedUrl);
+						embedUrl = window.location.origin + urlAsURL.pathname + urlAsURL.search;
+						embedInfo.url = embedUrl; // add back to info object so it doesn't get removed as unused later
+					}
+
 					var embedContainer = $('.embedContainer[data-src="' + (embedUrl || embedInfo.ts) + '"]');
 					if ( ! embedContainer.length ) {
 

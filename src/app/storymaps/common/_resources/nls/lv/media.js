@@ -6,7 +6,7 @@ define({
       "lblMap": "Karte",
       "lblImage": "Attēls",
       "lblVideo": "Video",
-      "lblExternal": "Web lapa",
+      "lblExternal": "Tīmekļa lapa",
       "lblUpload": "Augšupielāde",
       "lblLink": "Saite",
       "disabled": "Šo funkciju administrators ir atspējojis",
@@ -26,7 +26,7 @@ define({
     "imageSelectorUpload": {
       "lblUploadButton": "Pārlūkot attēlu",
       "lblDrop": "Nometiet attēlu šeit vai",
-      "infoUpload": "attēli tiks glabāti jūsu ArcGIS kontā un būs pieejami tikai jūsu stāstā.",
+      "infoUpload": "Attēli tiks glabāti jūsu ArcGIS kontā un būs pieejami tikai jūsu stāstā.",
       "warningFileTypes": "Attēla formāts var būt .jpg, .png, .gif vai .bmp",
       "warningOneFile": "Vienā reizē var augšupielādēt tikai vienu attēlu.",
       "warningFileSize": "Attēla izmērs nedrīkst pārsniegt 10 MB.",
@@ -70,10 +70,10 @@ define({
       "explain1": "Šajā karšu stāstā nevar atskaņot neapstrādātus video failus (piem., .avi un .mpeg), bet var atskaņot viesotus video ar iebūvētiem atskaņotājiem (piem., YouTube vai Vimeo).",
       "explain2": "Vairums viesošanas pakalpojumu piedāvā šo līdzekli. Atrodiet opciju video iegulšanai, nokopējiet norādīto kodu un pievienojiet to savam stāstam, izmantojot tīmekļa vietnes %WEBPAGE% satura opciju.",
       "explain3": "Varat arī pats viesot video kopā ar HTML lapu, kurā tiek izmantots video atskaņotājs, piemēram, %EXAMPLE%. Pēc tam jūs savam stāstam pievienosiet šīs HTML lapas URL kā %WEBPAGE%.",
-      "webpage": "Web lapa"
+      "webpage": "Tīmekļa lapa"
     },
     "webpageSelectorHome": {
-      "lblUrl": "Web lapas saite",
+      "lblUrl": "Tīmekļa lapas saite",
       "lblEmbed": "Iedarināt kodu",
       "lblMustUseHTTPS": "Saitēm uz tīmekļa saturu ir jāsākas ar HTTPS",
       "lblOR": "VAI",
@@ -85,7 +85,7 @@ define({
       "lblURL": "Attēla saite",
       "lblURLPH": "Saites beigās ir jābūt .jpg, .png, .gif vai .bmp",
       "lblURLPHHTTPS": "https://www.example.com/image.jpg",
-      "lblURLError": "Šķiet, ka šis attēls nav derīgs. Lūdzu, norādiet tiešu saiti uz attēla failu (parasti URL beidzas ar .jpg vai .png). Saites uz web lapu, kurā atrodas attēls, nedarbosies.",
+      "lblURLError": "Šķiet, ka šis attēls nav derīgs. Lūdzu, norādiet tiešu saiti uz attēla failu (parasti URL beidzas ar .jpg vai .png). Saites uz tīmekļa lapu, kurā atrodas attēls, nedarbosies.",
       "lblURLErrorHTTPS": "Šī attēla saite nav derīga. Vietrādim URL ir jāsākas ar HTTPS un jābeidzas ar atbalstītu attēla faila paplašinājumu (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Notiek attēla pārbaude...",
       "lblLabel": "Attēla paraksts",
@@ -109,7 +109,7 @@ define({
       "lblPosition3Explain2": "(platums vienmēr atbildīs panelim)",
       "lblPosition4Explain": "(var tikt izkropļots)",
       "unloadLbl": "Izlādēt, ja lasītājs pārvietojas uz citurieni",
-      "unloadHelp": "Ja web lapā ir audio vai video multivide, atzīmējiet šo iespēju, lai tā netiktu atskaņota brīdī, kad lasītājs naviģē tālāk. Noņemiet atzīmi, ja vēlaties, lai, piemēram, tiktu turpināta skaņu celiņa atskaņošana, kamēr lasītājs virzās uz priekšu stāstā.<br />Ja web lapa ir lietotne, noņemiet atzīmi pie šīs iespējas, lai stāsts netiktu ielādēts atkārtoti, kad lasītājs atgriežas šajā sadaļā.",
+      "unloadHelp": "Ja web lapā ir audio vai video multivide, atzīmējiet šo iespēju, lai tā netiktu atskaņota brīdī, kad lasītājs naviģē tālāk. Noņemiet atzīmi, ja vēlaties, lai, piemēram, tiktu turpināta skaņu celiņa atskaņošana, kamēr lasītājs virzās uz priekšu stāstā.<br />Ja tīmekļa lapa ir lietotne, noņemiet atzīmi pie šīs iespējas, lai stāsts netiktu ielādēts atkārtoti, kad lasītājs atgriežas šajā sadaļā.",
       "embedProtocolLabel": "Ielādēt lapu, izmantojot drošu savienojumu (HTTPS)",
       "embedProtocolWarning1": "Ja šī lapa jūsu stāstā neielādējas, to nevar iegult tīmekļa drošības iemeslu dēļ. Alternatīva iespēja — stāstījumā ievietojiet saiti, lai lapu atvērtu jaunā pārlūka cilnē.",
       "embedProtocolWarning2": "Ja šī lapa jūsu stāstā neielādējas, noņemiet atzīmi no šīs opcijas un mēģiniet vēlreiz. Ja lapa joprojām neielādējas, to nevar iegult tīmekļa drošības iemeslu dēļ. Alternatīva iespēja — stāstījumā ievietojiet saiti, lai lapu atvērtu jaunā pārlūka cilnē.",
@@ -131,7 +131,7 @@ define({
       "lblTitle": "Galvenā posma satura maiņa"
     },
     "editorInlineMedia": {
-      "lblTitle": "Attēla, video vai web lapas ievietošana"
+      "lblTitle": "Attēla, video vai tīmekļa lapas ievietošana"
     }
   }
 });

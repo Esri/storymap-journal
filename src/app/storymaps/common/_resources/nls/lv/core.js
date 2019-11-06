@@ -4,13 +4,13 @@ define({
       "add": "Pievienot",
       "edit": "Rediģēt",
       "save": "Saglabāt",
-      "next": "Nākamais",
+      "next": "Turpināt",
       "cancel": "Atcelt",
       "back": "Atpakaļ",
       "apply": "Lietot",
       "close": "Aizvērt",
       "open": "Atvērt",
-      "start": "Starts",
+      "start": "Sākt",
       "loading": "Ielādē",
       "disabledAdmin": "Šo funkciju administrators ir atspējojis",
       "width": "Platums",
@@ -54,14 +54,14 @@ define({
       "btnOk": "Rediģējiet stāsta nosaukumu"
     },
     "saveErrorSocial": {
-      "title": "Sociālās multivides kopīgošanas atjaunināšana",
-      "panel1": "Ir uzlabots jūsu stāsta izskats sociālajā multividē, bet jūsu ArcGIS Web lietotnes vienības virsraksts atšķiras no stāsta virsraksta.",
+      "title": "Atjaunināt sociālo mediju kopīgošanu",
+      "panel1": "Ir uzlabots jūsu stāsta izskats sociālajos medijos, bet jūsu ArcGIS tīmekļa lietotnes vienības virsraksts atšķiras no stāsta virsraksta.",
       "panel1tooltip": "Kad būsiet definējis virsrakstu, kopsavilkumu un sīktēla attēlu, jūsu stāsts izskatīsies šādi:",
-      "panel2": "Kādu virsrakstu vēlaties izmantot sociālajā multividē:",
+      "panel2": "Kādu virsrakstu vēlaties izmantot sociālajos medijos:",
       "panel2q1": "Stāsta virsraksts (ieteicams)",
       "panel2q1tooltip": "Ja izvēlēsieties šo opciju, vienības virsraksts tiks modificēts tā, lai atbilstu stāsta virsrakstam, un veidotājā tiks sinhronizētas tālākās izmaiņas.",
       "panel2q2": "Vienības virsraksts",
-      "panel3": "Ja sociālajā multividē vēlaties vēl vairāk uzlabot stāsta izskatu, izmantojiet ${MYSTORIES}, lai pievienotu kopsavilkumu un sīktēla attēlu.",
+      "panel3": "Ja sociālajos medijos vēlaties vēl vairāk uzlabot stāsta izskatu, izmantojiet ${MYSTORIES}, lai pievienotu kopsavilkumu un sīktēla attēlu.",
       "panel4": "Vairāk nerādīt brīdinājumus par šo stāstu"
     },
     "share": {
@@ -100,7 +100,7 @@ define({
       "title": "Izkārtojums",
       "explain": "Kādu izkārtojumu vēlaties izmantot?",
       "explainInit": "Varat mainīt izkārtojumu jebkurā laikā iestatījumu dialoglodziņā.",
-      "viewExample": "Skatiet piemēru tiešraidē"
+      "viewExample": "Skatīt piemēru"
     },
     "settingsTheme": {
       "title": "Tēma"

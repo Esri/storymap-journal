@@ -45,6 +45,7 @@ define({
 	"sv": 1,
 	"th": 1,
 	"tr": 1,
+	"uk": 1,
 	"vi": 1,
 	"zh-cn": 1,
 	"zh-hk": 1,

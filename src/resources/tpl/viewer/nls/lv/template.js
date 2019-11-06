@@ -38,8 +38,8 @@ define({
     "errors": {
       "boxTitle": "Kļūda",
       "invalidConfig": "Nederīga konfigurācija",
-      "invalidConfigNoApp": "Web kartēšanas aplikācijas identifikators nav norādīts šeit: index.html.",
-      "invalidConfigNoAppDev": "URL parametros nav norādīts web kartēšanas aplikācijas identifikators (?appid=). Izstrādes režīmā lapā index.html ir ignorēta appid konfigurācija.",
+      "invalidConfigNoApp": "Tīmekļa kartēšanas lietotnes identifikators nav norādīts šeit: index.html.",
+      "invalidConfigNoAppDev": "URL parametros nav norādīts tīmekļa kartēšanas lietotnes identifikators (?appid=). Izstrādes režīmā lapā index.html ir ignorēta appid konfigurācija.",
       "unspecifiedConfigOwner": "Autorizētais īpašnieks nav konfigurēts.",
       "invalidConfigOwner": "Stāsta īpašnieks nav autorizēts.",
       "createMap": "Nevar izveidot karti",
@@ -67,7 +67,7 @@ define({
       "clickForDetails": "Uzziniet vairāk",
       "swipeToExplore": "Pavelciet, lai izpētītu",
       "tapForMap": "Pieskarties, lai atgrieztos",
-      "clickForMap": "Atpakaļ"
+      "clickForMap": "ATPAKAĻ"
     },
     "floatLayout": {
       "scroll": "Ritināt"
@@ -104,11 +104,11 @@ define({
       "copy": "Kopēt",
       "copied": "Kopēts",
       "open": "Atvērt",
-      "embed": "Iegult web lapā",
+      "embed": "Iegult tīmekļa lapā",
       "embedExplain": "Izmantojiet šo HTML kodu, lai iegultu žurnālu web lapā.",
       "size": "Izmēri (platums/augstums):",
       "autoplayLabel": "Automātiskās demonstrēšanas režīms",
-      "autoplayExplain1": "Automātiskās demonstrēšanas režīms darbosies jūsu stāstā ar regulāriem intervāliem. Tas ir izcili piemērots rādīšanai stendos vai publiskās demonstrēšanas monitorā, bet ņemiet vērā, ka citās situācijās šis režīms var padarīt stāstu grūtāk izlasāmu. Šī funkcija netiek atbalstīta maza izmēra displejos.",
+      "autoplayExplain1": "Automātiskās demonstrēšanas režīms darbosies jūsu stāstā ar regulāriem intervāliem. Tas ir izcili piemērots demonstrēšanai stendos vai publiskās demonstrēšanas monitorā, bet ņemiet vērā, ka citās situācijās šis režīms var padarīt stāstu grūtāk izlasāmu. Šī funkcija netiek atbalstīta maza izmēra displejos.",
       "autoplayExplain2": "Pēc šī režīma aktivizēšanas ir pieejamas vadīklas stāsta demonstrēšanai/apturēšanai un navigācijas ātruma regulēšanai.",
       "linksupdated": "Saites ir atjauninātas.",
       "print": "Drukāt",

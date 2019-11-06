@@ -6,7 +6,7 @@ define({
       "lblMap": "맵",
       "lblImage": "이미지",
       "lblVideo": "동영상",
-      "lblExternal": "웹 페이지",
+      "lblExternal": "웹페이지",
       "lblUpload": "업로드",
       "lblLink": "링크",
       "disabled": "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
@@ -27,7 +27,7 @@ define({
       "lblUploadButton": "이미지 찾기",
       "lblDrop": "여기에 이미지를 드롭하거나",
       "infoUpload": "이미지가 ArcGIS에 저장되며 스토리 내에서만 접근할 수 있습니다.",
-      "warningFileTypes": "이미지는.jpg, .png, .gif 또는 .bmp 형식이 가능함",
+      "warningFileTypes": "이미지는.jpg, .png, .gif, .bmp 형식이 가능함",
       "warningOneFile": "한 번에 하나의 이미지만 업로드할 수 있습니다.",
       "warningFileSize": "이미지는 10MB 미만이어야 합니다.",
       "tooltipRemove": "ArcGIS 계정에서 사용하지 않은 이 이미지를 삭제하세요. <br> 나중에 사용하기로 결정한 경우 다시 업로드해야 합니다."
@@ -67,13 +67,13 @@ define({
       "url": "Vimeo 비디오 링크"
     },
     "videoSelectorOther": {
-      "explain1": "이 스토리 맵은 비디오 파일(예: avi, mpeg)을 재생할 수 없지만 YouTube 또는 Vimeo와 같은 빌트인 플레이어를 통해 호스팅 비디오를 재생할 수 있습니다.",
+      "explain1": "이 스토리맵은 비디오 파일(예: avi, mpeg)을 재생할 수 없지만 YouTube 또는 Vimeo와 같은 빌트인 플레이어를 통해 호스팅 비디오를 재생할 수 있습니다.",
       "explain2": "대부분의 비디오 호스팅 서비스는 이 기능을 제공합니다. 비디오를 임베드하는 옵션을 찾고 제공된 코드를 복사하고 %WEBPAGE% 콘텐츠 옵션을 사용하여 스토리에 추가합니다.",
       "explain3": "또는 %EXAMPLE% 등의 비디오 플레이어를 사용하는 HTML 페이지로 비디오를 호스팅할 수 있습니다. 그런 다음 %WEBPAGE%로 스토리에 해당 HTML 페이지의 URL을 추가합니다.",
-      "webpage": "웹 페이지"
+      "webpage": "웹페이지"
     },
     "webpageSelectorHome": {
-      "lblUrl": "웹 페이지 링크",
+      "lblUrl": "웹페이지 링크",
       "lblEmbed": "코드 포함",
       "lblMustUseHTTPS": "웹 콘텐츠에 대한 링크는 HTTPS로 시작해야 함",
       "lblOR": "또는",
@@ -83,9 +83,9 @@ define({
     },
     "mediaConfigure": {
       "lblURL": "이미지 링크",
-      "lblURLPH": "링크는.jpg, .png, .gif 또는 .bmp 형식이어야 함",
+      "lblURLPH": "링크는.jpg, .png, .gif, .bmp 형식이어야 함",
       "lblURLPHHTTPS": "https://www.example.com/image.jpg",
-      "lblURLError": "이 이미지는 올바른 것 같지 않습니다. 이미지 파일(URL이 대개 .jpg 또는 .png로 끝남)에 대한 직접 링크를 지정하세요. 이미지를 포함하는 웹 페이지 링크는 작동하지 않습니다.",
+      "lblURLError": "이 이미지는 올바른 것 같지 않습니다. 이미지 파일(URL이 대개 .jpg 또는 .png로 끝남)에 대한 직접 링크를 지정하세요. 이미지를 포함하는 웹페이지 링크는 작동하지 않습니다.",
       "lblURLErrorHTTPS": "이 이미지 링크는 올바르지 않습니다. URL은 HTTPS로 시작해야 하며 지원되는 이미지 파일 확장자(.jpg, .png, .gif, .bmp)로 끝나야 합니다.",
       "lblURLCheck": "이미지 확인 중...",
       "lblLabel": "이미지 캡션",
@@ -109,7 +109,7 @@ define({
       "lblPosition3Explain2": "(너비는 항상 패널에 맞춤)",
       "lblPosition4Explain": "(왜곡될 수 있음)",
       "unloadLbl": "독자가 다른 위치를 탐색할 때 언로드",
-      "unloadHelp": "웹 페이지에 오디오 또는 비디오 미디어가 있는 경우 이 옵션을 선택 상태로 유지하여 독자가 다른 위치를 탐색할 때 콘텐츠가 재생되는 것을 방지할 수 있습니다. 독자가 스토리를 진행할 때 사운드 트랙이 재생되도록 하려는 등의 경우에는 옵션을 선택 취소합니다.<br />웹 페이지가 응용프로그램인 경우 독자가 돌아왔을 때 스토리를 다시 불러오지 않도록 이 옵션을 선택 취소합니다.",
+      "unloadHelp": "웹페이지에 오디오 또는 비디오 미디어가 있는 경우 이 옵션을 선택 상태로 유지하여 독자가 다른 위치를 탐색할 때 콘텐츠가 재생되는 것을 방지할 수 있습니다. 독자가 스토리를 진행할 때 사운드 트랙이 재생되도록 하려는 등의 경우에는 옵션을 선택 취소합니다.<br />웹페이지가 응용프로그램인 경우 독자가 돌아왔을 때 스토리를 다시 불러오지 않도록 이 옵션을 선택 취소합니다.",
       "embedProtocolLabel": "보안 연결(HTTPS)을 통해 페이지 불러오기",
       "embedProtocolWarning1": "스토리에서 이 페이지를 불러오지 않는 경우 웹 보안상의 이유로 임베드되지 않을 수 있습니다. 대신 이야기에 링크를 추가하여 새 브라우저 탭에서 페이지를 열 수 있습니다.",
       "embedProtocolWarning2": "스토리에서 이 페이지를 불러오지 않는 경우 이 옵션을 선택 취소하고 다시 시도하세요. 해당 페이지를 여전히 불러올 수 없다면 웹 보안상의 이유로 임베드되지 않을 수 있습니다. 대신 이야기에 링크를 추가하여 새 브라우저 탭에서 페이지를 열 수 있습니다.",
@@ -120,7 +120,7 @@ define({
     },
     "editorActionGeocode": {
       "lblTitle": "주소 또는 장소 찾기",
-      "mapMarkerExplain": "링크를 클릭하면 맵 표식이 표시됩니다."
+      "mapMarkerExplain": "링크를 클릭하면 맵 마커가 표시됩니다."
     },
     "editorActions": {
       "navigate": "다른 섹션으로 이동",
@@ -131,7 +131,7 @@ define({
       "lblTitle": "기본 단계 콘텐츠 변경"
     },
     "editorInlineMedia": {
-      "lblTitle": "이미지, 비디오 또는 웹 페이지 삽입"
+      "lblTitle": "이미지, 비디오 또는 웹페이지 삽입"
     }
   }
 });

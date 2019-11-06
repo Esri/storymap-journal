@@ -61,8 +61,8 @@ define({
       "mainStageDisabled": "Akce příběhu jsou vypnuty, pokud je editor maximalizován."
     },
     "organizePopup": {
-      "title": "Organizovat",
-      "lblHeader": "Zorganizujte svůj příběh kliknutím a přetažením jeho částí.",
+      "title": "Uspořádat",
+      "lblHeader": "Uspořádejte svůj příběh kliknutím a přetažením jeho částí.",
       "lblColTitle": "Nadpis",
       "lblColPubDate": "Datum zveřejnění",
       "lblColStatus": "Stav",
@@ -82,7 +82,7 @@ define({
       "lblHelp": "Nápověda",
       "lblAdd": "Přidat část",
       "lblSettings": "Nastavení",
-      "lblOrga": "Zorganizovat obsah",
+      "lblOrga": "Uspořádat obsah",
       "lblEdit": "Úpravy",
       "lblPublish": "Sdílet",
       "lblTips": "Tipy",
@@ -92,7 +92,7 @@ define({
       "content1Div2": "Přidáváním částí si můžete obsah mapy přizpůsobit podle svých představ. Stejně jako čtenáři procházejí text %LAYOUT_TITLE%, mapa na hlavní úrovni se může posouvat nebo přibližovat na klíčové body, nebo se mohou automaticky aktivovat nové mapy a obrázky zdůrazňující vaši zprávu.",
       "content2Div1": "V dialogovém okně Nastavení můžete upravit vzhled %TPL_NAME%. Můžete zde měnit rozvržení, barevné schéma, písmo atd.",
       "content2Div2": "Můžete také nahradit logo Esri logem své vlastní značky. Dále můžete určit webové stránky s dalšími informacemi, na které bude čtenář přesměrován po kliknutí na logo.",
-      "content3Div1": "Váš obsah je rozdělen do částí. Můžete jich mít libovolný počet (berte je jako malé kapitoly). Je důležité, jak kapitoly plynou za sebou, a proto je v části Organizovat můžete libovolně přeřazovat a odstraňovat.",
+      "content3Div1": "Váš obsah je rozdělen do částí. Můžete jich mít libovolný počet (berte je jako malé kapitoly). Je důležité, jak kapitoly plynou za sebou, a proto je v části Uspořádat můžete libovolně přeřazovat a odstraňovat.",
       "content4Div1": "Našli jste chybu nebo chcete změnit svůj materiál? Žádný problém. Hledejte v aplikaci ikonu úprav, která vám umožní změnit obsah. Funkce úprav použijete při vytváření %TPL_NAME% mnohokrát!",
       "content5Div1": "Šablona %TPL_NAME% se poprvé uloží v soukromém režimu. Chcete-li ji sdílet s ostatními, použijte tlačítko Sdílení. Šablonu %TPL_NAME% můžete sdílet s veřejností.",
       "content5Div2": "V závislosti na vašem účtu můžete mít k dispozici možnost sdílet šablonu %TPL_NAME% pouze se členy vaší organizace.",

@@ -103,7 +103,7 @@ define({
       "viewExample": "Live-Beispiel anzeigen"
     },
     "settingsTheme": {
-      "title": "Thema"
+      "title": "Design"
     },
     "settingsHeader": {
       "title": "Kopfzeile",

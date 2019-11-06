@@ -33,8 +33,8 @@ define({
       "tooltipRemove": "Ištrinkite šį nenaudojamą atvaizdą iš savo ArcGIS paskyros. <br> (Jei vėliau nuspręsite jį naudoti, turėsite įkelti dar kartą.)"
     },
     "imageSelectorFlickr": {
-      "userInputLbl": "Vartotojo vardas",
-      "signInMsg2": "Vartotojas nerastas",
+      "userInputLbl": "Naudotojo vardas",
+      "signInMsg2": "Naudotojas nerastas",
       "loadingFailed": "Įkelti nepavyko"
     },
     "imageSelectorPicasa": {
@@ -54,10 +54,10 @@ define({
     },
     "videoSelectorYoutube": {
       "url": "Youtube vaizdo įrašo nuoroda",
-      "pageInputLbl": "Vartotojo vardas",
-      "lookupMsgError": "Vartotojas nerastas",
-      "howToFind": "Kaip rasti YouTube vartotojo vardą",
-      "howToFind2": "Vartotojo vardas rodomas po vaizdo įrašo",
+      "pageInputLbl": "Naudotojo vardas",
+      "lookupMsgError": "Naudotojas nerastas",
+      "howToFind": "Kaip rasti YouTube naudotojo vardą",
+      "howToFind2": "Naudotojo vardas rodomas po vaizdo įrašo",
       "found": "Rasta",
       "noData": "Nerasta viešų vaizdo įrašų",
       "videoNotChecked": "Vaizdo įrašas nebuvo patikrintas „YouTube“, bet jo adresas atrodo tinkamas.",
@@ -120,7 +120,7 @@ define({
     },
     "editorActionGeocode": {
       "lblTitle": "Raskite adresą arba vietą",
-      "mapMarkerExplain": "Spustelėjęs nuorodą, vartotojas matys žemėlapio žymeklį"
+      "mapMarkerExplain": "Spustelėjęs nuorodą, naudotojas matys žemėlapio žymeklį"
     },
     "editorActions": {
       "navigate": "Eiti į kitą skiltį",
