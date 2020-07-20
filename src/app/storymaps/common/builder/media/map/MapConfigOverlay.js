@@ -242,11 +242,12 @@ define(["lib-build/tpl!./MapConfigOverlay",
 		function onClickResetLayerWebmap()
 		{
 			$.each(_layersInitial, function(i, layer){
+				var defaultVis = layer.visibility === undefined ? true : layer.visibility;
 				if ( layer.layerObject )
-					layer.layerObject.setVisibility(layer.visibility);
+					layer.layerObject.setVisibility(defaultVis);
 				else if ( layer.featureCollection ){
 					$.each(layer.featureCollection.layers, function(i, l){
-						l.layerObject.setVisibility(layer.visibility);
+						l.layerObject.setVisibility(defaultVis);
 					});
 				}
 			});
@@ -287,7 +288,7 @@ define(["lib-build/tpl!./MapConfigOverlay",
 			$.each(_layersInitial, function(i, layer){
 				var layerObject = layer.layerObject || (layer.featureCollection ? layer.featureCollection.layers[0].layerObject : null),
 					overrideAtOpening = $(_layersOpening).filter(function(i, l){ return l.id == layerObject.id; }),
-					newVisibility = overrideAtOpening.length ? overrideAtOpening[0].visibility : layer.visibility;
+					newVisibility = overrideAtOpening.length ? overrideAtOpening[0].visibility : (layer.visibility === undefined ? true : layer.visibility);
 
 				if ( layer.layerObject )
 					layerObject.setVisibility(newVisibility);

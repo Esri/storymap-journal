@@ -389,8 +389,9 @@ define(["dojo/topic",
 							// The visibility is set to the section definition when defined or to the webmap initial visibility
 							$.each(mapDefault, function(i, layer){
 								var layerObject = layer.layerObject || (layer.featureCollection ? layer.featureCollection.layers[0].layerObject : null),
-									override = $(sectionDefault).filter(function(i, l){ return l.id == layerObject.id; });
-								layerObject.setVisibility(override.length ? override[0].visibility : layer.visibility);
+									override = $(sectionDefault).filter(function(i, l){ return l.id == layerObject.id; }),
+									newViz = override.length ? override[0].visibility : (layer.visibility === undefined ? true : layer.visibility);
+								layerObject.setVisibility(newViz);
 							});
 						}
 					}

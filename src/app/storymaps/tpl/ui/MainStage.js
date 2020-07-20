@@ -601,10 +601,12 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 
 						if ( layer.layerObject) {
 							override = $(layerCfg).filter(function(i, l){ return l.id == layer.layerObject.id; });
+							// necessary because 4x mapviewer doesn't return parent layer visibility by default :/
+							var layerViz = layer.visibility === undefined ? true : layer.visibility;
 
 							var updateVisibility = function()
 							{
-								layer.layerObject.setVisibility(override.length ? override[0].visibility : layer.visibility);
+								layer.layerObject.setVisibility(override.length ? override[0].visibility : layerViz);
 							};
 
 							if ( layer.layerObject.loaded )
@@ -620,7 +622,8 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 									// Should change that and keep V1.0 compatibility
 									return l.id.split('_').slice(0,-1).join('_') == fcLayer.layerObject.id.split('_').slice(0,-1).join('_');
 								});
-								fcLayer.layerObject.setVisibility(override.length ? override[0].visibility : fcLayer.visibility);
+								var fcLayerViz = fcLayer.visibility === undefined ? true : fcLayer.visibility;
+								fcLayer.layerObject.setVisibility(override.length ? override[0].visibility : fcLayerViz);
 							});
 						}
 					});

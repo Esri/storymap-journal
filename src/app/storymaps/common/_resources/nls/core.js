@@ -164,6 +164,9 @@ define({
 			},
 			licenseChange2018: {
 				noAccess: "Your account (%USER_NAME%) is not licensed to open a Story Map that is not public.  Please ask your organization administrator to assign you a user type that includes Story Maps or an add-on Essential Apps license."
+			},
+			storyTellerUserType: {
+				notCreatorError: 'Your account (%USER_NAME%) is not licensed to use classic story map builders. Please ask your organization administrator to assign you a Creator user type.'
 			}
 		}
 	}),
@@ -179,7 +182,6 @@ define({
 	"fi": 1,
 	"fr": 1,
 	"he": 1,
-	"hi": 1,
 	"hr": 1,
 	"hu": 1,
 	"id": 1,

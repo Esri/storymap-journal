@@ -345,7 +345,11 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 							if (identityResponse && identityResponse.code && identityResponse.code === "IdentityManagerBase.1") {
 								initError("notAuthorizedBuilder");
 								return;
-							}else {
+							} else if(identityResponse.viewOnly){
+								// Storyteller user type
+								initError("viewOnlyLicense");
+								return;
+							} else {
 								initializeUI();
 								_mainView.startFromScratch();
 								appInitComplete();
@@ -403,11 +407,16 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 						portalUrl: 'https:' + app.indexCfg.sharingurl.split('/sharing')[0],
 						popup: true
 					});
+					
 					IdentityManager.registerOAuthInfos([oAuthInfo]);
-					if(response.item.access !== "public") {
+					if(response.item.access !== "public" || app.isInBuilder) {
 						IdentityManager.checkAppAccess('https:' + app.indexCfg.sharingurl, 'storymaps').then(function(identityResponse){
 							if (identityResponse && identityResponse.code && identityResponse.code === "IdentityManagerBase.1") {
 								initError("notAuthorizedLicense");
+								return;
+							} else if(app.isInBuilder && identityResponse.viewOnly){
+								// Storyteller user type
+								initError("viewOnlyLicense");
 								return;
 							} else {
 								loadWebMappingAppStep3(response);
@@ -419,6 +428,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 						});
 					} else {
 						loadWebMappingAppStep3(response);
+						return;
 					}
 				},
 				function(error)
@@ -719,6 +729,9 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 			if ( error == "notAuthorizedLicense" ) {
 				errorMsg = i18n.commonCore.licenseChange2018.noAccess;
+				errorMsg = errorMsg.replace(/%USER_NAME%/g, CommonHelper.getPortalUser() ? CommonHelper.getPortalUser() : '');
+			} else if (error == "viewOnlyLicense") {
+				errorMsg = i18n.commonCore.storyTellerUserType.notCreatorError;
 				errorMsg = errorMsg.replace(/%USER_NAME%/g, CommonHelper.getPortalUser() ? CommonHelper.getPortalUser() : '');
 			} else {
 				errorMsg = errorMsg.replace(/%TPL_NAME%/g, app.cfg.TPL_NAME);
