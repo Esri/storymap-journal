@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Su cuenta (%USER_NAME%) no tiene licencia para abrir un story map que no sea público.  Pídale al administrador de su organización que le asigne un tipo de usuario que incluya Story Maps o una licencia complementaria de aplicaciones esenciales."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Su cuenta (%USER_NAME%) no tiene licencia para usar builders de story maps clásicos. Pídale al administrador de su organización que le asigne un tipo de usuario Creator."
     }
   }
 });

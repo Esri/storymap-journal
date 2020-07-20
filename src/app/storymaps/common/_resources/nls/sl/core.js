@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Vaš račun (%USER_NAME%) ni licenciran za odpiranje Karte z zgodbo, ki ni javna. Prosite administratorja v vaši organizaciji, da vam dodeli vrsto uporabnika, ki vsebuje aplikacije Karto z zgodbo ali licenco za dodatne aplikacije Essential Apps."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Vaš račun (%UPORABNIŠKO_IME%) nima licence za uporabo graditeljev klasičnih kart z zgodbo. Prosite skrbnika svoje organizacije, da vam dodeli vrsto uporabnika Ustvarjalec."
     }
   }
 });

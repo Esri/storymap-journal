@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Contul dvs. (%USER_NAME%) nu este licențiat să deschidă o hartă informativă care nu este publică. Solicitați-i administratorului organizației să vă aloce un tip de utilizator care include hărți informative sau o licență pentru aplicații esențiale de completare."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Contul dvs. (%USER_NAME%) nu are licența necesară pentru utilizarea aplicațiilor de creare a hărților informative clasice. Solicitați-i administratorului organizației dvs. să vă aloce un tip de utilizator Creator."
     }
   }
 });

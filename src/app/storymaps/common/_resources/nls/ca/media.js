@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Carrega la pàgina a través d'una connexió segura (HTTPS)",
       "embedProtocolWarning1": "Si aquesta pàgina no es carrega a la vostra història, significa que no es pot incrustar per motius de seguretat web. Com a alternativa, afegiu un enllaç a la vostra narració per obrir la pàgina en una nova pestanya del navegador.",
       "embedProtocolWarning2": "Si aquesta pàgina no es carrega a la vostra història, deshabiliteu aquesta opció i torneu-ho a provar. Si la pàgina segueix sense carregar-se, significa que no es pot integrar per motius de seguretat web. Com a alternativa, afegiu un enllaç a la vostra narració per obrir la pàgina en una nova pestanya del navegador.",
+      "useParentOriginLabel": "Permeteu que els membres d'altres organitzacions tinguin accés a aquest contingut.",
+      "useParentOriginTooltip": "Activeu aquesta opció només si la pàgina web és una aplicació web d'ArcGIS compartida amb membres d'altres organitzacions. La vostra organització ha de tenir activada l'opció per iniciar sessió en altres organitzacions.",
       "learn": "Més informació",
       "lblAltText": "Text alternatiu",
       "placeholderAltText": "Introduïu una descripció d'aquest contingut multimèdia per als lectors amb dificultats visuals...",

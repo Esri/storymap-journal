@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Az Ön fiókjának (%USER_NAME%) licence nem teszi lehetővé a nem nyilvános story map megnyitását.  Igényelje a szervezete adminisztrátorától, hogy rendeljen Önhöz olyan felhasználótípust, amely tartalmazza a story map-eket, vagy egy kiegészítő story map-ekre vonatkozó licencet."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Az Ön fiókjának (%USER_NAME%) licence nem teszi lehetővé a klasszikus story map szerkesztők használatát. Kérje meg a szervezete adminisztrátorát, hogy rendeljen Önhöz Készítő felhasználótípust."
     }
   }
 });

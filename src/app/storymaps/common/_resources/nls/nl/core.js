@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Uw account  (%USER_NAME%) heeft geen licentie om een Story Map te openen die niet openbaar is. Vraag uw organisatiebeheerder om u een gebruikerstype toe te wijzen die Sory Maps of een add-on Essential Apps-licentie bevat."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Uw account (%USER_NAME%) heeft geen licentie om Classic Story Map Builders te gebruiken. Vraag uw organisatiebeheerder om u een Ontwikkelaar user type toe te wijzen."
     }
   }
 });

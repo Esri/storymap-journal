@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Wczytywanie strony przez bezpieczne połączenie (HTTPS)",
       "embedProtocolWarning1": "Jeśli ta strona nie jest wczytywana w narracji, nie można jej osadzać ze względów bezpieczeństwa internetowego. Alternatywnie można dodać łącze w narracji umożliwiające otwarcie tej strony na nowej karcie przeglądarki.",
       "embedProtocolWarning2": "Jeśli ta strona nie jest wczytywana w narracji, wyłącz zaznaczenie tej opcji i spróbuj ponownie. Jeśli ta strona nadal nie jest wczytywana, nie można jej osadzać ze względów bezpieczeństwa internetowego. Alternatywnie można dodać łącze w narracji umożliwiające otwarcie tej strony na nowej karcie przeglądarki.",
+      "useParentOriginLabel": "Zezwól członkom innych instytucji na uzyskiwanie dostępu do tych zasobów.",
+      "useParentOriginTooltip": "Tę opcję można włączyć tylko wtedy, gdy strona internetowa jest aplikacją internetową ArcGIS udostępnioną członkom innych instytucji. Twoja instytucja musi mieć włączoną opcję logowania się do innych instytucji.",
       "learn": "Dowiedz się więcej",
       "lblAltText": "Tekst alternatywny",
       "placeholderAltText": "Wprowadź opis tego medium dla odbiorców niedowidzących...",

@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Vaš nalog (%USER_NAME%) nema licencu za korišćenje Story mapa koje nisu javne. Zatražite od administratora organizacije da vam dodeli onaj tip korisnika koji uključuje Story mape ili licencu za dodatne osnovne aplikacije."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Vaš nalog (%USER_NAME%) nema licencu za korišćenje preglednika mape. Zatražite od administratora organizacije da vam dodeli dodatni tip korisnika Kreator."
     }
   }
 });

@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Lehe laadimine turvalise ühenduse (HTTPS) kaudu",
       "embedProtocolWarning1": "Kui seda lehte Teie loos ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas.",
       "embedProtocolWarning2": "Kui seda lehte Teie loos ei laadita, tühjendage see valik ja proovige uuesti. Kui lehte ikkagi ei laadita, ei saa seda veebilehe turvalisusega seotud põhjustel manustada. Teise võimalusena saate oma loole lisada lingi, et avada leht uues brauseriaknas.",
+      "useParentOriginLabel": "Luba muude organisatsioonide liikmetele juurdepääs sellele sisule.",
+      "useParentOriginTooltip": "Lubage see valik ainult juhul, kui see veebileht on muude organisatsioonide liikmetega ühiskasutatav ArcGISi veebirakendus. Teie organisatsioonil peab olema lubatud muudesse organisatsioonidesse sisselogimise valik.",
       "learn": "Lisateave",
       "lblAltText": "Alternatiivne tekst",
       "placeholderAltText": "Sisestage selle meediasisu kirjeldus nägemispuudega lugejate jaoks...",

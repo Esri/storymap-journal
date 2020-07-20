@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Tài khoản của bạn (%USER_NAME%) không được cấp phép để mở ứng dụng Story Map mà không được chia sẻ công khai. Vui lòng yêu cầu quản trị viên của tổ chức bạn gán cho bạn loại người dùng nào có bao gồm việc sử dụng Story Maps hoặc có giấy phép sử dụng các ứng dụng thiết yếu bổ trợ."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Tài khoản của bạn (%USER_NAME%) không được cấp phép để sử dụng các trình dựng bản đồ câu chuyện cổ điển. Vui lòng yêu cầu quản trị viên của tổ chức chỉ định cho bạn loại người dùng là Creator."
     }
   }
 });

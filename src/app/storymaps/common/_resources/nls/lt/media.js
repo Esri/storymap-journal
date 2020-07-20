@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Įkelkite puslapį naudodami saugų ryšį (HTTPS)",
       "embedProtocolWarning1": "Jei šis puslapis jūsų pasakojime neįkeliamas, tai yra daroma saugumo sumetimais. Kaip alternatyvą, pridėkite nuorodą savo pasakojime, kad atidarytumėte puslapį naujame naršyklės skirtuke.",
       "embedProtocolWarning2": "Jei šis puslapis jūsų pasakojime neįkeliamas, atžymėkite šią parinktį ir bandykite dar kartą. Jei puslapis vis tiek neįkeliamas, tai yra daroma saugumo sumetimais. Kaip alternatyvą, pridėkite nuorodą savo pasakojime, kad atidarytumėte puslapį naujame naršyklės skirtuke.",
+      "useParentOriginLabel": "Leisti kitų organizacijų nariams pasiekti šį turinį.",
+      "useParentOriginTooltip": "Šią parinktį įjunkite tik jei internetinis puslapis yra ArcGIS internetinė aplikacija, bendrinama su kitų organizacijų nariais. Jūsų organizacijoje turi būti įjungta parinktis, leidžianti prisijungti prie kitų organizacijų.",
       "learn": "Sužinokite daugiau",
       "lblAltText": "Alternatyvus tekstas",
       "placeholderAltText": "Įveskite šios medijos aprašą, skirtą skaitytojams su regos sutrikimais...",

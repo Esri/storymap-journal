@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Last inn scenen med en sikker tilkobling (HTTPS)",
       "embedProtocolWarning1": "Hvis denne siden ikke lastes inn i historien, kan den ikke bygges inn av hensyn til nettsikkerheten. Du kan eventuelt legge til en kobling i fortellingen som åpner siden i en ny fane i nettleseren.",
       "embedProtocolWarning2": "Hvis denne siden ikke lastes inn i historien, fjerner du merket for dette alternativet og prøver på nytt. Hvis den fremdeles ikke lastes inn, kan den ikke bygges inn av hensyn til nettsikkerheten. Du kan eventuelt legge til en kobling i fortellingen som åpner siden i en ny fane i nettleseren.",
+      "useParentOriginLabel": "La medlemmer i andre organisasjoner få tilgang til dette innholdet.",
+      "useParentOriginTooltip": "Aktiver dette alternativet bare hvis websiden er en ArcGIS-webapplikasjon som deles med medlemmer i andre organisasjoner. Organisasjonen din må ha alternativet for å logge på hos andre organisasjoner aktivert.",
       "learn": "Mer informasjon",
       "lblAltText": "Alternativ tekst",
       "placeholderAltText": "Angi en beskrivelse av dette mediet for brukere med nedsatt syn...",

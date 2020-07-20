@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Ditt konto (%USER_NAME%) har ingen licens för att öppna en Story Map som inte är tillgänglig för allmänheten. Be din organisations administratör att tilldela dig en användartyp som omfattar Story Maps eller en tilläggslicens för Essential Apps."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Ditt konto (%USER_NAME%) har ingen licens för att använda klassiska Story Maps-builder. Be organisationens administratör att tilldela dig en Creator-användartyp."
     }
   }
 });

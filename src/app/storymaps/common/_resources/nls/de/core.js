@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Ihr Konto (%USER_NAME%) ist nicht dafür lizenziert, eine nicht öffentliche Story-Map zu öffnen. Bitten Sie den Administrator der Organisation, Ihnen einen Benutzertyp mit Story-Maps oder eine Add-On-Lizenz für Essential Apps zuzuweisen."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Ihr Konto (%USER_NAME%) ist nicht für die Verwendung klassischer Story-Map-Builder lizenziert. Bitten Sie den Administrator Ihrer Organisation, Ihnen einen Creator-Benutzertyp zuzuweisen."
     }
   }
 });

@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Muat halaman melalui koneksi aman (HTTPS)",
       "embedProtocolWarning1": "Jika halaman ini tidak dimuat dalam cerita Anda, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru.",
       "embedProtocolWarning2": "Jika halaman ini tidak dimuat dalam cerita Anda, batalkan centang opsi ini dan coba lagi. Jika halaman tetap tidak dimuat, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru.",
+      "useParentOriginLabel": "Izinkan anggota organisasi lain untuk mengakses konten ini.",
+      "useParentOriginTooltip": "Hanya izinkan opsi ini jika halaman web merupakan aplikasi web ArcGIS yang dibagikan kepada anggota organisasi lain. Organisasi Anda harus mengizinkan opsi untuk masuk ke organisasi lain.",
       "learn": "Pelajari selengkapnya",
       "lblAltText": "Teks Alternatif",
       "placeholderAltText": "Masukkan deskripsi media ini untuk pembaca tunanetra...",

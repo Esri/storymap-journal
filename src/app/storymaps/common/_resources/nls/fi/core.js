@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Tiliäsi (%USER_NAME%) ei ole lisensoitu avaamaan tarinakarttaa, joka ei ole julkinen. Pyydä organisaatiosi pääkäyttäjää määrittämään sinulle käyttäjätyyppi, joka sisältää tarinakartat tai keskeisten sovellusten lisäosan lisenssin."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Tiliäsi (%USER_NAME%) ei ole lisensoitu käyttämään perinteisiä tarinakarttojen luontitoimintoja. Pyydä organisaatiosi pääkäyttäjää määrittämään sinulle Creator-käyttäjätyyppi."
     }
   }
 });

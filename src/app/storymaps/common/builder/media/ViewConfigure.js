@@ -156,17 +156,16 @@ define(["lib-build/css!./ViewConfigure",
 
 				if (_mediaType == 'webpage') {
 					var builderIsHTTPS = location.protocol == 'https:';
-					var embedIsHTTPS;
+					var webpageUrl = media[media.type].url || $(media[media.type].frameTag).attr('src');
 
-					if (media[media.type].url) {
-						embedIsHTTPS = media[media.type].url.match(/https:\/\//);
-					}
-					else {
-						embedIsHTTPS = $(media[media.type].frameTag).attr('src').match(/https:\/\//);
-					}
+					var embedIsHTTPS = webpageUrl.match(/https:\/\//);
+					var embedIsArcGIS = checkIfEmbedIsArcGIS(media[media.type].url);
+					var useParentOrigin = embedIsArcGIS ? media[media.type].useParentOrigin : false;
 
 					container.find(".embedProtocol").find('label').toggleClass('disabled', builderIsHTTPS);
 					container.find(".embedProtocolSecure").prop('checked', embedIsHTTPS);
+					container.find(".useParentOrigin").toggleClass('hidden', !embedIsArcGIS);
+					container.find(".useParentOriginEnabled").prop('checked', useParentOrigin);
 				}
 
 				container.find(".embedProtocol").toggle(_mediaType == 'webpage');
@@ -257,38 +256,47 @@ define(["lib-build/css!./ViewConfigure",
 					}
 				}
 
-				if ( _mediaType == "webpage" )
+				if ( _mediaType == "webpage" ) {
+					var webpageUrl;
 					data.unload = container.find(".navigateOutUnload").prop('checked');
 
-				if ( _mediaType == "webpage" && _media.webpage.frameTag ) {
-					var frameTag = data.url;
-					var node = $(frameTag);
+					if (_media.webpage.frameTag) {
+						var frameTag = data.url;
+						var node = $(frameTag);
 
-					if (container.find(".embedProtocolSecure").prop('checked')) {
-						node.attr('src', CommonHelper.convertURLHTTPS(node.attr('src')));
-					}
-					else {
-						node.attr('src', CommonHelper.convertURLHTTP(node.attr('src')));
-					}
+						if (container.find(".embedProtocolSecure").prop('checked')) {
+							node.attr('src', CommonHelper.convertURLHTTPS(node.attr('src')));
+						}
+						else {
+							node.attr('src', CommonHelper.convertURLHTTP(node.attr('src')));
+						}
+						webpageUrl = node.attr('src');
 
-					data.frameTag = node.prop('outerHTML').replace(/ xmlns="[^"]*"/, '');
-					data.url = '';
-					data.ts = new Date().getTime();
-				}
-				else if ( _mediaType == "webpage" ) {
-					if (container.find(".embedProtocolSecure").prop('checked')) {
-						data.url = CommonHelper.convertURLHTTPS(data.url);
+						data.frameTag = node.prop('outerHTML').replace(/ xmlns="[^"]*"/, '');
+						data.url = '';
+						data.ts = new Date().getTime();
+					} else {
+						if (container.find(".embedProtocolSecure").prop('checked')) {
+							data.url = CommonHelper.convertURLHTTPS(data.url);
+						}
+						else {
+							data.url = CommonHelper.convertURLHTTP(data.url);
+						}
+						webpageUrl = data.url;
 					}
-					else {
-						data.url = CommonHelper.convertURLHTTP(data.url);
+					if (checkIfEmbedIsArcGIS(webpageUrl)) {
+						data.useParentOrigin = container.find('.useParentOriginEnabled').prop('checked');
 					}
-				}
-				else {
+				} else {
 					data.url = CommonHelper.prependURLHTTP(data.url);
 				}
 
 				return data;
 			};
+
+			function checkIfEmbedIsArcGIS(url) {
+				return url && url.match && url.match(/arcgis\.com/);
+			}
 
 			/*
 			function fillImageInformation(url, cfg)
@@ -399,7 +407,7 @@ define(["lib-build/css!./ViewConfigure",
 					container: container
 				});
 
-				container.find('.maximizeHelp, .unloadHelp, .configureHelp, .protocolHelp, .altTextHelp').tooltip({
+				container.find('.maximizeHelp, .unloadHelp, .configureHelp, .protocolHelp, .useParentOriginHelp, .altTextHelp').tooltip({
 					html: true,
 					trigger: 'hover',
 					container: container

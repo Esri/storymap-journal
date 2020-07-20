@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Twoje konto (%USER_NAME%) nie jest licencjonowane do otwierania mapy narracyjnej, która nie jest publiczna. Poproś administratora instytucji o przypisanie typu użytkownika, który obejmuje licencję na mapy narracyjne lub licencję na kluczowe aplikacje dodatkowe."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Twoje konto (%USER_NAME%) nie ma licencji na użytkowanie kreatorów klasycznych map narracyjnych. Poproś administratora instytucji o przypisanie Tobie typu użytkownika Creator (Twórca)."
     }
   }
 });

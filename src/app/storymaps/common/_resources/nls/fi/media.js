@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Lataa sivu suojatun yhteyden kautta (HTTPS)",
       "embedProtocolWarning1": "Jos tämä sivu ei lataudu tarinassa, sitä ei voi upottaa suojaussyistä. Voit vaihtoehtoisesti lisätä linkin tarinaan, jolloin sivu avautuu uudella välilehdellä selaimessa.",
       "embedProtocolWarning2": "Jos tämä sivu ei lataudu tarinassa, poista tämän valintaruudun valinta ja yritä uudelleen. Jos sivu ei edelleenkään lataudu, sitä ei voi upottaa suojaussyistä. Voit vaihtoehtoisesti lisätä linkin tarinaan, jolloin sivu avautuu uudella välilehdellä selaimessa.",
+      "useParentOriginLabel": "Salli muiden organisaatioiden jäsenten käyttää tätä sisältöä.",
+      "useParentOriginTooltip": "Ota tämä asetus käyttöön vain, jos verkkosivu on muiden organisaatioiden jäsenille jaettu ArcGIS-web-sovellus. Organisaatiollasi on oltava käytössä asetus, joka mahdollistaa kirjautumisen muihin organisaatioihin.",
       "learn": "Lisätietoja",
       "lblAltText": "Vaihtoehtoinen teksti",
       "placeholderAltText": "Lisää tämän median kuvaus näkövammaisia lukijoita varten...",

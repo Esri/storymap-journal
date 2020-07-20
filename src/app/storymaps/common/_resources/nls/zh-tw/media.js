@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "透過安全連線 (HTTPS) 載入頁面",
       "embedProtocolWarning1": "若您的故事未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。",
       "embedProtocolWarning2": "若您的故事未載入此網頁，請取消勾選此選項並再試一次。若仍未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。",
+      "useParentOriginLabel": "允許其他組織的成員存取此內容。",
+      "useParentOriginTooltip": "只有當網頁是與其他組織成員分享的 ArcGIS Web 應用程式時，才啟用此選項。 您的組織必須已啟用登入其他組織的選項。",
       "learn": "瞭解詳細資訊",
       "lblAltText": "替代文字",
       "placeholderAltText": "為視障讀者輸入此媒體的說明。",

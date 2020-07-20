@@ -18,6 +18,10 @@
 	margin-right: 3px;
 }
 
+.mediaSelector.smallSize {
+	padding-bottom: 65px; /* room for footer */
+}
+
 .mediaSelector.smallSize .media-type-wrapper {
 	margin-right: 5px;
 }

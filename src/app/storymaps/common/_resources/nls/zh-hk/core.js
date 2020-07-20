@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "您的帳號 (%USER_NAME%) 未經授權，無法開啟非公開的故事地圖。 請聯繫您的組織管理員，請其將包含 Story Maps 或附加元件基礎應用程式授權的使用者類型指派給您。"
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "您的帳號 (%USER_NAME%) 沒有使用傳統的故事地圖建立器的授權。 請要求您的組織管理員將 Creator 使用者類型指派給您。"
     }
   }
 });

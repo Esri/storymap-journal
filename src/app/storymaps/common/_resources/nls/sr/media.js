@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Učitaj stranicu preko bezbedne veze (HTTPS)",
       "embedProtocolWarning1": "Ako se ova stranica ne učitava u vašoj priči, može da bude ugrađena iz veb sigurnosnih razloga. Kao alternativu, dodajte link u svom narativu da biste otvorili stranicu u novoj kartici pregledača.",
       "embedProtocolWarning2": "Ako se ova stranica ne učitava u vašoj priči, poništite izbor ove opcije i pokušajte ponovo. Ako se stranica i dalje ne učitava, može da bude ugrađena iz veb sigurnosnih razloga. Kao alternativu, dodajte link u svom narativu da biste otvorili stranicu u novoj kartici pregledača.",
+      "useParentOriginLabel": "Dozvoli članovima drugih organizacija da pristupe ovom sadržaju.",
+      "useParentOriginTooltip": "Omogući ovu opciju samo ako je veb stranica ArcGIS .veb aplikacije podeljena sa članovima drugih organizacija Vaša organizacija mora da ima uključenu opciju za prijavu na druge organizacije.",
       "learn": "Saznaj više",
       "lblAltText": "Alternativni tekst",
       "placeholderAltText": "Unesite opis ovih medija za osobe oštećenog vida...",

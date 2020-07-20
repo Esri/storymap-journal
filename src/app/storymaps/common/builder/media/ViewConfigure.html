@@ -168,6 +168,20 @@
 				<a href="http://links.esri.com/storymaps/blogs_mixed_content/" target="_blank"><%= learn %></a>
 			</div>
 		</div>
+		<% if ( mode == "mainMedia" ) { %>
+			<div class="form-group useParentOrigin hidden">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" class="useParentOriginEnabled" />
+						<%= useParentOriginLabel %>
+					</label>
+					<!-- note: if there's any space between an img link and its closing </a>, an underline will appear on hover -->
+					<a href="#" class="useParentOriginHelp" data-toggle="tooltip" data-title="<%= useParentOriginTooltip %>"><img
+							src="resources/tpl/builder/icons/builder-help.png" /></a>
+					<a href="https://support.esri.com/en/Technical-Article/000021734" target="_blank"><%= learn %></a>
+				</div>
+			</div>
+		<% } %>
 		<div class="alt-text-wrapper">
 			<div class="form-group">
 				<label><%= lblAltText %></label>

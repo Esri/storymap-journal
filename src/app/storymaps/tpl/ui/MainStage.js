@@ -144,10 +144,8 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 						embedInfo.hash = embedhash;
 					}
 
-					if (embedInfo.useParentOrigin) {
-						var urlAsURL = new window.URL(embedUrl);
-						embedUrl = window.location.origin + urlAsURL.pathname + urlAsURL.search;
-						embedInfo.url = embedUrl; // add back to info object so it doesn't get removed as unused later
+					if (useParentOriginUrl(embedInfo, embedUrl)) {
+						embedUrl = getParentOriginUrl(embedUrl);
 					}
 
 					var embedContainer = $('.embedContainer[data-src="' + (embedUrl || embedInfo.ts) + '"]');
@@ -191,10 +189,16 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				// Remove unused containers
 				$('.embedContainer').each(function() {
 					var embedSRC = $(this).data('ts') || $(this).data('src');
-					var embedInUse = $.grep(embeds, function(embed){
+					var embedInUse = $.grep(embeds, function (embed) {
 						var embedUrl = embed.url;
-						if ( embedUrl.lastIndexOf('#') > 0 )
+						if (embedUrl.lastIndexOf('#') > 0) {
 							embedUrl = embedUrl.substring(0, embedUrl.lastIndexOf('#'));
+						}
+
+						// replace embedUrl test variable with parentOriginUrl
+						if (useParentOriginUrl(embed, embedUrl)) {
+							embedUrl = getParentOriginUrl(embedUrl);
+						}
 
 						return embedSRC == embedUrl || embedSRC == embed.ts;
 					}).length > 0;
@@ -214,6 +218,16 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 
 				setMapControlsColor();
 			};
+
+			function useParentOriginUrl(embedInfo, embedUrl) {
+				return embedInfo && embedInfo.useParentOrigin && window.location.origin.match(/arcgis\.com/) &&
+					embedUrl && embedUrl.match && embedUrl.match(/arcgis\.com/);
+			}
+
+			function getParentOriginUrl(storedUrl) {
+				var urlAsURL = new window.URL(storedUrl);
+				return window.location.origin + urlAsURL.pathname + urlAsURL.search;
+			}
 
 			//
 			// Management of Main Stage: all media
@@ -983,6 +997,9 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 
 			function updateMainMediaEmbed(url, cfg)
 			{
+				if (useParentOriginUrl(cfg, url)) {
+					url = getParentOriginUrl(url);
+				}
 				$('.mainMediaContainer').removeClass('active');
 
 				// URL can be an URL or the timestamp in case of an iframe tag

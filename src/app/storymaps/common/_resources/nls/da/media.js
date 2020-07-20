@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Indlæs side via en sikker forbindelse (HTTPS)",
       "embedProtocolWarning1": "Hvis denne side ikke bliver indlæst i din historie, kan den ikke indlejres på grund af websikkerhedsårsager. Som alternativ kan du tilføje et link i din fortælling for at åbne siden i en ny browserfane.",
       "embedProtocolWarning2": "Hvis denne side ikke bliver indlæst i din historie, skal du fjerne markeringen af denne indstilling og prøve igen. Hvis siden fortsat ikke indlæses, kan den ikke indlejres på grund af websikkerhedsårsager. Som alternativ kan du tilføje et link i din fortælling for at åbne siden i en ny browserfane.",
+      "useParentOriginLabel": "Tillad medlemmer fra andre organisationer at få adgang til dette indhold.",
+      "useParentOriginTooltip": "Aktivér kun denne indstilling, hvis websiden er en ArcGIS-webapplikation, der deles med medlemmer fra andre organisationer. Din organisation skal have indstillingen for at logge på andre organisationer aktiveret.",
       "learn": "Lær mere",
       "lblAltText": "Alternativ tekst",
       "placeholderAltText": "Indtast en beskrivelse af dette medie til synshæmmede læsere...",

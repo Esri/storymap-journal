@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Sayfayı bir güvenli bağlantı üzerinden yükle (HTTPS)",
       "embedProtocolWarning1": "Bu sayfa hikayenizde yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz.",
       "embedProtocolWarning2": "Bu sayfa hikayenizde yüklenmiyorsa, bu seçeneğin işaretini kaldırın ve yeniden deneyin. Sayfa yine de yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz.",
+      "useParentOriginLabel": "Diğer kuruluşların üyelerinin bu içeriğe erişmesine izin verin.",
+      "useParentOriginTooltip": "Bu seçeneği, web sayfası diğer kuruluşların üyeleriyle paylaşılan bir ArcGIS web uygulamasıysa etkinleştirin. Kuruluşunuz etkinleştirilmiş diğer kuruluşlarda oturum açma seçeneğine sahip olmalıdır.",
       "learn": "Daha fazla bilgi",
       "lblAltText": "Alternatif Metin",
       "placeholderAltText": "Görme engelli okuyucular için bu medyanın bir açıklamasını girin...",

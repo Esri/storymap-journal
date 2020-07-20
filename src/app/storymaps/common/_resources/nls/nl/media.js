@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Pagina laden d.m.v. een beveiligde verbinding (HTTPS)",
       "embedProtocolWarning1": "Als deze pagina niet in uw verhaal geladen wordt, dan kan het niet geïnbed worden vanwege webbeveiligingsredenen. Voeg als alternatief een koppeling toe aan uw verhaal om de pagina te openen in een nieuw browsertabblad.",
       "embedProtocolWarning2": "Als deze pagina niet in uw verhaal geladen wordt, vink deze optie dan uit en probeer nogmaals. Als de pagina nog steeds niet geladen kan worden, dan kan het niet ingebed worden vanwege webbeveiligingsredenen. Voeg als alternatief een koppeling toe aan uw verhaal om de pagina te openen in een nieuw browsertabblad.",
+      "useParentOriginLabel": "Leden van andere organisaties de toegang tot deze content toestaan.",
+      "useParentOriginTooltip": "Schakel deze optie alleen in als de webpagina een ArcGIS web applicatie is die gedeeld wordt met leden van andere organisaties. Uw organisatie moet de optie ingeschakeld hebben om in te loggen bij andere organisaties.",
       "learn": "Meer weten",
       "lblAltText": "Alternatieve tekst",
       "placeholderAltText": "Voeg voor slechtzienden een beschrijving van deze media toe...",

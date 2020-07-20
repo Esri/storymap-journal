@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "El vostre compte (%USER_NAME%) no té llicència per obrir un story map que no sigui públic.  Demaneu a l'administrador de l'organització que us assigni un tipus d'usuari que inclogui story maps o una llicència d'aplicacions bàsiques de complement."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "El vostre compte (%USER_NAME%) no té llicència per utilitzar els builders d'story maps clàssics. Demaneu a l'administrador de l'organització que us assigni un tipus d'usuari Creator."
     }
   }
 });

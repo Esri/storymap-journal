@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Läs in sidan via en säker anslutning (HTTPS)",
       "embedProtocolWarning1": "Om sidan inte läses in till din berättelse kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik.",
       "embedProtocolWarning2": "Om sidan inte läses in till din berättelse avmarkerar du alternativet och försöker igen. Om sidan fortfarande inte läses in kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik.",
+      "useParentOriginLabel": "Tillåt medlemmar i andra organisationer att få åtkomst till detta innehåll.",
+      "useParentOriginTooltip": "Tillåt bara det här alternativet om webbsidan är en ArcGIS-webbapplikation som delas till medlemmar av andra organisationer. Din organisation måste ha alternativet att logga in i andra aktiverade organisationer.",
       "learn": "Läs mer",
       "lblAltText": "Alternativ text",
       "placeholderAltText": "Ange en beskrivning av mediematerialet för personer med nedsatt syn…",

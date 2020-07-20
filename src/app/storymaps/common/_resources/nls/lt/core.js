@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Jūsų paskyra (%USER_NAME%) nelicencijuota atidaryti ne viešą žemėlapio pasakojimą. Kreipkitės į organizacijos administratorių, kad paskirtų jums naudotojo tipą, kuris turi žemėlapių pasakojimus, arba suteiktų jums papildomą svarbiausių aplikacijų licenciją."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Jūsų paskyra (% USER_NAME%) nelicencijuota naudoti klasikines žemėlapių pasakojimų kūrimo priemones. Paprašykite organizacijos administratoriaus priskirti jums Kūrėjo naudotojo tipą."
     }
   }
 });

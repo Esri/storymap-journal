@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Caricare una pagina su una connessione protetta (HTTPS)",
       "embedProtocolWarning1": "Se questa pagina non viene caricata nella storia, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser.",
       "embedProtocolWarning2": "Se questa pagina non viene caricata nella storia, deselezionare questa opzione e riprovare. Se il problema persiste, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser.",
+      "useParentOriginLabel": "Consentire ai membri di altre organizzazioni di accedere a questo contenuto.",
+      "useParentOriginTooltip": "Abilitare questa opzione solo se la pagina Web è un'applicazione Web di ArcGIS condivisa con i membri di altre organizzazioni. L'organizzazione deve avere l'opzione di accesso ad altre organizzazioni abilitata.",
       "learn": "Ulteriori informazioni",
       "lblAltText": "Testo alternativo",
       "placeholderAltText": "Inserire una descrizione di questo contenuto multimediale per i lettori con disabilità visive...",

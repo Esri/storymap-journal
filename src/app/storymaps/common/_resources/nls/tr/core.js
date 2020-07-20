@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Hesabınız (%USER_NAME%) herkese açık olmayan bir Hikaye Haritasını açmak için lisanslandırılmamış. Lütfen kuruluş yöneticinizden Hikaye Haritaları veya eklenti Temel Uygulamalar lisansı içeren bir kullanıcı türü atamasını isteyin."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Hesabınızın (%USER_NAME%) klasik story map oluşturucularını kullanma yetkisi yok. Kuruluşunuzun yöneticisinden size bir Creator kullanıcı türü atamasını isteyin."
     }
   }
 });

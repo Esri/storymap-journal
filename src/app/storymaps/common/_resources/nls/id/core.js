@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Akun Anda (%USER_NAME%) tidak dilisensikan untuk membuka Peta Cerita yang bukan bersifat publik.  Harap minta administrator organisasi Anda untuk menetapkan Anda jenis pengguna yang menyertakan Peta Cerita atau lisensi add-on Essential App."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Akun Anda (%USER_NAME%) tidak dilisensikan untuk menggunakan builder Story Map Classic. Harap minta administrator organisasi Anda untuk menetapkan Anda jenis pengguna Creator."
     }
   }
 });

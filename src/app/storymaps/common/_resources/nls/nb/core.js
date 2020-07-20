@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Kontoen (%USER_NAME%) er ikke lisensiert til å åpne et fortellingskart som ikke er offentlig. Be administratoren for organisasjonen om å tilordne deg en brukertype som omfatter Story Maps eller en tilleggslisens for Essential Apps."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Kontoen (%USER_NAME%) har ikke lisens til å bruke byggeverktøyene for klassiske Story Maps. Be administratoren for organisasjonen om å tilordne Creator-brukertypen til deg."
     }
   }
 });

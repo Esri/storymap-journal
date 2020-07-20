@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Încărcaţi pagina printr-o conexiune securizată (HTTPS)",
       "embedProtocolWarning1": "Dacă pagina nu se încarcă în povestea dvs., nu poate fi încorporată din motive de securitate web. Ca alternativă, adăugaţi un link la naraţiunea dvs. pentru a deschide pagina într-o filă de browser nouă.",
       "embedProtocolWarning2": "Dacă pagina nu se încarcă în povestea dvs., debifaţi această opţiune şi încercaţi din nou. Dacă pagina tot nu se încarcă, nu poate fi încorporată din motive de securitate web. Alternativ, adăugaţi un link la naraţiunea dvs. pentru a deschide pagina într-o filă de browser nouă.",
+      "useParentOriginLabel": "Permiteți membrilor altor organizații să acceseze acest conținut.",
+      "useParentOriginTooltip": "Activați această opțiune doar dacă pagina web este o aplicație web ArcGIS partajată cu membrii altor organizații. Organizația dvs. trebuie să aibă activată opțiunea de a se conecta la alte organizații.",
       "learn": "Aflaţi mai multe",
       "lblAltText": "Text alternativ",
       "placeholderAltText": "Introduceţi o descriere a mediilor pentru cititorii cu probleme de vedere...",

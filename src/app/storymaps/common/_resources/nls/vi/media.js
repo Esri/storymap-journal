@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Tải trang qua kết nối bảo mật (HTTPS)",
       "embedProtocolWarning1": "Nếu trang này không tải ra trong câu chuyện của bạn, bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang trong một tab trình duyệt mới.",
       "embedProtocolWarning2": "Nếu trang này không tải ra trong câu chuyện của bạn, hãy bỏ chọn tùy chọn này và thử lại. Nếu trang vẫn không tải, thì bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang trong một tab trình duyệt mới.",
+      "useParentOriginLabel": "Cho phép thành viên của tổ chức khác truy cập vào nội dung này.",
+      "useParentOriginTooltip": "Chỉ kích hoạt tùy chọn này nếu trang web là một ứng dụng web của ArcGIS được chia sẻ cho thành viên của các tổ chức khác. Tổ chức của bạn phải được kích hoạt tùy chọn để đăng nhập vào tổ chức khác.",
       "learn": "Tìm hiểu thêm",
       "lblAltText": "Văn bản Thay thế",
       "placeholderAltText": "Nhập mô tả phương tiện này cho các độc giả khiếm thị...",

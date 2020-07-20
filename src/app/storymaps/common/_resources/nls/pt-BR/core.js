@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Sua conta (%USER_NAME%) não está licenciada para abrir um Mapa Histórico que não seja público. Solicite ao administrador da sua organização que lhe atribua um tipo de usuário que inclua os Aplicativos Fundamentais ou uma licença complementar dos Aplicativos Fundamentais."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Sua conta (%USER_NAME%) não está licenciada para utilizar os construtores de mapa histórico clássicos. Peça a seu administrador da organização para atribuir um tipo de usuário Creator."
     }
   }
 });

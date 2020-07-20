@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "您的帐户(%USER_NAME%)无权打开非公共 Story Map。 请联系您的组织管理员为您分配包含 Story Maps 或附加基本应用程序许可的用户类型。"
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "您的帐户(%USER_NAME%)未获得使用经典 Story Map 构建器的许可。 请求您的组织管理员为您分配一个 Creator 用户类型。"
     }
   }
 });

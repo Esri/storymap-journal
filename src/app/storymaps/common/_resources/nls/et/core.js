@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Teie kontol (%USER_NAME%) puudub litsents kaardiloo avamiseks, mis ei ole avalik. Paluge oma organisatsiooni administraatoril määrata teile kasutajatüüp, mis sisaldab kaardilugusid või oluliste rakenduse lisalitsentsi."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Teie konto (%USER_NAME%) ei ole litsentseeritud klassikaliste kaardilugude tegemiseks. Paluge oma organisatsiooni administraatoril määrata teile kasutajatüüp Creator."
     }
   }
 });

@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Ielādēt lapu, izmantojot drošu savienojumu (HTTPS)",
       "embedProtocolWarning1": "Ja šī lapa jūsu stāstā neielādējas, to nevar iegult tīmekļa drošības iemeslu dēļ. Alternatīva iespēja — stāstījumā ievietojiet saiti, lai lapu atvērtu jaunā pārlūka cilnē.",
       "embedProtocolWarning2": "Ja šī lapa jūsu stāstā neielādējas, noņemiet atzīmi no šīs opcijas un mēģiniet vēlreiz. Ja lapa joprojām neielādējas, to nevar iegult tīmekļa drošības iemeslu dēļ. Alternatīva iespēja — stāstījumā ievietojiet saiti, lai lapu atvērtu jaunā pārlūka cilnē.",
+      "useParentOriginLabel": "Atļaujiet citu organizāciju dalībniekiem piekļūt šim saturam.",
+      "useParentOriginTooltip": "Iespējojiet šo opciju tikai tad, ja tīmekļa lapa ir ArcGIS tīmekļa lietotne, kas koplietota ar citas organizācijas dalībniekiem. Jūsu organizācijai jābūt iespējotai iespējai pieteikties citās organizācijās.",
       "learn": "Papildinformācija",
       "lblAltText": "Alternatīvais teksts",
       "placeholderAltText": "Ievadiet šīs multivides aprakstu lasītājiem ar redzes traucējumiem…",

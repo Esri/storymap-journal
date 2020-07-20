@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "Váš účet (%USER_NAME%) nevlastní licenci k otevření mapy s příběhem, která není veřejná. Požádejte prosím správce své organizace, aby vám přidělil typ uživatele, jehož součástí jsou mapy s příběhem nebo doplňková licence základních aplikací."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "Váš účet (%USER_NAME%) nevlastní licenci k použití nástrojů pro tvorbu klasických map s příběhem. Požádejte prosím administrátora své organizace, aby vám přidělil typ uživatele Creator."
     }
   }
 });

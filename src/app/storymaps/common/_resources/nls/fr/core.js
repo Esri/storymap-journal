@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "La licence de votre compte (%USER_NAME%) ne permet pas d’ouvrir une Story Map non publique. Demandez à l’administrateur de votre organisation de vous attribuer un type d’utilisateur qui inclut les Story Maps ou une licence Essential Apps sous forme de complément."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "La licence de votre compte (%USER_NAME%) ne permet pas d’utiliser les générateurs de story maps classiques. Demandez à l’administrateur de votre organisation de vous attribuer le type d’utilisateur Creator."
     }
   }
 });

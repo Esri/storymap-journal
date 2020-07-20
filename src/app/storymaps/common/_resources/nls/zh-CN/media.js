@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "通过安全连接(HTTPS)加载页面",
       "embedProtocolWarning1": "如果您的故事未加载此页面，则出于 web 安全性的因素，无法嵌入该页面。但是可在叙述中添加链接以在新浏览器选项卡中打开页面。",
       "embedProtocolWarning2": "如果您的故事未加载此页面，请取消选中该选项并重试。如果仍未加载该页面，则出于 web 安全性的因素，无法嵌入该页面。但是可在叙述中添加链接以在新浏览器选项卡中打开页面。",
+      "useParentOriginLabel": "允许其他组织的成员访问此内容。",
+      "useParentOriginTooltip": "如果 web 页面是与其他组织成员共享的 ArcGIS web 应用程序，则仅启用此选项。 您的组织必须具有登录到其他已启用组织的选项。",
       "learn": "了解详细信息",
       "lblAltText": "备选文本",
       "placeholderAltText": "针对视觉障碍的读者，输入该媒体的描述...",

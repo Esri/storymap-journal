@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Seite über eine sichere Verbindung (HTTPS) laden",
       "embedProtocolWarning1": "Wenn diese Seite nicht in Ihre Story geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen.",
       "embedProtocolWarning2": "Wenn diese Seite nicht in Ihre Story geladen werden kann, deaktivieren Sie diese Option, und versuchen Sie es erneut. Wenn die Seite trotzdem nicht geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen.",
+      "useParentOriginLabel": "Mitgliedern anderer Organisationen den Zugriff auf diesen Inhalt erlauben.",
+      "useParentOriginTooltip": "Aktivieren Sie diese Option nur, wenn es sich bei der Webseite um eine ArcGIS-Webanwendung handelt, die für Mitglieder anderer Organisationen freigegeben ist. Die Option zum Anmelden bei anderen Organisationen muss für Ihre Organisation aktiviert sein.",
       "learn": "Weitere Informationen",
       "lblAltText": "Alternativer Text",
       "placeholderAltText": "Geben Sie für sehbehinderte Leser eine Beschreibung dieser Medien ein...",

@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Naložite stran prek varne povezave (HTTPS)",
       "embedProtocolWarning1": "Če se ta stran v vaši zgodbi ne naloži, je ni mogoče vdelati zaradi varnostnih razlogov. Namesto tega dodajte povezavo v zgodbo, da odprete stran v novem zavihku brskalnika.",
       "embedProtocolWarning2": "Če se ta stran v vaši zgodbi ne naloži, odkljukajte to možnost in poskusite znova. Če se stran še vedno ne naloži, je ni mogoče vdelati zaradi varnostnih razlogov. Namesto tega dodajte povezavo v zgodbo, da odprete stran v novem zavihku brskalnika.",
+      "useParentOriginLabel": "Uporabnikom drugih organizacij dovoli dostop do te vsebine.",
+      "useParentOriginTooltip": "To možnost omogoči le, če je spletna stran spletna aplikacija ArcGIS, deljena z uporabniki drugih organizacij. Vaša organizacija mora imeti omogočeno možnost prijave v druge organizacije.",
       "learn": "Izvedite več",
       "lblAltText": "Alternativno besedilo",
       "placeholderAltText": "Vnesite opis tega medija za slabovidne bralce...",

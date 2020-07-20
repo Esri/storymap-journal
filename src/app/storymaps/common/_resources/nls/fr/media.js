@@ -113,6 +113,8 @@ define({
       "embedProtocolLabel": "Charger la page via une connexion sécurisée (HTTPS)",
       "embedProtocolWarning1": "Si cette page ne se charge pas dans votre récit, elle ne peut pas être incorporée pour des raisons de sécurité Web. Vous pouvez également ajouter un lien dans votre narration afin d’ouvrir la page dans un nouvel onglet du navigateur.",
       "embedProtocolWarning2": "Si cette page ne se charge pas dans votre récit, désélectionnez cette option et réessayez. Si la page ne se charge toujours pas, elle ne peut pas être incorporée pour des raisons de sécurité Web. Vous pouvez également ajouter un lien dans votre narration afin d’ouvrir la page dans un nouvel onglet du navigateur.",
+      "useParentOriginLabel": "Autoriser les membres d’autres organisations à accéder à ce contenu.",
+      "useParentOriginTooltip": "Activez cette option uniquement si la page Web est une application Web ArcGIS partagée avec les membres d’autres organisations. L’option autorisant la connexion à d’autres organisations doit être activée pour votre organisation.",
       "learn": "En savoir plus",
       "lblAltText": "Texte de remplacement",
       "placeholderAltText": "Entrez une description de ce support pour les lecteurs malvoyants...",

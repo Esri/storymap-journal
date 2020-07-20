@@ -163,6 +163,9 @@ define({
     },
     "licenseChange2018": {
       "noAccess": "귀하의 계정(%USER_NAME%)에는 공개 상태가 아닌 스토리맵을 열 수 있는 라이선스가 없습니다. 스토리맵 또는 애드온 필수 앱 라이선스가 포함된 사용자 유형을 업무 지시하려면 기관 관리자에게 문의하세요."
+    },
+    "storyTellerUserType": {
+      "notCreatorError": "계정(%USER_NAME%)에는 클래식 스토리맵 빌더를 사용할 수 있는 라이선스가 없습니다. Creator 사용자 유형 할당을 기관 관리자에게 요청하세요."
     }
   }
 });
