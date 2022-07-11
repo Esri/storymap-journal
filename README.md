@@ -1,4 +1,6 @@
-﻿Story Map Journal
+﻿_Note: Classic Esri Story Maps templates are in extended support on ArcGIS Online as of September 2021 and mature support on ArcGIS Enterprise 10.9.1. For the latest information on the transition from classic Esri Story Maps to ArcGIS StoryMaps, click [here](https://www.esri.com/arcgis-blog/?s=#&tag=classic-esri-story-maps-transition)._
+
+Story Map Journal
 =================
 
 The Story Map Journal is ideal when you want to combine narrative text with maps and other embedded content. A Map Journal contains entries, or sections, that users simply scroll through. Each section in a Map Journal has an associated map, image, video or web page. Actions can also be defined in journal sections so that, for example, clicking a word automatically zooms the section’s map to a particular location.
@@ -9,7 +11,7 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 [Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
 [Download](http://links.esri.com/storymaps/map_journal_template_zip)
 
-**Latest release is version 1.24.1**; if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+**This release is version 1.31.0**, which corresponds to the June 2022 release of ArcGIS Online and the 11.0 release of Enterprise. If you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
 
 For more infomation about using and customizing Esri's Storytelling Apps follow the [Story Maps Developers' Corner](https://developerscorner.storymaps.arcgis.com).
 
