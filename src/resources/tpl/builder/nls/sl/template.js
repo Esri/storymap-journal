@@ -111,12 +111,12 @@ define({
       "quote4": "Ljudje si ne želijo več informacij. Informacij imajo že na pretek. V zgodbi, ki jo pripovedujete, želijo verjeti vam, vašim ciljem, vašemu uspehu.",
       "quote5": "Resnično verjamem, da ljudje iščejo zgodbe, ki imajo resničen pomen: zgodbe, ki so odrešujoče, navdihujoče in večje od posameznika.",
       "quote6": "Če želite vplivati na posameznika ali skupino, da v vsakdanjem življenju prevzamejo določeno vrednoto, jim povejte prepričljivo zgodbo.",
-      "quote7": "Če mi to poveste, je to esej. Če mi pokažete, je to zgodba.",
+      "quote7": "Če mi poveste, je to esej. Če mi pokažete, je to zgodba.",
       "quote8": "Če ne razločite dreves, se lahko izgubite v gozdu, če pa ne poznate zgodb, se lahko izgubite v življenju.",
       "quote9": "Zgodbe so ustvarjalna pretvorba življenja v močnejše, jasnejše in bolj smiselno doživetje. So valuta človeškega stika.",
       "quote10": "Ni večjega trpljenja, kot če v sebi zadržujete neizrečeno zgodbo.",
       "quote11": "Mogoče so zgodbe samo podatki z dušo.",
-      "quote12": "Zgodbe so eno izmed najmočnejših orožij arzenala vodje.",
+      "quote12": "Zgodbe so eno izmed najmočnejših sredstev vodje.",
       "quote13": "Značilnost zgodb je, da izpustijo veliko več, kot pa vsebujejo."
     },
     "firstAddSplash": {

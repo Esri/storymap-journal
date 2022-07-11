@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Cập nhật chia sẻ trên mạng xã hội",
-      "panel1": "Hình dạng câu chuyện của bạn trên mạng xã hội đã được cải thiện, tuy nhiên, tiêu đề mục ứng dụng web ArcGIS của bạn không giống với tiêu đề câu chuyện của bạn.",
+      "panel1": "Diện mạo câu chuyện của bạn trên mạng xã hội đã được cải thiện, tuy nhiên, tiêu đề mục ứng dụng web ArcGIS của bạn không giống với tiêu đề câu chuyện.",
       "panel1tooltip": "Bằng cách xác định tiêu đề, phần tổng kết và hình thu nhỏ, câu chuyện của bạn sẽ trông như thế này:",
       "panel2": "Bạn muốn sử dụng tiêu đề nào trên mạng xã hội:",
       "panel2q1": "Tiêu đề câu chuyện (khuyến nghị)",
@@ -152,6 +152,27 @@ define({
       "action1": "Đóng",
       "action2": "Kiểm tra câu chuyện của tôi ngay",
       "action3": "Tìm hiểu thêm"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Story Maps Cổ điển của Esri ở giai đoạn Hỗ trợ Mở rộng",
+      "s1h1": "Thông báo quan trọng về Story Maps Cổ điển của Esri",
+      "s1p1": "Các biểu mẫu Story Maps Cổ điển của Esri ở giai đoạn Hỗ trợ Mở rộng. Tất cả khách hàng đều được khuyến khích sử dụng ArcGIS StoryMaps, công cụ kể chuyện thế hệ hiện tại của Esri.",
+      "s1p2": "Các biểu mẫu cổ điển không còn được phát triển và không được khuyến khích sử dụng cho các dự án mới. Không có bản cập nhật thêm về chức năng nào được lên kế hoạch. Các câu chuyện bạn đã tạo bằng biểu mẫu cổ điển vẫn sẽ tiếp tục khả dụng.",
+      "s1p3": "Vào tháng 12 năm 2021, chúng tôi sẽ xóa biểu mẫu cổ điển khỏi bộ sưu tập configurable apps mặc định. Nếu cần, bạn có thể thêm một hoặc nhiều biểu mẫu cổ điển vào nhóm configurable apps tùy chỉnh của tổ chức bạn để hỗ trợ quy trình công việc hiện tại trong quá trình chuyển tiếp sang sử dụng ArcGIS StoryMaps.",
+      "s1p4": "Để biết thêm thông tin, hãy nhấp vào liên kết tìm hiểu thêm bên dưới.",
+      "action1": "Đóng",
+      "action2": "Tìm hiểu thêm",
+      "action3": "Dùng thử ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Story Maps Cổ điển của Esri ở giai đoạn Hỗ trợ Trưởng thành",
+      "s1h1": "Thông báo quan trọng về Story Maps Cổ điển của Esri",
+      "s1p1": "Các biểu mẫu Story Maps Cổ điển của Esri ở giai đoạn Hỗ trợ Trưởng thành Tất cả khách hàng đều được khuyến khích sử dụng ArcGIS StoryMaps, công cụ kể chuyện thế hệ hiện tại của Esri.",
+      "s1p2": "Các biểu mẫu cổ điển không còn được phát triển và không được khuyến khích sử dụng cho các dự án mới. Không có bản cập nhật thêm về chức năng nào được lên kế hoạch. Các câu chuyện bạn đã tạo bằng biểu mẫu cổ điển vẫn sẽ tiếp tục khả dụng.",
+      "s1p3": "Để biết thêm thông tin, hãy nhấp vào liên kết tìm hiểu thêm bên dưới.",
+      "action1": "Đóng",
+      "action2": "Tìm hiểu thêm",
+      "action3": "Dùng thử ArcGIS StoryMaps"
     },
     "embedBar": {
       "share": "Chia sẻ",

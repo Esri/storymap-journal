@@ -153,6 +153,27 @@ define({
       "action2": "Comprova les meves històries ara",
       "action3": "Més informació"
     },
+    "extendedSupportMessage": {
+      "bannerMsg": "La versió clàssica de l'Esri Story Maps es troba en suport ampliat",
+      "s1h1": "Missatge important sobre la versió clàssica de l'Esri Story Maps",
+      "s1p1": "Les plantilles de la versió clàssica de l'Esri Story Maps es troben en suport ampliat. Es recomana a tots els clients que facin servir l'ArcGIS StoryMaps, l'eina de narració d'històries de generació actual d'Esri.",
+      "s1p2": "Les plantilles clàssiques ja no es troben en desenvolupament actiu i no es recomanen per a projectes nous. No hi ha previstes més actualitzacions de les seves funcions. Les històries que hàgiu creat amb les plantilles bàsiques continuaran estant disponibles.",
+      "s1p3": "El desembre del 2021 les plantilles clàssiques s'eliminaran de la plantilla d'aplicacions configurables per defecte. Si cal per admetre els fluxos de treball actuals durant la transició a l'ús de l'ArcGIS StoryMaps, es poden afegir una o diverses plantilles clàssiques al grup personalitzat d'aplicacions configurables de la vostra organització.",
+      "s1p4": "Per obtenir més informació, feu clic a l'enllaç Més informació a continuació.",
+      "action1": "Tanca",
+      "action2": "Més informació",
+      "action3": "Proveu l'ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "La versió clàssica de l'Esri Story Maps es troba en la fase final de suport",
+      "s1h1": "Missatge important sobre la versió clàssica de l'Esri Story Maps",
+      "s1p1": "Les plantilles de la versió clàssica de l'Esri Story Maps es troben en la fase final de suport. Es recomana a tots els clients que facin servir l'ArcGIS StoryMaps, l'eina de narració d'històries de generació actual d'Esri.",
+      "s1p2": "Les plantilles clàssiques ja no es troben en desenvolupament actiu i no es recomanen per a projectes nous. No hi ha previstes més actualitzacions de les seves funcions. Les històries que hàgiu creat amb les plantilles bàsiques continuaran estant disponibles.",
+      "s1p3": "Per obtenir més informació, feu clic a l'enllaç Més informació a continuació.",
+      "action1": "Tanca",
+      "action2": "Més informació",
+      "action3": "Proveu l'ArcGIS StoryMaps"
+    },
     "embedBar": {
       "share": "Comparteix",
       "fullScreen": "Pantalla completa",

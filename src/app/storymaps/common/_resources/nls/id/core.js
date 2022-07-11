@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Pembaruan berbagi di media sosial",
-      "panel1": "Penampilan cerita di media sosial meningkat, namun judul item aplikasi web ArcGIS Anda tidak sama dengan judul cerita Anda.",
+      "panel1": "Penampilan cerita di media sosial meningkat, tetapi judul item aplikasi web ArcGIS Anda tidak sama dengan judul cerita Anda.",
       "panel1tooltip": "Dengan menentukan judul, ringkasan, dan gambar tampilan mini, cerita Anda akan terlihat seperti ini:",
       "panel2": "Judul mana yang ingin Anda gunakan di media sosial:",
       "panel2q1": "Judul cerita (disarankan)",
@@ -152,6 +152,27 @@ define({
       "action1": "Tutup",
       "action2": "Periksa cerita saya sekarang",
       "action3": "Pelajari lebih lanjut"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Peta Cerita Esri Klasik sudah dalam Dukungan yang Diperpanjang",
+      "s1h1": "Pesan penting tentang Peta Cerita Esri klasik",
+      "s1p1": "Template Peta Cerita Esri Klasik sudah dalam Dukungan yang Diperpanjang. Semua pelanggan dianjurkan menggunakan ArcGIS StoryMaps, alat bercerita generasi saat ini dari Esri.",
+      "s1p2": "Template klasik tidak lagi dalam pengembangan aktif dan tidak disarankan untuk proyek baru. Tidak direncanakan pembaruan lebih lanjut untuk kemampuannya. Cerita yang dibuat menggunakan template klasik akan terus tersedia.",
+      "s1p3": "Pada bulan Desember 2021, template klasik akan dihapus dari galeri configurable apps default. Satu atau beberapa template klasik dapat ditambahkan ke grup configurable apps kustom organisasi Anda jika diperlukan untuk mendukung alur kerja saat ini selama transisi ke penggunaan ArcGIS StoryMaps.",
+      "s1p4": "Untuk informasi selengkapnya, klik tautan pelajari selengkapnya di bawah.",
+      "action1": "Tutup",
+      "action2": "Pelajari selengkapnya",
+      "action3": "Coba AcrGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Peta Cerita Esri Klasik sudah dalam Dukungan Matang",
+      "s1h1": "Pesan penting tentang Peta Cerita Esri klasik",
+      "s1p1": "Template Peta Cerita Esri Klasik sudah dalam Dukungan Matang. Semua pelanggan dianjurkan menggunakan ArcGIS StoryMaps, alat bercerita generasi saat ini dari Esri.",
+      "s1p2": "Template klasik tidak lagi dalam pengembangan aktif dan tidak disarankan untuk proyek baru. Tidak direncanakan pembaruan lebih lanjut untuk kemampuannya. Cerita yang dibuat menggunakan template klasik akan terus tersedia.",
+      "s1p3": "Untuk informasi selengkapnya, klik tautan pelajari selengkapnya di bawah.",
+      "action1": "Tutup",
+      "action2": "Pelajari selengkapnya",
+      "action3": "Coba AcrGIS StoryMaps"
     },
     "embedBar": {
       "share": "Bagikan",

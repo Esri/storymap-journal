@@ -60,7 +60,10 @@ define({
       "print0": "Žao nam je, ovu priču nije moguće štampati.",
       "print1": "Da biste odštampali ovu priču, upotrebite dugme za štampanje koje se nalazi u dijalogu za deljenje.",
       "print2": "Žao nam je, verzija ove priče koja može da se štampa je uglavnom dostupna putem dijaloga za deljenje, ali je autor onemogućio ovaj dijalog.",
-      "attention": "Napomena!"
+      "attention": "Napomena!",
+      "nonOwnerOrgUrl": "%TPL_NAME% kojoj pokušavate da pristupite ne potiče sa URL adrese koju ste naveli.",
+      "nonOwnerOrgProceedToGeneric": "Nastavite da %HREF%",
+      "advanced": "Napredna"
     },
     "mobileView": {
       "tapForDetails": "Dodirnite za detalje",

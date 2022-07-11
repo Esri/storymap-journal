@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Actualizare partajare pe reţele de socializare",
-      "panel1": "Prezentarea scenariului dvs.â€™ pe reţelele de socializare, a fost îmbunătăţită, dar titlul elementului aplicaţiei dvs. web ArcGIS nu este acelaşi cu titlul scenariului dvs.",
+      "panel1": "Prezentarea relatării dvs. pe rețelele de socializare a fost îmbunătățită, dar titlul elementului aplicației dvs. web ArcGIS nu este același cu titlul relatării dvs.",
       "panel1tooltip": "Prin definirea unui titlu, unui rezumat şi unei imagini în miniatură, scenariul dvs. va arăta astfel:",
       "panel2": "Ce titlu doriţi să utilizaţi pe reţelele de socializare:",
       "panel2q1": "Titlul scenariului (recomandat)",
@@ -152,6 +152,27 @@ define({
       "action1": "Închidere",
       "action2": "Verificaţi-mi acum relatările",
       "action3": "Aflaţi mai multe"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Hărțile informative clasice Esri sunt incluse în asistența extinsă",
+      "s1h1": "Mesaj important despre hărțile informative Esri",
+      "s1p1": "Șabloanele de hărți informative clasice Esri sunt incluse în asistența extinsă. Toți clienții sunt încurajați să utilizeze instrumentul de relatare de generație actuală de la Esri, ArcGIS StoryMaps.",
+      "s1p2": "Șabloanele clasice nu mai fac parte din dezvoltarea actuală și nu sunt recomandate pentru proiectele noi. Nu se intenționează lansarea de actualizări viitoare la capacitățile lor. Relatările pe care le-ați creat folosind șabloane clasice vor fi disponibile în continuare.",
+      "s1p3": "În decembrie 2021, șabloanele clasice vor fi eliminate din galeria de aplicații configurabile implicite. Unul sau mai multe șabloane clasice pot fi adăugate în grupul de aplicații configurabile personalizate ale organizației dvs. dacă este necesar pentru a susține fluxurile de lucru actuale în timpul tranziției dvs. la utilizarea ArcGIS StoryMaps.",
+      "s1p4": "Pentru mai multe informații, faceți clic pe linkul de învățare suplimentară de mai jos.",
+      "action1": "Închidere",
+      "action2": "Aflați mai multe",
+      "action3": "Încercați ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Hărțile informative clasice Esri sunt incluse în asistența matură",
+      "s1h1": "Mesaj important despre hărțile informative Esri",
+      "s1p1": "Șabloanele de hărți informative clasice Esri sunt incluse în asistența matură. Toți clienții sunt încurajați să utilizeze instrumentul de relatare de generație actuală de la Esri, ArcGIS StoryMaps.",
+      "s1p2": "Șabloanele clasice nu mai fac parte din dezvoltarea actuală și nu sunt recomandate pentru proiectele noi. Nu se intenționează lansarea de actualizări viitoare la capacitățile lor. Relatările pe care le-ați creat folosind șabloane clasice vor fi disponibile în continuare.",
+      "s1p3": "Pentru mai multe informații, faceți clic pe linkul de învățare suplimentară de mai jos.",
+      "action1": "Închidere",
+      "action2": "Aflați mai multe",
+      "action3": "Încercați ArcGIS StoryMaps"
     },
     "embedBar": {
       "share": "Partajare",

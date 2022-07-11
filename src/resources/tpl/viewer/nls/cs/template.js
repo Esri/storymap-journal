@@ -60,7 +60,10 @@ define({
       "print0": "Je nám líto, tento příběh nelze vytisknout.",
       "print1": "Chcete-li tento příběh vytisknout, použijte tlačítko tisku v dialogovém okně sdílení.",
       "print2": "Omlouváme se. Tisknutelná verze příběhu je zpravidla přístupná přes dialogové okno sdílení, ale autor toto dialogové okno zakázal.",
-      "attention": "Upozornění!"
+      "attention": "Upozornění!",
+      "nonOwnerOrgUrl": "%TPL_NAME%, kam se snažíte získat přístup, nepochází z adresy URL, kterou jste zadali.",
+      "nonOwnerOrgProceedToGeneric": "Pokračujte na %HREF%",
+      "advanced": "Pokročilé"
     },
     "mobileView": {
       "tapForDetails": "Klepnutím zobrazíte podrobnosti.",

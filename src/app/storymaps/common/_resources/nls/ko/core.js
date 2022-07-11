@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "소셜 미디어 공유 업데이트",
-      "panel1": "소셜 미디어에서의 스토리의 외관이 향상되었지만 ArcGIS 웹 응용프로그램 항목 제목이 스토리 제목과 같지 않습니다.",
+      "panel1": "소셜 미디어에서의 스토리 외관이 향상되었지만 ArcGIS 웹 응용프로그램 항목 제목이 스토리 제목과 같지 않습니다.",
       "panel1tooltip": "제목, 요약 및 썸네일 이미지를 정의하면 스토리가 다음과 같이 보입니다:",
       "panel2": "소셜 미디어에서 사용할 제목:",
       "panel2q1": "스토리 제목(권장됨)",
@@ -152,6 +152,27 @@ define({
       "action1": "닫기",
       "action2": "내 스토리 지금 확인",
       "action3": "자세한 정보"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Classic Esri Story Maps가 연장 지원됩니다.",
+      "s1h1": "Classic Esri Story Maps에 대한 중요 메시지",
+      "s1p1": "Classic Esri Story Maps가 연장 지원됩니다. 모든 고객은 Esri의 최신 스토리텔링 도구인 ArcGIS StoryMaps를 사용하는 것이 좋습니다.",
+      "s1p2": "클래식 템플릿은 더 이상 활성 개발 상태가 아니며 새 프로젝트에 권장되지 않습니다. 해당 기능에 대한 추가 업데이트 계획은 없습니다. 클래식 템플릿을 사용하여 생성한 스토리는 계속 사용할 수 있습니다.",
+      "s1p3": "클래식 템플릿은 2021년 12월에 기본 Configurable Apps 갤러리에서 제거됩니다. ArcGIS StoryMaps 사용으로 전환하는 동안 현재 워크플로를 지원해야 하는 경우 기관의 사용자 설정 Configurable Apps 그룹에 클래식 템플릿을 하나 이상 추가할 수 있습니다.",
+      "s1p4": "자세한 내용을 확인하려면 아래의 자세한 정보 링크를 클릭하세요.",
+      "action1": "닫기",
+      "action2": "자세한 정보",
+      "action3": "ArcGIS StoryMaps 체험하기"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Classic Esri Story Maps가 만기 지원됩니다.",
+      "s1h1": "Classic Esri Story Maps에 대한 중요 메시지",
+      "s1p1": "Classic Esri Story Maps 템플릿이 만기 지원됩니다. 모든 고객은 Esri의 최신 스토리텔링 도구인 ArcGIS StoryMaps를 사용하는 것이 좋습니다.",
+      "s1p2": "클래식 템플릿은 더 이상 활성 개발 상태가 아니며 새 프로젝트에 권장되지 않습니다. 해당 기능에 대한 추가 업데이트 계획은 없습니다. 클래식 템플릿을 사용하여 생성한 스토리는 계속 사용할 수 있습니다.",
+      "s1p3": "자세한 내용을 확인하려면 아래의 자세한 정보 링크를 클릭하세요.",
+      "action1": "닫기",
+      "action2": "자세한 정보",
+      "action3": "ArcGIS StoryMaps 체험하기"
     },
     "embedBar": {
       "share": "공유",

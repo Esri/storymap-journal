@@ -600,9 +600,9 @@ define(["./WebApplicationData",
 			this.getSidebarImages = function() {
 				var sections = this.getStorySections();
 				var imgUrls = [];
-				_.each(sections, function(section) {
+				_.forEach(sections, function(section) {
 					var jqSection = $(section.content);
-					_.each(jqSection.find('img'), function(img) {
+					_.forEach(jqSection.find('img'), function(img) {
 						imgUrls.push(Helper.possiblyRemoveToken(img.src));
 					});
 				});
@@ -683,21 +683,23 @@ define(["./WebApplicationData",
 				});
 			};
 
+			// NOTE: This function seems to not be used anywhere. keeping anyway, just in case. -als 12/21
 			this.checkTokens = function() {
 				var sections = this.getStorySections();
-				_.each(sections, function(section) {
+				_.forEach(sections, function(section) {
 					duplicateSectionProcessing(section);
 				});
 				var imageUrls = this.getImages().concat([WebApplicationData.getLogoURL()]);
-				_.each(imageUrls, function(url) {
+				_.forEach(imageUrls, function(url) {
 					checkStr(url);
 				});
 			};
 
+			// NOTE: This function ALSO seems to not be used anywhere (except checkTokens above). -als 12/21
 			function duplicateSectionProcessing(section) {
 				var strToCheck = section.content;
 				var jqSection = $(section.content);
-				_.each(jqSection.find('img'), function(img) {
+				_.forEach(jqSection.find('img'), function(img) {
 					var originalUrl = img.src;
 					var untokenizedUrl = Helper.possiblyRemoveToken(img.src);
 					if (originalUrl !== untokenizedUrl) {

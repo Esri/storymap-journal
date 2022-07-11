@@ -153,6 +153,27 @@ define({
       "action2": "立即檢查我的故事",
       "action3": "瞭解詳細資訊"
     },
+    "extendedSupportMessage": {
+      "bannerMsg": "將延長支援經典 Esri Story Maps",
+      "s1h1": "關於經典 Esri Story Maps 的重要訊息",
+      "s1p1": "將延長支援經典 Esri Story Maps 樣板。 我們鼓勵所有客戶使用 ArcGIS StoryMaps，這是 Esri 目前的敘事工具系列。",
+      "s1p2": "經典樣板不再處於作用中開發階段，不建議新專案使用。 未規劃對其功能進行進一步更新。 使用經典樣板建立的故事將繼續使用。",
+      "s1p3": "在 2021 年 12 月，將從預設的可配置應用程式庫中移除經典樣板。 如果需要在過渡到使用 ArcGIS StoryMaps 期間支援目前工作流程，可將一或多個經典樣板新增至您組織的自訂可配置應用程式群組。",
+      "s1p4": "有關詳細資訊，請按一下底下的瞭解更多連結。",
+      "action1": "關閉",
+      "action2": "瞭解詳細資訊",
+      "action3": "試用 ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "將成熟支援經典 Esri Story Maps",
+      "s1h1": "關於經典 Esri Story Maps 的重要訊息",
+      "s1p1": "將成熟支援經典 Esri Story Maps 樣板。 我們鼓勵所有客戶使用 ArcGIS StoryMaps，這是 Esri 目前的敘事工具系列。",
+      "s1p2": "經典樣板不再處於作用中開發階段，不建議新專案使用。 未規劃對其功能進行進一步更新。 使用經典樣板建立的故事將繼續使用。",
+      "s1p3": "有關詳細資訊，請按一下底下的瞭解更多連結。",
+      "action1": "關閉",
+      "action2": "瞭解詳細資訊",
+      "action3": "試用 ArcGIS StoryMaps"
+    },
     "embedBar": {
       "share": "分享",
       "fullScreen": "全螢幕",

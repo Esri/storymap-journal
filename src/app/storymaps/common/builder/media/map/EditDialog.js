@@ -4,6 +4,7 @@ define([
 		"./MapViewerWrapper",
 		"./MapViewerWrapperUtils",
 		"./NewMapDialog",
+		"../../../utils/CommonHelper",
 		"dojo/Deferred",
 		"dojo/topic",
 		"dojo/has",
@@ -15,6 +16,7 @@ define([
 		MapViewerWrapper,
 		MapViewerWrapperUtils,
 		NewMapDialog,
+		CommonHelper,
 		Deferred,
 		topic,
 		has
@@ -44,7 +46,8 @@ define([
 				onSaveError: onSaveError,
 				onLoad: mapViewerLoaded,
 				onError: mapViewerFatalError,
-				onEnableSave: onEnableSave
+				onEnableSave: onEnableSave,
+				token: CommonHelper.getCookieToken()
 			});
 
 			this.present = function(params)

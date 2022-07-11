@@ -60,7 +60,10 @@ define({
       "print0": "Diese Story kann leider nicht gedruckt werden.",
       "print1": "Verwenden Sie zum Drucken dieser Story die Schaltfläche \"Drucken\" im Freigabe-Dialogfeld.",
       "print2": "Eine druckbare Version dieser Story kann in der Regel über das Freigabe-Dialogfeld aufgerufen werden. Dieses Dialogfeld wurde jedoch leider vom Autor deaktiviert.",
-      "attention": "Achtung!"
+      "attention": "Achtung!",
+      "nonOwnerOrgUrl": "Die Vorlage %TPL_NAME%, auf die Sie zugreifen möchten, stammt nicht von der von Ihnen angegebenen URL.",
+      "nonOwnerOrgProceedToGeneric": "Mit %HREF% fortfahren",
+      "advanced": "Erweitert"
     },
     "mobileView": {
       "tapForDetails": "Zum Anzeigen von Details tippen",
@@ -81,7 +84,7 @@ define({
       "errorNotPublished": "Dieser Link ist nicht aktiv (Abschnitt wurde nicht veröffentlicht)"
     },
     "headerFromCommon": {
-      "storymapsText": "Eine Story-Map",
+      "storymapsText": "Eine Story Map",
       "builderButton": "Bearbeiten",
       "facebookTooltip": "Auf Facebook freigeben",
       "twitterTooltip": "Auf Twitter freigeben",

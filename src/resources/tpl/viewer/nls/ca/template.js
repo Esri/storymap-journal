@@ -60,7 +60,10 @@ define({
       "print0": "Aquesta història no es pot imprimir.",
       "print1": "Per imprimir aquesta història, utilitzeu el botó d'impressió del quadre de diàleg per compartir.",
       "print2": "Normalment, es pot accedir a una versió per imprimir de la història a través del quadre de diàleg per compartir, però l'autor l'ha deshabilitat.",
-      "attention": "Atenció!"
+      "attention": "Atenció!",
+      "nonOwnerOrgUrl": "L'element %TPL_NAME% al qual proveu d'accedir no prové de l'URL que heu proporcionat.",
+      "nonOwnerOrgProceedToGeneric": "Procediu a %HREF%",
+      "advanced": "Advanced"
     },
     "mobileView": {
       "tapForDetails": "Toqueu per obtenir detalls",

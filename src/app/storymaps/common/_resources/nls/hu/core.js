@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Közösségi médiamegosztás módosítása",
-      "panel1": "Történetének közösségi médiabeli megjelenését javítottuk, de az ArcGIS webes alkalmazás elemcíme nem azonos a történetének a címével.",
+      "panel1": "Történetének közösségi médiabeli megjelenését javítottuk, de az ArcGIS webes alkalmazás elemcíme nem azonos a történet címével.",
       "panel1tooltip": "Cím, összefoglalás és bélyegkép megadásával a történet így fog megjelenni:",
       "panel2": "Melyik címet kívánja használni a közösségi médiában:",
       "panel2q1": "Történet címe (ajánlott)",
@@ -152,6 +152,27 @@ define({
       "action1": "Bezárás",
       "action2": "Saját történetek megtekintése most",
       "action3": "További információk"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Klasszikus Esri Story Maps: meghosszabított terméktámogatás",
+      "s1h1": "Fontos üzenet a klasszikus Esri Story Maps alkalmazással kapcsolatban",
+      "s1p1": "A klasszikus Esri Story Maps sablonokra a Meghosszabbított terméktámogatás vonatkozik. Minden ügyfelet arra ösztönzünk, hogy használják az ArcGIS StoryMaps alkalmazást, az Esri aktuális történetmesélő eszközét.",
+      "s1p2": "A klasszikus sablonok már nincsenek aktív fejlesztés alatt, és nem ajánljuk őket új projektekhez. Ne tervezzük funkcióik további frissítését. A klasszikus sablonok használatával létrehozott történetek továbbra is hozzáférhetők maradnak.",
+      "s1p3": "2021. decemberében a klasszikus sablonokat eltávolítjuk az alapértelmezett konfigurálható alkalmazások galériájából. Lehetőség van több klasszikus sablon hozzáadására a szervezete egyénileg konfigurálható alkalmazások csoportjához, ha szükséges a jelenlegi munkafolyamatok támogatásához az ArcGIS StoryMaps használatára való áttérés során.",
+      "s1p4": "További információért kattintson az alábbi linkre.",
+      "action1": "Bezárás",
+      "action2": "További információ",
+      "action3": "Próbálja ki az ArcGIS StoryMaps alkalmazást"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Klasszikus Esri Story Maps: Terméktámogatás",
+      "s1h1": "Fontos üzenet a klasszikus Esri Story Maps alkalmazással kapcsolatban",
+      "s1p1": "A klasszikus Esri Story Maps sablonokra a Terméktámogatás vonatkozik. Minden ügyfelet arra ösztönzünk, hogy használják az ArcGIS StoryMaps alkalmazást, az Esri aktuális történetmesélő eszközét.",
+      "s1p2": "A klasszikus sablonok már nincsenek aktív fejlesztés alatt, és nem ajánljuk őket új projektekhez. Ne tervezzük funkcióik további frissítését. A klasszikus sablonok használatával létrehozott történetek továbbra is hozzáférhetők maradnak.",
+      "s1p3": "További információért kattintson az alábbi linkre.",
+      "action1": "Bezárás",
+      "action2": "További információ",
+      "action3": "Próbálja ki az ArcGIS StoryMaps alkalmazást"
     },
     "embedBar": {
       "share": "Megosztás",

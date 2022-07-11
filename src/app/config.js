@@ -24,7 +24,7 @@ app.cfg = {
 		bitly: {
 			enable: true,
 			login: "esristorymaps",
-			key: "R_14fc9f92e48f7c78c21db32bd01f7014"
+			key: ""
 		}
 	},
 
@@ -124,6 +124,7 @@ app.cfg = {
 	// Text to be used as the browser page title during app creation
 	TPL_NAME: "Map Journal",
 	TPL_ID: "mapjournal",
+	TPL_DIR: "MapJournal",
 	WEBAPP_TAG: ["Story Map", "Map Journal"],
 	WEBAPP_KEYWORD_GENERIC: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map"],
 	WEBAPP_KEYWORD_APP: ["Story Map", "Story Maps", "MapJournal"],
@@ -163,6 +164,8 @@ app.cfg = {
 	// If you are using ArcGIS Online or deploying the template on a Portal instance, you don't have to edit those URL
 	DEFAULT_SHARING_URL: "//www.arcgis.com/sharing/rest/content/items",
 	//DEFAULT_SHARING_URL: "//portal.internal.com/arcgis/sharing/rest/content/items",
-	DEFAULT_PROXY_URL: "//www.arcgis.com/sharing/proxy"
+	DEFAULT_PROXY_URL: "//www.arcgis.com/sharing/proxy",
 	//DEFAULT_PROXY_URL: "//portal.internal.com/arcgis/sharing/proxy"
+ 	DEFAULT_CLIENT_ID: "storymaps"
+
 };

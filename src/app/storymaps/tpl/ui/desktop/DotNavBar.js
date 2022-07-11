@@ -199,7 +199,7 @@ define([
 			}
 
 			function initEvents() {
-				container.off('click keypress').on('click keypress', _.debounce(onClickKeypress, 200, true));
+				container.off('click keypress').on('click keypress', _.debounce(onClickKeypress, 200, {leading: true}));
 			}
 
 			function onClickKeypress(e) {

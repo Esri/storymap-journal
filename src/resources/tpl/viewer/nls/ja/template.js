@@ -60,7 +60,10 @@ define({
       "print0": "このストーリーは印刷できません。",
       "print1": "このストーリーを印刷するには、共有ダイアログにある印刷ボタンを使用してください。",
       "print2": "ストーリーの印刷可能なバージョンは、通常、共有ダイアログからアクセスできますが、このダイアログは作成者によって無効化されています。",
-      "attention": "注意"
+      "attention": "注意",
+      "nonOwnerOrgUrl": "アクセスしようとしている %TPL_NAME% は、指定した URL からのものではありません。",
+      "nonOwnerOrgProceedToGeneric": "%HREF% に進む",
+      "advanced": "Advanced"
     },
     "mobileView": {
       "tapForDetails": "タップして詳細を表示",

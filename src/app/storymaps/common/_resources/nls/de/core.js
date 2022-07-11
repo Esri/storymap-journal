@@ -45,7 +45,7 @@ define({
       "status5": "Story ist als privat eingestuft",
       "status6": "Story wurde noch nicht gespeichert",
       "checking": "Wird überprüft",
-      "fix": "Fix"
+      "fix": "Beheben"
     },
     "saveError": {
       "title": "Fehler beim Speichern der Story",
@@ -77,7 +77,7 @@ define({
       "loadingMessage": "Ihre Story wird auf Probleme überprüft",
       "viewToggle1": "Story-Inhalt anzeigen",
       "viewToggle2": "Story-Inhalt schließen",
-      "socialize": "Socialize",
+      "socialize": "In Social Media teilen",
       "statusPrivate": "Ihre Story ist privat, nur Sie können sie sehen.",
       "statusError": "Der Inhalt Ihrer Story weist Probleme auf, die Ihre Leser bemerken werden. Sie können diese Probleme unten identifizieren und beheben.",
       "statusNoErrPrivate": "Geben Sie Ihre Story frei, sobald Sie bereit sind!",
@@ -143,15 +143,36 @@ define({
       "dontShowAgain": "Diese Meldung nicht mehr anzeigen"
     },
     "httpsTransitionMessage": {
-      "bannerMsg": "Wichtige Informationen zur Websicherheit von Story-Maps",
-      "s1h1": "Esri verbessert die Sicherheit von Story-Maps",
-      "s1p1": "Das Internet bildet den Rahmen für Ihre Story-Maps, und daher arbeitet die Web-Community stets daran, bessere Sicherheitsvorkehrungen zu entwickeln und umzusetzen. HTTPS, womit eine sichere Verbindung für im Internet übermittelte Inhalte hergestellt wird, setzt sich zunehmend als die Standardmethode für den Zugriff auf Webinhalte durch. Der Großteil der modernen Browser zeigt nun eine Warnmeldung an, wenn HTTP anstelle von HTTPS verwendet wird. Aufgrund dieses neuen Standards empfehlen wir dringend, für das Erstellen und Freigeben von Story-Maps HTTPS-Links zu verwenden und ausschließlich HTTPS URLs zu verwenden, wenn Sie in eine Story-Map Webinhalt einbetten oder Links zu Bildern hinzufügen.",
-      "s1p2": "Konkret bedeutet dies, dass auf eine Story-Map und alle zugehörigen Inhalte (Bilder, Layer, eingebettete Apps und Websites) über HTTPS-Links anstelle von HTTP-Links zugegriffen werden sollte. Auf diese Weise wird eine gute Benutzererfahrung für Ihre Leser sichergestellt, da die meisten Webbrowser anzeigen, dass Ihre Storys sicher sind.",
+      "bannerMsg": "Wichtige Informationen zur Websicherheit von Story Maps",
+      "s1h1": "Esri verbessert die Sicherheit von Story Maps",
+      "s1p1": "Das Internet bildet den Rahmen für Ihre Story Maps, und daher arbeitet die Web-Community stets daran, bessere Sicherheitsvorkehrungen zu entwickeln und umzusetzen. HTTPS, womit eine sichere Verbindung für im Internet übermittelte Inhalte hergestellt wird, setzt sich zunehmend als die Standardmethode für den Zugriff auf Webinhalte durch. Der Großteil der modernen Browser zeigt nun eine Warnmeldung an, wenn HTTP anstelle von HTTPS verwendet wird. Aufgrund dieses neuen Standards empfehlen wir dringend, für das Erstellen und Freigeben von Story Maps HTTPS-Links zu verwenden und ausschließlich HTTPS URLs zu verwenden, wenn Sie in eine Story Map Webinhalt einbetten oder Links zu Bildern hinzufügen.",
+      "s1p2": "Konkret bedeutet dies, dass auf eine Story Map und alle zugehörigen Inhalte (Bilder, Layer, eingebettete Apps und Websites) über HTTPS-Links anstelle von HTTP-Links zugegriffen werden sollte. Auf diese Weise wird eine gute Benutzererfahrung für Ihre Leser sichergestellt, da die meisten Webbrowser anzeigen, dass Ihre Storys sicher sind.",
       "s2h1": "Was muss ich tun?",
-      "s2p1": "Esri arbeitet daran, einen einfachen Übergang für Autoren und Leser von Story-Maps sicherzustellen. In den Story-Map-Buildern und in \"Eigene Storys\" stehen nun Werkzeuge zur Verfügung, mit denen Sie unsichere Inhalte (HTTP) in Ihren Storys finden können. Es werden ebenfalls Empfehlungen für die Problembehebung gegeben. Überprüfen Sie Ihre Storys auf unsichere Inhalte, und wechseln Sie so bald wie möglich zu HTTPS.",
+      "s2p1": "Esri arbeitet daran, einen einfachen Übergang für Autoren und Leser von Story Maps sicherzustellen. In den Story Map-Buildern und in \"Eigene Storys\" stehen nun Werkzeuge zur Verfügung, mit denen Sie unsichere Inhalte (HTTP) in Ihren Storys finden können. Es werden ebenfalls Empfehlungen für die Problembehebung gegeben. Überprüfen Sie Ihre Storys auf unsichere Inhalte, und wechseln Sie so bald wie möglich zu HTTPS.",
       "action1": "Schließen",
       "action2": "Eigene Storys jetzt überprüfen",
       "action3": "Weitere Informationen"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Klassische Esri Story Maps befinden sich in der Phase \"Extended Support\"",
+      "s1h1": "Wichtige Information zu klassischen Esri Story Maps",
+      "s1p1": "Klassische Esri Story Maps-Vorlagen haben nun den Support-Status \"Extended\". Wir empfehlen allen Kunden, ArcGIS StoryMaps, das Esri Storytelling-Werkzeug der aktuellen Generation zu verwenden.",
+      "s1p2": "Die klassischen Vorlagen werden nicht mehr aktiv weiterentwickelt und für neue Projekte nicht empfohlen. Für die entsprechenden Funktionen sind keine weiteren Aktualisierungen geplant. Storys, die Sie mit den klassischen Vorlagen erstellt haben, sind weiterhin verfügbar.",
+      "s1p3": "Im Dezember 2021 werden die klassischen Vorlagen aus der Galerie der Standard-Configurable Apps entfernt. Während des Übergangs zur Verwendung von ArcGIS StoryMaps können der Gruppe der benutzerdefinierten Configurable Apps Ihrer Organisation bei Bedarf eine oder mehrere klassische Vorlagen hinzugefügt werden, um aktuelle Workflows zu unterstützen.",
+      "s1p4": "Klicken Sie unten auf den Link \"Weitere Informationen\", um mehr zu erfahren.",
+      "action1": "Schließen",
+      "action2": "Weitere Informationen",
+      "action3": "ArcGIS StoryMaps testen"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Klassische Esri Story Maps befinden sich in der Phase \"Mature Support\"",
+      "s1h1": "Wichtige Information zu klassischen Esri Story Maps",
+      "s1p1": "Klassische Esri Story Maps-Vorlagen haben nun den Support-Status \"Mature\". Wir empfehlen allen Kunden, ArcGIS StoryMaps, das Esri Storytelling-Werkzeug der aktuellen Generation zu verwenden.",
+      "s1p2": "Die klassischen Vorlagen werden nicht mehr aktiv weiterentwickelt und für neue Projekte nicht empfohlen. Für die entsprechenden Funktionen sind keine weiteren Aktualisierungen geplant. Storys, die Sie mit den klassischen Vorlagen erstellt haben, sind weiterhin verfügbar.",
+      "s1p3": "Klicken Sie unten auf den Link \"Weitere Informationen\", um mehr zu erfahren.",
+      "action1": "Schließen",
+      "action2": "Weitere Informationen",
+      "action3": "ArcGIS StoryMaps testen"
     },
     "embedBar": {
       "share": "Freigeben",
@@ -159,13 +180,13 @@ define({
       "exitFullScreen": "Vollbild beenden",
       "enlarge": "Vergrößern",
       "newTab": "In neuer Registerkarte öffnen",
-      "tagline": "Eine Story-Map"
+      "tagline": "Eine Story Map"
     },
     "licenseChange2018": {
-      "noAccess": "Ihr Konto (%USER_NAME%) ist nicht dafür lizenziert, eine nicht öffentliche Story-Map zu öffnen. Bitten Sie den Administrator der Organisation, Ihnen einen Benutzertyp mit Story-Maps oder eine Add-On-Lizenz für Essential Apps zuzuweisen."
+      "noAccess": "Ihr Konto (%USER_NAME%) ist nicht dafür lizenziert, eine nicht öffentliche Story Map zu öffnen. Bitten Sie den Administrator der Organisation, Ihnen einen Benutzertyp mit Story Maps oder eine Add-On-Lizenz für Essential Apps zuzuweisen."
     },
     "storyTellerUserType": {
-      "notCreatorError": "Ihr Konto (%USER_NAME%) ist nicht für die Verwendung klassischer Story-Map-Builder lizenziert. Bitten Sie den Administrator Ihrer Organisation, Ihnen einen Creator-Benutzertyp zuzuweisen."
+      "notCreatorError": "Ihr Konto (%USER_NAME%) ist nicht für die Verwendung klassischer Story Map-Builder lizenziert. Bitten Sie den Administrator Ihrer Organisation, Ihnen einen Creator-Benutzertyp zuzuweisen."
     }
   }
 });

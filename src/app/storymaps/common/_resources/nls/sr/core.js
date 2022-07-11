@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Ažuriranje deljenja na društvenim medijima",
-      "panel1": "Izgled vaše priče na društvenim medijima je poboljšan, ali naslov vaše stavke ArcGIS veb aplikacije nije isti kao naslov vaše priče.",
+      "panel1": "Izgled vaše priče na društvenim mrežama je poboljšan, ali naslov vaše stavke veb aplikacije ArcGIS nije isti kao naslov vaše priče.",
       "panel1tooltip": "Određivanjem naslova, rezimea i sličice, vaša priča će izgledati ovako:",
       "panel2": "Koji naslov biste želeli da koristite na društvenim medijima:",
       "panel2q1": "Naslov priče (preporučeno)",
@@ -152,6 +152,27 @@ define({
       "action1": "Zatvori",
       "action2": "Proveri odmah moje priče",
       "action3": "Saznaj više"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Klasične Esri Story Maps nalaze se u proširenoj podršci",
+      "s1h1": "Važne poruke za klasične Esri Story Maps",
+      "s1p1": "Classic Esri Story Maps šabloni nalaze se u proširenoj podršci. Podstičemo sve klijente da upotrebe ArcGIS StoryMaps, trenutnu alatku kompanije Esri za pričanje priča.",
+      "s1p2": "Klasični šabloni se ne nalaze više u okviru stavke za aktivni razvoj i ne preporučuju se više za nove projekte. Nema dodatnih ažuriranja koja su planirana za njihove sposobnosti. Priče koje ste kreirali koristeći klasične šablone nastaviće da budu dostupne.",
+      "s1p3": "U decembru 2021. klasični šabloni biće uklonjeni iz galerije podrazumevanih podesivih aplikacija. Jedan ili više klasičnih šablona može se dodati u grupu prilagođenih podesivih aplikacija ako je to potrebno kao podrška za trenutne radne tokove tokom vaše tranzicije na korišćenje ArcGIS StoryMaps.",
+      "s1p4": "Za više informacija, kliknite na vezu u nastavku.",
+      "action1": "Zatvori",
+      "action2": "Saznajte više",
+      "action3": "Isprobajte ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Klasične Esri Story Maps nalaze se u Mature Support",
+      "s1h1": "Važne poruke za klasične Esri Story Maps",
+      "s1p1": "Classic Esri Story Maps šabloni nalaze se u Mature Support. Podstičemo sve klijente da upotrebe ArcGIS StoryMaps, trenutnu alatku kompanije Esri za pričanje priča.",
+      "s1p2": "Klasični šabloni se ne nalaze više u okviru stavke za aktivni razvoj i ne preporučuju se više za nove projekte. Nema dodatnih ažuriranja koja su planirana za njihove sposobnosti. Priče koje ste kreirali koristeći klasične šablone nastaviće da budu dostupne.",
+      "s1p3": "Za više informacija, kliknite na vezu u nastavku.",
+      "action1": "Zatvori",
+      "action2": "Saznajte više",
+      "action3": "Isprobajte ArcGIS StoryMaps"
     },
     "embedBar": {
       "share": "Podeli",

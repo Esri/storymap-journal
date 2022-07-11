@@ -60,7 +60,10 @@ define({
       "print0": "Impossible d'imprimer ce récit.",
       "print1": "Pour imprimer ce récit, utilisez le bouton d'impression situé dans la boîte de dialogue de partage.",
       "print2": "Une version imprimable du récit est généralement accessible via la boîte de dialogue de partage, mais elle a été désactivée par l'auteur.",
-      "attention": "Attention !"
+      "attention": "Attention !",
+      "nonOwnerOrgUrl": "L’application %TPL_NAME% à laquelle vous essayez d’accéder n’est pas disponible à l’URL que vous avez indiquée.",
+      "nonOwnerOrgProceedToGeneric": "Poursuivre vers %HREF%",
+      "advanced": "Avancé"
     },
     "mobileView": {
       "tapForDetails": "Touchez pour obtenir des détails",

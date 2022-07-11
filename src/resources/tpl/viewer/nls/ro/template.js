@@ -60,7 +60,10 @@ define({
       "print0": "Ne pare rău, acest scenariu nu poate fi imprimat.",
       "print1": "Pentru a imprima acest scenariu, folosiţi butonul de imprimare din caseta de dialog pentru partajare.",
       "print2": "Ne pare rău, de obicei, o versiune printabilă a scenariului poate fi accesată din caseta de dialog pentru partajare, dar această casetă de dialog a fost dezactivată de autor.",
-      "attention": "Atenţie!"
+      "attention": "Atenţie!",
+      "nonOwnerOrgUrl": "%TPL_NAME% pe care încercați să îl accesați nu are originea în URL-ul pus la dispoziție de dvs.",
+      "nonOwnerOrgProceedToGeneric": "Continuați la %HREF%",
+      "advanced": "Avansat"
     },
     "mobileView": {
       "tapForDetails": "Atingeţi pentru detalii",

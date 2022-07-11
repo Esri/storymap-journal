@@ -101,37 +101,37 @@ define(["lib-build/css!./Builder",
 
 			app.builder.cleanApp = cleanApp;
 
-			// Show https-transition notification when app loads
+			// Show extended support notification when app loads
 			topic.subscribe('tpl-ready', function() {
 				if (!app.isPortal) {
-					var stringsHttps = i18n.commonCore.httpsTransitionMessage;
+					var bannerStrings = i18n.commonCore.extendedSupportMessage;
 
 					new BannerNotification({
-						id: "httpsTransitionMessage",
-						bannerMsg: stringsHttps.bannerMsg,
+						id: "extendedSupportMessage",
+						bannerMsg: bannerStrings.bannerMsg,
 						mainMsgHtml: '\
-							<h2>' + stringsHttps.s1h1 + '</h2>\
-							<p>' + stringsHttps.s1p1 + '</p>\
-							<p>' + stringsHttps.s1p2 + '</p>\
-							<h2>' + stringsHttps.s2h1 + '</h2>\
-							<p>' + stringsHttps.s2p1 + '</p>\
+							<h2>' + bannerStrings.s1h1 + '</h2>\
+							<p>' + bannerStrings.s1p1 + '</p>\
+							<p>' + bannerStrings.s1p2 + '</p>\
+							<p>' + bannerStrings.s1p3 + '</p>\
+							<p>' + bannerStrings.s1p4 + '</p>\
 						',
 						actions: [
 							{
 								primary: true,
-								string: stringsHttps.action1,
+								string: bannerStrings.action1,
 								closeOnAction: true
 							},
 							{
-								string: stringsHttps.action2,
+								string: bannerStrings.action2,
 								action: function() {
-									window.open('https://storymaps.arcgis.com/en/my-stories/');
+									window.open('https://www.esri.com/arcgis-blog/products/arcgis-storymaps/announcements/transition-timeline-for-classic-story-maps-august-2021/');
 								}
 							},
 							{
-								string: stringsHttps.action3,
+								string: bannerStrings.action3,
 								action: function() {
-									window.open('https://links.esri.com/storymaps/web_security_faq');
+									window.open('https://www.esri.com/en-us/arcgis/products/arcgis-storymaps/overview');
 								}
 							}
 						],
@@ -878,9 +878,9 @@ define(["lib-build/css!./Builder",
 			// strip tokens from inline images in sections
 			var sections = data && data.values && data.values.story && data.values.story.sections;
 			if (sections) {
-				_.each(sections, function(section) {
+				_.forEach(sections, function(section) {
 					var jqSection = $(section.content);
-					_.each(jqSection.find('img'), function(img) {
+					_.forEach(jqSection.find('img'), function(img) {
 						section.content = stripTokensFromUrls(section.content, img.src);
 					});
 				});

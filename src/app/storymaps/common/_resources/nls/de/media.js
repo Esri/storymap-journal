@@ -91,7 +91,7 @@ define({
       "lblLabel": "Bildüberschrift",
       "lblLabel1": "Beschriftung",
       "lblLabel2": "Hovertext",
-      "lblLabel3": "Keine",
+      "lblLabel3": "Kein(e)",
       "lblLabelPH": "Text eingeben...",
       "lblMaximize": "Fügen Sie eine Schaltfläche zum Maximieren in der Ecke des Bildes ein",
       "lblMaximizeHelp": "Nur für Fotos mit hoher Qualität empfohlen",

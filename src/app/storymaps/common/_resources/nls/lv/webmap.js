@@ -2,7 +2,7 @@ define({
   "commonWebmap": {
     "selector": {
       "lblWebMap": "Karte",
-      "lblLocation": "Izvietojums",
+      "lblLocation": "Novietojums",
       "lblContent": "Saturs",
       "lblPopup": "Uznirstošie logi",
       "lblControls": "Papildu",
@@ -39,10 +39,10 @@ define({
       "tooltipLocation": "Definējiet novietojumu, kuru parādīs šī karte.",
       "tooltipContent": "Definējiet redzamos slāņus.",
       "tooltipPopup": "Izvēlieties uznirstošo logu, kas jāatver, kad tiek parādīta šī karte.",
-      "tooltipOverview": "Attēlot mazu pārskata karti blakus galvenajai kartei.",
-      "tooltipLegend": "Attēlojiet kartē apzīmējumus, kas ir noderīgi, ja kartē ir daudz slāņu un simbolu.",
+      "tooltipOverview": "Attēlo mazu pārskata karti blakus galvenajai kartei.",
+      "tooltipLegend": "Kartē attēlo apzīmējumus, kas ir noderīgi, ja kartē ir daudz slāņu un simbolu.",
       "mapCfgInvite": "Izmantojiet šīs vadīklas, lai konfigurētu savu  karti",
-      "lblLocationAlt": "Mantots no pirmās kartes",
+      "lblLocationAlt": "Pārmantots no pirmās kartes",
       "tooltipLocationAlt": "Šīs kartes novietojums ir sinhronizēts ar sērijas pirmo karti. Lai mainītu šo rīcību savai sērijai, dodieties uz Iestatījumi > Kartes opcijas."
     },
     "configure": {

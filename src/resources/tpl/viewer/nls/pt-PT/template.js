@@ -60,7 +60,10 @@ define({
       "print0": "Lamentamos, esta história não pode ser impressa.",
       "print1": "Para imprimir esta história, por favor utilize o botão imprimir localizado na caixa de diálogo partilhar.",
       "print2": "Lamentamos, uma versão imprimível da história é normalmente acessível através da caixa de diálogo partilhar, mas esta caixa de diálogo foi desativada pelo autor.",
-      "attention": "Atenção!"
+      "attention": "Atenção!",
+      "nonOwnerOrgUrl": "O(A) %TPL_NAME% que está a tentar aceder não tem origem no URL facultado.",
+      "nonOwnerOrgProceedToGeneric": "Prosseguir para %HREF%",
+      "advanced": "Avançado"
     },
     "mobileView": {
       "tapForDetails": "Toque para aceder a detalhes",

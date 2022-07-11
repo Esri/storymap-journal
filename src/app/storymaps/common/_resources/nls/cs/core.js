@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Aktualizace sdílení na sociálních sítích",
-      "panel1": "Vzhled vašeho příběhu na sociálních médiích byl aktualizován, název vaší položky webové aplikace ArcGIS se však neshoduje s názvem vašeho příběhu.",
+      "panel1": "Vzhled vašeho příběhu na sociálních médiích byl aktualizován, název položky vaší webové aplikace ArcGIS se však neshoduje s názvem vašeho příběhu.",
       "panel1tooltip": "Pokud definujete název, shrnutí a náhledový obrázek, váš příběh bude vypadat následovně:",
       "panel2": "Název, který chcete použít na sociálních sítích:",
       "panel2q1": "Název příběhu (doporučeno)",
@@ -103,7 +103,7 @@ define({
       "viewExample": "Zobrazit živý příklad"
     },
     "settingsTheme": {
-      "title": "Téma"
+      "title": "Motiv"
     },
     "settingsHeader": {
       "title": "Záhlaví",
@@ -152,6 +152,27 @@ define({
       "action1": "Zavřít",
       "action2": "Chci si prohlédnout svoje příběhy",
       "action3": "Více informací"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Mapy Classic Esri Story mají prodlouženou podporu",
+      "s1h1": "Důležitá informace o klasických mapách Esri Story",
+      "s1p1": "Šablony map Classic Esri Story mají prodlouženou podporu. Vyzýváme všechny zákazníky, aby používali ArcGIS StoryMaps, aktuální generaci map Esri pro zobrazování příběhů.",
+      "s1p2": "Klasické šablony se už dále aktivně nevyvíjí a nedoporučujeme je pro nové projekty. Další aktualizace jejich funkcí se neplánují. Příběhy, které jste pomocí klasických šablon vytvořili, budou i nadále dostupné.",
+      "s1p3": "V prosinci 2021 budou klasické šablony odstraněny z výchozí galerie konfigurovatelných aplikací. Pokud potřebujete během vašeho přechodu na ArcGIS StoryMaps podpořit aktuální pracovní postupy může být k vaší skupině vlastních konfigurovatelných aplikací přidána jedna nebo více klasických šablon.",
+      "s1p4": "Více informací se dozvíte na níže uvedeném odkazu.",
+      "action1": "Zavřít",
+      "action2": "Další informace",
+      "action3": "Vyzkoušejte ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Mapy Classic Esri Story jsou ve finální fázi podpory",
+      "s1h1": "Důležitá informace o klasických mapách Esri Story",
+      "s1p1": "Šablony map Classic Esri Story jsou ve finální fázi podpory. Vyzýváme všechny zákazníky, aby používali ArcGIS StoryMaps, aktuální generaci map Esri pro zobrazování příběhů.",
+      "s1p2": "Klasické šablony se už dále aktivně nevyvíjí a nedoporučujeme je pro nové projekty. Další aktualizace jejich funkcí se neplánují. Příběhy, které jste pomocí klasických šablon vytvořili, budou i nadále dostupné.",
+      "s1p3": "Více informací se dozvíte na níže uvedeném odkazu.",
+      "action1": "Zavřít",
+      "action2": "Další informace",
+      "action3": "Vyzkoušejte ArcGIS StoryMaps"
     },
     "embedBar": {
       "share": "Sdílet",

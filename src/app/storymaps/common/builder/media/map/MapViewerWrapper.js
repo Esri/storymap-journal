@@ -73,11 +73,13 @@ define([
 				// If the app is on a white listed domain or same domain than MV, the MV need the esri_auth token
 				// In a development environment, that cookie is not likely to not be present
 				// So developer need to provide token in DEV_TOKEN properties above
+				// update feb 2021: use params.token, retrieved from /PortalSelf instead of discontinued esri_auth token
+
 				if ( MapViewerWrapperUtils.isWhiteListedDomain()
 						&& ! MapViewerWrapperUtils.viewerIsSameDomain()
-						&& dojo.cookie("esri_auth")
+						&& params.token
 				) {
-					url += '#' + JSON.parse(dojo.cookie("esri_auth")).token;
+					url += '#' + params.token;
 				}
 				else if ( MapViewerWrapperUtils.isWhiteListedDomain()
 						&& ! MapViewerWrapperUtils.viewerIsSameDomain()

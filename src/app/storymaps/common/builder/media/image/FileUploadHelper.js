@@ -170,7 +170,7 @@ define([
         fileDetails.thumbName = nameWithoutExt + '__thumb' + '.' + ext;
       }
 
-      _.each(fileDetails.files, function(fd) {
+      _.forEach(fileDetails.files, function(fd) {
         fd.name = nameWithoutExt + '__w' + fd.width + '.' + ext;
       });
 
@@ -191,9 +191,10 @@ define([
           }
 
           if (fileDetails.files) {
+            var self = this;
             result.sizes = _.map(fileDetails.files, function(f) {
-              return this.getSizesObj(f.name);
-            }, this);
+              return self.getSizesObj(f.name);
+            });
           } else if (fileDetails.file) {
             result.picUrl = this.getSizesObj(startingName).url;
             result.name = startingName;
@@ -326,9 +327,10 @@ define([
         defArr.push(this.removeResource(resource.thumbFile));
       }
       if (resource.sizes) {
+        var self = this;
         _.map(resource.sizes, function(size) {
-          defArr.push(this.removeResource(size.name));
-        }, this);
+          defArr.push(self.removeResource(size.name));
+        });
       }
 
       all(defArr).then(function(results) {
@@ -374,12 +376,13 @@ define([
       excludedName = excludedName || '';
       this.getPlainResources().then(lang.hitch(this, function(results) {
         var removeArr = [];
-        _.each(results.resources, function(r) {
+        var self = this;
+        _.forEach(results.resources, function(r) {
           var fileName = r.resource;
           if (fileName.match('^' + filePrefix) && fileName !== excludedName) {
-            removeArr.push(this.removeResource(r.resource));
+            removeArr.push(self.removeResource(r.resource));
           }
-        }, this);
+        });
         if (removeArr.length) {
           all(removeArr).then(def.resolve, def.reject);
         }
@@ -406,7 +409,9 @@ define([
         if (ignore) {
           return;
         }
-        if (_.contains(this.ignoreNames, r)) {}
+        // NOTE: 12/21 this isn't doing anything, right?
+        // but just in case, i'm leaving it -als
+        if (_.includes(this.ignoreNames, r)) {}
         var ext = self.getExt(r);
         // skip the unsupported resource types
         if (!self.getResourceType(ext)) { // generic 'image' or 'video'
@@ -440,7 +445,7 @@ define([
         }
 
       }));
-      _.each(lookup, function(fileDetails, fileId) {
+      _.forEach(lookup, function(fileDetails, fileId) {
         if (!fileDetails.sizes.length) {
           delete lookup[fileId];
         }
@@ -455,7 +460,7 @@ define([
       fileExt = fileExt.toLowerCase();
       var fileType;
       _.some(this.uploadTypesAccepted, function(extensions, type) {
-        if (_.contains(extensions, fileExt)) {
+        if (_.includes(extensions, fileExt)) {
           fileType = type;
           return true;
         }
@@ -478,7 +483,7 @@ define([
 
     addFilesToFormData: function(formdata, fileDetails) {
       if (fileDetails.files) {
-        _.each(fileDetails.files, function(fd, i) {
+        _.forEach(fileDetails.files, function(fd, i) {
           formdata.append('file' + i, fd.file, fd.name);
         });
       } else {

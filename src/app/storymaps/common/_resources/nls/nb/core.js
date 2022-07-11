@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Oppdater deling på sosiale medier",
-      "panel1": "Historien vises på en bedre måte på sosiale medier, men tittelen på ArcGIS-webapplikasjonselementet er ikke den samme som historietittelen.",
+      "panel1": "Historien vises på en bedre måte på sosiale medier, men ArcGIS-webapplikasjonens elementtittel er ikke den samme som historietittelen.",
       "panel1tooltip": "Når du angir en tittel, et sammendrag og et miniatyrbilde, vil historien se slik ut:",
       "panel2": "Hvilken tittel vil du bruke på sosiale medier:",
       "panel2q1": "Historietittel (anbefales)",
@@ -152,6 +152,27 @@ define({
       "action1": "Lukk",
       "action2": "Kontroller mine fortellinger nå",
       "action3": "Mer informasjon"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Classic Esri Story Maps er i Extended Support-fase",
+      "s1h1": "Viktig informasjon om Classic Esri Story Maps",
+      "s1p1": "Classic Esri Story Maps-maler er i Extended Support-fase. All kunder oppfordres til å bruke ArcGIS StoryMaps, som er Esris gjeldende verktøy for historiefortelling.",
+      "s1p2": "Classic-malene blir ikke videreutviklet og anbefales ikke til nye prosjekter. Det er ingen planer om å oppdatere funksjonaliteten i disse malene. Historier som er opprette ved hjelp av Classic-malene, vil fortsatt være tilgjengelige.",
+      "s1p3": "I desember 2021 blir Classic-malene fjernet fra standardgalleriet for Configurable Apps. Du kan legge til én eller flere Classic-maler i organisasjonens egendefinerte gruppe for konfigurerbare apper dersom det er nødvendig for å støtte nåværende arbeidsflyter under overgangen til ArcGIS StoryMaps.",
+      "s1p4": "Klikk på Mer informasjon-koblingen nedenfor hvis du vil ha mer informasjon.",
+      "action1": "Lukk",
+      "action2": "Mer informasjon",
+      "action3": "Prøv ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Classic Esri Story Maps er i Mature Support-fase",
+      "s1h1": "Viktig informasjon om Classic Esri Story Maps",
+      "s1p1": "Classic Esri Story Maps-maler er i Mature Support-fase. All kunder oppfordres til å bruke ArcGIS StoryMaps, som er Esris gjeldende verktøy for historiefortelling.",
+      "s1p2": "Classic-malene blir ikke videreutviklet og anbefales ikke til nye prosjekter. Det er ingen planer om å oppdatere funksjonaliteten i disse malene. Historier som er opprette ved hjelp av Classic-malene, vil fortsatt være tilgjengelige.",
+      "s1p3": "Klikk på Mer informasjon-koblingen nedenfor hvis du vil ha mer informasjon.",
+      "action1": "Lukk",
+      "action2": "Mer informasjon",
+      "action3": "Prøv ArcGIS StoryMaps"
     },
     "embedBar": {
       "share": "Del",

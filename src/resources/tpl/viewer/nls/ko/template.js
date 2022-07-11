@@ -60,7 +60,10 @@ define({
       "print0": "죄송합니다. 이 스토리는 인쇄할 수 없습니다.",
       "print1": "이 스토리를 인쇄하려면 공유 대화 상자에 있는 인쇄 버튼을 사용하세요.",
       "print2": "죄송합니다. 인쇄 가능한 스토리 버전은 일반적으로 공유 대화 상자를 통해 접근할 수 있지만 작성자가 이 대화 상자를 비활성화했습니다.",
-      "attention": "주의!"
+      "attention": "주의!",
+      "nonOwnerOrgUrl": "접근하려는 %TPL_NAME%이(가) 제공한 URL에서 생성되지 않았습니다.",
+      "nonOwnerOrgProceedToGeneric": "%HREF%로 계속 진행",
+      "advanced": "고급"
     },
     "mobileView": {
       "tapForDetails": "세부정보를 보려면 누릅니다.",

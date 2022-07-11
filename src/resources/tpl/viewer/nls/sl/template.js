@@ -60,7 +60,10 @@ define({
       "print0": "Oprostite, te zgodbe ni mogoče natisniti.",
       "print1": "Za tiskanje te zgodbe uporabite gumb za tiskanje v oknu za deljenje.",
       "print2": "Oprostite, različica zgodbe za tiskanje je običajno dostopna prek okna za deljenje, vendar je avtor to okno onemogočil.",
-      "attention": "Pozor!"
+      "attention": "Pozor!",
+      "nonOwnerOrgUrl": "%TPL_NAME%, do katere želite dostopati, ne izvira iz navedenega URL-ja.",
+      "nonOwnerOrgProceedToGeneric": "Nadaljuj na %HREF%",
+      "advanced": "Napredno"
     },
     "mobileView": {
       "tapForDetails": "Tapnite za podrobnosti",

@@ -60,7 +60,10 @@ define({
       "print0": "Üzgünüz, bu hikaye yazdırılamıyor.",
       "print1": "Bu hikayeyi yazdırmak için paylaşım iletişim kutusunda bulunan yazdır düğmesini kullanın.",
       "print2": "Üzgünüz, bu hikayenin yazdırılabilir bir versiyonuna genellikle paylaşım iletişim kutusundan ulaşılabilir, ancak söz konusu iletişim kutusu yazar tarafından devre dışı bırakılmış.",
-      "attention": "Dikkat!"
+      "attention": "Dikkat!",
+      "nonOwnerOrgUrl": "Erişim sağlamaya çalıştığınız %TPL_NAME%, sağladığınız URL'den kaynaklanmıyor.",
+      "nonOwnerOrgProceedToGeneric": "%HREF%'e devam edin",
+      "advanced": "Advanced"
     },
     "mobileView": {
       "tapForDetails": "Ayrıntılar için dokunun",

@@ -1,8 +1,8 @@
 define([],
 	function(){
 		// Header default configuration
-		var HEADER_LOGO_URL = "resources/tpl/viewer/icons/esri-logo.png",
-			HEADER_LOGO_TARGET = "https://www.esri.com",
+		var HEADER_LOGO_URL = "",
+			HEADER_LOGO_TARGET = "",
 			HEADER_LINK_URL = "https://storymaps.arcgis.com";
 
 		app.appCfg = {

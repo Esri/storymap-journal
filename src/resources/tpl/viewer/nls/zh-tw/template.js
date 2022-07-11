@@ -60,7 +60,10 @@ define({
       "print0": "很抱歉，無法列印此故事。",
       "print1": "若要列印此故事，請使用分享對話方塊中的列印按鈕。",
       "print2": "很抱歉，一般可透過分享對話方塊存取故事的可列印版本，但創作者已停用此對話方塊。",
-      "attention": "注意!"
+      "attention": "注意!",
+      "nonOwnerOrgUrl": "您正在嘗試存取的 %TPL_NAME% 並非源自您提供的 URL。",
+      "nonOwnerOrgProceedToGeneric": "繼續執行 %HREF%",
+      "advanced": "高級"
     },
     "mobileView": {
       "tapForDetails": "點選查看詳細資訊",

@@ -123,13 +123,14 @@ define([
     handleImageFile: function(origFile, isSingle) {
       var def = new Deferred();
       this.createNewImage(origFile).then(lang.hitch(this, function(img) {
+        var self = this;
         var files = [];
         var biggestDataUrl;
         var sortedWidths = _.sortBy(this.photoSettings.widths).reverse();
-        _.each(sortedWidths, function(thisWidth) {
-          var processed = this.createCanvasAndDataUrl(img, origFile.type, {width: thisWidth});
+        _.forEach(sortedWidths, function(thisWidth) {
+          var processed = self.createCanvasAndDataUrl(img, origFile.type, {width: thisWidth});
 
-          if (!this.validateFileSize(processed.file)) {
+          if (!self.validateFileSize(processed.file)) {
             def.reject({reason: 'compressed filesize'});
             return;
           }
@@ -138,7 +139,7 @@ define([
             files.push(_.omit(processed, 'dataUrl'));
           }
           biggestDataUrl = biggestDataUrl || processed.dataUrl;
-        }, this);
+        });
 
         var processedThumb = this.createCanvasAndDataUrl(img, origFile.type, {height: this.photoSettings.thumbHeight});
 

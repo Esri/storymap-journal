@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Sosiaalisen median jakamispäivitys",
-      "panel1": "Tarinasi ulkoasua sosiaalisessa mediassa on parannettu, mutta ArcGIS-Web-sovelluskohteen otsikko ei ole sama kuin tarinan otsikko.",
+      "panel1": "Tarinasi ulkoasua sosiaalisessa mediassa on parannettu, mutta ArcGIS-web-sovelluskohteen otsikko ei ole sama kuin tarinan otsikko.",
       "panel1tooltip": "Jos määrität otsikon, yhteenvedon ja pikkukuvan, tarinasi näyttää tältä:",
       "panel2": "Mitä otsikkoa haluat käyttää sosiaalisessa mediassa:",
       "panel2q1": "Tarinan otsikko (suositus)",
@@ -152,6 +152,27 @@ define({
       "action1": "Sulje",
       "action2": "Tarkista omat tarinani nyt",
       "action3": "Lisätietoja"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Perinteiset Esri Story Mapsit ovat laajennetussa tuessa",
+      "s1h1": "Tärkeä viesti koskien perinteistä Esri Story Mapsia",
+      "s1p1": "Perinteiset Esri Story Maps -mallit ovat laajennetussa tuessa. Kaikkia asiakkaita kehotetaan käyttämään ArcGIS StoryMapsia, joka on Esrin nykyisen sukupolven tarinankerrontatyökalu.",
+      "s1p2": "Perinteisiä malleja ei enää aktiivisesti kehitetä eikä niitä suositella käytettäväksi uusissa projekteissa. Ominaisuuksiin ei ole suunnitteilla uusia päivityksiä. Perinteisten mallien avulla luodut tarinat ovat edelleen käytettävissä.",
+      "s1p3": "Joulukuussa 2021 perinteiset mallit poistetaan oletusarvoisesta Configurable Apps -galleriasta. Yksi tai useampi perinteinen malli voidaan lisätä organisaatiosi oletusarvoiseen Configurable Apps -ryhmään tarvittaessa, jos niistä on hyötyä nykyisessä työnkulussa siirtyessäsi käyttämään ArcGIS StoryMapsia.",
+      "s1p4": "Lisätietoja saat napsauttamalla alla olevaa linkkiä.",
+      "action1": "Sulje",
+      "action2": "Lisätietoja",
+      "action3": "Kokeile ArcGIS StoryMapsia"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Perinteiset Esri Story Mapsit ovat syrjäytymässä olevassa tukivaiheessa",
+      "s1h1": "Tärkeä viesti koskien perinteistä Esri Story Mapsia",
+      "s1p1": "Perinteiset Esri Story Maps -mallit ovat syrjäytymässä olevassa tukivaiheessa. Kaikkia asiakkaita kehotetaan käyttämään ArcGIS StoryMapsia, joka on Esrin nykyisen sukupolven tarinankerrontatyökalu.",
+      "s1p2": "Perinteisiä malleja ei enää aktiivisesti kehitetä eikä niitä suositella käytettäväksi uusissa projekteissa. Ominaisuuksiin ei ole suunnitteilla uusia päivityksiä. Perinteisten mallien avulla luodut tarinat ovat edelleen käytettävissä.",
+      "s1p3": "Lisätietoja saat napsauttamalla alla olevaa linkkiä.",
+      "action1": "Sulje",
+      "action2": "Lisätietoja",
+      "action3": "Kokeile ArcGIS StoryMapsia"
     },
     "embedBar": {
       "share": "Jaa",

@@ -60,7 +60,10 @@ define({
       "print0": "Det går tyvärr inte att skriva ut berättelsen.",
       "print1": "Om du vill skriva ut berättelsen använder du utskriftsknappen i dialogrutan Dela.",
       "print2": "Det finns vanligtvis en utskrivbar version av berättelsen tillgänglig i dialogrutan Dela, men den dialogrutan har inaktiverats av författaren.",
-      "attention": "Obs!"
+      "attention": "Obs!",
+      "nonOwnerOrgUrl": "%TPL_NAME% du försöker öppna hämtas inte från den URL du angav.",
+      "nonOwnerOrgProceedToGeneric": "Fortsätt till %HREF%",
+      "advanced": "Avancerad"
     },
     "mobileView": {
       "tapForDetails": "Peka för information",

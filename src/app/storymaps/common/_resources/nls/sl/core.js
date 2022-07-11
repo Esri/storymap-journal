@@ -153,6 +153,27 @@ define({
       "action2": "Preveri moje zgodbe zdaj",
       "action3": "Izvedi več"
     },
+    "extendedSupportMessage": {
+      "bannerMsg": "Klasične karte z zgodbo Esri so v načinu Razširjene podpore",
+      "s1h1": "Pomembno sporočilo o klasičnih kartah z zgodbo Esri",
+      "s1p1": "Predloge klasičnih kart z zgodbo Esri so v načinu Razširjene podpore. Strankam priporočamo uporabo ArcGIS StoryMaps, Esrijevega orodja nove generacije za pripovedovanje zgodb.",
+      "s1p2": "Klasične predloge niso več v aktivnem razvoju in niso priporočljive za nove projekte. Posodobitve njihovih zmožnosti niso več načrtovane. Zgodbe, ki ste jih ustvarili s klasičnimi predlogami bodo še naprej na voljo.",
+      "s1p3": "V decembru 2021 bodo klasične predloge odstranjene iz galerije privzetih konfigurabilnih aplikacij. Ena ali več klasičnih predlog bo lahko dodanih v skupino vaše organizacije s konfigurabilnimi aplikacijami po meri, če bodo potrebne za podporo trenutnim delovnim postopkom med prehodom na uporabo ArcGIS StoryMaps.",
+      "s1p4": "Za več informacij kliknite na spodnjo povezavo \"Več\".",
+      "action1": "Zapri",
+      "action2": "Več",
+      "action3": "Preskusite ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Klasične karte z zgodbo Esri so v načinu za zrele izdelke",
+      "s1h1": "Pomembno sporočilo o klasičnih kartah z zgodbo Esri",
+      "s1p1": "Predloge klasičnih kart z zgodbo Esri so v načinu za zrele izdelke. Strankam priporočamo uporabo ArcGIS StoryMaps, Esrijevega orodja nove generacije za pripovedovanje zgodb.",
+      "s1p2": "Klasične predloge niso več v aktivnem razvoju in niso priporočljive za nove projekte. Posodobitve njihovih zmožnosti niso več načrtovane. Zgodbe, ki ste jih ustvarili s klasičnimi predlogami bodo še naprej na voljo.",
+      "s1p3": "Za več informacij kliknite na spodnjo povezavo \"Več\".",
+      "action1": "Zapri",
+      "action2": "Več",
+      "action3": "Preskusite ArcGIS StoryMaps"
+    },
     "embedBar": {
       "share": "Deli",
       "fullScreen": "Celozaslonski način",

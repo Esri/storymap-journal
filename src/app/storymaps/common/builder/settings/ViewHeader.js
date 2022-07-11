@@ -21,7 +21,7 @@ define(["lib-build/tpl!./ViewHeader",
 				_titleContainer = titleContainer;
 				_contentContainer = contentContainer;
 
-				_contentContainer.append(viewTpl(_.extend({}, i18n.commonCore.settingsHeader,
+				_contentContainer.append(viewTpl(_.assignIn({}, i18n.commonCore.settingsHeader,
 					{share: i18n.commonCore.builderPanel.buttonShare}
 				)));
 

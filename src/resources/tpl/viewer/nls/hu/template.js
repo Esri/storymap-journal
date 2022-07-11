@@ -60,7 +60,10 @@ define({
       "print0": "Ezt a történetet nem lehet kinyomtatni.",
       "print1": "A történet kinyomtatásához használja a megosztási párbeszédpanelen található Nyomtatás gombot.",
       "print2": "A történet nyomtatható verziója általában a megosztási párbeszédpanelen érhető el, de a szerző letiltotta ezt a párbeszédpanelt.",
-      "attention": "Figyelem!"
+      "attention": "Figyelem!",
+      "nonOwnerOrgUrl": "A(z) %TPL_NAME% alkalmazás, amelyhez megpróbál hozzáférni, nem a megadott URL-ből eredeztethető.",
+      "nonOwnerOrgProceedToGeneric": "Folytatás: %HREF%",
+      "advanced": "Haladó"
     },
     "mobileView": {
       "tapForDetails": "Koppintson a részletekért",

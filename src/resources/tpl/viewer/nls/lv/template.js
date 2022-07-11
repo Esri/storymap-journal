@@ -60,7 +60,10 @@ define({
       "print0": "Diemžēl šo stāstu nav iespējams drukāt.",
       "print1": "Lai drukātu šo stāstu, izmantojiet drukas pogu, kas atrodas koplietošanas dialogā.",
       "print2": "Atvainojiet, stāsta drukas versija parasti ir pieejama koplietošanas dialogā, bet autors šo dialogu ir atspējojis.",
-      "attention": "Uzmanību!"
+      "attention": "Uzmanību!",
+      "nonOwnerOrgUrl": "%TPL_NAME%, kuram mēģināt piekļūt, nav no jūsu norādītā vietrāža (URL).",
+      "nonOwnerOrgProceedToGeneric": "Turpināt ar %HREF%",
+      "advanced": "Uzlabots"
     },
     "mobileView": {
       "tapForDetails": "Pieskarieties, lai iegūtu detalizētu informāciju",

@@ -60,7 +60,10 @@ define({
       "print0": "Beklager, denne fortellingen kan ikke skrives ut.",
       "print1": "For å skrive ut denne fortellingen bruker du utskriftsknappen i delingsdialogboksen.",
       "print2": "Beklager, en utskriftsvennlig versjon av fortellingen er vanligvis tilgjengelig gjennom delingsdialogen, men denne dialogen har blitt deaktivert av forfatteren.",
-      "attention": "Obs!"
+      "attention": "Obs!",
+      "nonOwnerOrgUrl": "%TPL_NAME% du prøver å åpne, skriver seg ikke fra URL-en du har oppgitt.",
+      "nonOwnerOrgProceedToGeneric": "Fortsett til %HREF%",
+      "advanced": "Avansert"
     },
     "mobileView": {
       "tapForDetails": "Trykk for å se detaljer",

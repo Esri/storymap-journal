@@ -7,7 +7,7 @@ define(["dojo/cookie",
 		"./SocialSharing",
 		"esri/request",
 		"esri/dijit/Search",
-        "esri/tasks/locator",
+		"esri/tasks/locator",
 		"esri/urlUtils",
 		"esri/arcgis/utils",
 		"esri/geometry/webMercatorUtils",
@@ -43,7 +43,47 @@ define(["dojo/cookie",
 		OpenStreetMapLayer,
 		i18n)
 	{
+		// from /platformSelf
+		var fetchedUser, fetchedToken;
+
 		return {
+			fetchPortalSelfInfo: function() {
+				var deferred = new Deferred();
+				var portalUrl = arcgisUtils.arcgisUrl.split('/sharing/')[0];
+				var url = portalUrl.replace("http://", "https://") + "/sharing/rest/oauth2/platformSelf?f=json";
+
+				$.ajax(url, {
+					method: 'POST',
+					dataType: 'json',
+					data: {
+						f: 'json'
+					},
+					xhrFields: {
+						withCredentials: true
+					},
+					headers: {
+						'X-Esri-Auth-Client-Id': app.cfg.DEFAULT_CLIENT_ID,
+						'X-Esri-Auth-Redirect-Uri': window.location.href
+					},
+					success: function(data) {
+						if (data) {
+							if (data.username) {
+								fetchedUser = data.username;
+							}
+							if (data.token) {
+								fetchedToken = data.token;
+							}
+						}
+						// always resolve
+						deferred.resolve();
+					},
+					error: function() {
+						deferred.resolve();
+					}
+				});
+
+				return deferred.promise;
+			},
 			isMobile: function()
 			{
 				return navigator.userAgent.match(/iPhone|iPad|iPod/i)
@@ -220,20 +260,14 @@ define(["dojo/cookie",
 			},
 			getPortalUser: function()
 			{
-				var esriCookie = this.getEsriCookie();
-				if (!esriCookie) {
-					return;
-				}
-
-				// Cookie has to be set on the same organization
-				if( esriCookie.urlKey
-						&& esriCookie.customBaseUrl
-						&& (esriCookie.urlKey + '.' + esriCookie.customBaseUrl).toLowerCase() != document.location.hostname.toLowerCase())
-					return;
-
-				// if there's no esriCookie, we've already returned
-				return esriCookie.email;
+				return fetchedUser;
 			},
+			// add this function here to take advantage of fetching user and token at the same time
+			// (instead of adding to regular Helper file)
+			getCookieToken: function() {
+				return fetchedToken;
+			},
+			/* these seem to not be used
 			getPortalRole: function()
 			{
 				var esriCookie = this.getEsriCookie();
@@ -258,6 +292,7 @@ define(["dojo/cookie",
 
 				return JSON.parse(esriCookie.replace('"ssl":undefined','"ssl":""'));
 			},
+			*/
 			getAppViewModeURL: function()
 			{
 				return document.location.protocol

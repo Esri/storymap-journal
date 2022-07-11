@@ -60,7 +60,10 @@ define({
       "print0": "Maaf, cerita ini tidak dapat dicetak.",
       "print1": "Untuk mencetak cerita ini, gunakan tombol cetak yang terletak di dialog 'berbagi'.",
       "print2": "Maaf, versi cerita yang dapat dicetak biasanya dapat diakses melalui dialog 'berbagi', tetapi dialog ini telah dinonaktifkan oleh penulis.",
-      "attention": "Perhatian!"
+      "attention": "Perhatian!",
+      "nonOwnerOrgUrl": "%TPL_NAME% yang hendak Anda akses tidak berasal dari URL yang Anda berikan.",
+      "nonOwnerOrgProceedToGeneric": "Lanjutkan ke %HREF%",
+      "advanced": "Advanced"
     },
     "mobileView": {
       "tapForDetails": "Ketuk untuk melihat detailnya",

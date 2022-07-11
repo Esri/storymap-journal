@@ -60,7 +60,10 @@ define({
       "print0": "Onze excuses, dit verhaal kan niet worden afgedrukt.",
       "print1": "Om dit verhaal af te drukken, gebruik de knop Afdrukken in het dialoogvenster Delen.",
       "print2": "Onze excuses, een afdrukbare versie van het verhaal is gewoonlijk beschikbaar via het dialoogvenster Delen, maar dit dialoogvenster is door de auteur uitgeschakeld.",
-      "attention": "Let op!"
+      "attention": "Let op!",
+      "nonOwnerOrgUrl": "De %TPL_NAME% die u probeert te openen, is niet afkomstig van de URL die u hebt ingevoerd.",
+      "nonOwnerOrgProceedToGeneric": "Ga door naar %HREF%",
+      "advanced": "Geavanceerd"
     },
     "mobileView": {
       "tapForDetails": "Tik voor details",

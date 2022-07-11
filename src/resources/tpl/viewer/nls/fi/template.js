@@ -60,7 +60,10 @@ define({
       "print0": "Valitettavasti tätä tarinaa ei voi tulostaa.",
       "print1": "Jos haluat tulostaa tämän tarinan, käytä tulostuspainiketta jakamisen valintaikkunassa.",
       "print2": "Tarinan tulostettava versio on tavallisesti käytettävissä jakamisen valintaikkunassa, mutta tekijä on poistanut kyseisen valintaikkunan käytöstä.",
-      "attention": "Huomio!"
+      "attention": "Huomio!",
+      "nonOwnerOrgUrl": "%TPL_NAME%, jota yrität käyttää, ei ole peräisin määrittämästäsi URL-osoitteesta.",
+      "nonOwnerOrgProceedToGeneric": "Jatka kohtaan %HREF%",
+      "advanced": "Advanced"
     },
     "mobileView": {
       "tapForDetails": "Saat tiedot näkyviin napauttamalla",

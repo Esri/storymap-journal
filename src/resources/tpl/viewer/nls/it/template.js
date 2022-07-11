@@ -60,7 +60,10 @@ define({
       "print0": "Spiacenti, impossibile stampare questa storia.",
       "print1": "Per stampare questa storia, utilizzare il pulsante di stampa che si trova nella finestra di dialogo di condivisione.",
       "print2": "Spiacenti, una versione stampabile della storia è tipicamente accessibile tramite la finestra di dialogo di condivisione, questa finestra di dialogo è stata disabilita dall'autore.",
-      "attention": "Attenzione."
+      "attention": "Attenzione.",
+      "nonOwnerOrgUrl": "Il %TPL_NAME%a cui si sta tentando di accedere non ha origine dall'URL fornito.",
+      "nonOwnerOrgProceedToGeneric": "Procedere a %HREF%",
+      "advanced": "Avanzato"
     },
     "mobileView": {
       "tapForDetails": "Toccare per i dettagli",

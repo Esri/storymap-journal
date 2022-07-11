@@ -50,7 +50,7 @@ define({
       "step2NextTooltip": "Zadejte nadpis části a obsah %LAYOUT-TYPE%.",
       "stepNextTooltipNext": "chcete-li přejít na další krok",
       "stepNextTooltipAdd": "chcete-li přidat část",
-      "firstAddExplain": "První část je vaše domovská část. Berte ji jako „obálku“ svého příběhu. Nadpis, který jste právě zadali, se zde zobrazí velkým písmem.",
+      "firstAddExplain": "První část je vaše domovská část. Berte ji jako „úvodní stránku“ svého příběhu. Nadpis, který jste právě zadali, se zde zobrazí velkým písmem.",
       "firstAddLeanMore": "Další informace",
       "titlePlaceholder": "Nadpis části..."
     },
@@ -93,10 +93,10 @@ define({
       "content2Div1": "V dialogovém okně Nastavení můžete upravit vzhled %TPL_NAME%. Můžete zde měnit rozvržení, barevné schéma, písmo atd.",
       "content2Div2": "Můžete také nahradit logo Esri logem své vlastní značky. Dále můžete určit webové stránky s dalšími informacemi, na které bude čtenář přesměrován po kliknutí na logo.",
       "content3Div1": "Váš obsah je rozdělen do částí. Můžete jich mít libovolný počet (berte je jako malé kapitoly). Je důležité, jak kapitoly plynou za sebou, a proto je v části Uspořádat můžete libovolně přeřazovat a odstraňovat.",
-      "content4Div1": "Našli jste chybu nebo chcete změnit svůj materiál? Žádný problém. Hledejte v aplikaci ikonu úprav, která vám umožní změnit obsah. Funkce úprav použijete při vytváření %TPL_NAME% mnohokrát!",
+      "content4Div1": "Našli jste chybu nebo chcete změnit svůj materiál? Není problém. Na různých místech v aplikaci naleznete ikonu úprav, pomocí které můžete provést změny ve vašem obsahu. Při tvorbě své šablony %TPL_NAME% využijete editační funkce mnohokrát.",
       "content5Div1": "Šablona %TPL_NAME% se poprvé uloží v soukromém režimu. Chcete-li ji sdílet s ostatními, použijte tlačítko Sdílení. Šablonu %TPL_NAME% můžete sdílet s veřejností.",
       "content5Div2": "V závislosti na vašem účtu můžete mít k dispozici možnost sdílet šablonu %TPL_NAME% pouze se členy vaší organizace.",
-      "content6Div1": "Nadpis domovské části je také nadpisem vašeho deníku. Domovská část je prakticky „obálkou“ vašeho příběhu. Nadpis domovské části zůstane viditelný, zatímco čtenáři budou procházet váš deník.",
+      "content6Div1": "Nadpis domovské části je také nadpisem vašeho deníku. Domovská část je „úvodní stránkou“ vašeho příběhu. Nadpis domovské části zůstane viditelný, zatímco čtenáři budou procházet váš deník.",
       "content6Div2": "Vaše rozvržení %LAYOUT_TITLE% nemusí tvořit jen text. Můžete použít i fotografie a videa, abyste příběh oživili a rozdělili dlouhé bloky textu!"
     },
     "landing": {
@@ -108,15 +108,15 @@ define({
       "quote1": "Příběhy jsou nejmocnějším způsobem, jakým lze v dnešní době vypustit do světa nápady.",
       "quote2": "Příběhy, které vyprávíme, dávají světu jeho podobu. Pokud chcete změnit svět, musíte změnit svůj příběh. To platí jak pro jednotlivce, tak instituce.",
       "quote3": "Nejkratší spojnicí mezi lidskou bytostí a pravdou je příběh.",
-      "quote4": "Lidé nechtějí vědět víc, už tak se topí v přemíře informací. Lidé vám chtějí věřit: vašim cílům, vašemu úspěchu a příběhu, který vyprávíte.",
-      "quote5": "Upřímně mám za to, že lidé vyhledávají příběhy, které jsou něčím důležité: příběhy o vykoupení, příběhy podněcující inspiraci a příběhy, které mají hlubší dopad.",
+      "quote4": "Lidé nechtějí vědět víc. Jsou informacemi přímo zahlceni. Lidé vám chtějí věřit: vašim cílům, vašemu úspěchu a příběhu, který vyprávíte.",
+      "quote5": "Upřímně, mám za to, že lidé hledají příběhy, které jsou něčím důležité: příběhy o vykoupení, příběhy podněcující inspiraci a příběhy, které mají hlubší dopad.",
       "quote6": "Chcete-li ovlivnit jednotlivce nebo skupinu lidí, aby přijali určitou hodnotu a žili podle ní každý den, povězte jim příběh.",
-      "quote7": "Komunikujete-li slovy, stává se z vyprávění esej. Když dáte lidem možnost vnímat děj očima, vytváříte skutečný příběh.",
-      "quote8": "Když neznáte stromy, můžete se snadno ztratit v lese, ale když neznáte příběhy, můžete se ztratit v životě.",
+      "quote7": "Pokud se vyjadřujete pomocí slov, stává se z vyprávění esej. Když dáte lidem možnost vnímat děj očima, vytváříte příběh.",
+      "quote8": "Když neznáte stromy, můžete se ztratit v lese, ale když neznáte příběhy, můžete se ztratit v životě.",
       "quote9": "Příběhy jsou kreativním převodem samotného života do silnějších, jasnějších a smysluplnějších zážitků. Jsou oběživem kontaktu s ostatními lidmi.",
       "quote10": "Není většího utrpení pro člověka, než když si v sobě nese nevyprávěný příběh.",
       "quote11": "Možná že příběhy jsou jen data obdařená duší.",
-      "quote12": "Příběhy jsou tou nejmocnější zbraní v arzenálu každé vůdčí osobnosti.",
+      "quote12": "Příběhy jsou tou nejmocnější zbraní ve výbavě každé vůdčí osobnosti.",
       "quote13": "Příběhy ze své povahy zamlčují víc, než se snaží sdělit."
     },
     "firstAddSplash": {

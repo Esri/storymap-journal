@@ -324,7 +324,7 @@ define(["dojo/_base/lang", 'storymaps/tpl/core/Helper'],
 				var logoURL = ! this.getHeader().logoURL ? app.cfg.HEADER_LOGO_URL : this.getHeader().logoURL;
 
 				if ( logoURL == app.cfg.HEADER_LOGO_URL && this.getColors() && this.getColors().esriLogo == "white" )
-					logoURL = "resources/tpl/viewer/icons/esri-logo-white.png";
+					logoURL = "";
 
 				return Helper.possiblyRemoveToken(logoURL);
 			},

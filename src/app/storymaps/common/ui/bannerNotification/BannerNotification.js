@@ -23,15 +23,13 @@ define([
       // Unique ID for notification DOM element
       id: options.id,
       // Background color of banner message and primary action buttons
-      primaryColor: options.primaryColor || '#027bd2',
+      primaryColor: options.primaryColor || '#8E499B',
       // Contrasing color used with primary color
       secondaryColor: options.secondaryColor || '#fff',
       // Override the "Learn More" text in the banner button.
       bannerMainActionText: options.bannerMainActionText || config.strings.learnMore,
       // The browser tooltip text for the close button
       bannerCloseActionText: options.bannerCloseActionText || config.strings.close,
-      // Text to display next to a checkbox to tell the user the message shouldn't display again
-      dontShowAgainText: options.dontShowAgainText || config.strings.dontShowAgain,
       // The message to display in the banner
       bannerMsg: options.bannerMsg,
       // The html of the main message. CSS supports the following tags h1, h2, h3, and p.
@@ -57,10 +55,8 @@ define([
         path: options.cookie.path,
         maxAge: options.cookie.maxAge || 0
       },
-      // The number of times to show banner message before it doesn't show again.
-      autohideAfter: typeof options.autohideAfter !== 'undefined' ? options.autohideAfter : 2,
       // The number of milliseconds after which the banner will disappear.
-      fadeAfter: typeof options.fadeAfter !== 'undefined' ? options.fadeAfter : 30000,
+      fadeAfter: typeof options.fadeAfter !== 'undefined' ? options.fadeAfter : 120000,
       // The IDs of other banner notification that will block this banner from
       // showing if their hidden cookie has not been set. This allows you to
       // only show a single banner per app load.
@@ -68,70 +64,9 @@ define([
       blockingNotifications: options.blockingNotifications || []
     };
 
-    var cookieKey = 'bannerNotification_' + settings.id + '_hidden';
-
-    var setDontShowCookie = function(incrementAutoHide) {
-      var domain = settings.cookie.domain ? 'domain=' + settings.cookie.domain + ';' : '';
-      var path = settings.cookie.path ? 'path=' + settings.cookie.path + ';' : '';
-      var maxAge = new Date(new Date().getTime() + (settings.cookie.maxAge * 1000)).toUTCString();
-      var dontShowCheckbox = document.querySelector('#'+ settings.id + '-banner-notification-dont-show');
-      if (dontShowCheckbox && dontShowCheckbox.checked) {
-        document.cookie = cookieKey + '=true;expires=' + maxAge + ';' + domain + path;
-      }
-      else if (incrementAutoHide === true) {
-        var cookieValue = document.cookie.replace(new RegExp('(?:(?:^|.*;\\s*)' + cookieKey + '\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1');
-        var cookieInt = parseInt(cookieValue, 10);
-        if (settings.autohideAfter === 0) {
-          document.cookie = cookieKey + '=true;expires=' + maxAge + ';' + domain + path;
-        }
-        else if (cookieValue.length === 0) {
-          document.cookie = cookieKey + '=0;expires=' + maxAge + ';' + domain + path;
-        }
-        else if (cookieInt !== isNaN && cookieInt < settings.autohideAfter - 1) {
-          document.cookie = cookieKey + '=' + (cookieInt + 1) + ';expires=' + maxAge + ';' + domain + path;
-        }
-        else if (cookieInt !== isNaN && cookieInt >= settings.autohideAfter - 1) {
-          window.onbeforeunload = function() {
-            var cv = document.cookie.replace(new RegExp('(?:(?:^|.*;\\s*)' + cookieKey + '\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1');
-            if (cv !== 'false') {
-              document.cookie = cookieKey + '=true;expires=' + maxAge + ';' + domain + path;
-            }
-          };
-        }
-      }
-      else {
-        document.cookie = cookieKey + '=false;expires=' + maxAge + ';' + domain + path;
-      }
-    };
-
     var bannerTimer;
 
-    var isNotificationBlocked = function() {
-      var isBlocked = false;
-      var blockingNotifications = [].concat(settings.blockingNotifications);
-
-      for (var i = 0; i < blockingNotifications.length; i++) {
-        if (document.cookie.replace(new RegExp('(?:(?:^|.*;\\s*)bannerNotification_' + blockingNotifications[i] + '_hidden\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1') !== 'true') {
-          isBlocked = true;
-        }
-      }
-      return isBlocked;
-    };
-
-    var isHidden = function () {
-      var cookieValue = document.cookie.replace(new RegExp('(?:(?:^|.*;\\s*)' + cookieKey + '\\s*\\=\\s*([^;]*).*$)|^.*$'), "$1");
-      if (settings.autohideAfter === 0) {
-        setDontShowCookie(true);
-        return true;
-      }
-      if (isNotificationBlocked() || window.location.href.search(settings.cookie.domain) < 0) {
-        return true;
-      }
-      setDontShowCookie(true);
-      return cookieValue === 'true';
-    };
-
-    if (!isHidden() && isUniqueNotification(settings.id)) {
+    if (isUniqueNotification(settings.id)) {
       var styleTag = '\
         <style type="text/css">\
         .mobile-view .banner-notification {\
@@ -298,14 +233,6 @@ define([
             color: ' + settings.secondaryColor + ';\
             background-color: ' + settings.primaryColor + ';\
           }\
-          .banner-notification .banner-notification-dont-show {\
-            margin: 25px 0 0 0;\
-          }\
-          .banner-notification .banner-notification-dont-show label {\
-            display: inline;\
-            font-size: 0.9em;\
-            vertical-align: middle;\
-          }\
           .banner-notification .actions-buttons {\
             padding-bottom: 15px;\
           }\
@@ -352,10 +279,6 @@ define([
         <div class="main-msg-wrapper">\
           <div class="text-column-wrapper">\
             ' + settings.mainMsgHtml + '\
-            <form class="banner-notification-dont-show">\
-            <input type="checkbox" id="'+ settings.id + '-banner-notification-dont-show">\
-            <label for="'+ settings.id + '-banner-notification-dont-show">' + settings.dontShowAgainText + '</label>\
-            </form>\
             <div class="actions-buttons"></div>\
           </div>\
         </div>\
@@ -413,8 +336,6 @@ define([
 
         document.addEventListener('keyup', escapeEvent);
 
-        document.querySelector('#' + settings.id + '-banner-notification-dont-show').checked = true;
-        setDontShowCookie();
         clearTimeout(bannerTimer);
       };
 
@@ -445,7 +366,6 @@ define([
         // Add events
         var learnMore = document.querySelector('#' + settings.id + ' .mini-msg-popup');
         var closeBtns = document.querySelectorAll('#' + settings.id + ' .banner-notification-close-btn');
-        var dontShowCheckbox = document.querySelector('#'+ settings.id + '-banner-notification-dont-show');
 
         window.addEventListener('resize', resizeMainMsg);
 
@@ -470,14 +390,6 @@ define([
 
         // Close message if ignored by author when bannerTimer expires
         bannerTimer = setTimeout(closeMessage, settings.fadeAfter);
-
-        // Don't show again checkbox
-        dontShowCheckbox.addEventListener('click', setDontShowCookie);
-        dontShowCheckbox.addEventListener('keypress', function(e) {
-          if (e.keyCode === 13) {
-            setDontShowCookie();
-          }
-        });
 
         learnMore.focus();
         resizeMainMsg();

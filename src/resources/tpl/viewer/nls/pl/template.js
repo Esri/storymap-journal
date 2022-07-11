@@ -60,7 +60,10 @@ define({
       "print0": "Niestety, tej narracji nie można wydrukować.",
       "print1": "Aby wydrukować tę narrację, użyj przycisku drukowania znajdującego się w oknie dialogowym udostępniania.",
       "print2": "Niestety, wersja narracji przeznaczona do druku jest zwykle dostępna za pośrednictwem okna dialogowego udostępniania, ale to okno zostało zablokowane przez autora.",
-      "attention": "Uwaga!"
+      "attention": "Uwaga!",
+      "nonOwnerOrgUrl": "Aplikacja %TPL_NAME%, do której próbujesz uzyskać dostęp, nie pochodzi z podanego adresu URL.",
+      "nonOwnerOrgProceedToGeneric": "Przejdź do: %HREF%",
+      "advanced": "Advanced"
     },
     "mobileView": {
       "tapForDetails": "Wskaż, aby uzyskać szczegółowe informacje",

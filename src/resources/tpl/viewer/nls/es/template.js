@@ -60,7 +60,10 @@ define({
       "print0": "Esta historia no se puede imprimir.",
       "print1": "Para imprimir esta historia, utilice el botón de impresión situado en el cuadro de diálogo para compartir.",
       "print2": "Normalmente se puede acceder a una versión imprimible de la historia a través del cuadro de diálogo para compartir, pero el autor ha deshabilitado este cuadro de diálogo.",
-      "attention": "Atención"
+      "attention": "Atención",
+      "nonOwnerOrgUrl": "El %TPL_NAME% al que intenta acceder no procede de la dirección URL que ha proporcionado.",
+      "nonOwnerOrgProceedToGeneric": "Continuar con %HREF%",
+      "advanced": "Avanzada"
     },
     "mobileView": {
       "tapForDetails": "Tocar para ver detalles",

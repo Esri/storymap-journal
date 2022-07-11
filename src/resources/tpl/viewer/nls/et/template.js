@@ -60,7 +60,10 @@ define({
       "print0": "Kahjuks ei saa seda lugu printida.",
       "print1": "Loo printimiseks kasutage jagamise dialoogis olevat printimisnuppu.",
       "print2": "Üldjuhul pääseb loo prinditava versiooni juurde jagamisdialoogi kaudu, kuid kahjuks on autor selle dialoogi keelanud.",
-      "attention": "Tähelepanu!"
+      "attention": "Tähelepanu!",
+      "nonOwnerOrgUrl": "%TPL_NAME%, mida proovite avada, pole pärit teie esitatud URL-ilt.",
+      "nonOwnerOrgProceedToGeneric": "Kas soovite liikuda kohta %HREF%",
+      "advanced": "Täiustatud"
     },
     "mobileView": {
       "tapForDetails": "Üksikasjade kuvamiseks vajutage",

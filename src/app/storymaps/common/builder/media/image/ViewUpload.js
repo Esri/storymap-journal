@@ -84,8 +84,8 @@ define([
         });
         self.resourcesContainer.empty();
 
-        _.each(resources, function(resource) {
-          var isUsed = _.contains(storyImageIds, resource.fileId.toLowerCase());
+        _.forEach(resources, function(resource) {
+          var isUsed = _.includes(storyImageIds, resource.fileId.toLowerCase());
           resource.usedClass = isUsed ? '' : 'unused';
           resource.tokenizedThumbUrl = self.getTokenizedThumbUrl(resource);
 
@@ -116,7 +116,7 @@ define([
       } else if (resource.file) {
         fileName = resource.file;
       } else if (resource.sizes) {
-        fileName = _.min(resource.sizes, 'width').name;
+        fileName = _.minBy(resource.sizes, 'width').name;
       }
       if (!fileName) {
         console.warn('no thumbFile?', resource);
@@ -216,7 +216,7 @@ define([
         // listed as files, not file. in any case, the fileUploadHelper will know
         // what to do with these. they're just returned here so you can use the dataUrl
         // at this point if you want to.
-        _.extend(result, {baseName: baseName});
+        _.assignIn(result, {baseName: baseName});
         this.uploadFile(result);
 
       }), lang.hitch(this, function(err) {
@@ -284,7 +284,7 @@ define([
     },
 
     selectImage: function(resourceData) {
-      _.extend(resourceData, {name: resourceData.displayName});
+      _.assignIn(resourceData, {name: resourceData.displayName});
       this.showView('configure', {media: resourceData, fromService: true});
     }
 

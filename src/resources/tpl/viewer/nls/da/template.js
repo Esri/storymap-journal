@@ -60,7 +60,10 @@ define({
       "print0": "Beklager, denne historie kan ikke udskrives.",
       "print1": "Hvis du vil udskrive denne historie, skal du bruge udskrivningsknappen i delingsdialogboksen.",
       "print2": "Beklager, en udskrivningsparat version af historien er typisk tilgængelig via delingsdialogboksen, men denne dialogboks er blevet deaktiveret af forfatteren.",
-      "attention": "Bemærk!"
+      "attention": "Bemærk!",
+      "nonOwnerOrgUrl": "Den %TPL_NAME%, du prøver at få adgang til, stammer ikke fra den URL, som du har angivet.",
+      "nonOwnerOrgProceedToGeneric": "Fortsæt til %HREF%",
+      "advanced": "Avanceret"
     },
     "mobileView": {
       "tapForDetails": "Tryk for at få oplysninger",

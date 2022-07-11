@@ -60,7 +60,10 @@ define({
       "print0": "Deja, šio pasakojimo išspausdinti nepavyko.",
       "print1": "Norėdami išspausdinti šį pasakojimą, naudokite spausdinimo mygtuką, esantį bendrinimo dialogo lange.",
       "print2": "Šio pasakojimo spaudos versija paprastai pasiekiama bendrinimo dialogo lange. Deja, autorius šį dialogo langą yra išjungęs.",
-      "attention": "Dėmesio!"
+      "attention": "Dėmesio!",
+      "nonOwnerOrgUrl": "Aplikacija %TPL_NAME%, kurią bandote pasiekti, nėra pasiekiama naudojant jūsų nurodytą URL.",
+      "nonOwnerOrgProceedToGeneric": "Tęskite %HREF%",
+      "advanced": "Kiti parametrai"
     },
     "mobileView": {
       "tapForDetails": "Išsamiai informacijai bakstelėkite",

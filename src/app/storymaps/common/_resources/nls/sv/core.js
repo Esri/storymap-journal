@@ -153,6 +153,27 @@ define({
       "action2": "Kontrollera mina berättelser nu",
       "action3": "Läs mer"
     },
+    "extendedSupportMessage": {
+      "bannerMsg": "Klassiska Esri Story Maps är i utökad support",
+      "s1h1": "Viktigt meddelande om klassiska Esri Story Maps",
+      "s1p1": "Klassiska Esri Story Maps-mallar är i utökad support. Alla kunder uppmuntras att använda ArcGIS StoryMaps, Esris aktuella storytelling-verktyg.",
+      "s1p2": "De klassiska mallarna står inte längre under aktiv utveckling och rekommenderas inte för nya projekt. Inga ytterligare uppdateringar av deras funktioner är planerade. Berättelser som du har skapat med de klassiska mallarna kommer att vara tillgängliga även i fortsättningen.",
+      "s1p3": "I december 2021 kommer de klassiska mallarna att tas bort från galleriet med konfigurerbara standardappar. En eller flera klassiska mallar kommer vid behov att läggas till i din organisations grupp för anpassade konfigurerbara appar för att stödja aktuella arbetsflöden under övergången till ArcGIS StoryMaps.",
+      "s1p4": "Klicka på länken Läs mer nedan om du vill veta mer.",
+      "action1": "Stäng",
+      "action2": "Läs mer",
+      "action3": "Prova ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Klassiska Esri Story Maps befinner sig i den färdigutvecklade supportfasen.",
+      "s1h1": "Viktigt meddelande om klassiska Esri Story Maps",
+      "s1p1": "Klassiska Esri Story Maps-mallar befinner sig i den färdigutvecklade supportfasen. Alla kunder uppmuntras att använda ArcGIS StoryMaps, Esris aktuella storytelling-verktyg.",
+      "s1p2": "De klassiska mallarna står inte längre under aktiv utveckling och rekommenderas inte för nya projekt. Inga ytterligare uppdateringar av deras funktioner är planerade. Berättelser som du har skapat med de klassiska mallarna kommer att vara tillgängliga även i fortsättningen.",
+      "s1p3": "Klicka på länken Läs mer nedan om du vill veta mer.",
+      "action1": "Stäng",
+      "action2": "Läs mer",
+      "action3": "Prova ArcGIS StoryMaps"
+    },
     "embedBar": {
       "share": "Dela",
       "fullScreen": "Helskärm",

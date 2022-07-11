@@ -151,6 +151,8 @@ a:hover{
 }
 
 #fatalError > table {
+	table-layout: fixed;
+	width: 100%;
 	margin-top: -42px;
 	margin-left:-247px;
 	max-width: 490px;
@@ -170,6 +172,12 @@ a:hover{
 	margin-top: 8px;
 	padding-bottom: 8px;
 	margin-right: 8px;
+}
+
+#fatalError .error-details {
+	margin-top: 16px;
+	margin-bottom: 8px;
+	font-size: 12px;
 }
 
 #fatalError-icon {

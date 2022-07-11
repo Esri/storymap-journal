@@ -93,7 +93,7 @@ define({
       "content2Div1": "I dialogrutan Inställningar kan du ändra utseendet för %TPL_NAME%. Du kan ändra layout, välja ett annat färgschema, ändra teckensnitt o.s.v.",
       "content2Div2": "Du kan även byta ut Esri-logotypen mot din egen logotyp för att visa ditt varumärke. Du kan också ange vilken webbplats som ska öppnas när läsarna klickar på logotypen så att de kan få mer information.",
       "content3Div1": "Ditt innehåll är ordnat i avsnitt. Du kan ha så många avsnitt du vill (tänk dig dem som minikapitel). Flödet för kapitlen är viktigt. Med Organisera kan du ändra ordning på eller ta bort avsnitt som du vill.",
-      "content4Div1": "Har du hittat ett fel eller vill du ändra ditt material? Inga problem. Titta efter redigeringsikonen i appen om du vill göra ändringar i innehållet. Du kommer att använda redigeringsfunktionerna många gånger medan du utvecklar din %TPL_NAME%!",
+      "content4Div1": "Hittade du ett fel eller vill du ändra ditt material? Inga problem. Sök efter redigeringsikonen i appen om du vill göra ändringar av ditt innehåll. Du kommer att använda redigeringsfunktionerna många gånger när du utvecklar din %TPL_NAME%!",
       "content5Div1": "När du sparar din %TPL_NAME% är den privat i början. Använd knappen Dela om du vill dela den med andra. Du kan dela din %TPL_NAME% offentligt så alla kan komma åt den.",
       "content5Div2": "Beroende på konto kanske du också kan dela din %TPL_NAME% enbart med personer inom din organisation så att andra inte kommer åt den.",
       "content6Div1": "Titeln på startavsnittet är också titeln på din journal. Du kan tänka dig startavsnittet som försättsbladet för din berättelse. Titeln på startavsnittet fortsätter att visas när läsarna navigerar i journalen.",

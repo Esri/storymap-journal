@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Sosyal medya paylaşma güncellemesi",
-      "panel1": "Hikayenizin sosyal medyadaki görünümü iyileştirildi, ancak ArcGIS web uygulaması öğenizin başlığı hikaye başlığınızla aynı değil.",
+      "panel1": "Hikâyenizin sosyal medyadaki görünümü iyileştirildi, fakat ArcGIS web uygulaması ögenizin başlığı hikâye başlığınızla aynı değil.",
       "panel1tooltip": "Bir başlık, özet ve küçük resim tanımlandıktan sonra hikayeniz şöyle görüntülenir:",
       "panel2": "Sosyal medyada hangi başlığı kullanmak istersiniz?",
       "panel2q1": "Hikaye başlığı (önerilen)",
@@ -152,6 +152,27 @@ define({
       "action1": "Kapat",
       "action2": "Hikayelerimi şimdi kontrol et",
       "action3": "Daha fazla bilgi"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Klasik Esri Story Maps Genişletilmiş Destekte",
+      "s1h1": "Klasik Esri Story Maps hakkında önemli mesaj",
+      "s1p1": "Klasik Esri Story Maps şablonları Genişletilmiş Destekte Tüm müşterilerimiz, Esri'nin güncel hikaye anlatım aracı olan ArcGIS StoryMaps'i kullanmaya teşvik edilmektedir.",
+      "s1p2": "Klasik şablonlar artık aktif geliştirme aşamasında değildir ve yeni projeler için tavsiye edilmemektedirler. Yetenekleri için yeni güncellemeler planlanmamıştır. Klasik şablonları kullanarak oluşturduğunuz hikayeler kullanılabilir olmaya devam edecektir.",
+      "s1p3": "2021'in Aralık ayında klasik şablonlar, varsayılan yapılandırılabilir uygulamalar galerisinden kaldırılacaktır. ArcGIS StoryMaps'i kullanmaya geçişiniz sırasında mevcut iş akışlarını desteklemek için gerekirse, kuruluşunuzun özel yapılandırılabilir uygulamalar grubuna bir veya daha fazla klasik şablon eklenebilir.",
+      "s1p4": "Daha fazla bilgi için aşağıdaki daha fazla öğren bağlantısına tıklayın.",
+      "action1": "Kapat",
+      "action2": "Daha fazla bilgi edinin",
+      "action3": "ArcGIS StoryMaps'i deneyin"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Klasik Esri Story Maps Gelişmiş Destekte",
+      "s1h1": "Klasik Esri Story Maps hakkında önemli mesaj",
+      "s1p1": "Klasik Esri Story Maps şablonları Gelişmiş Destekte Tüm müşterilerimiz, Esri'nin güncel hikaye anlatım aracı olan ArcGIS StoryMaps'i kullanmaya teşvik edilmektedir.",
+      "s1p2": "Klasik şablonlar artık aktif geliştirme aşamasında değildir ve yeni projeler için tavsiye edilmemektedirler. Yetenekleri için yeni güncellemeler planlanmamıştır. Klasik şablonları kullanarak oluşturduğunuz hikayeler kullanılabilir olmaya devam edecektir.",
+      "s1p3": "Daha fazla bilgi için aşağıdaki daha fazla öğren bağlantısına tıklayın.",
+      "action1": "Kapat",
+      "action2": "Daha fazla bilgi edinin",
+      "action3": "ArcGIS StoryMaps'i deneyin"
     },
     "embedBar": {
       "share": "Paylaş",

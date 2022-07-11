@@ -1,7 +1,8 @@
 define([
   'esri/IdentityManager',
-  'dojo/cookie'
-], function(IdentityManager, cookie){
+  'dojo/cookie',
+  'storymaps/common/utils/CommonHelper'
+], function(IdentityManager, cookie, CommonHelper){
   return {
 
     possiblyAddToken: function(url) {
@@ -69,21 +70,7 @@ define([
     },
 
     getCookieToken: function() {
-      var esriCookie = cookie('esri_auth');
-
-      if(!esriCookie) {
-        return;
-      }
-
-      esriCookie = JSON.parse(esriCookie.replace('"ssl":undefined','"ssl":""'));
-
-      // Cookie has to be set on the same organization
-      if(esriCookie.urlKey && esriCookie.customBaseUrl
-          && (esriCookie.urlKey + '.' + esriCookie.customBaseUrl).toLowerCase() != document.location.hostname.toLowerCase()) {
-        return;
-      }
-
-      return esriCookie ? esriCookie.token : null;
+      return CommonHelper.getCookieToken();
     },
 
     possiblyRemoveToken: function(url) {

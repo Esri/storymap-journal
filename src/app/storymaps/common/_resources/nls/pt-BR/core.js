@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Atualização de compartilhamento da mídia social",
-      "panel1": "O visual da sua história na mídia social foi melhorado, mas seu título de item do aplicativo da web do ArcGIS não é o mesmo que o título da sua história.",
+      "panel1": "O visual da sua história na rede social foi melhorado, mas seu título de item do aplicativo da web do ArcGIS não é o mesmo que o título da sua história.",
       "panel1tooltip": "Ao definir um título, resumo e imagem de miniatura, sua história parecerá com isto:",
       "panel2": "Qual título você gostaria de utilizar na mídia social:",
       "panel2q1": "Título da história (recomendado)",
@@ -152,6 +152,27 @@ define({
       "action1": "Fechar",
       "action2": "Verificar minhas histórias agora",
       "action3": "Mais informações"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Classic Esri Story Maps estão em Suporte Estendido",
+      "s1h1": "Importar mensagem sobre Classic Esri Story Maps",
+      "s1p1": "Modelos do Classic Esri Story Maps estão em Suporte Estendido Todos os clientes são incentivados a usar ArcGIS StoryMaps, a ferramenta de narrativa da geração atual da Esri.",
+      "s1p2": "Os modelos clássicos não estão mais em desenvolvimento ativo e não são recomendados para novos projetos. Nenhuma outra atualização de seus recursos está planejada. As histórias que você criou usando os modelos clássicos continuarão disponíveis.",
+      "s1p3": "Em Dezembro de 2021, os modelos clássicos serão removidos da galeria de aplicativos configuráveis padrão. Um ou mais modelos clássicos podem ser adicionados ao grupo de aplicativos configuráveis personalizados da sua organização, se necessário, para oferecer suporte aos fluxos de trabalho atuais durante a transição para usar o ArcGIS StoryMaps.",
+      "s1p4": "Para mais informações, clique no link para saber mais abaixo.",
+      "action1": "Fechar",
+      "action2": "Saiba mais",
+      "action3": "Testar ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Classic Esri Story Maps estão em Suporte Vencido",
+      "s1h1": "Importar mensagem sobre Classic Esri Story Maps",
+      "s1p1": "Modelos do Classic Esri Story Maps estão em Suporte Vencido Todos os clientes são incentivados a usar ArcGIS StoryMaps, a ferramenta de narrativa da geração atual da Esri.",
+      "s1p2": "Os modelos clássicos não estão mais em desenvolvimento ativo e não são recomendados para novos projetos. Nenhuma outra atualização de seus recursos está planejada. As histórias que você criou usando os modelos clássicos continuarão disponíveis.",
+      "s1p3": "Para mais informações, clique no link para saber mais abaixo.",
+      "action1": "Fechar",
+      "action2": "Saiba mais",
+      "action3": "Testar ArcGIS StoryMaps"
     },
     "embedBar": {
       "share": "Compartilhar",

@@ -154,6 +154,27 @@ define({
 				action2: "Check my stories now",
 				action3: "Learn more"
 			},
+			extendedSupportMessage: {
+				bannerMsg: "Classic Esri Story Maps are in Extended Support",
+				s1h1: "Important message about classic Esri Story Maps",
+				s1p1: "Classic Esri Story Maps templates are in Extended Support. All customers are encouraged to use ArcGIS StoryMaps, Esri's current-generation storytelling tool.",
+				s1p2: "The classic templates are no longer under active development and are not recommended for new projects. No further updates to their capabilities are planned. Stories you have created using the classic templates will continue to be available.",
+				s1p3: "In December 2021, the classic templates will be removed from the default configurable apps gallery. One or more classic templates may be added to your organization’s custom configurable apps group if needed to support current workflows during your transition to using ArcGIS StoryMaps.",
+				s1p4: "For more information, click the learn more link below.",
+				action1: "Close",
+				action2: "Learn more",
+				action3: "Try ArcGIS StoryMaps"
+			},
+			matureSupportMessage: {
+				bannerMsg: "Classic Esri Story Maps are in Mature Support",
+				s1h1: "Important message about classic Esri Story Maps",
+				s1p1: "Classic Esri Story Maps templates are in Mature Support. All customers are encouraged to use ArcGIS StoryMaps, Esri's current-generation storytelling tool.",
+				s1p2: "The classic templates are no longer under active development and are not recommended for new projects. No further updates to their capabilities are planned. Stories you have created using the classic templates will continue to be available.",
+				s1p3: "For more information, click the learn more link below.",
+				action1: "Close",
+				action2: "Learn more",
+				action3: "Try ArcGIS StoryMaps"
+			},
 			embedBar: {
 				share: "Share",
 				fullScreen: "Full screen",
@@ -171,6 +192,7 @@ define({
 		}
 	}),
 	"ar": 1,
+	"bg": 1,
 	"bs": 1,
 	"ca": 1,
 	"cs": 1,
@@ -198,6 +220,7 @@ define({
 	"ro": 1,
 	"ru": 1,
 	"sl": 1,
+	"sk": 1,
 	"sr": 1,
 	"sv": 1,
 	"th": 1,

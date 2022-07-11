@@ -60,7 +60,10 @@ define({
       "print0": "Rất tiếc, không thể in câu chuyện này.",
       "print1": "Để in câu chuyện này, vui lòng sử dụng nút in nằm trong hộp thoại chia sẻ.",
       "print2": "Rất tiếc, thông thường phiên bản có chức năng in của câu chuyện sẽ được truy cập thông qua hộp thoại chia sẻ. Tuy nhiên, hộp thoại này đã bị tác giả vô hiệu hóa.",
-      "attention": "Chú ý!"
+      "attention": "Chú ý!",
+      "nonOwnerOrgUrl": "%TPL_NAME% bạn đang cố gắng truy cập không có nguồn gốc từ URL bạn đã cung cấp.",
+      "nonOwnerOrgProceedToGeneric": "Tiếp tục tới %HREF%",
+      "advanced": "Nâng cao"
     },
     "mobileView": {
       "tapForDetails": "Chạm nhẹ vào để biết chi tiết",

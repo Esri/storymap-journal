@@ -153,6 +153,27 @@ define({
       "action2": "Peržiūrėkite savo pasakojimus jau dabar",
       "action3": "Sužinokite daugiau"
     },
+    "extendedSupportMessage": {
+      "bannerMsg": "Klasikiniai Esri Story Maps yra išplėstiniame palaikyme",
+      "s1h1": "Svarbus pranešimas apie klasikinius Esri Story Maps",
+      "s1p1": "Klasikinių Esri Story Maps šablonai yra išplėstiniame palaikyme Visi klientai skatinami naudoti ArcGIS StoryMaps – dabartinės kartos Esri pasakojimų įrankį.",
+      "s1p2": "Klasikiniai šablonai nebėra aktyviai kuriami ir nerekomenduojami naujiems projektams. Jų galimybėms nesuplanuotas tolesnis naujinimas. Pasakojimai, kuriuos sukūrėte naudodami klasikinius šablonus, vis dar bus prieinami.",
+      "s1p3": "2021 m. gruodį klasikiniai šablonai bus pašalinti iš numatytosios Configurable Apps galerijos. Vieną ar daugiau klasikinių šablonų galima pridėti prie Jūsų organizacijos pasirinktinės Configurable Apps grupės, jei jų reikia dabartinių darbo eigų palaikymui, pereinant prie ArcGIS StoryMaps naudojimo.",
+      "s1p4": "Daugiau informacijos rasite spustelėję žemiau pateiktą nuorodą.",
+      "action1": "Uždaryti",
+      "action2": "Sužinokite daugiau",
+      "action3": "Išbandyti ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Klasikinių Esri Story Maps palaikymas nebeteikiamas",
+      "s1h1": "Svarbus pranešimas apie klasikinius Esri Story Maps",
+      "s1p1": "Klasikinių Esri Story Maps šablonų palaikymas nebeteikiamas. Visi klientai skatinami naudoti ArcGIS StoryMaps – dabartinės kartos Esri pasakojimų įrankį.",
+      "s1p2": "Klasikiniai šablonai nebėra aktyviai kuriami ir nerekomenduojami naujiems projektams. Jų galimybėms nesuplanuotas tolesnis naujinimas. Pasakojimai, kuriuos sukūrėte naudodami klasikinius šablonus, vis dar bus prieinami.",
+      "s1p3": "Daugiau informacijos rasite spustelėję žemiau pateiktą nuorodą.",
+      "action1": "Uždaryti",
+      "action2": "Sužinokite daugiau",
+      "action3": "Išbandyti ArcGIS StoryMaps"
+    },
     "embedBar": {
       "share": "Bendrinti",
       "fullScreen": "Visas ekranas",

@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "Ažuriranje dijeljenja na društvenim mrežama",
-      "panel1": "Poboljšana je prisutnost vaše priče na društvenim medijima, ali naziv stavke u web-aplikaciji ArcGIS nije jednak nazivu vaše priče.",
+      "panel1": "Poboljšana je prisutnost vaše priče na društvenim medijima, ali naziv stavke u ArcGIS web-aplikaciji nije jednak nazivu vaše priče.",
       "panel1tooltip": "Kada odredite naziv, sažetak i sličicu, vaša će priča izgledati ovako:",
       "panel2": "Koji biste naziv upotrijebili na društvenim medijima:",
       "panel2q1": "Naziv priče (preporučeno)",
@@ -152,6 +152,27 @@ define({
       "action1": "Zatvori",
       "action2": "Sada pregledaj moje priče",
       "action3": "Saznajte više"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "Klasične Esrijeve karte s pričama su u proširenoj podršci",
+      "s1h1": "Važna poruka o klasičnim Esrijevim kartama s pričama",
+      "s1p1": "Predlošci klasičnih Esrijevih karata s pričama su u proširenoj podršci Svi se kupci potiču na korištenje programa ArcGIS StoryMaps, Esrijevog alata za pripovijedanje priča trenutne generacije.",
+      "s1p2": "Klasični predlošci više nisu u aktivnom razvoju i ne preporučuju se za nove projekte. Ne planiraju se daljnja ažuriranja njihovih sposobnosti. Priče koje ste stvorili pomoću klasičnih predložaka i dalje će biti dostupne.",
+      "s1p3": "U prosincu 2021. klasični će predlošci biti uklonjeni iz zadane galerije konfigurabilnih aplikacija. Jedan ili više klasičnih predložaka može se dodati u prilagođenu grupu konfigurabilnih aplikacija vaše organizacije ako je potrebno za podršku trenutnih tijekova rada tijekom prijelaza na korištenje programa ArcGIS StoryMaps.",
+      "s1p4": "Za više informacija kliknite poveznicu u nastavku.",
+      "action1": "Zatvori",
+      "action2": "Saznajte više",
+      "action3": "Isprobajte ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Klasične Esrijeve karte s pričama su u zreloj podršci",
+      "s1h1": "Važna poruka o klasičnim Esrijevim kartama s pričama",
+      "s1p1": "Predlošci klasičnih Esrijevih karata s pričama su u zreloj podršci Svi se kupci potiču na korištenje programa ArcGIS StoryMaps, Esrijevog alata za pripovijedanje priča trenutne generacije.",
+      "s1p2": "Klasični predlošci više nisu u aktivnom razvoju i ne preporučuju se za nove projekte. Ne planiraju se daljnja ažuriranja njihovih sposobnosti. Priče koje ste stvorili pomoću klasičnih predložaka i dalje će biti dostupne.",
+      "s1p3": "Za više informacija kliknite poveznicu u nastavku.",
+      "action1": "Zatvori",
+      "action2": "Saznajte više",
+      "action3": "Isprobajte ArcGIS StoryMaps"
     },
     "embedBar": {
       "share": "Podijeli",

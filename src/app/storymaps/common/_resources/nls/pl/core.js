@@ -153,6 +153,27 @@ define({
       "action2": "Sprawdź teraz moje narracje",
       "action3": "Dowiedz się więcej"
     },
+    "extendedSupportMessage": {
+      "bannerMsg": "Klasyczne mapy narracyjne Esri Story Maps są w fazie przedłużonej obsługi technicznej",
+      "s1h1": "Ważny komunikat dotyczący klasycznych map narracyjnych Esri Story Maps",
+      "s1p1": "Klasyczne szablony map narracyjnych Esri Story Maps są w fazie przedłużonej obsługi technicznej. Zachęcamy wszystkich klientów do korzystania z aplikacji ArcGIS StoryMaps – nowoczesnego narzędzia firmy Esri służącego do tworzenia narracji.",
+      "s1p2": "Szablony klasyczne nie są już aktywnie rozwijane i ich użycie w nowych projektach nie jest zalecane. Nie są planowane żadne aktualizacje ich możliwości. Narracje utworzone przy użyciu klasycznych szablonów będą nadal dostępne.",
+      "s1p3": "W grudniu 2021 roku klasyczne szablony zostaną usunięte z domyślnej galerii aplikacji konfigurowalnych. W trakcie przechodzenia na aplikację ArcGIS StoryMaps można dodać jeden lub większą liczbę klasycznych szablonów do niestandardowej grupy aplikacji konfigurowalnych instytucji, jeśli jest to konieczne w celu obsługi bieżących procedur wykonywania zadań.",
+      "s1p4": "Aby uzyskać więcej informacji, Kliknij poniższe łącze Dowiedz się więcej.",
+      "action1": "Zamknij",
+      "action2": "Dowiedz się więcej",
+      "action3": "Wypróbuj aplikację ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "Klasyczne mapy narracyjne Esri Story Maps są w fazie wsparcia dla produktów dojrzałych",
+      "s1h1": "Ważny komunikat dotyczący klasycznych map narracyjnych Esri Story Maps",
+      "s1p1": "Klasyczne szablony map narracyjnych Esri Story Maps są w fazie wsparcia dla produktów dojrzałych. Zachęcamy wszystkich klientów do korzystania z aplikacji ArcGIS StoryMaps – nowoczesnego narzędzia firmy Esri służącego do tworzenia narracji.",
+      "s1p2": "Szablony klasyczne nie są już aktywnie rozwijane i ich użycie w nowych projektach nie jest zalecane. Nie są planowane żadne aktualizacje ich możliwości. Narracje utworzone przy użyciu klasycznych szablonów będą nadal dostępne.",
+      "s1p3": "Aby uzyskać więcej informacji, Kliknij poniższe łącze Dowiedz się więcej.",
+      "action1": "Zamknij",
+      "action2": "Dowiedz się więcej",
+      "action3": "Wypróbuj aplikację ArcGIS StoryMaps"
+    },
     "embedBar": {
       "share": "Udostępnij",
       "fullScreen": "Pełny ekran",

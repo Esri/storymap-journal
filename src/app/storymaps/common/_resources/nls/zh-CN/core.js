@@ -55,7 +55,7 @@ define({
     },
     "saveErrorSocial": {
       "title": "社交媒体共享更新",
-      "panel1": "您的故事在社交媒体上的外观已改善，但您的 ArcGIS web 应用程序项目标题与故事标题不一致。",
+      "panel1": "您的故事在社交媒体上的外观已改善，但您的 ArcGIS Web 应用程序项目标题与故事的标题不一致。",
       "panel1tooltip": "通过定义标题、摘要和缩略图，您的故事将显示如下:",
       "panel2": "您希望在社交媒体上使用的标题:",
       "panel2q1": "故事标题(建议)",
@@ -152,6 +152,27 @@ define({
       "action1": "关闭",
       "action2": "立即检查我的故事",
       "action3": "了解详细信息"
+    },
+    "extendedSupportMessage": {
+      "bannerMsg": "经典 Esri Story Maps 受扩展支持",
+      "s1h1": "关于经典 Esri Story Maps 的重要信息",
+      "s1p1": "经典 Esri Story Maps 模板受扩展支持 我们鼓励所有客户使用 ArcGIS StoryMaps，这是 Esri 最新一代叙述工具。",
+      "s1p2": "经典模板不再处于积极开发阶段，不推荐用于新工程。 不再计划对其功能进行进一步更新。 使用经典模板创建的故事仍然可用。",
+      "s1p3": "经典模板将于 2021 年 12 月从默认的可配置应用程序库中移除。 如果在过渡到使用 ArcGIS StoryMaps 期间需要支持当前工作流，可以将一个或多个经典模板添加到您组织的自定义可配置应用程序组中。",
+      "s1p4": "有关详细信息，请单击以下的了解更多链接。",
+      "action1": "关闭",
+      "action2": "了解详细信息",
+      "action3": "试用 ArcGIS StoryMaps"
+    },
+    "matureSupportMessage": {
+      "bannerMsg": "经典 Esri Story Maps 受成熟支持",
+      "s1h1": "关于经典 Esri Story Maps 的重要信息",
+      "s1p1": "经典 Esri Story Maps 模板受成熟支持 我们鼓励所有客户使用 ArcGIS StoryMaps，这是 Esri 最新一代叙述工具。",
+      "s1p2": "经典模板不再处于积极开发阶段，不推荐用于新工程。 不再计划对其功能进行进一步更新。 使用经典模板创建的故事仍然可用。",
+      "s1p3": "有关详细信息，请单击以下的了解更多链接。",
+      "action1": "关闭",
+      "action2": "了解详细信息",
+      "action3": "试用 ArcGIS StoryMaps"
     },
     "embedBar": {
       "share": "共享",

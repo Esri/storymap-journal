@@ -60,7 +60,10 @@ define({
       "print0": "抱歉，此故事无法打印。",
       "print1": "如需打印此故事，请使用共享对话框中的打印按钮。",
       "print2": "抱歉，通常可通过共享对话框得到故事的可打印版本，但该对话框已经被作者禁用。",
-      "attention": "注意!"
+      "attention": "注意!",
+      "nonOwnerOrgUrl": "您正在尝试访问的 %TPL_NAME% 并非源自您已提供的 URL。",
+      "nonOwnerOrgProceedToGeneric": "跳转至 %HREF%",
+      "advanced": "高级"
     },
     "mobileView": {
       "tapForDetails": "点击查看详细信息",

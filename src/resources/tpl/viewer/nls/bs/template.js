@@ -60,7 +60,10 @@ define({
       "print0": "Nažalost, ova se priča ne može ispisati.",
       "print1": "Da biste ispisali ovu priču, upotrijebite gumb za ispis koji se nalazi u dijaloškom okviru za dijeljenje.",
       "print2": "Nažalost, verzija za ispis priče obično je dostupna putem dijaloškog okvira za dijeljenje, no autor je onemogućio ovaj dijaloški okvir.",
-      "attention": "Pozor!"
+      "attention": "Pozor!",
+      "nonOwnerOrgUrl": "%TPL_NAME% kojem pokušavate pristupiti ne potječe s URL-a koji ste naveli",
+      "nonOwnerOrgProceedToGeneric": "Nastavite do %HREF%",
+      "advanced": "Napredno"
     },
     "mobileView": {
       "tapForDetails": "Dodirni za pojedinosti",
